@@ -2,12 +2,8 @@
   "name": "serverless-blog",
   "version": "1.0.0",
   "description": "Serverless blog content",
-  "main": "index.js",
   "dependencies": {},
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/serverless/blog.git"
@@ -17,5 +13,5 @@
   "bugs": {
     "url": "https://github.com/serverless/blog/issues"
   },
-  "homepage": "https://github.com/serverless/blog#readme"
+  "homepage": "https://serverless.com/blog"
 }

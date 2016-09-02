@@ -18,5 +18,12 @@ date: 2016-05-25
 layout: Post
 ---
 
+# Post Heading
+
 Post Content
+
+## Post SubSection
+
+etc.
+
 ```
