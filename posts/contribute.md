@@ -3,6 +3,8 @@ title: Contritubing Guest Posts
 layout: Page
 ---
 
+# Contribute to the Serverless Blog
+
 Are you as excited about the possibilities of serverless architectures as we are? Do you stay up at night thinking about serverless architectures and their potential to revolutionize web development? Are you passionate about sharing your knowledge and experience with others? Do you like to write? Let’s connect!
 
 At Serverless Inc. we value the knowledge and experience our community shares through contributing to our open source framework. Writing for the Serverless blog is another way to contribute.

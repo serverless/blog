@@ -11,8 +11,6 @@ tags:
 - serverless
 ---
 
-# Defining “Serverless” and Why It Matters to Developers  
-
 You’ve probably heard the term _serverless._ But what does it actually mean? And more importantly, as a developer, why should you care?
 
 Serverless refers to a cloud architectural design pattern that abstracts servers away to the point that developers have little to no direct interaction with them. Of course technically there are still servers behind the scenes, but you don’t have to worry about managing them.
