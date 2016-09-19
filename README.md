@@ -10,7 +10,7 @@ Contributions and pull requests are welcome.
 
 2. Name your post in this format `YYYY-MM-DD-blog-post-name.md` and include the required post information
 
-## Required post information
+**Required post information**
 
 ```yaml
 ---
@@ -41,3 +41,5 @@ etc.
 ## Popular Markdown Editors
 * [Byword](https://bywordapp.com/)
 * [typora](https://www.typora.io/)
+
+- Add to scripts https://www.npmjs.com/package/s3-uploader

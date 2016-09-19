@@ -2,9 +2,13 @@
 title: Serverless V1.0 Beta 2
 date: 2016-08-17
 layout: Post
+author:
+  name: Serverless
+  url: http://twitter.com/goServerless
+  avatar: https://avatars3.githubusercontent.com/u/13742415?v=3&s=60
 ---
 
-Two weeks have passed since our first v1 beta.1 release. Today we’re proud to announce the second beta version of the Serverless framework which introduces lots of new features, improvements and bug fixes.  
+Two weeks have passed since our first v1 beta.1 release. Today we’re proud to announce the second beta version of the Serverless framework which introduces lots of new features, improvements and bug fixes.
 
 You can install it via:
 
