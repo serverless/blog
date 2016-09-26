@@ -17,6 +17,7 @@ Contributions and pull requests are welcome.
 title: My awesome post
 description: "This post is about awesome stuff!"
 date: 2016-05-25
+thumbnail: 'link to thumnail'
 layout: Post
 ---
 

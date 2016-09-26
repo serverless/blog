@@ -2,7 +2,7 @@
 layout: Post
 title: 'Defining Serverless and Why It Matters to Developers'
 date: 2016-09-01
-description: "You’ve probably heard the term _serverless._ But what does it actually mean? And more importantly, as a developer, why should you care?"
+description: "You’ve probably heard the term serverless. But what does it actually mean? And more importantly, as a developer, why should you care?"
 author:
   name: Serverless
   url: http://twitter.com/goServerless
