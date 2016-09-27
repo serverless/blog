@@ -1,0 +1,10 @@
+{
+  "github": "eahefnawy",
+  "twitter": "eahefnawy",
+  "site": "http://eahefnawy.com",
+  "bio": {
+    "short": "Eslam Hefnawy is a senior developer at Serverless Inc.",
+    "long":
+      "Eslam Hefnawy is a senior developer at Serverless Inc. He leads the team in charge of building and maintaining the Serverless Framework — an application framework for building web, mobile and IoT applications powered by AWS Lambda, AWS API Gateway and in the future other FaaS providers."
+  }
+}
