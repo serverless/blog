@@ -1,6 +1,6 @@
 ---
 title: Contritubing Guest Posts
-layout: Page
+layout: Default
 ---
 
 # Contribute to the Serverless Blog
