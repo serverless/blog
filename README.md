@@ -44,3 +44,7 @@ etc.
 * [typora](https://www.typora.io/)
 
 - Add to scripts https://www.npmjs.com/package/s3-uploader
+
+## Publishing to medium
+
+You can [import posts into medium](https://medium.com/p/import)
