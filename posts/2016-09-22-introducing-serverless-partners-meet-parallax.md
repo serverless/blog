@@ -3,7 +3,7 @@ layout: Post
 title: 'Introducing Serverless Partners: Meet Parallax'
 date: 2016-09-22
 description: ""
----  
+---
 
 Serverless architecture has opened a whole new world of possibilities for developers. We’re seeing so many cool projects being built with the Serverless Framework. The open-source Framework allows you to easily build web, mobile and IoT applications with serverless architectures using AWS Lambda, Azure Functions, Google Cloud Functions and more. Startups to Fortune 100 companies are using the Framework to build sophisticated event-driven systems.
 
