@@ -17,7 +17,7 @@ Meet Serverless Partner [Parallax](https://parall.ax/) – an international dig
 
 Parallax worked on the huge marketing campaign for David Guetta’s new release – [This One’s For You](https://thisonesforyou.com/) – the official anthem of the Union of European Football Associations (UEFA) 2016 European Championship finals. Working for UEFA in conjunction with sports group [Perform](http://www.performgroup.com/), they created [a revolutionary web app](https://thisonesforyou.com/) by utilizing in-house skills and a range of different technologies, including the Serverless Framework.
 
-![](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/wp/09/Social-4.jpg)
+![](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/legacy/2016/09/Social-4.jpg)
 
 ### The Challenge
 
