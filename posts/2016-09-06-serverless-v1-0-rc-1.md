@@ -2,9 +2,6 @@
 layout: Post
 title: 'New Release: Serverless V1.0 rc.1'
 date: 2016-09-06
-description: ""
-tags:
-- serverless
 ---
 
 It’s time again. [Serverless v1 beta.2](http://blog.serverless.com/serverless-v1-0-beta-release-2/) was released nearly two weeks ago. Today we’re happy and proud to announce the first release candidate of the Serverless Framework v1 (Serverless v1 rc.1). You can install it via:
@@ -153,7 +150,7 @@ See [#1818](https://github.com/serverless/serverless/issues/1818) and [#1927](ht
 serverless deploy --verbose
 ```
 
-That’s it. Now you’ll see the CloudFormation outputs in real time! Nifty! ![](http://blog.serverless.com/wp-content/uploads/2016/09/0.png)
+That’s it. Now you’ll see the CloudFormation outputs in real time! Nifty! ![](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/legacy/2016/09/0.png)
 
 ## Brand new documentation
 
@@ -287,7 +284,7 @@ Moving fast unfortunately means that something might be reconsidered and introdu
 
 ## Reaching 10,000 GitHub stars
 
-After looking at all the amazing new features it’s time to celebrate! On Friday, 19th of August Serverless finally broke the 10,000 GitHub stars mark! ![](http://blog.serverless.com/wp-content/uploads/2016/09/1.png) We’d like to thank everyone who has supported us so far! We’re proud to have such a great community and are excited about the future with all of you! **Thank you!**
+After looking at all the amazing new features it’s time to celebrate! On Friday, 19th of August Serverless finally broke the 10,000 GitHub stars mark! ![](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/legacy/2016/09/1.png) We’d like to thank everyone who has supported us so far! We’re proud to have such a great community and are excited about the future with all of you! **Thank you!**
 
 ## New homepage
 

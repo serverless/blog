@@ -2,12 +2,9 @@
 layout: Post
 title: 'Interview with Peter Sbarski of Serverlessconf London + Registration Discount'
 date: 2016-09-09
-description: ""
-tags:
-- serverless
 ---
     
-![](http://blog.serverless.com/wp-content/uploads/2016/09/Screen-Shot-2016-09-02-at-9.44.03-AM.png)
+![](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/legacy/2016/09/Screen-Shot-2016-09-02-at-9.44.03-AM.png)
 
 Serverlessconf London is happening October 26-28, 2016 at etc.venues, 200 Aldersgate, St. Paul’s, London, EC1A 4HD. The event kicks off <span class="aBn" tabindex="0" data-term="goog_1397140873"><span class="aQJ">Wed., Oct.</span></span> 26 with a full day of workshops. The conference and talks take place Oct. 27-28\. Early bird registration is still available for a limited time and starts at £395\. Find full information, including speakers, at [london.serverlessconf.io](http://london.serverlessconf.io/). Then purchase your tickets via [https://serverlessconf-lo<wbr>ndon.eventbrite.com](https://serverlessconf-london.eventbrite.com/).
 

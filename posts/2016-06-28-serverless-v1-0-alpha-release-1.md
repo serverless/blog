@@ -4,7 +4,7 @@ date: 2016-06-28
 layout: Post
 ---
 
-![v1alpha1](http://blog.serverless.com/wp-content/uploads/2016/06/v1alpha1-1.gif) **We've released Alpha-2 in the meantime, please check out the [corresponding post](http://blog.serverless.com/serverless-v1-0-alpha-release-2/) as there are changes to how things are presented in this blogpost.** After giving you a little more insight into our thoughts regarding the future of Serverless and event driven infrastructure in general in our [last blogpost](http://blog.serverless.com/building-serverless-framework-v1/) we’re happy to release the first alpha of Serverless V1.0 today. Serverless Framework V.1 features strong extensibility through a new [Plugin System](https://github.com/serverless/serverless/tree/v1.0/docs/using-plugins) and the ability to work with multiple providers from the start, though this release focuses purely on AWS.  We already have most of the functionality that was available in 0.x reimplemented with many optimizations to the developer experience going forward. With all those new plans coming we decided that this is our time to introduce breaking changes, so from V1.0 onwards we can improve incrementally. We will provide more information, documentation and direct help to our community going forward to transition from 0.X of Serverless to 1.x. The new system is very easy to set up and should be fast to reconfigure. We will release more alpha versions over the next weeks and months until we finally release the stable version of Serverless V1.0\. We want to include you early on in this process for feedback and you can see the direction and help us on the way. We already have most of the functionality that was available in 0.x reimplemented and will put a special focus on developer tooling and developer experience going forward. With all of that said let's dig into Setting up a new “serverless service”, a new and fundamental concept in V.1.
+![v1alpha1](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/legacy/2016/06/v1alpha1-1.gif) **We've released Alpha-2 in the meantime, please check out the [corresponding post](http://blog.serverless.com/serverless-v1-0-alpha-release-2/) as there are changes to how things are presented in this blogpost.** After giving you a little more insight into our thoughts regarding the future of Serverless and event driven infrastructure in general in our [last blogpost](http://blog.serverless.com/building-serverless-framework-v1/) we’re happy to release the first alpha of Serverless V1.0 today. Serverless Framework V.1 features strong extensibility through a new [Plugin System](https://github.com/serverless/serverless/tree/v1.0/docs/using-plugins) and the ability to work with multiple providers from the start, though this release focuses purely on AWS.  We already have most of the functionality that was available in 0.x reimplemented with many optimizations to the developer experience going forward. With all those new plans coming we decided that this is our time to introduce breaking changes, so from V1.0 onwards we can improve incrementally. We will provide more information, documentation and direct help to our community going forward to transition from 0.X of Serverless to 1.x. The new system is very easy to set up and should be fast to reconfigure. We will release more alpha versions over the next weeks and months until we finally release the stable version of Serverless V1.0\. We want to include you early on in this process for feedback and you can see the direction and help us on the way. We already have most of the functionality that was available in 0.x reimplemented and will put a special focus on developer tooling and developer experience going forward. With all of that said let's dig into Setting up a new “serverless service”, a new and fundamental concept in V.1.
 
 ## Introducing The “Serverless Service”
 
@@ -24,7 +24,7 @@ To get an overview on the available commands and the plugins that are currently 
 serverless --help
 ```
 
-![Screenshot 2016-06-24 15.05.29](http://blog.serverless.com/wp-content/uploads/2016/06/Screenshot-2016-06-24-15.05.29.png)
+![Screenshot 2016-06-24 15.05.29](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/legacy/2016/06/Screenshot-2016-06-24-15.05.29.png)
 
 ## Create a new Service
 
@@ -34,7 +34,7 @@ Let's create a new service. You need to set the **nam****e** and **provider** fo
 serverless create --name first-service --provider aws
 ```
 
-This will create a subfolder **first-service** with the necessary files for your Node.js service. At the moment we only support Node.js in this alpha, but other languages will follow. ![Screenshot 2016-06-24 15.05.05](http://blog.serverless.com/wp-content/uploads/2016/06/Screenshot-2016-06-24-15.05.05.png) This will create the following simple serverless.yml file for deployment, the file that declares and describes a serverless service:
+This will create a subfolder **first-service** with the necessary files for your Node.js service. At the moment we only support Node.js in this alpha, but other languages will follow. ![Screenshot 2016-06-24 15.05.05](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/legacy/2016/06/Screenshot-2016-06-24-15.05.05.png) This will create the following simple serverless.yml file for deployment, the file that declares and describes a serverless service:
 
 ```yaml
 service: first-service
@@ -52,7 +52,7 @@ Now that we have created the new service lets deploy it to AWS. The new implemen
 serverless deploy
 ```
 
-Following is the log output during the deployment. We’re also working on having a little nicer output during the deployment so we don’t repeat the same message: ![Screenshot 2016-06-24 16.03.09](http://blog.serverless.com/wp-content/uploads/2016/06/Screenshot-2016-06-24-16.03.09.png)
+Following is the log output during the deployment. We’re also working on having a little nicer output during the deployment so we don’t repeat the same message: ![Screenshot 2016-06-24 16.03.09](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/legacy/2016/06/Screenshot-2016-06-24-16.03.09.png)
 
 ## Invoke the function with test data
 
@@ -66,7 +66,7 @@ Now we can invoke the function with some test data and see the results. We’re 
 serverless invoke --function hello --path testfile.json
 ```
 
-![Screenshot 2016-06-24 16.08.38](http://blog.serverless.com/wp-content/uploads/2016/06/Screenshot-2016-06-24-16.08.38.png)
+![Screenshot 2016-06-24 16.08.38](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/legacy/2016/06/Screenshot-2016-06-24-16.08.38.png)
 
 ## Add other Events and Custom Resources
 
@@ -98,7 +98,7 @@ Of course you can also remove a serverless service, which will remove the whole 
 serverless remove
 ```
 
-![Screenshot 2016-06-24 16.28.50](http://blog.serverless.com/wp-content/uploads/2016/06/Screenshot-2016-06-24-16.28.50.png)
+![Screenshot 2016-06-24 16.28.50](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/legacy/2016/06/Screenshot-2016-06-24-16.28.50.png)
 
 ## Next Steps for Serverless Framework V.1
 

@@ -21,7 +21,7 @@ Following months of experimentation and feedback we’ve summarized our findings
 
 Let’s explore how we can build our Serverless Social Network using each one of these patterns, while outlining the benefits and drawbacks of each along with the configuration required for each pattern.
 
-## Microservices Pattern
+## 1. Microservices Pattern
 
 In the Microservices Pattern each job or functionality is isolated within a separate Lambda function. In the case of our example app, each Lambda function would also have a single http endpoint that serves as the entry point for that function.
 
@@ -52,7 +52,7 @@ functions:
 *   Deployments will be slower, since multiple functions have to be provisioned.
 *   You could reach the CloudFormation template file size limit quickly, especially if you’re using custom resources.
 
-## **Services Pattern**
+## 2. **Services Pattern**
 
 In the Services Pattern, a single Lambda function can handle a few (~4) jobs that are usually related via a data model or a shared infrastructure dependency. In our example app, all operations on the Users data model are performed in a single Lambda function, and multiple HTTP endpoints are created for all CRUD operations.
 
@@ -92,7 +92,7 @@ You can inspect the incoming HTTP request’s path and method by parsing the _ev
 *   Requires creating a router to call the right logic based on the request method or endpoint.
 *   Bigger function sizes due to putting multiple operations within the same Lambda function.
 
-## Monolithic Pattern
+## 3. Monolithic Pattern
 
 In the Monolithic Pattern your entire application is crammed into a single Lambda function. In our example app, our entire app is in a single Lambda function, all HTTP endpoints point to that Lambda function.
 
@@ -125,7 +125,7 @@ functions:
 *   It’s harder to understand performance. The Lambda function will run for a variety of durations.
 *   You can easily hit the Lambda size limit in real world practical applications due to the larger function size.
 
-## The Graph Pattern
+## 4. The Graph Pattern
 
 The Graph Pattern is similar to the Monolithic Pattern, but it allows you to take advantage of GraphQL to reduce your entire REST API and all of its endpoints into 1–2 endpoints. As a result, your entire application will be composed of a single function and a 1–2 endpoints that handle GraphQL queries. GraphQL will then fetch the correct data in any form you need.
 
