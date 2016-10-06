@@ -3,10 +3,6 @@ layout: Post
 title: 'Interview with Peter Sbarski of Serverlessconf London + Registration Discount'
 date: 2016-09-09
 description: ""
-author:
-  name: Serverless
-  url: http://twitter.com/goServerless
-  avatar: https://avatars3.githubusercontent.com/u/13742415?v=3&s=60
 tags:
 - serverless
 ---

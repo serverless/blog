@@ -3,10 +3,6 @@ layout: Post
 title: 'New Release: Serverless V1.0 rc.1'
 date: 2016-09-06
 description: ""
-author:
-  name: Serverless
-  url: http://twitter.com/goServerless
-  avatar: https://avatars3.githubusercontent.com/u/13742415?v=3&s=60
 tags:
 - serverless
 ---

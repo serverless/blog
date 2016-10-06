@@ -1,0 +1,10 @@
+{
+  "github": "pmuens",
+  "twitter": "pmmuens",
+  "site": "http://eahefnawy.com",
+  "bio": {
+    "short": "Philipp Müns is a core developer at Serverless, Inc.",
+    "long":
+      "Philipp Müns is a core developer at Serverless, Inc. He works on the team in charge of building and maintaining the Serverless Framework — an application framework for building web, mobile and IoT applications powered by AWS Lambda, Azure Functions, Google Cloud Functions and more"
+  }
+}
