@@ -5,10 +5,6 @@ date: 2016-09-20
 description: "Two students built an alternative Australian Bureau of Statistics Census website for $10 million less than the Australian government"
 ---
 
-
-# Challenge Accepted: Building A Better Australian Census Website with Serverless Architecture
-
-
 Austin Wilshire and Bernd Hartzer [received world-wide attention](http://www.dailymail.co.uk/news/article-3742618/Two-university-students-just-54-hours-build-Census-website-WORKS-10-MILLION-ABS-disastrous-site.html) in August when they built an alternative Australian Bureau of Statistics Census website for $10 million less than the Australian government.
 
 The kicker? The official ABS site crashed almost immediately after launching. Whereas, the site created by Austin and Bernd at a weekend hack-a-thon remained stable because it was built using serverless architecture. It also cost less than $500 compared to the government’s $10 million price tag. Here’s what Austin had to say about the whole process when he recently connected with Serverless, Inc. CEO Austen Collins and Developer Evangelist David Wells. Watch the video or read the transcript below.

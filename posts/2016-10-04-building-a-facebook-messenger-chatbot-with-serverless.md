@@ -1,7 +1,7 @@
 ---
 layout: Post
-title: 'Introducing Serverless Partners: Meet Parallax'
-date: 2016-09-22
+title: 'Building a Facebook Messenger Chatbot with Serverless'
+date: 2016-10-04
 description: ""
 authors:
   - PhilippMuns
