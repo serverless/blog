@@ -27,7 +27,7 @@ Guest posts include a contributor bio and contact information, including links t
 
 # How to contribute
 
-Drop us a line at team@serverless.com, add an [issue on the blog repo](http://github.com/serverless/blog) or [submit a pull request on our blog repo](http://github.com/serverless/blog)!
+Drop us a line at david@serverless.com, add an [issue on the blog repo](http://github.com/serverless/blog) or [submit a pull request on our blog repo](http://github.com/serverless/blog)!
 
 
 
