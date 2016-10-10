@@ -24,7 +24,9 @@ Here's how to build a [Facebook Messenger](http://messenger.com) chatbot with 
 
 ## Getting started
 
-We’ll build a chatbot called **Quotebot** that will send us a quote if we send it a message. [![](https://raw.githubusercontent.com/pmuens/quotebot/master/quotebot-1.gif)](https://raw.githubusercontent.com/pmuens/quotebot/master/quotebot-1.gif)
+We’ll build a chatbot called **Quotebot** that will send us a quote if we send it a message. 
+
+[![](https://raw.githubusercontent.com/pmuens/quotebot/master/quotebot-1.gif)](https://raw.githubusercontent.com/pmuens/quotebot/master/quotebot-1.gif)
 
 ## The code
 
