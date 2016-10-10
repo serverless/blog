@@ -9,6 +9,8 @@ authors:
 
 Chatbots. Maybe you've heard about them recently. Maybe you've even talked to one. But what are chatbots, why are they relevant, and how do you build one? In this post we’ll answer those questions, plus show you how to develop your very own Serverless Facebook Messenger Chatbot. We’ll also explore why serverless architecture and the Serverless Framework are a great fit for this type of application. 
 
+Hi!
+
 ## What are Chatbots
 
 Imagine that you could pull out your smartphone and send a quick Facebook message to your favorite shoe retailer. Something like “What are the current shoe trends?” Seconds later you receive a message with several pictures of trendy sneakers. Next you respond: “I’m more of a casual  person and would like to go with black sneakers in size 10”. _Ping._ You receive another instant message with the shoes you requested and a simple option to buy them. This might sound futuristic, but it's already happening in online retail stores. This is a chatbot. And it's been called “the next big thing” in customer technologies. Chatbots are a great way to enable users to instantly interact with companies in a very familiar format--direct messaging.
