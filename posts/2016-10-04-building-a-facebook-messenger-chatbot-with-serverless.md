@@ -3,6 +3,7 @@ layout: Post
 title: 'Building a Facebook Messenger Chatbot with Serverless'
 date: 2016-10-04
 description: ""
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/facebook.png
 authors:
   - PhilippMuns
 ---

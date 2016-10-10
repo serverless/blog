@@ -2,6 +2,7 @@
 title: Serverless V1.0 Beta 1
 date: 2016-08-03
 layout: Post
+thumbnail: https://avatars1.githubusercontent.com/u/13742415?v=3&s=200
 ---
 
 ![announcement_v1beta1](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/legacy/2016/08/announcement_v1beta1.gif) It’s been two weeks since our [Serverless V1.0-alpha.2](http://blog.serverless.com/serverless-v1-0-alpha-release-2/) release. Lots of valuable feedback and suggestions were [submitted and discussed](https://github.com/serverless/serverless/milestone/11?closed=1) since then. Thanks to the help of our great community we’re proud to announce our first beta release today: **Serverless V1.0-beta.1** Let’s take a closer look what has changed / is new.
