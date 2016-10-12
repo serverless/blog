@@ -2,6 +2,7 @@
 layout: Post
 title: 'Introducing Serverless Partners: Meet Parallax'
 date: 2016-09-22
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/parallax.png
 description: ""
 ---
 
