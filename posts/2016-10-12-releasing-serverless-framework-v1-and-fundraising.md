@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: 'Releasing Serverless Framework V.1 & Fundraising'
-date: 2016-10-04
+date: 2016-10-12
 description: "Serverless, Inc. has brought Serverless Framework V.1 out of beta and also closed a seed round from Trinity Ventures."
 authors:
   - AustenCollins
@@ -17,7 +17,7 @@ Here’s how to quickly get started with Serverless Framework V.1:
 
 ## Graduating From Beta
 
-In the beginning (Serverless Framework V.0), the key AWS services that comprise the Serverless Architecture (e.g., AWS Lambda, API Gateway) required a lot of assistance to use.  Today, they have all matured fantastically and most of their functionality is supported by AWS CloudFormation, allowing users to perform safer deployments of their functions and required resources.
+In the beginning (Serverless Framework V.0), the key AWS services that comprise the Serverless Architecture (e.g., AWS Lambda, API Gateway) required a lot of assistance to use.  Today, they have all matured well and most of their functionality is supported by AWS CloudFormation, allowing users to perform safer deployments of their functions and required resources.
 
 In order for our users to take advantage of these new benefits, we started working on Serverless Framework V.1 Beta five months ago which relied entirely on AWS CloudFormation for deployments.  This change allowed us to focus more on developer experience and solving new challenges within the serverless architecture.
 
