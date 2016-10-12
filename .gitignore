@@ -5,9 +5,3 @@ node_modules
 # OS stuff
 .DS_Store
 .tmp
-
-# Other stuff
-admin.env
-.env
-tmp
-.coveralls.yml
