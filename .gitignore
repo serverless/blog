@@ -1,1 +1,7 @@
 node_modules
+# IDE stuff
+**/.idea
+
+# OS stuff
+.DS_Store
+.tmp
