@@ -7,8 +7,6 @@ authors:
   - AustenCollins
 ---
 
-# Releasing Serverless V.1 & Fundraising
-
 For over a year now, we’ve been building an application framework to help developers spend less time operating complex infrastructure and more time delivering results.  To date, the Serverless Framework has garnered more than 11,000 stars on Github and hundreds of startups and enterprise users use it every week to deploy thousands of AWS Lambda functions.
 
 Today, we’re excited to announce that we’re bringing Serverless Framework V.1 out of beta.  We’re also announcing we’ve closed a seed round of funding worth $3 million, led by Trinity Ventures.  With these funds, we’ll be able to substantially increase our efforts on the Framework and evolve its focus to help users deploy bigger, more powerful serverless architectures, across providers.
