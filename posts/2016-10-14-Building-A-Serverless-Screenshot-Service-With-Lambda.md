@@ -49,6 +49,7 @@ For this project we're going to need to setup:
  * An S3 bucket for the screenshots
  * A CloudFront distribution for serving the screenshots
 
+
 **Getting Started**
 ===============
 
@@ -197,6 +198,7 @@ custom:
     endpoint: {"Fn::Join": ["", ["https://", { "Fn::GetAtt": "CloudFrontEndpoint.DomainName" }, "/"]]}
 ```
 
+
 **Defining functions**
 ==================
 
@@ -244,6 +246,7 @@ functions:
 
 **Awesome!** Everything is up and running. 
 
+
 **Using the Service**
 =================
 
@@ -285,12 +288,14 @@ $ curl -X GET https://123g1jc802.execute-api.us-east-1.amazonaws.com/dev/screens
 	"original": "https://foobar.cloudfront.net/6ab016b2dad7ba49a992ba0213a91cf8/original.png"
 }
 ```
+
 **Cost**
 =======
 
 So how much will this cost you? If every call takes approximately 10 seconds (which is a safe bet, usually they are way faster). You could make 250 calls per month in the free tier, which wouldn't cost you a thing.
 
 So creating at least 100.000 screenshots **per month** with 15 thumbnails per screenshot would be absolutely free.
+
 
 **Conclusion**
 ==========
