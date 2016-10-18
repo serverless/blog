@@ -17,7 +17,7 @@ My name is [John McKim](https://twitter.com/johncmckim) and I am a Software Deve
 
 In February this year (2016), I attended an AWS meetup where [Sam Kroonenburg](https://twitter.com/samkroon) spoke about [A Cloud Guru](https://acloud.guru). Sam told us how he built [A Cloud Guru](https://acloud.guru) without a single server. I was inspired.
 
-After that meetup I started learning as much as I could about Serverless. I started by converting an [Express app to Serverless](https://blog.johncmckim.me/express-to-aws-lambda-part-1-a057096abe34) with the Serverless Framework. But that was not enough. I want to build a real project. To do that, I needed a problem.
+After that meetup I started learning as much as I could about Serverless. I started by converting an [Express app to Serverless](https://blog.johncmckim.me/express-to-aws-lambda-part-1-a057096abe34) with the Serverless Framework. But that was not enough. I wanted to build a real project. To do that, I needed a problem.
 
 **The Problem**
 --------
@@ -69,7 +69,7 @@ This project has been extremely valuable to me. I still forget to water my plant
 
 It wasn't all smooth sailing. In fact, the project isn't finished (is software ever finished?). The AWS IoT Device Gateway requires clients to authentication with mutual TLS 1.2 authentication. The device I bought does not support TLS 1.2 out of the box. So as of now (Oct 2016), I haven't actually got a soil moisture sensor working.
 
-**Know what Services**
+**Know your Services**
 --------
 Knowing what cloud services exist and how they work is important. If I had known that AWS IoT requires TLS 1.2 I would have bought a different device. Knowing what different services are on offer allows you to choose the best in class for your project. I chose Firebase hosting over S3 + CloudFront as it is far better suited for single page apps. Spending time researching services rather than just using what you know will save you in the long run.
 
