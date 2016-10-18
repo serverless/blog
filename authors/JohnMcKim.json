@@ -1,0 +1,10 @@
+{
+  "github": "johncmckim",
+  "twitter": "johncmckim",
+  "site": "https://johncmckim.me/",
+  "bio": {
+    "short": "John McKim is a developer at A Cloud Guru",
+    "long":
+      "John McKim is a developer at A Cloud Guru. He is is part of the team that is building the A Cloud Guru platform, a Serverless learning platform. He contributes to the Serverless Framework and runs the Brisbane Serverless Meetup."
+  }
+}
