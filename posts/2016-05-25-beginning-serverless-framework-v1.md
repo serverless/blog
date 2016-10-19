@@ -32,4 +32,4 @@ The new serverless offerings look incredible.  But, we absolutely cannot forge
 
 ## Wrapping Up
 
-Serverless Framework Version 1 is currently being built [in the v.1 branch](https://github.com/serverless/serverless/tree/v1.0).  Above, are some hints as to the direction we're taking.  Progress is rapid and we expect to release an alpha in a few weeks.  If you'd like to contribute, [please check out our issues](https://github.com/serverless/serverless/issues?q=is%3Aopen+is%3Aissue+milestone%3Av1.0).  If you have questions, [please email Flo](mailto:florian@severless.com), our CTO :) - The Serverless Team
+Serverless Framework Version 1 is currently being built [in the v.1 branch](https://github.com/serverless/serverless/tree/v1.0).  Above, are some hints as to the direction we're taking.  Progress is rapid and we expect to release an alpha in a few weeks.  If you'd like to contribute, [please check out our issues](https://github.com/serverless/serverless/issues?q=is%3Aopen+is%3Aissue+milestone%3Av1.0).  If you have questions, [please email Flo](mailto:florian@severless.com), our CTO :)  The Serverless Team
