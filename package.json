@@ -2,8 +2,6 @@
   "name": "serverless-blog",
   "version": "1.0.0",
   "description": "Serverless blog content",
-  "dependencies": {},
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/serverless/blog.git"
