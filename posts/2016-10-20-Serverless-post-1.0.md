@@ -4,11 +4,11 @@ date: 2016-10-20
 layout: Post
 ---
 
-Last week we released [1.0 of Serverless](./releasing-serverless-framework-v1-and-fundraising). With that release done we want to share our thoughts about the future of Serverless. This is also an invitation to everyone to share your ideas with us so we know that we're building exactly what you need to build complex infrastructure.
+Last week we released [1.0 of Serverless](./releasing-serverless-framework-v1-and-fundraising). With that release done we feel it's important to share our thoughts about the future. This is also an open invitation to our community to share your ideas with us so we know that we're building exactly what you need to help you build complex infrastructure.
 
-We see Serverless as the main tool for you to build large scale serverless event driven micro-services. With 1.0 we've built the foundation to easily build and deploy services. You can create custom resources, define events and deploy to separate accounts and stages.
+We see Serverless as the main tool to allow you to build large-scale serverless, event-driven microservices. With 1.0 we've built the foundation to easily build and deploy services. You can create custom resources, define events and deploy to separate accounts and stages.
 
-While discussing their needs with users over the last months we've identified five main areas as the next goal of Serverless. Of course we will implement many other features and improvements, but those five will be our main focus as they will provide the biggest benefits.
+Over months spent engaging users in a discussion about their needs, we've identified five main areas as the focal point of our next round of goals for Serverless. Of course we'll implement many other features and improvements, but these five will be our main focus as they will provide the most benefits.
 
 * Service Composition
 * Service Discovery
@@ -18,24 +18,24 @@ While discussing their needs with users over the last months we've identified fi
 
 ### Service Composition
 
-Building a large event driven micro-service infrastructure with Serverless requires many decisions on how to compose your infrastructure. How do you want to split up services, do you deploy them individually or as one larger deployment, how should they talk to each other and ho are dependencies between them defined.
+Building a large event-driven microservice infrastructure with Serverless requires many decisions on how to compose your infrastructure. How do you want to split up services? Do you deploy them individually or as one larger deployment? How should they talk to each other, and how are dependencies between them defined?
 
 We'll introduce more features, documentation and best practices to help you build and understand a large Serverless infrastructure. You can jump into the discussion and share your thoughts about features, documentation and best practices in our [Service Composition Issue](https://github.com/serverless/serverless/issues/2481)
 
 ### Service Discovery
-One of the fundamental problems to solve when you build a large micro-service infrastructure is service discovery. How do you make it easy for services to find each other, get the appropriate rights to talk to each other and make this possible across different stages. Maybe during development you want a few services to be shared by everyone, but other services should be deployed independently for each developer so they can easily iterate on it. Of course service discovery should never be hardcoded into the application as deployment would become a nightmare in that case.
+One of the fundamental problems you have to solve when you build a large microservice infrastructure is service discovery. How do you make it easy for services to find each other, get the appropriate rights to talk to each other and make this possible across different stages? Maybe during development you want a few services to be shared by everyone, but other services should be deployed independently for each developer so they can easily iterate on it. Of course service discovery should never be hardcoded into the application as deployment would become a nightmare in that case.
 
-To solve this issue we're working with AWS on making it easy to configure your services to find each other. We'll implement a simple syntax to define dependencies and through our upcoming SDK allow you to easily communicate between services, use Resources defined in other services and even include your preexisting infrastructure in your Serverless services easily.
+To solve this issue we're working with AWS on making it easy to configure your services to find each other. We'll implement a simple syntax to define dependencies and through our upcoming SDK allow you to easily communicate between services, use Resources defined in other services and even include your preexisting infrastructure in your Serverless services.
 
-AWS recently launched [Cloud Formation cross-stack referencing](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/walkthrough-crossstackref.html) which will help us with implementing discovery and we're working on different ways to provide information to services for discovery during deployment within environment variables. DNS is another technology that we want to support for service discovery so your endpoints can get a public DNS record easily. You can provide your views and jump into the discussion in our [Service Discovery Issue](https://github.com/serverless/serverless/issues/2483)
+AWS recently launched [Cloud Formation cross-stack referencing](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/walkthrough-crossstackref.html) which will help us with implementing discovery and we're working on different ways to provide information to services for discovery during deployment within environment variables. DNS is another technology that we want to support for service discovery so that your endpoints can get a public DNS record easily. You can provide your views and jump into the discussion in our [Service Discovery Issue](https://github.com/serverless/serverless/issues/2483)
 
 ### Service Communication
 
-Once you build a large micro-service infrastructure communication between those services can become complicated. You might not want every service to be able to talk to every other service, you might want to invoke specific services whenever one finishes or simply send out an event and have other services react to that event automatically and asynchronously.
+Once you build a large microservice infrastructure, communication between those services can become complicated. You might not want every service to be able to talk to every other service. You might want to invoke specific services whenever one finishes, or simply send out an event and have other services react to that event automatically and asynchronously.
 
-We've thought about this for quite a while now and following are examples of how this could potentially look in the future. These examples are in no way a finished proposal and will most likely change in some way, but they should give you an idea of things that should be possible in the future in Serverless.
+We've thought about this for quite a while now, and the following are examples of how this could potentially look in the future. These examples are in no way a finished proposal and will most likely change in some way. But they should give you an idea of what should be possible in the future in Serverless.
 
-The following example would be an option how to listen to functions starting or failing as an event, so you can easily subscribe to these events in different services.
+The following example would be an option for how to listen to functions starting or failing as an event, so you can easily subscribe to these events in different services.
 
 ```yaml
 service: subscriberService
@@ -84,14 +84,14 @@ These are just a few ideas (and we have more) on how communication between funct
 
 ### Security Controls
 
-Serverless has to work great for any kind of team, from small ones to large enterprises. One very important part of an infrastructure across those different organisations is being able to lock down and have tight control over the security of your system. By default it should be closed down well, but you should have full control over which part will be opened up. In future releases we're going to add more security controls into Serverless to give you even more ability to tighten your system.
+Serverless has to work well for all types of teams, ranging from small startups to large enterprises. One very important component of an infrastructure spanning across those different organizations is the ability to lock down and have tight control over the security of your system. By default it should be secure, but you should have full control over which part will be opened up. In future releases we're going to add more security controls into Serverless to give you even more ability to tighten your system.
 
-The `calling` example from before is a good case of additional security restrictions by making sure your resources are locked down by default and only get opened up where necessary. Security controls will be implement across various issues and pull requests in the future, so its best to follow our Milestones and releases to see our updates on that part of Serverless.
+The `calling` example from before is a good case of adding additional security restrictions by making sure your resources are locked down by default and only get opened up where necessary. Security controls will be implemented across various issues and pull requests in the future, so it's best to follow our Milestones and releases to see our updates on that part of Serverless.
 
 ### Multi Provider support
 
-We regularly talk to different providers about their FaaS infrastructure services and we're very excited because Serverless is a huge topic for all cloud providers and many other tooling providers. We're working with them to provide a great Serverless experience for all the different services that are already anounced or in the making. Stay tuned for more info in the future.
+We regularly talk to different providers about their FaaS infrastructure services. We're excited that Serverless is a huge topic for all cloud providers and many other tooling providers. We're working with them to create a great Serverless experience for all the different services that are already announced, or in the making. Stay tuned for more info in the future.
 
 ## Conclusions
 
-Now that we have the basic platform in place that allows you to build and deploy services easily our next goal is to help you go from a few services to dozens of services with hundreds of functions. This requires a lot of features to make that scale of infrastructure still understandable and we're looking forward to hear what other features you have in mind to make sure Serverless can deliver on helpoing you build large and complex infrastructure.
+Now that we have the basic platform in place that allows you to build and deploy services easily, our next goal is to help you grow from a few services to dozens of services with hundreds of functions. It will require a lot of features to make that scale of infrastructure still understandable. We look forward to hearing what other features you have in mind to make sure Serverless can deliver on helping you build large and complex infrastructure.
