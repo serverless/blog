@@ -1,0 +1,9 @@
+{
+  "github": "nicka",
+  "twitter": "nickengelsman",
+  "site": "http://www.codedrops.nl",
+  "bio": {
+    "short": "Nick den Engelsman is a Full Stack Developer at BandLab.",
+    "long": "Nick den Engelsman is a Full Stack Developer at BandLab, who specialises in orchestrating and automating highly available infrastructures. He's also contributor to the Serverless Framework."
+  }
+}
