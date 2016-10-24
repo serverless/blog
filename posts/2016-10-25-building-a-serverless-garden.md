@@ -40,7 +40,7 @@ I started the project as a single monolithic Serverless service. There are [good
 The [IoT Service](https://github.com/garden-aid/iot-hub) is the heart of this project. The IoT Service uses the AWS IoT Device Gateway and Rules Engine. The Device Gateway provides an endpoint for messages to and from devices. I use the Rules Engine for two tasks:
 
 - Storing raw messages in DynamoDB for the dashboard
-- Invoking the check moisture Lambda in the notifications service.
+- Invoking the check moisture Lambda in the notifications service
 
 The Rules Engine connects the services with devices. It's the piece that makes Serverless a great solution for an IoT system.
 
