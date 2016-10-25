@@ -4,7 +4,7 @@ date: 2016-10-20
 layout: Post
 ---
 
-Last week we released [1.0 of Serverless](./releasing-serverless-framework-v1-and-fundraising). With that release done we feel it's important to share our thoughts about the future. This is also an open invitation to our community to share your ideas with us so we know that we're building exactly what you need to help you build complex infrastructure. You can follow what we're working on in [our Milestones](https://github.com/serverless/serverless/milestones).
+Last week we released [1.0 of Serverless](https://serverless.com/blog/releasing-serverless-framework-v1-and-fundraising/). With that release done we feel it's important to share our thoughts about the future. This is also an open invitation to our community to share your ideas with us so we know that we're building exactly what you need to help you build complex infrastructure. You can follow what we're working on in [our Milestones](https://github.com/serverless/serverless/milestones).
 
 We see Serverless as the main tool to allow you to build large-scale serverless, event-driven microservices. With 1.0 we've built the foundation to easily build and deploy services. You can create custom resources, define events and deploy to separate accounts and stages.
 
