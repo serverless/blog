@@ -19,7 +19,7 @@ description: "This post is about awesome stuff!"
 date: 2016-05-25
 thumbnail: 'link to thumnail'
 layout: Post
-author: camelCaseAuthorNameWithNoSpaces
+author: FirstnameLastname # references file in ./authors folder
 ---
 
 # Post Heading
