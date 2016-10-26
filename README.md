@@ -19,6 +19,7 @@ description: "This post is about awesome stuff!"
 date: 2016-05-25
 thumbnail: 'link to thumnail'
 layout: Post
+author: camelCaseAuthorNameWithNoSpaces
 ---
 
 # Post Heading
@@ -30,6 +31,8 @@ Post Content
 etc.
 
 ```
+
+Note: Use fully qualified URL as links. No relative links.
 
 
 3. Submit a PR to the repository.
