@@ -1,0 +1,35 @@
+---
+title:  Introducing V.1 in the First Serverless Office Hours
+description:  Earlier this month we released V.1 of the Serverless Framework. Join the Serverless team in our first edition of Office Hours for a live chat to answer all your questions about the latest release.
+date:  2016-27-2016
+layout:  Post
+---
+At Serverless our community and contributors' input matters to us - a lot. Earlier this month we [released V.1 of Serverless](https://serverless.com/blog/releasing-serverless-framework-v1-and-fundraising/). Now that you've had some time to check it out, we want to know what you think.
+
+What questions have come up? What do you want to see next? Let us know in our first edition of Serverless Office hours where we'll devote one hour to answering your questions and feedback.
+
+Join the Serverless CEO [Austen Collins](https://twitter.com/austencollins), CTO [Florian Motlik](https://twitter.com/flomotlik) and Developer Evangelist [David Wells](https://twitter.com/DavidWells) for a live chat about V.1 of the Serverless Framework.   
+
+#**#ASKSERVERLESS**
+
+Introducing V.1 in Serverless Office Hours, Thursday, November 3, 10-11AM PST
+------------------------------------------------------------------------
+
+**How To Get Involved:**
+ 
+ 1. Install the latest version of Serverless: `npm install -g serverless`, if you haven't already checked it out.
+
+ 2. Tweet [@goserverless](https://twitter.com/goserverless) with your
+    questions about V.1 of the Serverless Framework between now and 12AM
+    PST, Thur., Nov. 3.
+
+ 3. Be sure to include the hashtag **#AskServerless**.
+
+ 4. Tune into [YouTube Live](https://www.youtube.com/channel/UCFYG383lawh9Hrs_DEKTtdg) Thur., Nov. 3, 10-11AM PST when the
+    Serverless team will answer your questions.
+
+Can't join us live? No problem! We'll share a recording of Office Hours on [YouTube](https://www.youtube.com/channel/UCFYG383lawh9Hrs_DEKTtdg), so send us your questions anyway.
+
+Start sending us your questions tagged with **#AskServerless** and stay tuned for upcoming Serverless Office Hours topics and dates!
+
+*You can join the ongoing discussion about Serverless on [GitHub](https://github.com/serverless/serverless), [Twitter](https://twitter.com/goserverless), [Gitter](https://gitter.im/serverless/serverless), the [Serverless Forum](http://forum.serverless.com/) or [Facebook](https://www.facebook.com/serverless/).*
