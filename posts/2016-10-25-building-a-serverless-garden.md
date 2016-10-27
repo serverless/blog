@@ -4,7 +4,8 @@ title:  Building A Serverless Garden Monitoring System with Lambda
 description:  Guest author John McKim writes about building a serverless garden monitoring system with the Serverless Framework and AWS Lambda.
 date:  2016-10-25
 thumbnail: https://johncmckim.me/static/external/2016-10-Serverless-Blog/happy-plants-thumb.jpg
-author: John McKim
+authors:
+ - JohnMcKim
 ---
 
 **My Serverless Garden**
