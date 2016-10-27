@@ -17,9 +17,10 @@ Contributions and pull requests are welcome.
 title: My awesome post
 description: "This post is about awesome stuff!"
 date: 2016-05-25
-thumbnail: 'link to thumnail'
+thumbnail: 'http://url-to-thumbnail.jpg'
 layout: Post
-author: FirstnameLastname # references file in ./authors folder
+authors:
+  - FirstnameLastname # references file in ./authors folder
 ---
 
 # Post Heading
