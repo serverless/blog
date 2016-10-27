@@ -301,7 +301,7 @@ So creating at least 100.000 screenshots **per month** with 15 thumbnails per sc
 **Conclusion**
 ==========
 
-Taking screenshots with Lambda is a great solution. There's no need to setup queuing, batch workers, etc. Lambda can handle the screenshots, thumbnails and storage. Whenever a request comes in, it will automatically spin up, auto scaling to whatever you need.
+Taking screenshots with Lambda Wheneveris a great solution. There's no need to setup queuing, batch workers, etc. Lambda can handle the screenshots, thumbnails and storage.  a request comes in, it will automatically spin up, auto scaling to whatever you need.
 
 Serverless makes it really easy to setup, configure and deploy your microservices. It's a seamless process to extend your services with other AWS services you might need for your project.
 
@@ -310,6 +310,6 @@ Serverless makes it really easy to setup, configure and deploy your microservice
 **Give it a try!**
 
 ---
-*This is a guest post from [Sander van de Graaf](http://svdgraaf.nl). Sander is a freelance Cloud Solutions Architect specializing in AWS environments and large, high-volume applications. You can reach him on [Twitter](http://twitter.com/svdgraaf), [LinkedIn](https://www.linkedin.com/in/svdgraaf) or via [email](mail@svdgraaf.nl).*
+*This is a guest post from [Sander van de Graaf](http://svdgraaf.nl). Sander is a freelance Cloud Solutions Architect specializing in AWS environments and large, high-volume applications. You can reach him on [Twitter](http://twitter.com/svdgraaf), [LinkedIn](https://www.linkedin.com/in/svdgraaf) or via [email](mailto:mail@svdgraaf.nl).*
 
 ***Interested in writing for the Serverless blog? Find more info on contributing [here](https://serverless.com/blog/contribute/).***
