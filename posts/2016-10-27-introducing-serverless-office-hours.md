@@ -8,7 +8,7 @@ author:
 ---
 At Serverless our community and contributors' input matters to us - a lot. Earlier this month we [released V.1 of Serverless](https://serverless.com/blog/releasing-serverless-framework-v1-and-fundraising/). Now that you've had some time to check it out, we want to know what you think.
 
-What questions have come up? What do you want to see next? Let us know in our first edition of Serverless Office hours where we'll devote one hour to answering your questions and feedback.
+What questions have come up? What do you want to see next? Let us know in our first edition of Serverless Office Hours where we'll devote one hour to answering your questions and feedback.
 
 Join the Serverless CEO [Austen Collins](https://twitter.com/austencollins), CTO [Florian Motlik](https://twitter.com/flomotlik) and Developer Evangelist [David Wells](https://twitter.com/DavidWells) for a live chat about V.1 of the Serverless Framework.   
 
