@@ -4,8 +4,8 @@ date: 2016-10-18
 thumbnail: 'https://www.trek10.com/assets/logo.svg'
 layout: Post
 ---
-<img width="700px" class="center" src="https://www.trek10.com/assets/logo.svg">
 
+<img width="700px" class="center" src="https://www.trek10.com/assets/logo.svg">
 
 Serverless architecture has opened a whole new world of possibilities for developers. We’re seeing so many cool projects being built with the Serverless Framework. The open-source Framework allows you to easily build web, mobile and IoT applications with serverless architectures using AWS Lambda, Azure Functions, Google Cloud Functions and more. Startups to Fortune 100 companies are using the Framework to build sophisticated event-driven systems.
 We’re collaborating with some of these organizations to highlight their exceptional work through the new Serverless Partners Program. Serverless Partners are consultants and agencies who are verified experts in serverless application development with the Serverless Framework. We’ll share stories of how they use the Framework to work fast, manage costs and build for scale, in order to produce innovative products and solutions for their clients. 

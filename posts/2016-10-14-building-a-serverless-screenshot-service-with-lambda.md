@@ -4,8 +4,8 @@ title:  Building A Serverless Screenshot Service with Lambda
 description:  Guest author Sander van de Graaf writes about building a serverless screenshot service with the Serverless Framework and AWS Lambda.
 date:  2016-10-14
 thumbnail:  https://raw.githubusercontent.com/svdgraaf/serverless-screenshot/master/docs/architecture.png
-author:  Sander van de Graaf
-
+authors:  
+  - SanderVanDeGraaf
 ---
 
 A client recently requested a feature involving screenshots of random URLs. Now, there are several services out there that will do this for you. Most of these services have interesting REST APIs and pricing models, but I really wanted to develop something with [Serverless](https://serverless.com/). So I took this opportunity to check it out.
@@ -245,7 +245,7 @@ functions:
   lambda-screenshots-dev-takeScreenshot: arn:aws:lambda:us-east-1:123123123123:function:lambda-screenshots-dev-takeScreenshot
 ```
 
-**Awesome!** Everything is up and running. 
+**Awesome!** Everything is up and running.
 
 
 **Using the Service**
