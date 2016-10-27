@@ -3,6 +3,8 @@ title:  Introducing V.1 in the First Serverless Office Hours
 description:  Earlier this month we released V.1 of the Serverless Framework. Join the Serverless team in our first edition of Office Hours for a live chat to answer all your questions about the latest release.
 date:  2016-10-27
 layout:  Post
+author:
+
 ---
 At Serverless our community and contributors' input matters to us - a lot. Earlier this month we [released V.1 of Serverless](https://serverless.com/blog/releasing-serverless-framework-v1-and-fundraising/). Now that you've had some time to check it out, we want to know what you think.
 
@@ -25,7 +27,7 @@ Introducing V.1 in Serverless Office Hours, Thursday, November 3, 10-11AM PST
 
  3. Be sure to include the hashtag **#AskServerless**.
 
- 4. Tune into [YouTube Live](https://www.youtube.com/channel/UCFYG383lawh9Hrs_DEKTtdg) Thur., Nov. 3, 10-11AM PST when the
+ 4. Tune into [YouTube Live](https://www.youtube.com/watch?v=IxVxNjEqSCM) Thur., Nov. 3, 10-11AM PST when the
     Serverless team will answer your questions.
 
 Can't join us live? No problem! We'll share a recording of Office Hours on [YouTube](https://www.youtube.com/channel/UCFYG383lawh9Hrs_DEKTtdg), so send us your questions anyway.
