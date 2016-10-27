@@ -12,7 +12,7 @@ What questions have come up? What do you want to see next? Let us know in our fi
 
 Join the Serverless CEO [Austen Collins](https://twitter.com/austencollins), CTO [Florian Motlik](https://twitter.com/flomotlik) and Developer Evangelist [David Wells](https://twitter.com/DavidWells) for a live chat about V.1 of the Serverless Framework.
 
-![office_hours](https://cloud.githubusercontent.com/assets/20538501/19771277/fe9409bc-9c27-11e6-8d05-c81f1940a731.jpg)
+![office_hours_11_3_2017_2](https://cloud.githubusercontent.com/assets/20538501/19773597/cf0dcd60-9c2f-11e6-8d9e-f1414fd3d8ea.gif)
 
 ## How To Get Involved: ##
  
