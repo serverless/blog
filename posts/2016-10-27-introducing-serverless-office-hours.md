@@ -1,7 +1,7 @@
 ---
 title:  Introducing V.1 in the First Serverless Office Hours
 description:  Earlier this month we released V.1 of the Serverless Framework. Join the Serverless team in our first edition of Office Hours for a live chat to answer all your questions about the latest release.
-date:  2016-27-2016
+date:  2016-10-27
 layout:  Post
 ---
 At Serverless our community and contributors' input matters to us - a lot. Earlier this month we [released V.1 of Serverless](https://serverless.com/blog/releasing-serverless-framework-v1-and-fundraising/). Now that you've had some time to check it out, we want to know what you think.
