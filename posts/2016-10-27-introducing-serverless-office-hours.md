@@ -14,7 +14,7 @@ Join the Serverless CEO [Austen Collins](https://twitter.com/austencollins), CTO
 
 ![office_hours](https://cloud.githubusercontent.com/assets/20538501/19771277/fe9409bc-9c27-11e6-8d05-c81f1940a731.jpg)
 
-##How To Get Involved:##
+## How To Get Involved: ##
  
  1. Install the latest version of Serverless: `npm install -g serverless`, if you haven't already checked it out.
 
