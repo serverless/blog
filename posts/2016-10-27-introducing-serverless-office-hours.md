@@ -10,14 +10,11 @@ At Serverless our community and contributors' input matters to us - a lot. Earli
 
 What questions have come up? What do you want to see next? Let us know in our first edition of Serverless Office Hours where we'll devote one hour to answering your questions and feedback.
 
-Join the Serverless CEO [Austen Collins](https://twitter.com/austencollins), CTO [Florian Motlik](https://twitter.com/flomotlik) and Developer Evangelist [David Wells](https://twitter.com/DavidWells) for a live chat about V.1 of the Serverless Framework.   
+Join the Serverless CEO [Austen Collins](https://twitter.com/austencollins), CTO [Florian Motlik](https://twitter.com/flomotlik) and Developer Evangelist [David Wells](https://twitter.com/DavidWells) for a live chat about V.1 of the Serverless Framework.
 
-# #ASKSERVERLESS
+![office_hours](https://cloud.githubusercontent.com/assets/20538501/19771277/fe9409bc-9c27-11e6-8d05-c81f1940a731.jpg)
 
-Introducing V.1 in Serverless Office Hours, Thursday, November 3, 10-11AM PST
-------------------------------------------------------------------------
-
-**How To Get Involved:**
+##How To Get Involved:##
  
  1. Install the latest version of Serverless: `npm install -g serverless`, if you haven't already checked it out.
 
