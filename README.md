@@ -2,7 +2,7 @@
 
 Welcome to the serverless blog repo! [Contributions and pull requests are welcome.](https://github.com/serverless/blog/new/master/post)
 
-## How to publish content:
+## How to contribute content:
 
 1. [Click here to add a post](https://github.com/serverless/blog/new/master/post) or submit a new pull request via the command line.
 
@@ -12,7 +12,7 @@ Welcome to the serverless blog repo! [Contributions and pull requests are welcom
 
 4. In your post, include the Required post information:
 
-At the top of your blog post:
+Include the post metadata at the top:
 <pre>
 ---
 title: My awesome post title
@@ -25,11 +25,11 @@ authors:
 ---
 </pre>
 
-Then write your post:
+Then write your post. [Github flavored markdown](https://guides.github.com/features/mastering-markdown/) is supported!
 <pre>
 # Post Heading
 
-Post Content
+This is an awesome paragraph!
 
 ## Post SubSection
 
