@@ -52,3 +52,19 @@ Note: Use fully qualified URL as links. No relative links.
 ## Publishing to medium
 
 You can [import posts into medium](https://medium.com/p/import)
+
+
+## How to add Author Information
+
+[Click here to add Author information](https://github.com/serverless/blog/new/master/authors)
+
+The name of the file should be the same as the name field used in the blog post meta data.
+
+Example `authors/JohnMcKim.json` and `JohnMcKim` in the `authors` field below are the same name and capitalization.
+
+---
+layout:  Post
+title:  Building A Serverless Garden Monitoring System with Lambda
+authors:
+ - JohnMcKim
+---
