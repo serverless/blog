@@ -8,13 +8,13 @@ Contributions and pull requests are welcome.
 
 ## How to publish content:
 
-1. Write your content in markdown! See [how to write in markdown](https://blog.ghost.org/markdown/) for how to write markdown. You can also use [https://stackedit.io/editor](https://stackedit.io/editor)
+1. Write your content in markdown!
 
-2. Name your post in this format `YYYY-MM-DD-blog-post-name.md` and include the required post information
+2. Name your post file name in this format `YYYY-MM-DD-blog-post-name.md`
 
-**Required post information**
+3. **Required post information**
 
-```yaml
+<pre>
 ---
 title: My awesome post
 description: "This post is about awesome stuff!"
@@ -22,7 +22,7 @@ date: 2016-05-25
 thumbnail: 'http://url-to-thumbnail.jpg'
 layout: Post
 authors:
-  - FirstnameLastname # references file in ./authors folder
+  - FirstnameLastname # references the FirstnameLastname.json file in ./authors folder
 ---
 
 # Post Heading
@@ -31,9 +31,17 @@ Post Content
 
 ## Post SubSection
 
-etc.
+[Link example](http://my-full-url-with-http-at-the-front.com)
 
+* List item 1
+* List item 2
+* List item 3
+
+```js
+console.log('JS code')
 ```
+
+</pre>
 
 Note: Use fully qualified URL as links. No relative links.
 
@@ -42,6 +50,8 @@ Note: Use fully qualified URL as links. No relative links.
 
 
 ## Other handy markdown links/resources
+
+See [how to write in markdown](https://blog.ghost.org/markdown/) for how to write markdown. You can also use [https://stackedit.io/editor](https://stackedit.io/editor)
 
 * [Convert HTML to markdown](https://domchristie.github.io/to-markdown/)
 
@@ -54,7 +64,6 @@ Note: Use fully qualified URL as links. No relative links.
 ## Publishing to medium
 
 You can [import posts into medium](https://medium.com/p/import)
-
 
 ## How to add Author Information
 
