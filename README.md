@@ -14,7 +14,8 @@ Contributions and pull requests are welcome.
 
 3. **Required post information**
 
-<pre>
+At the top of your blog post:
+<pre><code class="yaml">
 ---
 title: My awesome post
 description: "This post is about awesome stuff!"
@@ -24,7 +25,11 @@ layout: Post
 authors:
   - FirstnameLastname # references the FirstnameLastname.json file in ./authors folder
 ---
+</code></pre>
 
+
+Then write your post:
+<pre><code class="markdown">
 # Post Heading
 
 Post Content
@@ -41,7 +46,7 @@ Post Content
 console.log('JS code')
 ```
 
-</pre>
+</code></pre>
 
 Note: Use fully qualified URL as links. No relative links.
 
