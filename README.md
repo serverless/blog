@@ -4,6 +4,8 @@ Welcome to the serverless blog repo!
 
 Contributions and pull requests are welcome.
 
+# [Click here to add a post](https://github.com/serverless/blog/new/master/post)
+
 ## How to publish content:
 
 1. Write your content in markdown! See [how to write in markdown](https://blog.ghost.org/markdown/) for how to write markdown. You can also use [https://stackedit.io/editor](https://stackedit.io/editor)
