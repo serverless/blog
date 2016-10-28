@@ -25,7 +25,7 @@ authors:
 ---
 </pre>
 
-Then write your post. [Github flavored markdown](https://guides.github.com/features/mastering-markdown/) is supported!
+Then write your post :arrow_down:. [Github flavored markdown](https://guides.github.com/features/mastering-markdown/) is supported!
 <pre>
 # Post Heading
 
@@ -44,6 +44,8 @@ This is an awesome paragraph!
 console.log('JS code')
 ```
 </pre>
+
+Questions about formatting? [See a complete post example](https://raw.githubusercontent.com/serverless/blog/master/posts/2016-10-25-building-a-serverless-garden.md)
 
 
 4. Submit a PR to the repository and we will review and publish your post!
