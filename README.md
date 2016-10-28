@@ -57,6 +57,8 @@ We will review and publish your post with our audience on [serverless.com](http:
 
 Ping us with any questions on [Twitter](http://twitter.com/goserverless) or [post an issue](https://github.com/serverless/blog/issues/new) and we will get back with you shortly.
 
+Curious about what your post will look like on the live site? You can preview your post by [cloning down the site repo](https://github.com/serverless/site#quick-start), installing the dependencies and running `npm start`.
+
 ## How to add Author Information
 
 [Click here to add Author information](https://github.com/serverless/blog/new/master/authors)
@@ -85,4 +87,3 @@ Need to convert a Google doc to markdown? [Install this chrome extension](https:
 Need to convert HTML to markdown? You can use [this handy html to markdown converter](https://domchristie.github.io/to-markdown/)
 
 Need to convert Word to markdown? You can use [this handy Word to Markdown Converter](https://word-to-markdown.herokuapp.com/)
-
