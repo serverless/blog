@@ -25,7 +25,7 @@ authors:
 ---
 </pre>
 
-Then write your post :arrow_down:. [Github flavored markdown](https://guides.github.com/features/mastering-markdown/) is supported!
+Then write your post :arrow_down: [Github flavored markdown](https://guides.github.com/features/mastering-markdown/) is supported!
 <pre>
 # Post Heading
 
@@ -47,9 +47,7 @@ console.log('JS code')
 
 Questions about formatting? [See a complete post example](https://raw.githubusercontent.com/serverless/blog/master/posts/2016-10-25-building-a-serverless-garden.md)
 
-
-4. Submit a PR to the repository and we will review and publish your post!
-
+Once your post is ready to go, submit a PR to the repository and we will review and publish your post with our audience on serverless.com(http://serverless.com/blog)!
 
 ## How to add Author Information
 
@@ -57,22 +55,24 @@ Questions about formatting? [See a complete post example](https://raw.githubuser
 
 The name of the file should be the same as the name field used in the blog post meta data.
 
-Example `authors/JohnMcKim.json` and `JohnMcKim` in the `authors` field below are the same name and capitalization.
+Example `authors/DavidWells.json` and `DavidWells` in the `authors` field below are the same name and capitalization.
 
+```yml
 ---
 layout:  Post
-title:  Building A Serverless Garden Monitoring System with Lambda
+title:  David's Amazing Post
 authors:
- - JohnMcKim
+ - DavidWells # references data in authors/DavidWells.json file
 ---
+```
 
-## New to markdown? Read this:
+## New to markdown?
 
-See [how to write in markdown](https://blog.ghost.org/markdown/) for how to write markdown. You can also use [https://stackedit.io/editor](https://stackedit.io/editor)
+Read more about how to write [Github flavored markdown](https://guides.github.com/features/mastering-markdown/) and see this handy guide for [how to write in markdown](https://blog.ghost.org/markdown/)
 
-* [Convert HTML to markdown](https://domchristie.github.io/to-markdown/)
+Need a markdown editor? Give [stackedit.io](https://stackedit.io/editor), [Byword](https://bywordapp.com/) or [typora](https://www.typora.io/) a spin.
 
-## Popular Markdown Editors
-* [Byword](https://bywordapp.com/)
-* [typora](https://www.typora.io/)
+Need to convert a google doc to markdown? [Install this chrome extension](https://chrome.google.com/webstore/detail/export-as-markdown/hbojhdcnbcondcdfpfocpkjkfkbnbdad)
+
+Need to convert HTML to markdown? You can use [this handy html to markdown converter](https://domchristie.github.io/to-markdown/)
 
