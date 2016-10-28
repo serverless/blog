@@ -1,35 +1,32 @@
-# Serverless Blog
+# [Serverless Blog](https://serverless.com/blog/)
 
-Welcome to the serverless blog repo!
-
-Contributions and pull requests are welcome.
-
-# [Click here to add a post](https://github.com/serverless/blog/new/master/post)
+Welcome to the serverless blog repo! [Contributions and pull requests are welcome.](https://github.com/serverless/blog/new/master/post)
 
 ## How to publish content:
 
-1. Write your content in markdown!
+1. [Click here to add a post](https://github.com/serverless/blog/new/master/post) or submit a new pull request via the command line.
 
-2. Name your post file name in this format `YYYY-MM-DD-blog-post-name.md`
+2. Write your content in markdown!
 
-3. **Required post information**
+3. Name your post file name in this format `YYYY-MM-DD-blog-post-name.md`
+
+4. In your post, include the Required post information:
 
 At the top of your blog post:
-<pre><code class="yaml">
+<pre>
 ---
-title: My awesome post
+title: My awesome post title
 description: "This post is about awesome stuff!"
 date: 2016-05-25
 thumbnail: 'http://url-to-thumbnail.jpg'
 layout: Post
 authors:
-  - FirstnameLastname # references the FirstnameLastname.json file in ./authors folder
+  - FirstnameLastname # this references the FirstnameLastname.json file in ./authors folder
 ---
-</code></pre>
-
+</pre>
 
 Then write your post:
-<pre><code class="markdown">
+<pre>
 # Post Heading
 
 Post Content
@@ -43,32 +40,14 @@ Post Content
 * List item 3
 
 ```js
+// code snippet example with javascript (js) syntax highlighting
 console.log('JS code')
 ```
-
-</code></pre>
-
-Note: Use fully qualified URL as links. No relative links.
+</pre>
 
 
-3. Submit a PR to the repository.
+4. Submit a PR to the repository and we will review and publish your post!
 
-
-## Other handy markdown links/resources
-
-See [how to write in markdown](https://blog.ghost.org/markdown/) for how to write markdown. You can also use [https://stackedit.io/editor](https://stackedit.io/editor)
-
-* [Convert HTML to markdown](https://domchristie.github.io/to-markdown/)
-
-## Popular Markdown Editors
-* [Byword](https://bywordapp.com/)
-* [typora](https://www.typora.io/)
-
-- Add to scripts https://www.npmjs.com/package/s3-uploader
-
-## Publishing to medium
-
-You can [import posts into medium](https://medium.com/p/import)
 
 ## How to add Author Information
 
@@ -84,3 +63,14 @@ title:  Building A Serverless Garden Monitoring System with Lambda
 authors:
  - JohnMcKim
 ---
+
+## New to markdown? Read this:
+
+See [how to write in markdown](https://blog.ghost.org/markdown/) for how to write markdown. You can also use [https://stackedit.io/editor](https://stackedit.io/editor)
+
+* [Convert HTML to markdown](https://domchristie.github.io/to-markdown/)
+
+## Popular Markdown Editors
+* [Byword](https://bywordapp.com/)
+* [typora](https://www.typora.io/)
+
