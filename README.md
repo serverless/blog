@@ -14,7 +14,7 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
 
 3. Name your post file name in this format `YYYY-MM-DD-blog-post-name.md` :point_right: `2016-01-27-post-title-here.md`
 
-4. In your post, include the Required post information:
+4. In your post, include the **required post information:**
 
 Include the post metadata at the top:
 <pre>
@@ -25,7 +25,7 @@ date: 2016-05-25
 thumbnail: 'http://url-to-thumbnail.jpg'
 layout: Post
 authors:
-  - FirstnameLastname # this references the FirstnameLastname.json file in ./authors folder
+  - FirstnameLastname
 ---
 </pre>
 
@@ -51,13 +51,17 @@ console.log('JS code')
 
 Questions about formatting? [See a complete post example](https://raw.githubusercontent.com/serverless/blog/master/posts/2016-10-25-building-a-serverless-garden.md)
 
-Once your post is ready to go, submit a PR to the repository and we will review and publish your post with our audience on [serverless.com](http://serverless.com/blog)!
+Once your post is ready to go, [add your author info](#how-to-add-author-information), submit a PR to the repository.
+
+We will review and publish your post with our audience on [serverless.com](http://serverless.com/blog) and share it all around the web!
+
+Ping us with any questions on [Twitter](http://twitter.com/goserverless) or [post an issue](https://github.com/serverless/blog/issues/new) and we will get back with you shortly.
 
 ## How to add Author Information
 
 [Click here to add Author information](https://github.com/serverless/blog/new/master/authors)
 
-The name of the file should be the same as the name field used in the blog post meta data.
+The name of the file should be the same as the name field used in the blog post meta data. Format: `FirstnameLastname` (note the caps and no space!)
 
 Example `authors/DavidWells.json` and `DavidWells` in the `authors` field below are the same name and capitalization.
 
