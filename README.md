@@ -2,6 +2,10 @@
 
 Welcome to the serverless blog repo! [Contributions, typo fixes and pull requests are welcome](https://github.com/serverless/blog/new/master/post) :thumbsup:
 
+- [Submitting content](#how-to-contribute-content)
+- [Adding author details](#how-to-add-author-information)
+- [Markdown resources](#markdown-resources)
+
 ## How to contribute content:
 
 1. [Click here to add a post](https://github.com/serverless/blog/new/master/post) or submit a new pull request via the command line.
@@ -47,7 +51,7 @@ console.log('JS code')
 
 Questions about formatting? [See a complete post example](https://raw.githubusercontent.com/serverless/blog/master/posts/2016-10-25-building-a-serverless-garden.md)
 
-Once your post is ready to go, submit a PR to the repository and we will review and publish your post with our audience on serverless.com(http://serverless.com/blog)!
+Once your post is ready to go, submit a PR to the repository and we will review and publish your post with our audience on [serverless.com](http://serverless.com/blog)!
 
 ## How to add Author Information
 
@@ -66,7 +70,7 @@ authors:
 ---
 ```
 
-## New to markdown?
+## Markdown Resources
 
 Read more about how to write [Github flavored markdown](https://guides.github.com/features/mastering-markdown/) and see this handy guide for [how to write in markdown](https://blog.ghost.org/markdown/)
 
