@@ -1,6 +1,6 @@
 # [Serverless Blog](https://serverless.com/blog/)
 
-Welcome to the serverless blog repo! [Contributions and pull requests are welcome.](https://github.com/serverless/blog/new/master/post)
+Welcome to the serverless blog repo! [Contributions, typo fixes and pull requests are welcome](https://github.com/serverless/blog/new/master/post) :thumbsup:
 
 ## How to contribute content:
 
