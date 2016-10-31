@@ -20,11 +20,11 @@ Join the Serverless CEO [Austen Collins](https://twitter.com/austencollins), CTO
 
  2. Tweet [@goserverless](https://twitter.com/goserverless) with your
     questions about V.1 of the Serverless Framework between now and 12AM
-    PST, Thur., Nov. 3.
+    PDT, Thur., Nov. 3.
 
  3. Be sure to include the hashtag **#AskServerless**.
 
- 4. Tune into [YouTube Live](https://www.youtube.com/watch?v=IxVxNjEqSCM) Thur., Nov. 3, 10-11AM PST when the
+ 4. Tune into [YouTube Live](https://www.youtube.com/watch?v=IxVxNjEqSCM) Thur., Nov. 3, 10-11AM PDT when the
     Serverless team will answer your questions.
 
 Can't join us live? No problem! We'll share a recording of Office Hours on [YouTube](https://www.youtube.com/channel/UCFYG383lawh9Hrs_DEKTtdg), so send us your questions anyway.
