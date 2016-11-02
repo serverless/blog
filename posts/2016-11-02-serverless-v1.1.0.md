@@ -2,7 +2,7 @@
 title:  New Release - 1.1.0
 description:  Today we're releasing 1.1.0 of the Serverless Framework
 date:  2016-10-27
-thumbnail:  https://cloud.githubusercontent.com/assets/20538501/19769976/25c14630-9c23-11e6-9698-8cda3b8809d8.jpg
+thumbnail: 
 layout:  Post
 ---
 
