@@ -8,7 +8,7 @@ authors:
   - TimKadlec
 ---
 
-Serverless is a powerful new approach that enables developers to focus on building features instead of having to focus on the underlying architecture.
+<img align="right" width="150" height="150" src="http://res.cloudinary.com/snyk/image/upload/w_400/v1468845258/logo/snyk-avatar.png">Serverless is a powerful new approach that enables developers to focus on building features instead of having to focus on the underlying architecture.
 
 From a security perspective, it greatly reduces the risk of security issues due to unpatched servers. But it doesn't totally eliminate the risk. In serverless architectures vulnerable open source packages become the primary security risk.
 
