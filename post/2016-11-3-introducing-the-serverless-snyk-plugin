@@ -1,11 +1,11 @@
 ---
-title: The Four Ways to Secure and Prevent Vulnerabilities in Your Serverless Applications Using Snyk
-description: Using Serverless is a boon for security, as it greatly reduces the risk of unpatched servers. In this environment, vulnerable open source packages become the primary security risk. The new Serverless Snyk plugin addresses this issue.
+title: The 4 Ways to Secure and Prevent Vulnerabilities in Your Serverless Applications Using Snyk
+description: "Using Serverless is a boon for security, as it greatly reduces the risk of unpatched servers. In this environment, vulnerable open source packages become the primary security risk. The new Serverless Snyk plugin addresses this issue."
 date: 2016-11-03
 thumbnail: 'http://res.cloudinary.com/snyk/image/upload/w_400/v1468845258/logo/snyk-avatar.png'
 layout: Post
 authors:
-  - FirstnameLastname
+  - TimKadlec
 ---
 
 ## Serverless Security
