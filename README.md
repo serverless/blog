@@ -53,26 +53,26 @@ Questions about formatting? [See a complete post example](https://raw.githubuser
 
 ## Aligning images
 
-### Left alignment
+### `left` alignment
 ```
 <img align="left" width="150" height="150" src="http://www.fillmurray.com/200/200">
 ```
 
 <img align="left" width="150" height="150" src="http://www.fillmurray.com/200/200">
 
-### Right alignment
+### `right` alignment
 ```
 <img align="right" width="150" height="150" src="http://www.fillmurray.com/200/200">
 ```
 
 <img align="right" width="150" height="150" src="http://www.fillmurray.com/200/200">
 
-### Center alignment
+### `middle` alignment
 ```
-<img align="center" width="150" height="150" src="http://www.fillmurray.com/200/200">
+<img align="middle" width="150" height="150" src="http://www.fillmurray.com/200/200">
 ```
 
-<img align="center" width="150" height="150" src="http://www.fillmurray.com/200/200">
+<img align="middle" width="150" height="150" src="http://www.fillmurray.com/200/200">
 
 Once your post is ready to go, [add your author info](#how-to-add-author-information), submit a PR to the repository.
 
