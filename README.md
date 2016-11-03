@@ -54,33 +54,36 @@ Questions about formatting? [See a complete post example](https://raw.githubuser
 ## Aligning images
 
 ### `left` alignment
-```
-<img align="left" width="150" height="150" src="http://www.fillmurray.com/200/200">
-```
 
 <img align="left" width="150" height="150" src="http://www.fillmurray.com/200/200">
+
+```
+<img align="left" width="150" height="150" src="http://www.fillmurray.com/200/200">
+```
 
 ---
 
 ### `right` alignment
-```
-<img align="right" width="150" height="150" src="http://www.fillmurray.com/200/200">
-```
 
 <img align="right" width="150" height="150" src="http://www.fillmurray.com/200/200">
+
+```
+<img align="right" width="150" height="150" src="http://www.fillmurray.com/200/200">
+```
 
 ---
 
 ### `center` alignment example
-```
-<p align="center">
-  <img width="460" height="300" src="http://www.fillmurray.com/460/300">
-</p>
-```
 
 <p align="center">
   <img width="460" height="300" src="http://www.fillmurray.com/460/300">
 </p>
+
+```
+<p align="center">
+  <img width="460" height="300" src="http://www.fillmurray.com/460/300">
+</p>
+```
 
 ---
 
