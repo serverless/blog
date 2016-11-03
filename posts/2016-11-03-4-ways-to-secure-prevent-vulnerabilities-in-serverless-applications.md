@@ -8,8 +8,6 @@ authors:
   - TimKadlec
 ---
 
-## Serverless Security
-
 Serverless is a powerful new approach that enables developers to focus on building features instead of having to focus on the underlying architecture.
 
 From a security perspective, it greatly reduces the risk of security issues due to unpatched servers. But it doesn't totally eliminate the risk. In serverless architectures vulnerable open source packages become the primary security risk.
