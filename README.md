@@ -51,6 +51,29 @@ console.log('JS code')
 
 Questions about formatting? [See a complete post example](https://raw.githubusercontent.com/serverless/blog/master/posts/2016-10-25-building-a-serverless-garden.md)
 
+## Aligning images
+
+### Left alignment
+```
+<img align="left" width="150" height="150" src="http://www.fillmurray.com/200/200">
+```
+
+<img align="left" width="150" height="150" src="http://www.fillmurray.com/200/200">
+
+### Right alignment
+```
+<img align="right" width="150" height="150" src="http://www.fillmurray.com/200/200">
+```
+
+<img align="right" width="150" height="150" src="http://www.fillmurray.com/200/200">
+
+### Center alignment
+```
+<img align="center" width="150" height="150" src="http://www.fillmurray.com/200/200">
+```
+
+<img align="center" width="150" height="150" src="http://www.fillmurray.com/200/200">
+
 Once your post is ready to go, [add your author info](#how-to-add-author-information), submit a PR to the repository.
 
 We will review and publish your post with our audience on [serverless.com](http://serverless.com/blog) and share it all around the web!
