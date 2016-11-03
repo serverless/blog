@@ -60,6 +60,8 @@ Questions about formatting? [See a complete post example](https://raw.githubuser
 
 <img align="left" width="150" height="150" src="http://www.fillmurray.com/200/200">
 
+---
+
 ### `right` alignment
 ```
 <img align="right" width="150" height="150" src="http://www.fillmurray.com/200/200">
@@ -67,12 +69,20 @@ Questions about formatting? [See a complete post example](https://raw.githubuser
 
 <img align="right" width="150" height="150" src="http://www.fillmurray.com/200/200">
 
-### `middle` alignment
+---
+
+### `center` alignment example
 ```
-<img align="middle" width="150" height="150" src="http://www.fillmurray.com/200/200">
+<p align="center">
+  <img width="460" height="300" src="http://www.fillmurray.com/460/300">
+</p>
 ```
 
-<img align="middle" width="150" height="150" src="http://www.fillmurray.com/200/200">
+<p align="center">
+  <img width="460" height="300" src="http://www.fillmurray.com/460/300">
+</p>
+
+---
 
 Once your post is ready to go, [add your author info](#how-to-add-author-information), submit a PR to the repository.
 
