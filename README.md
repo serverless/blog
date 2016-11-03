@@ -12,7 +12,7 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
 
 2. Write your content in markdown!
 
-3. Name your post file name in this format `YYYY-MM-DD-blog-post-name.md` :point_right: `2016-01-27-post-title-here.md`
+3. Name your post file name in this format `YYYY-MM-DD-blog-post-name.md` :point_right: `2016-01-27-post-title-here.md` [handy tool for this](https://blog.tersmitten.nl/slugify/)
 
 4. In your post, include the **required post information:**
 
