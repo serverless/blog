@@ -29,7 +29,7 @@ Whilist in this role I did a lot of Ruby on Rails work, and since a few others w
 **Phase 3:**
 --------
 
-As time progressed, the company built-out the group of Ruby experts and we started a [R&D](https://en.wikipedia.org/wiki/Research_and_development) team who’s only focus was the automation and building of components that could be re-used between clients and projects. We matured our Ruby modules and made them more and more intelligent in order do most of the configuration for us. It became its own “framework”!
+As time progressed, the company built-out the group of Ruby experts and we started an [R&D](https://en.wikipedia.org/wiki/Research_and_development) team who’s only focus was the automation and building of components that could be re-used between clients and projects. We matured our Ruby modules and made them more and more intelligent in order do most of the configuration for us. It became its own “framework”!
 
 **Soooo, where does serverless come into play?**
 ====================
