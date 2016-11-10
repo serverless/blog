@@ -1,6 +1,6 @@
 ---
 layout: Post
-title: Why we chose AWS Lambda + API Gateway and the Serverless Framework
+title: Better DevOps with AWS Lambda + API Gateway and the Serverless Framework
 description: Guest author Nick den Engelsman writes about why he and his team at BandLab chose AWS Lambda + API Gateway and the Serverless Framework.
 date: 2016-11-01
 thumbnail: https://cloud.githubusercontent.com/assets/195404/19552825/d3b728ee-96b1-11e6-85e2-5fd4b8714514.png
