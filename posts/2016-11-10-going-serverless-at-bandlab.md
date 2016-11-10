@@ -1,9 +1,9 @@
 ---
-layout: Post
 title: Better DevOps with AWS Lambda + API Gateway and the Serverless Framework
 description: Guest author Nick den Engelsman writes about why he and his team at BandLab chose AWS Lambda + API Gateway and the Serverless Framework.
 date: 2016-11-01
 thumbnail: https://cloud.githubusercontent.com/assets/195404/19552825/d3b728ee-96b1-11e6-85e2-5fd4b8714514.png
+layout: Post
 authors:  
   - NickDenEngelsman
 ---
@@ -11,11 +11,14 @@ authors:
 **Background**
 ====================
 
-My name is [Nick den Engelsman](https://twitter.com/nickengelsman) and I’m a Full Stack Developer at [BandLab](https://www.bandlab.com), who specialises in orchestrating and automating highly available infrastructures.
+Hi, I'm [Nick den Engelsman](https://twitter.com/nickengelsman). I’m a Full Stack Developer at [BandLab](https://www.bandlab.com) who specialises in orchestrating and automating highly available infrastructures.
 
-At the start of 2016, and for the previous five years, I worked as a Cloud Systems Engineer at a certified AWS Managed Service Program Partner in The Netherlands. Most of my tasks were to educate clients and migrate them to the AWS cloud. Their environments and applications needed to be highly available, scalable and fault tolerant(duh). 
+At the start of 2016, and for the previous five years, I worked as a Cloud Systems Engineer at a certified AWS Managed Service Program Partner in The Netherlands. Most of my tasks were to educate clients and migrate them to the AWS cloud. Their environments and applications needed to be highly available, scalable and fault tolerant. 
 
->In that role automation was key, clients only needed to worry about pushing code and in return we would worry about keeping their infrastructure up-to-date, secure, patched, autoscaled and in general meeting SLA’s. If you think about it, **that’s a lot of work!**
+>In that role automation was key. Clients only needed to worry about pushing code and in return we would worry about keeping their infrastructure up-to-date, secure, patched, autoscaled and in general meeting SLA’s. If you think about it, **that’s a lot of work!**
+
+**Optimizing DevOps**
+--------
 
 **Phase 1:**
 --------
@@ -25,7 +28,7 @@ So in order to stay [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 **Phase 2:**
 --------
 
-Whilist in this role I did a lot of Ruby on Rails work, and since a few others within the company also had Ruby knowledge, we came up with the idea to create Ruby modules that would compile to CloudFormation JSON resources (similar to Python’s [Troposphere](https://github.com/cloudtools/troposphere)). Again this worked for a while but also ended up not being as DRY as we would’ve liked! 
+Whilst in this role I did a lot of Ruby on Rails work, and since a few others within the company also had Ruby knowledge, we came up with the idea to create Ruby modules that would compile to CloudFormation JSON resources (similar to Python’s [Troposphere](https://github.com/cloudtools/troposphere)). Again this worked for a while but also ended up not being as DRY as we would’ve liked! 
 
 **Phase 3:**
 --------
