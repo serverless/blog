@@ -42,11 +42,11 @@ serverless create --template aws-nodejs --path quotebot
 
 ## Creating a new Facebook application
 
-Next, you need to create a new Facebook app. You need to be a Facebook developer to create Facebook applications and interact with the Facebook Open Graph and their ecosystem. Head over to [developers.facebook.com](http://developers.facebook.com) and create an account or sign in if you haven’t already. Go to [developers.facebook.com/apps](http://developers.facebook.com/apps) and click on "**Add a New App"**. Skip the wizard that pops up and select **"B****asic Setup"** at the bottom. Set the **Display Name** to **Quotebot** and the **Contact E-Mail** to your E-Mail address. Select a corresponding category (I’ve selected "**Communication"**) and click on **"****Create App ID"**. The Facebook app for your **Quotebot** will be created and you'll be redirected to the overview page. Now you need to setup the Facebook product you want to use. Click on “**Get Started**” in the “**Messenger**” section. After that click “**Get Started**” again and you should see the page where you can configure your messenger integration. That’s all you need to do for now. Let’s go back to your Serverless service.
+Next, you need to create a new Facebook app. You need to be a Facebook developer to create Facebook applications and interact with the Facebook Open Graph and their ecosystem. Head over to [developers.facebook.com](http://developers.facebook.com) and create an account or sign in if you haven’t already. Go to [developers.facebook.com/apps](http://developers.facebook.com/apps) and click on “**Add a New App**”. Skip the wizard that pops up and select “**Basic Setup**” at the bottom. Set the **Display Name** to **Quotebot** and the **Contact E-Mail** to your E-Mail address. Select a corresponding category (I’ve selected “**Communication**”) and click on “**Create App ID**”. The Facebook app for your **Quotebot** will be created and you'll be redirected to the overview page. Now you need to setup the Facebook product you want to use. Click on “**Get Started**” in the “**Messenger**” section. After that click “**Get Started**” again and you should see the page where you can configure your messenger integration. That’s all you need to do for now. Let’s go back to your Serverless service.
 
 ## Creating a webhook
 
-Facebook Messenger communicates with you through a webhook. Your webhook is basically an API endpoint that the messenger will send HTTP requests to. Open up the **serverless.yml** file and modify it slightly. You’ll rename the **hello** function definition to **webhook**. You'll also rename the handler property so that it points to the **handler.js** file and the **webhook** function. Then you’ll add two **http****events** to the events definition. They’re both accessible with the help of the webhook path. One via the **GET** method and the other via **POST**. Our **serverless.yml** code should look something like this:
+Facebook Messenger communicates with you through a webhook. Your webhook is basically an API endpoint that the messenger will send HTTP requests to. Open up the **serverless.yml** file and modify it slightly. You’ll rename the **hello** function definition to **webhook**. You'll also rename the handler property so that it points to the **handler.js** file and the **webhook** function. Then you’ll add two **http events** to the events definition. They’re both accessible with the help of the webhook path. One via the **GET** method and the other via **POST**. Our **serverless.yml** code should look something like this:
 
 ```yaml
 service: quotebot
@@ -59,8 +59,14 @@ functions:
   webhook:
     handler: handler.webhook
     events:
-      - http: GET webhook
-      - http: POST webhook
+      - http:
+          path: webook
+          method: GET
+          integration: lambda
+      - http: 
+          path: webook
+          method: POST
+          integration: lambda
 ```
 
 Now you need to update your **handler.js** file. You'll implement a way to respond to GET requests that are sent to our webhook. You’ll use this functionality so that Facebook can verify that you’re the owner and operator of the webhook. Basically, you decide on a token that only you know which you’ll send from Facebook to your webhook. Open up the **handler.js** file and update it with the following code:
@@ -81,7 +87,7 @@ module.exports.webhook = (event, context, callback) => {
 };
 ```
 
-Verify that the request that was sent to your webhook is a GET request. If this is the case, check whether the token Facebook sent you is the one you've chosen. If this is the case, you’ll send the challenge code that was sent by Facebook alongside this request back to them. Otherwise, you’ll get an error message. **Note:** You should replace **“STRONGTOKEN”** with a really strong token if you deploy a chatbot in the wild. Deploy your Serverless service by running:
+Verify that the request that was sent to your webhook is a GET request. If this is the case, check whether the token Facebook sent you is the one you've chosen. If this is the case, you’ll send the challenge code that was sent by Facebook alongside this request back to them. Otherwise, you’ll get an error message. **Note:** You should replace “**STRONGTOKEN**” with a really strong token if you deploy a chatbot in the wild. Deploy your Serverless service by running:
 
 ```bash
 serverless deploy
@@ -91,11 +97,11 @@ You should see the API endpoints in your terminal. Copy and paste the link of t
 
 ## Verifying your webhook from Facebook
 
-Now it's time to verify that you’re the owner of your webhook and awesome **Quotebot.** Go back to the Facebook Messenger app you previously created and select the "**Messenger"** product on the left-hand side. Go to "**S****ettings"** underneath it. Click on" **Setup Webhooks"** in the **"****Webhooks"** section. Paste the copied **GET endpoint URL** into the **Callback URL** field and enter your token (e.g. **STRONGTOKEN**). Just select all the **Subscription Fields** for now and then click on "**Verify and Save"**. Facebook will now send a GET request to your webhook and verify that you’re the owner of this Chatbot. You should see a green "**C****ompleted"** message in the "**Webhooks"** section. 
+Now it's time to verify that you’re the owner of your webhook and awesome **Quotebot.** Go back to the Facebook Messenger app you previously created and select the “**Messenger**” product on the left-hand side. Go to “**Settings**” underneath it. Click on “**Setup Webhooks**” in the “**Webhooks**” section. Paste the copied **GET endpoint URL** into the **Callback URL** field and enter your token (e.g. **STRONGTOKEN**). Just select all the **Subscription Fields** for now and then click on “**Verify and Save**”. Facebook will now send a GET request to your webhook and verify that you’re the owner of this Chatbot. You should see a green “**Completed**” message in the “**Webhooks**” section. 
 
 ## Creating and setting up a Facebook Page
 
-Facebook chatbots need a Facebook Page so they can communicate with a user. Let’s create and setup your Quotebot Page so that it can communicate with your Quotebot Facebook app. Go to [https://www.facebook.com/business/products/pages](https://www.facebook.com/business/products/pages) and create a new Facebook Page with the name **Quotebot** (We’ll choose the same name as your Facebook chatbot app). The settings you choose aren't that important for now. Go back to the Facebook Messenger settings page and hit refresh once you’ve successfully created your Page. Select the recently created “**Quotebot**” Page in the "**Token Generation"** section. Click on "**OK"** in the pop-up window to grant access to your Facebook profile. Facebook will now generate a token that you’ll need to use to connect your chatbot with the corresponding Facebook Page. Copy this token. (Note: the token might contain line breaks so move the mouse down a little bit while selecting it). Open up a terminal and enter this command:
+Facebook chatbots need a Facebook Page so they can communicate with a user. Let’s create and setup your Quotebot Page so that it can communicate with your Quotebot Facebook app. Go to [https://www.facebook.com/business/products/pages](https://www.facebook.com/business/products/pages) and create a new Facebook Page with the name **Quotebot** (We’ll choose the same name as your Facebook chatbot app). The settings you choose aren't that important for now. Go back to the Facebook Messenger settings page and hit refresh once you’ve successfully created your Page. Select the recently created “**Quotebot**” Page in the “**Token Generation**” section. Click on “**OK**” in the pop-up window to grant access to your Facebook profile. Facebook will now generate a token that you’ll need to use to connect your chatbot with the corresponding Facebook Page. Copy this token. (Note: the token might contain line breaks so move the mouse down a little bit while selecting it). Open up a terminal and enter this command:
 
 ```bash
 curl -X POST
@@ -184,7 +190,7 @@ once again to deploy the **Quotebot**!
 
 ## Testing the Quotebot
 
-After all this hard work you could use some inspiration! Open up the **Quotebot Page** and click on **“Message”** to compose a new message. Type something and hit **"Enter"** as if you're interacting with a human being. Quotebot will reply with an inspirational quote from your array of quotes. But it won’t end here. You could also use Quotebot from your smartphone's Messenger app. Just open the Facebook Messenger app, select the conversation with Quotebot and send a new message. You’ll immediately get an awesome quote as a response.
+After all this hard work you could use some inspiration! Open up the **Quotebot Page** and click on “**Message**” to compose a new message. Type something and hit “**Enter**” as if you're interacting with a human being. Quotebot will reply with an inspirational quote from your array of quotes. But it won’t end here. You could also use Quotebot from your smartphone's Messenger app. Just open the Facebook Messenger app, select the conversation with Quotebot and send a new message. You’ll immediately get an awesome quote as a response.
 
 ## Quotebot source code
 
