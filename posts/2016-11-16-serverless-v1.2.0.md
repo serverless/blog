@@ -61,10 +61,10 @@ It's a change which will happen once you (re)deploy your service with Serverless
 
 ### Refactorings and bugfixes
 
-We've fixed a bunch of bugs (thanks for bringing the up!) and also started our process of [codebase refactorings](https://github.com/serverless/serverless/issues/2645) which will make the whole onboarding process for new contributors even easier.
+We've fixed a bunch of bugs (thanks for bringing them up!) and also started our process of [codebase refactorings](https://github.com/serverless/serverless/issues/2645) which will make the whole onboarding process for new contributors even easier.
 
 ### Next steps
 
 We've already started to fill up the next [milestones](https://github.com/serverless/serverless/milestones) for Serverless. Check out the [1.3 milestone](https://github.com/serverless/serverless/milestone/17) to see what to expect in two weeks.
 
-We hope that you have fun with the new release! Let is know if you have any questions or feedback in [our Forum](http://forum.serverless.com/) or [Github Issues](https://github.com/serverless/serverless/issues).
+We hope that you have fun with the new release! Let us know if you have any questions or feedback in [our Forum](http://forum.serverless.com/) or [Github Issues](https://github.com/serverless/serverless/issues).
