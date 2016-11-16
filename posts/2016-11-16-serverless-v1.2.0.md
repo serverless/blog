@@ -84,7 +84,7 @@ You should definitely give it a spin! Please let us know what you think.
 
 ## Serverless LA Meetup
 
-On December 7th we'll kick-off the [Serverless LA Meetup](https://www.meetup.com/Serverless-LA) series with interesting talks from Nick Gottlieb (Head of Customer Development at [Serverless, Inc.](http://serverless.com)) and Marc Campbell (CTO of [Replicated](https://www.replicated.com/)) about the Serverless Framework and serverless architectures. Join us is you're in LA!
+On December 7th we'll kick-off the [Serverless LA Meetup](https://www.meetup.com/Serverless-LA) series with interesting talks from Nick Gottlieb (Head of Customer Development at [Serverless, Inc.](http://serverless.com)) and Marc Campbell (CTO of [Replicated](https://www.replicated.com/)) about the Serverless Framework and serverless architectures. Join us if you're in LA!
 
 ## Serverless Survey
 
