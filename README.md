@@ -107,11 +107,27 @@ Example `authors/DavidWells.json` and `DavidWells` in the `authors` field below 
 
 ```yml
 ---
-layout:  Post
-title:  David's Amazing Post
+layout: Post
+title: David's Amazing Post
 authors:
  - DavidWells # references data in authors/DavidWells.json file
 ---
+```
+
+## Including Custom Scripts
+
+**Note:** For security purposes, all scripts referenced are vetted and hosted via our s3 bucket. If you need to include a custom demo, you will need to send the script over for review.
+
+```yml
+# blog post frontmatter
+layout: Post
+title: David's Amazing Post
+scripts:
+  - https://link-to-custom-js-in-s3-bucket.js
+  - http://link-to-custom-js-two-in-s3-bucket.js
+inlineJS: |
+  console.log('hi')
+  console.log('this is a multiline inline JS that will run in the post')
 ```
 
 ## Markdown Resources
