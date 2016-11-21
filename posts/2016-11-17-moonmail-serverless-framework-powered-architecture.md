@@ -2,11 +2,11 @@
 
 One day we found ourselves in a peculiar situation: We were really good at email marketing, but our software sucked. We were spending way too much time trying to "use" the tools we had, and it was truly horrible. At the same time, we were proud to say that we used *Amazon Online* super tech tools to create amazing platform for others.
 
-Then it hit us. Wait. What are we doing? That is how the idea of [MoonMail](https://goo.gl/t4Etqm) was born.
+Then it hit us. Wait. What are we doing? That is how the idea of [MoonMail](https://moonmail.io) was born.
 
 We wanted to present something different to the eCommerce community: a platform with superior performance and infinite scalability. The only problem was that it was not possible with our previous architecture, as it was relying too much on EC2 and Ruby on Rails. So, we embarked on a never-ending journey in perfecting the art and science of sending emails.
 
-In the meantime, we were playing with something new, called Lambda, with small and, at that moment, rather obscure Shopify apps. We also went into digital payments solutions, which we aptly named [MONEI](https://goo.gl/xBm6Bn). The team was extremely fast in changing, deploying and updating the code. It was literally 1 click away. No servers, and there were only incurred costs when an action was triggered, meaning that if the user didn’t hit the function, there wouldn’t be a cost. We read some serverless books, got involved with the OSS project to see if the project had solid roots, and, after 2 weeks, our company went fully Serverless.
+In the meantime, we were playing with something new, called Lambda, with small and, at that moment, rather obscure Shopify apps. We also went into digital payments solutions, which we aptly named [MONEI](https://monei.net). The team was extremely fast in changing, deploying and updating the code. It was literally 1 click away. No servers, and there were only incurred costs when an action was triggered, meaning that if the user didn’t hit the function, there wouldn’t be a cost. We read some serverless books, got involved with the OSS project to see if the project had solid roots, and, after 2 weeks, our company went fully Serverless.
 
 We have looked into different serverless approaches, but in the end decided to use the Serverless Framework because it relies on AWS, the infrastructure we’re already familiar with. With Serverless Framework on our minds, we took a bold step toward a new approach based on totally decoupled microservices, and they only cost us when they are used. If they get any traction, they are almost infinitely scaleable. How is that for creating and testing a minimally viable product?
 
@@ -49,7 +49,7 @@ MoonMail is the result of the combined efforts of many people. Thus, we would lo
 
 Developer? Contribute here: [https://github.com/microapps/MoonMail](https://github.com/microapps/MoonMail)
 
-User? Take it for a spin for free: [https://moonmail.io](https://goo.gl/xBm6Bn)
+User? Take it for a spin for free: [https://moonmail.io](https://moonmail.io)
 
 How are you going to use MoonMail to help your infrastructure reach new heights?
 
