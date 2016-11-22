@@ -47,7 +47,7 @@ functions:
 
 ### JavaScript Support for Serverless Variables
 
-Serverless Variables now suppot raw JavaScript so that you can easily generate dynamic data. This makes the Serverless Variables even more powerful.
+Serverless Variables now support raw JavaScript so that you can easily generate dynamic data. This makes the Serverless Variables even more powerful.
 
 Here's a quick example that shows what this looks like:
 
