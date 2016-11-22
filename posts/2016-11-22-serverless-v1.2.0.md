@@ -1,5 +1,5 @@
 ---
-title: Better Packaging, Permission & Configuration Features for AWS Lambda - Serverless Framework V1.2
+title: Flexible Environment Variable Support for AWS Lambda - Serverless Framework V1.2
 description: Optimized function packaging, per function IAM permissions, and new configuration options available in Serverless v1.2
 date: 2016-11-22
 layout: Post
