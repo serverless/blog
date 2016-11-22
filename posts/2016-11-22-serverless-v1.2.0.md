@@ -7,10 +7,6 @@ layout: Post
 
 It's been two weeks since we started our bi-weekly release cycle. Today we're proud to announce the new version 1.2.0 of the Serverless Framework.
 
-## Using Semver
-
-Note that we're using [strict Semver](http://semver.org/) for our Serverless Framework versioning. This way you'll know when we introduce major features or breaking changes.
-
 ## Highlights of 1.2.0
 
 Let's take a look at the release highlights. You can find all the changes in the [release changelog](https://github.com/serverless/serverless/releases/tag/v1.2.0).
@@ -104,6 +100,10 @@ We've fixed a bunch of bugs (thanks for bringing them up!) and also started our 
 We've already started filling in the next [milestones](https://github.com/serverless/serverless/milestones) for Serverless. Check out the [1.3 milestone](https://github.com/serverless/serverless/milestone/17) to preview what you can expect in two weeks.
 
 We hope that you have fun with the new release! Let us know if you have any questions or feedback in [our Forum](http://forum.serverless.com/) or [Github Issues](https://github.com/serverless/serverless/issues).
+
+### Using Semver
+
+Note that we're using [strict Semver](http://semver.org/) for our Serverless Framework versioning. This way you'll know when we introduce major features or breaking changes.
 
 ## Serverless Examples
 
