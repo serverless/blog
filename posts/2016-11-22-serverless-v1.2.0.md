@@ -1,25 +1,23 @@
 ---
 title: Flexible Environment Variable Support for AWS Lambda - Serverless Framework V1.2
-description: Environment Variable Support, optimized function packaging, per function IAM permissions, and new configuration options available in Serverless v1.2
+description: Environment variable support, optimized function packaging, per function IAM permissions, and new configuration options available in Serverless v1.2
 date: 2016-11-22
 layout: Post
 ---
 
-It's been two weeks since we started our bi-weekly release cycle. Today we're proud to announce the new version 1.2.0 of the Serverless Framework.
+Today we're proud to announce the new version 1.2.0 of the Serverless Framework.
 
 ## Highlights of 1.2.0
 
-Let's take a look at the release highlights. You can find all the changes in the [release changelog](https://github.com/serverless/serverless/releases/tag/v1.2.0).
+Let's take a look at the release highlights. You can find a list of all the changes in the [release changelog](https://github.com/serverless/serverless/releases/tag/v1.2.0).
 
 ### Environment variables
 
 AWS just added native support for environment variables inside of Lambda functions a few days ago.
 
-We're proud to announce that Serverless v1.2 ships with support for native environment variables as well!
+We're proud to announce that Serverless v1.2 ships with support for native environment variables as well! You can define environment variables on a service- or function level.
 
-You can define environment variables on a service- or function level.
-
-Let's take a look at an example to see how this looks like:
+Here's an example of what this looks like:
 
 ```yml
 # serverless.yml
