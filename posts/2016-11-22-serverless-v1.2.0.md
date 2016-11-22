@@ -15,6 +15,41 @@ Note that we're using [strict Semver](http://semver.org/) for our Serverless Fra
 
 Let's take a look at the release highlights. You can find all the changes in the [release changelog](https://github.com/serverless/serverless/releases/tag/v1.2.0).
 
+### Environment variables
+
+AWS just added native support for environment variables inside of Lambda functions a few days ago.
+We're proud to announce that Serverless v1.2 ships with support for native environment variables as well!
+
+You can define environment variables on a service- or function level.
+
+Let's take a look at an example to see how this looks like:
+
+```yml
+# serverless.yml
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  environment:
+    envOne: 12345678
+
+functions:
+  myFunction:
+    environment:
+      envTwo: 87654321
+```
+
+Environment variables can be even more useful if you use them together with Serverless Variables to reference dynamic values:
+
+```yml
+# serverless.yml
+
+functions:
+  myFunction:
+    environment:
+      apiKey: ${file(../keys.yml):apiKey}
+```
+
 ### JavaScript Support for Serverless Variables
 
 Serverless Variables now suppot raw JavaScript so that you can easily generate dynamic data. This makes the Serverless Variables even more powerful.
@@ -26,15 +61,16 @@ Here's a quick example that shows what this looks like:
 
 functions:
   myFunction:
-    role: ${(./config.js):fetchRoleARN}
+    environment:
+      apiKey: ${file(./config.js):fetchApiKey}
 ```
 
 ```javascript
 // config.js
 
-module.exports.fetchRoleARN = () => {
+module.exports.fetchApiKey = () => {
    // create / fetch dynamic data here (e.g. call an API)
-   return roleARN;
+   return someApiKey;
 }
 ```
 
