@@ -18,6 +18,7 @@ Let's take a look at the release highlights. You can find all the changes in the
 ### Environment variables
 
 AWS just added native support for environment variables inside of Lambda functions a few days ago.
+
 We're proud to announce that Serverless v1.2 ships with support for native environment variables as well!
 
 You can define environment variables on a service- or function level.
