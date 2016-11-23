@@ -13,7 +13,7 @@ This year CMX divided the talks into two tracks - Developer Community & Support 
 
 Here are a few takeaways on how to build a thriving developer community from my 2016 CMX experience.
 
-(https://cloud.githubusercontent.com/assets/20538501/20569554/172b1ecc-b166-11e6-80ed-c013d38cd3c5.jpg)
+![pexels-photo-29106](https://cloud.githubusercontent.com/assets/20538501/20573192/465e5a66-b174-11e6-821c-fc393bbac88b.jpg)
 
 #6 Lessons Learned at CMX Summit
 
