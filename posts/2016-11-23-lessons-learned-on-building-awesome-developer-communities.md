@@ -2,7 +2,7 @@
 title:  6 Lessons Learned on Building Awesome Developer Communities from CMX Summit 
 description:  Tips for building an engaged developer community from CMX Summit 2016. CMX is an annual conference that brings the world's top community managers to San Francisco.
 date:  2016-11-23
-thumbnail:  ![screen shot 2016-11-23 at 10 25 26 am](https://cloud.githubusercontent.com/assets/20538501/20569878/35f57694-b167-11e6-9b38-b4fde253ba65.png)
+thumbnail:  https://cloud.githubusercontent.com/assets/20538501/20569878/35f57694-b167-11e6-9b38-b4fde253ba65.png
 layout:  Post
 authors:
   - CaseyShultz
