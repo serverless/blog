@@ -4,7 +4,8 @@ description:  Tips for building an engaged developer community from CMX Summit 2
 date:  2016-11-23
 thumbnail:  https://cloud.githubusercontent.com/assets/20538501/20569878/35f57694-b167-11e6-9b38-b4fde253ba65.png
 layout:  Post
-
+authors:
+ - CaseyShultz
 ---
 [CMX Summit](http://cmxhub.com/summit/) is an annual conference for community managers featuring top tier experts from companies like Google, Slack, and Salesforce. Speakers cover topics ranging from how to grow developer communities from scratch to member engagement to measuring ROI on community. Fortunately for me, the CMX Summit is hosted in San Francisco, where I live and work, making it possible to connect with the world’s top community managers right in my backyard.
 
