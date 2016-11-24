@@ -1,3 +1,13 @@
+---
+title: How serverless tells me when we can go kiteboarding.
+description: "This post illustrates how I use serverless to update a `windclock` which shows me the windspeed and direction for our favorite watersports spot!"
+date: 2016-11-224
+thumbnail: 'https://i.ytimg.com/vi/CS6aQ6hjeuU/hqdefault.jpg?custom=true&w=336&h=188&stc=true&jpg444=true&jpgq=90&sp=68&sigh=XpR9VOd63qO5pDXyJaw8K3BcPO4'
+layout: Post
+authors:
+  - DouweHomans
+---
+
 #How serverless tells me when we can go kiteboarding.
 
 ## Background
