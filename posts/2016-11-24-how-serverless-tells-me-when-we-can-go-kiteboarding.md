@@ -1,4 +1,4 @@
-#How serverless tells me when we can go kitesurfing.
+#How serverless tells me when we can go kiteboarding.
 
 ## Background
 Long long time ago (somewhere in the 80's), my grandparents received a homemade gift from a friend: a 'windclock'. A 'clock-style' display which indicated the current wind direction near their home. The sensor part was an actual mechanical wind-vane which uses a magnet and reed-switches to determine the wind direction. It was placed multiple meters from their house on a high pole and was connected with a multicore cable (a core for every wind-direction) to the display inside. The display consisted of 8 LED's mounted in a black acrylic plate. The plate was then framed in a circular piece of wood.
