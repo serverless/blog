@@ -19,7 +19,9 @@ Long long time ago (somewhere in the 80's), my grandparents received a homemade 
 When they moved to an apartment we never found the space to put op the sensor part and the clock has not been working since....
 
 ## Now
-A lot changed since then: we now have internet! I thought it would be nice to hook up the clock to the internet so we just get the current wind-direction (and speed) from the web.
+A lot changed since then: we now have internet! I thought it would be nice to hook up the clock to the internet so we just get the current wind-direction (and speed) from the web. This way I could just get rid of the mechanical wind-vane, and I could also add the display of wind*speed* (apart from the direction).
+
+See: [https://www.youtube.com/embed/CS6aQ6hjeuU](Youtube) for a short movie.
 
 ## How to
 It comes down to 2 steps:
@@ -62,6 +64,8 @@ if ( THERE_IS_NO_WIFI ) {
 ```
 
 The clock is pretty 'dumb': it is not reaching out to the internet to find, parse, and display data... It just displays what it's instructed. This helps to keep the code on the display simple.
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/CS6aQ6hjeuU" frameborder="0" allowfullscreen></iframe>
 
 ### So how do we get the data to the clock?
 Once the clock is connected to the particle-cloud you can (with the right credentials) connect to it through the particle-cloud and call the functions you exposed in the code (`setWindSpeed` and `setWindDir`). So I can login to the particle-cloud; find out the ID of our wind-clock, and just use the `particle` command line tool.
