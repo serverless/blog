@@ -2,7 +2,7 @@
 title: How serverless tells me when we can go kiteboarding.
 description: "This post illustrates how I use serverless to update a `windclock` which shows me the windspeed and direction for our favorite watersports spot!"
 date: 2016-11-224
-thumbnail: 'https://i.ytimg.com/vi/CS6aQ6hjeuU/hqdefault.jpg?custom=true&w=336&h=188&stc=true&jpg444=true&jpgq=90&sp=68&sigh=XpR9VOd63qO5pDXyJaw8K3BcPO4'
+thumbnail: 'https://github.com/douweh/windclock_serverless/blob/master/klok.jpg?raw=true'
 layout: Post
 authors:
   - DouweHomans
@@ -12,6 +12,8 @@ authors:
 
 ## Background
 Long long time ago (somewhere in the 80's), my grandparents received a homemade gift from a friend: a 'windclock'. A 'clock-style' display which indicated the current wind direction near their home. The sensor part was an actual mechanical wind-vane which uses a magnet and reed-switches to determine the wind direction. It was placed multiple meters from their house on a high pole and was connected with a multicore cable (a core for every wind-direction) to the display inside. The display consisted of 8 LED's mounted in a black acrylic plate. The plate was then framed in a circular piece of wood.
+
+![The clock](https://github.com/douweh/windclock_serverless/blob/master/klok.jpg?raw=true)
 
 When they moved to an apartment we never found the space to put op the sensor part and the clock has not been working since....
 
@@ -28,7 +30,11 @@ It comes down to 2 steps:
 ### Connect the clock to the internet 
 I decided to work with a Photon (made by Particle.io). A microprocessor which auto-connects to the Particle-Cloud once set up. The particle can be programmed with C-code.
 
+![Photon](https://github.com/douweh/windclock_serverless/blob/master/photon.jpg)
+
 So I just connected each LED (with a current limiting resistor) to a seperate pin of the Photon.
+
+![The inside of the clock](https://github.com/douweh/windclock_serverless/blob/master/inhoud.jpg)
 
 The cool thing about the Photon is that you can program it over the air from your browser. In your code you can define functions which you'll be able to call over the internet once the code has been deployed to the device. [https://docs.particle.io/reference/api/#call-a-function](Particle Documentation).
 
