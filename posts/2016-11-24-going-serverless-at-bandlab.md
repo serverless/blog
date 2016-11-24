@@ -5,7 +5,7 @@ date: 2016-11-24
 thumbnail: https://cloud.githubusercontent.com/assets/195404/19552825/d3b728ee-96b1-11e6-85e2-5fd4b8714514.png
 layout: Post
 authors:  
-  -NickDenEngelsman
+  - NickDenEngelsman
 ---
 
 **Background**
@@ -54,7 +54,7 @@ When AWS first [introduced](https://www.youtube.com/watch?v=9eHoyUVo-yg) Lambda 
 
 Internally we started sprinkling in custom [Lambda-Backed Custom Resources](https://aws.amazon.com/blogs/aws/aws-cloudformation-update-lambda-backed-custom-resources-more/) within CloudFormation stacks to fill-up missing gaps. This was when I started to realize how powerful Lambda actually is. We were able to automate a lot of use-cases and 3rd party applications/providers with the use of AWS Lambda.
 
-![pexels-photo-38125](https://cloud.githubusercontent.com/assets/20538501/20605146/70cadfb6-b22f-11e6-8252-80593cfef88d.jpeg)
+![new_33b](https://cloud.githubusercontent.com/assets/20538501/20609535/82b4bbe2-b253-11e6-87b2-0cc4ac9cab6c.jpg)
 
 **Fast forward**
 ====================
@@ -69,7 +69,7 @@ The Serverless Framework seemed like the perfect fit to accomplish this goal! No
 
 >A creative, collaborative, global community of Musicians
 
-[BandLab](https://www.bandlab.com) is where musicians and music fans from all over the world can come together to make, collaborate and share Music. Everything users create is hosted in the cloud, so they can capture musical ideas wherever they are, then further develop them using BandLab’s web-based, MIDI-enabled app.
+[BandLab](https://www.bandlab.com) is where musicians and music fans from all over the world can come together to make, collaborate and share Music. The platform works on both iOS and Android. Everything users create is hosted in the cloud, so they can capture musical ideas wherever they are, then further develop them using BandLab’s web-based, MIDI-enabled app.
 
 The Serverless Framework was easy to pick up within our team, even for developers without prior AWS knowledge.
 
