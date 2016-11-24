@@ -21,7 +21,9 @@ When they moved to an apartment we never found the space to put op the sensor pa
 ## Now
 A lot changed since then: we now have internet! I thought it would be nice to hook up the clock to the internet so we just get the current wind-direction (and speed) from the web. This way I could just get rid of the mechanical wind-vane, and I could also add the display of wind*speed* (apart from the direction).
 
-See: [https://www.youtube.com/embed/CS6aQ6hjeuU](Youtube) for a short movie.
+<p align="center">
+  <img src="IMG_1510.gif">
+ </p>
 
 ## How to
 It comes down to 2 steps:
@@ -49,7 +51,7 @@ I exposed two functions: `setWindSpeed` and `setWindDir`. The first one takes th
 
 The code on the Photon just runs an infinite loop (something like this) see actual code on [https://github.com/douweh/windclock_photon](github):
 
-```
+```pseudo
 if ( THERE_IS_NO_WIFI ) {
     blink_leds_fast_to_indicate_no_wifi();
 } else if ( I_GOT_NO_WEATHER_UPDATE_FOR_A_LOOOOONG_TIME ) {
@@ -102,7 +104,7 @@ A `handler.js` which exposes an `update` function which:
 
 A `serverless.yml`:
 
-```
+```yml
 service: windclock
 provider:
   name: aws
