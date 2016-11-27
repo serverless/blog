@@ -45,7 +45,7 @@ Well for starters, anyone with a github account can submit blog post updates, ty
 On every post, including this one, you will have a one click 'edit this post' link that lets anyone submit updates to posts.
 
 <p align="center">
-  <img width="100%" src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/edit-github-view.jpg">
+  <img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/edit-github-view.jpg">
 </p>
 
 ## Better Developer Focused posts
