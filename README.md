@@ -116,7 +116,9 @@ authors:
 
 ## Including Custom Scripts
 
-**Note:** For security purposes, all scripts referenced are vetted and hosted via our s3 bucket. If you need to include a custom demo, you will need to send the script over for review.
+**Note:** For security purposes, all scripts referenced are vetted and hosted via our s3 bucket.
+
+If you need to include a custom script for demo purposes, you will need to send the script over to us for review.
 
 ```yml
 # blog post frontmatter
