@@ -10,7 +10,7 @@ authors:
 
 # Open Source Blogging
 
-<img align="right" width="100" height="100" src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/blogging.jpg">
+<img align="right" width="250" src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/blogging.jpg">
 
 Blogging has been around for ages and is a proven source of sustainable organic traffic into your companies site.
 
