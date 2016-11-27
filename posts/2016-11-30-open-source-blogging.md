@@ -38,9 +38,15 @@ The content is fed into our site's build process and is rendered with our static
 
 Well for starters, anyone with a github account can submit blog post updates, typo fixes, and new content without needed a user account with our site.
 
-Screenshot of post update here
+<p align="center">
+  <img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/edit-this-post.jpg">
+</p>
 
 On every post, including this one, you will have a one click 'edit this post' link that lets anyone submit updates to posts.
+
+<p align="center">
+  <img width="100%" src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/edit-github-view.jpg">
+</p>
 
 ## Better Developer Focused posts
 
