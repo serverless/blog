@@ -7,7 +7,7 @@ layout: Post
 scripts:
   - https://www.gstatic.com/charts/loader.js
   - https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/scripts/state-of-serverless.js
-author:
+authors:
   - NickGottlieb
 ---
 
