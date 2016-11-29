@@ -1,15 +1,17 @@
 ---
 title: State of the Serverless Community Survey Results
-description: We recently shared a State of the Serverless Community survey to find out more about how and why people are adopting serverless architectures, the obastacles they're encountering, and their thoughts on the future of serverless. Here's what we learned.
+description: We recently shared a State of the Serverless Community survey to find out more about how and why our community is adopting serverless architectures, the obastacles they're encountering, and their thoughts on the future of serverless. Here's what we learned.
 date: 2016-11-29
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/20676598/dfc90252-b555-11e6-84a7-ea320f6ca210.png
 layout: Post
+author:
+  - NickGottlieb
 scripts:
   - https://www.gstatic.com/charts/loader.js
   - https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/scripts/state-of-serverless.js
 ---
 
-About 2 months ago we shared a ‘State of the Serverless Community’ survey. We wanted to find out more about how and why people are adopting serverless architectures, what problems they're encountering, and how they feel about the future of serverless. 
+About 2 months ago we shared a ‘State of the Serverless Community’ survey. We wanted to find out more about how and why our community is adopting serverless architectures, what problems they're encountering, and how they feel about the future of serverless. 
 
 ## The Responses
 
