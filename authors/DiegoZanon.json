@@ -1,0 +1,12 @@
+{
+  "name": "Diego Zanon",
+  "github": "zanon-io",
+  "twitter": "zanon_io",
+  "site": "https://zanon.io/",
+  "avatar": "https://diego.zanon.io/images/profilepic.png",
+  "bio": {
+    "short": "Diego Zanon is a Full-Stack Developer",
+    "long":
+      "Diego Zanon is a Full-Stack Developer that loves to design applications thinking on scalability. He is currently writing a book about how to build Serverless Apps that will be released in a few months."
+  }
+}
