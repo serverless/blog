@@ -1,7 +1,7 @@
 ---
-title: Serverless Notifications on AWS
+title: How To Build A Serverless Notification System on AWS
 description: Guest author Diego Zanon writes about building a serverless notification system for browsers using the Serverless Framework and AWS IoT.
-date: 2016-11-21
+date: 2016-11-30
 thumbnail: https://zanon.io/images/posts/2016-11-05-architecture.png
 layout: Post
 authors:
@@ -10,13 +10,13 @@ authors:
 
 # Serverless Notifications
 
-Real-time notifications are an important use case for modern apps. For example, you may need to notify your user that there is another post available in his social feed or that someone else added a comment in one of his photos.
+Real-time notifications are an important use case for modern apps. For example, you may need to notify your user that another post is available in their social feed or that someone else added a comment on one of their photos.
 
 Implementing notifications is an easy task when you use WebSockets and have a dedicated server. You can make a permanent link between the user and the server and use the publish-subscribe pattern to share messages. The browser will subscribe to automatically receive new messages without needing a polling mechanism to constantly check for updates.
 
-But if we are going serverless, we don't have a dedicated server. Instead, we need a cloud service that will solve this problem for us providing scalability, high availability and charging per messages and not per hour.
+But if you're going serverless, you don't have a dedicated server. Instead, you need a cloud service that will solve this problem for you providing scalability, high availability and charging per messages and not per hour.
 
-In this post, I'm going to describe how I've implemented a notification system for unauthenticated users using the Serverless Framework and the AWS IoT for *browsers*. I know that "Internet of Things" sounds strange to be used in a website, but it supports WebSockets and is very easy to use. Besides, Amazon SNS (Simple Notification Service) has a better name, but doesn't support WebSockets.
+In this post, I'm going to describe how I implemented a notification system for unauthenticated users with the Serverless Framework and AWS IoT for *browsers*. I know that "Internet of Things" sounds strange to be used in a website, but it supports WebSockets and is very easy to use. Besides, Amazon SNS (Simple Notification Service) has a better name, but doesn't support WebSockets.
 
 IoT is used due to its simple messaging system. You create a "topic" and make users to subscribe to it. A message sent to this topic will be automatically shared with all subscribed users. A common use case for this is a chat system.
 
@@ -36,7 +36,7 @@ Try it here: https://serverless-notifications.zanon.io (open two browser tabs)
 
 ## Architecture
 
-In this demo, I've used the following architecture.
+I've used the following architecture in this demo.
 
 <p align="center">
   <img src="https://zanon.io/images/posts/2016-11-05-architecture.png" alt="architecture">
@@ -60,7 +60,7 @@ This demo runs in a static site hosted on Amazon S3. As I've used a Node.js modu
 
 ### AWS IoT
 
-In this project, I've used the Node module [AWS IoT SDK](https://github.com/aws/aws-iot-device-sdk-js) to connect to the IoT service. 
+In this project I used the Node module [AWS IoT SDK](https://github.com/aws/aws-iot-device-sdk-js) to connect to the IoT service. 
 
 First, you need to create a "device" (client browser) by providing access keys and setting the IoT endpoint that is specific to your AWS account. I'll show later how you find those data. After providing those values, it will try to connect.
 
@@ -113,11 +113,11 @@ const onClose = () => {
 };
 ```
 
-In the project's folder, you can find a folder named **iot**. Open it and run `npm install`, followed by `node make-bundle` to execute Browserify and export the **bundle.js** dependency that can run in the browser.
+In the project's folder you can find a folder named **iot**. Open it and run `npm install`, followed by `node make-bundle` to execute Browserify and export the **bundle.js** dependency that can run in the browser.
 
 ### Client-side code
 
-The client-side will use the IoT object that we have just created. It will be responsible by:
+The client-side will use the IoT object that you've just created. It will be responsible by:
 
 1) Request Access Keys and the IoT endpoint address
 
@@ -167,7 +167,7 @@ $('#btn-send').on('click', () => {
 
 ## Backend
 
-Now we need to create our backend and the Serverless Framework will be used to make this task easier by deploying the API Gateway endpoint and our Lambda Function. The function will be responsible by creating temporary AWS keys. However, it needs a role to define what access those keys will provide.
+Now you need to create your backend. Using the Serverless Framework will make this task easier by deploying the API Gateway endpoint and your Lambda Function. The function will be responsible by creating temporary AWS keys. However, it needs a role to define what access those keys will provide.
 
 ### Create an IoT Role
 
@@ -188,7 +188,7 @@ This role needs the following "Trust Relationship":
 }
 ```
 
-Note that you need to replace the string **AWS_ACCOUNT** with your account number. If you are using the code that I've provided, it will automatically retrieve your account number using the STS service.
+Note that you need to replace the string **AWS_ACCOUNT** with your account number. If you're using the code that I've provided it will automatically retrieve your account number using the STS service.
 
 The permissions will be set for IoT functions and for all resources, which means that the client will be able to subscribe to any IoT topic. You can restrict this access if you want.
 
@@ -205,7 +205,7 @@ The permissions will be set for IoT functions and for all resources, which means
 
 ### Serverless Framework
 
-Now, let's create a Lambda function that will generate temporary keys (valid for 1 hour) to connect to the IoT service. We are going to use the Serverless Framework to help here. If you don't have it installed yet, do so using:
+Now you'll create a Lambda function that will generate temporary keys (valid for 1 hour) to connect to the IoT service. You're going to use the Serverless Framework to help here. If you don't have it installed yet, do so using:
 
 ```bash
 npm install serverless -g
@@ -322,10 +322,10 @@ If you need to provide temporary keys for *authenticated* users (logged with Fac
 
 ## What more?
 
-I've tried another experiment with this and created a demo for a serverless multiplayer game. If you want to develop an HTML5 game in a serverless architecture, you can use IoT to exchange messages between players and implement a cheap multiplayer game. The performance is good enough for dynamic games.
+I tried another experiment with this and created a demo for a serverless multiplayer game. If you want to develop an HTML5 game in a serverless architecture, you can use IoT to exchange messages between players and implement a cheap multiplayer game. The performance is good enough for dynamic games.
 
 You can see the demo [here](https://bombermon.zanon.io) and the code on [GitHub](https://github.com/zanon-io/serverless-multiplayer-game). You can try it using your desktop and phone to test the multiplayer feature.
 
 ## Conclusion
 
-IoT can also be used for real-time notifications in the browser. Notifications are a common use case in modern apps and it is one more problem that you can solve using with Serverless.
+IoT can also be used for real-time notifications in the browser. Notifications are a common use case in modern apps, and it's one more problem that you can solve using with Serverless.
