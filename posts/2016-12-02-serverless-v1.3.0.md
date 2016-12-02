@@ -51,6 +51,12 @@ Keeping a history of all your deployed Lambda functions is an important feature 
 
 You don't need to change anything. Just deploy your service as usual and Serverless will version your Lambda functions from now on.
 
+### Invoke local improvements
+
+The `invoke local` command was improved so that it works the same way like the `invoke` command.
+
+You'll now have access to the AWS environment variables in your function. Furthermore you can run functions with runtimes other than `Node.js` locally.
+
 ### Refactorings and Bug Fixes
 
 We've also fixed a bunch of bugs (thanks for bringing them up!) and also continued our process of [codebase refactorings](https://github.com/serverless/serverless/issues/2645) so that it's easier for new contributors to get aboard.
