@@ -17,19 +17,33 @@ Ever wondered how your functions are performing? The new `serverless metrics` le
 
 Just type in
 
-```serverless metrics --function myFunction```
+```bash
+serverless metrics --function myFunction
+```
 
 to see the metrics of the last 24h for your function `myFunction`.
 
 You can even specify the timeframe you want to see the metrics with the `startTime` and `endTime` options.
 
-```serverless metrics --function myFunction --startTime 2016-11-28 --endTime 2016-12-02```
+```bash
+serverless metrics --function myFunction --startTime 2016-11-28 --endTime 2016-12-02
+```
 
 will show you all the metrics between November, 28th and December, 2nd.
 
 You can read more about the new metrics functionality in [the documentaion](https://serverless.com/framework/docs/providers/aws/cli-reference/metrics/).
 
-### AWS Credential setup
+### AWS Credential Setup
+
+Setting up credentials should be streamlined in the overall Serverless experience. v1.3 adds a new command called `serverless config credentials` which helps you setup your AWS crendentials on your local machine.
+
+This example will setup the `default` AWS profile with the provided key and secret:
+
+```bash
+serverless config credentials --provider aws --key someKey --secret someSecret
+```
+
+No need to configure the `credentials` file through the `aws-cli` anymore.
 
 ### Lambda versioning
 
