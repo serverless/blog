@@ -1,6 +1,6 @@
 ---
 title: Function metrics, AWS credential setup, Lambda versioning and invoke local improvements - Serverless Framework v1.3
-description: Function metrics, AWS credential setup, Lambda versioning and invoke local improvements available in Serverless v1.3
+description: Function metrics, easier AWS credential setup, Lambda versioning and invoke local improvements available in Serverless v1.3
 date: 2016-12-02
 layout: Post
 ---
