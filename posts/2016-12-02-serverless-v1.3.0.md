@@ -9,7 +9,7 @@ We're proud to release the Serverless Framework v1.3.0 today.
 
 ## Highlights of 1.3.0
 
-Let's take a look at the highlights of this release. You can find a list with all the changes in the [release changelog](https://github.com/serverless/serverless/releases/tag/v1.3.0).
+Let's take a look at the highlights of this release. You can find a list with all the updates in the [changelog](https://github.com/serverless/serverless/blob/master/CHANGELOG.md).
 
 ### Function Metrics
 
