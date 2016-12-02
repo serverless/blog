@@ -35,7 +35,7 @@ will show you all the metrics between Nov. 28th and Dec. 2nd.
 
 You can read more about the new metrics functionality in [the documentation](https://serverless.com/framework/docs/providers/aws/cli-reference/metrics/).
 
-### AWS Credential Setup
+### AWS Credentials Setup
 
 Setting up credentials should be streamlined in the overall Serverless experience. V1.3 adds a new command called `serverless config credentials` that helps you setup your AWS crendentials on your local machine.
 
