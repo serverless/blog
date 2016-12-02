@@ -13,6 +13,22 @@ Let's take a look at the highlights of this release. You can find a list with al
 
 ### Function Metrics
 
+Ever wondered how your functions are performing? The new `serverless metrics` lets you see all the function metrics such as invocations, throttles, errors and duration at a glance.
+
+Just type in
+
+```serverless metrics --function myFunction```
+
+to see the metrics of the last 24h for your function `myFunction`.
+
+You can even specify the timeframe you want to see the metrics with the `startTime` and `endTime` options.
+
+```serverless metrics --function myFunction --startTime 2016-11-28 --endTime 2016-12-02```
+
+will show you all the metrics between November, 28th and December, 2nd.
+
+You can read more about the new metrics functionality in [the documentaion](https://serverless.com/framework/docs/providers/aws/cli-reference/metrics/).
+
 ### AWS Credential setup
 
 ### Lambda versioning
