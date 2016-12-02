@@ -31,7 +31,7 @@ serverless metrics --function myFunction --startTime 2016-11-28 --endTime 2016-1
 
 will show you all the metrics between November, 28th and December, 2nd.
 
-You can read more about the new metrics functionality in [the documentaion](https://serverless.com/framework/docs/providers/aws/cli-reference/metrics/).
+You can read more about the new metrics functionality in [the documentation](https://serverless.com/framework/docs/providers/aws/cli-reference/metrics/).
 
 ### AWS Credential Setup
 
@@ -45,9 +45,11 @@ serverless config credentials --provider aws --key someKey --secret someSecret
 
 No need to configure the `credentials` file through the `aws-cli` anymore.
 
+You can read more about the new config functionality in [the documentation](https://serverless.com/framework/docs/providers/aws/cli-reference/config/).
+
 ### Lambda versioning
 
-Keeping a history of all your deployed Lambda functions is an important feature if you e.g. want to rollback to a specific function. Serverless now supports automatic Lambda versioning with the help of the build in Lambda versions AWS provides.
+Keeping a history of all your deployed Lambda functions is an important feature. Serverless now supports automatic Lambda versioning with the help of the build in Lambda versions AWS provides.
 
 You don't need to change anything. Just deploy your service as usual and Serverless will version your Lambda functions from now on.
 
