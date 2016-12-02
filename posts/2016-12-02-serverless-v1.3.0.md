@@ -37,7 +37,7 @@ You can read more about the new metrics functionality in [the documentation](htt
 
 ### AWS Credentials Setup
 
-Setting up credentials should be streamlined in the overall Serverless experience. V1.3 adds a new command called `serverless config credentials` that helps you setup your AWS crendentials on your local machine.
+Setting up credentials should be streamlined in the overall Serverless experience. V1.3 adds a new command called `serverless config credentials` that helps you setup your AWS credentials on your local machine.
 
 This example will setup the `default` AWS profile with the provided key and secret:
 
