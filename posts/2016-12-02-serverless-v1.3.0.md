@@ -1,6 +1,6 @@
 ---
-title: Function metrics, AWS credential setup, Lambda versioning and invoke local improvements - Serverless Framework v1.3
-description: Function metrics, easier AWS credential setup, Lambda versioning and invoke local improvements available in Serverless v1.3
+title: Function metrics, AWS credential setup and Lambda versioning - Serverless Framework v1.3
+description: Function metrics, easier AWS credential setup and Lambda versioning available in Serverless v1.3
 date: 2016-12-02
 layout: Post
 ---
@@ -52,12 +52,6 @@ You can read more about the new config functionality in [the documentation](http
 Keeping a history of all your deployed Lambda functions is an important feature. Serverless now supports automatic Lambda versioning with the help of the build in Lambda versions AWS provides.
 
 You don't need to change anything. Just deploy your service as usual and Serverless will version your Lambda functions from now on.
-
-### Invoke local improvements
-
-The `invoke local` command was improved so that it works the same way like the `invoke` command.
-
-You'll now have access to the AWS environment variables in your function. Furthermore you can run functions with runtimes other than `Node.js` locally.
 
 ### Refactorings and Bug Fixes
 
