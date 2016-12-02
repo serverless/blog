@@ -49,7 +49,10 @@ You can read more about the new config functionality in [the documentation](http
 
 ### Lambda versioning
 
-Keeping a history of all your deployed Lambda functions is an important feature. Serverless now supports automatic Lambda versioning with the help of the build in Lambda versions AWS provides.
+Serverless now supports automatic Lambda versioning with the help of the build in Lambda versions AWS provides.
+
+Keeping a history of all your deployed Lambda functions is an important feature.
+E.g. AWS will now use your Lambda version in the logs as well. This makes it way easier to track down bugs.
 
 You don't need to change anything. Just deploy your service as usual and Serverless will version your Lambda functions from now on.
 
