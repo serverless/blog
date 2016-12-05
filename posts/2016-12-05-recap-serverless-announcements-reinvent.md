@@ -8,7 +8,7 @@ authors:
   - NickGottlieb
 ---
 
-Many of AWS' biggest releases tend to happen aroud their annual re:Invent conference, and 2016 was no exception. AWS announced lots of amazing stuff last week in Vegas. Here are some highlights of what we're most excited about as it relates to serverless architectures.
+Many of AWS' biggest releases tend to happen around their annual re:Invent conference, and 2016 was no exception. AWS announced lots of amazing stuff last week in Vegas. Here are some highlights of what we're most excited about as it relates to serverless architectures.
 
 ## Lambda@Edge
 **What is it?**
