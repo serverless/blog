@@ -61,7 +61,7 @@ This is the first step towards allowing developers to sell their functions direc
 
 ## Dead Letter Queues for Lambda
 **What is it?**
- - Allows failed Lambda events to be automatically sent to an SQS queue to SNS topic
+ - Allows failed Lambda events to be automatically sent to an SQS queue or to SNS topic
 
 **Why is it important?**
 
