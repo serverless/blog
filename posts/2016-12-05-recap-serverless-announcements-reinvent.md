@@ -79,9 +79,7 @@ This announcement is especially interesting for organizations with a C# competen
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9-7zPxecAFMNLghatahtTPVpIH19Aypv6tPWxH9sxuyjcug/viewform" target="_new"><strong>Take our survey on which announcements are the most exciting</strong><a/>
 
 
-
-## More re:Invent Lambda discussions in Serverless Office Hours,  
+## More re:Invent Lambda discussions in Serverless Office Hours  
 Tune in for <a href="https://www.youtube.com/watch?v=IoW_IcvRTGM" target="_new">Serverless Office Hours</a>, Thursday, Dec. 8, 10-11AM PST, for a live discussion of the Lambda announcements at re:Invent and how they relate to the Serverless Framework. We'll also answer questions about the latest framework release - v1.3.
 
 Start tweeting your questions now to <a href="https://twitter.com/goserverless" target="_new">@goserverless</a> with the hashtag #ASKSERVERLESS. Then <a href="https://www.youtube.com/watch?v=IoW_IcvRTGM" target="_new">log on here</a> for a live chat with members of the core team Thursday.
-
