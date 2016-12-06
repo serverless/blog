@@ -2,7 +2,7 @@
 title: A Serverless re:Invent
 description: A recap of serverless news from AWS re:Invent 2016 and why it matters.
 date: 2016-12-05
-thumbnail: https://cloud.githubusercontent.com/assets/20538501/20900593/78e98710-baf4-11e6-9409-e05a55a70602.jpg
+thumbnail: https://cloud.githubusercontent.com/assets/20538501/20940035/de826f34-bbb6-11e6-8f32-ac70c9ec3a66.png
 layout: Post
 authors:
   - NickGottlieb
