@@ -15,7 +15,7 @@ Creating blog content is a [proven source of sustainable organic traffic](https:
 
 Most companies look to WordPress, SquareSpace, or Medium for their company blogs. While these sites work for hosting blog content, they come with a number of downsides, especially if your target audience is developers.
 
-Problems with typically company blogs:
+**Problems with the typical company blog setup:**
 
 - Barriers to contribute
 - Speed / security issues (cough cough WordPress)
@@ -33,9 +33,7 @@ Serverless.com's blog 100% open source content driven by a [github repo](https:/
 
 Blog content is fed into our site and is rendered with our static website generator of choice [Phenomic](http://phenomic.io).
 
-"Sounds like over-engineering to me" you might be saying to yourself... But Nay!
-
-Lets explore the benefits of our site and blog setup.
+Lets explore the benefits of our blog setup and how they address the problems outlined above.
 
 ### 1. Easier to contribute and edit posts
 
@@ -53,45 +51,63 @@ On every post, including this one, you will have a one click 'edit this post' li
 
 This is great for getting streamlined contributions to our blog.
 
-P.S. we are always looking for fresh content. Drop us a line if you're interested in contributing.
+P.S. we are always looking for fresh content. [Drop us a line if you're interested in contributing](https://serverless.com/blog/contribute/).
 
 ### 2. Better Developer Focused posts
 
-If you have ever had to write code focused blog posts in Wordpress, it's a rather painful experience. wysiwyg editors are extremly proficient at mangling code snippets.
+If you have ever had to write a code heavy developer focused blog posts in Wordpress, it's a **rather painful** experience. WYSIWYG editors are extremely proficient at mangling code snippets.
 
 On the flip side, writing in github flavored markdown makes writing and (more importantly) maintaining blog posts about code MUCH easier.
+
+**Markdown** FTW! 🎉
 
 Side note: If you are stuck with Wordpress, I wrote a plugin to allow you to write in [github favored markdown](http://davidwells.io/easy-markdown/)
 
 ### 3. Unified product experience
 
-We are using React for our [dashboard](http://github.com/serverless/dashboard) and other apps we are creating. This means if we when with WordPress, we would need to maintain 2 seperate style/component libraries because wordpress can't render react components serverside.
+We are using React as our front-end framework of choice for creating our serverless applications (like [dashboard](http://github.com/serverless/dashboard)). This is a no go with other blogging setups.
 
-Keep styles in sync in multiple platforms is painful and evenvetabliy leads to inconsistant user experience issues.
+If we decided to blog with WordPress, we would need to maintain 2 separate style/component libraries because WordPress can't render react components server-side. Keeping styles in sync in multiple platforms is painful and will eventually leads to an inconsistent user experience.
 
-Our site and blog are powered by phenomic so we can use all of the same react components we use in our products.
+Luckily, our site & blog are powered by [Phenomic](http://phenomic.io), so we can use all of the same React components we use in our products.
 
-Code reuse and consistant brand experience FTW
+**Code reuse and brand consistency FTW**! 🎉
 
 ### 4. Scale out of the box
 
 Using a static site site gives us raw scale out of the box unlike dynamic blogging platforms like Wordpress.
 
-If we get featured on the front page of the NYtimes, we are sitting pretty because our site is statically served from the netlify content delivery network.
+**How our static site is built:**
+
+1. `npm run build` uses React's serverside rendering capabilities to build all the static HTML files for the site
+2. Thats it. The site is pre-rendered for all visitors 🔥
+
+If we get featured on the front page of the New York Times or Justin Bieber tweets about Serverless, we are sitting pretty because our site is statically served from the [netlify](https://www.netlify.com/) content delivery network.
 
 ### 5. Speed like Whoa 🔥
 
 Because we are using [Phenomic](https://github.com/MoOx/phenomic) which uses react + react router under the hood, page fetching and transitions are lightning fast.
 
-Instead of hard page reloads when navigating around the serverless.com site, you get a single page app like experience when navigating through site links, including the blog of course.
+Instead of hard page reloads when navigating around the serverless.com site, you get a single page app experience when navigating through site links.
 
-Phenomic is pretty awesome in the way that it only fetches the required data from a `.json` file, instead of a full HTML page like other static site generators.
+Each link clicked only fetches the required data from a `.json` file, instead of a full HTML page like other static site generators
 
-Another benefits with phenomic is **optimistic page rendering**
+Another out of the box benefits with phenomic is **optimistic page rendering**
 
 This is an example of what the loading state of a blog post looks like while the posts lightweight `json` data is being fetched
 
 ![loading-state](https://cloud.githubusercontent.com/assets/532272/19630866/9793f07a-9947-11e6-919a-ba2d81ebcf68.gif)
 
+As you can see, when navigating to any given page, the visitor gets instant feedback and the percieved site performance feels snappy.
 
-##
+## React + Phenomic + Static Websites are the future
+
+Ultra scalable, fast, dynamic static websites are the future of frontend sites and I highly recommend checking out our site repo for how it's all hooked up!
+
+You can run our site locally by:
+
+1. `git clone git@github.com:serverless/site.git`
+2. `npm install`
+3. `npm start`
+
+If I haven't convinced you yet. Tweet at me [@DavidWells](http://twitter.com/davidwells) and I will yell at you.
