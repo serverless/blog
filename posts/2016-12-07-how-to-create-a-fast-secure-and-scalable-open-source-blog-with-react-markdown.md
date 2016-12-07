@@ -75,7 +75,7 @@ Luckily, our site & blog are powered by [Phenomic](http://phenomic.io), so we ca
 
 ### 4. Scale out of the box
 
-Using a static site site gives us raw scale out of the box unlike dynamic blogging platforms like Wordpress.
+Using a static site gives us raw scale out of the box unlike dynamic blogging platforms like Wordpress.
 
 **How our static site is built:**
 
