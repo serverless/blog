@@ -1,5 +1,5 @@
 ---
-title: Creating a fast, secure, and scalable open source blog powered by React & Markdown
+title: How to Create a Fast, Secure, and Scalable Open Source Blog with React + Markdown
 description: How serverless used phenomic.io to create a fast, secure, and scalable open source blog powered by React & Markdown
 date: 2016-11-30
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/blogging-thumb.jpg
@@ -96,13 +96,15 @@ Another out of the box benefits with phenomic is **optimistic page rendering**
 
 This is an example of what the loading state of a blog post looks like while the posts lightweight `json` data is being fetched
 
-![loading-state](https://cloud.githubusercontent.com/assets/532272/19630866/9793f07a-9947-11e6-919a-ba2d81ebcf68.gif)
+<p align="center">
+  <img src="https://cloud.githubusercontent.com/assets/532272/19630866/9793f07a-9947-11e6-919a-ba2d81ebcf68.gif"/>
+</p>
 
-As you can see, when navigating to any given page, the visitor gets instant feedback and the percieved site performance feels snappy.
+As you can see, when navigating to any given page, the visitor gets instant feedback and the perceived site performance feels snappy.
 
 ## React + Phenomic + Static Websites are the future
 
-Ultra scalable, fast, dynamic static websites are the future of frontend sites and I highly recommend checking out our site repo for how it's all hooked up!
+Ultra scalable, fast, dynamic static websites are the future of front-end sites and I highly recommend checking out our site repo for how it's all hooked up!
 
 You can run our site locally by:
 
@@ -111,3 +113,7 @@ You can run our site locally by:
 3. `npm start`
 
 If I haven't convinced you yet. Tweet at me [@DavidWells](http://twitter.com/davidwells) and I will yell at you.
+
+I'm planning a series of posts illustrating how the site is built.
+
+For now, [checkout the github repo](github.com/serverless/site).
