@@ -37,13 +37,13 @@ Lets explore the benefits of our blog setup and how they address the problems ou
 
 ### 1. Easier to contribute and edit posts
 
-Well for starters, anyone with a github account can submit blog post updates, typo fixes, and new content without needed a user account with our site.
+Well for starters, anyone with a github account can submit blog post updates, typo fixes, and new content without needing a user account with our site.
 
 <p align="center">
   <img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/edit-this-post.jpg">
 </p>
 
-On every post, including this one, you will have a one click 'edit this post' link that lets anyone submit updates to posts.
+On every post, including this one, users have a one click 'edit this post' link that lets anyone submit updates to posts.
 
 <p align="center">
   <img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/edit-github-view.jpg">
@@ -51,17 +51,17 @@ On every post, including this one, you will have a one click 'edit this post' li
 
 This is great for getting streamlined contributions to our blog.
 
-P.S. we are always looking for fresh content. [Drop us a line if you're interested in contributing](https://serverless.com/blog/contribute/).
+P.S. We are always looking for fresh content. [Drop us a line if you're interested in contributing](https://serverless.com/blog/contribute/).
 
 ### 2. Better Developer Focused posts
 
-If you have ever had to write a code heavy developer focused blog posts in Wordpress, it's a **rather painful** experience. WYSIWYG editors are extremely proficient at mangling code snippets.
+If you've ever had to write a code heavy developer focused blog posts in Wordpress, it's a **rather painful** experience. WYSIWYG editors are extremely proficient at mangling code snippets.
 
 On the flip side, writing in github flavored markdown makes writing and (more importantly) maintaining blog posts about code MUCH easier.
 
 **Markdown** FTW! 🎉
 
-Side note: If you are stuck with Wordpress, I wrote a plugin to allow you to write in [github favored markdown](http://davidwells.io/easy-markdown/)
+Side note: If you're stuck with Wordpress, I wrote a plugin to allow you to write in [github favored markdown](http://davidwells.io/easy-markdown/)
 
 ### 3. Unified product experience
 
