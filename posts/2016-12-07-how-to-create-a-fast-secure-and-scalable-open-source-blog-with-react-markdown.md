@@ -116,4 +116,4 @@ If I haven't convinced you yet. Tweet at me [@DavidWells](http://twitter.com/dav
 
 I'm planning a series of posts illustrating how the site is built.
 
-For now, [checkout the github repo](github.com/serverless/site).
+For now, [checkout the github repo](https://github.com/serverless/site).
