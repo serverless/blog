@@ -11,7 +11,7 @@ If you’ve opened this article, you probably know some basics of **the Serverle
 
 In this tutorial, **you’ll learn by examples how to write your own plugins.** We’ll start from very simple examples and build up on them to get all the way to writing useful plugins that could help you with your everyday deployments.
 
-## Lesson 1 – Create First Plugin
+##  Create First Plugin
 
 The Serverless Framework is an incredibly well-built open source platform. It is nearly indefinitely extensible and allows you to add new features with surprising ease. **Let’s see how you can add a plugin in the simplest way possible.**
 
@@ -132,3 +132,65 @@ this.commands = {
 This will work in a very similar way as the definition above. However, it won't provide you with automatic checking that the required option is passed to the command, or any help information.
 
 From this perspective, **I'd suggest spending the time with writing up `usage`, requirements and shortcuts.** It will make it significantly easier for the users of your plugin to figure out how to actually use it.
+
+### Hook Into Events
+
+Defining the commands and their lifecycle events is useful to describe what the plugin does. **Hooks describe _how_ the plugin does it.**
+
+You can find them right under commands in the constructor:
+
+```js
+class ServerlessPlugin {
+  constructor(serverless, options) {
+    // ...
+    this.hooks = {
+      'before:welcome:hello': this.beforeWelcome.bind(this),
+      'welcome:hello': this.welcomeUser.bind(this),
+      'welcome:world': this.displayHelloMessage.bind(this),
+      'after:welcome:world': this.afterHelloWorld.bind(this),
+    };
+  }
+}
+```
+
+**Hooks help us define the implementation of each step.** In the code above, you can discern the command name `hello` and the two lifecycle events we defined for it: `hello` and `world`.
+
+Hook `welcome:hello` defines what to do at step `hello` of command `welcome`; `before:welcome:hello` describes what to do before the first step. Similarly, `after:welcome:world` defines what to do after the last step.
+
+This gives us a very fine-grained control over definition of **what the command does at each step, and enter specific actions before and after each step.**
+
+Remember you don't have to define every step. Maybe in your particular implementation, you only care about `world` and not `hello`, and that's absolutely fine.
+
+Someone else can later on come with their plugin and define their own implementation of the `welcome` plugin based on the steps you specified in the command. It's an open-ended world, allowing (nearly) endless extensions.
+
+### Implementation
+
+After having defined the command, its lifecycle events and how we hook into them, **all that's left is the actual implementation.** The details are obviously specific to the plugin you're writing, which platform you're targeting it at, etc.
+
+In the template, we're only logging out greetings and the message we've passed it:
+
+```js
+class ServerlessPlugin {
+  // ...
+
+  beforeWelcome() {
+    this.serverless.cli.log('Hello from Serverless!');
+  }
+
+  welcomeUser() {
+    this.serverless.cli.log('Your message:');
+  }
+
+  displayHelloMessage() {
+    this.serverless.cli.log(`${this.options.message}`);
+  }
+
+  afterHelloWorld() {
+    this.serverless.cli.log('Please come again!');
+  }
+}
+```
+
+That, however, _might not be quite enough_ in a real world project.
+
+You'll learn **how to write implementations** of plugins, what the **serverless object** is all about, and how you can approach writing plugins in **multiple ways** - in the follow-up article.
