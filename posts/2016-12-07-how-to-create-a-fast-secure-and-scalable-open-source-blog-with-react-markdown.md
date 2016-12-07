@@ -1,7 +1,7 @@
 ---
 title: How to Create a Fast, Secure, and Scalable Open Source Blog with React + Markdown
 description: How serverless used phenomic.io to create a fast, secure, and scalable open source blog powered by React & Markdown
-date: 2016-11-30
+date: 2016-12-07
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/blogging-thumb.jpg
 layout: Post
 authors:
