@@ -131,7 +131,7 @@ This gives you way more flexibility to invoke a function with different data. He
 dataGenerator.js | serverless invoke local --function hello
 ```
 
-### Enhancements, refactorings and Bug Fixes
+### Enhancements, refactorings and bug fixes
 
 As usual we've also pushed a bunch of enhacements, refacotrings and bug fixes (thanks for reporting!) in this release!
 
