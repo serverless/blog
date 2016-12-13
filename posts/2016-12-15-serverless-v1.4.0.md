@@ -1,6 +1,6 @@
 ---
-title: C# support, CLI based plugin discovery and management, Alexa event support, service wide metrics in Serverless Framework v1.3
-description: C# support, CLI based plugin discovery and management, Alexa event support, service wide metrics in Serverless Framework v1.3
+title: C# support, CLI based plugin discovery and management, Alexa event support, service wide metrics in Serverless Framework v1.4
+description: C# support, CLI based plugin discovery and management, Alexa event support, service wide metrics in Serverless Framework v1.4
 date: 2016-12-15
 layout: Post
 ---
