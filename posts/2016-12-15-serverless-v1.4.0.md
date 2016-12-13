@@ -83,7 +83,9 @@ Simply run
 serverless create --template aws-csharp
 ```
 
-to create a new C# service and you're good to go!
+to create a new C# service.
+
+The [C# "hello world" example](https://serverless.com/framework/docs/providers/aws/examples/hello-world/csharp/) will show you how you can setup and deploy your C# service.
 
 **Note:** Serverless supports all [AWS Lambda runtimes](http://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html) out of the box. You can change the runtime with the help of the `runtime` property in [`serverless.yml` file](https://serverless.com/framework/docs/providers/aws/guide/serverless.yml/).
 
