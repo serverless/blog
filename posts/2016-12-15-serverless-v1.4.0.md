@@ -1,6 +1,6 @@
 ---
-title: C# support, CLI based plugin discovery and management, Alexa event support, service wide metrics in Serverless Framework v1.4
-description: C# support, CLI based plugin discovery and management, Alexa event support, service wide metrics in Serverless Framework v1.4
+title: C# service template, CLI based plugin discovery and management, Alexa event support, service wide metrics in Serverless Framework v1.4
+description: C# service template, CLI based plugin discovery and management, Alexa event support, service wide metrics in Serverless Framework v1.4
 date: 2016-12-15
 layout: Post
 ---
@@ -130,7 +130,7 @@ echo "hello world!" | serverless invoke --function hello --stage dev --region us
 This gives you way more flexibility to invoke a function with different data. Here's an example how a `dataGenerator.js` file could be used to generate data for your function:
 
 ```bash
-dataGenerator.js | serverless invoke local --function hello
+node dataGenerator.js | serverless invoke local --function hello
 ```
 
 ### Enhancements, refactorings and bug fixes
