@@ -51,7 +51,9 @@ serverless plugin install --name serverless-webpack
 serverless plugin uninstall --name serverless-webpack
 ```
 
-**Note:** You're a plugin author or found a Serverless plugin which is misisng? Feel free to submit a PR to the [Serverless plugin registry](https://github.com/serverless/plugins)!
+This makes it a lot easier to find and manage Serverless plugins for your service
+
+**Note:** You're a plugin author or found a Serverless plugin which is misisng? Feel free to submit a PR to the [Serverless plugin registry](https://github.com/serverless/plugins/edit/master/plugins.json)!
 
 ### Alexa event support
 
@@ -64,7 +66,7 @@ functions:
   hello:
     handler: handler.hello
     events:
-      - alexa: true
+      - alexaSkill: true
 ```
 
 You can read more in [the docs](https://serverless.com/framework/docs/providers/aws/events/alexa-skill) about this new event source.
