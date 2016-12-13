@@ -5,7 +5,7 @@ date: 2016-12-15
 layout: Post
 ---
 
-We're happ to release v1.4.0 of the Serverless Framework today!
+We're happy to release v1.4.0 of the Serverless Framework today!
 
 This release is packed with a lot of great, new feature. Let's take a look at the highlights!
 
@@ -84,6 +84,8 @@ serverless create --template aws-csharp
 ```
 
 to create a new C# service and you're good to go!
+
+**Note:** Serverless supports all [AWS Lambda runtimes](http://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html) out of the box. You can change the runtime with the help of the `runtime` property in [`serverless.yml` file](https://serverless.com/framework/docs/providers/aws/guide/serverless.yml/).
 
 ### Directory support for service installation via git
 
