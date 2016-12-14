@@ -66,7 +66,7 @@ functions:
   hello:
     handler: handler.hello
     events:
-      - alexaSkill: true
+      - alexaSkill
 ```
 
 You can read more in [the docs](https://serverless.com/framework/docs/providers/aws/events/alexa-skill) about this new event source.
