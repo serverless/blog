@@ -13,12 +13,6 @@ This release is packed with a lot of great, new feature. Let's take a look at th
 
 Here are the highlights of this release. You can find a list with all the updates in the [changelog](https://github.com/serverless/serverless/blob/master/CHANGELOG.md).
 
-### CLI based plugin discovery and management
-
-Plugins are a nice way to extend Serverless with 3rd party functionality.
-
-Do you need `webpack` support? There's [a plugin](https://github.com/elastic-coders/serverless-webpack) for that!
-
 ### Alexa event support
 
 v1.4 also introduces a new event `alexaSkill` event source.
