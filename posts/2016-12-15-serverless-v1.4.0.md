@@ -47,13 +47,13 @@ The [C# "hello world" example](https://serverless.com/framework/docs/providers/a
 
 **Note:** Serverless supports all [AWS Lambda runtimes](http://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html) out of the box. You can change the runtime with the help of the `runtime` property in [`serverless.yml` file](https://serverless.com/framework/docs/providers/aws/guide/serverless.yml/).
 
-### Directory support for service installation via git
+### Directory support for service installation via GitHub URL
 
 The [Serverless examples repository](https://github.com/serverless/examples) is the go to point if you want to see some real world examples and learn how Serverless architectures can look like.
 
-The `serverless install` command makes it possible for you to download services based on git repository URLs. The downside was that only full repositories could be downloaded.
+The `serverless install` command makes it possible for you to download services based on GitHub repository URLs. The downside was that only full repositories could be downloaded.
 
-Until now! A recent enhancement makes it possible to download specific directories from a git URL.
+Until now! A recent enhancement makes it possible to download specific directories from a GitHub URL.
 
 Want to play around with the REST API example which connects to a DynamoDB?
 
