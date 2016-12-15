@@ -1,6 +1,6 @@
 ---
-title: C# service template, CLI based plugin discovery and management, Alexa event support, service wide metrics in Serverless Framework v1.4
-description: C# service template, CLI based plugin discovery and management, Alexa event support, service wide metrics in Serverless Framework v1.4
+title: C# service template, Alexa event support, service wide metrics in Serverless Framework v1.4
+description: C# service template, Alexa event support, service wide metrics in Serverless Framework v1.4
 date: 2016-12-15
 layout: Post
 ---
@@ -18,42 +18,6 @@ Here are the highlights of this release. You can find a list with all the update
 Plugins are a nice way to extend Serverless with 3rd party functionality.
 
 Do you need `webpack` support? There's [a plugin](https://github.com/elastic-coders/serverless-webpack) for that!
-
-Do you want offline support? There's [a plugin](https://github.com/dherault/serverless-offline) for that!
-
-Recently we've introduced the [Serverless plugin registry](https://github.com/serverless/plugins) which is a GitHub repository containg a list of all the available Serverless plugins.
-
-Serverless now integrates with this repository so you can discover, install and uninstall plugins in your service!
-
-Here's what it looks like:
-
-#### List all available plugins:
-
-```bash
-serverless plugin list
-```
-
-#### Search for a plugin
-
-```
-serverless plugin search --query webpack
-```
-
-#### Install a plugin
-
-```bash
-serverless plugin install --name serverless-webpack
-```
-
-#### Uninstall a plugin
-
-```bash
-serverless plugin uninstall --name serverless-webpack
-```
-
-This makes it a lot easier to find and manage Serverless plugins for your service
-
-**Note:** You're a plugin author or found a Serverless plugin which is misisng? Feel free to submit a PR to the [Serverless plugin registry](https://github.com/serverless/plugins/edit/master/plugins.json)!
 
 ### Alexa event support
 
