@@ -71,7 +71,7 @@ serverless metrics --function hello
 
 v1.4 enhances this command so that you can get service-wide metrics (all functions combined) when you run:
 
-```
+```bash
 serverless metrics
 ```
 
