@@ -34,7 +34,7 @@ Shifter is built according to the microservices concept. The backend relies on h
 
 ![The overall outlook of Shifter Service](https://s3.amazonaws.com/shifter-serverless-blog/sitegenerator.png "The overall outlook of Shifter Service")
 
-Here’s the architecture of the user console:
+**Here’s the architecture of the user console:**
 
 ![How the console architecture look like](https://s3.amazonaws.com/shifter-serverless-blog/dashboard.png "How the console architecture look like")
 
