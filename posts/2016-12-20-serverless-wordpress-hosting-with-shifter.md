@@ -1,5 +1,5 @@
 ---
-title: How Shifter Introduced Serverless Hosting to WordPress Using AWS, DynamoDB and the Serverless Framework
+title: How Shifter Introduced Serverless Hosting to WordPress Using AWS, DynamoDB & the Serverless Framework
 description: Learn how Shifter transforms WordPress blogs and websites into static sites to make them faster, more secure and scalable in this guest post. 
 date: 2016-12-20
 thumbnail: 'https://s3.amazonaws.com/shifter-serverless-blog/shifter-square.png'
@@ -48,7 +48,7 @@ The biggest advantage of using this architecture is that you don’t need to mai
 
 Here’s a snippet of the code what runs on Lambda:
 
-```
+```js
 exports.handler = (event, context, cb) => {
   const projects = new Projects(event);
 
