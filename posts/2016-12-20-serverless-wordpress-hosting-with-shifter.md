@@ -18,7 +18,7 @@ WordPress currently serves about 25% of all sites on the web. People use it in m
 
 The Shifter team consists of WordPress pros who contribute to the project actively. As AWS Advanced Technology Partners, we're also AWS experts. Through repeatedly creating hosting solutions for large-scale, high traffic websites, we realized an opportunity to introduce the concept of microservices into the context of WordPress.
 
-## Solving the Scalabilty Issue
+## Solving the Scalability Issue
 
 Maintaining WordPress sites demands significantly more time and attention as the website gains popularity (and more traffic) or the number of websites you manage increases. In some cases, the amount of time spent maintaining the backend can exceed the work put into new content. This can cause major problems for WordPress users as their websites grow. 
 
@@ -38,7 +38,7 @@ Shifter is built according to the microservices concept. The backend relies on h
 
 ![How the console architecture look like](https://s3.amazonaws.com/shifter-serverless-blog/dashboard.png "How the console architecture look like")
 
-We chose to set up the console architecture with the Serverless Framework. It's a Single-Page Application. Here are some highights:
+We chose to set up the console architecture with the Serverless Framework. It's a Single-Page Application. Here are some highlights:
 
 - HTML, CSS, Javascript files are hosted on S3
 - User registration data is stored with Cognito User Pool
