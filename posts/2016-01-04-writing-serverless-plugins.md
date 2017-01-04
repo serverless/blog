@@ -1,19 +1,21 @@
 ---
 layout: Post
-title: 'Writing Serverless Framework Plugins'
-date: 2016-12-12
-description: "In this tutorial, you’ll learn by examples how to write your own plugins. We’ll start from very simple examples and build up on them to get all the way to writing useful plugins that coul help you with your everyday deployments."
+title: 'How To Write Your First Plugin For The Serverless Framework'
+date: 2017-01-04
+description: "Learn how to write a Serverless Plugin in this guest post from Anna Doubkova. Start with the basics of creating a plugin in Part 1 of this tutorial. Then stay tuned for the follow-up post with more on implementation and different approaches to writing Serverless plugins."
 tags:
 - serverless
 ---
 
-If you’ve opened this article, you probably know some basics of **the Serverless Framework** such as deploying lambdas and creating API endpoints. While using it, you might have hit a block where doing something with the framework is either difficult, impossible, or simply too repetitive. **You can ease your pain by using plugins.** Some are already built for the most common problems but there are always some project-specific issues that plugins can help you resolve. Fortunately, writing a plugin for the Serverless Framework is easier than you might think.
+Hi, I'm [Anna Doubkova](https://github.com/lithin), a software engineer at [Red Badger](https://red-badger.com/) in London. If you’re reading this post, you probably know some basics of **the Serverless Framework**, like deploying Lambdas and creating API endpoints. But maybe you've hit a block where you find doing something with the framework is either difficult, impossible, or simply too repetitive. 
 
-In this tutorial, **you’ll learn by examples how to write your own plugins.** We’ll start from very simple examples and build up on them to get all the way to writing useful plugins that could help you with your everyday deployments.
+**You can ease your pain by using plugins.** Some are already built for the most common problems (check them out in the official [Serverless Plugins Github repo](https://github.com/serverless/plugins)), but there are always some project-specific issues that plugins can help you resolve. Fortunately, writing a plugin for the Serverless Framework is easier than you might think.
 
-##  Create First Plugin
+In this tutorial, **you’ll learn by examples how to write your own plugins.** We’ll start from very simple examples and build upon them to get all the way to writing useful plugins that could help you with your everyday deployments.
 
-The Serverless Framework is an incredibly well-built open source platform. It is nearly indefinitely extensible and allows you to add new features with surprising ease. **Let’s see how you can add a plugin in the simplest way possible.**
+##  Create Your First Plugin
+
+The Serverless Framework is an incredibly well-built open source platform. It's nearly indefinitely extensible, and allows you to add new features with surprising ease. **Let’s see how you can add a plugin in the simplest way possible.**
 
 Somewhere in a new directory run:
 
@@ -36,7 +38,7 @@ class ServerlessPlugin {
 }
 ```
 
-**Every serverless plugin is a class.** This class gets instantiated with a `serverless` object and a bunch of `options`. We'll get to them in more detail in a little while but for now it's enough to say that these will help you _do_ things in your plugin.
+**Every serverless plugin is a class.** This class gets instantiated with a `serverless` object and a bunch of `options`. We'll get to them in more detail in a little while, but for now it's enough to say that these will help you _do_ things in your plugin.
 
 ### Define Your Commands
 
@@ -58,7 +60,7 @@ class ServerlessPlugin {
 }
 ```
 
-Next thing to notice in the constructor is the **definition of commands** that your plugin introduces. In the boileplate we initialised using the serverless cli helper, command `serverless welcome` is added.
+The next thing to notice in the constructor is the **definition of commands** that your plugin introduces. In the boilerplate we initialised using the Serverless CLI helper, command `serverless welcome` is added.
 
 #### Usage - or Help
 
@@ -76,15 +78,15 @@ The crucial bit in any command is the `lifecycleEvents` array. **Lifecycle event
 - compileEvents
 - deploy
 
-From `cleanup` to `deploy`, we have a list of tasks we should fulfil on our way to deploying a service. We don't write any implementation yet, though. **We're only describing the process** in a very general way that doesn't include any implementation details.
+From `cleanup` to `deploy`, we have a list of tasks we should fulfill on our way to deploying a service. We don't write any implementation yet, though. **We're only describing the process** in a very general way that doesn't include any implementation details.
 
-The advantage of this approach is that it doesn't tie us into one way of doing deployment (or executing any other command), which in turn helps us avoid vendor lock-in.
+The advantage of this approach is that it doesn't tie us into one way of handling deployment (or executing any other command), which in turn helps us avoid vendor lock-in.
 
 As such, you can **see the command definition as a guideline** that you can use later on to write your code. This makes for more readable, **self-documented code.**
 
 #### Options - or Flags
 
-You might notice that in the plugin template, we also have `options` section alongside `usage` and `lifecycleEvents`.
+You might notice that in the plugin template we also have the `options` section alongside `usage` and `lifecycleEvents`.
 
 ```js
 this.commands = {
@@ -109,7 +111,7 @@ this.commands = {
 
 The `options` section can be used to **describe which flags can be used in CLI with your command.** In this definition, the `--message` option is required, and has a shortcut `-m` so that you can equally write `serverless welcome --message "Hello!"` and `serverless welcome --m "Hello!"`.
 
-As with the command itself, we have a `usage` description which appears when asking for help int he CLI `serverless welcome --help`.
+As with the command itself, we have a `usage` description which appears when asking for help in the CLI `serverless welcome --help`.
 
 #### Requirements for Defining a Command
 
@@ -129,7 +131,7 @@ this.commands = {
 };
 ```
 
-This will work in a very similar way as the definition above. However, it won't provide you with automatic checking that the required option is passed to the command, or any help information.
+This will work in a very similar way to the definition above. However, it won't provide you with automatic checking that the required option is passed to the command, or any help information.
 
 From this perspective, **I'd suggest spending the time with writing up `usage`, requirements and shortcuts.** It will make it significantly easier for the users of your plugin to figure out how to actually use it.
 
@@ -161,7 +163,7 @@ This gives us a very fine-grained control over definition of **what the command 
 
 Remember you don't have to define every step. Maybe in your particular implementation, you only care about `world` and not `hello`, and that's absolutely fine.
 
-Someone else can later on come with their plugin and define their own implementation of the `welcome` plugin based on the steps you specified in the command. It's an open-ended world, allowing (nearly) endless extensions.
+Later on someone else can come with their plugin and define their own implementation of the `welcome` plugin based on the steps you specified in the command. It's an open-ended world, allowing (nearly) endless extensions.
 
 ### Implementation
 
@@ -193,4 +195,4 @@ class ServerlessPlugin {
 
 That, however, _might not be quite enough_ in a real world project.
 
-You'll learn **how to write implementations** of plugins, what the **serverless object** is all about, and how you can approach writing plugins in **multiple ways** - in the follow-up article.
+You'll learn **how to write implementations** of plugins, what the **serverless object** is all about, and how you can approach writing plugins in **multiple ways** - in the follow-up post coming soon.
