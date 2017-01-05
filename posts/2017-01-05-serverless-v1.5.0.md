@@ -1,6 +1,6 @@
 ---
-title: IoT event support, Cognito user pool authorizer, service installation with a name in Serverless Framework v1.5
-description: IoT event support, Cognito user pool authorizer, service installation with a name in Serverless Framework v1.5
+title: IoT event support, Cognito user pool authorizer & service installation with a name in Serverless Framework v1.5
+description: Check out IoT event support, Cognito user pool authorizer, service installation with a name in the Serverless Framework v1.5 release.
 date: 2017-01-05
 layout: Post
 authors:
@@ -9,7 +9,7 @@ authors:
 
 Today we're happy to announce the release of the Serverless Framework v1.5.0.
 
-Let's take a look at the release highlights!
+Here are some of the release highlights!
 
 ## Highlights of 1.5.0
 
@@ -19,7 +19,7 @@ Let's take a look at the release highlights!
 
 v1.5 introduces the new `iot` event source.
 
-Lambda functions can now be triggered by AWS IoT events. Here's a simple code snippet which shows you how this looks like:
+Lambda functions can now be triggered by AWS IoT events. Here's a simple code snippet that demonstrates how this looks:
 
 ```yml
 functions:
@@ -32,11 +32,11 @@ functions:
 
 In this example the `weatherReporter` function will be called every time an IoT event is sent to the `weather_data` topic.
 
-As usual you can learn more about this new event source in [the docs](https://serverless.com/framework/docs/providers/aws/events/iot). You should also check out the IoT example in our [Serverless Examples repository](https://github.com/serverless/examples/tree/master/aws-node-iot-event) to see a the code of a full functional Serverless service which uses the `iot` event.
+As usual you can learn more about this new event source in [the docs](https://serverless.com/framework/docs/providers/aws/events/iot). You should also check out the IoT example in our [Serverless Examples repository](https://github.com/serverless/examples/tree/master/aws-node-iot-event) to see the code for a fully functional Serverless service using the `iot` event.
 
-IoT devices and `iot` event support are a hot topic as it makes it possible to connect and interact with other hardware devices through Lambda functions. Furthermore it's a great use case for a serverless architecture.
+IoT devices and `iot` event support are a hot topic as it makes it possible to connect and interact with other hardware devices through Lambda functions. It's a great use case for a serverless architecture.
 
-We have a dedicated blog post which will show you how an IoT device made it possible to see if the wheater at the lake is good enough to hang out there. This blog post will be released soon, so stay tuned!
+In fact, we have an upcoming guest blog post that will show you how an IoT device made it possible to see (from home) if the weather at the lake is nice enough to go hang out there. Stay tuned!
 
 ### Cognito user pool authorizer
 
@@ -46,7 +46,7 @@ However up until now only custom authorizers were supported. What if you have a 
 
 Serverless has you covered! You can now specify the `arn` to your user pool so that it'll be used by the authorizer function to authorize incoming requests.
 
-Here's a code snippet which shows how the setup looks like:
+Here's a code snippet that shows what the setup looks like:
 
 ```yml
 functions:
@@ -72,7 +72,7 @@ https://github.com/johnf/serverless-cognito-demo
 
 `serverless install` is a widely used command to download existing Serverless services from GitHub.
 
-Oftentimes you want to use and deploy the service you download under a different name. Serverless v1.5.0 makes it possible to rename services directly after they've been downloaded.
+Often times you want to use and deploy the service you download under a different name. Serverless v1.5.0 makes it possible to rename services directly after they've been downloaded.
 
 Just provide the `--name` flag and the service will be renamed after it was downloaded:
 
