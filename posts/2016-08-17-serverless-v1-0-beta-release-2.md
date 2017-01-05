@@ -2,6 +2,8 @@
 title: Serverless V1.0 Beta 2
 date: 2016-08-17
 layout: Post
+authors:
+  - PhilippMuns
 ---
 
 Two weeks have passed since our first v1 beta.1 release. Today we’re proud to announce the second beta version of the Serverless framework which introduces lots of new features, improvements and bug fixes.
