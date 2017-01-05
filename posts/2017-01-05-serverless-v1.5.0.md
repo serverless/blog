@@ -42,7 +42,7 @@ In fact, we have an upcoming guest blog post that will show you how an IoT devic
 
 Serverless supports the use of custom authorizers for your API Gateway endpoints (see [the docs](https://serverless.com/framework/docs/providers/aws/events/apigateway/#http-endpoints-with-custom-authorizers) for more information about it).
 
-However up until now only custom authorizers were supported. What if you have a Cognito user pool you want to use to authroize your users?
+However up until now only custom authorizers were supported. What if you have a Cognito user pool you want to use to authorize your users?
 
 Serverless has you covered! You can now specify the `arn` to your user pool so that it'll be used by the authorizer function to authorize incoming requests.
 
@@ -82,7 +82,7 @@ serverless install --url https://github.com/serverless/examples/tree/master/aws-
 
 ### Enhancement and bug fixes
 
-With every release we also implement a bunch of enhacements and bug fixes (thanks for reporting!).
+With every release we also implement a bunch of enhancements and bug fixes (thanks for reporting!).
 
 ### Next Steps
 
