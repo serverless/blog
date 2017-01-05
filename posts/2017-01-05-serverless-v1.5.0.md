@@ -1,6 +1,6 @@
 ---
-title: IoT event support, Cognito user pool authorizer & service installation with a name in Serverless Framework v1.5
-description: Check out IoT event support, Cognito user pool authorizer, service installation with a name in the Serverless Framework v1.5 release.
+title: IoT event support, Cognito user pool authorizer & install service with a name in Serverless Framework v1.5
+description: IoT event support, Cognito user pool authorizer and the ability to install your service with a name in the Serverless Framework v1.5 release.
 date: 2017-01-05
 layout: Post
 authors:
@@ -68,7 +68,7 @@ Want to see a more in-depth example? The following Serverless example service sh
 
 https://github.com/johnf/serverless-cognito-demo
 
-### Service installation with a name
+### Install service with a name
 
 `serverless install` is a widely used command to download existing Serverless services from GitHub.
 
