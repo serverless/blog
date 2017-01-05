@@ -2,7 +2,7 @@
 title: Scaling Email Marketing to Infinity & Beyond by Going Serverless
 description: Get a sneak peek at how MoonMail designed their serverless architecture for an infinitely scalable open source email marketing app in this guest post.
 date: 2017-01-05
-thumbnail: 
+thumbnail: https://cloud.githubusercontent.com/assets/20538501/21700252/2890892e-d365-11e6-8f0c-96262c5a3027.png
 layout: Post
 authors:
   - CarlosCastellanos
