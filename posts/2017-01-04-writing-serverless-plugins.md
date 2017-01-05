@@ -5,7 +5,7 @@ date: 2017-01-04
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/21665215/e3c9aae6-d2b0-11e6-9865-498d91318e7a.png
 layout: Post
 authors:
-  -AnnaDoubkova
+  - AnnaDoubkova
 ---
 
 Hi, I'm [Anna Doubkova](https://github.com/lithin), a software engineer at [Red Badger](https://red-badger.com/) in London. If you’re reading this post, you probably know some basics of **the Serverless Framework**, like deploying Lambdas and creating API endpoints. But maybe you've hit a block where you find doing something with the framework is either difficult, impossible, or simply too repetitive. 
