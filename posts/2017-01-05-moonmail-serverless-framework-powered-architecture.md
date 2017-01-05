@@ -16,7 +16,7 @@ Years spent building eCommerce apps led us to start thinking about how to create
 
 We were already using the best performing email marketing tools for Shopify (Automation + Recover Checkouts), but we wanted to go a step beyond. We wanted to present something different to the eCommerce community: an email marketing platform with superior performance, plus infinite scalability.
 
-## Overcoming Limitations by Building a Serverless Architecture
+# Overcoming Limitations by Building a Serverless Architecture
 
 We realized that just wasn't possible with the architecture we were using at the time since it relied too heavily on EC2 and Ruby on Rails. So, we decided to embark on a never-ending journey in perfecting the art and science of sending emails.
 
@@ -28,11 +28,13 @@ We looked into different serverless approaches, but in the end decided to use th
 
 How about that for creating and testing a minimum viable product?
 
-## What Does This New Infrastructure Look Like?
+# What Does This New Infrastructure Look Like?
 
-### Top Secret Front End Preview
+## Top Secret Front End Preview
 
 In the immortal words of wisdom: Simplify. Sometimes developers like to cram as many features as possible into an app. However, more often than not, we see that the most effective way is to have the right tools for the right job. No more, no less. With this in mind, we created MoonMail’s UI clean, simple and extremely easy to use.
+
+### A Single Page Application
 
 MoonMail’s front-end consists of a Single Page Application, built in React and Redux, which is hosted in an AWS S3 Bucket and served through CloudFront with Route53 as DNS. Cloudfront provides the fastest and most reliable way to gain access to our application. Content is replicated in different regions, which significantly reduces loading times and also allows us to handle as many requests as needed. It obtains temporary AWS credentials for each user with our IAM SAML auth provider. This allows them to access the S3 bucket directly, which we use for file uploads in the app.
 
@@ -42,17 +44,29 @@ The login is handled by Auth0, so the Sign Up / Sign Up process is virtually fri
 
 *MoonMail Serverless Infrastructure*
 
-### Back End Insights
+## Back End Insights
+
+### Event-Driven Architecture
 
 When it comes to MoonMail’s back-end architecture, we can say that it’s fully event driven. It doesn’t use any traditional servers because it 100% relies on AWS Lambda, which handles the "no server part" for us. The Serverless Framework is the key to managing the lifecycle of the infrastructure. It covers us in the sense that we only have to worry about writing code and doing very little with operations. It’s worth mentioning that MoonMail is composed of more than 70 Lambda functions (and increasing) written in NodeJS with a microservices approach in mind.
 
+### Funtions & Microservices
+
 MoonMail’s simplest processing units are its functions. Functions are composed to create microservices, which are composed to build functionalities. So how do we deal with their growing numbers? Vast knowledge of business logic, which translates into: good separation of concerns, well defined microservices and boundaries, and last but not least, a good and reliable tool to manage the whole process. That’s why Serverless Framework is in our stack.
+
+### Serverless Decoupled Concept of Functions & Events
 
 A Serverless decoupled concept of functions (the functional part) and events (what triggers the functions) is as good as it gets. We add REST Endpoints exposed by API Gateway or SNS/Kinesis integration with a simple configuration. This is very important to us since it’s easier to add or remove functions/services from our event driven "Choreographies." Every action, from an “Upload Recipient List” to a “Send Campaign” triggers a number of microservices interactions, and everything is done asynchronously to avoid maximum direct microservices communication with SNS, SQS, Kinesis integration and/or data replication in an eventually consistent way.
 
+### DynamoDb
+
 Since our data storage is DynamoDB, every record gets stored there. But we also store some “redundant” aggregated information in tables so reports can be created and presented to the user in near real time (with the help of Kinesis Streams and DynamoDB Streams). We even do some AI on the platform in the User Reputation System, which is handled in real time by our super complex “AI” program; we call it **_Miguel_**.
 
+### The Serverless Framework
+
 As a result of using serverless technologies along with the Serverless Framework, the engineering team has become confident in the developing-release cycle. This is because we truly understand our business model, as mentioned previously, but also due to the reliability and simplicity provided by Serverless in configuration management, stage management and ecosystem. This gives us 100% automation capabilities to build our Development Environments in the same way we built our Production one so it’s been much easier to implement our Deployment Pipeline and Continuous Delivery system. The result is less cash spent on resources compared to conventional architectures. We couldn’t ask for more. Totally in love.
+
+## The Results
 
 **What happened after developing this new infrastructure?**
 
@@ -70,7 +84,7 @@ Cick here if you want to check out this alternative MoonMail version: [https://m
 
 Soon after releasing [MoonMail as an Open Source project](https://github.com/microapps/MoonMail) on GitHub, some developers approached us asking us to help them in installing/deploying MoonMail in their own AWS account. We monetize there, too. Sometimes companies feel more comfortable with storing some really sensitive data within their AWS accounts. That's possible, too.
 
-## Contribute to MoonMail
+# Contribute to MoonMail
 
 MoonMail is the result of the combined efforts of many people. Thus, we would love for you to help us make MoonMail even better, greater, faster, and smarter!
 
