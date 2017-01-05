@@ -30,6 +30,8 @@ How about that for creating and testing a minimum viable product?
 
 # What Does This New Infrastructure Look Like?
 
+Let's have a look:
+
 ## Top Secret Front End Preview
 
 In the immortal words of wisdom: Simplify. Sometimes developers like to cram as many features as possible into an app. However, more often than not, we see that the most effective way is to have the right tools for the right job. No more, no less. With this in mind, we created MoonMail’s UI clean, simple and extremely easy to use.
