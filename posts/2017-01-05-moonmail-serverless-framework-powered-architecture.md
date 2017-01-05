@@ -5,7 +5,7 @@ date: 2017-01-05
 thumbnail: 
 layout: Post
 authors:
-  - MoonMail
+  - CarlosCastellanos
 ---
 
 One day we found ourselves in a predicament: We were really good at email marketing, but our software sucked. We were spending way too much time trying to "use" the tools we had, and it was painful.
