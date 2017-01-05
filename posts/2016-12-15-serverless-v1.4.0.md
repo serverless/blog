@@ -3,6 +3,8 @@ title: C# service template, Alexa event support, service-wide metrics in Serverl
 description: Introducing C# service template, Alexa event support, service-wide metrics & more in Serverless Framework v1.4
 date: 2016-12-15
 layout: Post
+authors:
+  - PhilippMuns
 ---
 
 We're happy to release v1.4.0 of the Serverless Framework today!

@@ -2,6 +2,8 @@
 layout: Post
 title: 'New Release: Serverless V1.0 rc.1'
 date: 2016-09-06
+authors:
+  - PhilippMuns
 ---
 
 It’s time again. [Serverless v1 beta.2](http://blog.serverless.com/serverless-v1-0-beta-release-2/) was released nearly two weeks ago. Today we’re happy and proud to announce the first release candidate of the Serverless Framework v1 (Serverless v1 rc.1). You can install it via:

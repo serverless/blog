@@ -2,6 +2,8 @@
 title: Serverless V1.0 Alpha 2
 date: 2016-07-19
 layout: Post
+authors:
+  - PhilippMuns
 ---
 
 ![img](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/legacy/2016/07/005adf42-d269-43ee-9998-9502487bb99b.gif) Today we’re proud to announce the release of Serverless V1.0-alpha2\. Two weeks have passed since the very [first release](http://blog.serverless.com/serverless-v1-0-alpha1-announcement/) of our [scheduled rolling release roadmap](https://github.com/serverless/serverless/milestones). Thanks to our great community we were able to [jump into discussions](https://github.com/serverless/serverless/issues) around different topics regarding the vision for Serverless v1\. With that help we were able to finish and release this second alpha of Serverless v1. To install the new version of Serverless run the following:
