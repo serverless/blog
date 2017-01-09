@@ -23,7 +23,7 @@ A lot changed since then: we now have internet! I thought it would be nice to ho
 
 <p align="center">
   <img src="IMG_1510.gif">
- </p>
+</p>
 
 ## How to
 It comes down to 2 steps:
@@ -33,7 +33,7 @@ It comes down to 2 steps:
 
 
 ### Connect the clock to the internet 
-I decided to work with a Photon (made by Particle.io). A microprocessor which auto-connects to the Particle-Cloud once set up. The particle can be programmed with C-code.
+I decided to work with a Photon (made by Particle.io). A microprocessor which auto-connects to the Particle-Cloud once set up. The particle can be programmed in C.
 
 <p align="center">
   <img width="400" src="https://github.com/douweh/windclock_serverless/blob/master/photon.jpg">
@@ -45,9 +45,9 @@ So I just connected each LED (with a current limiting resistor) to a seperate pi
   <img width="400" src="https://github.com/douweh/windclock_serverless/blob/master/inhoud.jpg">
 </p>
 
-The cool thing about the Photon is that you can program it over the air from your browser. In your code you can define functions which you'll be able to call over the internet once the code has been deployed to the device. [https://docs.particle.io/reference/api/#call-a-function](Particle Documentation).
+The cool thing about the Photon is that you can program it over the air from your browser. In your code you can define [https://docs.particle.io/reference/firmware/photon/#particle-function-](remote functions) which you'll be able to call over the internet once the code has been deployed to the device. [https://docs.particle.io/reference/api/#call-a-function](Particle Documentation).
 
-I exposed two functions: `setWindSpeed` and `setWindDir`. The first one takes the windspeed (in Beaufort; which is a commonly used scale in the Netherlands) as argument, the second one the windDirection.
+I exposed two of those functions: `setWindSpeed` and `setWindDir`. The first one takes the windspeed (in Beaufort; which is a commonly used scale in the Netherlands) as argument, the second one the windDirection.
 
 The code on the Photon just runs an infinite loop (something like this) see actual code on [https://github.com/douweh/windclock_photon](github):
 
@@ -59,13 +59,15 @@ if ( THERE_IS_NO_WIFI ) {
 } else {
     // I HAVE INTERNET AND DATA!
     animate_all_leds_in_circle();
-    turn_on_led_for_corresponding_wind_direction();
+    turn_on_led_for_corresponding_wind_direction(); // which has been set by externally calling setWindDir
     animate_all_leds_in_circle();
-    turn_on_number_of_leds_to_indicate_windspeed();
+    turn_on_number_of_leds_to_indicate_windspeed(); // which has been set by externally calling setWindSpeed
 }
 ```
 
-The clock is pretty 'dumb': it is not reaching out to the internet to find, parse, and display data... It just displays what it's instructed. This helps to keep the code on the display simple.
+The clock is pretty 'dumb': it is not reaching out to the internet to find, parse, and display data... It just displays the values for the windSpeed and windDir and those values get set by calling `setWindSpeed` and `setWindDir`. This helps to keep the code in the clock really simple and focused on one job.
+
+Gathering weather data and getting it to the clock is not the concern of the clock itself.
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/CS6aQ6hjeuU" frameborder="0" allowfullscreen></iframe>
 
@@ -76,7 +78,7 @@ Once the clock is connected to the particle-cloud you can (with the right creden
 
 And that makes my clock's `N` and `NE` LED's light up indicating the wind is blowing from North-North-East.
 
-So this is cool and shows me the hardware is working, but ofcourse I want the *actual* winddirection for my favorite spot, pushed automically (and periodically) to the clock.
+So this is cool and shows me the hardware is working, but ofcourse I want the *current* winddirection for my favorite spot, pushed automically (and periodically) to the clock.
 
 So basically I need to run the following steps periodically.
 
@@ -89,7 +91,7 @@ When I thought about how I wanted to run the code to update my clock I came to t
 
 I really don't care that much where my code runs. As long as I know it *does* and I can *tune in* to see it *still does* :).
 
-I could spin up a server myself, I could use an EC2 instance or heroku, or a virtual server from a different vendor.. Or....
+I could spin up a server myself, I could use an EC2 instance, or heroku, or a virtual server from a different vendor, or....
 I don't want to spend time figuring out what is the best option.
 
 This is where serverless made sense to me. I just write my code and configure which events triggers my code to run.
