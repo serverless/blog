@@ -52,7 +52,7 @@ The login is handled by Auth0, so the Sign Up / Sign Up process is virtually fri
 
 When it comes to MoonMail’s back-end architecture, we can say that it’s fully event driven. It doesn’t use any traditional servers because it 100% relies on AWS Lambda, which handles the "no server part" for us. The Serverless Framework is the key to managing the lifecycle of the infrastructure. It covers us in the sense that we only have to worry about writing code and doing very little with operations. It’s worth mentioning that MoonMail is composed of more than 70 Lambda functions (and increasing) written in NodeJS with a microservices approach in mind.
 
-### Funtions & Microservices
+### Functions & Microservices
 
 MoonMail’s simplest processing units are its functions. Functions are composed to create microservices, which are composed to build functionalities. So how do we deal with their growing numbers? Vast knowledge of business logic, which translates into: good separation of concerns, well defined microservices and boundaries, and last but not least, a good and reliable tool to manage the whole process. That’s why Serverless Framework is in our stack.
 
