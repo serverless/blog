@@ -48,7 +48,7 @@ I connected each LED, using a current limiting resistor, to a seperate pin of th
   <img width="400" src="https://github.com/douweh/windclock_serverless/blob/master/inhoud.jpg">
 </p>
 
-The cool thing about the Photon is that you can program it over the air from your browser. In your code you can define [https://docs.particle.io/reference/firmware/photon/#particle-function-](remote functions) which you'll be able to call over the Internet once the code has been deployed to the device. [https://docs.particle.io/reference/api/#call-a-function](Particle Documentation).
+The cool thing about the Photon is that you can program it over the air from your browser. In your code you can define [remote functions](https://docs.particle.io/reference/firmware/photon/#particle-function-) which you'll be able to call over the Internet once the code has been deployed to the device. ([Particle Documentation](https://docs.particle.io/reference/api/#call-a-function)).
 
 I exposed two of those functions: `setWindSpeed` and `setWindDir`. The first one takes the windspeed in Beaufort (a commonly used scale in the Netherlands), the second one the windDirection.
 
