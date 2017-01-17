@@ -67,7 +67,7 @@ if ( THERE_IS_NO_WIFI ) {
     turn_on_number_of_leds_to_indicate_windspeed(); // which has been set by externally calling setWindSpeed
 }
 ```
-You can see actual code on [https://github.com/douweh/windclock_photon](GitHub).
+You can see actual code [on GitHub](https://github.com/douweh/windclock_photon).
 
 The clock is pretty 'dumb'. It's not reaching out to the Internet to find, parse, and display data. It just displays the values for the windSpeed and windDir and those values get set by calling `setWindSpeed` and `setWindDir`. This helps to keep the code in the clock really simple and focused on one job.
 
@@ -100,7 +100,7 @@ I don't want to spend time figuring out what is the best option.
 
 This is where Serverless made sense to me. I just write my code and configure which events triggers my code to run.
 
-The complete code is on [https://github.com/douweh/windclock_serverless](GitHub). But it boils down to the following:
+The complete code is [on GitHub](https://github.com/douweh/windclock_serverless). But it boils down to the following:
 
 A `handler.js` which exposes an `update` function which:
 
