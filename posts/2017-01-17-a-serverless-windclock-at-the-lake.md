@@ -16,7 +16,7 @@ In the 80's, my grandparents received a homemade weatherclock as a gift from a f
 
 They placed it several meters from their house on a high pole. It was connected with a multicore cable (a core for every wind direction) to the display inside. The display consisted of 8 LEDs mounted in a black acrylic plate. The plate was framed in a circular piece of wood.
 <p align="center">
-  <img width="400" src="https://github.com/douweh/windclock_serverless/blob/master/klok.jpg?raw=true">
+  <img width="400" src="https://cloud.githubusercontent.com/assets/20538501/22045501/41045826-dce0-11e6-8203-48d5bf6e5c08.jpg">
 </p>
 
 After my grandparents moved to an apartment, we never found the space to put up the sensor. The clock hadn't been working since.
@@ -25,7 +25,7 @@ After my grandparents moved to an apartment, we never found the space to put up 
 A lot has changed since then. Now we have the Internet! I thought it would be nice to hook up the clock to the Internet so we could get the current wind direction (and speed) from the web. This would allow me to get rid of the mechanical wind vane, and I could also add wind*speed* to the display in addition to the direction.
 
 <p align="center">
-  <img src="IMG_1510.gif">
+  <img src="https://cloud.githubusercontent.com/assets/20538501/22045403/b1c3444c-dcdf-11e6-8876-3c3491d056c1.gif">
 </p>
 
 ## Getting Started
@@ -39,13 +39,13 @@ It came down to 2 steps:
 I decided to work with a Photon made by [Particle.io](https://www.particle.io/). It's a microprocessor that automatically connects to the Particle Cloud once set up. The device can be programmed in C.
 
 <p align="center">
-  <img width="400" src="https://github.com/douweh/windclock_serverless/blob/master/photon.jpg">
+  <img width="400" src="https://cloud.githubusercontent.com/assets/20538501/22045527/70b1499e-dce0-11e6-864d-15f33feb8511.jpg">
 </p>
 
 I connected each LED, using a current limiting resistor, to a seperate pin of the Photon.
 
 <p align="center">
-  <img width="400" src="https://github.com/douweh/windclock_serverless/blob/master/inhoud.jpg">
+  <img width="400" src="https://cloud.githubusercontent.com/assets/20538501/22045561/93b6b99c-dce0-11e6-8084-088a2f2b7d3c.jpg">
 </p>
 
 The cool thing about the Photon is that you can program it over the air from your browser. In your code you can define [remote functions](https://docs.particle.io/reference/firmware/photon/#particle-function-) which you'll be able to call over the Internet once the code has been deployed to the device. ([Particle Documentation](https://docs.particle.io/reference/api/#call-a-function)).
