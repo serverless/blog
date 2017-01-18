@@ -47,7 +47,7 @@ globby(['*', '!node_modules'], {
   // console.log(paths);
   paths.forEach((file) => {
     const postPath = path.join(postsDirectory, file)
-    if (file.match(/\.md/) && file.match(dateFormatRegex)) {
+    if (file.match(dateFormatRegex)) {
       const post = fs.readFileSync(postPath, 'utf8')
       const postData = yml(post).data
       let msg
@@ -126,9 +126,20 @@ ${seperator}
         throw new Error(`no date found in post! Please update ${file}`)
       }
 
-    } else {
-      // not .md throw error
-      // throw new Error(`${file} not allowed in posts directory`);
+    }
+    // Only allow markdown files in directory
+    if(!file.match(/\.md/)) {
+msg = `${file} type not allowed in posts directory
+
+Please remove ${file}
+
+Only markdown files are allow in this directory.
+
+Please upload all images to github or s3
+
+${seperator}
+`
+      throw new Error(msg);
     }
   })
 }).catch((e) => {
