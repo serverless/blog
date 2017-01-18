@@ -1,5 +1,6 @@
 ---
 title: Serverless V1.0 Beta 1
+description: "Multi language support added to the serverless framework"
 date: 2016-08-03
 layout: Post
 thumbnail: https://avatars1.githubusercontent.com/u/13742415?v=3&s=200

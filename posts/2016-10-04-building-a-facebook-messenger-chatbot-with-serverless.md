@@ -2,7 +2,7 @@
 layout: Post
 title: 'Building a Facebook Messenger Chatbot with Serverless'
 date: 2016-10-04
-description: ""
+description: "Learn how to develop your very own Serverless Facebook Messenger Chatbot with the serverless framework"
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/facebook.png
 authors:
   - PhilippMuns
@@ -24,7 +24,7 @@ Here's how to build a [Facebook Messenger](http://messenger.com) chatbot with 
 
 ## Getting started
 
-We’ll build a chatbot called **Quotebot** that will send us a quote if we send it a message. 
+We’ll build a chatbot called **Quotebot** that will send us a quote if we send it a message.
 
 [![](https://raw.githubusercontent.com/pmuens/quotebot/master/quotebot-1.gif)](https://raw.githubusercontent.com/pmuens/quotebot/master/quotebot-1.gif)
 
@@ -63,7 +63,7 @@ functions:
           path: webook
           method: GET
           integration: lambda
-      - http: 
+      - http:
           path: webook
           method: POST
           integration: lambda

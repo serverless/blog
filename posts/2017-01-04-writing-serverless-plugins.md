@@ -1,6 +1,6 @@
 ---
 title: 'How To Write Your First Plugin For The Serverless Framework'
-description: "Learn how to write a Serverless Plugin in this guest post from Anna Doubkova. Start with the basics of creating a plugin in Part 1 of this tutorial. Then stay tuned for the follow-up post with more on implementation and different approaches to writing Serverless plugins."
+description: "Learn the basics of creating a Serverless plugin to extend the frameworks functionality"
 date: 2017-01-04
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/21665215/e3c9aae6-d2b0-11e6-9865-498d91318e7a.png
 layout: Post
@@ -8,7 +8,7 @@ authors:
   - AnnaDoubkova
 ---
 
-Hi, I'm [Anna Doubkova](https://github.com/lithin), a software engineer at [Red Badger](https://red-badger.com/) in London. If you’re reading this post, you probably know some basics of **the Serverless Framework**, like deploying Lambdas and creating API endpoints. But maybe you've hit a block where you find doing something with the framework is either difficult, impossible, or simply too repetitive. 
+Hi, I'm [Anna Doubkova](https://github.com/lithin), a software engineer at [Red Badger](https://red-badger.com/) in London. If you’re reading this post, you probably know some basics of **the Serverless Framework**, like deploying Lambdas and creating API endpoints. But maybe you've hit a block where you find doing something with the framework is either difficult, impossible, or simply too repetitive.
 
 **You can ease your pain by using plugins.** Some are already built for the most common problems (check them out in the official [Serverless Plugins Github repo](https://github.com/serverless/plugins)), but there are always some project-specific issues that plugins can help you resolve. Fortunately, writing a plugin for the Serverless Framework is easier than you might think.
 

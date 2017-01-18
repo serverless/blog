@@ -4,8 +4,10 @@ description: Serverless CEO Austen Collins chats with Cloud Academy about new fr
 date: 2017-01-12
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/21903668/9a097caa-d8b5-11e6-8f1b-e6062ebf4982.png
 layout: Post
+authors:
+  - Serverless
 ---
-Serverless CEO [Austen Collins](https://twitter.com/austencollins) recently had the chance to connect with [Cloud Academy](https://cloudacademy.com/) to chat about new framework features, give an overview of basic application lifecycle management with Serverless and answer questions from the community. 
+Serverless CEO [Austen Collins](https://twitter.com/austencollins) recently had the chance to connect with [Cloud Academy](https://cloudacademy.com/) to chat about new framework features, give an overview of basic application lifecycle management with Serverless and answer questions from the community.
 
 ### The webinar includes:
 

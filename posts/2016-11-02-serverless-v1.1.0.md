@@ -1,8 +1,10 @@
 ---
-title:  Serverless Framework Release - 1.1.0
-description:  Today we're releasing 1.1.0 of the Serverless Framework
-date:  2016-10-27
-layout:  Post
+title: Serverless Framework Release - 1.1.0
+description: Today we're releasing 1.1.0 of the Serverless Framework
+date: 2016-10-27
+layout: Post
+authors:
+  - PhilippMuns
 ---
 
 With the release of 1.0 a few weeks ago we're now settling into our bi-weekly release cycle and can announce our next release today with 1.1.0.

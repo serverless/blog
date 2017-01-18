@@ -2,14 +2,20 @@
   "name": "serverless-blog",
   "version": "1.0.0",
   "description": "Serverless blog content",
+  "scripts": {
+    "test": "node validate.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/serverless/blog.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Serverless Inc",
   "bugs": {
     "url": "https://github.com/serverless/blog/issues"
   },
-  "homepage": "https://serverless.com/blog"
+  "homepage": "https://serverless.com/blog",
+  "devDependencies": {
+    "gray-matter": "^2.1.0",
+    "markdown-magic": "0.1.8"
+  }
 }
