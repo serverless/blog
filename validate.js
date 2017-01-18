@@ -4,6 +4,7 @@ const fs = require('markdown-magic').fsExtra
 const globby = require('markdown-magic').globby
 const authorDirectory = path.join(__dirname, 'authors')
 const postsDirectory = path.join(__dirname, 'posts')
+const dateFormatRegex = /[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])-/g
 
 // Example shape of author data
 const authorData = JSON.parse(fs.readFileSync(path.join(authorDirectory, 'DavidWells.json'), 'utf8'))
@@ -33,7 +34,7 @@ ${JSON.stringify(authorData, null, 2)}`
       return file.replace('.json', '')
     })
 }).then((authorNames)=> {
-  console.log('authorNames', authorNames)
+  // console.log('authorNames', authorNames)
 }).catch((e) => {
   console.log(e)
   process.exit(1)
@@ -43,41 +44,86 @@ ${JSON.stringify(authorData, null, 2)}`
 globby(['*', '!node_modules'], {
   cwd: postsDirectory
 }).then(paths => {
-  console.log(paths);
+  // console.log(paths);
   paths.forEach((file) => {
     const postPath = path.join(postsDirectory, file)
-    if (file.match(/\.md/)) {
+    if (file.match(/\.md/) && file.match(dateFormatRegex)) {
       const post = fs.readFileSync(postPath, 'utf8')
       const postData = yml(post).data
+      let msg
       if (isEmptyObject(postData)) {
-        // throw new Error(`no yaml found in post! Please update ${file}`)
+        msg = `no yaml found in post! Please update ${file}`
+        throw new Error(msg)
       }
 
       if (!postData.title) {
-        throw new Error(`no title found in post! Please update ${file}`)
+msg = `No title found in post YAML
+
+Please update ${file}
+
+---- The description format is -----
+
+title: "My 50-60 character Human & Keyword Friendly title"
+
+${seperator}
+`
+        throw new Error(msg)
       }
       if (!postData.authors) {
-        //throw new Error(`no author found in post! Please update ${file}`)
+msg = `no author found in post! Please update ${file}
+
+---- Author format is -----
+
+authors:
+  - Serverless
+
+${seperator}
+`
+        throw new Error(msg)
       }
       if (postData.authors && !Array.isArray(postData.authors)) {
-        throw new Error(`Author field is incorrectly formatted.
-Please update ${postPath}
+msg = `Author field is incorrectly formatted as a string.
+
+Please update ${file}
 
 ---- The correct format is -----
 
 authors:
   - AuthorName
   - OptionalAuthorTwo
-`)
+
+${seperator}
+`
+        throw new Error(msg)
+      }
+      if (postData.description && postData.description.length > 185) {
+msg = `Description in ${file} is too long.
+
+It is ${postData.description.length} characters long
+
+Please update keep descriptions under 185 characters long
+${seperator}
+`
+        throw new Error(msg)
       }
       if (!postData.description) {
-        // throw new Error(`no description found in post! Please update ${file}`)
+msg = `No description found in post YAML
+
+Please update ${file}
+
+---- The description format is -----
+
+description: "My 155-170 character long description for SEO purposes"
+
+${seperator}
+`
+        throw new Error(msg)
       }
       if (!postData.thumbnail) {
         // throw new Error(`no thumbnail found in post! Please update ${file}`)
       }
       if (!postData.date) {
-        // throw new Error(`no date found in post! Please update ${file}`)
+        throw new Error(`no date found in post! Please update ${file}`)
       }
 
     } else {
@@ -91,6 +137,7 @@ authors:
 })
 
 
+var seperator = '-----------------------------------------'
 /* utils */
 function hasSameProps(obj1, obj2) {
   return Object.keys(obj1).every((prop) => {

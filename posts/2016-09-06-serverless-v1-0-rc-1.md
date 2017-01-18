@@ -1,5 +1,6 @@
 ---
 layout: Post
+description: "New Serverless variable system for serverless.yml added to the serverless framework"
 title: 'New Release: Serverless V1.0 rc.1'
 date: 2016-09-06
 authors:

@@ -1,8 +1,11 @@
 ---
 title: "Introducing Serverless Partners: Meet Trek10"
+description: "Indiana based consultancy that specializes in using the latest services around container-based & event-driven architectures"
 date: 2016-10-18
 thumbnail: 'https://www.trek10.com/assets/logo.svg'
 layout: Post
+authors:
+  - NickGottlieb
 ---
 
 <img width="700px" class="center" src="https://www.trek10.com/assets/logo.svg">
@@ -12,7 +15,7 @@ We’re collaborating with some of these organizations to highlight their excep
 
 ## Meet Trek10
 
-Trek10 in an Indiana based consultancy that specializes in using the latest and best services around container-based and event-driven architectures alongside the rest of the AWS services to design, build, and support new systems for their customers. They also aim for massive scalability, high up-time, heavy automation, and remarkably low operating costs, much of which they accomplish through the use of AWS Lambda and the Serverless Framework.
+Trek10 is an Indiana based consultancy that specializes in using the latest and best services around container-based and event-driven architectures alongside the rest of the AWS services to design, build, and support new systems for their customers. They also aim for massive scalability, high up-time, heavy automation, and remarkably low operating costs, much of which they accomplish through the use of AWS Lambda and the Serverless Framework.
 
 
 ## Serverless and GraphQL
