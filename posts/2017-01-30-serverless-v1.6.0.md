@@ -9,7 +9,7 @@ authors:
 
 Today we're thrilled to announce the release of the Serverless Framework v1.6.0.
 
-This release is a special one as it's the first version to include official support for a new provider: [OpenWhisk](openwhisk.org).
+This release is a special one as it's the first version to include official support for a new provider: [OpenWhisk](http://openwhisk.org).
 
 Furthermore, we've added a bunch of new features and enhancement you'll enjoy! Let's take a look at the highlights of this release.
 
@@ -21,7 +21,7 @@ Furthermore, we've added a bunch of new features and enhancement you'll enjoy! L
 
 Serverless v1.6 is the first version that officially supports a different provider besides AWS!
 
-From now on you can also write Serverless applications for [OpenWhisk](openwhisk.org)!
+From now on you can also write Serverless applications for [OpenWhisk](http://openwhisk.org)!
 
 The only thing you need to do is to install the [Serverless OpenWhisk plugin](https://github.com/serverless/serverless-openwhisk):
 
