@@ -100,7 +100,7 @@ We're making a slight change and won't follow strict semver anymore.
 
 Stating today we might include breaking changes in every release. However we keep the breaking changes as low and as painless as possible.
 
-Furthermore we'll include guides how you can migrate your current codebase in the [changelog](https://github.com/serverless/serverless/blob/master/CHANGELOG.md).
+Furthermore we'll include guides how you can migrate your current codebase in the [changelog](https://github.com/serverless/serverless/blob/master/CHANGELOG.md). Take a look [here](https://github.com/serverless/serverless/blob/master/CHANGELOG.md#160-30012017) for v1.6 migration guides.
 
 Here's a list of all the breaking changes in this release:
 
