@@ -1,6 +1,6 @@
 ---
-title: Apache OpenWhisk support, Python for invoke local in Serverless Framework v1.6
-description: Apache OpenWhisk support, Python for invoke local in the Serverless Framework v1.6 release.
+title: OpenWhisk support, Python for invoke local in Serverless Framework v1.6
+description: OpenWhisk support, Python for invoke local in the Serverless Framework v1.6 release.
 date: 2017-01-30
 layout: Post
 authors:
@@ -9,7 +9,7 @@ authors:
 
 Today we're thrilled to announce the release of the Serverless Framework v1.6.0.
 
-This release is a special one as it includes the first official support for a new provider: [Apache OpenWhisk](https://openwhisk.org).
+This release is a special one as it includes the first official support for a new provider: [OpenWhisk](https://openwhisk.org).
 
 Furthermore we've added a bunch of new features and enhancement you'll enjoy! Let's look at the highlights of this release.
 
@@ -17,11 +17,11 @@ Furthermore we've added a bunch of new features and enhancement you'll enjoy! Le
 
 **Note:** You can find a complete list of all the updates in the [changelog](https://github.com/serverless/serverless/blob/master/CHANGELOG.md).
 
-### Apache OpenWhisk support
+### OpenWhisk support
 
 Serverless v1.6 is the first version which official supports a different provider other than AWS!
 
-From now on you can also write Serverless applications for [Apache OpenWhisk](https://openwhisk.org)!
+From now on you can also write Serverless applications for [OpenWhisk](https://openwhisk.org)!
 
 The only thing you need to do is to install the [Serverless OpenWhisk plugin](https://github.com/serverless/serverless-openwhisk):
 
