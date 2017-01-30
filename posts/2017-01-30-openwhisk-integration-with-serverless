@@ -1,13 +1,13 @@
 ---
 title: Introducing OpenWhisk Integration with the Serverless Framework
-description: The new OpenWhisk provider plugin allows developers to build applications for the platform using the Serverless Framework.
+description: The new OpenWhisk provider plugin allows developers to build applications for the OpenWhisk cloud platform using the Serverless Framework.
 date: 2017-01-30
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/22410455/110d1f36-e65e-11e6-8db8-87e834504e13.jpg
 layout: Post
 ---
-Today we're excited to announce [OpenWhisk](https://developer.ibm.com/openwhisk/) integration with the Serverless Framework!
+Today we're excited to announce [OpenWhisk](http://openwhisk.org/) integration with the Serverless Framework!
 
-The official [OpenWhisk Provider Plugin](https://github.com/serverless/serverless-openwhisk) allows developers to build applications for the platform using the Serverless Framework.
+The official [OpenWhisk Provider Plugin](https://github.com/serverless/serverless-openwhisk) allows developers to build applications for the OpenWhisk cloud platform using the Serverless Framework.
 
 Special shout out to [James Thomas (@jthomas)](https://github.com/jthomas) at IBM for his awesome contribution spearheading this effort.
 
@@ -40,5 +40,5 @@ You can report bugs or request features by opening an issue in the [Serverless-O
 
 We're excited to hear your feedback.
 
-## What's Next
+## What's Next for OpenWhisk
 The roadmap includes support for non-Node.js runtimes, ensuring compatibility with popular third-party plugins and integrating new features from the platform.
