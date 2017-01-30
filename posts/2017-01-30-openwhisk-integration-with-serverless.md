@@ -1,5 +1,5 @@
 ---
-title: Introducing OpenWhisk Integration with the Serverless Framework
+title: Announcing OpenWhisk Integration with the Serverless Framework
 description: The new OpenWhisk provider plugin allows developers to build applications for the OpenWhisk cloud platform using the Serverless Framework.
 date: 2017-01-30
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/22410455/110d1f36-e65e-11e6-8db8-87e834504e13.jpg
