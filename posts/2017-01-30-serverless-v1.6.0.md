@@ -116,7 +116,25 @@ This release contains lots of work from our awesome community and couldn't have 
 
 Here's a list of all the contributors who have submitted changes to the codebase in this release:
 
-- John Doe
+- Alasdair Nicol
+- Andrew Sprouse
+- Chris Anderson
+- Daniel Schep
+- Dave Townsend
+- Doug Moscrop
+- Eetu Tuomala
+- Erik Erikson
+- Fabien Ruffin
+- James Thomas
+- Luke Childs
+- Rasmus Faddersbøll
+- Ryan S. Brown
+- Ryan Stelly
+- Sergey Semyonov
+- Vlad Golubev
+- domharrington
+- horike37
+- payoub
 
 ### Call for participation
 
