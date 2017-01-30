@@ -27,7 +27,7 @@ The Serverless workflow and developer experience is consistent across all provid
 *Check out these resources to help you get started with OpenWhisk integration.*
 
 ### Intro to the OpenWhisk Serverless Plugin Video
-Learn more about how to use the Serverless Framework with the new OpenWhisk provider plugin in this [quick video].
+Learn more about how to use the Serverless Framework with the new OpenWhisk provider plugin in this [quick video](https://youtu.be/GJY10W98Itc).
 
 ### Serverless Docs
 OpenWhisk is now included in the [Serverless Docs](https://serverless.com/framework/docs/). You'll find a guide to building Serverless applications, CLI command reference, platform event support and an example application.
