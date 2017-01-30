@@ -124,10 +124,7 @@ Serverless has an awesome and vibrant community. Do you want to help us develop 
 
 Congributing isn't just writing code! Chime in into discussion, help with documentation updates or review PRs.
 
-Here's a list of issues and Pull Requests we're currently focusing on. Feel free to take a look and help us:
-
-- [BEGINNER - Some Issue]()
-- [Some PR]()
+Just filter by [our labels](https://github.com/serverless/serverless/labels) such as [easy-pick](https://github.com/serverless/serverless/issues?q=is%3Aopen+is%3Aissue+label%3Astatus%2Feasy-pick), [help-wanted](https://github.com/serverless/serverless/issues?q=is%3Aopen+is%3Aissue+label%3Astatus%2Fhelp-wanted) or [needs-feedback](https://github.com/serverless/serverless/labels/stage%2Fneeds-feedback) to find areas where you can help us!
 
 ### Next Steps
 
