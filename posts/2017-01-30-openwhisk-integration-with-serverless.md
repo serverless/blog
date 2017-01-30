@@ -11,7 +11,9 @@ Today we're excited to announce [OpenWhisk](http://openwhisk.org/) integration w
 
 The official [OpenWhisk Provider Plugin](https://github.com/serverless/serverless-openwhisk) allows developers to build applications for the OpenWhisk cloud platform using the Serverless Framework.
 
-Special shout out to [James Thomas (@jthomas)](https://github.com/jthomas) at IBM for his awesome contribution spearheading this effort.
+Special shout out to [James Thomas (@thomasj)](https://twitter.com/thomasj)) at IBM for his awesome contribution spearheading this effort.
+
+![openwhisk serverless integration](https://cloud.githubusercontent.com/assets/20538501/22434123/748ae372-e6e0-11e6-86d0-38db9941552d.png)
 
 ## OpenWhisk + The Serverless Framework
 The Serverless Framework enables developers to use a [simple manifest file](https://serverless.com/framework/docs/providers/openwhisk/guide/services#serverlessyml) to define [Serverless functions](https://serverless.com/framework/docs/providers/openwhisk/guide/functions/), connect them to [event sources](https://serverless.com/framework/docs/providers/openwhisk/guide/events/) and declare cloud services needed by their application.
