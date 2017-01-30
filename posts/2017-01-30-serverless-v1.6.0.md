@@ -1,6 +1,6 @@
 ---
-title: IBM OpenWhisk support, Python for invoke local in Serverless Framework v1.6
-description: IBM OpenWhisk support, Python for invoke local in the Serverless Framework v1.6 release.
+title: Apache OpenWhisk support, Python for invoke local in Serverless Framework v1.6
+description: Apache OpenWhisk support, Python for invoke local in the Serverless Framework v1.6 release.
 date: 2017-01-30
 layout: Post
 authors:
@@ -9,7 +9,7 @@ authors:
 
 Today we're thrilled to announce the release of the Serverless Framework v1.6.0.
 
-This release is a special one as it includes the first official support for a new provider: [IBM OpenWhisk](https://developer.ibm.com/openwhisk/).
+This release is a special one as it includes the first official support for a new provider: [Apache OpenWhisk](https://openwhisk.org).
 
 Furthermore we've added a bunch of new features and enhancement you'll enjoy! Let's look at the highlights of this release.
 
@@ -17,15 +17,74 @@ Furthermore we've added a bunch of new features and enhancement you'll enjoy! Le
 
 **Note:** You can find a complete list of all the updates in the [changelog](https://github.com/serverless/serverless/blob/master/CHANGELOG.md).
 
-### IBM OpenWhisk support
+### Apache OpenWhisk support
+
+Serverless v1.6 is the first version which official supports a different provider other than AWS!
+
+From now on you can also write Serverless applications for [Apache OpenWhisk](https://openwhisk.org)!
+
+The only thing you need to do is to install the [Serverless OpenWhisk plugin](https://github.com/serverless/serverless-openwhisk):
+
+```bash
+serverless install -g serverless-openwhisk
+```
+
+And create a new service based upon the OpenWhisk template:
+
+```bash
+serverless create --template openwhisk-nodejs`
+```
+
+We'd recommend to take a look into the [OpenWhisk documentation](https://serverless.com/framework/docs/providers/openwhisk/guide/) and the ["Hello World" example](https://github.com/serverless/serverless/tree/master/docs/providers/openwhisk/examples/hello-world) to get started!
+
+There's also an [example application](https://github.com/serverless/examples/tree/master/openwhisk-node-simple) in the [Serverless examples](https://github.com/serverless/examples) repository.
 
 ### Python support for invoke local command
 
+Back in v1.1 we've introduced the "invoke local" plugin so that you can invoke your serverless functions locally.
+
+We started with support for the Node.js runtime but got immediate feedback that Python should be supported as well.
+
+Today we're happy to announce that "invoke local" now supports the Python runtime!
+
+Next up is Java!
+
+Do you have expertise with Java? Great! Please chime in on the discussion about [local Java invocation](https://github.com/serverless/serverless/issues/2864) so that we can add support for this runtime in one of the next releases!
+
 ### Optional Lambda versioning
+
+Versioning your Lambda function was an often requested feature for production environments. In 1.3 we added this feature and introduced Lambda versioning on every deplot. Lambda versioning is turned on by default.
+
+However sometimes you don't want to version your Lambdas. v1.6 introduces a simple way to disable Lambda versioning.
+
+Simply add the `versionFunctions` property to the provider section and set it to `false`:
+
+```yml
+provider:
+  versionFunctions: false
+```
+
+This will turn off Lambda versioning upon the next deployment.
+
+### Significant reduction of CloudFormation Outputs
+
+In the past Serverless added the a bunch of different `Outputs` to the CloudFormation template. This caused some problems with large services since limts for CloudFormation Outputs were reached frequently.
+
+The possibility to opt out of Lambda versioning (which creates an output for your Lambda version) and the removal of the functions `arn` displaying in the "info" plugin will reduce the `Output` count significantly.
+
+Those changes which are available in v1.6 should make it possible to write and deploy larger Serverless services.
 
 ### Reduce memory consumption on deploy by ~50%
 
+Deployments had a huge memory footprint when uploading the artifacts to the S3 bucket. This memory consumption was reduced by ~50%.
+
+Take a look at the [Pull Request](https://github.com/serverless/serverless/pull/3145/files) to see how changing one line of code can make a huge difference in performance.
+
 ### Support for SNS subscriptions to existing topics
+
+Up until now you needed to sign into the AWS console and a permission manually so that your Lambda function can be called with the help of your existing SNS topic.
+
+A Pull Request which was merged in v1.6 makes it possible to specify just the ARN to the SNS topic and Serverless will create the permission automatically.
 
 ### Enhancement and bug fixes
 
@@ -45,11 +104,11 @@ Furthermore we'll include guides how you can migrate your current codebase in th
 
 Here's a list of all the breaking changes in this release:
 
-- BREAKING - Remove getStackName() method
-- BREAKING - Create Log Group Resources By Default
-- BREAKING - Remove on-the-fly arn generation for displayed functions
-- BREAKING - Remove defaults service property
-- BREAKING - Replace IamPolicyLambdaExecution with inline policies and added ManagedPolicyArns to fix VPC permissions
+- [BREAKING - Remove getStackName() method](https://github.com/serverless/serverless/pull/3128)
+- [BREAKING - Create Log Group Resources By Default](https://github.com/serverless/serverless/pull/3155)
+- [BREAKING - Refactor function arn generation for info plugin](https://github.com/serverless/serverless/pull/3125)
+- [BREAKING - Remove defaults service property](https://github.com/serverless/serverless/pull/3130)
+- [BREAKING - Replace IamPolicyLambdaExecution with inline policies and added ManagedPolicyArns to fix VPC permissions](https://github.com/serverless/serverless/pull/2983)
 
 ### Contributors
 
