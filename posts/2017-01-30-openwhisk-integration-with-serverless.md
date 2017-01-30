@@ -14,7 +14,7 @@ The official [OpenWhisk Provider Plugin](https://github.com/serverless/serverles
 Special shout out to [James Thomas (@jthomas)](https://github.com/jthomas) at IBM for his awesome contribution spearheading this effort.
 
 ## OpenWhisk + The Serverless Framework
-Developers can use a [simple manifest file](https://serverless.com/framework/docs/providers/openwhisk/guide/services#serverlessyml) to define [Serverless functions](https://serverless.com/framework/docs/providers/openwhisk/guide/functions/), connect them to [event sources](https://serverless.com/framework/docs/providers/openwhisk/guide/events/) and declare cloud services needed by their application.
+The Serverless Framework enables developers to use a [simple manifest file](https://serverless.com/framework/docs/providers/openwhisk/guide/services#serverlessyml) to define [Serverless functions](https://serverless.com/framework/docs/providers/openwhisk/guide/functions/), connect them to [event sources](https://serverless.com/framework/docs/providers/openwhisk/guide/events/) and declare cloud services needed by their application.
 
 The framework then [deploys these Serverless applications](https://serverless.com/framework/docs/providers/openwhisk/cli-reference/deploy/) to the cloud provider.
 
@@ -24,7 +24,7 @@ Multi-provider support was a goal we laid out following [the Serverless Framewor
 The Serverless workflow and developer experience is consistent across all providers. You don't need to learn custom commands or syntax for each platform.
 
 ## Resources for Getting Started
-Check out these resources to help you get started with OpenWhisk integration.
+*Check out these resources to help you get started with OpenWhisk integration.*
 
 ### Intro to the OpenWhisk Serverless Plugin Video
 Learn more about how to use the Serverless Framework with the new OpenWhisk provider plugin in this [quick video].
