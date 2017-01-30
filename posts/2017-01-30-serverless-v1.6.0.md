@@ -1,6 +1,6 @@
 ---
-title: IBM OpenWhisk support, CloudWatch events, Python for invoke local, F# service template in Serverless Framework v1.6
-description: IBM OpenWhisk support, CloudWatch events, Python for invoke local, F# service template in the Serverless Framework v1.6 release.
+title: IBM OpenWhisk support, Python for invoke local in Serverless Framework v1.6
+description: IBM OpenWhisk support, Python for invoke local in the Serverless Framework v1.6 release.
 date: 2017-01-30
 layout: Post
 authors:
@@ -19,19 +19,13 @@ Furthermore we've added a bunch of new features and enhancement you'll enjoy! Le
 
 ### IBM OpenWhisk support
 
-### CloudWatch event support
-
 ### Python support for invoke local command
-
-### F# service template
 
 ### Optional Lambda versioning
 
 ### Reduce memory consumption on deploy by ~50%
 
 ### Support for SNS subscriptions to existing topics
-
-### Customize stack names
 
 ### Enhancement and bug fixes
 
@@ -56,7 +50,6 @@ Here's a list of all the breaking changes in this release:
 - BREAKING - Remove on-the-fly arn generation for displayed functions
 - BREAKING - Remove defaults service property
 - BREAKING - Replace IamPolicyLambdaExecution with inline policies and added ManagedPolicyArns to fix VPC permissions
-- BREAKING - Patch DynamoDB and kinesis stream detection to allow use of GetAtt/Importvalue
 
 ### Contributors
 
