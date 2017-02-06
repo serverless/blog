@@ -7,13 +7,25 @@ layout: Post
 authors:
   - AnnaDoubkova
 ---
-Hi, I'm [Anna Doubkova](https://github.com/lithin), a software engineer at [Red Badger](https://red-badger.com/) in London. In my previous article (link link), you learnt what Serverless plugins are and how you can hook into the Serverless Framework yourself. In this follow-up article, you’ll see how to write an implementation of an actually useful plugin. To do that, we’ll be following the main ways of extending the framework:
+Hi, I'm [Anna Doubkova](https://github.com/lithin), a software engineer at [Red Badger](https://red-badger.com/) in London. In my previous article (link link), you learnt what Serverless plugins are and how you can hook into the Serverless Framework yourself. In this follow-up article, you’ll see how to write implementation of a plugin that could be used in real life.
+
+##Extending Serverless Framework
+Plugins extend functionality of the framework to make it tailored for your use-case. The framework is very flexible and allows you to take different strategies to implementing your logic. The main ways are:
 
 1.	Writing a new command
 2.	Extending an existing command to implement additional functionality
 3.	Writing your own implementation of an existing command from scratch
 
 ##Writing a new command
-In the previous article, we used a Serverless Framework template to create a new command and hook into its lifecycle events. We’ll be doing something similar this time but using a real-world, useful example that will show you the ropes of how Serverless plugin implementation works.
+Let's have a look at a practical example that will illustrate why we'd want to write a new command for the Serverless Framework.
 
-Imagine you have a microservice defined in your `serverless.yml` that also contains a DynamoDB table. You can deploy the functions, add API gateway endpoints, and create the table automatically by running `serverless deploy`. Now you want to backup/download backup/download data from the table. If you do such a thing frequently, it'd be very tedious to repeat aws-cli commands over and over. Instead, let's write a plugin for it.
+Imagine you have a microservice defined in your `serverless.yml` that contains a DynamoDB table. You can deploy the functions, add API gateway endpoints, and create the table automatically by running `serverless deploy`. Easy!
+
+What if you want to copy data from production to dev table so that you can test your application with real data? You could export and import data from one table to another but that'd be very tedious if done frequently. Instead, we'll write a plugin for it.
+
+
+
+console.log('aws', serverless.providers.aws);
+console.log('utils', serverless.utils);
+console.log('variables', serverless.variables);
+console.log('config', serverless.config);
