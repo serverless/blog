@@ -32,7 +32,7 @@ serverless install -g serverless-openwhisk
 And create a new service based upon the OpenWhisk template:
 
 ```bash
-serverless create --template openwhisk-nodejs`
+serverless create --template openwhisk-nodejs
 ```
 
 We recommend checking out the [OpenWhisk documentation](https://serverless.com/framework/docs/providers/openwhisk/guide/) and the ["Hello World" example](https://github.com/serverless/serverless/tree/master/docs/providers/openwhisk/examples/hello-world) to get started!
