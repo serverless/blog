@@ -10,11 +10,11 @@ authors:
 
 # Quick Start to Test-Driven Development with Serverless Framework
 
-If you don’t have the [magic](http://www.commitstrip.com/en/2017/02/08/where-are-the-tests/) which keeps your code working, the following instructions will help you start test-driven Serverless applications development.
+If you don’t have the [magic](http://www.commitstrip.com/en/2017/02/08/where-are-the-tests/) which keeps your code working, the following instructions will help you start test-driven Serverless application development.
 
 What I like in Serverless Framework the most, is that it is a development tool which gathers together all the used cloud resources to a structured project. With the whole stack in the same project, it is also easy to start writing tests. 
 
-Usually, for a new project I use [SC5 Serverless boilerplate](https://github.com/sc5/sc5-serverless-boilerplate), which is a good setup, to begin with. But in this tutorial, I start with an existing example [aws-node-simple-http-endpoint](https://github.com/serverless/examples/tree/master/aws-node-simple-http-endpoint) project, to show how easy it is to add Serverless testing plugin even to an existing project. 
+Usually, for a new project I use [SC5 Serverless boilerplate](https://github.com/sc5/sc5-serverless-boilerplate), which is a good setup to begin with. But in this tutorial, I start with an existing example [aws-node-simple-http-endpoint](https://github.com/serverless/examples/tree/master/aws-node-simple-http-endpoint) project, to show how easy it is to add Serverless testing plugin even to an existing project. 
 
 Let’s start by installing the service, changing the directory to the one that `sls install` command creates and installing dependencies what service requires to run.
 
@@ -26,7 +26,7 @@ npm install
 
 Then install the [Mocha plugin](https://github.com/sc5/serverless-mocha-plugin) with `npm install --save-dev serverless-mocha-plugin`. If you are more familiar writing tests with Jest, you can use [Jest plugin](https://github.com/sc5/serverless-jest-plugin).
 
-Next step is to add the installed plugin to serverless.yml. This project doesn't have any plugins yet installed so the plugin block is also added.
+Next step is to add the installed plugin to serverless.yml. This project doesn't have any plugins yet installed so the `plugins` key is also added.
 
 ```Yaml
 plugins:
@@ -41,7 +41,7 @@ create function ............... Create a function into the service
 invoke test ................... Invoke test(s)
 ```
 
-To create a test to existing function, use `create test` command with parameter `-f` or `--function`. In this example project, there is already a function called `currentTime`. To create test stub for that, run `sls create test -f currentTime` and it should print out `Serverless: serverless-mocha-plugin: created test/currentTime.js`.
+To create a test to existing function, use `create test` command with parameter `-f` or `--function`. In this example project, there is already a function called `currentTime`. To create test stub for that, run `sls create test -f currentTime` and it should print out `Serverless: serverless-mocha-plugin: created test/currentTime.js` as a result.
 
 Next, invoke the test by running `sls invoke test` and to output should be something like this:
 
@@ -66,7 +66,7 @@ it('implement tests here', () => {
 });
 ```
 
-Replace that with following one, which tests that statusCode is 200 and response body contains a message that has the time. In the real world scenario, you may like to fake the date with [Sinon.JS](http://sinonjs.org/) or similar.
+Replace that with following one, which tests that statusCode is 200 and response body contains a message that has the time. In the real world scenario, you may like to fake the date with [Sinon.JS](http://sinonjs.org/) or similar so that you can test the response with predefined dates.
 
 ```JavaScript
 it('should return current time', () => {
