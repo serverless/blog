@@ -77,7 +77,7 @@ Recently we've introduced our newest Open Source effort. It's called ["Scope"](h
 
 We built this tool to scratch our own itch of maintaining and guiding through the development process of the Serverless Framework.
 
-A deployed version for our Serverless Framework repository is deployed at;
+A deployed version for our Serverless Framework repository is deployed at:
 
 https://serverless.com/framework/status/
 
