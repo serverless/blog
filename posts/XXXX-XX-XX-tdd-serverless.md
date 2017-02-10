@@ -41,9 +41,9 @@ create function ............... Create a function into the service
 invoke test ................... Invoke test(s)
 ```
 
-To create test to existing function, use `create test` command with parameter `-f` or `--function`. In this example project there is a already a function called `currentTime`. To create test stub for that, run `sls create test -f currentTime` and it should print out `Serverless: serverless-mocha-plugin: created test/currentTime.js`.
+To create test to existing function, use `create test` command with parameter `-f` or `--function`. In this example project there is already a function called `currentTime`. To create test stub for that, run `sls create test -f currentTime` and it should print out `Serverless: serverless-mocha-plugin: created test/currentTime.js`.
 
-Next, invoke the test by running `sls invoke test` and to output should be something like this.
+Next, invoke the test by running `sls invoke test` and to output should be something like this:
 
 ```Bash
   currentTime
@@ -53,7 +53,7 @@ Next, invoke the test by running `sls invoke test` and to output should be somet
   1 passing (8ms)
 ```
 
-Now to the fun part – implementing the actual test. The tests that Serverless Mocha plugin creates are located in `test` directory, which is default directory for mocha tests. If you wish to use different directory you can create tests using `-p` or `--path` parameter when creating and invoking tests. Open the `tests/currentTime.js` to your code editor.
+Now to the fun part – implementing the actual tests. The tests that Serverless Mocha plugin creates are located in `test` directory, which is default directory for mocha tests. If you prefer to use different directory you can create tests using `-p` or `--path` parameter when creating and invoking tests. Open the `tests/currentTime.js` to your code editor.
 
 There is a generated test which just tests that response is not empty.
 
@@ -129,9 +129,9 @@ module.exports.endpoint = (event, context, callback) => {
 };
 ```
 
-One more time, run the `sls ivoke test` command and result should be successful.
+One more time, run the `sls invoke test` command and result should be successful.
 
-Beside that the tests keeps your code functional, the benefit of using test instead of e.g. `sls invoke` is that you can test the same handler function easily with different payloads.
+Beside that the tests keeps your code functional, the benefit of using test instead of e.g. `sls invoke local` is that you can test the same handler function easily with different payloads.
 
 If you need working example here is the repository I used while making this tutorial [my-tdd-service](https://github.com/laardee/my-tdd-service).
 
