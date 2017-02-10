@@ -1,6 +1,6 @@
 ---
-title: CloudWatch Events support, deprecation notices, lower memory usage during zipping, bugfixes and improvements in Serverless Framework v1.7
-description: CloudWatch Events support, deprecation notices, lower memory usage during zipping, bugfixes and improvements in the Serverless Framework v1.7 release.
+title: CloudWatch Events support, CLI deprecation warnings, lower memory usage during zipping, bugfixes and improvements in Serverless Framework v1.7
+description: CloudWatch Events support, CLI deprecation warnings, lower memory usage during zipping, bugfixes and improvements in the Serverless Framework v1.7 release.
 date: 2017-02-14
 layout: Post
 authors:
@@ -39,7 +39,7 @@ Serverless is more and more used in CI / CD systems. Oftentimes the resources su
 
 This release introduces a [one-line bugfix](https://github.com/serverless/serverless/pull/3220) which reduces the memory consumtion during the zipping process by about ~40%.
 
-This should make it easier for you to use Serverless in a less powerful CI / CD machine.
+This should e.g. make it easier for you to use Serverless in a less powerful CI / CD machine.
 
 ### Enhancement and bug fixes
 
