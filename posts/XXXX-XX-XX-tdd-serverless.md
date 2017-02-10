@@ -12,9 +12,9 @@ authors:
 
 If you don’t have the [magic](http://www.commitstrip.com/en/2017/02/08/where-are-the-tests/) which keeps your code working, the following instructions will help you start test-driven Serverless applications development.
 
-What I like in Serverless Framework the most, is that it is a development tool which gathers together all the cloud resources which are used in a structured project. With the whole stack in the same project, it is also easy to start writing tests. 
+What I like in Serverless Framework the most, is that it is a development tool which gathers together all the used cloud resources to a structured project. With the whole stack in the same project, it is also easy to start writing tests. 
 
-Usually, for a new project I use [SC5 Serverless boilerplate](https://github.com/sc5/sc5-serverless-boilerplate), which is a good setup, to begin with. But in this tutorial, I start with an existing example [aws-node-simple-http-endpoint](https://github.com/serverless/examples/tree/master/aws-node-simple-http-endpoint) project, just to demonstrate how easy it is to add Serverless testing plugin even to an existing project. 
+Usually, for a new project I use [SC5 Serverless boilerplate](https://github.com/sc5/sc5-serverless-boilerplate), which is a good setup, to begin with. But in this tutorial, I start with an existing example [aws-node-simple-http-endpoint](https://github.com/serverless/examples/tree/master/aws-node-simple-http-endpoint) project, to show how easy it is to add Serverless testing plugin even to an existing project. 
 
 Let’s start by installing the service, changing the directory to the one that `sls install` command creates and installing dependencies what service requires to run.
 
@@ -33,7 +33,7 @@ plugins:
   - serverless-mocha-plugin
 ```
 
-Now, run `sls` and the output should include following new commands that are included in the Mocha plugin.
+Now, run `sls` and the output should include following new commands that Mocha plugin adds to Serverless Framework.
 
 ```
 create test ................... Create mocha tests for service / function
@@ -53,9 +53,9 @@ Next, invoke the test by running `sls invoke test` and to output should be somet
   1 passing (8ms)
 ```
 
-Now to the fun part – implementing the actual tests. The tests that Serverless Mocha plugin creates are located in `test` directory, which is default directory for mocha tests. If you prefer to use different directory you can create tests using `-p` or `--path` parameter when creating and invoking tests. Open the `tests/currentTime.js` to your code editor.
+Now to the fun part – implementing the actual tests. The tests that Serverless Mocha plugin creates are in `test` directory, which is default directory for mocha tests. If you prefer to use different directory you can create tests using `-p` or `--path` parameter when creating and invoking tests. Open the `tests/currentTime.js` to your code editor.
 
-There is a generated test which just tests that response is not empty.
+There is a generated test which only tests that response is not empty.
 
 ```JavaScript
 it('implement tests here', () => {
@@ -133,4 +133,4 @@ One more time, run the `sls invoke test` command and result should be successful
 
 Beside that the tests keep your code functional, the benefit of using test instead of e.g. `sls invoke local` is that you can test the same handler function easily with different payloads.
 
-If you need a working example here is the repository I used while making this tutorial [my-tdd-service](https://github.com/laardee/my-tdd-service).
+If you need a working example here is the [repository ](https://github.com/laardee/my-tdd-service) I used while making this tutorial.
