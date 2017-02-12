@@ -1,5 +1,5 @@
 ---
-title: CloudWatch Events support, CLI deprecation warnings, lower memory usage during zipping, bugfixes and improvements in Serverless Framework v1.7
+title: Trigger Lambda functions through CloudWatch Events with Serverless v1.7
 description: CloudWatch Events support, CLI deprecation warnings, lower memory usage during zipping, bugfixes and improvements in the Serverless Framework v1.7 release.
 date: 2017-02-14
 layout: Post
