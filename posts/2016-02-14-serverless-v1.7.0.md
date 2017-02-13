@@ -23,13 +23,13 @@ Serverless v1.7 has you covered and introduces the new `cloudwatchEvent` event s
 
 ### Logging of Deprecation changes
 
-We heard you and we agree that introducing breaking changes during release can be pretty painful.
+We heard you and we agree that introducing breaking changes can be pretty painful.
 
 With this release we introduce logging messages which will show you what breaking changes will be introduced in the upcoming release.
 
-You'll see them by default after upgrading to the next version but you can also disable them if you don't want to see them anymore.
+You'll see them by default after upgrading to the new Serverless version but you can also disable them if you don't want to see them anymore.
 
-The idea here is that we show you all the upcoming breaking changes and introduce them one version after the announcement.
+The idea here is that we show you all the upcoming breaking changes and implement them one version after the announcement.
 
 This should give you enough time to update your codebase so that Serverless will run smoothly.
 
@@ -65,7 +65,7 @@ Here's a list of all the contributors who've PRed changes for this release:
 
 ### Get involved
 
-Serverless has a really helpfukl, awesome and vibrant community. Do you want to help us develop the best Serverless toolings out there?
+Serverless has a really helpful, awesome and vibrant community. Do you want to help us develop the best Serverless toolings out there?
 
 Congributing isn't just about code! Chime in on discussion, help with documentation updates or review PRs.
 
@@ -77,7 +77,7 @@ Recently we've introduced our newest Open Source effort. It's called ["Scope"](h
 
 We built this tool to scratch our own itch of maintaining and guiding through the development process of the Serverless Framework.
 
-A deployed version for our Serverless Framework repository is deployed at:
+A deployed version for our Serverless Framework repository can be found here:
 
 https://serverless.com/framework/status/
 
