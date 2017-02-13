@@ -66,7 +66,7 @@ it('implement tests here', () => {
 });
 ```
 
-Replace that with following one, which tests that statusCode is 200 and response body contains a message that has the time. In the real world scenario, you may like to fake the date with [Sinon.JS](http://sinonjs.org/) or similar so that you can test the response with predefined dates.
+Replace that with following one, which tests that statusCode is 200 and response body contains a message that has the time. In the real life, you may like to fake the date with [Sinon.JS](http://sinonjs.org/) or similar so that you can test the response with predefined dates.
 
 ```JavaScript
 it('should return current time', () => {
@@ -88,13 +88,13 @@ After invoking the tests again with `sls invoke test` command, the output should
   1 passing (8ms)
 ```
 
-The first test is now ready, let's create some more! Now we have a function that returns time, so we need to know the date also. With `sls create function` command you are able to create a function and test for it.
+The first test is now ready, let's create some more! Now we have a function that returns time, so we need to know the date also. With `sls create function` command you are able to create a function and test case for it.
 
 ```Bash
 sls create function -f currentDate --handler date/handler.endpoint
 ```
 
-Then open `test/currentDate.js` to your editor and replace the default `implement tests here` test block with the following snippet.
+Then open `test/currentDate.js` to your editor and replace the default `implement tests here` test block with snippet:
 
 ```JavaScript
 it('should return current date', () => {
@@ -129,7 +129,7 @@ module.exports.endpoint = (event, context, callback) => {
 };
 ```
 
-One more time, run the `sls invoke test` command and result should be successful.
+Once again, run the `sls invoke test` command and result should be successful.
 
 Beside that the tests keep your code functional, the benefit of using test instead of e.g. `sls invoke local` is that you can test the same handler function easily with different payloads.
 
