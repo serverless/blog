@@ -21,31 +21,53 @@ Have you ever wanted to connect custom CloudWatch rules to fire your Lambda func
 
 Serverless v1.7 has you covered and introduces the new `cloudwatchEvent` event source!
 
-### Logging of Deprecation changes
+Here's an example how the new `cloudwatchEvent` can be used:
+
+```yml
+functions:
+  notifier:
+    handler: handler.notifier
+    events:
+      - cloudwatchEvent:
+          event:
+            source:
+              - "aws.ec2"
+            detail-type:
+              - "EC2 Instance State-change Notification"
+            detail:
+               state:
+                 - pending
+```
+
+You can find more about the new CloudWatch Event support in the [corresponding documentation](https://serverless.com/framework/docs/providers/aws/events/cloudwatch-event).
+
+### Logging of upcoming deprecations
 
 We heard you and we agree that introducing breaking changes can be pretty painful.
 
-With this release we introduce logging messages which will show you what breaking changes will be introduced in the upcoming release.
+With this release we introduce logging messages which will show you what breaking changes will be introduced in the next release (v1.8 in this case).
 
 You'll see them by default after upgrading to the new Serverless version but you can also disable them if you don't want to see them anymore.
 
-The idea here is that we show you all the upcoming breaking changes and implement them one version after the announcement.
+The idea here is that we inform you about all the upcoming breaking changes we'll introduce in the next release.
 
 This should give you enough time to update your codebase so that Serverless will run smoothly.
+
+As usual we keep the breaking changes as minimal as possible so that updating from one version to the other shouldn't be too hard.
 
 ### Reduced memory footprint during zipping
 
 Serverless is more and more used in CI / CD systems. Oftentimes the resources such as CPU or Memory of those system tend to be limited.
 
-This release introduces a [one-line bugfix](https://github.com/serverless/serverless/pull/3220) which reduces the memory consumtion during the zipping process by about ~40%.
+This release introduces a [one-line bugfix](https://github.com/serverless/serverless/pull/3220) which reduces the memory consumption during the zipping process by about ~40%.
 
-This should e.g. make it easier for you to use Serverless in a less powerful CI / CD machine.
+This should e.g. make it easier for you to use Serverless on a less powerful machine (such as a CI / CD system).
 
 ### Enhancement and bug fixes
 
-We've also slashed some nasty bugs and introduced some enhancements.
+We've also fixed some nasty bugs and introduced some enhancements.
 
-> Thanks for reporting the bugs and opening issues to improve Serverless!
+> Thanks for reporting bugs and opening issues to improve Serverless!
 
 ### Upcoming breaking changes
 
@@ -53,7 +75,9 @@ Here's a list of all the breaking changes which will be introduced in Serverless
 
 **Note:** You'll see the same list in the CLI if you run a Serverless command (and haven't disabled it).
 
-- [BREAKING - Some Breaking change](https://github.com/serverless/serverless)
+- [BREAKING - Replace IamPolicyLambdaExecution with inline policies and added ManagedPolicyArns to fix VPC permissions](https://github.com/serverless/serverless/pull/2983)
+
+*You'll always get the most recent list with breaking changes when you take a look at the [upcoming milestone](https://github.com/serverless/serverless/milestones) or in the Serverless CLI.*
 
 ### Contributors
 
