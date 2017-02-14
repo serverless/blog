@@ -39,7 +39,7 @@ functions:
                  - pending
 ```
 
-You can find more about the new CloudWatch Event support in the [corresponding documentation](https://serverless.com/framework/docs/providers/aws/events/cloudwatch-event).
+You can find more about the new CloudWatch Event support in the [corresponding documentation](https://serverless.com/framework/docs/providers/aws/events/cloudwatch-event/).
 
 ### Logging of upcoming deprecations
 
