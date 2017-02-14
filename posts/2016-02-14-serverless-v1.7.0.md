@@ -76,6 +76,7 @@ Here's a list of all the breaking changes which will be introduced in Serverless
 **Note:** You'll see the same list in the CLI if you run a Serverless command (and haven't disabled it).
 
 - [BREAKING - Replace IamPolicyLambdaExecution with inline policies and added ManagedPolicyArns to fix VPC permissions](https://github.com/serverless/serverless/pull/2983)
+- [BREAKING - Update function name displaying for info plugin](https://github.com/serverless/serverless/pull/3239)
 
 *You'll always get the most recent list with breaking changes when you take a look at the [upcoming milestone](https://github.com/serverless/serverless/milestones) or in the Serverless CLI.*
 
