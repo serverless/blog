@@ -86,7 +86,20 @@ This release contains lots of hard work from our awesome community and wouldn't 
 
 Here's a list of all the contributors who've PRed changes for this release:
 
-- John Doe
+- Andrey Tserkus 
+- Bruno Belotti 
+- Chris Selmer 
+- Dan Caddigan 
+- Francesc Rosas 
+- James Andersen 
+- James Thomas 
+- Joey van Dijk 
+- Marc Abramowitz 
+- Nikos Katsikanis 
+- Steve Persch 
+- Vlad Golubev 
+- dan moore 
+- horike37
 
 ### Get involved
 
