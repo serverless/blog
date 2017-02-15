@@ -1,5 +1,5 @@
 ---
-title: 'How To Write Your First Plugin For The Serverless Framework'
+title: 'How To Write Your First Plugin For The Serverless Framework - Part 1'
 description: "Learn the basics of creating a Serverless plugin to extend the frameworks functionality"
 date: 2017-01-04
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/21665215/e3c9aae6-d2b0-11e6-9865-498d91318e7a.png
@@ -198,4 +198,4 @@ class ServerlessPlugin {
 
 That, however, _might not be quite enough_ in a real world project.
 
-You'll learn **how to write implementations** of plugins, what the **serverless object** is all about, and how you can approach writing plugins in **multiple ways** - in the follow-up post coming soon.
+You'll learn **how to write implementations** of plugins, what the **serverless object** is all about, and how you can approach writing plugins in **multiple ways** - in [How To Write Your First Serverless Plugin - Part 2](https://serverless.com/blog/writing-serverless-plugins-2/).
