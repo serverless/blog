@@ -2,21 +2,21 @@
 title: 'How To Write Your First Plugin For The Serverless Framework - Part 2'
 description: "Now that you've written your fist Serverless plugin, learn about several approaches to implementation."
 date: 2017-02-15
-thumbnail: https://cloud.githubusercontent.com/assets/20538501/22942760/731970b8-f2b0-11e6-9b64-d9756cba4d0b.png
+thumbnail: https://cloud.githubusercontent.com/assets/20538501/22978450/58c89e48-f358-11e6-96b1-dd665f3c9c5e.png
 layout: Post
 authors:
   - AnnaDoubkova
 ---
 Hi, I'm [Anna Doubkova](https://github.com/lithin), a software engineer at [Red Badger](https://red-badger.com/) in London. In my previous post ([How To Write Your First Plugin for the Serverless Framework - Part 1](https://serverless.com/blog/writing-serverless-plugins/)), you learned what Serverless plugins are and how you can use them to hook into the Serverless Framework yourself. In this follow-up post, you’ll see how to write implementation of a plugin that could be used in real life.
 
-## Extending the Serverless Framework
+## Extending The Serverless Framework
 Plugins extend functionality of the framework to tailor it for your use case. The framework is very flexible and allows you to take different approaches to implementing your logic. The main ways are:
 
 1.	Writing a new command
 2.	Extending an existing command to implement additional functionality
 3.	Writing your own implementation of an existing command from scratch
 
-## Writing a New Command
+## Writing A New Command
 Let's have a look at a practical example that will illustrate why you'd want to write a new command for the Serverless Framework.
 
 Imagine you have a microservice defined in your `serverless.yml` that contains a DynamoDB table. You can deploy the functions, add API Gateway endpoints, and create the table automatically by running `serverless deploy`. Easy!
@@ -202,7 +202,7 @@ And we're done!
 
 Somehow, this doesn't quite feel satisfying. Why should this be a Serverless plugin when really we could write this easily as node or bash script?
 
-## Why Serverless Plugin?
+## Why Create A Serverless Plugin?
 To see where the Serverless Framework helps us, we need to dig a bit deeper. Generally speaking, it contains whatever we specified in `serverless.yml`. To give a few practical examples related to our case:
 
 - region
@@ -357,7 +357,7 @@ const getTableName = (serverless, options, isUpload = false) => {
 
 Although this solution has its issues, it makes the plugin yet a bit more reusable and resilient.
 
-## Plugin Done
+## Ready
 Well done! You've just finished a Serverless Framework plugin that not only solves a real-world issue, but also can be easily packaged, published to npm and shared with others!
 
 There's yet much more to explore. What other things can we get from the `serverless` object? How do we hook into existing commands to extend them? How do we write a plugin that could be used, say, with both AWS and OpenWhisk?
