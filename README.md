@@ -1,6 +1,6 @@
 # [Serverless Blog](https://serverless.com/blog/)
 
-<a href="https://www.youtube.com/watch?v=ps1oQeg-0ss"><img align="right" width="465" height="241" src="https://cloud.githubusercontent.com/assets/532272/23035035/bb26026c-f432-11e6-9338-a603b8cb32b4.png"></a>
+<a href="https://www.youtube.com/watch?v=ps1oQeg-0ss" target="_blank"><img align="right" width="465" height="241" src="https://cloud.githubusercontent.com/assets/532272/23035035/bb26026c-f432-11e6-9338-a603b8cb32b4.png"></a>
 
 Welcome to the serverless blog repo! [Contributions, typo fixes and pull requests are welcome](https://github.com/serverless/blog/new/master/post) :thumbsup:
 
