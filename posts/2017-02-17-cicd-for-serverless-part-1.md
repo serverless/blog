@@ -1,11 +1,11 @@
 ---
 title: CICD for Serverless Part 1: Mocha Endpoint Testing
 description: Part 1 of 2 on how to implement a CICD workflow for a Serverless project
-date: 
+date: 2017-02-17
 thumbnail: https://cldup.com/xFVFxOioAU.svg
 layout: Post
 authors:
-  - nerdguru
+  - PeteJohnson
 ---
 
 By day, I'm a Technical Solutions Architect at Cisco  where my primary job is to teach Cisco's vast ecosystem of partners to present the value of CloudCenter ([formerly CliQr](http://www.cisco.com/c/en/us/about/corporate-strategy-office/acquisitions/cliqr.html)), which is a Cloud Management Platform that uses abstraction on top of multiple IaaS APIs to enable a systems administrator to manage applications running on different clouds from a single pane of glass.  But since March of last year, [I've been using AWS Lambda on a personal project](https://fmlnerd.com/2016/08/16/30k-page-views-for-0-21-a-serverless-story/) and quickly became interested at what the good folks here at the Serverless Framework have been doing to similarly abstract details of different FaaS platforms to lower the learning curve and deployment overhead for developers.
