@@ -14,9 +14,13 @@ But since March of last year, [I've been using AWS Lambda on a personal project]
 
 In this 2-part series I'll demonstrate how it's possible for emerging FaaS technology to coexist with modern programming techniques like test-driven development (TDD) and Continuous Integration/Continuous Delivery (CICD). I'll show you how to perform automated endpoint testing using Mocha (this post) and a AWS CodePipeline CICD workflow (next post).
 
-I'm kind of a web old timer. My first web application went into production in January of 1996. It was written in CGI-BIN Perl, only worked with a specific version of Mosaic, and used `<pre>` tags to space the page elements because the `<table>` tag wasn't part of the HTML specification yet. As a web veteran, the current state of FaaS reminds me of other technology waves in that it shows great promise, but needs to change some minds before it can experience widespread adoption.
-	
-So when I met up with the Serverless Framework team in Las Vegas at their mixer during AWS re:Invent, among the things we talked about was the need for more complete examples. And how to demonstrate how this cutting edge technology can coexist with modern programming techniques like test-driven development (TDD) and Continuous Integration/Continuous Delivery (CICD). [The team followed through with an excellent set of examples](https://github.com/serverless/examples) and [I riffed off one of them](https://github.com/nerdguru/serverlessTodos) to provide automated endpoint testing using Mocha (this post) and a AWS CodePipeline CICD workflow (next time).  
+I'm kind of a web old timer. My first web application went into production in January of 1996. It was written in CGI-BIN Perl, only worked with a specific version of Mosaic, and used `<pre>` tags to space the page elements because the `<table>` tag wasn't part of the HTML specification yet.
+
+As a web veteran, the current state of FaaS reminds me of other technology waves in that it shows great promise, but needs to change some minds before it can experience widespread adoption.
+
+So when I met up with the Serverless Framework team in Las Vegas at their mixer during AWS re:Invent, among the things we talked about was the need for more complete examples. And how to demonstrate how this cutting edge technology can coexist with modern programming techniques like test-driven development (TDD) and Continuous Integration/Continuous Delivery (CICD).
+
+[The team followed through with an excellent set of examples](https://github.com/serverless/examples) and [I riffed off one of them](https://github.com/nerdguru/serverlessTodos) to provide automated endpoint testing using Mocha (this post) and a AWS CodePipeline CICD workflow (next time).  
 
 At a high level, the whole thing looks like this:
 
@@ -62,6 +66,8 @@ When you deploy the service, set an environment variable containing the endpoint
 This enables a team of developers all working on the same Serverless Framework project to deploy the service independently and run tests locally. Should those individuals then merge their code and perform pull requests on the master branch, those changes and tests could be integrated into a CICD workflow when bound for staging or production.  Speaking of . . .
 
 ## Next Time: CICD with AWS CodePipeline
-Now that we have automated testing for our simple todos example, the next step would be to automate the whole toolchain in a CICD workflow.  In my case, I chose to do what with the newly announced AWS CodePipeline, which will look at the master branch of a repo on GitHub, download it when there has been a change and then execute a set of steps that causes the service to be deployed and tested. We'll cover this in Part 2 coming next week.
+Now that we have automated testing for our simple todos example, the next step would be to automate the whole toolchain in a CICD workflow.  In my case, I chose to do what with the newly announced AWS CodePipeline, which will look at the master branch of a repo on GitHub, download it when there has been a change and then execute a set of steps that causes the service to be deployed and tested.
+
+We'll cover this in Part 2 coming next week.
 
 
