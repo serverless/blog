@@ -22,7 +22,7 @@ So when I met up with the Serverless Framework team in Las Vegas at their mixer 
 
 [The team followed through with an excellent set of examples](https://github.com/serverless/examples) and [I riffed off one of them](https://github.com/nerdguru/serverlessTodos) to provide automated endpoint testing using Mocha (this post) and a AWS CodePipeline CICD workflow (next time).  
 
-At a high level, the whole thing looks like this:
+**At a high level, the whole thing looks like this:**
 
 ![Serverless CICD Diagram](https://s3.amazonaws.com/analyzer.fmlnerd.com/img/ServerlessCICDmed.png)
 
