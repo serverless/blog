@@ -1,6 +1,6 @@
 ---
 title: 'How To Write Your First Plugin For The Serverless Framework - Part 2'
-description: "Now that you've written your fist Serverless plugin, learn about several approaches to implementation."
+description: "Now that you've written your first Serverless plugin, learn about different approaches to implementation in part 2 of this series."
 date: 2017-02-15
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/22978450/58c89e48-f358-11e6-96b1-dd665f3c9c5e.png
 layout: Post
