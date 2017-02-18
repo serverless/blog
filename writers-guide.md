@@ -4,7 +4,7 @@ Use this Serverless Writer’s Guide as a resource to help you get started. This
 
 ## Suggested Topics
 
-* Serverless Architecture
+* Serverless Architecture.
 * Serverless Framework How-To posts or Tutorials
 * Answering Forum Questions
 * Startup/Company Culture
