@@ -25,7 +25,7 @@ Include the post metadata at the top:
 ---
 title: My awesome post title
 description: "This post is about awesome stuff!"
-date: 2016-05-25
+date: 2016-07-25
 thumbnail: 'http://url-to-thumbnail.jpg'
 layout: Post
 authors:
