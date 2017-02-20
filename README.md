@@ -150,4 +150,4 @@ Need to convert Word to markdown? You can use [this handy Word to Markdown Conve
 
 ## Recommended Writing Apps
 
-[hemingwayapp](http://www.hemingwayapp.com/desktop.html) - Hemingway helps you write with power and clarity by highlighting adverbs, passive voice, and dull, complicated words.
+[hemingwayapp](http://www.hemingwayapp.com/desktop.html) - Hemingway helps you write with power and clarity by highlighting adverbs, passive voice, and dull, complicated words
