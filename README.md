@@ -8,7 +8,7 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
 - [Adding author details](#how-to-add-author-information)
 - [Markdown resources](#markdown-resources)
 
-## How to contribute content:
+## How to contribute content
 
 [Video Guide on how to contribute](https://www.youtube.com/watch?v=ps1oQeg-0ss)
 
