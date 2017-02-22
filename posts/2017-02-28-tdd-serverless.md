@@ -2,7 +2,7 @@
 title: Test-Driven Serverless Application Development
 description: Quick Start to Test-Driven Development with Serverless Framework.
 date: 2017-02-28
-thumbnail: https://.jpg
+thumbnail: https://cloud.githubusercontent.com/assets/4726921/23232988/fdabd3fa-f955-11e6-84bd-c8a939841360.png
 layout: Post
 authors:
  - EetuTuomala
@@ -101,7 +101,7 @@ it('should return current date', () => {
   return wrapped.run({}).then((response) => {
     const body = JSON.parse(response.body);
     expect(response.statusCode).to.be.equal(200);
-    expect(body.message).to.match(/.*\s(Sun|Mon|Tue|Web|Thu|Fri|Sat)\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Nov|Dec)\s[0-3]\d{1}\s\d{4}\./);
+    expect(body.message).to.match(/.*\s(Sun|Mon|Tue|Wed|Thu|Fri|Sat)\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s[0-3]\d{1}\s\d{4}\./);
   });
 });
 ```
@@ -109,7 +109,7 @@ it('should return current date', () => {
 When invoking tests with `sls invoke test` command, you should get the following error:
 
 ```
-AssertionError: expected 'Go Serverless v1.0! Your function executed successfully!' to match /.*\s(Sun|Mon|Tue|Web|Thu|Fri|Sat)\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Nov|Dec)\s[0-3]\d{1}\s\d{4}\./
+AssertionError: expected 'Go Serverless v1.0! Your function executed successfully!' to match /.*\s(Sun|Mon|Tue|Wed|Thu|Fri|Sat)\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s[0-3]\d{1}\s\d{4}\./
 ```
 
 Next fix the function to match the test, open `date/handler.js` and replace the code with one that returns the date.
@@ -133,4 +133,4 @@ Once again, run the `sls invoke test` command and the result should be successfu
 
 In addition to test keeping your code functional, the benefit of using test instead of e.g. `sls invoke local` is that you can test the same handler function easily with different payloads.
 
-If you'd like a working example, here's the [repository ](https://github.com/laardee/my-tdd-service) I used while making this tutorial.
+If you'd like a working example, here's the [repository](https://github.com/laardee/my-tdd-service) I used while making this tutorial.
