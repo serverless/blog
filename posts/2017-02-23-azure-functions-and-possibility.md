@@ -15,11 +15,11 @@ Meanwhile, getting started is easier than ever.  If you want to adopt a cloud pr
 
 No doubt the cloud providers have recognized this, given there are now serverless compute offerings from AWS, Google, Azure, IBM and more.  Serverless functions are a gateway drug into their platforms.  However, a side effect has our attention... 
 
-*Serverless Functions don't only break down the barriers between adopting a cloud.  Serverless Functions break down the barriers between adopting all clouds.*
+> Serverless Functions don't only break down the barriers between adopting a cloud.  Serverless Functions break down the barriers between adopting all clouds.
 
 Stateless, zero-administration, pay-per-execution functions can exist in a single region, multiple regions as well as multiple providers, with minimal administration and no cost for idle.  Developers can stash serverless functions across providers, enabling them to use more cloud services to solve more problems.  This resulting possibility is what excites us at Serverless, Inc.
 
-It's a bit early to tell what the serverless multi-cloud architecture will look like, how it will work and whether it can solve the timeless concern of vendor lock-in (which is a complex problem).  However, it's a concept we are heavily focused on and we'll be introducing more products to reduce lock-in and capitalize on all of the providers, together.
+It's a bit early to tell what the serverless multi-cloud architecture will look like, how it will work and whether it can solve the timeless concern of vendor lock-in (which is a complex problem).  However, it's a concept we are heavily focused on and we'll be introducing more products this year to reduce lock-in and capitalize on all of the providers, together.
 
 That said, we're pleased to announce support for Azure Functions within the Serverless Framework.  Our goal is to offer a uniform experience across serverless compute providers.  So you can develop and deploy functions in a single fashion, regardless of their host.
 
