@@ -11,7 +11,7 @@ To the engineers and business leaders ducking out of political protests, excusin
 
 Fortunately,  tools couldn't be better right now.  The cloud providers are competing for your business and doubling down on investment in their platforms.  The number of high-value services in database, storage, artifical intelligence technology and more is growing rapidly.  Innovation in IaaS is now a daily occurrence.
 
-Meanwhile, getting started is easier than ever.  If you want to adopt a cloud provider and utilize these new services immediately... put some code there, in the form of a *Serverless Function*.
+Meanwhile, getting started is easier than ever.  If you want to adopt a cloud provider and utilize these new services immediately, put some code there, in the form of a *Serverless Function*.
 
 No doubt the cloud providers have recognized this, given there are now serverless compute offerings from AWS, Google, Azure, IBM and more.  Serverless functions are a gateway drug into their platforms.  However, a side effect has our attention... 
 
