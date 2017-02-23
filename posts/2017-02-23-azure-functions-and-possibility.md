@@ -15,7 +15,7 @@ Meanwhile, getting started is easier than ever.  If you want to adopt a cloud pr
 
 No doubt the cloud providers have recognized this, given there are now serverless compute offerings from AWS, Google, Azure, IBM and more.  Serverless functions are a gateway drug into their platforms.  However, a side effect has our attention... 
 
-> Serverless Functions don't only break down the barriers between adopting a cloud.  Serverless Functions break down the barriers between adopting all clouds.
+> Serverless Functions don't only break down the barriers between adopting a cloud.  Serverless Functions break down the barriers between adopting all clouds, simultaneously.
 
 Stateless, zero-administration, pay-per-execution functions can exist in a single region, multiple regions as well as multiple providers, with minimal administration and no cost for idle.  Developers can stash serverless functions across providers, enabling them to use more cloud services to solve more problems.  This resulting possibility is what excites us at Serverless, Inc.
 
