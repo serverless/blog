@@ -9,17 +9,17 @@ authors:
 ---
 To the engineers and business leaders ducking out of political protests, excusing themselves from heated dinner table debates, rolling up their sleeves and getting back to work:  Ready to actually take on the insurmountable challenges all around you?  First you'll need courage.  After that, you'll need really good *tools*.
 
-Fortunately, the tools couldn't be better.  The cloud providers are competing for your business and doubling down on investment in their platforms.  The number of high-value services in database, storage, artificial intelligence technology and more is growing rapidly.  Innovation in IaaS is now a daily occurrence.
+Fortunately,  tools couldn't be better right now.  The cloud providers are competing for your business and doubling down on investment in their platforms.  The number of high-value services in database, storage, artifical intelligence technology and more is growing rapidly.  Innovation in IaaS is now a daily occurrence.
 
 Meanwhile, getting started is easier than ever.  If you want to adopt a cloud provider and utilize these new services immediately... put some code there, in the form of a *Serverless Function*.
 
-No doubt the cloud providers have recognized this, given there are now serverless compute offerings from AWS, Google, Azure, IBM and more.  Serverless functions are a gateway drug into their platforms.  However, a side effect has our attention...
+No doubt the cloud providers have recognized this, given there are now serverless compute offerings from AWS, Google, Azure, IBM and more.  Serverless functions are a gateway drug into their platforms.  However, a side effect has our attention... 
 
 *Serverless Functions don't only break down the barriers between adopting a cloud.  Serverless Functions break down the barriers between adopting all clouds.*
 
 Stateless, zero-administration, pay-per-execution functions can exist in a single region, multiple regions as well as multiple providers, with minimal administration and no cost for idle.  Developers can stash serverless functions across providers, enabling them to use more cloud services to solve more problems.  This resulting possibility is what excites us at Serverless, Inc.
 
-It's early to tell what the serverless multi-cloud architecture will look like, how it will work and whether it can solve the timeless concern of Vendor lock-in (which is a complex problem).  This is a concept we are heavily focused on and we'll be introducing more products around to reduce lock-in and increase possibility by capitalizing on all of the providers, together.
+It's a bit early to tell what the serverless multi-cloud architecture will look like, how it will work and whether it can solve the timeless concern of vendor lock-in (which is a complex problem).  However, it's a concept we are heavily focused on and we'll be introducing more products to reduce lock-in and capitalize on all of the providers, together.
 
 That said, we're pleased to announce support for Azure Functions within the Serverless Framework.  Our goal is to offer a uniform experience across serverless compute providers.  So you can develop and deploy functions in a single fashion, regardless of their host.
 
