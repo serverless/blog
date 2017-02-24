@@ -10,15 +10,17 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
 
 ## How to contribute content
 
-[Video Guide on how to contribute](https://www.youtube.com/watch?v=ps1oQeg-0ss)
+### [Video guide on contributing](https://www.youtube.com/watch?v=ps1oQeg-0ss)
 
-**(1)** [Click here to add a post](https://github.com/serverless/blog/new/master/post) or submit a new pull request via the command line.
+**(1)[Click here to add a post](https://github.com/serverless/blog/new/master/post) or submit a new pull request via the command line.**
 
-**(2)** Write your content in markdown!
+**(2) Write your content in markdown!**
 
-**(3)** Name your post file name in this format `YYYY-MM-DD-blog-post-name.md` :point_right: `2016-01-27-post-title-here.md` [handy tool for this](https://blog.tersmitten.nl/slugify/)
+**(3) Name your post file name in this format `YYYY-MM-DD-blog-post-name.md` :point_right: `2016-01-27-post-title-here.md`**
 
-**(4)** In your post, include the **required post information:**
+> [handy tool for slugifying titles](https://blog.tersmitten.nl/slugify/)
+
+**(4) In your post, include the required post information:**
 
 Include the post metadata at the top:
 
