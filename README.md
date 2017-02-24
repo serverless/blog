@@ -4,7 +4,10 @@
 
 Welcome to the serverless blog repo! [Contributions, typo fixes and pull requests are welcome](https://github.com/serverless/blog/new/master/post) :thumbsup:
 
-<!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC) -->
+## Table of Contents
+<!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:collapse=true&collapseText=Click to expand) -->
+<details>
+<summary>Click to expand</summary>
 - [How to contribute content](#how-to-contribute-content)
   * [1. Write your content in markdown!](#1-write-your-content-in-markdown)
   * [2. Name your post file name](#2-name-your-post-file-name)
@@ -15,6 +18,7 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
 - [Including Custom Scripts](#including-custom-scripts)
 - [Markdown Resources](#markdown-resources)
 - [Recommended Writing Apps](#recommended-writing-apps)
+</details>
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## [How to contribute content](https://www.youtube.com/watch?v=ps1oQeg-0ss)
