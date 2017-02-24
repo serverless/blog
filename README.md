@@ -31,7 +31,7 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
   thumbnail: 'http://url-to-thumbnail.jpg'
   layout: Post
   authors:
-    \- FirstnameLastname
+    - FirstnameLastname
   ---
   ```
 
@@ -54,7 +54,7 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
   ```js
   // code snippet example with javascript (js) syntax highlighting
   console.log('JS code')
-  ```
+  \`\`\`
   ```
 
   > Questions about formatting? [See a complete post example](https://raw.githubusercontent.com/serverless/blog/master/posts/2016-10-25-building-a-serverless-garden.md)
