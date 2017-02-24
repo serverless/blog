@@ -1,6 +1,6 @@
 # [Serverless Blog](https://serverless.com/blog/)
 
-<a href="https://www.youtube.com/watch?v=ps1oQeg-0ss" target="_blank"><img align="right" width="465" height="241" src="https://cloud.githubusercontent.com/assets/532272/23035035/bb26026c-f432-11e6-9338-a603b8cb32b4.png"></a>
+<a href="https://www.youtube.com/watch?v=ps1oQeg-0ss" target="_blank"><img align="right" width="411" height="241" src="https://cloud.githubusercontent.com/assets/532272/23035035/bb26026c-f432-11e6-9338-a603b8cb32b4.png"></a>
 
 Welcome to the serverless blog repo! [Contributions, typo fixes and pull requests are welcome](https://github.com/serverless/blog/new/master/post) :thumbsup:
 
@@ -8,13 +8,16 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
 - [Adding author details](#how-to-add-author-information)
 - [Markdown resources](#markdown-resources)
 
-## How to contribute content
+## [How to contribute content](https://www.youtube.com/watch?v=ps1oQeg-0ss)
 
-### [Video guide on contributing](https://www.youtube.com/watch?v=ps1oQeg-0ss)
+**(1) [Click here to add a post](https://github.com/serverless/blog/new/master/post) or submit a new pull request via the command line.**
 
-**(1)[Click here to add a post](https://github.com/serverless/blog/new/master/post) or submit a new pull request via the command line.**
+> Serverless team members: [click here to add a post](https://github.com/serverless/blog/new/master/post) or submit a PR.
+> External contributors: fork this repo and submit a PR, [see this](https://www.youtube.com/watch?v=ps1oQeg-0ss)
 
 **(2) Write your content in markdown!**
+
+> New to markdown? [Read this](https://guides.github.com/features/mastering-markdown/)
 
 **(3) Name your post file name in this format `YYYY-MM-DD-blog-post-name.md` :point_right: `2016-01-27-post-title-here.md`**
 
@@ -61,13 +64,13 @@ console.log('JS code')
 
 Questions about formatting? [See a complete post example](https://raw.githubusercontent.com/serverless/blog/master/posts/2016-10-25-building-a-serverless-garden.md)
 
-**(5)** Once your post is ready to go, [add your author info](#how-to-add-author-information), submit a PR to the repository.
+**(5)Once your post is ready to go, [add your author info](#how-to-add-author-information), submit a PR to the repository.**
 
 We will review and publish your post with our audience on [serverless.com](http://serverless.com/blog) and share it all around the web!
 
 Ping us with any questions on [Twitter](http://twitter.com/goserverless) or [post an issue](https://github.com/serverless/blog/issues/new) and we will get back with you shortly.
 
-**(6)** Preview your post (optional)
+**(6) (optional) Preview your post**
 
 Curious about what your post will look like on the live site? You can preview your post by [cloning down the site repo](https://github.com/serverless/site#quick-start), installing the dependencies and running `npm start`.
 
