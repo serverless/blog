@@ -12,63 +12,62 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
 
 [Video Guide on how to contribute](https://www.youtube.com/watch?v=ps1oQeg-0ss)
 
-1. [Click here to add a post](https://github.com/serverless/blog/new/master/post) or submit a new pull request via the command line.
+**(1)** [Click here to add a post](https://github.com/serverless/blog/new/master/post) or submit a new pull request via the command line.
 
-2. Write your content in markdown!
+**(2)** Write your content in markdown!
 
-3. Name your post file name in this format `YYYY-MM-DD-blog-post-name.md` :point_right: `2016-01-27-post-title-here.md` [handy tool for this](https://blog.tersmitten.nl/slugify/)
+**(3)** Name your post file name in this format `YYYY-MM-DD-blog-post-name.md` :point_right: `2016-01-27-post-title-here.md` [handy tool for this](https://blog.tersmitten.nl/slugify/)
 
-4. In your post, include the **required post information:**
+**(4)** In your post, include the **required post information:**
 
-  Include the post metadata at the top:
-
-
-  ```
-  ---
-  title: My awesome post title
-  description: "This post is about awesome stuff!"
-  date: 2016-07-25
-  thumbnail: 'http://url-to-thumbnail.jpg'
-  layout: Post
-  authors:
-    - FirstnameLastname
-  ---
-  ```
+Include the post metadata at the top:
 
 
-  Then write your post :arrow_down: [Github flavored markdown](https://guides.github.com/features/mastering-markdown/) is supported!
-
-  ```
-  # Post Heading
-
-  This is an awesome paragraph!
-
-  ## Post SubSection
-
-  [Link example](http://my-full-url-with-http-at-the-front.com)
-
-  * List item 1
-  * List item 2
-  * List item 3
-
-  ```js
-  // code snippet example with javascript (js) syntax highlighting
-  console.log('JS code')
-  \`\`\`
-  ```
-
-  > Questions about formatting? [See a complete post example](https://raw.githubusercontent.com/serverless/blog/master/posts/2016-10-25-building-a-serverless-garden.md)
+```
+---
+title: My awesome post title
+description: "This post is about awesome stuff!"
+date: 2016-07-25
+thumbnail: 'http://url-to-thumbnail.jpg'
+layout: Post
+authors:
+  - FirstnameLastname
+---
+```
 
 
-5. Once your post is ready to go, [add your author info](#how-to-add-author-information), submit a PR to the repository.
+Then write your post :arrow_down: [Github flavored markdown](https://guides.github.com/features/mastering-markdown/) is supported!
 
-  We will review and publish your post with our audience on [serverless.com](http://serverless.com/blog) and share it all around the web!
+<pre>
+# Post Heading
 
-  Ping us with any questions on [Twitter](http://twitter.com/goserverless) or [post an issue](https://github.com/serverless/blog/issues/new) and we will get back with you shortly.
+This is an awesome paragraph!
 
-6. Preview your post (optional)
+## Post SubSection
 
-  Curious about what your post will look like on the live site? You can preview your post by [cloning down the site repo](https://github.com/serverless/site#quick-start), installing the dependencies and running `npm start`.
+[Link example](http://my-full-url-with-http-at-the-front.com)
+
+* List item 1
+* List item 2
+* List item 3
+
+```js
+// code snippet example with javascript (js) syntax highlighting
+console.log('JS code')
+```
+</pre>
+
+Questions about formatting? [See a complete post example](https://raw.githubusercontent.com/serverless/blog/master/posts/2016-10-25-building-a-serverless-garden.md)
+
+**(5)** Once your post is ready to go, [add your author info](#how-to-add-author-information), submit a PR to the repository.
+
+We will review and publish your post with our audience on [serverless.com](http://serverless.com/blog) and share it all around the web!
+
+Ping us with any questions on [Twitter](http://twitter.com/goserverless) or [post an issue](https://github.com/serverless/blog/issues/new) and we will get back with you shortly.
+
+**(6)** Preview your post (optional)
+
+Curious about what your post will look like on the live site? You can preview your post by [cloning down the site repo](https://github.com/serverless/site#quick-start), installing the dependencies and running `npm start`.
 
 ## How to add Author Information
 
