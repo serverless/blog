@@ -20,86 +20,51 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
 
 4. In your post, include the **required post information:**
 
-Include the post metadata at the top:
-<pre>
----
-title: My awesome post title
-description: "This post is about awesome stuff!"
-date: 2016-07-25
-thumbnail: 'http://url-to-thumbnail.jpg'
-layout: Post
-authors:
-  - FirstnameLastname
----
-</pre>
+  Include the post metadata at the top:
+  <pre>
+  ---
+  title: My awesome post title
+  description: "This post is about awesome stuff!"
+  date: 2016-07-25
+  thumbnail: 'http://url-to-thumbnail.jpg'
+  layout: Post
+  authors:
+    - FirstnameLastname
+  ---
+  </pre>
 
-Then write your post :arrow_down: [Github flavored markdown](https://guides.github.com/features/mastering-markdown/) is supported!
-<pre>
-# Post Heading
+  Then write your post :arrow_down: [Github flavored markdown](https://guides.github.com/features/mastering-markdown/) is supported!
+  <pre>
+  # Post Heading
 
-This is an awesome paragraph!
+  This is an awesome paragraph!
 
-## Post SubSection
+  ## Post SubSection
 
-[Link example](http://my-full-url-with-http-at-the-front.com)
+  [Link example](http://my-full-url-with-http-at-the-front.com)
 
-* List item 1
-* List item 2
-* List item 3
+  * List item 1
+  * List item 2
+  * List item 3
 
-```js
-// code snippet example with javascript (js) syntax highlighting
-console.log('JS code')
-```
-</pre>
+  ```js
+  // code snippet example with javascript (js) syntax highlighting
+  console.log('JS code')
+  ```
+  </pre>
 
-Questions about formatting? [See a complete post example](https://raw.githubusercontent.com/serverless/blog/master/posts/2016-10-25-building-a-serverless-garden.md)
+  > Questions about formatting? [See a complete post example](https://raw.githubusercontent.com/serverless/blog/master/posts/2016-10-25-building-a-serverless-garden.md)
 
-## Aligning images
 
-### `left` alignment
+5. Once your post is ready to go, [add your author info](#how-to-add-author-information), submit a PR to the repository.
 
-<img align="left" width="100" height="100" src="http://www.fillmurray.com/100/100">
+  We will review and publish your post with our audience on [serverless.com](http://serverless.com/blog) and share it all around the web!
 
-This is the code you need to align images to the left:
-```
-<img align="left" width="100" height="100" src="http://www.fillmurray.com/100/100">
-```
+  Ping us with any questions on [Twitter](http://twitter.com/goserverless) or [post an issue](https://github.com/serverless/blog/issues/new) and we will get back with you shortly.
 
----
+6. Preview your post (optional)
 
-### `right` alignment
-
-<img align="right" width="100" height="100" src="http://www.fillmurray.com/100/100">
-
-This is the code you need to align images to the right:
-```
-<img align="right" width="100" height="100" src="http://www.fillmurray.com/100/100">
-```
-
----
-
-### `center` alignment example
-
-<p align="center">
-  <img width="460" height="300" src="http://www.fillmurray.com/460/300">
-</p>
-
-```
-<p align="center">
-  <img width="460" height="300" src="http://www.fillmurray.com/460/300">
-</p>
-```
-
----
-
-Once your post is ready to go, [add your author info](#how-to-add-author-information), submit a PR to the repository.
-
-We will review and publish your post with our audience on [serverless.com](http://serverless.com/blog) and share it all around the web!
-
-Ping us with any questions on [Twitter](http://twitter.com/goserverless) or [post an issue](https://github.com/serverless/blog/issues/new) and we will get back with you shortly.
-
-Curious about what your post will look like on the live site? You can preview your post by [cloning down the site repo](https://github.com/serverless/site#quick-start), installing the dependencies and running `npm start`.
+  Curious about what your post will look like on the live site? You can preview your post by [cloning down the site repo](https://github.com/serverless/site#quick-start), installing the dependencies and running `npm start`.
 
 ## How to add Author Information
 
