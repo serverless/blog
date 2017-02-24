@@ -10,7 +10,7 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
 
 ## [How to contribute content](https://www.youtube.com/watch?v=ps1oQeg-0ss)
 
-**(1) Write your content in markdown!**
+### 1. Write your content in markdown!
 
 > New to markdown? [Read this](https://guides.github.com/features/mastering-markdown/)
 
@@ -18,13 +18,15 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
 
 ---
 
-**(2) Name your post file name in this format `YYYY-MM-DD-blog-post-name.md` :point_right: `2016-01-27-post-title-here.md`**
+### 2. Name your post file name
+
+`YYYY-MM-DD-blog-post-name.md` :point_right: `2016-01-27-post-title-here.md`**
 
 > [handy tool for slugifying titles](https://blog.tersmitten.nl/slugify/)
 
 ---
 
-**(3) In your post, include post meta information:**
+### 3. In your post, include post meta information:
 
 Include the post metadata at the top:
 
@@ -66,7 +68,24 @@ console.log('JS code')
 
 ---
 
-**(4) Once your post is ready to go, [add your author info](#how-to-add-author-information), submit a PR to the repository.**
+### 4. Add your author bio
+
+If you haven't created an author bio in the `/authors` folder. Go ahead and do that now.
+
+The name of the file should be the same as the name field used in the blog post meta data. Format: `FirstnameLastname` (note the caps and no space!)
+
+Example `authors/DavidWells.json` and `DavidWells` in the `authors` field below are the same name and capitalization.
+
+```yml
+---
+layout: Post
+title: David's Amazing Post
+authors:
+ - DavidWells # references data in authors/DavidWells.json file
+---
+```
+
+### 5. Submit a PR to the repository
 
 **Serverless team members**
 
@@ -82,7 +101,7 @@ Ping us with any questions on [Twitter](http://twitter.com/goserverless) or [pos
 
 ---
 
-**(5) (optional) Preview your post**
+### 6. (optional) Preview your post
 
 > Curious about what your post will look like on the live site? You can preview your post by [cloning down the site repo](https://github.com/serverless/site#quick-start), installing the dependencies and running `npm start`.
 
@@ -90,20 +109,7 @@ Ping us with any questions on [Twitter](http://twitter.com/goserverless) or [pos
 
 ## How to add Author Information
 
-[Click here to add Author information](https://github.com/serverless/blog/new/master/authors)
 
-The name of the file should be the same as the name field used in the blog post meta data. Format: `FirstnameLastname` (note the caps and no space!)
-
-Example `authors/DavidWells.json` and `DavidWells` in the `authors` field below are the same name and capitalization.
-
-```yml
----
-layout: Post
-title: David's Amazing Post
-authors:
- - DavidWells # references data in authors/DavidWells.json file
----
-```
 
 ## Including Custom Scripts
 
