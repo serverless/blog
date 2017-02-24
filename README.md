@@ -16,9 +16,13 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
 
 > Need Content ideas? [Read this](./writers-guide.md)
 
+---
+
 **(2) Name your post file name in this format `YYYY-MM-DD-blog-post-name.md` :point_right: `2016-01-27-post-title-here.md`**
 
 > [handy tool for slugifying titles](https://blog.tersmitten.nl/slugify/)
+
+---
 
 **(3) In your post, include post meta information:**
 
@@ -60,6 +64,8 @@ console.log('JS code')
 
 > Questions about formatting? [See a complete post example](https://raw.githubusercontent.com/serverless/blog/master/posts/2016-10-25-building-a-serverless-garden.md)
 
+---
+
 **(4) Once your post is ready to go, [add your author info](#how-to-add-author-information), submit a PR to the repository.**
 
 **Serverless team members**
@@ -74,9 +80,13 @@ We will review and publish your post with our audience on [serverless.com](http:
 
 Ping us with any questions on [Twitter](http://twitter.com/goserverless) or [post an issue](https://github.com/serverless/blog/issues/new) and we will get back with you shortly.
 
+---
+
 **(5) (optional) Preview your post**
 
-Curious about what your post will look like on the live site? You can preview your post by [cloning down the site repo](https://github.com/serverless/site#quick-start), installing the dependencies and running `npm start`.
+> Curious about what your post will look like on the live site? You can preview your post by [cloning down the site repo](https://github.com/serverless/site#quick-start), installing the dependencies and running `npm start`.
+
+---
 
 ## How to add Author Information
 
