@@ -24,7 +24,7 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
 
 
   ```
-  \-\-\-
+  ---
   title: My awesome post title
   description: "This post is about awesome stuff!"
   date: 2016-07-25
@@ -32,13 +32,13 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
   layout: Post
   authors:
     \- FirstnameLastname
-  \-\-\-
+  ---
   ```
 
 
   Then write your post :arrow_down: [Github flavored markdown](https://guides.github.com/features/mastering-markdown/) is supported!
 
-  <pre>
+  ```
   # Post Heading
 
   This is an awesome paragraph!
@@ -55,7 +55,7 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
   // code snippet example with javascript (js) syntax highlighting
   console.log('JS code')
   ```
-  </pre>
+  ```
 
   > Questions about formatting? [See a complete post example](https://raw.githubusercontent.com/serverless/blog/master/posts/2016-10-25-building-a-serverless-garden.md)
 
