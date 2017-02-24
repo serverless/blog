@@ -21,6 +21,7 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
 4. In your post, include the **required post information:**
 
   Include the post metadata at the top:
+
   <pre>
   ---
   title: My awesome post title
@@ -34,6 +35,7 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
   </pre>
 
   Then write your post :arrow_down: [Github flavored markdown](https://guides.github.com/features/mastering-markdown/) is supported!
+
   <pre>
   # Post Heading
 
