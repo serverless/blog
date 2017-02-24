@@ -22,8 +22,9 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
 
   Include the post metadata at the top:
 
-  <pre>
+
   ---
+  \-\-\-
   title: My awesome post title
   description: "This post is about awesome stuff!"
   date: 2016-07-25
@@ -31,8 +32,9 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
   layout: Post
   authors:
     - FirstnameLastname
+  \-\-\-
   ---
-  </pre>
+
 
   Then write your post :arrow_down: [Github flavored markdown](https://guides.github.com/features/mastering-markdown/) is supported!
 
