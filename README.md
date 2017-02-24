@@ -31,7 +31,7 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
   thumbnail: 'http://url-to-thumbnail.jpg'
   layout: Post
   authors:
-    - FirstnameLastname
+    \- FirstnameLastname
   \-\-\-
   ```
 
