@@ -60,11 +60,15 @@ console.log('JS code')
 
 > Questions about formatting? [See a complete post example](https://raw.githubusercontent.com/serverless/blog/master/posts/2016-10-25-building-a-serverless-garden.md)
 
-**(4)Once your post is ready to go, [add your author info](#how-to-add-author-information), submit a PR to the repository.**
+**(4) Once your post is ready to go, [add your author info](#how-to-add-author-information), submit a PR to the repository.**
 
-> Serverless team members: [click here to add a post](https://github.com/serverless/blog/new/master/post) or submit a PR.
+**Serverless team members**
 
-> External contributors: fork this repo and submit a PR, [see this](https://www.youtube.com/watch?v=ps1oQeg-0ss)
+> [click here to add a post](https://github.com/serverless/blog/new/master/post) or submit a PR.
+
+**External contributors**
+
+> Fork this repo and submit a PR. [This video guide will walk you through the process](https://www.youtube.com/watch?v=ps1oQeg-0ss)
 
 We will review and publish your post with our audience on [serverless.com](http://serverless.com/blog) and share it all around the web!
 
