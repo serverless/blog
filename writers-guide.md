@@ -33,7 +33,7 @@ Use this Serverless Writer’s Guide as a resource to help you get started. This
 
 ## Creating an Outline
 
-It’s helpful to organize your ideas in an outline before you start writing. Your outline will depend on what type of post you’re writing, but here are a few prompts you can follow to help you get started.
+It’s helpful to organize your ideas in an outline before you start writing. Your outline will depend on what type of post you’re writing, but here are a few prompts you can follow to help you get started
 
 Note: These are just suggestions. Feel free to amend to fit your needs.
 
