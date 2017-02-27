@@ -29,11 +29,11 @@ Use this Serverless Writer’s Guide as a resource to help you get started. This
 ## Choosing A Topic
 
 1.  Find the ongoing list of ideas and schedule in the <span class="c5 c10">[Content Calendar in Asana](https://www.google.com/url?q=https://app.asana.com/0/173140658754685/206747580911378&sa=D&ust=1481063994397000&usg=AFQjCNHuy4Sb66K5avepG3zVg8TXqSfqrQ). The Serverless team gets first choice on writing topics, then we turn to guest authors. Posts are scheduled 1-6 weeks in advance.
-2.  Heart your top 2 choices for the posts you’d like to write in Asana. Feel free to add a topic to the list and heart it instead of choosing from the list. Stefanie will follow up to create a timeline for a draft and final post that works with your schedule.
+2.  Heart your top 2 choices for the posts you’d like to write in Asana. Feel free to add a topic to the list and heart it instead of choosing from the list. Stefanie will follow up to create a timeline for a draft and final post that works with your schedule
 
 ## Creating an Outline
 
-It’s helpful to organize your ideas in an outline before you start writing. Your outline will depend on what type of post you’re writing, but here are a few prompts you can follow to help you get started.
+It’s helpful to organize your ideas in an outline before you start writing. Your outline will depend on what type of post you’re writing, but here are a few prompts you can follow to help you get started
 
 Note: These are just suggestions. Feel free to amend to fit your needs.
 
