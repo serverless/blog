@@ -1,6 +1,6 @@
 ---
 title: Azure functions support with Serverless v1.8
-description: Azure functions provider plugin, inline policies, bugfixes and improvements in the Serverless Framework v1.8 release.
+description: Azure functions provider plugin, inline policies, bug fixes and improvements in the Serverless Framework v1.8 release.
 date: 2017-02-28
 layout: Post
 authors:
@@ -25,13 +25,13 @@ We're proud to announce the official [Azure functions provider plugin](https://g
 
 You can read the [announcement blog post](https://serverless.com/blog/azure-functions-and-possibility/) for more information.
 
-Now you're able to write and deploy Azure function applications with the help of the Serverless Framework. Curious how this looks like? Here are some resources which will help you get started:
+Now you're able to write and deploy Azure function applications with the help of the Serverless Framework. Curious what this looks like? Here are some resources to help you get started:
 
 1. [Quickstart guide](https://serverless.com/framework/docs/providers/azure/guide/quickstart/)
 2. [Serverless Azure Functions documentation](https://serverless.com/framework/docs/providers/azure/)
 3. [HTTP example](https://github.com/serverless/examples/tree/master/azure-node-simple-http-endpoint)
 
-Just give it a spin and let us know what you think!
+Give it a spin and let us know what you think!
 
 **Pro tip:** Sign up via the [free trial](https://azure.microsoft.com/en-us/free/) to get a whopping $200 of free credit.
 
@@ -41,7 +41,7 @@ Until now we've created a separate `IamPolicyLambdaExecution` resource so that y
 
 [PR #2983](https://github.com/serverless/serverless/pull/2983) updates this behavior so that inline policies are used rather than a separate CloudFormation resource.
 
-This change fixes a bunch of related issue with e.g. VPC setups.
+This change fixes a bunch of related issues with e.g. VPC setups.
 
 **Note:** This is a breaking change which affects all users / plugin authors who reference the `IamPolicyLambdaExecution` resource since it's removed in v1.8.
 
@@ -49,17 +49,17 @@ This change fixes a bunch of related issue with e.g. VPC setups.
 
 Recently we've switched from a memory intensive `fs.readFileSync` implementation to a `fs.createReadStream` implementation for the code zipping (see [#3220](https://github.com/serverless/serverless/pull/3220/files).
 
-This change reduced the memory footprint by about ~40% which is important when Serverless is used on low power hardware such as CI / CD systems or virtual machines.
+This change reduced the memory footprint by about ~40% which is important when Serverless is used on low power hardware like CICD systems or virtual machines.
 
 Unfortunately this fix creates another problem. Old Node versions tend to keep too many files open which results in an error during the zipping process (see [#3249](https://github.com/serverless/serverless/issues/3249)).
 
-We've tried different approaches to provide a quick fix for this issue. One was to use the [`graceful-fs`](https://github.com/isaacs/node-graceful-fs) npm package to wrap the `fs.createReadStream` usage. However those solutions were not sufficient enough to get into a stable state again.
+We've tried different approaches to provide a quick fix for this issue. One was to use the [`graceful-fs`](https://github.com/isaacs/node-graceful-fs) npm package to wrap the `fs.createReadStream` usage. However, those solutions weren't sufficient enough to get into a stable state again.
 
 For v1.8 we decided to switch back to `fs.readFileSync` (see [#3310](https://github.com/serverless/serverless/pull/3310)) and investigate further.
 
 This is just a temporary fix. We'll work on a long term fix so that a read stream is used again to reduce the memory usage.
 
-Do you have any idea how we can solve this and want to help? Here's the corresponding issue where we capture the progress: [#3311](https://github.com/serverless/serverless/issues/3311)!
+Have some ideas about how we can solve this and want to help? Here's the corresponding issue where we capture the progress: [#3311](https://github.com/serverless/serverless/issues/3311)!
 
 ### Fix monitorStack freezing bug
 
@@ -117,7 +117,7 @@ Here's a list of all the contributors who've PR'd changes for this release:
 
 ### Get Involved
 
-Serverless has a really helpful, vibrand and awesome community. Do you want to help us develop the best Serverless toolings out there?
+Serverless has a really helpful, vibrant and awesome community. Do you want to help us develop the best Serverless tooling out there?
 
 Contributing isn't just about code! Chime in on discussion, help with documentation updates or review PRs.
 
