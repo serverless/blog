@@ -110,7 +110,8 @@ When invoking tests with `sls invoke test` command, you should get the following
 
 ```bash
 AssertionError: expected 'Go Serverless v1.0! Your function executed successfully!'
-to match /.*\s(Sun|Mon|Tue|Wed|Thu|Fri|Sat)\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s[0-3]\d{1}\s\d{4}\./
+to match 
+/.*\s(Sun|Mon|Tue|Wed|Thu|Fri|Sat)\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s[0-3]\d{1}\s\d{4}\./
 ```
 
 Next fix the function to match the test, open `date/handler.js` and replace the code with one that returns the date.
