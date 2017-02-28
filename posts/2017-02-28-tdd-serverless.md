@@ -18,7 +18,7 @@ Usually for a new project I use the [SC5 Serverless boilerplate](https://github.
 
 Let’s start by installing the service, changing the directory to the one that `sls install` command creates, and installing dependencies that service requires to run.
 
-```Bash
+```bash
 sls install -u https://github.com/serverless/examples/tree/master/aws-node-simple-http-endpoint -n my-tdd-service
 cd my-tdd-service
 npm install
@@ -28,7 +28,7 @@ Then install the [Mocha plugin](https://github.com/sc5/serverless-mocha-plugin) 
 
 The next step is to add the installed plugin to serverless.yml. This project doesn't have any plugins yet installed so the `plugins` key is also added.
 
-```Yaml
+```yml
 plugins:
   - serverless-mocha-plugin
 ```
@@ -45,7 +45,7 @@ To create a test to an existing function, use the `create test` command with par
 
 Next, invoke the test by running `sls invoke test` and the output should be something like this:
 
-```Bash
+```bash
   currentTime
     ✓ implement tests here
 
@@ -57,7 +57,7 @@ Now for the fun part – implementing the actual tests. The tests that the Serve
 
 There is a generated test that only tests that the response is not empty.
 
-```JavaScript
+```js
 it('implement tests here', () => {
   return wrapped.run({}).then((response) => {
     console.log(response);
@@ -68,7 +68,7 @@ it('implement tests here', () => {
 
 Replace that with the following one, which tests that statusCode is 200 and that the response body contains a message that has the time. In real life, you may want to fake the date with [Sinon.JS](http://sinonjs.org/) or similar so that you can test the response with predefined dates.
 
-```JavaScript
+```js
 it('should return current time', () => {
   return wrapped.run({}).then((response) => {
     const body = JSON.parse(response.body);
@@ -108,13 +108,14 @@ it('should return current date', () => {
 
 When invoking tests with `sls invoke test` command, you should get the following error:
 
-```
-AssertionError: expected 'Go Serverless v1.0! Your function executed successfully!' to match /.*\s(Sun|Mon|Tue|Wed|Thu|Fri|Sat)\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s[0-3]\d{1}\s\d{4}\./
+```bash
+AssertionError: expected 'Go Serverless v1.0! Your function executed successfully!'
+to match /.*\s(Sun|Mon|Tue|Wed|Thu|Fri|Sat)\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s[0-3]\d{1}\s\d{4}\./
 ```
 
 Next fix the function to match the test, open `date/handler.js` and replace the code with one that returns the date.
 
-```JavaScript
+```js
 'use strict';
 
 module.exports.endpoint = (event, context, callback) => {
