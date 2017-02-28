@@ -22,9 +22,9 @@ First, two of the five methods in our service perform writes.  Specifically [cre
 
 The first change, then, is to return the entire JSON of the newly created Todo. For clarity, I kept the old code commented out, so the new lines 38-44 look like this:
 
-```bash
+```js
     // create a response
-    const response = {
+    const response: {
       statusCode: 200,
       // PCJ: Minor change from original, return full item inserted instead of empty result
       // body: JSON.stringify(result.Item),
@@ -38,8 +38,8 @@ Next, the original code hard-coded the DynamoDB table name in every method handl
 
 In the method handlers, in the constant set up to pass parameters to DynamoDB, you'll see a change similar to this one found in the create handler:
 
-```bash	
-	const params = {
+```js	
+	const params: {
 		// PCJ: Minor change from original, use environment variable for stage sensitive table name
   		TableName: process.env.TABLE_NAME,
   		Item: {
@@ -55,7 +55,7 @@ In the method handlers, in the constant set up to pass parameters to DynamoDB, y
 So now, the database table name gets pulled from the `TABLE_NAME` environment variable, which is getting set in the `serverless.yml` file based on the stage defined for the deployment:
 
 
-```bash
+```js
 	provider:
   	name: aws
   	runtime: nodejs4.3
@@ -70,7 +70,7 @@ I chose to use AWS CodePipeline since it was newly announced at AWS re:Invent in
 
 At the center of the automation is AWS CodeBuild and its `buildspec.yml` file. In our example, that file looks like this:
 
-```bash
+```js
 	version: 0.1
 	phases:
   	install:
