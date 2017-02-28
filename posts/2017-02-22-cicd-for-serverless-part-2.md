@@ -18,13 +18,13 @@ Here we're still using the same [Todo list example the folks at the Serverless F
 ## Code Differences From The Original Todo
 In Part 1, I neglected to get into the details of what I had to change for the original Todo codebase to get it to function more cleanly for automated testing. Let's explore that here. 
 
-First, two of the five methods in our service perform writes.  Specifically [create.js](https://github.com/nerdguru/serverlessTodos/blob/master/todos/create.js) and [update.js](https://github.com/nerdguru/serverlessTodos/blob/master/todos/update.js). The issue with automating the testing, especially for the create, is that the original version wasn't returning the UUID for the newly created Todo. That meant in order to verify that the write occurred correctly, testing code would have to do a list and scan for matching Todo content.
+First, two of the five methods in our service perform writes.  Specifically [create.js](https://github.com/nerdguru/serverlessTodos/blob/master/src/todos/create.js) and [update.js](https://github.com/nerdguru/serverlessTodos/blob/master/src/todos/update.js). The issue with automating the testing, especially for the create, is that the original version wasn't returning the UUID for the newly created Todo. That meant in order to verify that the write occurred correctly, testing code would have to do a list and scan for matching Todo content.
 
 The first change, then, is to return the entire JSON of the newly created Todo. For clarity, I kept the old code commented out, so the new lines 38-44 look like this:
 
 ```js
     // create a response
-    const response: {
+    const response = {
       statusCode: 200,
       // PCJ: Minor change from original, return full item inserted instead of empty result
       // body: JSON.stringify(result.Item),
@@ -39,7 +39,7 @@ Next, the original code hard-coded the DynamoDB table name in every method handl
 In the method handlers, in the constant set up to pass parameters to DynamoDB, you'll see a change similar to this one found in the create handler:
 
 ```js	
-	const params: {
+	const params = {
 		// PCJ: Minor change from original, use environment variable for stage sensitive table name
   		TableName: process.env.TABLE_NAME,
   		Item: {
@@ -55,7 +55,7 @@ In the method handlers, in the constant set up to pass parameters to DynamoDB, y
 So now, the database table name gets pulled from the `TABLE_NAME` environment variable, which is getting set in the `serverless.yml` file based on the stage defined for the deployment:
 
 
-```js
+```yml
 	provider:
   	name: aws
   	runtime: nodejs4.3
@@ -66,11 +66,11 @@ So now, the database table name gets pulled from the `TABLE_NAME` environment va
 I'm really liking the relatively new syntax for multiple `serverless.yml` variable references for a single evaluation, BTW.
 
 ## Creating the CodePipeline and Explaining the AWS CodeBuild buildspec.yml file
-I chose to use AWS CodePipeline since it was newly announced at AWS re:Invent in December. The [CodePipeline Execution readme](https://github.com/nerdguru/serverlessTodos/blob/master/codePipeline.md) in my repo describes how you can set that up step-by-step. Future versions will automate this set up, but CodePipeline is new enough and the oAuth integration with GitHub wasn't straight forward to script. So for now I've got a lot of screenshots for a manual process instead.
+I chose to use AWS CodePipeline since it was newly announced at AWS re:Invent in December. The [CodePipeline Execution readme](https://github.com/nerdguru/serverlessTodos/blob/master/docs/codePipeline.md) in my repo describes how you can set that up step-by-step. Future versions will automate this set up, but CodePipeline is new enough and the oAuth integration with GitHub wasn't straight forward to script. So for now I've got a lot of screenshots for a manual process instead.
 
 At the center of the automation is AWS CodeBuild and its `buildspec.yml` file. In our example, that file looks like this:
 
-```js
+```yml
 	version: 0.1
 	phases:
   	install:
