@@ -113,7 +113,17 @@ This release contains lots of hard work from our awesome community and wouldn't 
 
 Here's a list of all the contributors who've PR'd changes for this release:
 
-- John Doe
+- Andrey Tserkus
+- Ben Berman
+- Bruno Belotti
+- Christoph Gysin
+- Christopher Anderson
+- Colby M. White
+- Danny Cohn
+- Gert Jansen van Rensburg
+- John Gossman
+- Jonathan Goldwasser
+- Nick den Engelsman
 
 ### Get Involved
 
