@@ -22,13 +22,15 @@ First, two of the five methods in our service perform writes.  Specifically [cre
 
 The first change, then, is to return the entire JSON of the newly created Todo. For clarity, I kept the old code commented out, so the new lines 38-44 look like this:
 
-    // create a resonse
+```bash
+    // create a response
     const response = {
       statusCode: 200,
       // PCJ: Minor change from original, return full item inserted instead of empty result
       // body: JSON.stringify(result.Item),
       body: JSON.stringify(params.Item),
     };
+```
 
 For consistency's sake, the same was done for the update.
 
@@ -36,6 +38,7 @@ Next, the original code hard-coded the DynamoDB table name in every method handl
 
 In the method handlers, in the constant set up to pass parameters to DynamoDB, you'll see a change similar to this one found in the create handler:
 
+```bash	
 	const params = {
 		// PCJ: Minor change from original, use environment variable for stage sensitive table name
   		TableName: process.env.TABLE_NAME,
@@ -47,14 +50,18 @@ In the method handlers, in the constant set up to pass parameters to DynamoDB, y
     		updatedAt: timestamp,
   		},
 	};
+```	
 	
 So now, the database table name gets pulled from the `TABLE_NAME` environment variable, which is getting set in the `serverless.yml` file based on the stage defined for the deployment:
 
+
+```bash
 	provider:
   	name: aws
   	runtime: nodejs4.3
   	environment: 
       	TABLE_NAME: todos-${opt:stage, self:provider.stage}
+```	
 
 I'm really liking the relatively new syntax for multiple `serverless.yml` variable references for a single evaluation, BTW.
 
@@ -63,6 +70,7 @@ I chose to use AWS CodePipeline since it was newly announced at AWS re:Invent in
 
 At the center of the automation is AWS CodeBuild and its `buildspec.yml` file. In our example, that file looks like this:
 
+```bash
 	version: 0.1
 	phases:
   	install:
@@ -76,6 +84,7 @@ At the center of the automation is AWS CodeBuild and its `buildspec.yml` file. I
   	post_build:
     	commands:
       	  - . ./test.sh
+```
 
 Here we've defined three of the standard phases that CodeBuild supports: *install, build,* and *post_build*. From steps performed in the Local Execution from last time, the commands for each phase should look familiar. The various dependencies are set up during *install*.  
 
