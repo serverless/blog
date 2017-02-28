@@ -53,11 +53,13 @@ This change reduced the memory footprint by about ~40% which is important when S
 
 Unfortunately this fix creates another problem. Old Node versions tend to keep too many files open which results in an error during the zipping process (see [#3249](https://github.com/serverless/serverless/issues/3249)).
 
-We've attacked this fix by using the [`graceful-fs`](https://github.com/isaacs/node-graceful-fs) npm package to wrap the `fs.createReadStream` usage.
+We've tried different approaches to provide a quick fix for this issue. One was to use the [`graceful-fs`](https://github.com/isaacs/node-graceful-fs) npm package to wrap the `fs.createReadStream` usage. However those solutions were not sufficient enough to get into a stable state again.
 
-However this is just a temporary fix.
+For v1.8 we decided to switch back to `fs.readFileSync` (see [#3310](https://github.com/serverless/serverless/pull/3310)) and investigate further.
 
-We're open to a more reliable solution for this problem. Do you have any plan how we can solve this in a better way? Feel free to chime in on the discussions or create a new issue for it!
+This is just a temporary fix. We'll work on a long term fix so that a read stream is used again to reduce the memory usage.
+
+Do you have any idea how we can solve this and want to help? Feel free to chime in on the discussions or create a new issue for it!
 
 ### Fix monitorStack freezing bug
 
