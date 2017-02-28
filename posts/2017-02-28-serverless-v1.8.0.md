@@ -1,5 +1,5 @@
 ---
-title: Azure functions support,  with Serverless v1.8
+title: Azure functions support with Serverless v1.8
 description: Azure functions provider plugin, inline policies, bugfixes and improvements in the Serverless Framework v1.8 release.
 date: 2017-02-28
 layout: Post
@@ -9,7 +9,7 @@ authors:
 
 Today we're proud to announce v1.8 of the Serverless Framework.
 
-v1.8 is yet another special release since we're officially introducing support for Azure functions support via a [Serverless plugin](https://github.com/serverless/serverless-azure-functions)!
+v1.8 is yet another special release since we're officially introducing support for Azure via the [Serverless Azure functions plugin](https://github.com/serverless/serverless-azure-functions)!
 
 Let's take a deep dive into the highlights of this release.
 
@@ -17,15 +17,15 @@ Let's take a deep dive into the highlights of this release.
 
 **Note:** You can find a complete list of all the updates in the [changelog](https://github.com/serverless/serverless/blob/master/CHANGELOG.md).
 
-### Azure Functions provider plugin
+### Azure functions provider plugin
 
 It finally arrived. The next provider support for the Serverless Framework is here!
 
-We're proud to announce the official [Azure Functions provider plugin](https://github.com/serverless/serverless-azure-functions) for the Serverless Framework!
+We're proud to announce the official [Azure functions provider plugin](https://github.com/serverless/serverless-azure-functions) for the Serverless Framework!
 
-Read the [announcement blog post](https://serverless.com/blog/azure-functions-and-possibility/) for more info.
+You can read the [announcement blog post](https://serverless.com/blog/azure-functions-and-possibility/) for more information.
 
-You can write and deploy Azure Functions applications with the help of the Serverless Framework. Curious how this looks like? Here are some resources which will help you get started:
+Now you're able to write and deploy Azure function applications with the help of the Serverless Framework. Curious how this looks like? Here are some resources which will help you get started:
 
 1. [Quickstart guide](https://serverless.com/framework/docs/providers/azure/guide/quickstart/)
 2. [Serverless Azure Functions documentation](https://serverless.com/framework/docs/providers/azure/)
@@ -35,7 +35,7 @@ Just give it a spin and let us know what you think!
 
 **Pro tip:** Sign up via the [free trial](https://azure.microsoft.com/en-us/free/) to get a whopping $200 of free credit.
 
-### BREAKING - Introduce inline policies
+### BREAKING - Introducing inline policies
 
 Until now we've created a separate `IamPolicyLambdaExecution` resource so that your Lambda functions can interact and execute code appropriately.
 
@@ -43,23 +43,25 @@ Until now we've created a separate `IamPolicyLambdaExecution` resource so that y
 
 This change fixes a bunch of related issue with e.g. VPC setups.
 
-**Note:** This is a breaking change which affects all users / plugin authors who reference the `IamPolicyLambdaExecution` resource since it's removed with the update to v1.8.
+**Note:** This is a breaking change which affects all users / plugin authors who reference the `IamPolicyLambdaExecution` resource since it's removed in v1.8.
 
 ### Fix file streams during zipping
 
-Recently we've switched from a memory intensive `fs.readFileSync` implementation to a `fs.createReadStream` implementation for the zipping of your code (see [#3220](https://github.com/serverless/serverless/pull/3220/files). This reduced the memory footprint by about ~40% which is important when Serverless is used on low power hardware such as CI / CD systems or virtual machines.
+Recently we've switched from a memory intensive `fs.readFileSync` implementation to a `fs.createReadStream` implementation for the code zipping (see [#3220](https://github.com/serverless/serverless/pull/3220/files).
+
+This change reduced the memory footprint by about ~40% which is important when Serverless is used on low power hardware such as CI / CD systems or virtual machines.
 
 Unfortunately this fix creates another problem. Old Node versions tend to keep too many files open which results in an error during the zipping process (see [#3249](https://github.com/serverless/serverless/issues/3249)).
 
 We've attacked this fix by using the [`graceful-fs`](https://github.com/isaacs/node-graceful-fs) npm package to wrap the `fs.createReadStream` usage.
 
-However this is just a temporary.
+However this is just a temporary fix.
 
 We're open to a more reliable solution for this problem. Do you have any plan how we can solve this in a better way? Feel free to chime in on the discussions or create a new issue for it!
 
 ### Fix monitorStack freezing bug
 
-We're finally able to reproduce a nasty bug which causes Serverless Deployment to freeze in the `Checking Stack update progress...` status.
+We were finally able to reproduce a nasty bug which caused Serverless deployments to freeze in the `Checking Stack update progress...` status.
 
 This problem was introduced due to a clock drift where the time of your local machine is slightly in the future causing AWS server to report incorrect updates about your CloudFormation status.
 
@@ -67,7 +69,7 @@ Luckily we were able to [fix this](https://github.com/serverless/serverless/pull
 
 ### Different displaying of function name in info command
 
-New users coming to the Serverless Framework faced some issues with the different names the function is refered to on their local machine and AWS.
+New users coming to the Serverless Framework faced some issues with the different names the function is refered to on their local machine vs. AWS.
 
 We decided to update the `info` plugin so that both names are shown. The functions name in `serverless.yml` and the name of the deployed function on AWS.
 
@@ -89,7 +91,7 @@ functions:
 
 ### Enhancements & Bug Fixes
 
-This release also cisex some bugs and introduces some enhancements.
+This release also fixes some other bugs and introduces some enhancements.
 
 > Thanks for reporting bugs and opening issues!
 
