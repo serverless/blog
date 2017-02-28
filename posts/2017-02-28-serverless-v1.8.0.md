@@ -59,7 +59,7 @@ For v1.8 we decided to switch back to `fs.readFileSync` (see [#3310](https://git
 
 This is just a temporary fix. We'll work on a long term fix so that a read stream is used again to reduce the memory usage.
 
-Do you have any idea how we can solve this and want to help? Feel free to chime in on the discussions or create a new issue for it!
+Do you have any idea how we can solve this and want to help? Here's the corresponding issue where we capture the progress: [#3311](https://github.com/serverless/serverless/issues/3311)!
 
 ### Fix monitorStack freezing bug
 
