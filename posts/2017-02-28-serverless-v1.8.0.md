@@ -9,9 +9,9 @@ authors:
 
 Today we're proud to announce v1.8 of the Serverless Framework.
 
-This release is yet another special release since we're introducing the official support for Azure functions!
+v1.8 is yet another special release since we're officially introducing support for Azure functions support via a [Serverless plugin](https://github.com/serverless/serverless-azure-functions)!
 
-Let's take a look at the highlights of this release.
+Let's take a deep dive into the highlights of this release.
 
 ## Highlights of 1.8.0
 
@@ -19,23 +19,73 @@ Let's take a look at the highlights of this release.
 
 ### Azure Functions provider plugin
 
-Lorem
+It finally arrived. The next provider support for the Serverless Framework is here!
+
+We're proud to announce the official [Azure Functions provider plugin](https://github.com/serverless/serverless-azure-functions) for the Serverless Framework!
+
+Read the [announcement blog post](https://serverless.com/blog/azure-functions-and-possibility/) for more info.
+
+You can write and deploy Azure Functions applications with the help of the Serverless Framework. Curious how this looks like? Here are some resources which will help you get started:
+
+1. [Quickstart guide](https://serverless.com/framework/docs/providers/azure/guide/quickstart/)
+2. [Serverless Azure Functions documentation](https://serverless.com/framework/docs/providers/azure/)
+3. [HTTP example](https://github.com/serverless/examples/tree/master/azure-node-simple-http-endpoint)
+
+Just give it a spin and let us know what you think!
+
+**Pro tip:** Sign up via the [free trial](https://azure.microsoft.com/en-us/free/) to get a whopping $200 of free credit.
+
+### BREAKING - Introduce inline policies
+
+Until now we've created a separate `IamPolicyLambdaExecution` resource so that your Lambda functions can interact and execute code appropriately.
+
+[PR #2983](https://github.com/serverless/serverless/pull/2983) updates this behavior so that inline policies are used rather than a separate CloudFormation resource.
+
+This change fixes a bunch of related issue with e.g. VPC setups.
+
+**Note:** This is a breaking change which affects all users / plugin authors who reference the `IamPolicyLambdaExecution` resource since it's removed with the update to v1.8.
 
 ### Fix file streams during zipping
 
-Lorem
+Recently we've switched from a memory intensive `fs.readFileSync` implementation to a `fs.createReadStream` implementation for the zipping of your code (see [#3220](https://github.com/serverless/serverless/pull/3220/files). This reduced the memory footprint by about ~40% which is important when Serverless is used on low power hardware such as CI / CD systems or virtual machines.
 
-### Introduce inline policies
+Unfortunately this fix creates another problem. Old Node versions tend to keep too many files open which results in an error during the zipping process (see [#3249](https://github.com/serverless/serverless/issues/3249)).
 
-Lorem
+We've attacked this fix by using the [`graceful-fs`](https://github.com/isaacs/node-graceful-fs) npm package to wrap the `fs.createReadStream` usage.
+
+However this is just a temporary.
+
+We're open to a more reliable solution for this problem. Do you have any plan how we can solve this in a better way? Feel free to chime in on the discussions or create a new issue for it!
 
 ### Fix monitorStack freezing bug
 
-Lorem
+We're finally able to reproduce a nasty bug which causes Serverless Deployment to freeze in the `Checking Stack update progress...` status.
+
+This problem was introduced due to a clock drift where the time of your local machine is slightly in the future causing AWS server to report incorrect updates about your CloudFormation status.
+
+Luckily we were able to [fix this](https://github.com/serverless/serverless/pull/3297) in a way where the status checking is not dependent on your local machines time anymore.
 
 ### Different displaying of function name in info command
 
-Lorem
+New users coming to the Serverless Framework faced some issues with the different names the function is refered to on their local machine and AWS.
+
+We decided to update the `info` plugin so that both names are shown. The functions name in `serverless.yml` and the name of the deployed function on AWS.
+
+Here's an example output how this looks like:
+
+```
+Service Information
+service: service
+stage: dev
+region: us-east-1
+api keys:
+  None
+endpoints:
+  GET - https://foo.execute-api.us-east-1.amazonaws.com/dev/goodbye
+functions:
+  hello: service-dev-hello
+  goodbye: service-dev-goodbye
+```
 
 ### Enhancements & Bug Fixes
 
@@ -49,7 +99,7 @@ Here's a list of all the breaking changes that will be introduced in Serverless 
 
 **Note:** You'll see the same list in the CLI if you run a Serverless command (as long as you haven't disabled it).
 
-- [BREAKING - Some Example Title](https://github.com/serverless/serverless/pull/4711)
+There are currently no breaking changes planned for v1.9
 
 *You'll always get the most recent list of breaking changes when you take a look at the [upcoming milestone](https://github.com/serverless/serverless/milestones) or in the Serverless CLI.*
 
