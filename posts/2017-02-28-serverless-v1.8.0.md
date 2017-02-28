@@ -69,7 +69,7 @@ This problem was introduced due to a clock drift where the time of your local ma
 
 Luckily we were able to [fix this](https://github.com/serverless/serverless/pull/3297) in a way where the status checking is not dependent on your local machines time anymore.
 
-### Different displaying of function name in info command
+### BREAKING - Different displaying of function name in info command
 
 New users coming to the Serverless Framework faced some issues with the different names the function is refered to on their local machine vs. AWS.
 
