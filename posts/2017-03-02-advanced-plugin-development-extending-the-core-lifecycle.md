@@ -1,6 +1,6 @@
 ---
-title: 'Advanced plugin development - Extending the core lifecycle'
-description: 'How to expose lifecycle hooks in a hook driven plugin'
+title: Advanced plugin development - Extending the core lifecycle
+description: How to expose lifecycle hooks in a hook driven plugin
 date: 2017-03-02
 layout: Post
 authors:
@@ -30,7 +30,7 @@ i.e. the plugin does not offer any explicit commands but only hooks into Serverl
 Your plugin is automatically invoked after the Serverless core deploy plugin left its deploy:deploy lifecycle.
 With this implementation you implicitly have created a dead end in the lifecycle dependencies, but why?
 
-Let me explain it: Everything works as expected, as soon as `serverless deploy` is executed, its deploy:deploy
+*Let me explain it:* Everything works as expected, as soon as `serverless deploy` is executed, its deploy:deploy
 lifecycle event is run, and because you hooked after that, your plugin is executed right after the deploy has
 been finished. So far so good.
 
@@ -38,7 +38,7 @@ But what if you want to expose hooks by yourself in that case? If you want a plu
 or just after your storeData() step, so that it can either add additiona transformations or grab an work on the data
 after you have stored it?
 
-You did just not offer any lifecycle events that can be hooked. That's why this is a dead end.
+You did just not offer any lifecycle events that can be hooked. That's why this is a *dead end*.
 
 
 To offer the best functionality for other plugin writers the plugin should extend the Serverless core lifecycle
