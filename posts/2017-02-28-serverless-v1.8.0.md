@@ -47,9 +47,9 @@ This change fixes a bunch of related issues with e.g. VPC setups.
 
 ### Fix file streams during zipping
 
-Recently we've switched from a memory intensive `fs.readFileSync` implementation to a `fs.createReadStream` implementation for the code zipping (see [#3220](https://github.com/serverless/serverless/pull/3220/files).
+Recently we've switched from a memory intensive `fs.readFileSync` implementation to a `fs.createReadStream` implementation for the code zipping (see [#3220](https://github.com/serverless/serverless/pull/3220/files)).
 
-This change reduced the memory footprint by about ~40% which is important when Serverless is used on low power hardware like CICD systems or virtual machines.
+This change reduced the memory footprint by about ~40% which is important when Serverless is used on low power hardware like CI / CD systems or virtual machines.
 
 Unfortunately this fix creates another problem. Old Node versions tend to keep too many files open which results in an error during the zipping process (see [#3249](https://github.com/serverless/serverless/issues/3249)).
 
