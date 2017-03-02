@@ -47,7 +47,7 @@ This change fixes a bunch of related issues with e.g. VPC setups.
 
 ### Fix file streams during zipping
 
-Recently we've switched from a memory intensive `fs.readFileSync` implementation to a `fs.createReadStream` implementation for the code zipping (see [#3220](https://github.com/serverless/serverless/pull/3220/files).
+Recently we've switched from a memory intensive `fs.readFileSync` implementation to a `fs.createReadStream` implementation for the code zipping (see [#3220](https://github.com/serverless/serverless/pull/3220/files)).
 
 This change reduced the memory footprint by about ~40% which is important when Serverless is used on low power hardware like CICD systems or virtual machines.
 
