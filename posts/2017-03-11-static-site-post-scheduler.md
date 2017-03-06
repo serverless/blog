@@ -8,9 +8,8 @@ authors:
  - DavidWells
 ---
 
-<p align="center">
-  <img width="415" height="204" src="https://cloud.githubusercontent.com/assets/532272/23386639/779ce26c-fd0c-11e6-9e54-f33281e17719.jpg">
-</p>
+<img align="right" width="415" height="204" src="https://cloud.githubusercontent.com/assets/532272/23386639/779ce26c-fd0c-11e6-9e54-f33281e17719.jpg">
+
 
 Like many static site's we use markdown + github for all of our [blog content](https://github.com/serverless/blog/).
 
@@ -102,3 +101,10 @@ We needed someone to manually merge a post into the `master` branch of our site.
 **After:**
 
 We are sipping margaritas on the beach while posts are being published automatically. **Yay 🎉***
+
+## Getting Github API token
+
+For your API token to work, you will need `repo` and `admin:repo_hooks` enabled for your token.
+
+![image](https://cloud.githubusercontent.com/assets/532272/23635398/77910974-0284-11e7-9102-58ff6ad26202.png)
+
