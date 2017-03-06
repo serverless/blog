@@ -1,6 +1,6 @@
 # Serverless Writer’s Guide
 
-Use this Serverless Writer’s Guide as a resource to help you get started. This guide includes suggested topics, sample outlines, example posts, helpful links & more.
+Use this Serverless Writer’s Guide as a resource to help you get started. This guide includes suggested topics, sample outlines, example posts, helpful links and more.
 
 ## Suggested Topics
 
