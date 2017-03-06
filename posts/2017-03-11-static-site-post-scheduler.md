@@ -10,7 +10,6 @@ authors:
 
 <img align="right" width="415" height="204" src="https://cloud.githubusercontent.com/assets/532272/23386639/779ce26c-fd0c-11e6-9e54-f33281e17719.jpg">
 
-
 Like many static site's we use markdown + github for all of our [blog content](https://github.com/serverless/blog/).
 
 Having content under version control comes with some great benefits:
@@ -68,13 +67,23 @@ VIDEO HERE
   {
     "serviceName": "blog-scheduler",
     "region": "us-west-2",
-     "TIMEZONE": "America/Los_Angeles",
+    "TIMEZONE": "America/Los_Angeles",
+    "CRON": "cron(0 * * * ? *)",
     "GITHUB_REPO": "serverless/blog",
     "GITHUB_WEBHOOK_SECRET": "YOUR_GITHUB_WEBHOOK_SECRET_HERE",
     "GITHUB_API_TOKEN": "YOUR_GITHUB_API_TOKEN_HERE",
     "GITHUB_USERNAME": "YOUR_GITHUB_USERNAME_HERE"
   }
   ```
+
+  - `serviceName` is the name of the service that will appear in your AWS account
+  - `region` is the AWS region you would like your functions and database to run in
+  - `TIMEZONE` is the timezone your scheduler will run on. See `timezone.json` for available options
+  - `CRON` - How often you want to check for scheduled posts. See the [AWS cron docs](http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html) or [serverless `schedule` docs](https://serverless.com/framework/docs/providers/aws/events/schedule/) for more information. Default: every hour on the hour
+  - `GITHUB_REPO` - The `owner/repoName` of your repository
+  - `GITHUB_WEBHOOK_SECRET` - Any string you want. This gets plugged into your webhook settings
+  - `GITHUB_API_TOKEN` - Personal access token. See below for additonal info
+  - `GITHUB_USERNAME` - Your github username. Used for requests to github
 
 3. Deploy the service with `serverless deploy`. If you need to setup serverless, please see [these install instructions](https://github.com/serverless/serverless#quick-start).
 
