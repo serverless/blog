@@ -7,7 +7,15 @@ const postsDirectory = path.join(__dirname, 'posts')
 const dateFormatRegex = /[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])-/g
 
 // Example shape of author data
-const authorData = JSON.parse(fs.readFileSync(path.join(authorDirectory, 'DavidWells.json'), 'utf8'))
+const authorData = {
+  "name": "David Wells",
+  "github": "davidwells",
+  "avatar": "https://avatars2.githubusercontent.com/u/532272?v=3&s=60",
+  "bio": {
+    "short": "David Wells is a developer at Serverless, Inc.",
+    "long": "David is a Full Stack JavaScript Developer, entrepreneur, past life marketer. Developer @ http://serverless.com "
+  }
+}
 
 // test author directory
 globby(['*', '!node_modules'], {
