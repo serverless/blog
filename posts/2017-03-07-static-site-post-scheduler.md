@@ -34,7 +34,7 @@ So I thought to myself:
 
 The [post scheduler](https://github.com/serverless/post-scheduler/) is a serverless project that gives static site owners the ability to schedule posts (or other site content).
 
-It works with any static site setup (Jekyll, Huge, Phenomic, Gatsby etc.) as long as your site builds off your `master` branch.
+It works with any static site setup (Jekyll, Hugo, Phenomic, Gatsby etc.) as long as your site builds off your `master` branch.
 
 **How much does it cost?:**
 
