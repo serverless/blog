@@ -1,4 +1,4 @@
-## Aligning images
+## Aligning images for posts
 
 ### `left` alignment
 

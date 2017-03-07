@@ -1,7 +1,7 @@
 {
   "name": "serverless-blog",
   "version": "1.0.0",
-  "description": "Serverless blog content",
+  "description": "Serverless.com blog content",
   "scripts": {
     "docs": "md-magic --path 'README.md' --ignore 'node_modules'",
     "test": "node validate.js"
