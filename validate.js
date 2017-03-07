@@ -6,7 +6,7 @@ const authorDirectory = path.join(__dirname, 'authors')
 const postsDirectory = path.join(__dirname, 'posts')
 const dateFormatRegex = /[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])-/g
 
-// Example shape of author data!
+// Example shape of author data
 const authorData = {
   "name": "David Wells",
   "github": "davidwells",
