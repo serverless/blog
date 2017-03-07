@@ -1,21 +1,20 @@
 ---
-title: Advanced plugin development - Extending the core lifecycle
-description: How to expose lifecycle hooks in a hook driven plugin
-date: 2017-03-02
+title: Advanced Plugin Development - Extending The Serverless Core Lifecycle
+description: Learn how to expose lifecycle hooks in a hook-driven Serverless plugin.
+date: 2017-03-08
+thumbnail:  
 layout: Post
 authors:
   - FrankSchmid
 ---
-# Advanced plugin development - Extending the core lifecycle
+# Introduction
 
-## Introduction
-
-In Serverless 1.x you can easily write plugins that add additional commands who in turn define a lifecycle
+In Serverless 1.x you can easily write plugins to add additional commands that in turn define a lifecycle
 that can be hooked by other plugins. This works great as long as you initiate your plugin functionality by
 invoking it through the defined commands.
 
-But imagine, you have written a plugin (myplugin) that adds some functionality to the standard behavior of Serverless,
-i.e. the plugin does not offer any explicit commands but only hooks into Serverless' core lifecycle events.
+But imagine, you've written a plugin (myplugin) that adds some functionality to the standard behavior of Serverless,
+i.e. the plugin does not offer any explicit commands, but only hooks into Serverless' core lifecycle events.
 
 ```js
   this.hooks = {
@@ -28,25 +27,24 @@ i.e. the plugin does not offer any explicit commands but only hooks into Serverl
 ```
 
 Your plugin is automatically invoked after the Serverless core deploy plugin left its deploy:deploy lifecycle.
-With this implementation you implicitly have created a dead end in the lifecycle dependencies, but why?
+With this implementation you've implicitly created a dead end in the lifecycle dependencies, but why?
 
-*Let me explain it:* Everything works as expected, as soon as `serverless deploy` is executed, its deploy:deploy
-lifecycle event is run, and because you hooked after that, your plugin is executed right after the deploy has
-been finished. So far so good.
+*Let me explain it:* Everything works as expected as soon as `serverless deploy` is executed and its deploy:deploy
+lifecycle event is run. And because you hooked after that, your plugin is executed right after the deploy has
+been finished. So far, so good.
 
-But what if you want to expose hooks by yourself in that case? If you want a plugin to be able to hook just before
-or just after your storeData() step, so that it can either add additiona transformations or grab an work on the data
-after you have stored it?
+But what if you want to expose hooks by yourself in that case? What if you want a plugin to be able to hook just before
+or just after your storeData() step, so that it can either add additional transformations or grab any work on the data
+after you've stored it?
 
-You did just not offer any lifecycle events that can be hooked. That's why this is a *dead end*.
+You just didn't offer any lifecycle events that can be hooked. That's why this is a *dead end*.
 
-
-To offer the best functionality for other plugin writers the plugin should extend the Serverless core lifecycle
+To offer the best functionality for other plugin writers, the plugin should extend the Serverless core lifecycle
 and offer lifecycle events that can be hooked by others. That's what most people expect and what makes the plugin
 system valuable and usable.
 
-From a lifecycle event point of view we would expect that the following lifecycle events are available after
-adding your plugin to any serverless service project:
+From a lifecycle event point of view, we'd expect that the following lifecycle events are available after
+adding your plugin to any Serverless service project:
 
 ```
 -> deploy:deploy
@@ -56,10 +54,9 @@ adding your plugin to any serverless service project:
 -> myplugin:data:store
 ```
 
-Now any other plugin could hook before or after any of your plugin actions. Thats exactly how it should work.
+Now any other plugin could hook before or after any of your plugin actions. That's exactly how it should work.
 
-
-## Extending the Serverless core lifecycle
+# Extending the Serverless Core Lifecycle
 
 The Serverless core implementation composes the lifecycle by inspecting the commands offered by any plugins. There is
 no direct way for a plugin to inject its own lifecycle events when triggered by a hook. Only a command invocation will
@@ -72,9 +69,9 @@ As lifecycles can only be started by invoking a command, and the plugin manager 
 feasible solution here.
 
 In short, we have to define an internal command, that defines our plugin lifecycle and that can be
-run by the plugin manager from within our hook implementation. Here is the step by step walkthrough.
+run by the plugin manager from within our hook implementation. Here's the step-by-step walkthrough.
 
-### Adding our internal command(s)
+## Adding Our Internal Command(s)
 
 We add the internal command to our plugin, although the plugin is only triggered by hooks.
 ```js
@@ -100,11 +97,11 @@ class myPlugin {
   }
 }
 ```
-The command only defines the lifecycle, not anything else. We do not want to let it be called from the user.
+The command only defines the lifecycle, not anything else. We don't want to let it be called from the user.
 
-### Invoke the command within our hook / Enter our lifecycle
+## Invoke the Command Within Our Hook / Enter Our Lifecycle
 
-In our hook we now use the plugin manager to enter our very own plugin lifecycle. Therefore we modify our hooks
+In our hook we now use the plugin manager to enter our very own plugin lifecycle. Therefore we modify our hook's
 definition from above.
 
 ```js
@@ -123,10 +120,9 @@ definition from above.
   }
 ```
 
+## Multiple Descriptive Sub Lifecycles
 
-### Multiple descriptive sub lifecycles
-
-You might have noticed the it would be possible to define additional lifecycles besides the 'data' lifecycle.
+You may have noticed the it would be possible to define additional lifecycles besides the 'data' lifecycle.
 For larger plugins that will make the lifecycle model much more structured and transparent and implicitly adds
 more intuition to your exposed lifecycle events.
 
@@ -140,18 +136,18 @@ Example:
 -> myplugin:analysis:evalBandwidth
 ```
 
-A further advanced usage could be a combination of user command lifecycles and internal lifecycles. Your plugin
-could offer additional commands that are accessible by the user and that also can be invoked within your internal
-hook chain. There are no limit what you can do there.
+A further advanced use case could be a combination of user command lifecycles and internal lifecycles. Your plugin
+could offer additional commands that are accessible by the user and can also be invoked within your internal
+hook chain. There are no limits to what you can do there.
 
-### Prevent invocation from the outside (user)
+## Prevent Invocation from the Outside (User)
 
 Serverless will show all defined commands in its help output and every shown command normally can also be executed.
 For our internal hook lifecycle both of these behaviors are issues, so we have to add a workaround - Serverless does 
-not allow commands to be not exposed nor does it allow to hide commands from the help output.
+not allow commands to not be exposed nor does it allow you to hide commands from the help output.
 
 We add a small description to our data command that will be shown on the help screen and a validate lifecycle event that
-we will use to check if the invocation has been done from our hook implementation:
+we'll use to check if the invocation has been done from our hook implementation:
 ```js
         ...
         commands: {
@@ -162,7 +158,7 @@ we will use to check if the invocation has been done from our hook implementatio
             ...
 ```
 
-Additionally we prevent the user from starting it via 'serverless myplugin data' and add a local invocation check to our
+Additionally, we prevent the user from starting it via 'serverless myplugin data' and add a local invocation check to our
 hook implementation and the new validate event as follows:
 
 ```js
@@ -176,13 +172,9 @@ hook implementation and the new validate event as follows:
   ...
 ```
 
-Maybe the plugin manager can support some flag for internal commands in the future, that prevents calling from the outside and 
+Maybe the plugin manager can support some flag for internal commands in the future that prevents calling from the outside and 
 display on the help screen. Then the trigger check can be removed completely.
 
-## Conclusion
+# Conclusion
 
-Hopefully this approach will make your plugins more flexible and lets other plugin contributors integrate easily with them.
-
-Cheers!
-
-Frank
+Hopefully this approach will make your plugins more flexible and allow other plugin contributors to integrate easily with them.
