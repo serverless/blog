@@ -21,6 +21,7 @@ Many of AWS' biggest releases tend to happen around their annual re:Invent confe
 This allows for interesting use cases such as ‘intelligent’ HTTP processing and modifying HTTP headers on the fly. Also has some interesting potential use cases for IoT.
 
 ## AWS X-Ray
+
 **What is it?**
 - Provides distributed tracing for distributed systems on AWS
 - Provides a visualization of your applications' components and allows for an end-to-end view of requests
