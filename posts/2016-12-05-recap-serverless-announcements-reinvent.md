@@ -32,6 +32,7 @@ This allows for interesting use cases such as ‘intelligent’ HTTP processing 
 Getting a detailed view of performance as well as debugging for microservice architectures built on AWS has always been a difficult problem. X-Ray appears to be a tool that will make this a lot easier. It’s not available for Lambda yet, but when it is it will allow for a lot more peace-of-mind and encourage larger, more complex systems to be built on top of it.
 
 ## Step Functions
+
 **What is it?**
 - Visual workflow for designing and coordinating microservice oriented applications
 - Allows you to setup your functions as a series of ‘steps’, including automatic triggers, tracking, and retries
