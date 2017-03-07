@@ -8,36 +8,55 @@ authors:
  - DavidWells
 ---
 
-<img align="right" width="415" height="204" src="https://cloud.githubusercontent.com/assets/532272/23386639/779ce26c-fd0c-11e6-9e54-f33281e17719.jpg">
+<img align="right" width="250" height="123" src="https://cloud.githubusercontent.com/assets/532272/23386639/779ce26c-fd0c-11e6-9e54-f33281e17719.jpg">
 
 Like many static site's we use markdown + github for all of our [blog content](https://github.com/serverless/blog/).
 
 Having content under version control comes with some great benefits:
 
-- Anyone can submit content, fix typos & update anything via pull requests
-- Version control - Roll back & see the history of any given post
-- No CMS lock in - We can easily port to any static site generator
-- It's just simple - No user accounts to manage, no CMS software to upgrade, no plugins to install.
+- **It's Open** - Anyone can submit/update content & fix typos via pull requests
+- **Version control** - Roll back & see the history of any given post
+- **No CMS lock in** - We can easily port to any static site generator
+- **It's just simple** - No user accounts to manage, no CMS software to upgrade, no plugins to install.
 
-All that said, there are some missing features when it comes to running your blog via a static site generator.
+All that said, there are some *missing features* when it comes to running your site or blog via a static site generator.
 
-The biggest missing feature is the ability to schedule posts to publish at a specific time.
+Lacking the ability to **schedule posts** to publish at a specific time is a pain. Publishing content to our [static site](https://github.com/serverless/site) & [blog](https://github.com/serverless/blog/) has been a manual process.
 
-### **Not anymore baby!**
+We had to be psychically at our keyboard & use our meat sticks to click the "merge" button in github for a specific post branch to merge it into `master`.
 
-Until now, publishing a post was a manual process of merging a post branch into the `master` branch of our [blog repo](https://github.com/serverless/blog/).
+So I thought to myself:
 
-While not the end of the world, it was an inconvenience for our content team needing to be awake super early to manually click a button.
-
-So I thought to myself... There has got to be a better way... a better **serverless** way.
+> There has got to be a better way... a better **serverless** way.
+> - **David's brain**
 
 ## Introducing the Post Scheduler for Static Websites
 
-The post scheduler is a serverless project enables people running their sites on any static website generator the ability to schedule posts.
+The [post scheduler](https://github.com/serverless/post-scheduler/) is a serverless project that gives static site owners the ability to schedule posts (or other site content).
 
-For.... **free!** That's right, under the generous free tier of AWS you can deploy this project for your site and run well under the free tier limits.
+It works with any static site setup (Jekyll, Huge, Phenomic, Gatsby etc.) as long as your site builds off your `master` branch.
+
+**How much does it cost?:**
+
+It's a free open source project that you can run easily for free under the generous free tier of AWS. Just clone it down, add in your repo details and `sls deploy` it into your AWS account.
+
+**Before:**
+
+Late night manual merges **🙈**
+
+**After:**
+
+Sipping margaritas on the beach while posts are being published automatically. **🎉**
+
+## Show me the 💸 (demo)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YETxuhexZY4?list=PLIIjEI2fYC-BubklemD4D51vrXHOcUOpc" frameborder="0" allowfullscreen></iframe>
+
+[Watch the rest of the playlist on youtube](https://www.youtube.com/watch?v=YETxuhexZY4&index=1&list=PLIIjEI2fYC-BubklemD4D51vrXHOcUOpc)
 
 ## How does it work?
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RaJw_6s5nWc?list=PLIIjEI2fYC-BubklemD4D51vrXHOcUOpc" frameborder="0" allowfullscreen></iframe>
 
 1. A github webhook fires when a pull request (aka new posts or site content) is updated.
 
@@ -47,8 +66,6 @@ For.... **free!** That's right, under the generous free tier of AWS you can depl
 
 4. When the post is ready to be published, the cron function automatically merges the branch into `master` and your site, if you have CI/CD built in, will redeploy itself.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YETxuhexZY4?list=PLIIjEI2fYC-BubklemD4D51vrXHOcUOpc" frameborder="0" allowfullscreen></iframe>
-
 ### Github Webhook Architecture
 
 ![cloudcraft - post scheduler webhook](https://cloud.githubusercontent.com/assets/532272/23387076/2e7960b2-fd0f-11e6-88da-49517b27d8ae.png)
@@ -57,13 +74,16 @@ For.... **free!** That's right, under the generous free tier of AWS you can depl
 
 ![cloudcraft - post scheduler cron setup](https://cloud.githubusercontent.com/assets/532272/23388042/e129772e-fd14-11e6-96ca-ff23a019a51e.png)
 
-## Install Instructions
+## How to Install
 
-1. Clone down the [repository](https://github.com/serverless/post-scheduler/) and run `npm install` to install the dependencies
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rfZPQX-PQkQ" frameborder="0" allowfullscreen></iframe>
 
-2. Duplicate `config.prod.example.json` into a new file called `config.prod.json` and insert your Github username, API token, and webhook secret
+### 1. Clone down the [repository](https://github.com/serverless/post-scheduler/) and run `npm install` to install the dependencies
+
+### 2. Duplicate `config.prod.example.json` into a new file called `config.prod.json` and insert your Github username, API token, and webhook secret
 
   ```json
+  // config.prod.json
   {
     "serviceName": "blog-scheduler",
     "region": "us-west-2",
@@ -76,44 +96,39 @@ For.... **free!** That's right, under the generous free tier of AWS you can depl
   }
   ```
 
-  - `serviceName` is the name of the service that will appear in your AWS account
-  - `region` is the AWS region you would like your functions and database to run in
-  - `TIMEZONE` is the timezone your scheduler will run on. See `timezone.json` for available options
-  - `CRON` - How often you want to check for scheduled posts. See the [AWS cron docs](http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html) or [serverless `schedule` docs](https://serverless.com/framework/docs/providers/aws/events/schedule/) for more information. Default: every hour on the hour
+  - `serviceName` - name of the service that will appear in your AWS account
+  - `region` - AWS region to deploy the functions and database in
+  - `TIMEZONE` - Timezone the cron runs on. See `timezone.json` for available options
+  - `CRON` - How often you want to check for scheduled posts? See the [AWS cron docs](http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html) or [serverless `schedule` docs](https://serverless.com/framework/docs/providers/aws/events/schedule/) for more information. **Default:** every hour on the hour
   - `GITHUB_REPO` - The `owner/repoName` of your repository
   - `GITHUB_WEBHOOK_SECRET` - Any string you want. This gets plugged into your webhook settings
   - `GITHUB_API_TOKEN` - Personal access token. See below for additonal info
   - `GITHUB_USERNAME` - Your github username. Used for requests to github
 
-3. Deploy the service with `serverless deploy`. If you need to setup serverless, please see [these install instructions](https://github.com/serverless/serverless#quick-start).
+### 3. Deploy the service with `serverless deploy`. If you need to setup serverless, please see [these install instructions](https://github.com/serverless/serverless#quick-start).
 
-4. Take the POST endpoint returned from deploy and plug it into your [repositories settings in github](https://youtu.be/b_DVXgiByec?t=1m9s)
+### 4. Take the POST endpoint returned from deploy and plug it into your [repositories settings in github](https://youtu.be/b_DVXgiByec?t=1m9s)
 
-  ![image](https://cloud.githubusercontent.com/assets/532272/23144203/e0dada50-f77a-11e6-8da3-7bdbcaf8f2a0.png)
+![image](https://cloud.githubusercontent.com/assets/532272/23144203/e0dada50-f77a-11e6-8da3-7bdbcaf8f2a0.png)
 
-  1. Add your github webhook listener URL into the `Payload URL` and choose type `application/json`
+1. Add your github webhook listener URL into the `Payload URL` and choose type `application/json`
 
-  2. Plugin your `GITHUB_WEBHOOK_SECRET` defined in your config file
+2. Plugin your `GITHUB_WEBHOOK_SECRET` defined in your config file
 
-  3. Select which github events will trigger your webhook
+3. Select which github events will trigger your webhook
 
-  4. Select Issue comments, these will be where you insert `schedule(MM/DD/YYYY H:MM pm)` comments in a given PR
+4. Select Issue comments, these will be where you insert `schedule(MM/DD/YYYY H:MM pm)` comments in a given PR
 
-5. Submit a PR and give it a go!
+### 5. Submit a PR and give it a go!
 
-## Automate all the things!
+## Contributions Welcome
 
-**Before:**
+Have an idea on how we can improve the static site post scheduler?
 
-We needed someone to manually merge a post into the `master` branch of our site. **Boo 🙈***
+Leave us a comment below, [submit a PR](https://github.com/serverless/post-scheduler/), or tweet [@DavidWells](https://twitter.com/davidwells)
 
-**After:**
+## Was this post scheduled?
 
-We are sipping margaritas on the beach while posts are being published automatically. **Yay 🎉***
+How did you guess it?
 
-## Getting Github API token
-
-For your API token to work, you will need `repo` and `admin:repo_hooks` enabled for your token.
-
-![image](https://cloud.githubusercontent.com/assets/532272/23635398/77910974-0284-11e7-9102-58ff6ad26202.png)
-
+[This post was scheduled!](https://github.com/serverless/blog/pull/94)
