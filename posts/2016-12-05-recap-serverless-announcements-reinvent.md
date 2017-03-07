@@ -71,6 +71,7 @@ This is the first step towards allowing developers to sell their functions direc
 By default if a Lambda is triggered and fails it will automatically retry twice before discarding the event. Dead letter queues for Lambda mean you will never miss an event again. Failed events can be sent to SQS or SNS where they can be processed and debugged further, so you can actually find the cause of the problem and fix it. This feature makes event processing on Lambda much more reliable and will likely result in a more widespread use.
 
 ## C# for Lambda
+
 **What is it?**
 - .NET Core 1.0 is now an officially supported runtime on Lambda
 
