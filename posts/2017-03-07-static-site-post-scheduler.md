@@ -1,6 +1,6 @@
 ---
-title: Static Site Post Scheduler
-description: Open source static site scheduler tool
+title: How to schedule posts for static site generators (Jekyll, Hugo, Phenomic etc.)
+description: Open source static site scheduler tool built with serverless
 date: 2017-03-07
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/post-scheduler-icon-clear.png
 layout: Post
@@ -21,9 +21,11 @@ Having content under version control comes with some great benefits:
 
 All that said, there are some *missing features* when it comes to running your site or blog via a static site generator.
 
-Lacking the ability to **schedule posts** to publish at a specific time is a pain. Publishing content to our [static site](https://github.com/serverless/site) & [blog](https://github.com/serverless/blog/) has been a manual process.
+Lacking the ability to **schedule posts** to publish at a specific time is a pain. Publishing content to our [static site](https://github.com/serverless/site) & [blog](https://github.com/serverless/blog/) have been a manual process.
 
-We had to be psychically at our keyboard & use our meat sticks to click the "merge" button in github for a specific post branch to merge it into `master`.
+We had to physically be at our keyboards & use our meat sticks to click the "merge" button in github.
+
+How antiquated...
 
 So I thought to myself:
 
@@ -34,11 +36,13 @@ So I thought to myself:
 
 The [post scheduler](https://github.com/serverless/post-scheduler/) is a serverless project that gives static site owners the ability to schedule posts (or other site content).
 
-It works with any static site setup (Jekyll, Hugo, Phenomic, Gatsby etc.) as long as your site builds off your `master` branch.
+It works with any static site setup (Jekyll, Hugo, Phenomic, Gatsby etc.)
 
 **How much does it cost?:**
 
-It's a free open source project that you can run easily for free under the generous free tier of AWS. Just clone it down, add in your repo details and `sls deploy` it into your AWS account.
+It's **free** & open source project. You can easily run under this under the generous free tier of AWS.
+
+Just clone it down, add in your repo details and `sls deploy` it into your AWS account.
 
 **Before:**
 
@@ -65,6 +69,8 @@ Sipping margaritas on the beach while posts are being published automatically. *
 3. A serverless cron job runs every hour to check if a post is ready to be published.
 
 4. When the post is ready to be published, the cron function automatically merges the branch into `master` and your site, if you have CI/CD built in, will redeploy itself.
+
+To cancel scheduled posts, delete the scheduled comment and it will unschedule the branch.
 
 ### Github Webhook Architecture
 
