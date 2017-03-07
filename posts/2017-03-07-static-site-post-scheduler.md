@@ -1,5 +1,5 @@
 ---
-title: How to schedule posts for static site generators (Jekyll, Hugo, Phenomic etc.)
+title: How To Schedule Posts for Static Site Generators (Jekyll, Hugo, Phenomic etc.)
 description: Open source static site scheduler tool built with serverless
 date: 2017-03-07
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/post-scheduler-icon-clear.png
@@ -10,20 +10,20 @@ authors:
 
 <img align="right" width="250" height="123" src="https://cloud.githubusercontent.com/assets/532272/23386639/779ce26c-fd0c-11e6-9e54-f33281e17719.jpg">
 
-Like many static site's we use markdown + github for all of our [blog content](https://github.com/serverless/blog/).
+Like many static sites we use Markdown + GitHub for all of our [blog content](https://github.com/serverless/blog/).
 
 Having content under version control comes with some great benefits:
 
-- **It's Open** - Anyone can submit/update content & fix typos via pull requests
+- **It's open** - Anyone can submit/update content and fix typos via pull requests
 - **Version control** - Roll back & see the history of any given post
 - **No CMS lock in** - We can easily port to any static site generator
 - **It's just simple** - No user accounts to manage, no CMS software to upgrade, no plugins to install.
 
 All that said, there are some *missing features* when it comes to running your site or blog via a static site generator.
 
-Lacking the ability to **schedule posts** to publish at a specific time is a pain. Publishing content to our [static site](https://github.com/serverless/site) & [blog](https://github.com/serverless/blog/) have been a manual process.
+Lacking the ability to **schedule posts** to publish at a specific time is a pain. Publishing content to our [static site](https://github.com/serverless/site) and [blog](https://github.com/serverless/blog/) has been a manual process.
 
-We had to physically be at our keyboards & use our meat sticks to click the "merge" button in github.
+We had to physically be at our keyboards and click the "merge" button in GitHub.
 
 How antiquated...
 
@@ -34,13 +34,13 @@ So I thought to myself:
 
 ## Introducing the Post Scheduler for Static Websites
 
-The [post scheduler](https://github.com/serverless/post-scheduler/) is a serverless project that gives static site owners the ability to schedule posts (or other site content).
+The [post scheduler](https://github.com/serverless/post-scheduler/) is a Serverless project that gives static site owners the ability to schedule posts (or other site content).
 
 It works with any static site setup (Jekyll, Hugo, Phenomic, Gatsby etc.)
 
 **How much does it cost?:**
 
-It's **free** & open source project. You can easily run under this under the generous free tier of AWS.
+It's **free** and open source project. You can easily run under this under the generous free tier of AWS.
 
 Just clone it down, add in your repo details and `sls deploy` it into your AWS account.
 
@@ -52,17 +52,17 @@ Late night manual merges **🙈**
 
 Sipping margaritas on the beach while posts are being published automatically. **🎉**
 
-## Show me the 💸 (demo)
+## Show Me The 💸 (Demo)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YETxuhexZY4?list=PLIIjEI2fYC-BubklemD4D51vrXHOcUOpc" frameborder="0" allowfullscreen></iframe>
 
 [Watch the rest of the playlist on youtube](https://www.youtube.com/watch?v=YETxuhexZY4&index=1&list=PLIIjEI2fYC-BubklemD4D51vrXHOcUOpc)
 
-## How does it work?
+## How It Works
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RaJw_6s5nWc?list=PLIIjEI2fYC-BubklemD4D51vrXHOcUOpc" frameborder="0" allowfullscreen></iframe>
 
-1. A github webhook fires when a pull request (aka new posts or site content) is updated.
+1. A GitHub webhook fires when a pull request (aka new posts or site content) is updated.
 
 2. If the pull request comment has a comment matching `schedule(MM/DD/YYYY H:MM pm)` & the person is a collaborator on the project, the post/content gets scheduled for you.
 
@@ -111,17 +111,17 @@ To cancel scheduled posts, delete the scheduled comment and it will unschedule t
   - `GITHUB_API_TOKEN` - Personal access token. See below for additonal info
   - `GITHUB_USERNAME` - Your github username. Used for requests to github
 
-### 3. Deploy the service with `serverless deploy`. If you need to setup serverless, please see [these install instructions](https://github.com/serverless/serverless#quick-start).
+### 3. Deploy the service with `serverless deploy`. If you need to setup Serverless, please see [these install instructions](https://github.com/serverless/serverless#quick-start).
 
 ### 4. Take the POST endpoint returned from deploy and plug it into your [repositories settings in github](https://youtu.be/b_DVXgiByec?t=1m9s)
 
 ![image](https://cloud.githubusercontent.com/assets/532272/23144203/e0dada50-f77a-11e6-8da3-7bdbcaf8f2a0.png)
 
-1. Add your github webhook listener URL into the `Payload URL` and choose type `application/json`
+1. Add your GitHub webhook listener URL into the `Payload URL` and choose type `application/json`
 
 2. Plugin your `GITHUB_WEBHOOK_SECRET` defined in your config file
 
-3. Select which github events will trigger your webhook
+3. Select which GitHub events will trigger your webhook
 
 4. Select Issue comments, these will be where you insert `schedule(MM/DD/YYYY H:MM pm)` comments in a given PR
 
