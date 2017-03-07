@@ -1,8 +1,8 @@
 ---
 title: Static Site Post Scheduler
 description: Open source static site scheduler tool
-date: 2017-03-11
-thumbnail: https://cloud.githubusercontent.com/assets/4726921/23232988/fdabd3fa-f955-11e6-84bd-c8a939841360.png
+date: 2017-03-07
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/post-scheduler-icon-clear.png
 layout: Post
 authors:
  - DavidWells
