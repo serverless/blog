@@ -47,7 +47,7 @@ For.... **free!** That's right, under the generous free tier of AWS you can depl
 
 4. When the post is ready to be published, the cron function automatically merges the branch into `master` and your site, if you have CI/CD built in, will redeploy itself.
 
-VIDEO HERE
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YETxuhexZY4?list=PLIIjEI2fYC-BubklemD4D51vrXHOcUOpc" frameborder="0" allowfullscreen></iframe>
 
 ### Github Webhook Architecture
 
