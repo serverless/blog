@@ -126,7 +126,7 @@ You may have noticed the it would be possible to define additional lifecycles be
 For larger plugins that will make the lifecycle model much more structured and transparent and implicitly adds
 more intuition to your exposed lifecycle events.
 
-Example:
+**Example:**
 ```
 -> deploy:deploy
 -> after:deploy:deploy
