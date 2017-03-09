@@ -1,6 +1,6 @@
 ---
 title: Google Cloud Functions support with Serverless v1.9
-description: Google Cloud Functions provider plugin, Separate package and deploy commands, GetAtt / ImportValue for Streams, Top-Level references, bug fixes and improvements in the Serverless Framework v1.9 release.
+description: Google Cloud Functions provider plugin, Separate package and deploy commands, bug fixes and improvements in the Serverless Framework v1.9 release.
 date: 2017-03-14
 layout: Post
 authors:
