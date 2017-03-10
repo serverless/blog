@@ -33,7 +33,7 @@ Curious how this looks like? Here's a list with resources to help you get starte
 
 Let us know what you think!
 
-**Pro tip:** Google Cloud offers a [free trial](https://console.cloud.google.com/freetrial) where you'll get a $300 credit.
+**Pro tip:** Google Cloud offers a [free trial](https://cloud.google.com/free) where you'll get a $300 credit.
 
 ### Top-Level References
 
@@ -43,7 +43,9 @@ https://github.com/serverless/serverless/pull/3208
 
 https://github.com/serverless/serverless/pull/3111
 
-### Package and deploy as single commands
+### `virtualenv` support for invoke local
+
+https://github.com/serverless/serverless/pull/3346
 
 ### Enhancements & Bug Fixes
 
@@ -57,7 +59,7 @@ Here's a list of all the breaking changes that will be introduced in Serverless 
 
 **Note:** You'll see the same list in the CLI if you run a Serverless command (as long as you haven't disabled it).
 
-There are currently no breaking changes planned for v1.10
+- [BREAKING - Separated Packaging and Deployment for CI/CD](https://github.com/serverless/serverless/pull/3344)
 
 *You'll always get the most recent list of breaking changes when you take a look at the [upcoming milestone](https://github.com/serverless/serverless/milestones) or in the Serverless CLI.*
 
