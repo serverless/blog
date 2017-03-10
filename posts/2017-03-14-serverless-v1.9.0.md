@@ -35,7 +35,39 @@ Let us know what you think!
 
 **Pro tip:** Google Cloud offers a [free trial](https://cloud.google.com/free) where you'll get a $300 credit.
 
-### Top-Level References
+### Allow DynamoDB and Kinesis streams to use GetAtt / ImportValue
+
+Streams such as Kinesis Streams or DynamoDB Streams are an often used event source in serverless architectures. They make it easy to build awesome data pipelining tools and process a huge amount of data in a serverless manner.
+
+The Serverless Framework introduced support for the `stream` event a while ago. Version 1.9 adds a nice new feature which makes it able to reference stream sources with the help of `GetAtt` or `ImportValue`.
+
+This way you could e.g. define the stream as a CloudFormation resource in the `resources` section and reference it directly in your `serverless.yml` file.
+
+Here's an example how this would look like:
+
+```yml
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - stream:
+          type: kinesis
+          arn:
+            Fn::GetAtt:
+              - ResourcesKinesisStream
+              - Arn
+          batchSize: 1
+
+resources:
+  Resources:
+    ResourcesKinesisStream:
+      Type: AWS::Kinesis::Stream
+      Properties:
+        Name: ResourcesKinesisStream
+        ShardCount: 1
+```
+
+### Top-Level references for Serverless variables
 
 The [Serverless variable system](https://serverless.com/framework/docs/providers/aws/guide/variables/) is a flexible and powerful way to spice up your `serverless.yml` files.
 
@@ -74,38 +106,6 @@ resources:
       Value: 'Exported env variable'
       Export:
         Name: ${env:}
-```
-
-### Allow DynamoDB and Kinesis streams to use GetAtt / ImportValue
-
-Streams such as Kinesis Streams or DynamoDB Streams are an often used event source in serverless architectures. They make it easy to build awesome data pipelining tools and process a huge amount of data in a serverless manner.
-
-The Serverless Framework introduced support for the `stream` event a while ago. Version 1.9 adds a nice new feature which makes it able to reference stream sources with the help of `GetAtt` or `ImportValue`.
-
-This way you could e.g. define the stream as a CloudFormation resource in the `resources` section and reference it directly in your `serverless.yml` file.
-
-Here's an example how this would look like:
-
-```yml
-functions:
-  hello:
-    handler: handler.hello
-    events:
-      - stream:
-          type: kinesis
-          arn:
-            Fn::GetAtt:
-              - ResourcesKinesisStream
-              - Arn
-          batchSize: 1
-
-resources:
-  Resources:
-    ResourcesKinesisStream:
-      Type: AWS::Kinesis::Stream
-      Properties:
-        Name: ResourcesKinesisStream
-        ShardCount: 1
 ```
 
 ### `virtualenv` support for invoke local
