@@ -1,11 +1,11 @@
 ---
 title: Using Serverless Authentication Boilerplate with FaunaDB
 description: FaunaDB is a security aware database, so we pass user-specific access tokens to it via a custom authorizer.
-date: 2017-03-07
-thumbnail: 
+date: 2017-03-15
+thumbnail: https://cloud.githubusercontent.com/assets/20538501/23813615/4b53e4fc-05a5-11e7-8214-e34c2c02b949.png
 layout: Post
 authors:
- - jchris
+ - ChrisAnderson
 ---
 
 We are proud to support our friends at Fauna as they announce [FaunaDB Serverless Cloud](https://fauna.com/product), a globally consistent distributed database. This is a guest post from Chris Anderson, Director of Developer Experience, showing how to connect FaunaDB's access control model with Serverless platform best practices.
