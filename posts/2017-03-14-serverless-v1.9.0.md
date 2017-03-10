@@ -45,7 +45,13 @@ https://github.com/serverless/serverless/pull/3111
 
 ### `virtualenv` support for invoke local
 
-https://github.com/serverless/serverless/pull/3346
+Most of the time developing in Python is done with the help of `virtualenvs` to encapsulate dependencies for Python projects. This is especially helpful when working on different Serverless Python services.
+
+Most of the time you want to quickly test your functions locally without the need to deploy them to AWS first. This is where the `invoke local` command comes in handy. However in the past `invoke local` didn't support `virtualenv` setups.
+
+Serverless v1.9 changes that and adds support for `virtualenv` setups in the `invoke local` command.
+
+This way you can still encapsulate your Serverless Python services into their own environments but also iterate quickly on your ideas by using `invoke local`.
 
 ### Enhancements & Bug Fixes
 
