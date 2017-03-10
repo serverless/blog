@@ -37,7 +37,44 @@ Let us know what you think!
 
 ### Top-Level References
 
-https://github.com/serverless/serverless/pull/3208
+The [Serverless variable system](https://serverless.com/framework/docs/providers/aws/guide/variables/) is a flexible and powerful way to spice up your `serverless.yml` files.
+
+Serverless Framework v1.9 makes this system even more powerful.
+
+You're now able to reference to the current `serverless.yml` files root or access the options root parameters so that you have access to all option parameters and don't need to specify the option you want to access.
+
+Curious how this looks like? Here's a code example which illustrates how to use those enhancements:
+
+```yml
+service: self-reference
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+
+custom:
+  newService: ${self:}
+  exportName: ${self:custom.newService.service}-export
+
+functions:
+  hello:
+    handler: handler.hello
+
+resources:
+  Outputs:
+    selfExport:
+      Value: 'A Value To Export'
+      Export:
+        Name: ${self:custom.exportName}
+    OptExport:
+      Value: 'Exported option variable'
+      Export:
+        Name: ${opt:}
+    EnvExport:
+      Value: 'Exported env variable'
+      Export:
+        Name: ${env:}
+```
 
 ### Allow DynamoDB and Kinesis streams to use GetAtt / ImportValue
 
