@@ -2,7 +2,7 @@
 title: Build A Serverless Python Application with AWS + FaunaDB - The First Serverless Database
 description: "Learn how to build a Serverless Python app with serverless database FaunaDB."
 date: 2017-03-10
-thumbnail: https://cloud.githubusercontent.com/assets/20538501/23813615/4b53e4fc-05a5-11e7-8214-e34c2c02b949.png
+thumbnail: 
 layout: Post
 authors:
   - ChrisAnderson
