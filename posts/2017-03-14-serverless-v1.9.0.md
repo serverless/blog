@@ -150,18 +150,6 @@ Contributing isn't just about code! Chime in on discussion, help with documentat
 
 Just filter by [our labels](https://github.com/serverless/serverless/labels) such as [easy-pick](https://github.com/serverless/serverless/issues?q=is%3Aopen+is%3Aissue+label%3Astatus%2Feasy-pick), [help-wanted](https://github.com/serverless/serverless/issues?q=is%3Aopen+is%3Aissue+label%3Astatus%2Fhelp-wanted) or [needs-feedback](https://github.com/serverless/serverless/labels/stage%2Fneeds-feedback) to find areas where you can help us!
 
-### Introducing the "Post Scheduler"
-
-Our latest open source effort called ["Post Scheduler"](https://github.com/serverless/post-scheduler) was recently announced! 
-
-It's a handy tool which makes it possible for you to schedule the publishing of blog articles when using static site generator such as Jekyll, Hugo, Phenomic etc. through simple GitHub comments.
-
-It's (of course) made with the help of the Serverless Framework. You should definitely check out the [GitHub repository](https://github.com/serverless/post-scheduler) and the [introduction video](https://www.youtube.com/watch?v=YETxuhexZY4).
-
-Furthermore you can read the corresponding announcement blog post [here](https://serverless.com/blog/static-site-post-scheduler/).
-
-Happy scheduling!
-
 ### Using "Scope" to Contribute
 
 We use our own Serverless Open Source tool called ["Scope"](https://github.com/serverless/scope) to manage the Frameworks development process:
@@ -177,5 +165,19 @@ You can use this status board to see all the important things currently happenin
 We've already started filling in the next [milestones](https://github.com/serverless/serverless/milestones). Check out the [1.10 milestone](https://github.com/serverless/serverless/milestone/25) to see what we've planned for the next release.
 
 We hope that you like the new release! Let us know if you have any questions or feedback in [our Forum](http://forum.serverless.com/) or [GitHub Issues](https://github.com/serverless/serverless/issues).
+
+## Introducing the "Post Scheduler" project
+
+Our latest open source effort called ["Post Scheduler"](https://github.com/serverless/post-scheduler) was recently announced! 
+
+It's a handy tool which makes it possible for you to schedule the publishing of blog articles when using static site generator such as Jekyll, Hugo, Phenomic etc. through simple GitHub comments.
+
+It's (of course) made with the help of the Serverless Framework. You should definitely check out the [GitHub repository](https://github.com/serverless/post-scheduler) and the [introduction video](https://www.youtube.com/watch?v=YETxuhexZY4).
+
+Furthermore you can read the corresponding announcement blog post [here](https://serverless.com/blog/static-site-post-scheduler/).
+
+Happy scheduling!
+
+## Serverless examples
 
 The [Serverless Examples Repository](https://github.com/serverless/examples) is an excellent resource if you want to explore some real world examples and learn more about what Serverless architectures look like.
