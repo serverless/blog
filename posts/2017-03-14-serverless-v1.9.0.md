@@ -113,6 +113,16 @@ Contributing isn't just about code! Chime in on discussion, help with documentat
 
 Just filter by [our labels](https://github.com/serverless/serverless/labels) such as [easy-pick](https://github.com/serverless/serverless/issues?q=is%3Aopen+is%3Aissue+label%3Astatus%2Feasy-pick), [help-wanted](https://github.com/serverless/serverless/issues?q=is%3Aopen+is%3Aissue+label%3Astatus%2Fhelp-wanted) or [needs-feedback](https://github.com/serverless/serverless/labels/stage%2Fneeds-feedback) to find areas where you can help us!
 
+### Introducing the "Post Scheduler"
+
+Our latest open source effort called ["Post Scheduler"](https://github.com/serverless/post-scheduler) was recently announced! 
+
+It's a handy tool which makes it possible for you to schedule the publishing of blog articles when using static site generator such as "Jekyll", "Hugo", etc. through simple GitHub comments.
+
+It's (of course) made with the help of the Serverless Framework. You should definitely check out the [GitHub repository](https://github.com/serverless/post-scheduler) and the [introduction video](https://www.youtube.com/watch?v=YETxuhexZY4).
+
+Happy scheduling!
+
 ### Using "Scope" to Contribute
 
 We use our own Serverless Open Source tool called ["Scope"](https://github.com/serverless/scope) to manage the Frameworks development process:
