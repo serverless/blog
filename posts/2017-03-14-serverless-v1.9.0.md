@@ -41,7 +41,35 @@ https://github.com/serverless/serverless/pull/3208
 
 ### Allow DynamoDB and Kinesis streams to use GetAtt / ImportValue
 
-https://github.com/serverless/serverless/pull/3111
+Streams such as Kinesis Streams or DynamoDB Streams are an often used event source in serverless architectures. They make it easy to build awesome data pipelining tools and process a huge amount of data in a serverless manner.
+
+The Serverless Framework introduced support for the `stream` event a while ago. Version 1.9 adds a nice new feature which makes it able to reference stream sources with the help of `GetAtt` or `ImportValue`.
+
+This way you could e.g. define the stream as a CloudFormation resource in the `resources` section and reference it directly in your `serverless.yml` file.
+
+Here's an example how this would look like:
+
+```yml
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - stream:
+          type: kinesis
+          arn:
+            Fn::GetAtt:
+              - ResourcesKinesisStream
+              - Arn
+          batchSize: 1
+
+resources:
+  Resources:
+    ResourcesKinesisStream:
+      Type: AWS::Kinesis::Stream
+      Properties:
+        Name: ResourcesKinesisStream
+        ShardCount: 1
+```
 
 ### `virtualenv` support for invoke local
 
