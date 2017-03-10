@@ -117,9 +117,11 @@ Just filter by [our labels](https://github.com/serverless/serverless/labels) suc
 
 Our latest open source effort called ["Post Scheduler"](https://github.com/serverless/post-scheduler) was recently announced! 
 
-It's a handy tool which makes it possible for you to schedule the publishing of blog articles when using static site generator such as "Jekyll", "Hugo", etc. through simple GitHub comments.
+It's a handy tool which makes it possible for you to schedule the publishing of blog articles when using static site generator such as Jekyll, Hugo, Phenomic etc. through simple GitHub comments.
 
 It's (of course) made with the help of the Serverless Framework. You should definitely check out the [GitHub repository](https://github.com/serverless/post-scheduler) and the [introduction video](https://www.youtube.com/watch?v=YETxuhexZY4).
+
+Furthermore you can read the corresponding announcement blog post [here](https://serverless.com/blog/static-site-post-scheduler/).
 
 Happy scheduling!
 
