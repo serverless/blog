@@ -1,6 +1,6 @@
 ---
-title: Google Cloud Functions support with Serverless v1.9
-description: Google Cloud Functions provider plugin, Separate package and deploy commands, bug fixes and improvements in the Serverless Framework v1.9 release.
+title: GetAtt and ImportValue support for stream events with Serverless v1.9
+description: Serverless variable system and stream event enhancements in the Serverless Framework v1.9 release.
 date: 2017-03-14
 layout: Post
 authors:
@@ -9,31 +9,11 @@ authors:
 
 We're proud to announce v1.9 of the Serverless Framework.
 
-In v1.9 we're finally adding support for the recently announced Google Cloud Functions! Simply use our official [Serverless Google Cloud Functions plugin](https://github.com/serverless/serverless-google-cloudfunctions) to deploy to the Google Cloud with the Serverless Framework!
-
 Let's take a dive into the release highlights.
 
 ## Highlights of 1.9.0
 
 **Note:** You can find a complete list of all the updates in the [changelog](https://github.com/serverless/serverless/blob/master/CHANGELOG.md).
-
-### Google Cloud Functions provider plugin
-
-It's here! Google Cloud Functions support was added to the Serverless Framework!
-
-Read our [announcement blog post](https://serverless.com/blog/google/) for more information.
-
-You can finally use our official [Google Cloud Functions provider plugin](https://github.com/serverless/serverless-google-cloudfunctions) for the Serverless Framework to deploy your code into the Google Cloud!
-
-Curious how this looks like? Here's a list with resources to help you get started:
-
-1. [Quickstart guide](https://serverless.com/framework/docs/providers/google/guide/quickstart/)
-2. [Serverless Google Cloud Functions documentation](https://serverless.com/framework/docs/providers/google/)
-3. [HTTP example](https://github.com/serverless/examples/tree/master/google-node-simple-http-endpoint)
-
-Let us know what you think!
-
-**Pro tip:** Google Cloud offers a [free trial](https://cloud.google.com/free) where you'll get a $300 credit.
 
 ### Allow DynamoDB and Kinesis streams to use GetAtt / ImportValue
 
