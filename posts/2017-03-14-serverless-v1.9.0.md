@@ -100,9 +100,9 @@ This way you can still encapsulate your Serverless Python services into their ow
 
 ### Support for CloudFormation service roles
 
-You can now specify a custom CloudFormation service role which should be used for the deployment.
+You can now define a custom CloudFormation service role which should be used for the deployment of your stack.
 
-To use this feature you simply need to specify the `arn` of your CloudFormation service role in the `provider.cfnRole` property.
+To use this feature you simply need to add the `arn` of your CloudFormation service role in the `provider.cfnRole` property.
 
 Here's an example how this looks like:
 
@@ -114,7 +114,9 @@ provider:
 
 ### More features for invoke local
 
-The feature set of the `invoke local` command was updated. The following additions were introduced:
+The feature set of the `invoke local` command was updated.
+
+The following additions were introduced:
 
 1. Support for JavaScript file that has export as a data input
 2. Specifing the location of handlers, such as `/dist`
