@@ -1,6 +1,6 @@
 ---
-title: GetAtt and ImportValue support for stream events with Serverless v1.9
-description: Serverless variable system and stream event enhancements in the Serverless Framework v1.9 release.
+title: stream event improvements, CloudFormation service roles with Serverless v1.9
+description: Serverless variable system and stream event enhancements, CloudFormation services roles in the Serverless Framework v1.9 release.
 date: 2017-03-14
 layout: Post
 authors:
@@ -97,6 +97,31 @@ Most of the time you want to quickly test your functions locally without the nee
 Serverless v1.9 changes that and adds support for `virtualenv` setups in the `invoke local` command.
 
 This way you can still encapsulate your Serverless Python services into their own environments but also iterate quickly on your ideas by using `invoke local`.
+
+### Support for CloudFormation service roles
+
+You can now specify a custom CloudFormation service role which should be used for the deployment.
+
+To use this feature you simply need to specify the `arn` of your CloudFormation service role in the `provider.cfnRole` property.
+
+Here's an example how this looks like:
+
+```yml
+provider:
+  name: aws
+  cfnRole: <ARN of CloudFormation service role>
+```
+
+### More features for invoke local
+
+The feature set of the `invoke local` command was updated. The following additions were introduced:
+
+1. Support for JavaScript file that has export as a data input
+2. Specifing the location of handlers, such as `/dist`
+3. Support for `context.done(err, result)`
+4. Show JSON.parse result if Content-Type = "application/json"
+
+These additions should make local development more convenient and fun!
 
 ### Enhancements & Bug Fixes
 
