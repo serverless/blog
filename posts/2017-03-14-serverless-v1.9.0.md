@@ -17,13 +17,13 @@ Let's take a dive into the release highlights.
 
 ### Allow DynamoDB and Kinesis streams to use GetAtt / ImportValue
 
-Streams such as Kinesis Streams or DynamoDB Streams are an often used event source in serverless architectures. They make it easy to build awesome data pipelining architectures and process a huge amount of data in a serverless manner.
+Streams like Kinesis Streams or DynamoDB Streams are often used as event sources in serverless architectures. They make it easy to build awesome data pipelining architectures and process a huge amount of data in a serverless manner.
 
-The Serverless Framework introduced support for the `stream` event a while ago. Version 1.9 adds a nice new feature which makes it possible to reference stream sources with the help of `GetAtt` or `ImportValue`.
+The Serverless Framework introduced support for the `stream` event a while back. Version 1.9 adds a nice new feature that makes it possible to reference stream sources with the help of `GetAtt` or `ImportValue`.
 
-This way you could e.g. define the stream as a CloudFormation resource in the `resources` section and reference it directly in your `serverless.yml` file.
+This way you could essentially define the stream as a CloudFormation resource in the `resources` section and reference it directly in your `serverless.yml` file.
 
-Here's an example how this looks like:
+Here's an example of what this looks like:
 
 ```yml
 functions:
@@ -53,9 +53,9 @@ The [Serverless variable system](https://serverless.com/framework/docs/providers
 
 Serverless Framework v1.9 makes this system even more powerful.
 
-You're now able to reference to the current `serverless.yml` files root or options root parameters. This way you have access to all option parameters and don't need to specify the option you want to access.
+You're now able to reference the current `serverless.yml` file's root or options root parameters. This allows you to access all option parameters without needing to specify which option you want to access.
 
-Curious how this looks like? Here's a code example which illustrates how to use those enhancements:
+Curious how this looks? Here's a code example that illustrates how to use those enhancements:
 
 ```yml
 service: self-reference
@@ -92,19 +92,19 @@ resources:
 
 Most of the time developing in Python is done with the help of `virtualenvs` to encapsulate dependencies for Python projects. This is especially helpful when working on different Serverless Python services.
 
-Oftentimes you want to quickly test your functions locally without the need to deploy them to AWS first. This is where the `invoke local` command comes in handy. However in the past `invoke local` didn't support `virtualenv` setups.
+Oftentimes you want to quickly test your functions locally without the need to deploy them to AWS first. This is where the `invoke local` command comes in handy. However, in the past `invoke local` didn't support `virtualenv` setups.
 
-Serverless v1.9 changes that and adds support for `virtualenv` setups in the `invoke local` command.
+Serverless v1.9 changes that by adding support for `virtualenv` setups in the `invoke local` command.
 
-This way you can still encapsulate your Serverless Python services into their own environments but also iterate quickly on your ideas by using `invoke local`.
+This way you can still encapsulate your Serverless Python services into their own environments, but also iterate quickly on your ideas by using `invoke local`.
 
 ### Support for CloudFormation service roles
 
-You can now define a custom CloudFormation service role which should be used for the deployment of your stack.
+You can now define a custom CloudFormation service role that should be used for the deployment of your stack.
 
 To use this feature you simply need to add the `arn` of your CloudFormation service role in the `provider.cfnRole` property.
 
-Here's an example how this looks like:
+Here's an example of what this looks like:
 
 ```yml
 provider:
@@ -127,7 +127,7 @@ These enhancements should make local development more convenient and fun!
 
 ### Enhancements & Bug Fixes
 
-This release also fixes some other bugs and introduces some enhancements.
+This release also fixes some other bugs and introduces several enhancements.
 
 > Thanks for reporting bugs and opening issues!
 
@@ -139,7 +139,7 @@ Here's a list of all the breaking changes that will be introduced in Serverless 
 
 - [BREAKING - Separated Packaging and Deployment for CI/CD](https://github.com/serverless/serverless/pull/3344)
 
-*You'll always get the most recent list of breaking changes when you take a look at the [upcoming milestone](https://github.com/serverless/serverless/milestones) or in the Serverless CLI.*
+*You'll always get the most recent list of breaking changes in the [upcoming milestone](https://github.com/serverless/serverless/milestones) or in the Serverless CLI.*
 
 ### Contributors
 
@@ -175,13 +175,13 @@ We hope that you like the new release! Let us know if you have any questions or 
 
 ## Introducing the "Post Scheduler" project
 
-Our latest open source effort called ["Post Scheduler"](https://github.com/serverless/post-scheduler) was recently announced! 
+Our latest open source effort, ["Post Scheduler"](https://github.com/serverless/post-scheduler), was recently announced! 
 
-It's a handy tool which makes it possible for you to schedule the publishing of blog articles when using static site generator such as Jekyll, Hugo, Phenomic etc. through simple GitHub comments.
+It's a handy tool that makes it possible to automate the scheduling of blog posts and content updates for static site generators (like Jekyll, Hugo, Phenomic, etc.) through simple GitHub comments.
 
 It's (of course) made with the help of the Serverless Framework. You should definitely check out the [GitHub repository](https://github.com/serverless/post-scheduler) and the [introduction video](https://www.youtube.com/watch?v=YETxuhexZY4).
 
-Furthermore you can read the corresponding announcement blog post [here](https://serverless.com/blog/static-site-post-scheduler/).
+You can read the corresponding announcement blog post with more details [here](https://serverless.com/blog/static-site-post-scheduler/).
 
 Happy scheduling!
 
