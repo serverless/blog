@@ -147,7 +147,23 @@ This release contains lots of hard work from our awesome community and wouldn't 
 
 Here's a list of all the contributors who've submitted changes for this release:
 
-- John Doe
+- Daniel Schep
+- Doug Moscrop
+- Erik Erikson
+- James Thomas
+- Jonathan Carter
+- Jonathan Goldwasser
+- Kurt Lee
+- Ludovic
+- Marcus Molchany
+- Nicholas Rakoto
+- Ryan S. Brown
+- Tanas Gjorgoski
+- Tylor Shin
+- Vlad Golubev
+- Vlad Holubiev
+- Yoriki Yamaguchi
+- horike37
 
 ### Get Involved
 
