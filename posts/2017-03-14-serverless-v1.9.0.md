@@ -1,5 +1,5 @@
 ---
-title: Stream event improvements, CloudFormation service roles with Serverless v1.9
+title: Stream event improvements and CloudFormation service roles with Serverless v1.9
 description: Serverless variable system and stream event enhancements, CloudFormation services roles in the Serverless Framework v1.9 release.
 date: 2017-03-14
 layout: Post
@@ -7,7 +7,7 @@ authors:
   - PhilippMuns
 ---
 
-We're proud to announce v1.9 of the Serverless Framework.
+Today we're happy to announce v1.9 of the Serverless Framework.
 
 Let's take a dive into the release highlights.
 
@@ -17,13 +17,13 @@ Let's take a dive into the release highlights.
 
 ### Allow DynamoDB and Kinesis streams to use GetAtt / ImportValue
 
-Streams such as Kinesis Streams or DynamoDB Streams are an often used event source in serverless architectures. They make it easy to build awesome data pipelining tools and process a huge amount of data in a serverless manner.
+Streams such as Kinesis Streams or DynamoDB Streams are an often used event source in serverless architectures. They make it easy to build awesome data pipelining architectures and process a huge amount of data in a serverless manner.
 
-The Serverless Framework introduced support for the `stream` event a while ago. Version 1.9 adds a nice new feature which makes it able to reference stream sources with the help of `GetAtt` or `ImportValue`.
+The Serverless Framework introduced support for the `stream` event a while ago. Version 1.9 adds a nice new feature which makes it possible to reference stream sources with the help of `GetAtt` or `ImportValue`.
 
 This way you could e.g. define the stream as a CloudFormation resource in the `resources` section and reference it directly in your `serverless.yml` file.
 
-Here's an example how this would look like:
+Here's an example how this looks like:
 
 ```yml
 functions:
@@ -53,7 +53,7 @@ The [Serverless variable system](https://serverless.com/framework/docs/providers
 
 Serverless Framework v1.9 makes this system even more powerful.
 
-You're now able to reference to the current `serverless.yml` files root or access the options root parameters so that you have access to all option parameters and don't need to specify the option you want to access.
+You're now able to reference to the current `serverless.yml` files root or options root parameters. This way you have access to all option parameters and don't need to specify the option you want to access.
 
 Curious how this looks like? Here's a code example which illustrates how to use those enhancements:
 
@@ -92,7 +92,7 @@ resources:
 
 Most of the time developing in Python is done with the help of `virtualenvs` to encapsulate dependencies for Python projects. This is especially helpful when working on different Serverless Python services.
 
-Most of the time you want to quickly test your functions locally without the need to deploy them to AWS first. This is where the `invoke local` command comes in handy. However in the past `invoke local` didn't support `virtualenv` setups.
+Oftentimes you want to quickly test your functions locally without the need to deploy them to AWS first. This is where the `invoke local` command comes in handy. However in the past `invoke local` didn't support `virtualenv` setups.
 
 Serverless v1.9 changes that and adds support for `virtualenv` setups in the `invoke local` command.
 
@@ -123,7 +123,7 @@ The following additions were introduced:
 3. Support for `context.done(err, result)`
 4. Show JSON.parse result if Content-Type = "application/json"
 
-These additions should make local development more convenient and fun!
+These enhancements should make local development more convenient and fun!
 
 ### Enhancements & Bug Fixes
 
