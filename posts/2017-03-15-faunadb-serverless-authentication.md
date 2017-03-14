@@ -1,6 +1,6 @@
 ---
 title: Using Serverless Authentication Boilerplate with FaunaDB
-description: FaunaDB is a security aware database, so we pass user-specific access tokens to it via a custom authorizer.
+description: Use FaunaDB's secure database features with AWS API Gateway to run lambdas with the capabilities of the authenticated user.
 date: 2017-03-15
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/23813615/4b53e4fc-05a5-11e7-8214-e34c2c02b949.png
 layout: Post
@@ -8,7 +8,7 @@ authors:
  - ChrisAnderson
 ---
 
-We are proud to support our friends at Fauna as they announce [FaunaDB Serverless Cloud](https://fauna.com/product), a globally consistent distributed database. This is a guest post from Chris Anderson, Director of Developer Experience, showing how to connect FaunaDB's access control model with Serverless platform best practices.
+We are proud to support our friends at Fauna as they announce [FaunaDB Serverless Cloud](https://fauna.com/product), a globally consistent distributed database. This is a guest post from Chris Anderson, Director of Developer Experience, showing how FaunaDB's access control model can connect with best practices from the Serverless community.
 
 > Forget the cloud — go Serverless with FaunaDB and let your pre-provisioned capacity woes become a thing of the past.
 > - **Chris Anderson, Fauna**
@@ -19,15 +19,17 @@ FaunaDB offers instance level security, so you can model your application’s da
 
 In the spirit of the Serverless model, the authorizer supplies application content functions with a FaunaDB connection secret that corresponds to the currently logged-in user. This way, there is no possibility of application level bugs impacting data integrity and security.
 
-There is no limit to the data security patterns you can model in FaunaDB. See the tutorials for social graph examples, or follow this space for a multi-user TodoMVC example. For now, the content service just looks up the current user in the database.
+There is no limit to the data security patterns you can model in FaunaDB. See our tutorials for [social graph examples](https://fauna.com/tutorials/social), or follow this space for a multi-user TodoMVC example. For now, the content service just looks up the current user in the database.
 
 These instructions for launching the Serverless Authentication Boilerplate with FaunaDB are based on the `serverless-authentication-boilerplate` README.
+
+This is not simplified example code, rather more like the first steps you'd take when creating a new real application. The final result is not a cool demo, it's a useful auth service you can rely on. If you are looking for more basic usage of FaunaDB and Serverless, see our [blog post about the FaunaDB Serverless CRUD example.](https://fauna.com/blog/serverless-cloud-database) There is also a [Python version available](https://serverless.com/blog/serverless-fauna-python-example/).
 
 ## Installing Serverless Authentication
 
 The boilerplate ships with code for a few different identity backends. These steps walk you through installing the service and running it with FaunaDB. The FaunaDB example also integrates with the `test-token` example content service. So once you have it running you can [look at that code](https://github.com/laardee/serverless-authentication-boilerplate/blob/37e4006870c708fa3ef8b64d451a13e2ed93e6f3/test-token/handler.js#L20) to see how your application would use the database.
 
-0. If you haven't yet, `npm install -g serverless` and make sure the standard AWS environment variables are set.
+0. If you haven't yet, `npm install -g serverless` and make sure your [AWS environment variables](https://serverless.com/framework/docs/providers/aws/guide/credentials/) are set.
 1. Run `serverless install --url https://github.com/laardee/serverless-authentication-boilerplate`, or clone or download the repository.
 2. Rename `authentication/example.env.yml` to `authentication/env.yml` and set environmental variables. Delete the `CacheTable` entry to avoid provisioning DynamoDB tables you won't be using.
 3. Sign up instantly and [create a database in the FaunaDB dashboard](https://fauna.com/serverless-cloud-sign-up).
@@ -39,8 +41,8 @@ The boilerplate ships with code for a few different identity backends. These ste
 9. Run `serverless invoke -f schema` to create your FaunaDB schema.
 10. (optional) Change directory to `test-token` and insert the arn of the authorize function to `authorizer/arn` in `serverless.yml`. Then run `serverless deploy` to deploy test-token service.
 
+Look here for the code to the [test-token service](https://github.com/laardee/serverless-authentication-boilerplate/blob/37e4006870c708fa3ef8b64d451a13e2ed93e6f3/test-token/handler.js#L20) and here for [the code that uses FaunaDB as an authentication cache and user store.](https://github.com/laardee/serverless-authentication-boilerplate/tree/master/authentication/lib/storage/fauna)
+
 There is no need to configure the `test-token` service with database access, as the `authorize` function provides a database access secret which matches the current user. Each function invocation runs only with the privileges of the current user. In a future post we'll show how to model ownership of data instances, read and update control, and delegation of capabilities to other users.
 
 When you choose FaunaDB you get multi-region cross-cloud replication of your data, with the option to run on-premise, avoiding vendor lock-in. You get a functional relational query language and the ability to define complex indexes. You get built in [temporal support for sync, audit and snapshot queries.](https://fauna.com/blog/time-traveling-databases)  And you never have to pre-provision, you only pay for the database you use. [Launch FaunaDB and you'll be storing data in moments.](https://fauna.com/serverless-cloud-sign-up)
-
-For more basic usage of FaunaDB and Serverless, see our [blog post about the FaunaDB Serverless CRUD example.](https://fauna.com/blog/serverless-cloud-database)
