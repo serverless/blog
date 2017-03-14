@@ -1,5 +1,5 @@
 ---
-title: Stream event improvements and CloudFormation service roles with Serverless v1.9
+title: Stream event improvements and custom roles for CloudFormation deployments with Serverless v1.9
 description: Serverless variable system and stream event enhancements, CloudFormation services roles in the Serverless Framework v1.9 release.
 date: 2017-03-14
 layout: Post
