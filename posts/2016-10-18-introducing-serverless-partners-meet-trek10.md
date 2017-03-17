@@ -31,7 +31,7 @@ PlayBrain, the company behind DEKKI, (described as a cross between Medium and si
 
 The Serverless Framework allowed Trek10 and PlayBrain to work in parallel on the frontend ReactJS based editors as well as the backend API and rendering engine. Trek10 estimates that when compared to a project leveraging typical infrastructure (EC2 / Docker based), Serverless saves roughly 40%-60% of typical infrastructure development time, allowing the Trek10 team to focus more on the core value.
 
-> **“**Looking beyond the buzz, Serverless is undeniably the best framework for simplifying software development with AWS Lambda & API Gateway. Continuous integration and deployment with Serverless and Jenkins allows our clients to rapidly develop new features, maintain high code quality with good unit test coverage, and automate deployments to sandbox and production environments.” –Andy Warzon, _Founder & CEO at Trek10,_
+>“Looking beyond the buzz, Serverless is undeniably the best framework for simplifying software development with AWS Lambda & API Gateway. Continuous integration and deployment with Serverless and Jenkins allows our clients to rapidly develop new features, maintain high code quality with good unit test coverage, and automate deployments to sandbox and production environments.” –Andy Warzon, _Founder & CEO at Trek10,_
 
 **Check out the [Trek10 Case Study](https://serverless.com/learn/graphql-and-serverless/) for more on the specifics of their process and results. Spoiler Alert: Infrastructure costs were less than $200/month!**
 
