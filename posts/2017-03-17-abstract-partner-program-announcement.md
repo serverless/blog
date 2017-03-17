@@ -2,7 +2,7 @@
 title: One Chatbot, Two Millions Fans - How Abstract AI Reduced Back-End Costs By 95-Percent
 description: How Serverless Partner AbstractAI leveraged the Serverless Framework and Lambda to reduce the cost of running back-end services by 95%.
 date: 2017-03-17
-thumbnail: https://cloud.githubusercontent.com/assets/20538501/24060277/88d57590-0b20-11e7-8104-fa9d6e08cc4d.png
+thumbnail: https://cloud.githubusercontent.com/assets/20538501/24061595/08747a26-0b26-11e7-9faf-52c7e3ae3492.png
 layout: Post
 authors:
   - Serverless
