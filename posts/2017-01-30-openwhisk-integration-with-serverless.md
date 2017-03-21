@@ -5,7 +5,7 @@ date: 2017-01-30
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/22410455/110d1f36-e65e-11e6-8db8-87e834504e13.jpg
 layout: Post
 authors:
-  - Serverless
+  - StefanieMonge
 ---
 Today we're excited to announce [OpenWhisk](http://openwhisk.org/) integration with the Serverless Framework!
 
