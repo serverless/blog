@@ -32,7 +32,7 @@ npm update -g serverless-openwhisk
 - **Export Web Actions** - Functions can be turned into [“*web actions*”] which return HTTP content without use of an API Gateway. This feature is enabled by setting an annotation (`web-export`) in the configuration file. Learn more [in the docs](https://serverless.com/framework/docs/providers/openwhisk/guide/web-actions/).
 - **Support Local OpenWhisk Deployments** - This plugin now supports targeting OpenWhisk instances without valid SSL certificates. Developers running personal instances of the platform often do not have a custom SSL certificate set up for their domain.
 
-See the milestone [release on Github](https://github.com/serverless/serverless-openwhisk/milestone/1?closed=1) or the [OpenWhisk blog](https://medium.com/openwhisk/updated-openwhisk-support-in-the-serverless-framework-62d1c3d7c112#.s6pivymqo) for full details on the new features and bug fixes. Items planned for the next release are shown in the [0.6 milestone](https://github.com/serverless/serverless-openwhisk/milestone/2).
+See the milestone [release on GitHub](https://github.com/serverless/serverless-openwhisk/milestone/1?closed=1) or the [OpenWhisk blog](https://medium.com/openwhisk/updated-openwhisk-support-in-the-serverless-framework-62d1c3d7c112#.s6pivymqo) for full details on the new features and bug fixes. Items planned for the next release are shown in the [0.6 milestone](https://github.com/serverless/serverless-openwhisk/milestone/2).
 
 ### Getting Started with OpenWhisk & Serverless
 
