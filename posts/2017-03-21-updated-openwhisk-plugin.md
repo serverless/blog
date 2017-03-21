@@ -1,6 +1,6 @@
 ---
-title: Updated OpenWhisk support in The Serverless Framework
-description: The Serverless Framework now has even better support for the OpenWhisk platform!
+title: New Event Sources and Other Updates in v0.5.0 of the OpenWhisk Plugin for the Serverless Framework
+description: The official OpenWhisk plugin for Serverless now includes support for Cloudant DB and IBM Message Hub events, exporting Web Actions and more.
 date: 2017-03-21
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/22410455/110d1f36-e65e-11e6-8db8-87e834504e13.jpg
 layout: Post
@@ -35,9 +35,7 @@ https://serverless.com/framework/docs/providers/openwhisk/events/cloudant/)** - 
 https://serverless.com/framework/docs/providers/openwhisk/guide/web-actions/)** - Functions can be turned into [“*web actions*”] which return HTTP content without use of an API Gateway. This feature is enabled by setting an annotation (`web-export`) in the configuration file.
 - **Support Local OpenWhisk Deployments** - This plugin now supports targeting OpenWhisk instances without valid SSL certificates. Developers running personal instances of the platform often do not have a custom SSL certificate set up for their domain.
 
-See the milestone [release on Github](https://github.com/serverless/serverless-openwhisk/milestone/1?closed=1) or the [OpenWhisk blog](https://medium.com/openwhisk/updated-openwhisk-support-in-the-serverless-framework-62d1c3d7c112#.s6pivymqo) for full details on the new features and bug fixes.
-
-Items planned for the next release are shown in the [0.6 milestone](https://github.com/serverless/serverless-openwhisk/milestone/2).
+See the milestone [release on Github](https://github.com/serverless/serverless-openwhisk/milestone/1?closed=1) or the [OpenWhisk blog](https://medium.com/openwhisk/updated-openwhisk-support-in-the-serverless-framework-62d1c3d7c112#.s6pivymqo) for full details on the new features and bug fixes. Items planned for the next release are shown in the [0.6 milestone](https://github.com/serverless/serverless-openwhisk/milestone/2).
 
 ### Getting Started with OpenWhisk & Serverless
 
