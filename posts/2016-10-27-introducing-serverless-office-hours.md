@@ -5,7 +5,7 @@ date: 2016-10-27
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/19769976/25c14630-9c23-11e6-9698-8cda3b8809d8.jpg
 layout:  Post
 authors:
-  - Serverless
+  - StefanieMonge
 ---
 At Serverless our community and contributors' input matters to us - a lot. Earlier this month we [released V.1 of Serverless](https://serverless.com/blog/releasing-serverless-framework-v1-and-fundraising/). Now that you've had some time to check it out, we want to know what you think.
 
