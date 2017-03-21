@@ -4,7 +4,7 @@ title: 'Interview with Peter Sbarski of Serverlessconf London + Registration Dis
 description: "Peter Sbarski discusses how Serverlessconf came to be and what it's future holds"
 date: 2016-09-09
 authors:
-  - Serverless
+  - StefanieMonge
 ---
     
 ![](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/legacy/2016/09/Screen-Shot-2016-09-02-at-9.44.03-AM.png)
