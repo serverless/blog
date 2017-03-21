@@ -27,12 +27,9 @@ npm update -g serverless-openwhisk
 
 ### New Features Supported in v0.5.0
 
-- **[IBM Message Hub Events](
-https://serverless.com/framework/docs/providers/openwhisk/events/messagehub/)** - Functions can be bound to events from IBM Message Hub (“Apache Kafka”-as-a-Service) using a new event type (*message_hub*). Functions will be fired with the batch of messages received since the last invocation. Service credentials can be automatically read from an OpenWhisk package.
-- **[IBM Cloudant DB Events](
-https://serverless.com/framework/docs/providers/openwhisk/events/cloudant/)** - Functions can be bound to events from IBM Cloudant (“CouchDB”-as-a-Service) using a new event type (*cloudant*). Functions are invoked for each database modification surfaced through the CouchDB *_changes* feed. Service credentials can be automatically read from an OpenWhisk package.
-- **[Export Web Actions](
-https://serverless.com/framework/docs/providers/openwhisk/guide/web-actions/)** - Functions can be turned into [“*web actions*”] which return HTTP content without use of an API Gateway. This feature is enabled by setting an annotation (`web-export`) in the configuration file.
+- **IBM Message Hub Events** - Functions can be bound to events from IBM Message Hub (“Apache Kafka”-as-a-Service) using a new event type (*message_hub*). Functions will be fired with the batch of messages received since the last invocation. Service credentials can be automatically read from an OpenWhisk package. Learn more [in the docs](https://serverless.com/framework/docs/providers/openwhisk/events/messagehub/).
+- **IBM Cloudant DB Events** - Functions can be bound to events from IBM Cloudant (“CouchDB”-as-a-Service) using a new event type (*cloudant*). Functions are invoked for each database modification surfaced through the CouchDB *_changes* feed. Service credentials can be automatically read from an OpenWhisk package. Learn more [in the docs](https://serverless.com/framework/docs/providers/openwhisk/events/cloudant/).
+- **Export Web Actions** - Functions can be turned into [“*web actions*”] which return HTTP content without use of an API Gateway. This feature is enabled by setting an annotation (`web-export`) in the configuration file. Learn more [in the docs](https://serverless.com/framework/docs/providers/openwhisk/guide/web-actions/).
 - **Support Local OpenWhisk Deployments** - This plugin now supports targeting OpenWhisk instances without valid SSL certificates. Developers running personal instances of the platform often do not have a custom SSL certificate set up for their domain.
 
 See the milestone [release on Github](https://github.com/serverless/serverless-openwhisk/milestone/1?closed=1) or the [OpenWhisk blog](https://medium.com/openwhisk/updated-openwhisk-support-in-the-serverless-framework-62d1c3d7c112#.s6pivymqo) for full details on the new features and bug fixes. Items planned for the next release are shown in the [0.6 milestone](https://github.com/serverless/serverless-openwhisk/milestone/2).
