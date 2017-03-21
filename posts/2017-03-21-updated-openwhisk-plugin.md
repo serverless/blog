@@ -5,7 +5,7 @@ date: 2017-03-21
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/22410455/110d1f36-e65e-11e6-8db8-87e834504e13.jpg
 layout: Post
 authors:
-  - Serverless
+  - StefanieMonge
 ---
 Multi-provider support was a goal we laid out following the [Serverless Framework v1 release](https://serverless.com/blog/serverless-post-1.0/). Since then we've been working towards simplifying the process of moving applications between cloud providers to enable the development of multi-cloud Serverless apps. All while keeping the Serverless workflow and developer experience consistent across providers so you don't need to learn custom commands or syntax for each platform.
 
