@@ -5,7 +5,7 @@ date: 2016-09-20
 description: "Two students built an alternative Australian Bureau of Statistics Census website for $10 million less than the Australian government"
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/austrialia.png
 authors:
-  - Serverless
+  - StefanieMonge
 ---
 
 Austin Wilshire and Bernd Hartzer [received world-wide attention](http://www.dailymail.co.uk/news/article-3742618/Two-university-students-just-54-hours-build-Census-website-WORKS-10-MILLION-ABS-disastrous-site.html) in August when they built an alternative Australian Bureau of Statistics Census website for $10 million less than the Australian government.
