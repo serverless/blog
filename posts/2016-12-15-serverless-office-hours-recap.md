@@ -5,7 +5,7 @@ date: 2016-12-15
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/21226296/73f5269e-c29a-11e6-99f0-f7d34f858e7c.png
 layout: Post
 authors:
-  - Serverless
+  - StefanieMonge
 ---
 
 Serverless Office Hours is a monthly live chat with core members of the Serverless team. In the 2nd episode of Office Hours, Developer Evangelist [David Wells](https://github.com/DavidWells) and Core Framework Engineer [Eslam Hefnawy](https://github.com/eahefnawy) reviewed Lambda announcements from AWS re:Invent and talked about new features in Severless Framework [v1.2](https://serverless.com/blog/serverless-v1.2.0/) & [v1.3](https://serverless.com/blog/serverless-v1.3.0/) (now with [Environment Variables Support](https://serverless.com/framework/docs/providers/aws/guide/functions/#environment-variables), Yay!).
