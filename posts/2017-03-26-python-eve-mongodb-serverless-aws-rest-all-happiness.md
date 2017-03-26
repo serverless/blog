@@ -136,7 +136,7 @@ Lets breakdown the **run.py** file.
 
 create a file name **serverless.yml** under the same project directory.
 
-**serveless.yml** 
+**serverless.yml** 
 ```yamlex
 service: eve-api
 
