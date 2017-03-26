@@ -132,7 +132,7 @@ Lets breakdown the **run.py** file.
       ````
     this registers all the **configs and schemas** defined under **api_settings**.
 
-### 3. Defining the serveless file
+### 3. Defining the serverless file
 
 create a file name **serverless.yml** under the same project directory.
 
@@ -171,10 +171,10 @@ custom:
     app: run.app
 ```
 
-Lets breakdown the **serveless.yml** file.
+Lets breakdown the **serverless.yml** file.
   - if we get into the **environment** section under the **provider** section u can find **MONGO_HOST, MONGO_USERNAME, MONGO_PASSWORD, MONGO_DBNAME** update them as per your MongoDB credentials. These values will be defined as Environment values in AWS Lambda.
   - under plugins section we added **serverless-wsgi** as a plugin which is used to build and deploy **Python WSGI** applications.
-      ```bash
+      ```npm
       npm install --save severless-wsgi
       ```
       > what is **Serverless WSGI** ?
