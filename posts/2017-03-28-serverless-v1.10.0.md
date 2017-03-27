@@ -1,7 +1,7 @@
 ---
 title: Faster deployment for large services, separate package and deploy commands with Serverless v1.10
 description: Faster deploy times for large services, separated package and deploy commands, Groovy service template in the Serverless Framework v1.10 release.
-date: 2017-03-28
+date: 2017-03-29
 layout: Post
 authors:
   - PhilippMuns
