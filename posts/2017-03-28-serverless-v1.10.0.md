@@ -17,17 +17,81 @@ Today we've release v1.10 of the Serverless Framework! Let's take a look at all 
 
 https://github.com/serverless/serverless/pull/3344
 
+### Support for Node.js 6.10 runtime
+
+AWS recently announced that Lambda [now supports Node.js 6.10](https://aws.amazon.com/about-aws/whats-new/2017/03/aws-lambda-supports-node-js-6-10/).
+
+Serverless got you covered. All the new Node.js services you create with the help of the `serverless create --template aws-nodejs` command ship with the Node.js 6.10 runtime out of the box.
+
+However if you've got an old service and want to use the new runtime you simply need to update the `runtime` property in your `serverless.yml` file:
+
+```diff
+provider:
+  name: aws
+- runtime: nodejs4.3
++ runtime: nodejs6.10
+```
+
+**Note:** Please make sure to check the [changes `nodejs6.10` introduce](https://blog.risingstack.com/whats-new-in-node-v6/) so that your service still works flawlessly.
+
 ### AWS Groovy Gradle Template
 
-https://github.com/serverless/serverless/pull/3353
+You can now use the `aws-groovy-gradle` template option when creating a new service:
+
+```bash
+serverless create --template aws-groovy-gradle`
+```
+
+This creates a basic Serverless service for Groovy on the JVM which uses the `gradle` build tool.
 
 ### Faster deploy times for large services
 
-https://github.com/serverless/serverless/pull/3360
+The Serverless Framework relies on CloudFormation to deploy the service with its infrastructure in a consistent and realiable way.
+
+CloudFormation itself uses a graph representation to identify how and in which order the infrastructure components should be deployed.
+
+v1.10 of the Serverless Framework includes an improvement where resources are defined in a way which helps CloudFormation to deploy them in parallel rather than sequentially making the deployment process faster.
+
+Especially larger Serverless services will be deployed in significantly less time.
 
 ### Entrypoints for plugins
 
-https://github.com/serverless/serverless/pull/3327
+Plugin authors can now specify `entrypoints` for their plugin which makes it possible for other plugins to hook into those specific lifecycle events.
+
+Here's a simple plugin definition which utilizes the new `entrypoint` property:
+
+```javascript
+this.commands = {
+  package: {
+    // uppermost command is an entrypoint other plugins can use
+    type: 'entrypoint',
+    commands: {
+      build: {
+        lifecycleEvents: [
+          'prepare',
+        ],
+      },
+      deploy: {
+        lifecycleEvents: [
+          'upload',
+        ],
+      },
+    },
+  },
+};
+```
+
+Other plugin can use the following syntax to hook into this plugin:
+
+```javascript
+'package:build:prepare': () => BbPromise.bind(this)
+  .then(this.validate)
+  .then(this.mergeCustomProviderResources),
+```
+
+If you're interested in the motivation of this plugin enhancement then you should definitely read the blog post about [extending the core lifecycle events](https://serverless.com/blog/advanced-plugin-development-extending-the-core-lifecycle/) by [Frank Schmid](https://github.com/HyperBrain) who PRed this change.
+
+**Note:** This change made it possible to introduce the `package` and `deploy` commands (see above) in a non-breaking way!
 
 ### Enhancements & Bug Fixes
 
