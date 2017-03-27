@@ -1,7 +1,7 @@
 ---
 title: Software Engineering resources you must read / watch
 description: Resources you should read / watch to enhance your Software Engineering career
-date: 2017-xx-xx
+date: 2017-04-11
 layout: Post
 authors:
   - PhilippMuns
