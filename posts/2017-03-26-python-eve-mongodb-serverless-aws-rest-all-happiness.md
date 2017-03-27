@@ -99,7 +99,7 @@ Lets breakdown the **run.py** file.
   - **MONGO_HOST**, **MONGO_PORT**, **MONGO_USERNAME**, **MONGO_PASSWORD** and **MONGO_DBNAME** defines the variable for storing out MongoDB host, port, username, password and database name which we will configure in our **serverless.yml** file as part of environment section. 
   - **api_settings** dictionary defines all the **configs and schemas** for our **api**. you can use any name for defining your dictionary for ease i have defined it as **api_settings**.
   - **DOMAIN** section under **api_settings** defines the **endpoints** and there respective **schemas** for API.
-      ```json
+      ```python
       {'people': {
                     'item_title': 'person',
                     'additional_lookup':
