@@ -39,7 +39,7 @@ provider:
 You can now use the `aws-groovy-gradle` template option when creating a new service:
 
 ```bash
-serverless create --template aws-groovy-gradle`
+serverless create --template aws-groovy-gradle
 ```
 
 This creates a basic Serverless service for Groovy on the JVM which uses the `gradle` build tool.
