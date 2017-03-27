@@ -32,7 +32,10 @@ provider:
 + runtime: nodejs6.10
 ```
 
-**Note:** Please make sure to check the [changes `nodejs6.10` introduce](https://blog.risingstack.com/whats-new-in-node-v6/) so that your service still works flawlessly.
+**Note:** Please make sure to check the changes an update to `nodejs6.10` introduces so that your service still works flawless.
+
+[Breaking chanes between v4 and v5](https://github.com/nodejs/node/wiki/Breaking-changes-between-v4-and-v5)
+[Breaking chanes between v5 and v6](https://github.com/nodejs/node/wiki/Breaking-changes-between-v5-and-v6)
 
 ### AWS Groovy Gradle Template
 
