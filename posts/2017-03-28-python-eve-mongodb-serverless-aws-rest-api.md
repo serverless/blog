@@ -2,36 +2,33 @@
 title: Python EVE + MongoDB + Serverless + AWS = REST All Happiness
 description: Learn how to build and deploy a Serverless REST API using Python EVE and MongoDB 
 date: 2017-03-28
-thumbnail: 
+thumbnail: https://cloud.githubusercontent.com/assets/20538501/24419938/9ed1b9f0-13b6-11e7-8531-66a49808d338.png
 layout: Post
 authors:
  - NareshSurisetty
 ---
 <img align="right" src="http://python-eve.org/_static/eve-sidebar.png">
 
-Hi, I'm Naresh Surisetty, an enthusiastic Python developer based in India. I'm especially interested in developing scalable apps in the cloud - a main reason I'm drawn to experimenting with serverless architecture. In this post I'll share a serverless project using [Python EVE](http://python-eve.org/) and [MongoDB](https://docs.mongodb.com/). 
+Hi, I'm Naresh Surisetty, an enthusiastic Python developer based in India. I'm especially interested in developing scalable apps in the cloud - a main reason I'm drawn to experimenting with serverless architecture. In this post I'll share a Serverless project using [Python EVE](http://python-eve.org/) and [MongoDB](https://docs.mongodb.com/). 
 
-> **Why Python EVE?**
+> **What is Python EVE?**
+> Python EVE is an open source Python REST API framework. Python EVE allows for [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS) (Hypermedia As The Engine Of Application State), and includes pagination support, support for multiple content types (JSON, XML, plain text, ...), if-Match/ETag and MongoDB GridFS. 
 
-> Python EVE is an open source Python REST API framework. Python EVE allows for [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS) (Hypermedia As The Engine Of Application State), pagination support, support for multiple content types (JSON, XML, plain text, ...), if-Match/ETag and MongoDB GridFS. 
+# Get Started Progamming
 
-## Get Started Progamming
-
-### 1. Installation
+## 1. Installation
 
 We'll use pip to install **EVE**.
 ```bash
 pip install eve
 ```
-We'll create our MongoDB database using [mLab](https://mlab.com/). If you dont have an existing mLab account just go ahead and create one as we'll be using mLab hosted database throughout the post. (There's an option for a free Sandbox account.) Make sure you create a database as well. 
+We'll create our MongoDB database using [mLab](https://mlab.com/). If you don't have an existing mLab account go ahead and create one as we'll be using mLab hosted database throughout the post. *(There's an option for a free Sandbox account.)* Make sure you create a database, as well. 
 
 > **What is mLab?**
-
 > mLab is a fully managed cloud database service that hosts MongoDB databases. mLab runs on cloud providers Amazon, Google, and Microsoft Azure, and has partnered with PaaS (Platform-as-a-Service) providers.
+> Find more help getting started in the [mLab Docs & Quick Start Guide](http://docs.mlab.com/).
 
-> Find more details in the [mLab Docs & Quick Start Guide](http://docs.mlab.com/).
-
-### 2. Creating A Basic API
+## 2. Creating a Basic API
 
 Create a project named **eve-api-project**. Navigate to **eve-api-project** folder and create a file called **run.py**. Copy the following code:
 
@@ -89,15 +86,15 @@ Create a project named **eve-api-project**. Navigate to **eve-api-project** fold
   app = Eve(settings=api_settings)  
   ```
 
-Lets breakdown the **run.py** file.
-  - Initially we have imported the **EVE module**
+### Lets break down the **run.py** file.
+  - Initially we've imported the **EVE module**
       ```python
       import os
       from eve import Eve
       ```
   - **MONGO_HOST**, **MONGO_PORT**, **MONGO_USERNAME**, **MONGO_PASSWORD** and **MONGO_DBNAME** defines the variable for storing our MongoDB host, port, username, password and database name which we will configure in our **serverless.yml** file as part of environment section. 
-  - **api_settings** dictionary defines all the **configs and schemas** for our **api**. you can use any name for defining your dictionary for ease i have defined it as **api_settings**.
-  - **DOMAIN** section under **api_settings** defines the **endpoints** and there respective **schemas** for API.
+  - **api_settings** dictionary defines all the **configs and schemas** for our **API**. You can use any name for defining your dictionary for ease I've defined it as **api_settings**.
+  - **DOMAIN** section under **api_settings** defines the **endpoints** and their respective **schemas** for API.
       ```python
       {'people': {
                     'item_title': 'person',
@@ -125,15 +122,15 @@ Lets breakdown the **run.py** file.
        }
       ```
        The above mentioned **people** schema defines EVE API to create an endpoint with name **people** and add the following structure for the API defined. We have two fields in the API named **firstname** and **lastname**. Different validations can be performed upon the schema such as **minlength, maxlenth, type and many more** that can be referred at [EVE Allowed Validations](http://python-eve.org/config.html#schema-definition).
-  - pass the **api_settings** as a parameter for settings in Eve.
+  - Pass the **api_settings** as a parameter for settings in Eve.
       ```python
       app = Eve(settings=api_settings)
       ````
     This registers all the **configs and schemas** defined under **api_settings**.
 
-### 3. Defining the Serverless File
+## 3. Defining the Serverless File
 
-create a file name **serverless.yml** under the same project directory.
+Create a file named **serverless.yml** under the same project directory.
 
 **serverless.yml** 
 ```yamlex
@@ -170,20 +167,19 @@ custom:
     app: run.app
 ```
 
-Lets breakdown the **serverless.yml** file.
+### Lets breakdown the **serverless.yml** file.
   - If we get into the **environment** section under the **provider** section you can find **MONGO_HOST, MONGO_USERNAME, MONGO_PASSWORD, MONGO_DBNAME** and update them as per your MongoDB credentials. These values will be defined as Environment values in AWS Lambda.
   - Under plugins section we added **serverless-wsgi** as a plugin which is used to build and deploy **Python WSGI** applications.
       ```npm
       npm install --save severless-wsgi
       ```
       > **What is Serverless WSGI?**
+      > The [Serverless WSGI plugin](https://github.com/logandk/serverless-wsgi) is used to deploy WSGI applications (Flask/Django/Pyramid etc.) and bundle Python packages.
       
-      > A Serverless WSGI plugin is to build your deploy Python WSGI applications using Serverless. Compatible WSGI application frameworks include Flask, Django and Pyramid.
+## 4. Test the Service 
 
-### 4. Test the Service 
-
-Fire up your console and run `serverless wsgi serve` in the project directory to see your live api at `http://localhost:5000`
-
+Fire up your console and run `serverless wsgi serve` in the project directory to see your live API at `http://localhost:5000`
+.
 ```bash
 $ curl -i http://localhost:5000/people
 HTTP/1.1 200 OK
@@ -216,25 +212,16 @@ The response payload will look something like this:
     }
 }
 ```
-The **_items** list contains the requested data. Along with its own fields, other fields such as **_created, _updated, _etag, _id** are automatically handled by the API (clients don’t need to provide them when adding/editing resources).
+The **_items** list contains the requested data. Along with its own fields, other fields such as **_created, _updated, _etag, _id**, are automatically handled by the API (clients don’t need to provide them when adding/editing resources).
 
 The **_meta** field provides pagination data and will only be there if Pagination has been enabled (it is by default) and there is at least one document being returned. The **_links** list provides [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS) directives. 
 
-> [more_info] http://python-eve.org/features.html
+## 5. Deploy the Service
 
-### 5. Deploy the Service
+Deploy the service with `serverless deploy`. If you need to setup Serverless, please see [the Serverless Quick Start Guide](https://github.com/serverless/serverless#quick-start) for instructions.
 
-Deploy the service with `serverless deploy`. If you need to setup Serverless, please see [these install instructions](https://github.com/serverless/serverless#quick-start).
+# Conclusion
 
-## Conclusion
-
-Python EVE, MongoDB enhanced with Serverless is an awesome bundle for REST API development. You can further enhance the REST API with more additions such as Adding **Authentication** , **OAuth2**, **Swaggger** documentation and even more. I will drop some links for you all to refer.
-  
-## References
-  - [Hosted AWS EVE Lambda API](https://v5jc6620c5.execute-api.us-east-1.amazonaws.com/dev/api/v1/people)
-  - [A fully functional REST Web API. Powered by Eve](https://github.com/pyeve/eve-demo) 
-  - [A very simple API consumer client](https://github.com/pyeve/eve-demo-client) 
-  - [Swagger extension for Eve-powered RESTful APIs](https://github.com/pyeve/eve-swagger)
-  - [Tuts + Build REST APIs using EVE](https://code.tutsplus.com/tutorials/building-rest-apis-using-eve--cms-22961)
-  - [Building EVE RESTFul APIs using SQL Alchemy](https://blogs.rdoproject.org/7625/build-your-restful-api-web-service-in-5-minutes)
-  - [Nicola Iarocci: "Eve - REST API for Humans™"](https://www.youtube.com/watch?v=Hs8u1TdEx6A)
+Python EVE and MongoDB enhanced with Serverless is an awesome bundle for REST API development. You can further enhance the REST API with more additions such as Adding **Authentication** , **OAuth2**, **Swaggger** documentation and even more. You can find more resources [on GitHub](https://github.com/pyeve).
+ 
+ 
