@@ -1,5 +1,5 @@
 ---
-title: Faster deployment for large services, support for Node.js 6.10 runtime with Serverless v1.10
+title: Faster deployment for larges services, support for Node.js 6.10 runtime with Serverless v1.10
 description: Faster deploy times for large services, support for Node.js 6.10 runtime, Groovy service template in the Serverless Framework v1.10 release.
 date: 2017-03-29
 layout: Post
@@ -7,7 +7,7 @@ authors:
   - PhilippMuns
 ---
 
-Today we've release v1.10 of the Serverless Framework! Let's take a look at all the new changes.
+We've just released v1.10 of the Serverless Framework! Let's take a look at all the new changes.
 
 ## Highlights of 1.10.0
 
@@ -17,7 +17,7 @@ Today we've release v1.10 of the Serverless Framework! Let's take a look at all 
 
 AWS recently announced that Lambda [now supports Node.js 6.10](https://aws.amazon.com/about-aws/whats-new/2017/03/aws-lambda-supports-node-js-6-10/).
 
-Serverless got you covered. All the new Node.js services you create with the help of the `serverless create --template aws-nodejs` command ship with the Node.js 6.10 runtime out of the box.
+Serverless got you covered. All the new Node.js services you create with the help of the `serverless create --template aws-nodejs` command ship with the new Node.js 6.10 runtime out of the box.
 
 However if you've got an old service and want to use the new runtime you simply need to update the `runtime` property in your `serverless.yml` file:
 
@@ -28,7 +28,7 @@ provider:
 + runtime: nodejs6.10
 ```
 
-**Note:** Please make sure to check the changes an update to `nodejs6.10` introduces so that your service still works flawless.
+**Note:** Please make sure to check the breaking changes an update to `nodejs6.10` introduces so that your service still works flawless.
 
 [Breaking chanes between v4 and v5](https://github.com/nodejs/node/wiki/Breaking-changes-between-v4-and-v5)
 [Breaking chanes between v5 and v6](https://github.com/nodejs/node/wiki/Breaking-changes-between-v5-and-v6)
@@ -45,17 +45,17 @@ This creates a basic Serverless service for Groovy on the JVM which uses the `gr
 
 ### Faster deploy times for large services
 
-The Serverless Framework relies on CloudFormation to deploy the service with its infrastructure in a consistent and realiable way.
+The Serverless Framework relies on CloudFormation to deploy the service with its infrastructure in a consistent and reliable way.
 
 CloudFormation itself uses a graph representation to identify how and in which order the infrastructure components should be deployed.
 
-v1.10 of the Serverless Framework includes an improvement where resources are defined in a way which helps CloudFormation to deploy them in parallel rather than sequentially making the deployment process faster.
+v1.10 of the Serverless Framework includes an improvement where resources are defined in a way which helps CloudFormation to deploy them in parallel rather than sequential. Making the deployment process faster.
 
 Especially larger Serverless services will be deployed in significantly less time.
 
 ### Entrypoints for plugins
 
-Plugin authors can now specify `entrypoints` for their plugin which makes it possible for other plugins to hook into those specific lifecycle events.
+Plugin authors can now specify `entrypoints` for their plugins which makes it possible for other plugins to hook into those specific lifecycle events.
 
 Here's a simple plugin definition which utilizes the new `entrypoint` property:
 
