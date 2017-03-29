@@ -13,10 +13,6 @@ Today we've release v1.10 of the Serverless Framework! Let's take a look at all 
 
 **Note:** You can find a complete list of all the updates in the [changelog](https://github.com/serverless/serverless/blob/master/CHANGELOG.md).
 
-### Separate `package` and `deploy` commands
-
-https://github.com/serverless/serverless/pull/3344
-
 ### Support for Node.js 6.10 runtime
 
 AWS recently announced that Lambda [now supports Node.js 6.10](https://aws.amazon.com/about-aws/whats-new/2017/03/aws-lambda-supports-node-js-6-10/).
@@ -94,7 +90,7 @@ Other plugin can use the following syntax to hook into this plugin:
 
 If you're interested in the motivation of this plugin enhancement then you should definitely read the blog post about [extending the core lifecycle events](https://serverless.com/blog/advanced-plugin-development-extending-the-core-lifecycle/) by [Frank Schmid](https://github.com/HyperBrain) who PRed this change.
 
-**Note:** This change made it possible to introduce the `package` and `deploy` commands (see above) in a non-breaking way!
+**Note:** This change will make it possible to introduce the [`package` and `deploy` commands](https://github.com/serverless/serverless/pull/3344) in a non-breaking way!
 
 ### Enhancements & Bug Fixes
 
@@ -108,7 +104,7 @@ Here's a list of all the breaking changes that will be introduced in Serverless 
 
 There are currently no breaking changes planned for v1.11
 
-*You'll always get the most recent list of breaking changes in the [upcoming milestone](https://github.com/serverless/serverless/milestones) or in the Serverless CLI.*
+*You'll always get the most recent list of breaking changes in the [upcoming milestone](https://github.com/serverless/serverless/milestones).*
 
 ### Contributors
 
