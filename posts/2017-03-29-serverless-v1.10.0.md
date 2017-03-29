@@ -1,6 +1,6 @@
 ---
-title: Faster deployment for large services, separate package and deploy commands with Serverless v1.10
-description: Faster deploy times for large services, separated package and deploy commands, Groovy service template in the Serverless Framework v1.10 release.
+title: Faster deployment for large services, support for Node.js 6.10 runtime with Serverless v1.10
+description: Faster deploy times for large services, support for Node.js 6.10 runtime, Groovy service template in the Serverless Framework v1.10 release.
 date: 2017-03-29
 layout: Post
 authors:
@@ -112,7 +112,14 @@ This release contains lots of hard work from our awesome community and wouldn't 
 
 Here's a list of all the contributors who've submitted changes for this release:
 
-- John Doe
+- Assaf Lavie
+- Doug Moscrop
+- Frank Schmid
+- James Manners
+- Rowell Belen
+- Ryan S. Brown
+- horike37
+- marcusmolchany
 
 ### Get Involved
 
