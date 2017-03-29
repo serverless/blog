@@ -1,25 +1,25 @@
 ---
-title: Faster deployment for larges services, support for Node.js 6.10 runtime with Serverless v1.10
-description: Faster deploy times for large services, support for Node.js 6.10 runtime, Groovy service template in the Serverless Framework v1.10 release.
+title: Faster Deployment for Large Services, Support for Node.js 6.10 Runtime with Serverless v1.10
+description: Faster deploy times for large services, support for Node.js 6.10 runtime, Groovy service template and more in the Serverless Framework v1.10 release.
 date: 2017-03-29
 layout: Post
 authors:
   - PhilippMuns
 ---
 
-We've just released v1.10 of the Serverless Framework! Let's take a look at all the new changes.
+We've just released v1.10 of the Serverless Framework! Let's take a look at all the new features.
 
 ## Highlights of 1.10.0
 
 **Note:** You can find a complete list of all the updates in the [changelog](https://github.com/serverless/serverless/blob/master/CHANGELOG.md).
 
-### Support for Node.js 6.10 runtime
+### Support for Node.js 6.10 Runtime
 
 AWS recently announced that Lambda [now supports Node.js 6.10](https://aws.amazon.com/about-aws/whats-new/2017/03/aws-lambda-supports-node-js-6-10/).
 
-Serverless got you covered. All the new Node.js services you create with the help of the `serverless create --template aws-nodejs` command ship with the new Node.js 6.10 runtime out of the box.
+Serverless has got you covered. All the new Node.js services you create with the help of the `serverless create --template aws-nodejs` command ship with the new Node.js 6.10 runtime out of the box.
 
-However if you've got an old service and want to use the new runtime you simply need to update the `runtime` property in your `serverless.yml` file:
+However, if you've got an old service and want to use the new runtime you simply need to update the `runtime` property in your `serverless.yml` file:
 
 ```diff
 provider:
@@ -28,10 +28,10 @@ provider:
 + runtime: nodejs6.10
 ```
 
-**Note:** Please make sure to check the breaking changes an update to `nodejs6.10` introduces so that your service still works flawless.
+**Note:** Please make sure to check the breaking changes an update to `nodejs6.10` introduces so that your service still works flawlessly.
 
-[Breaking chanes between v4 and v5](https://github.com/nodejs/node/wiki/Breaking-changes-between-v4-and-v5)
-[Breaking chanes between v5 and v6](https://github.com/nodejs/node/wiki/Breaking-changes-between-v5-and-v6)
+[Breaking changes between v4 and v5](https://github.com/nodejs/node/wiki/Breaking-changes-between-v4-and-v5)
+[Breaking changes between v5 and v6](https://github.com/nodejs/node/wiki/Breaking-changes-between-v5-and-v6)
 
 ### AWS Groovy Gradle Template
 
@@ -43,17 +43,17 @@ serverless create --template aws-groovy-gradle
 
 This creates a basic Serverless service for Groovy on the JVM which uses the `gradle` build tool.
 
-### Faster deploy times for large services
+### Faster Deploy Times for Large Services
 
 The Serverless Framework relies on CloudFormation to deploy the service with its infrastructure in a consistent and reliable way.
 
 CloudFormation itself uses a graph representation to identify how and in which order the infrastructure components should be deployed.
 
-v1.10 of the Serverless Framework includes an improvement where resources are defined in a way which helps CloudFormation to deploy them in parallel rather than sequential. Making the deployment process faster.
+v1.10 of the Serverless Framework includes an improvement where resources are defined in a way which helps CloudFormation to deploy them in parallel rather than sequentially. Making the deployment process faster.
 
-Especially larger Serverless services will be deployed in significantly less time.
+Especially large Serverless services will be deployed in significantly less time.
 
-### Entrypoints for plugins
+### Entrypoints for Plugins
 
 Plugin authors can now specify `entrypoints` for their plugins which makes it possible for other plugins to hook into those specific lifecycle events.
 
@@ -123,7 +123,7 @@ Here's a list of all the contributors who've submitted changes for this release:
 
 ### Get Involved
 
-Serverless has a really helpful, vibrant and awesome community. Do you want to help us develop the best Serverless tooling out there?
+Serverless has a really helpful, vibrant and awesome community. Want to help us develop the best Serverless tooling out there?
 
 Contributing isn't just about code! Chime in on discussion, help with documentation updates or review PRs.
 
@@ -131,7 +131,7 @@ Just filter by [our labels](https://github.com/serverless/serverless/labels) suc
 
 ### Using "Scope" to Contribute
 
-We use our own Serverless Open Source tool called ["Scope"](https://github.com/serverless/scope) to manage the Frameworks development process:
+We use our own Serverless open Source tool called ["Scope"](https://github.com/serverless/scope) to manage the Frameworks development process:
 
 [Serverless Framework Status Board](https://serverless.com/framework/status/)
 
@@ -145,6 +145,6 @@ We've already started filling in the next [milestones](https://github.com/server
 
 We hope that you like the new release! Let us know if you have any questions or feedback in [our Forum](http://forum.serverless.com/) or [GitHub Issues](https://github.com/serverless/serverless/issues).
 
-## Serverless examples
+## Serverless Examples
 
 The [Serverless Examples Repository](https://github.com/serverless/examples) is an excellent resource if you want to explore some real world examples and learn more about what Serverless architectures look like.
