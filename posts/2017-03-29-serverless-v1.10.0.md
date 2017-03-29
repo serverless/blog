@@ -106,8 +106,6 @@ This release also fixes some other bugs and introduces several enhancements.
 
 Here's a list of all the breaking changes that will be introduced in Serverless v1.11.
 
-**Note:** You'll see the same list in the CLI if you run a Serverless command (as long as you haven't disabled it).
-
 There are currently no breaking changes planned for v1.11
 
 *You'll always get the most recent list of breaking changes in the [upcoming milestone](https://github.com/serverless/serverless/milestones) or in the Serverless CLI.*
