@@ -80,7 +80,7 @@ this.commands = {
 };
 ```
 
-Other plugin can use the following syntax to hook into this plugin:
+This makes something like the following hook usage possible:
 
 ```javascript
 'package:build:prepare': () => BbPromise.bind(this)
