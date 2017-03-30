@@ -6,7 +6,7 @@ thumbnail: https://cloud.githubusercontent.com/assets/20538501/24512700/edd8d2f2
 layout: Post
 authors:
   - TomBereknyei
- ---
+---
 
 # Background
 
