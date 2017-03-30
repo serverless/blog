@@ -2,7 +2,7 @@
 title: How To Use AWS Lambda & API Gateway to Send Shipment Tracking Updates via SMS with Shippo & Twilio
 description: A guide on using Serverless to create an AWS Lambda function that triggers on updates sent to AWS API Gateway to send SMS updates via Twilio for shipments you're tracking using Shippo
 date: 2017-03-22
-thumbnail: https://cloud.githubusercontent.com/assets/20538501/24206757/3d16dbd2-0eed-11e7-9ce5-578a498df942.png
+thumbnail: https://cloud.githubusercontent.com/assets/20538501/24521012/27ac7428-1550-11e7-895d-64f1e04208f5.png
 layout: Post
 authors:
   - RichardMoot
