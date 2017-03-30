@@ -1,6 +1,6 @@
 ---
 title: Builing A Serverless Bot To Streamline Contributions To Open Source Department of Defense Projects
-description: Learn how (and why) the Defense Digital Service at the Pentagon used Serverless to automate the Developer Certificate of Origin process for contriutors.
+description: Learn how, and why, the Defense Digital Service at the Pentagon used Serverless to automate the Developer Certificate of Origin process for contriutors.
 date: 2017-03-30
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/24477620/4b3b8216-149d-11e7-945b-ef645f8c13f2.jpeg
 layout: Post
