@@ -24,7 +24,7 @@ The first phase of Code.mil was to work with the developer community in crafting
 
 > During this process, a colleague mentioned it would be nice to automate the DCO process for project maintainers. I volunteered.
 
-**My task:** I wanted to simplify the DCO process for contributors while also maintaining the integrity of the contributions. Ideally, there would be an automated pass/fail check to make sure that all pull requests and commits had a DCO sign off tagged to it. GitHub doesn’t currently provide a method of doing this (hint hint), so I began exploring other ways to incorporate this function into the user experience.
+*My task:* I wanted to simplify the DCO process for contributors while also maintaining the integrity of the contributions. Ideally, there would be an automated pass/fail check to make sure that all pull requests and commits had a DCO sign off tagged to it. GitHub doesn’t currently provide a method of doing this (hint hint), so I began exploring other ways to incorporate this function into the user experience.
 
 # The Solution
 
