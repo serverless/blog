@@ -2,7 +2,7 @@
 title: How the US Department of Defense is Streamlining Open Source Contributions with Serverless Code
 description: Learn how the Defense Digital Service at the Pentagon used Serverless to automate the Developer Certificate of Origin process for contriutors.
 date: 2017-03-30
-thumbnail: https://cloud.githubusercontent.com/assets/20538501/24512700/edd8d2f2-1534-11e7-99c2-54a7f2be4cc2.png
+thumbnail: https://cloud.githubusercontent.com/assets/20538501/24520509/5c4edd80-154e-11e7-825c-600ad2e5e247.png
 layout: Post
 authors:
   - TomBereknyei
