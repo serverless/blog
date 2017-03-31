@@ -68,7 +68,7 @@ $ serverless create --template aws-nodejs --path candidate-service --name candid
 
 This will create a directory `candidate-service` with the following structure.
 
-```Text
+```bash
 .
 ├── .npmignore
 ├── handler.js
@@ -140,7 +140,8 @@ To deploy the function, execute `serverless deploy` command.
 ```shell
 $ sls deploy
 ```
-```
+
+```bash
 Serverless: Creating Stack...
 Serverless: Checking Stack create progress...
 .....
@@ -308,7 +309,7 @@ This will create the DynamoDB table.
 
 To test the API, you can use cURL again.
 
-```
+```bash
 $ curl -H "Content-Type: application/json" -X POST -d '{"fullname":"Shekhar Gulati","email": "shekhargulati84@gmail.com", "experience":12}' https://05ccffiraa.execute-api.us-east-1.amazonaws.com/dev/candidates
 ```
 
@@ -418,7 +419,7 @@ module.exports.get = (event, context, callback) => {
 
 Now, you can test the API using cURL.
 
-```
+```bash
 curl https://05ccffiraa.execute-api.us-east-1.amazonaws.com/dev/candidates/5343f0c0-f773-11e6-84ed-7bf29f824f23
 {"experience":12,"id":"5343f0c0-f773-11e6-84ed-7bf29f824f23","email":"shekhargulati84@gmail.com","fullname":"Shekhar Gulati","submittedAt":1487598537164,"updatedAt":1487598537164}
 ```
