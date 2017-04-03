@@ -22,11 +22,11 @@ RESTful APIs is a well-understood architecture for web and app backends. In a RE
 
 Because `Users` and `Posts` are separate entities, they are availabe under different URLs. The code responsible for returning users doesn't have to know anything about posts and vice versa. In fact, as the application grows it is common to move the code to separate microservices and even separate development teams. The fact that resources are exposed on a canonical URL makes it really easy to use standard HTTP headers to enable caching in the browser and network layer.
 
-This is great in theory, but unfortunately this model is no longer a great fit for the rich web and mobile apps we are building today. Consider the canonical Facebook Feed. In a RESTful paradigm we would have at least 4 endpoints: `/user`, `/feed`, `/post`, and `/comment`. To fully render the first screen the app would have to 
+This is great in theory, but unfortunately this model is no longer a great fit for the rich web and mobile apps we are building today. Consider the canonical Facebook Feed. In a RESTful paradigm we would have at least 4 endpoints: `/users`, `/feed`, `/posts`, and `/comments`. To fully render the first screen the app would have to 
 
 1. Query the `/feed` endpoint to retrieve the top 5 items for the current user.
-2. For each item, query `/post` to retrieve the actual post
-3. For each post, query `/user` and `/comment` to retrieve more data required for the UI
+2. For each item, query `/posts` to retrieve the actual post
+3. For each post, query `/users` and `/comments` to retrieve more data required for the UI
 
 This pattern results in a waterfall of network requests where the response from one request leads to additional requests. Because of network latency - which is especially bad on mobile networks - the fully RESTful approach leads to poor user experience.
 
