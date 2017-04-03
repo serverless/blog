@@ -323,7 +323,7 @@ module.exports.handler = function(event, lambdaContext, callback) {
     from: 'Serverless Webshop <FROM_EMAIL>',
     to: basket.user.email,
     subject: 'Your order is being delivered',
-    text: `Purchased: ${basket.items.join(', ')}`,
+    text: 'Purchased: ' + basket.items.reduce((a,b) => `${a.name}, ${b.name}`),
   }
 
   mailgun.messages().send(mailData, (error, body) => {
