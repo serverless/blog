@@ -46,13 +46,13 @@ Let's get to it!
 
  > If you want to follow along, now is the time to head over to [Graphcool](https://www.graph.cool/) and create a free account.
 
-A webshop will as minimum have three types of data:
+Our webshop example will have three types of data:
 
 <img src="https://s3-eu-west-1.amazonaws.com/serverless-blogpost/webshop-datamodel.png">
 
 A `Customer` can have many `Baskets` and a `Basket` can have many `Items`.
 
-In GraphQL a data model is described using the [Schema Definition Language](https://www.graph.cool/docs/faq/graphql-idl-schema-definition-language-kr84dktnp0/):
+In GraphQL a data model is described using IDL ([Interface Definition Language](https://www.graph.cool/docs/faq/graphql-idl-schema-definition-language-kr84dktnp0/)):
 
 ```graphql
 type Basket {
@@ -82,11 +82,11 @@ type User {
 Setting this up in the Graphcool schema editor will take less than 5 minutes.
 
 
-Now that we have the data model nailed down, lets start implementing the core functionality of a webshop.
+Now that we have the data model nailed down, let's start implementing the core functionality of a webshop.
 
 ## Adding Items to Basket
 
-The first feature we want to implement is adding items to the basket. To write your first mutation, go to the Playground in the Graphcool Console. If you have not yet created an account you can perform the queries directly in this in-browser IDE: [Serverless Webshop GraphiQL](https://api.graph.cool/simple/v1/cj0rpuog7fqzo0118tk1hnens?query=%7B%0A%20%20allItems%7B%0A%20%20%20%20name%0A%20%20%7D%0A%7D)
+The first feature we want to implement is adding items to the basket. To write your first mutation, go to the Playground in the Graphcool Console. If you have not yet created an account you can perform the queries directly [in this in-browser IDE](https://api.graph.cool/simple/v1/serverless-webshop?query=%7B%0A%20%20allItems%7B%0A%20%20%20%20name%0A%20%20%7D%0A%7D).
 
 First, list all existing items:
 
@@ -129,7 +129,7 @@ mutation {
 }
 ```
 
-By now you should have a solid understanding of GraphQL queries and mutations. If this still feels a little foreign to you, I would recommend you spend some time trying out different queries in the playground before continuing.
+By now you should have a solid understanding of GraphQL queries and mutations. If this still feels a little foreign to you, I would recommend you spend some time trying out different queries in the playground before continuing. You can find more examples in [the reference docs](https://www.graph.cool/docs/reference/simple-api/queries-nia9nushae/).
 
 ## Pay for Items in Basket
 
@@ -156,20 +156,20 @@ Graphcool is an event based platform that allows you to attach custom serverless
 
 <img src="https://s3-eu-west-1.amazonaws.com/serverless-blogpost/webhook-stripe.png">
 
-When setting up the webhook we use GraphQL to specify the data requirements for our function. We retrieve information about the `Basket`, but also name and price of all `Items` as well as information about the `Customer`.
+When setting up the webhook we use a GraphQL query to specify the data requirements for our function. We retrieve information about the `Basket`, but also name and price of all `Items` as well as information about the `Customer`.
 
-When we have deployed our lambda function we can return and enter the Webhook URL.
+When we have deployed our AWS Lambda function, we can return and enter the webhook URL.
 
-> Error handling is omitted below. Full source code is available in the [Graphcool Examples](https://github.com/graphcool-examples/serverless-webshop) GitHub repository
+> Error handling is omitted below. Full source code is available in the [Graphcool Examples](https://github.com/graphcool-examples/serverless-webshop) GitHub repository.
 
 ```javascript
-const stripe = require("stripe")("STRIPE_SECRET_KEY");
-const Lokka = require('lokka').Lokka;
-const Transport = require('lokka-transport-http').Transport;
+const stripe = require("stripe")("STRIPE_SECRET_KEY")
+const Lokka = require('lokka').Lokka
+const Transport = require('lokka-transport-http').Transport
 
 const client = new Lokka({
-  transport: new Transport('https://api.graph.cool/simple/v1/PROJECT_ID')
-});
+  transport: new Transport('https://api.graph.cool/simple/v1/PROJECT_ID'),
+})
 
 module.exports.handler = function(event, lambdaContext, callback) {
 
@@ -242,14 +242,14 @@ functions:
   stripeTokenAddedToBasketCallback: serverless-webshop-dev-stripeTokenAddedToBasketCallback
 ```
 
-> Before implementing payment in a production app you have to consider how you set up the proper permission rules. This  [webinar](https://youtu.be/wu253F_WEso) goes into more detail on this.
+> Before implementing payment in a production app you have to consider how you set up the proper permission rules. This  [webinar](https://youtu.be/wu253F_WEso) goes into more detail about this.
 
 
 ## Subscribe to Payments
 
-The next feature is a bit contrived, but I want to demonstrate how GraphQL subscriptions work :-)
+The next part of the webshop is a bit contrived, but it's a nice demonstration of how GraphQL subscriptions work. ✌️
 
-Subscriptions are currently in the process of being incorporated into the official GraphQL spec, so this is all quite new. You can think of subscriptions as being notified of somebody elses mutation. For example you can subscribe to all changes to `Items` like this:
+Subscriptions are currently in the process of being incorporated into the official GraphQL spec, so this is all quite new. You can think of subscriptions as being notified of somebody else's mutation. For example you can subscribe to all changes to `Items` like this:
 
 ```graphql
 subscription {
@@ -263,7 +263,7 @@ subscription {
 
 Go ahead and run this in the Playground. Then run a mutation in a different tab to create a few `Items`.
 
-If you only care about a subset of events, you can use the sophisticated filter API to narrow down the events that result in subscription triggers. For the Serverless Webshop we want to be notified only when a `Customer`'s credit card has been successfully charged:
+If you only care about a subset of events, you can use the sophisticated [filter API](https://www.graph.cool/docs/reference/simple-api/filtering-by-field-xookaexai0/) to narrow down the events that result in subscription triggers. For the Serverless Webshop we want to be notified only when a `Customer`'s credit card has been successfully charged:
 
 ```graphql
 subscription {
@@ -288,7 +288,7 @@ subscription {
 
 ## Send Shipping Email to Customer
 
-The last feature is to send a mail to the customer when the order has been shipped. Again we set up a mutation callback:
+The last feature is to send a mail to the customer when her order has been shipped. Again we set up a mutation callback with the following payload:
 
 ```graphql
 {
