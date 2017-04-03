@@ -102,7 +102,10 @@ This should return an empty list, so let's go ahead and add some items:
 
 ```graphql
 mutation {
-  createItem(name: "Mackbook Pro 2016", price: 250000) {
+  createItem(
+    name: "Mackbook Pro 2016"
+    price: 250000
+  ) {
     id
   }
 }
