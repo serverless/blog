@@ -92,7 +92,7 @@ First, list all existing items:
 
 ```graphql
 query {
-  allItems{
+  allItems {
     name
   }
 }
@@ -141,8 +141,8 @@ When the frontend app has retrieved a one-time token from Stripe it can be assoc
 mutation {
   updateBasket(
     id:"cj11ytlwgje2u0112jfl30zoe",
-    stripeToken:"tok_1A4WB5AM0MAtIPOjm2b1uhze")
-  {
+    stripeToken:"tok_1A4WB5AM0MAtIPOjm2b1uhze"
+  ) {
     id
   }
 }
