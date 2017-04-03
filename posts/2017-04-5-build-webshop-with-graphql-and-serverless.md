@@ -1,41 +1,41 @@
 ---
 title: Building a Webshop with GraphQL and the Serverless Framework
 description: Get introduced to GraphQL in this 30 minute tutorial by building a webshop with stripe and mailgun integration.
-date: 2017-03-5
+date: 2017-04-05
 thumbnail: https://s3-eu-west-1.amazonaws.com/serverless-blogpost/graphcool.png
 layout: Post
 authors:
-  - SorenBramer
+  - Soren Bramer
 ---
 
-The Serverless framework has made it extremely easy to deploy business logic to scalable cloud infrastructure. The previous post [Building a REST API](https://serverless.com/blog/node-rest-api-with-serverless-lambda-and-dynamodb/) by Shekhar Gulati goes into detail on how to expose business logic through a REST api. In this post we will explore the benefits of GraphQL over REST and build a feature rich webshop using Graphcool and the Serverless framework.
+The Serverless framework has made it extremely easy to deploy business logic to scalable cloud infrastructure. The previous post [Building a REST API](https://serverless.com/blog/node-rest-api-with-serverless-lambda-and-dynamodb/) by Shekhar Gulati goes into detail on how to expose business logic through a REST API. In this post we will explore the benefits of GraphQL over REST and build a feature rich webshop using Graphcool and the Serverless framework.
 
 ## So, why GraphQL?
 
 If you are already sold on GraphQL you can skip this section :-)
 
-RESTful apis is a well-understood architecture for web and app backends. In a RESTful api you expose domain models at individual urls and enable the client to traverse the data model either by following links in the response or by adhering to a pre-defined url structure. The benefits of this approach are:
+RESTful APIs is a well-understood architecture for web and app backends. In a RESTful API, you expose domain models at individual URLs and enable the client to traverse the data model either by following links in the response or by adhering to a pre-defined URL structure. The benefits of this approach are:
 
  - Separation of concerns
  - Browser + network caching
  - Mature tooling
 
-Because `Users` and `Posts` are separate urls, the code responsible for returning users doesn't have to know anything about posts and vice versa. In fact, as the application grows it is common to move the code to separate microservices and even separate development teams. The fact that resources are exposed on a canonical url makes it really easy to use standard http headers to enable caching in the browser and network layer.
+Because `Users` and `Posts` are separate entities, they are availabe under different URLs. The code responsible for returning users doesn't have to know anything about posts and vice versa. In fact, as the application grows it is common to move the code to separate microservices and even separate development teams. The fact that resources are exposed on a canonical URL makes it really easy to use standard HTTP headers to enable caching in the browser and network layer.
 
 This is great in theory, but unfortunately this model is no longer a great fit for the rich web and mobile apps we are building today. Consider the canonical Facebook Feed. In a RESTful paradigm we would have at least 4 endpoints: `/user`, `/feed`, `/post`, and `/comment`. To fully render the first screen the app would have to 
 
 1. Query the `/feed` endpoint to retrieve the top 5 items for the current user.
 2. For each item, query `/post` to retrieve the actual post
-3. For each post, query `/user` and `/comment` to retrieve more data required for the ui
+3. For each post, query `/user` and `/comment` to retrieve more data required for the UI
 
 This pattern results in a waterfall of network requests where the response from one request leads to additional requests. Because of network latency - which is especially bad on mobile networks - the fully RESTful approach leads to poor user experience.
 
-To work around this, developers have had to break away from the clean RESTful architecture and allow multiple resource types to be returned in a single request. Many patterns have emerged for how to implement this, but they all sacrifice one or more of the original benefits of RESTful apis. 
+To work around this, developers have had to break away from the clean RESTful architecture and allow multiple resource types to be returned in a single request. Many patterns have emerged for how to implement this, but they all sacrifice one or more of the original benefits of RESTful APIs. 
 
 The innovation of GraphQL is to embrace the fact that a RESTful architecture no longer works while acknowledging that the three benefits listed above are worth striving for:
 
  - GraphQL enables strong separation of concerns in the backend by introducing the concept of independent resolvers and a batching DataLoader
- - Clients such as Relay and Apollo enables flexible and super fine grained client side caching
+ - Clients such as Relay and Apollo enable flexible and super fine grained client side caching
  - GraphQL is an open standard, allowing the community to build advanced tooling such as clients, editor plugins, code generators as well as the awesome in-browser [GraphiQL query editor](https://github.com/graphql/graphiql)  
 
 Nik Graf went into more detail in his recent webinar [Serverless & GraphQL: A Love Story](https://cloudacademy.com/webinars/serverless-graphql-love-story-46/)
@@ -44,13 +44,13 @@ Nik Graf went into more detail in his recent webinar [Serverless & GraphQL: A Lo
 
 Let's get to it!
 
- > If you want to follow along, now is the time to head over to [graph.cool](https://www.graph.cool/) and create a free account.
+ > If you want to follow along, now is the time to head over to [Graphcool](https://www.graph.cool/) and create a free account.
 
 A webshop will as minimum have three types of data:
 
 <img src="https://s3-eu-west-1.amazonaws.com/serverless-blogpost/webshop-datamodel.png">
 
-A `Customer` can have many `Baskets` and a `Basket` can have many `Items`
+A `Customer` can have many `Baskets` and a `Basket` can have many `Items`.
 
 In GraphQL a data model is described using the [Schema Definition Language](https://www.graph.cool/docs/faq/graphql-idl-schema-definition-language-kr84dktnp0/):
 
@@ -86,7 +86,7 @@ Now that we have the data model nailed down, lets start implementing the core fu
 
 ## Adding Items to Basket
 
-The first feature we want to implement is adding items to the basket. To write your fist mutation, go to the Playground in the Graphcool Console. If you have not yet created an account you can perform the queries directly in this in-browser IDE: [Serverless Webshop GraphiQL](https://api.graph.cool/simple/v1/cj0rpuog7fqzo0118tk1hnens?query=%7B%0A%20%20allItems%7B%0A%20%20%20%20name%0A%20%20%7D%0A%7D)
+The first feature we want to implement is adding items to the basket. To write your first mutation, go to the Playground in the Graphcool Console. If you have not yet created an account you can perform the queries directly in this in-browser IDE: [Serverless Webshop GraphiQL](https://api.graph.cool/simple/v1/cj0rpuog7fqzo0118tk1hnens?query=%7B%0A%20%20allItems%7B%0A%20%20%20%20name%0A%20%20%7D%0A%7D)
 
 First, list all existing items:
 
@@ -102,7 +102,7 @@ This should return an empty list, so let's go ahead and add some items:
 
 ```graphql
 mutation {
-  createItem(name: "Mackbook Pro 2016", price: 250000){
+  createItem(name: "Mackbook Pro 2016", price: 250000) {
     id
   }
 }
@@ -112,14 +112,14 @@ When you run the query again, you should get a response like this:
 
 <img src="https://s3-eu-west-1.amazonaws.com/serverless-blogpost/add-item-playground.png">
 
-To create a user with a basket containing the Macbook Pro, you can write a [nested mutation](https://www.graph.cool/docs/reference/simple-api/nested-mutations-ubohch8quo/):
+To create a user with a basket containing the Mackbook Pro, you can write a [nested mutation](https://www.graph.cool/docs/reference/simple-api/nested-mutations-ubohch8quo/):
 
 ```graphql
 mutation {
   createUser(
     email:"user@gmail.com", 
     name:"Carl Johan", 
-    baskets:[{itemsIds:["cj11yp6q0fb5c0145fnviqho3"]}]){
+    baskets:[{itemsIds:["cj11yp6q0fb5c0145fnviqho3"]}]) {
     id
   }
 }
@@ -129,7 +129,7 @@ By now you should have a solid understanding of GraphQL queries and mutations. I
 
 ## Pay for Items in Basket
 
-So far we have only implemented pure data manipulation. Now it's time to add a serverless function to integrate with Stripe. Head over to [stripe.com](https://stripe.com/) and create a free account. Make sure the account is in test mode, then go to the API menu and locate your `Test Secret Key`. You will need this when calling the Stripe api from your serverless function.
+So far we have only implemented pure data manipulation. Now it's time to add a serverless function to integrate with Stripe. Head over to [stripe.com](https://stripe.com/) and create a free account. Make sure the account is in test mode, then go to the API menu and locate your `Test Secret Key`. You will need this when calling the Stripe API from your serverless function.
 
 In a real application you will use one of the Stripe native SDKs or checkout.js for websites to collect a customers credit card information and securely exchange it for a one-time token. During development you can use the test card number `4242 4242 4242 4242` to generate a one-time token directly on the [Stripe documentation page](https://stripe.com/docs/checkout). Click Pay with Card to generate a token like this: `tok_1A4WB5AM0MAtIPOjm2b1uhze`
 
@@ -148,7 +148,7 @@ mutation {
 }
 ```
 
-Graphcool is an event based platform that allows you to attach custom serverless functions at different stages of the request processing. To charge the customers credit card we will add a mutation callback for updates to the `Basket` type. In the ui it looks like this:
+Graphcool is an event based platform that allows you to attach custom serverless functions at different stages of the request processing. To charge the customers credit card we will add a mutation callback for updates to the `Basket` type. In the UI it looks like this:
 
 <img src="https://s3-eu-west-1.amazonaws.com/serverless-blogpost/webhook-stripe.png">
 
@@ -199,7 +199,7 @@ module.exports.handler = function(event, lambdaContext, callback) {
 
 Managing secure payments with Stripe is quite simple. Stripe has a rich set of features to deal with everything from international transactions to recurrent payments and more.
 
-We can now use Serverless to deploy a lambda function and expose an http endpoint with API Gateway:
+We can now use Serverless to deploy a lambda function and expose an HTTP endpoint with API Gateway:
 
 ```yml
 service: serverless-webshop
@@ -217,7 +217,7 @@ functions:
           method: post
 ```
 
-Running `serverless deploy` will start the deployment process and eventually return the url where your function can be accessed:
+Running `serverless deploy` will start the deployment process and eventually return the URL where your function can be accessed:
 
 ```bash
 ❯ serverless deploy
@@ -249,7 +249,7 @@ functions:
 
 The next feature is a bit contrived, but I want to demonstrate how GraphQL subscriptions work :-)
 
-Subscriptions is currently in the process of being incorporated into the official GraphQL spec, so this all quite new. You can think of subscriptions as being notified of somebody elses mutation. For example you can subscribe to all changes to `Items` like this:
+Subscriptions are currently in the process of being incorporated into the official GraphQL spec, so this is all quite new. You can think of subscriptions as being notified of somebody elses mutation. For example you can subscribe to all changes to `Items` like this:
 
 ```graphql
 subscription {
@@ -263,7 +263,7 @@ subscription {
 
 Go ahead and run this in the Playground. Then run a mutation in a different tab to create a few `Items`.
 
-If you only care about a subset of events, you can use the sophisticated filter api to narrow down the events that are triggered. For the Serverless Webshop we want to be notified only when a `Customers` credit card has been successfully charged:
+If you only care about a subset of events, you can use the sophisticated filter API to narrow down the events that result in subscription triggers. For the Serverless Webshop we want to be notified only when a `Customer`'s credit card has been successfully charged:
 
 ```graphql
 subscription {
