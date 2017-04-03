@@ -5,7 +5,7 @@ date: 2017-04-05
 thumbnail: https://s3-eu-west-1.amazonaws.com/serverless-blogpost/graphcool.png
 layout: Post
 authors:
-  - Soren Bramer
+  - SorenBramer
 ---
 
 The Serverless framework has made it extremely easy to deploy business logic to scalable cloud infrastructure. The previous post [Building a REST API](https://serverless.com/blog/node-rest-api-with-serverless-lambda-and-dynamodb/) by Shekhar Gulati goes into detail on how to expose business logic through a REST API. In this post we will explore the benefits of GraphQL over REST and build a feature rich webshop using Graphcool and the Serverless framework.
