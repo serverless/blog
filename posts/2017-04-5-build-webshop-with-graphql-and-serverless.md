@@ -163,7 +163,7 @@ When we have deployed our AWS Lambda function, we can return and enter the webho
 > Error handling is omitted below. Full source code is available in the [Graphcool Examples](https://github.com/graphcool-examples/serverless-webshop) GitHub repository.
 
 ```javascript
-const stripe = require("stripe")("STRIPE_SECRET_KEY")
+const stripe = require('stripe')('STRIPE_SECRET_KEY')
 const Lokka = require('lokka').Lokka
 const Transport = require('lokka-transport-http').Transport
 
@@ -176,7 +176,7 @@ module.exports.handler = function(event, lambdaContext, callback) {
   const basket = JSON.parse(event.body).updatedNode
 
   stripe.charges.create({
-    amount: basket.items.reduce((a,b) => a.price+b.price),
+    amount: basket.items.reduce((a, b) => a.price + b.price),
     currency: 'eur',
     description: 'Purchased: ' + basket.items.reduce((a,b) => `${a.name}, ${b.name}`),
     source: basket.stripeToken,
@@ -190,7 +190,7 @@ module.exports.handler = function(event, lambdaContext, callback) {
         }
       }`).then(() => callback(null, {
         statusCode: 200,
-        body: "success"
+        body: 'success'
       }))
     }
   })
@@ -296,7 +296,6 @@ The last feature is to send a mail to the customer when her order has been shipp
     id
     isDelivered
     user {
-      name
       email
     }
     items {
@@ -313,7 +312,8 @@ The function for this integrations is simple as well:
 ```javascript
 const mailgun = require('mailgun-js')({
   apiKey: 'MAILGIN_API_KEY',
-  domain: 'MAILGUN_DOMAIN'});
+  domain: 'MAILGUN_DOMAIN',
+})
 
 module.exports.handler = function(event, lambdaContext, callback) {
 
@@ -323,15 +323,15 @@ module.exports.handler = function(event, lambdaContext, callback) {
     from: 'Serverless Webshop <FROM_EMAIL>',
     to: basket.user.email,
     subject: 'Your order is being delivered',
-    text: 'Purchased: ' + basket.items.reduce((a,b) => `${a.name}, ${b.name}`)
-  };
+    text: `Purchased: ${basket.items.join(', ')}`,
+  }
 
-  mailgun.messages().send(mailData, function (error, body) {
+  mailgun.messages().send(mailData, (error, body) => {
     callback(null, {
-        statusCode: 200,
-        body: "Mail sent to customer"
-      })
-  });
+      statusCode: 200,
+      body: 'Mail sent to customer',
+    })
+  })
 }
 ```
 
