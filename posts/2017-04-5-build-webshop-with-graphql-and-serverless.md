@@ -331,3 +331,7 @@ module.exports.handler = function(event, lambdaContext, callback) {
   });
 }
 ```
+
+## Wrapping Up
+
+As we have seen, GraphQL provides a compelling solution to the challenges faced when developing a RESTful API. By letting the application developer specify the exact data requirements for a frontend component you can avoid the two most frequent offenders when it comes to app performance - overfetching and multiple roundtrips. In combination with AWS Lambda and the Serverless Framework, GraphQL is a great way to deploy scalable backends. [Graphcool](https://www.graph.cool) is the fastest way to get started and makes it really easy to integrate external services into your API.
