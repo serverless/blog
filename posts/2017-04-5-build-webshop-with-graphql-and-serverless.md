@@ -12,7 +12,7 @@ The Serverless framework has made it extremely easy to deploy business logic to 
 
 ## So, why GraphQL?
 
-If you are already sold on GraphQL you can skip this section :-)
+If you are already sold on GraphQL you can skip this section ⤵️
 
 RESTful APIs is a well-understood architecture for web and app backends. In a RESTful API, you expose domain models at individual URLs and enable the client to traverse the data model either by following links in the response or by adhering to a pre-defined URL structure. The benefits of this approach are:
 
