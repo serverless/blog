@@ -1,6 +1,6 @@
 ---
 title: Building a Webshop with GraphQL and the Serverless Framework
-description: Get introduced to GraphQL in this 30 minute tutorial by building a webshop with stripe and mailgun integration.
+description: Get introduced to GraphQL in this 30 minute tutorial by building a webshop with Stripe and Mailgun integration.
 date: 2017-04-05
 thumbnail: https://s3-eu-west-1.amazonaws.com/serverless-blogpost/graphcool.png
 layout: Post
@@ -242,7 +242,7 @@ functions:
   stripeTokenAddedToBasketCallback: serverless-webshop-dev-stripeTokenAddedToBasketCallback
 ```
 
-> Before implementing payment in a production app you have to consider how you set up the proper permission rules. An upcoming post on the [Graphcool Blog](https://www.graph.cool/blog/) will go into more detail on this.
+> Before implementing payment in a production app you have to consider how you set up the proper permission rules. This  [webinar](https://youtu.be/wu253F_WEso) goes into more detail on this.
 
 
 ## Subscribe to Payments
