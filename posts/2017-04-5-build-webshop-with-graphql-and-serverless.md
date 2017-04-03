@@ -117,9 +117,10 @@ To create a user with a basket containing the Mackbook Pro, you can write a [nes
 ```graphql
 mutation {
   createUser(
-    email:"user@gmail.com", 
-    name:"Carl Johan", 
-    baskets:[{itemsIds:["cj11yp6q0fb5c0145fnviqho3"]}]) {
+    email: "user@gmail.com"
+    name: "Carl Johan"
+    baskets: [{ itemsIds: ["cj11yp6q0fb5c0145fnviqho3"] }]
+  ) {
     id
   }
 }
@@ -140,8 +141,8 @@ When the frontend app has retrieved a one-time token from Stripe it can be assoc
 ```graphql
 mutation {
   updateBasket(
-    id:"cj11ytlwgje2u0112jfl30zoe",
-    stripeToken:"tok_1A4WB5AM0MAtIPOjm2b1uhze"
+    id: "cj11ytlwgje2u0112jfl30zoe"
+    stripeToken: "tok_1A4WB5AM0MAtIPOjm2b1uhze"
   ) {
     id
   }
@@ -267,14 +268,17 @@ If you only care about a subset of events, you can use the sophisticated filter 
 
 ```graphql
 subscription {
-  Basket(filter:{mutation_in:UPDATED, updatedFields_contains:"isPaid"}){
-    node{
-      items{
+  Basket(filter:{
+    mutation_in: UPDATED
+    updatedFields_contains: "isPaid"
+  }) {
+    node {
+      items {
         id
         name
         price
       }
-      user{
+      user {
         name
         email
       }
@@ -289,7 +293,7 @@ The last feature is to send a mail to the customer when the order has been shipp
 
 ```graphql
 {
-  updatedNode{
+  updatedNode {
     id
     isDelivered
     user {
