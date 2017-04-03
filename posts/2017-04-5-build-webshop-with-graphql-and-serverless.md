@@ -178,24 +178,20 @@ module.exports.handler = function(event, lambdaContext, callback) {
   stripe.charges.create({
     amount: basket.items.reduce((a,b) => a.price+b.price),
     currency: 'eur',
-    description: 'Purchased: ' + basket.items.reduce((a,b) =>
-      `${a.name}, ${b.name}`),
+    description: 'Purchased: ' + basket.items.reduce((a,b) => `${a.name}, ${b.name}`),
     source: basket.stripeToken,
   }, (err, charge) => {
 
       console.log('Charge went through!')
 
-      client.mutate(`
-        {
-          updateBasket(id: "${basket.id}", isPaid: true) {
-            id
-          }
-        }`
-      ).then(() =>
-        callback(null, {
-          statusCode: 200,
-          body: "success"
-        }))
+      client.mutate(`{
+        updateBasket(id: "${basket.id}" isPaid: true) {
+          id
+        }
+      }`).then(() => callback(null, {
+        statusCode: 200,
+        body: "success"
+      }))
     }
   })
 }
