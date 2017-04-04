@@ -2,7 +2,7 @@
 title: Building a Web Store with GraphQL, Stripe, Mailgun and the Serverless Framework
 description: Get familiar with GraphQL in this 30-minute tutorial on building an online store with Stripe, Mailgun and Serverless.
 date: 2017-04-05
-thumbnail: https://s3-eu-west-1.amazonaws.com/serverless-blogpost/graphcool.png
+thumbnail: https://cloud.githubusercontent.com/assets/20538501/24682287/88250a60-195e-11e7-9c71-0b3241911641.png
 layout: Post
 authors:
   - SorenBramer
