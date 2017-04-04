@@ -1,6 +1,6 @@
 ---
-title: Building a Webshop with GraphQL and the Serverless Framework
-description: Get introduced to GraphQL in this 30 minute tutorial by building a webshop with Stripe and Mailgun integration.
+title: Building a Web Store with GraphQL, Stripe, Mailgun and the Serverless Framework
+description: Get familiar with GraphQL in this 30-minute tutorial on building an online store with Stripe, Mailgun and Serverless.
 date: 2017-04-05
 thumbnail: https://s3-eu-west-1.amazonaws.com/serverless-blogpost/graphcool.png
 layout: Post
@@ -8,23 +8,23 @@ authors:
   - SorenBramer
 ---
 
-The Serverless framework has made it extremely easy to deploy business logic to scalable cloud infrastructure. The previous post [Building a REST API](https://serverless.com/blog/node-rest-api-with-serverless-lambda-and-dynamodb/) by Shekhar Gulati goes into detail on how to expose business logic through a REST API. In this post we will explore the benefits of GraphQL over REST and build a feature rich webshop using Graphcool and the Serverless framework.
+The Serverless Framework has made it extremely easy to deploy business logic to scalable cloud infrastructure. The recent post [Building a REST API](https://serverless.com/blog/node-rest-api-with-serverless-lambda-and-dynamodb/) by Shekhar Gulati goes into detail on how to expose business logic through a REST API. In this post we'll explore the benefits of GraphQL over REST, and build a feature rich webshop using [Graphcool](https://www.graph.cool/) and the Serverless Framework.
 
-## So, why GraphQL?
+## So, Why GraphQL?
 
-If you are already sold on GraphQL you can skip this section. ⤵️
+If you're already sold on GraphQL, you can skip this section. ⤵️
 
-RESTful APIs is a well-understood architecture for web and app backends. In a RESTful API, you expose domain models at individual URLs and enable the client to traverse the data model either by following links in the response or by adhering to a pre-defined URL structure. The benefits of this approach are:
+RESTful APIs is a well-understood architecture for web and app backends. In a RESTful API, you expose domain models at individual URLs and enable the client to traverse the data model either by following links in the response, or by adhering to a pre-defined URL structure. The benefits of this approach are:
 
  - Separation of concerns
  - Browser + network caching
  - Mature tooling
 
-Because `Users` and `Posts` are separate entities, they are availabe under different URLs. The code responsible for returning users doesn't have to know anything about posts and vice versa. In fact, as the application grows it is common to move the code to separate microservices and even separate development teams. The fact that resources are exposed on a canonical URL makes it really easy to use standard HTTP headers to enable caching in the browser and network layer.
+Because `Users` and `Posts` are separate entities, they're availabe under different URLs. The code responsible for returning users doesn't have to know anything about posts and vice versa. In fact, as the application grows it's common to move the code to separate microservices, and even separate development teams. The fact that resources are exposed on a canonical URL makes it really easy to use standard HTTP headers to enable caching in the browser and network layer.
 
-This is great in theory, but unfortunately this model is no longer a great fit for the rich web and mobile apps we are building today. Consider the canonical Facebook Feed. In a RESTful paradigm we would have at least 4 endpoints: `/users`, `/feed`, `/posts`, and `/comments`. To fully render the first screen the app would have to 
+This is great in theory, but unfortunately this model is no longer a great fit for the rich web and mobile apps we are building today. Consider the canonical Facebook Feed. In a RESTful paradigm we would have at least 4 endpoints: `/users`, `/feed`, `/posts`, and `/comments`. To fully render the first screen the app would have to: 
 
-1. Query the `/feed` endpoint to retrieve the top 5 items for the current user.
+1. Query the `/feed` endpoint to retrieve the top 5 items for the current user
 2. For each item, query `/posts` to retrieve the actual post
 3. For each post, query `/users` and `/comments` to retrieve more data required for the UI
 
@@ -32,7 +32,7 @@ This pattern results in a waterfall of network requests where the response from 
 
 To work around this, developers have had to break away from the clean RESTful architecture and allow multiple resource types to be returned in a single request. Many patterns have emerged for how to implement this, but they all sacrifice one or more of the original benefits of RESTful APIs. 
 
-The innovation of GraphQL is to embrace the fact that a RESTful architecture no longer works while acknowledging that the three benefits listed above are worth striving for:
+The innovation of GraphQL is to embrace the fact that a RESTful architecture no longer works while acknowledging that the three benefits listed below are worth striving for:
 
  - GraphQL enables strong separation of concerns in the backend by introducing the concept of independent resolvers and a batching DataLoader
  - Clients such as Relay and Apollo enable flexible and super fine grained client side caching
@@ -80,7 +80,6 @@ type User {
 ```
 
 Setting this up in the Graphcool schema editor will take less than 5 minutes.
-
 
 Now that we have the data model nailed down, let's start implementing the core functionality of a webshop.
 
@@ -139,7 +138,7 @@ In a real application you will use one of the Stripe native SDKs or checkout.js 
 
 <img src="https://s3-eu-west-1.amazonaws.com/serverless-blogpost/stripe-documentation.png">
 
-When the frontend app has retrieved a one-time token from Stripe it can be associated to the basket using a GraphQL mutation:
+When the front-end app has retrieved a one-time token from Stripe it can be associated to the basket using a GraphQL mutation:
 
 ```graphql
 mutation {
@@ -152,13 +151,13 @@ mutation {
 }
 ```
 
-Graphcool is an event based platform that allows you to attach custom serverless functions at different stages of the request processing. To charge the customers credit card we will add a mutation callback for updates to the `Basket` type. In the UI it looks like this:
+Graphcool is an event-based platform that allows you to attach custom serverless functions at different stages of the request processing. To charge the customers credit card we will add a mutation callback for updates to the `Basket` type. In the UI it looks like this:
 
 <img src="https://s3-eu-west-1.amazonaws.com/serverless-blogpost/webhook-stripe.png">
 
 When setting up the webhook we use a GraphQL query to specify the data requirements for our function. We retrieve information about the `Basket`, but also name and price of all `Items` as well as information about the `Customer`.
 
-When we have deployed our AWS Lambda function, we can return and enter the webhook URL.
+When we've deployed our AWS Lambda function, we can return and enter the webhook URL.
 
 > Error handling is omitted below. Full source code is available in the [Graphcool Examples](https://github.com/graphcool-examples/serverless-webshop) GitHub repository.
 
@@ -288,7 +287,7 @@ subscription {
 
 ## Send Shipping Email to Customer
 
-The last feature is to send a mail to the customer when her order has been shipped. Again we set up a mutation callback with the following payload:
+The last feature is to send an email to the customer when her order has been shipped. Again we set up a mutation callback with the following payload:
 
 ```graphql
 {
@@ -337,4 +336,4 @@ module.exports.handler = function(event, lambdaContext, callback) {
 
 ## Wrapping Up
 
-As we have seen, GraphQL provides a compelling solution to the challenges faced when developing a RESTful API. By letting the application developer specify the exact data requirements for a frontend component you can avoid the two most frequent offenders when it comes to app performance - overfetching and multiple roundtrips. In combination with AWS Lambda and the Serverless Framework, GraphQL is a great way to deploy scalable backends. [Graphcool](https://www.graph.cool) is the fastest way to get started and makes it really easy to integrate external services into your API.
+As we've seen, GraphQL provides a compelling solution to the challenges faced when developing a RESTful API. By letting the application developer specify the exact data requirements for a front-end component you can avoid the two most frequent offenders when it comes to app performance - overfetching and multiple roundtrips. In combination with AWS Lambda and the Serverless Framework, GraphQL is a great way to deploy scalable backends. [Graphcool](https://www.graph.cool) is the fastest way to get started and makes it really easy to integrate external services into your API.
