@@ -11,8 +11,7 @@ authors:
 
 Hi, I'm Naresh Surisetty, an enthusiastic Python developer based in India. I'm especially interested in developing scalable apps in the cloud - a main reason I'm drawn to experimenting with serverless architecture. In this post I'll share a Serverless project using [Python EVE](http://python-eve.org/) and [MongoDB](https://docs.mongodb.com/). 
 
-> **What is Python EVE?**
-> Python EVE is an open source Python REST API framework. Python EVE allows for [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS) (Hypermedia As The Engine Of Application State), and includes pagination support, support for multiple content types (JSON, XML, plain text, ...), if-Match/ETag and MongoDB GridFS. 
+> **What is Python EVE?** Python EVE is an open source Python REST API framework. Python EVE allows for [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS) (Hypermedia As The Engine Of Application State), and includes pagination support, support for multiple content types (JSON, XML, plain text, ...), if-Match/ETag and MongoDB GridFS. 
 
 # Get Started Progamming
 
@@ -24,9 +23,7 @@ pip install eve
 ```
 We'll create our MongoDB database using [mLab](https://mlab.com/). If you don't have an existing mLab account go ahead and create one as we'll be using mLab hosted database throughout the post. *(There's an option for a free Sandbox account.)* Make sure you create a database, as well. 
 
-> **What is mLab?**
-> mLab is a fully managed cloud database service that hosts MongoDB databases. mLab runs on cloud providers Amazon, Google, and Microsoft Azure, and has partnered with PaaS (Platform-as-a-Service) providers.
-> Find more help getting started in the [mLab Docs & Quick Start Guide](http://docs.mlab.com/).
+> **What is mLab?** mLab is a fully managed cloud database service that hosts MongoDB databases. mLab runs on cloud providers Amazon, Google, and Microsoft Azure, and has partnered with PaaS (Platform-as-a-Service) providers. Find more help getting started in the [mLab Docs & Quick Start Guide](http://docs.mlab.com/).
 
 ## 2. Creating a Basic API
 
@@ -92,8 +89,8 @@ Create a project named **eve-api-project**. Navigate to **eve-api-project** fold
       import os
       from eve import Eve
       ```
-  - **MONGO_HOST**, **MONGO_PORT**, **MONGO_USERNAME**, **MONGO_PASSWORD** and **MONGO_DBNAME** defines the variable for storing our MongoDB host, port, username, password and database name which we will configure in our **serverless.yml** file as part of environment section. 
-  - **api_settings** dictionary defines all the **configs and schemas** for our **API**. You can use any name for defining your dictionary for ease I've defined it as **api_settings**.
+  - **MONGO_HOST**, **MONGO_PORT**, **MONGO_USERNAME**, **MONGO_PASSWORD** and **MONGO_DBNAME** defines the variable for storing our MongoDB host, port, username, password and database name that we'll configure in our **serverless.yml** file as part of environment section. 
+  - **api_settings** dictionary defines all the **configs and schemas** for our **API**. You can use any name for defining your dictionary. For ease I've defined it as **api_settings**.
   - **DOMAIN** section under **api_settings** defines the **endpoints** and their respective **schemas** for API.
       ```python
       {'people': {
@@ -167,14 +164,13 @@ custom:
     app: run.app
 ```
 
-### Lets breakdown the **serverless.yml** file.
+### Lets break down the **serverless.yml** file.
   - If we get into the **environment** section under the **provider** section you can find **MONGO_HOST, MONGO_USERNAME, MONGO_PASSWORD, MONGO_DBNAME** and update them as per your MongoDB credentials. These values will be defined as Environment values in AWS Lambda.
   - Under plugins section we added **serverless-wsgi** as a plugin which is used to build and deploy **Python WSGI** applications.
       ```npm
       npm install --save severless-wsgi
       ```
-      > **What is Serverless WSGI?**
-      > The [Serverless WSGI plugin](https://github.com/logandk/serverless-wsgi) is used to deploy WSGI applications (Flask/Django/Pyramid etc.) and bundle Python packages.
+      > **What is Serverless WSGI?** The [Serverless WSGI plugin](https://github.com/logandk/serverless-wsgi) is used to deploy WSGI applications (Flask/Django/Pyramid etc.) and bundle Python packages.
       
 ## 4. Test the Service 
 
@@ -222,6 +218,5 @@ Deploy the service with `serverless deploy`. If you need to setup Serverless, pl
 
 # Conclusion
 
-Python EVE and MongoDB enhanced with Serverless is an awesome bundle for REST API development. You can further enhance the REST API with more additions such as Adding **Authentication** , **OAuth2**, **Swaggger** documentation and even more. You can find more resources [on GitHub](https://github.com/pyeve).
- 
+Python EVE and MongoDB enhanced with Serverless is an awesome bundle for REST API development. You can further enhance the REST API with more additions such as Adding **Authentication** , **OAuth2**, **Swaggger** documentation and even more. Check out more resources [on GitHub](https://github.com/pyeve).
  
