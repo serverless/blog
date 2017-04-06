@@ -25,11 +25,9 @@ From the beginning, MaaS knew it didn't want to create its own maps, geodata or 
 
 ## Bootstrapping the Backend with AWS and Serverless Framework
 
-The system was founded on AWS, consisting of a REST API using Serverless Framework and Postgres data storage. With the exception of managed database services, the whole solution was based on a serverless architecture pattern with Lambda and API Gateway, which should scale infinitely out-of-the-box.
+The system was founded on AWS, consisting of a REST API using Serverless Framework and Postgres data storage. With the exception of managed database services, the whole solution was based on a serverless architecture pattern with Lambda and API Gateway, allowing it to scale infinitely out-of-the-box.
 
->The whole process was really fast-paced and results spectacular. The first online routing demo with a test site was up overnight, surprising everyone in the industry and even our board! -Sami Pippuri, CTO at MaaS Global
-
-The first end-to-end version, consisting of the full flow of finding a route to getting a taxi order was demoed to investors in four months from the start of the project. Since then, the platform has had a beta launch in the Helsinki area with paying customers, and it's currently expanding internationally to the United Kingdom.
+The first end-to-end version, consisting of the full flow of finding a route to getting a taxi ordered was demoed to investors in four months from the start of the project. Since then, the platform has had a beta launch in the Helsinki area with paying customers, and it's currently expanding internationally to the United Kingdom.
 
 The Whim app, powered by the SC5 bootstrapped backend has received several awards, including the Helsinki Smart City Action Award and Nordic Smart Cities Award. Whim has also been featured in the international press, such as the Economist, the Guardian and Wired.
 
