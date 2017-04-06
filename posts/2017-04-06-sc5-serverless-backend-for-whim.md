@@ -13,7 +13,7 @@ Startups to Fortune 100 companies are using the Framework to build sophisticated
 
 ## Meet SC5
 
-Helsinki-based SC5 is a digital agency specializing in cloud solutions. The SC5 team works with enterprise clients to create cloud-native applications, APIs, and data solutions often leveraging Machine Learning. The team recently helped build the backend for the award winning [Whim](http://whimapp.com/fi-en/) personal transportation app by [MaaS Global](http://maas.global/).
+Helsinki-based [SC5](https://sc5.io/) is a digital agency specializing in cloud solutions. The SC5 team works with enterprise clients to create cloud-native applications, APIs, and data solutions often leveraging Machine Learning. The team recently helped build the backend for the award winning [Whim](http://whimapp.com/fi-en/) personal transportation app by [MaaS Global](http://maas.global/).
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/partners/maas-whim-app.png" alt="MaaS Whim app" />
 
