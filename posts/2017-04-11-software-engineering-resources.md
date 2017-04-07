@@ -78,6 +78,30 @@ Even after the rise of new programming paradigms such as Functional Programming 
 
 [Get the book](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/ref=sr_1_2?ie=UTF8&qid=1490274362&sr=8-2&keywords=gang+of+four)
 
+# The Imposter's Handbook
+
+Can you relate to the feelding that you're not knowing enough? That someday you might be exposed as a "fraud" because you do your job but compated to others you're still lacking some knowledge?
+
+This is called ["Impostor Syndrome"](https://en.wikipedia.org/wiki/Impostor_syndrome) and quite a common feeling in the tech industry where experienced coders are hired even if they don't have an academic degree.
+
+Some people even find theirselves sitting next to a 16 years old who was hired from college because of his coding experience.
+
+Tought times. But ["The Imposter's Handbook"](https://bigmachine.io/products/the-imposters-handbook/) got you covered. It fills your knowledge gaps and walks you through all the topics you'll also learn in a CS degree program.
+
+This will enhance your career, solidify your self-esteem and you can finally chitchat with the Ph.D. who's working in the Machine Learning division.
+
+[Get the book](https://bigmachine.io/products/the-imposters-handbook/)
+
+# Refactoring
+
+Code get's messy over time. That's just a circumstance we cannot change. But what we can change is the complexity of our codebase through refactoring.
+
+The classic "Refactoring: Improving the Design of Existing Code" by Martin Fowler and Kent Beck will show you how you can identify code smells and how you can work your way through the old, entangled codebase to a newk shiny, refactored one.
+
+The books is old but still a classic. The examples are Java heavy but can be applied to other codebases as well.
+
+[Get the book](https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672/)
+
 ## Is something missing?
 
 Do you feel that something is missing in this list? Great! just open up a PR by clicking on the "edit" button above or add
