@@ -1,7 +1,7 @@
 ---
 title: 4 Reasons to make your next meeting a walking meeting
 description: Serverless head of operations, Casey Shultz, espouses the value of getting your team up and moving during walking meetings.
-date: 2016-11-30
+date: 2017-04-14
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/WalkingMeetingThumbnail.jpg
 layout: Post
 authors:
