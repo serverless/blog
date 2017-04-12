@@ -1,7 +1,8 @@
 ---
-title: Software Engineering resources you must read / watch
-description: Resources you should read / watch to enhance your Software Engineering career
-date: 2017-04-11
+title: Essential Resources for Becoming the Best Software Engineer You Can Be
+description: Want to be a better programmer? Check out this list of resources from the Serverless team.
+date: 2017-04-13
+thumbnail: https://cloud.githubusercontent.com/assets/20538501/24940473/2bdb229a-1ef8-11e7-9e8d-8f75b5461748.png
 layout: Post
 authors:
   - PhilippMuns
@@ -10,19 +11,19 @@ authors:
 At Serverless we're constantly educating ourselves to incorporate the latest best practices in our engineering 
 processes and deliver the best Serverless toolings out there.
 
-In this blog post we'll provide a list with useful Software Engineering books we've read and recommend you to read.
+In this blog post we'll provide a list with useful software engineering books we've read and highly recommend.
 
-**Note:** This list is a living document. We'll update it constantly to reflect our recent learnings / recommendations.
+**Note:** This list is a living document. We'll update it periodically to reflect our recent learnings/recommendations.
 
-*We're not associated with any authors or platforms we list here*
+*We are not associated with any authors or platforms we list here*
 
 # Clean Code
 
-This is a really classic book every software engineer / programmer should read. It teaches you how to write code in a way that it's easy to read and understand.
+This is a really classic book every software engineer and programmer should read. It teaches you how to write code in a way that's easy to read and understand.
 
-Not all techniques which are shown here need to be followed but even after adapting some of them your code "reads like" prose.
+Not all techniques which are shown here need to be followed, but even after adopting some of them your code "reads like" prose.
 
-Remember that we spent most of the time reading code rather than writing code.
+Remember that we spend most of the time reading code rather than writing code.
 
 And to be honest
 
@@ -44,11 +45,11 @@ return tester && beta ? beta() : default();
 
 # The Clean Coder
 
-This is another great book by the same autohr (uncle Bob) who also wrote ["Clean Code"](#clean-code).
+This is another great book by the same author (uncle Bob) who also wrote ["Clean Code"](#clean-code).
 
-The main topic of this book is how professional software developers should behave. How they should communicate and work on projects / problems.
+The main topic of this book is how professional software developers should behave. How they should communicate and work on projects or solve problems.
 
-Did you ever feel empowered and super happy after hitting a super tight deadline while being you're overloaded with tasks in the current sprint? You should be proud and your boss too, right?
+Have you ever felt empowered and super happy after hitting a super tight deadline while being you're overloaded with tasks in the current sprint? You should be proud and your boss too, right?
 
 Read this book and think again...
 
