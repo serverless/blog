@@ -98,7 +98,30 @@ You can read more about this new event source in the [`cloudwatchLog` docs](http
 
 ### Mark functions to be packaged individually
 
-https://github.com/serverless/serverless/pull/3433
+Serverless supports the ability to package functions individually for a long time. You could enable this feature by setting the `individually: true` configuration on the `package` service property:
+
+```yml
+package:
+  individually: true
+```
+
+The problem with this approach is that it's "all-or-nothing" which means that you can either let Serverless package your whole service as one large `.zip` file or one `.zip` file per function, but nothing in between.
+
+Serverless v1.11 solves this problem and let's you use the `individually: true` configuration on a function level.
+
+The following example will create one service-wide `service.zip` file, but also one `world.zip` file for the `world` function:
+
+```yml
+service: service
+
+functions:
+  hello:
+    handler: handler.hello
+  world:
+    handler: handler.hello
+    package:
+      individually: true
+```
 
 ### An important note for plugin authors
 
