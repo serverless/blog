@@ -1,6 +1,6 @@
 ---
-title: New in Serverless v1.11 - Trigger Functions with CloudWatch Events, Improved CI/CD Support with New Package Command & More
-description: New package command, CloudWatch Log event support and more in the Serverless Framework v1.11 release.
+title: New in Serverless v1.11 - Trigger Functions with CloudWatch Events, Improved CI/CD Support & More
+description: New package command to improve CI/CD, CloudWatch Log event support and more in the Serverless Framework v1.11 release.
 date: 2017-04-12
 layout: Post
 authors:
