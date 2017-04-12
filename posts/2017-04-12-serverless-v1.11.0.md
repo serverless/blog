@@ -1,15 +1,15 @@
 ---
-title: Improved CI / CD support with new package command, CloudWatch Log event support with Serverless v1.11
-description: New package command, CloudWatch Log event support, and more in the Serverless Framework v1.11 release.
+title: New in Serverless v1.11 - Trigger Functions with CloudWatch Events, Improved CI/CD Support with New Package Command & More
+description: New package command, CloudWatch Log event support and more in the Serverless Framework v1.11 release.
 date: 2017-04-12
 layout: Post
 authors:
   - PhilippMuns
 ---
 
-We're proud to announce that we've just released v1.11 of the Serverless Framework!
+We're excited to announce that we've just released v1.11 of the Serverless Framework!
 
-Let's take a look at all the new features and improvements.
+Here's an overview of the new features and improvements.
 
 ## Highlights of 1.11.0
 
@@ -17,17 +17,17 @@ Let's take a look at all the new features and improvements.
 
 ### Separate `package` and `deploy` command
 
-It finally arrived! Serverless v1.11 introduces a way to separate the packaging step from the deployment of your service!
+This long awaited feature has arrived! Serverless v1.11 introduces a way to separate the packaging step from the deployment of your service.
 
-This gives you more control over the build process which will also improve CI / CD usage in combination with the Serverless Framework.
+This gives you more control over the build process, which will also improve CI/CD usage in combination with the Serverless Framework.
 
-Let's take a closer look how we can make use of this new feature.
+Let's take a closer at look how we can make use of this new feature.
 
 #### The `package` command
 
-The `package` command enables you a way to package all your service artifacts and store the on your disk.
+The `package` command enables you to package all of your service artifacts and store them on your disk.
 
-Running the following command will build and save all the deployment artifacts in the services `.serverless` directory:
+Running the following command will build and save all of the deployment artifacts in the services `.serverless` directory:
 
 ```bash
 serverless package
@@ -41,21 +41,21 @@ serverless package --package my-artifacts
 
 #### The updated `deploy` command
 
-The "simple" deployment process via `serverless deploy` was not changed. It will still package all your artifacts, store them in the `.serverless` directory and deploy your service after that:
+The "simple" deployment process via `serverless deploy` has not changed. It will still package all of your artifacts, store them in the `.serverless` directory and deploy your service after that:
 
 ```bash
 serverless deploy
 ```
 
-However you're now able to use the `--package` option to specify which package you want to use for deployment:
+However, you're now able to use the `--package` option to specify which package you want to use for deployment:
 
-**Note:** This package needs to be created (e.g. with the `serverless package` command) and therefore available beforehand.
+**Note:** This package needs to be created (e.g. with the `serverless package` command) and available beforehand.
 
 ```bash
 serverless deploy --package my-artifacts
 ```
 
-Furthermore you can set the path to the package directory in your `serverless.yml` file like this:
+Furthermore, you can set the path to the package directory in your `serverless.yml` file like this:
 
 ```yml
 package:
@@ -70,9 +70,9 @@ serverless deploy
 
 ### CloudWatch Log event source
 
-Ever wanted to call a Lambda function when something happens in one of your log groups? Serverless v1.11 introduces native support for `CloudWatch Log` events!
+Have you ever wanted to call a Lambda function when something happens in one of your log groups? Serverless v1.11 introduces native support for `CloudWatch Log` events!
 
-Here's an example configuration which will trigger the `alarm` Lambda function whenever something in the `/aws/lambda/alarms` log group happens:
+Here's an example configuration that will trigger the `alarm` Lambda function whenever something in the `/aws/lambda/alarms` log group happens:
 
 ```yml
 functions:
@@ -98,16 +98,16 @@ You can read more about this new event source in the [`cloudwatchLog` docs](http
 
 ### Mark functions to be packaged individually
 
-Serverless supports the ability to package functions individually for a long time. You could enable this feature by setting the `individually: true` configuration in the `package` service property:
+Serverless has supported the ability to package functions individually for a while now. You could enable this feature by setting the `individually: true` configuration in the `package` service property:
 
 ```yml
 package:
   individually: true
 ```
 
-The problem with this approach is that it's "all-or-nothing" which means that you can either let Serverless package your whole service as one large `.zip` file (the default behavior) or one `.zip` file per function (by using the `individually: true` config), but nothing in between.
+The drawback with this approach is that it's all-or-nothing. You can either let Serverless package your whole service as one large `.zip` file (the default behavior) or one `.zip` file per function (by using the `individually: true` config), but nothing in between.
 
-Serverless v1.11 solves this problem and let's you use the `individually: true` configuration on a function level.
+Serverless v1.11 resolves this issue and let's you use the `individually: true` configuration on a function level.
 
 The following example will create one service-wide `service.zip` file, but also one `world.zip` file for the `world` function:
 
@@ -131,29 +131,29 @@ The separation of the `package` and `deploy` command was a tough one since our g
 
 This release includes the option to show a warning message if a plugin hooks into deprecated lifecycle events.
 
-Showing this warning message is disabled bu default. You need to enable it by setting the `SLS_DEBUG=*` system environment variable.
+Showing this warning message is disabled by default. You need to enable it by setting the `SLS_DEBUG=*` system environment variable.
 
 After setting this you'll see a message in the console every time your plugin uses an old lifecycle event.
 
 **We encourage all plugin authors to enable the debugging information and check if their plugin uses old, deprecated lifecycle events.**
 
-You can see all the deprecated lifecycle events with their corresponding redirections Serverless introduces with v1.11 [here](https://github.com/serverless/serverless/blob/f5c7f2fa13975560746c0c40cda2077ab09c7353/lib/plugins/deploy/deploy.js#L11-L16).
+You can see all the deprecated lifecycle events with the corresponding redirections Serverless introduces with v1.11 [here](https://github.com/serverless/serverless/blob/f5c7f2fa13975560746c0c40cda2077ab09c7353/lib/plugins/deploy/deploy.js#L11-L16).
 
 Those lines of code also show how the redirection of deprecated lifecycle events works. So you can now use the same mechanism to deprecate your own plugin lifecycle events.
 
-Interested in more about this topic? Read [Franks gist](https://gist.github.com/HyperBrain/bba5c9698e92ac693bb461c99d6cfeec) to learn why this was needed and how this works behind the scenes.
+Wnat to know more about this topic? Read [Frank's gist](https://gist.github.com/HyperBrain/bba5c9698e92ac693bb461c99d6cfeec) to learn why this was needed and how it works behind the scenes.
 
 ### Enhancements & Bug Fixes
 
-This release also includes bugfixes and introduces several enhancements.
+This release also includes bug fixes and introduces several enhancements.
 
 > Thanks for reporting bugs and opening issues!
 
 ### Contributors
 
-This release contains lots of hard work from our awesome community and wouldn't have been possible without passionate people who decided to spent their time to contributing and make Serverless better.
+This release contains lots of hard work from our awesome community, and wouldn't have been possible without passionate people who decided to spend their time contributing to make Serverless better.
 
-Here's a list of all the contributors who've submitted changes for this release:
+Thank You to all of the contributors who submitted changes for this release:
 
 - John Doe
 
@@ -165,11 +165,11 @@ Contributing isn't just about code! Chime in on [discussions](https://github.com
 
 Just filter by [our labels](https://github.com/serverless/serverless/labels) such as [easy-pick](https://github.com/serverless/serverless/issues?q=is%3Aopen+is%3Aissue+label%3Astatus%2Feasy-pick), [help-wanted](https://github.com/serverless/serverless/issues?q=is%3Aopen+is%3Aissue+label%3Astatus%2Fhelp-wanted) or [needs-feedback](https://github.com/serverless/serverless/labels/stage%2Fneeds-feedback) to find areas where you can help us!
 
-Furthermore we're always seeking feedback from our community to build the features in the best way possible. [Here's a list](https://github.com/serverless/serverless/labels/stage%2Fneeds-feedback) with issues where we need your feedback and insights in your real world usage of Serverless.
+Furthermore, we're always seeking feedback from our community to build the features in the best way possible. [Here's a list](https://github.com/serverless/serverless/labels/stage%2Fneeds-feedback) with issues where we need your feedback and insights in your real world usage of Serverless.
 
 ### Using "Scope" to Contribute
 
-We use our own Serverless open Source tool called ["Scope"](https://github.com/serverless/scope) to manage the Frameworks development process:
+We use our own Serverless open source tool called ["Scope"](https://github.com/serverless/scope) to manage the Framework's development process:
 
 [Serverless Framework Status Board](https://serverless.com/framework/status/)
 
