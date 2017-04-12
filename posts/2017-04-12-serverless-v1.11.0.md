@@ -1,6 +1,6 @@
 ---
-title: New in Serverless v1.11 - Trigger Functions with CloudWatch Events & More
-description: Trigger Lambdas through CloudWatch Logs and more in the Serverless Framework v1.11 release.
+title: New in Serverless v1.11 - Trigger Functions with CloudWatch Events
+description: Trigger Lambdas through CloudWatch Logs, plus more new features in the Serverless Framework v1.11 release.
 date: 2017-04-12
 layout: Post
 authors:
@@ -72,11 +72,11 @@ functions:
 
 ### Description for Lambda versions
 
-Lamdba versions will now pick up the functions description if you've provied one in your `serverless.yml` file.
+Lamdba versions will now pick up the function's description if you've provided one in your `serverless.yml` file.
 
 This will make it easier to find specific versions if you want to e.g. rollback.
 
-Here's a quick refresher how you can use function descriptions:
+Here's a quick refresher on how you can use function descriptions:
 
 ```yml
 service: service
