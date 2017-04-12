@@ -70,6 +70,27 @@ functions:
       individually: true
 ```
 
+### Description for Lambda versions
+
+Lamdba versions will now pick up the functions description if you've provied one in your `serverless.yml` file.
+
+This will make it easier to find specific versions if you want to e.g. rollback.
+
+Here's a quick refresher how you can use function descriptions:
+
+```yml
+service: service
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  hello:
+    handler: handler.hello
+    description: Prints out and logs a "Hello World"
+```
+
 ### Enhancements & Bug Fixes
 
 This release also includes bug fixes and introduces several enhancements.
