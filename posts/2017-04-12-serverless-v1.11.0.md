@@ -1,5 +1,5 @@
 ---
-title: Separate Package and Deploy command, CloudWatch Log event support with Serverless v1.11
+title: Improved CI / CD support with new package command, CloudWatch Log event support with Serverless v1.11
 description: New package command, CloudWatch Log event support, and more in the Serverless Framework v1.11 release.
 date: 2017-04-12
 layout: Post
@@ -9,7 +9,7 @@ authors:
 
 We're proud to announce that we've just released v1.11 of the Serverless Framework!
 
-Let's take a look at all the new features.
+Let's take a look at all the new features and improvements.
 
 ## Highlights of 1.11.0
 
@@ -17,15 +17,15 @@ Let's take a look at all the new features.
 
 ### Separate `package` and `deploy` command
 
-It finally arrived! Serverless now has the separation between the packaging and deployment of your Serverless service!
+It finally arrived! Serverless v1.11 introduces a way to separate the packaging step from the deployment of your service!
 
 This gives you more control over the build process which will also improve CI / CD usage in combination with the Serverless Framework.
 
-Let's take a closer look how this feature works:
+Let's take a closer look how we can make use of this new feature.
 
 #### The `package` command
 
-The `package` command gives you a way to just package the service artifacts.
+The `package` command enables you a way to package all your service artifacts and store the on your disk.
 
 Running the following command will build and save all the deployment artifacts in the services `.serverless` directory:
 
@@ -33,29 +33,29 @@ Running the following command will build and save all the deployment artifacts i
 serverless package
 ```
 
-However you can also add a path to the destination directory where you want Serverless to store your deployment artifacts:
+However you can also use the `--package` option to add a destination path and Serverless will store your deployment artifacts there (`./my-artifacts` in the following case):
 
 ```bash
 serverless package --package my-artifacts
 ```
 
-This way Serverless will store the deployment artifacts in the `my-artifacts` directory.
-
 #### The updated `deploy` command
 
-The simple deployment process was not changed. It still packages your artifacts and store them in the services `.serverless` directory:
+The "simple" deployment process via `serverless deploy` was not changed. It will still package all your artifacts, store them in the `.serverless` directory and deploy your service after that:
 
 ```bash
 serverless deploy
 ```
 
-However you're now able to specify which package you want to use (if you've created different ones with the `package` command beforehand):
+However you're now able to use the `--package` option to specify which package you want to use for deployment:
+
+**Note:** This package needs to be created (e.g. with the `serverless package` command) and therefore available beforehand.
 
 ```bash
 serverless deploy --package my-artifacts
 ```
 
-Furthermore you can speficy the package you want to deploy in your `serverless.yml` file like this:
+Furthermore you can set the path to the package directory in your `serverless.yml` file like this:
 
 ```yml
 package:
@@ -72,7 +72,7 @@ serverless deploy
 
 Ever wanted to call a Lambda function when something happens in one of your log groups? Serverless v1.11 introduces native support for `CloudWatch Log` events!
 
-Here's an example configuration which will trigger the `alarm` lambda function whenever change to the `/aws/lambda/alarms` log group happens:
+Here's an example configuration which will trigger the `alarm` Lambda function whenever something in the `/aws/lambda/alarms` log group happens:
 
 ```yml
 functions:
@@ -82,7 +82,7 @@ functions:
       - cloudwatchLog: '/aws/lambda/alarms'
 ```
 
-Additional to that you can add a `filter` configuration so that the Lambda function is only triggered when the log in your log group matches the filter:
+You can also add a `filter` configuration so that the Lambda function is only triggered when the appended log in your log group matches the `filter`:
 
 ```yml
 functions:
@@ -98,14 +98,14 @@ You can read more about this new event source in the [`cloudwatchLog` docs](http
 
 ### Mark functions to be packaged individually
 
-Serverless supports the ability to package functions individually for a long time. You could enable this feature by setting the `individually: true` configuration on the `package` service property:
+Serverless supports the ability to package functions individually for a long time. You could enable this feature by setting the `individually: true` configuration in the `package` service property:
 
 ```yml
 package:
   individually: true
 ```
 
-The problem with this approach is that it's "all-or-nothing" which means that you can either let Serverless package your whole service as one large `.zip` file or one `.zip` file per function, but nothing in between.
+The problem with this approach is that it's "all-or-nothing" which means that you can either let Serverless package your whole service as one large `.zip` file (the default behavior) or one `.zip` file per function (by using the `individually: true` config), but nothing in between.
 
 Serverless v1.11 solves this problem and let's you use the `individually: true` configuration on a function level.
 
@@ -127,19 +127,21 @@ functions:
 
 The separation of the `package` and `deploy` command was a tough one since our goal was to introduce this change in a non-breaking way.
 
-[Frank Schmid](https://github.com/HyperBrain) worked really hard on new concepts around our core plugin system to help plugin authors deprecate and redirect lifecycle usages. This makes it possible to use both, old lifecycle events and new lifecycle events alongside each other.
+[Frank Schmid](https://github.com/HyperBrain) worked really hard on new concepts around our core plugin system to help plugin authors deprecate and redirect lifecycle usages. This makes it possible to use both old lifecycle events and new lifecycle events alongside each other.
 
 This release includes the option to show a warning message if a plugin hooks into deprecated lifecycle events.
 
-You need to enable this warning by setting the `SLS_DEBUG=*` system environment variable. After setting this you'll see a message in the console every time your plugin uses an old lifecycle event.
+Showing this warning message is disabled bu default. You need to enable it by setting the `SLS_DEBUG=*` system environment variable.
 
-**We encourage all plugin authors to quickly enable the debugging information and check if their plugin uses old, deprecated lifecycle events.**
+After setting this you'll see a message in the console every time your plugin uses an old lifecycle event.
 
-You can see all the deprecated lifecycle events Serverless introduces with v1.11 [here](https://github.com/serverless/serverless/blob/f5c7f2fa13975560746c0c40cda2077ab09c7353/lib/plugins/deploy/deploy.js#L11-L16).
+**We encourage all plugin authors to enable the debugging information and check if their plugin uses old, deprecated lifecycle events.**
 
-This also shows how the redirection of deprecated lifecycle events works. So you can now use the same mechanism to deprecate your own plugin lifecycle events.
+You can see all the deprecated lifecycle events with their corresponding redirections Serverless introduces with v1.11 [here](https://github.com/serverless/serverless/blob/f5c7f2fa13975560746c0c40cda2077ab09c7353/lib/plugins/deploy/deploy.js#L11-L16).
 
-You can get more information why this was needed and how this works behind the scenes by reading [Franks gist](https://gist.github.com/pmuens/fb113cf21ee2d70696e4b7f31384404b) about the lifecycle changes.
+Those lines of code also show how the redirection of deprecated lifecycle events works. So you can now use the same mechanism to deprecate your own plugin lifecycle events.
+
+Interested in more about this topic? Read [Franks gist](https://gist.github.com/pmuens/fb113cf21ee2d70696e4b7f31384404b) to learn why this was needed and how this works behind the scenes.
 
 ### Enhancements & Bug Fixes
 
