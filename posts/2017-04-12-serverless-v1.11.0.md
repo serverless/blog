@@ -70,8 +70,31 @@ serverless deploy
 
 ### CloudWatch Log event source
 
-https://github.com/serverless/serverless/issues/3399
-https://github.com/serverless/serverless/pull/3407
+Ever wanted to call a Lambda function when something happens in one of your log groups? Serverless v1.11 introduces native support for `CloudWatch Log` events!
+
+Here's an example configuration which will trigger the `alarm` lambda function whenever change to the `/aws/lambda/alarms` log group happens:
+
+```yml
+functions:
+  alarm:
+    handler: handler.alarm
+    events:
+      - cloudwatchLog: '/aws/lambda/alarms'
+```
+
+Additional to that you can add a `filter` configuration so that the Lambda function is only triggered when the log in your log group matches the filter:
+
+```yml
+functions:
+  notify:
+    handler: handler.user
+    events:
+      - cloudwatchLog:
+          logGroup: '/aws/lambda/users'
+          filter: '{$.userIdentity.type = Root}'
+```
+
+You can read more about this new event source in the [`cloudwatchLog` docs](https://serverless.com/framework/docs/providers/aws/events/cloudwatch-log/).
 
 ### Mark functions to be packaged individually
 
