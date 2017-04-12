@@ -82,7 +82,12 @@ This release contains lots of hard work from our awesome community, and wouldn't
 
 Thank You to all of the contributors who submitted changes for this release:
 
-- John Doe
+- Avindu
+- Chris LeBlanc
+- Ericbear
+- Jérémy Benoist
+- Kevin Rambaud
+- horike37
 
 ### Get Involved
 
