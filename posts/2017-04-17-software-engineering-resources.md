@@ -1,7 +1,7 @@
 ---
-title: Essential Resources for Becoming a Rockstar Developer
+title: 7 Must Read Books for Becoming a Better Software Developer
 description: Want to be a better engineer or programmer? Check out this list of resources from the Serverless team.
-date: 2017-04-14
+date: 2017-04-17
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/24940473/2bdb229a-1ef8-11e7-9e8d-8f75b5461748.png
 layout: Post
 authors:
@@ -18,6 +18,8 @@ This blog post lists useful software engineering books we've read and highly rec
 *We are not associated with any authors or platforms we list here*
 
 ## Clean Code: A Handbook of Agile Software Craftsmanship
+
+<img align="right" src="https://cloud.githubusercontent.com/assets/20538501/25054483/36c7f428-2112-11e7-8318-b12234266df2.png">
 
 *Clean Code* by Robert C. Martin (aka Uncle Bob) is a classic book every software engineer and programmer should read. It teaches you how to write code in a way that's easy to read and understand.
 
@@ -45,6 +47,8 @@ return tester && beta ? beta() : default();
 
 ## The Clean Coder: A Code of Conduct for Professional Programmers
 
+<img align="right" src="https://cloud.githubusercontent.com/assets/20538501/25054571/ba5e5638-2112-11e7-91c3-b3e93563ad84.png">
+
 This is another great book from Robert C. Martin, the author of ["Clean Code"](#clean-code).
 
 The main topic of this book is how professional software developers should behave, incluing how they should communicate and work on projects or solve problems.
@@ -57,6 +61,8 @@ Read this book and think again...
 
 ## The Phoenix Project: A Novel about IT, DevOps, and Helping your Business Win
 
+<img align="right" src="https://cloud.githubusercontent.com/assets/20538501/25055177/22726158-2116-11e7-87a3-2139e1aa791b.png">
+
 Authored by Gene Kim, Kevin Behr, and George Spafford, this novel about IT operations is not the usual tech book. It's really something you can read before going to sleep without your head spinning with all the complex tech problems you've just read about.
 
 *The Phoenix Project* is a good read if you want to see how the "wrong work" will negatively impact the performance of your company. You'll learn the different types of work and see how a (fictional) doomed corporation transitioned from being a ["poor dog" to a "star"](https://en.wikipedia.org/wiki/Growth%E2%80%93share_matrix).
@@ -64,6 +70,8 @@ Authored by Gene Kim, Kevin Behr, and George Spafford, this novel about IT opera
 [Get the book](https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business/dp/0988262509/ref=sr_1_1?ie=UTF8&qid=1490274311&sr=8-1&keywords=phoenix+project)
 
 ## The Pragmatic Programmer: From Journeyman to Master
+
+<img align="right" src="https://cloud.githubusercontent.com/assets/20538501/25055150/0133a524-2116-11e7-830a-77c3c1df9872.png">
 
 *The Pragmatic Programmer* by Andrew Hunt and David Thomas is another classic every software engineer should read. A true "oldie but goldie".
 
@@ -73,6 +81,8 @@ You'll learn how to approach tackling different problems you might face during y
 
 ## Design Patterns: Elements of Reusable Object-Oriented Software
 
+<img align="right" src="https://cloud.githubusercontent.com/assets/20538501/25054865/5890722c-2114-11e7-9a8c-84c8af27640f.png">
+
 Even with the rise of new programming paradigms (like Functional Programming), Object-Oriented thinking and designed software is definitely still around.
 
 *Design Patterns* by the infamous "Gang of Four (GoF)" - Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides - with foreword by Grady Booch, is a great compilation of all relevant architectural patterns you can utilize to make your Object-Oriented software easier to maintain.
@@ -80,6 +90,8 @@ Even with the rise of new programming paradigms (like Functional Programming), O
 [Get the book](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/ref=sr_1_2?ie=UTF8&qid=1490274362&sr=8-2&keywords=gang+of+four)
 
 ## The Imposter's Handbook: A Primer for Self-Taught Programmers
+
+<img align="right" src="https://cloud.githubusercontent.com/assets/20538501/25054993/20f586c6-2115-11e7-95b6-58d3d14175f3.png">
 
 Can you relate to the feeling that you just don't know enough? Perhaps someday you might be exposed as a "fraud" because you do your job, but compated to others you're still lacking some knowledge?
 
@@ -94,6 +106,8 @@ This will enhance your career, solidify your self-esteem and you can finally chi
 [Get the book](https://bigmachine.io/products/the-imposters-handbook/)
 
 ## Refactoring: Improving the Design of Existing Code
+
+<img align="right" src="https://cloud.githubusercontent.com/assets/20538501/25055071/943c4d18-2115-11e7-990e-b2de3546fee9.png">
 
 Code gets messy over time. That's just a circumstance we cannot change. But what we can change is the complexity of our codebase through refactoring.
 
