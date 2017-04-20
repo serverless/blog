@@ -1,0 +1,12 @@
+{
+  "name": "Corey Light",
+  "github": "coreylight",
+  "twitter": "coreyalight",
+  "site": "https://iopipe.com",
+  "avatar": "https://avatars2.githubusercontent.com/u/1470090?v=3&s=120",
+  "bio": {
+    "short": "Corey Light is a senior software engineer at IOpipe",
+    "long":
+      "Corey Light is a senior software engineer at IOpipe. He is a UX-first problem solver specializing in Node, React, GraphQL, and AWS."
+  }
+}
