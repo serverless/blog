@@ -5,7 +5,7 @@ date: 2017-04-21
 thumbnail: https://s3-us-west-2.amazonaws.com/iopipe-public/iopipe-serverless-logo.png
 layout: Post
 authors:
-  - Corey Light
+  - CoreyLight
 ---
 
 At [IOpipe](https://iopipe.com), we enable users of AWS Lambda to monitor, analyze, and tune their serverless architectures. Getting started is a breeze with the [iopipe wrapper library](https://github.com/iopipe/iopipe).
