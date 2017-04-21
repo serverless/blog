@@ -1,7 +1,7 @@
 ---
-title: Introducing the IOpipe Serverless Plugin
-description: Activate analytics and alerts quickly by automatically wrapping your Serverless functions with IOpipe
-date: 2017-04-017
+title: Enhanced Analytics & Monitoring for your Serverless Apps with the IOpipe Serverless Plugin - Now in Beta
+description: Activate analytics and alerts quickly by automatically wrapping your Serverless functions with IOpipe.
+date: 2017-04-21
 thumbnail: https://s3-us-west-2.amazonaws.com/iopipe-public/iopipe-serverless-logo.png
 layout: Post
 authors:
@@ -10,7 +10,7 @@ authors:
 
 At [IOpipe](https://iopipe.com), we enable users of AWS Lambda to monitor, analyze, and tune their serverless architectures. Getting started is a breeze with the [iopipe wrapper library](https://github.com/iopipe/iopipe).
 
-[Serverless](https://serverless.com/) is an indispensable tool for Lambda, OpenWhisk, and Azure functions-as-service development and deployment. Once you get the hang of launching functions with it, the sky's the limit. But when you have 10 or 100 functions, you might want to abstract your build pipeline further to include your favorite tooling + processes. There are [plenty of powerful plugins already](https://github.com/serverless/plugins).
+[The Serverless Framework](https://serverless.com/) is an indispensable tool for Lambda, OpenWhisk, and Azure functions-as-service development and deployment. Once you get the hang of launching functions with it, the sky's the limit. But when you have 10 or 100 functions, you might want to abstract your build pipeline further to include your favorite tooling + processes. There are [plenty of powerful plugins already](https://github.com/serverless/plugins).
 
 So to enable even _easier_ integration with IOpipe, [we made a plugin too](https://github.com/iopipe/serverless-plugin-iopipe).
 
@@ -123,7 +123,7 @@ The plugin creates a temporary `.iopipe` folder, copies the source code, applies
 
 ## What Else?
 
-While we are at it, why not keep your IOpipe npm package up to date? Upgrading automatically provides the latest speed, developer experience, and feature enhancements.
+While we're at it, why not keep your IOpipe npm package up to date? Upgrading automatically provides the latest speed, developer experience, and feature enhancements.
 
 While the process of auto-upgrading the package could be a separate post, the main idea is to fire off a [child process](https://nodejs.org/api/child_process.html) to run some npm commands. We ❤️ [yarn](https://yarnpkg.com) at IOpipe, so we also support that.
 
