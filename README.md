@@ -149,7 +149,7 @@ Need to convert a Google doc to markdown? [Install this chrome extension](https:
 
 Need to convert HTML to markdown? You can use [this handy html to markdown converter](https://domchristie.github.io/to-markdown/)
 
-Need to convert Word to markdown? You can use [this handy Word to Markdown Converter](https://word-to-markdown.herokuapp.com/)
+Need to convert Word to markdown?! You can use [this handy Word to Markdown Converter](https://word-to-markdown.herokuapp.com/)
 
 ## Recommended Writing Apps
 
