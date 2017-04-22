@@ -28,6 +28,7 @@ Knowing your service performance bottlenecks is essential. Which functions are s
 One of our cold functions was the reset email service during off-peak hours, so it took on average more than double of the time to get the reset password email from UTC+1 23:00 to UTC+1 06:00 (London).
 
 **Understanding AWS cold starts:**
+
 When using AWS Lambda, provisioning of your function container can take >5 seconds. Making it impossible to guarantee <1 second responses to events such as API Gateway, DynamoDB, CloudWatch, S3, etc. [Benchmarks](https://robertvojta.com/aws-journey-api-gateway-lambda-vpc-performance-452c6932093b) have been done to analyse in more detail AWS Lambda + private VPC container initialisation times. Benchmark conclusion:
 - Run-times and memory size don't affect container initialisation time
 - Lambda within a private VPC increase container initialisation time
