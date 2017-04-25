@@ -32,7 +32,9 @@ One of our cold functions was the reset email service during off-peak hours. It 
 
 **Understanding AWS cold starts:**
 
-When using AWS Lambda, provisioning of your function's container can take >5 seconds. That makes it impossible to guarantee <1 second responses to events such as API Gateway, DynamoDB, CloudWatch, S3, etc. [This analysis of AWS Lambda + private VPC container initialization times](https://robertvojta.com/aws-journey-api-gateway-lambda-vpc-performance-452c6932093b) concluded:
+When using AWS Lambda, provisioning of your function's container can take >5 seconds. That makes it impossible to guarantee <1 second responses to events such as API Gateway, DynamoDB, CloudWatch, S3, etc.
+
+[This analysis of AWS Lambda + private VPC container initialization times](https://robertvojta.com/aws-journey-api-gateway-lambda-vpc-performance-452c6932093b) concluded:
 - Run-times and memory size don't affect container initialization time
 - Lambda within a private VPC increases container initialization time
 - Containers are not reused after ~15 minutes of inactivity
