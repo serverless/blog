@@ -89,7 +89,20 @@ The `serverless invoke local` command was also updated so that you can run Pytho
 
 ### New OpenWhisk runtimes
 
-https://github.com/serverless/serverless/pull/3454
+[James Thomas](https://github.com/jthomas) from the OpenWhisk team [recently announced v0.6](https://medium.com/openwhisk/serverless-framework-and-openwhisk-plugin-update-v0-6-1339cfdcd2d2) of the official Serverless [OpenWhisk provider plugin](https://github.com/serverless/serverless-openwhisk).
+
+This update is a huge step forwards as it now supports Python, Swift, Docker and Binaries as runtimes.
+
+Serverless Framework v1.12 adds the `openwhisk-python` and `openwhiks-swift` templates to streamline this process.
+
+Just run `serverless create --template openwhisk-python` or `serverless --create openwhiks-swift` to generate the new service templates.
+
+Curious how to take it from there? Take a look at the docs to learn more:
+
+- [Writing Functions with Python](https://github.com/serverless/serverless-openwhisk#writing-functions---python)
+- [Writing Functions with Swift](https://github.com/serverless/serverless-openwhisk#writing-functions---swift)
+- [Writing Functions with Docker](https://github.com/serverless/serverless-openwhisk#writing-functions---docker)
+- [Writing Functions with Binaries](https://github.com/serverless/serverless-openwhisk#writing-functions---binary)
 
 ### Intrinsic function support for SNS event
 
