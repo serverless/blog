@@ -1,6 +1,6 @@
 ---
 title: New in Serverless v1.12 - Package / Deploy command separation for better CI / CD support
-description: New package command, Python 3.6 service template, new OpenWhisk runtimes, plus more new features in the Serverless Framework v1.12 release.
+description: New package command, Python 3.6 support, new OpenWhisk runtimes, plus more in the Serverless Framework v1.12 release.
 date: 2017-04-26
 layout: Post
 authors:
@@ -66,9 +66,26 @@ Serverless will now use this path automatically if you run the `deploy` command 
 serverless deploy		
 ```
 
-### Python 3.6 service template
+### Python 3.6 support
 
-https://github.com/serverless/serverless/pull/3483
+AWS [recently announced](https://aws.amazon.com/de/about-aws/whats-new/2017/04/aws-lambda-supports-python-3-6/) the support for Python 3.6 and added the corresponding runtime to their Lambda compute service.
+
+Serverless has you covered and ships with a new `aws-python3` template you can use to deploy your Python 3 services to AWS.
+
+Just run `serverless create --template aws-python3` and start coding.
+
+You can also migrate an "old" Python 2 service so that it uses the new `python3.6` runtime:
+
+```diff
+provider:
+  name: aws
+- runtime: python2.7
++ runtime: python3.6
+```
+
+Just make sure that your code is compatible with Python 3 and run `serverless deploy` to update your service.
+
+The `serverless invoke local` command was also updated so that you can run Python 3 code as well.
 
 ### New OpenWhisk runtimes
 
