@@ -183,7 +183,7 @@ You can see all the deprecated lifecycle events with the corresponding redirecti
 		
 Those lines of code also show how the redirection of deprecated lifecycle events works. So you can now use the same mechanism to deprecate your own plugin lifecycle events.		
 		
-Want to know more about this topic? Read [Frank's gist](https://gist.github.com/HyperBrain/bba5c9698e92ac693bb461c99d6cfeec) to learn why this was needed and how it works behind the scenes.
+Want to know more about this topic? Read [Franks gist](https://gist.github.com/HyperBrain/bba5c9698e92ac693bb461c99d6cfeec) to learn why this was needed and how it works behind the scenes.
 
 ### Enhancements & Bug Fixes
 
