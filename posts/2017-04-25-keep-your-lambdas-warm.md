@@ -1,8 +1,8 @@
 ---
-title: Turn Your Lambdas from Cold to Hot with this Simple Fix
-description: Learn how to reduce cold starts for your Lambda functions with the Serverless WarmUp plugin.
+title: Keeping Functions Warm - How To Fix AWS Lambda Cold Start Issues
+description: Learn how to prevent cold start in your Lambda functions with the Serverless WarmUp plugin.
 date: 2017-04-25
-thumbnail: 
+thumbnail: https://cloud.githubusercontent.com/assets/20538501/25389822/3defba8c-2997-11e7-983a-f45c257ac59b.png
 layout: Post
 authors:
   - GoncaloNeves
@@ -16,17 +16,17 @@ In this blog post we'll tackle this issue with AWS Lambda + Serverless.
 
 ## Cold Start in Serverless ❄️ *- problem*
 
-Now more than ever with *Function-as-a-Service (FaaS)* cold start can be an issue that's detrimental to this huge step forward in the developer world.
+The *Function-as-a-Servive (FaaS)* paradigm allows developers to do more than ever with less resources. Unfortunately, cold start can be an issue.
 
 **What is cold start in Serverless?**
 
-Cold start happens when you execute an inactive *(cold)* function for the first time. This occurs while your cloud provider provisions your selected runtime container and then runs your function. This process, referred to as *cold start*, will increase your execution time considerably.
+Cold start happens when you execute an inactive *(cold)* function for the first time. It occurs while your cloud provider provisions your selected runtime container and then runs your function. This process, referred to as *cold start*, will increase your execution time considerably.
 
-On the contrary, while you're actually running your function it will stay active *(hot)*, meaning your container stays alive - ready and waiting for execution. But eventually after a period of inactivity, your cloud provider will drop the container and your function will become *cold* again. 
+While you're actually running your function it will stay active *(hot)*, meaning your container stays alive - ready and waiting for execution. But eventually after a period of inactivity, your cloud provider will drop the container and your function will become *cold* again. 
 
 **Where are the bottlenecks and when?**
 
-Knowing your service performance bottlenecks is essential. Which functions are slowing down and when? From small to big services, it's common to find one function that slows down your service logic because it doesn't run as often as needed to keep its container alive.
+Knowing your service performance bottleneck is essential. Which functions are slowing down and when? From small to big services, it's common to find one function that slows down your service logic because it doesn't run as often as needed to keep its container alive.
 
 One of our cold functions was the reset email service during off-peak hours. It took on average more than double the amount of time to get the reset password email from UTC+1 23:00 to UTC+1 06:00 (London).
 
@@ -91,7 +91,7 @@ module.exports.lambdaToWarm = function(event, context, callback) {
 
 Perfect! Now you all of your Lambdas are hot, and you have less to worry about.
 
-You can read more information [here](https://github.com/FidelLimited/serverless-plugin-warmup#options) about options, event source and cost. 
+You can read more information [here](https://github.com/FidelLimited/serverless-plugin-warmup#options) about options, event source and estimated cost. 
 
 ## Provider support *- future*
 
