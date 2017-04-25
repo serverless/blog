@@ -1,6 +1,6 @@
 ---
 title: New in Serverless v1.12 - Package / Deploy command separation for better CI / CD support
-description: New package command, Python 3.6 support, new OpenWhisk runtimes, plus more in the Serverless Framework v1.12 release.
+description: New package command, Python 3.6 support, new OpenWhisk runtimes and more in the Serverless Framework v1.12 release.
 date: 2017-04-26
 layout: Post
 authors:
