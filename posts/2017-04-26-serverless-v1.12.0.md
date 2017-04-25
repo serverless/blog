@@ -97,7 +97,7 @@ The `serverless invoke local` command was also updated so that you can run Pytho
 
 This update is a huge step forwards as it now supports Python, Swift, Docker and Binaries as runtimes.
 
-Serverless Framework v1.12 adds the `openwhisk-python` and `openwhiks-swift` templates to streamline this process.
+Serverless Framework v1.12 adds the `openwhisk-python` and `openwhisk-swift` templates to streamline this process.
 
 Just run the following command to create a new Python template:
 
@@ -108,7 +108,7 @@ serverless create --template openwhisk-python
 This command will generate a new Swift service template for you:
 
 ```bash
-serverless --create openwhiks-swift
+serverless --create openwhisk-swift
 ```
 
 Curious how to take it from there? Take a look at the docs to learn more:
