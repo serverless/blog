@@ -112,7 +112,9 @@ https://github.com/serverless/serverless/pull/3443
 		
 The separation of the `package` and `deploy` command was a tough one since our goal was to introduce this change in a non-breaking way.		
 		
-[Frank Schmid](https://github.com/HyperBrain) worked really hard on new concepts around our core plugin system to help plugin authors deprecate and redirect lifecycle usages. This makes it possible to use both old lifecycle events and new lifecycle events alongside each other.		
+[Frank Schmid](https://github.com/HyperBrain) worked really hard on new concepts around our core plugin system to help plugin authors deprecate and redirect lifecycle usages. This makes it possible to use both old lifecycle events and new lifecycle events alongside each other.
+
+A huge thanks goes out to Frank for all his ideas and help here since these additions made it possible to introduce the package and deploy separation in a non-breaking way! (As a day-to-day Framework user you might not even notice a difference altough the whole system behind the scenes works entirely different)
 		
 This release includes the option to show a warning message if a plugin hooks into deprecated lifecycle events.		
 		
