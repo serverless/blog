@@ -72,7 +72,11 @@ AWS [recently announced](https://aws.amazon.com/de/about-aws/whats-new/2017/04/a
 
 Serverless has you covered and ships with a new `aws-python3` template you can use to deploy your Python 3 services to AWS.
 
-Just run `serverless create --template aws-python3` and start coding.
+Run the following command to generate a new Python 3 template:
+
+```bash
+serverless create --template aws-python3
+```
 
 You can also migrate an "old" Python 2 service so that it uses the new `python3.6` runtime:
 
@@ -95,7 +99,17 @@ This update is a huge step forwards as it now supports Python, Swift, Docker and
 
 Serverless Framework v1.12 adds the `openwhisk-python` and `openwhiks-swift` templates to streamline this process.
 
-Just run `serverless create --template openwhisk-python` or `serverless --create openwhiks-swift` to generate the new service templates.
+Just run the following command to create a new Python template:
+
+```bash
+serverless create --template openwhisk-python
+```
+
+This command will generate a new Swift service template for you:
+
+```bash
+serverless --create openwhiks-swift
+```
 
 Curious how to take it from there? Take a look at the docs to learn more:
 
