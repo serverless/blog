@@ -104,9 +104,50 @@ Curious how to take it from there? Take a look at the docs to learn more:
 - [Writing Functions with Docker](https://github.com/serverless/serverless-openwhisk#writing-functions---docker)
 - [Writing Functions with Binaries](https://github.com/serverless/serverless-openwhisk#writing-functions---binary)
 
-### Intrinsic function support for SNS event
+### Intrinsic function support for SNS events
 
-https://github.com/serverless/serverless/pull/3443
+The SNS event source is now updated so that it supports CloudFormation intrinsic functions such as `Fn::GetAtt`.
+
+This way you can e.g. reference other resources in your `serverless.yml` `resources` section.
+
+Here's an in-depth example how this looks like in practice:
+
+```yml
+functions:
+  ingestFn1:
+    handler: handler.hello
+    events:
+      - sns:
+          topicName: myTopic
+          arn:
+            Fn::Join:
+              - ""
+              - - "arn:aws:sns:"
+                - Ref: "AWS::Region"
+                - ":"
+                - Ref: "AWS::AccountId"
+                - ":myTopic"
+
+resources:
+  Resources:
+    myTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        TopicName: myTopic
+        Subscription:
+          -
+            Endpoint:
+              Fn::Join:
+                - ""
+                - - "arn:aws:sqs:"
+                  - Ref: "AWS::Region"
+                  - ":"
+                  - Ref: "AWS::AccountId"
+                  - ":mySqs"
+            Protocol: sqs
+```
+
+Take a look at the [SNS documentation](https://serverless.com/framework/docs/providers/aws/events/sns/) for more information.
 
 ### An important note for plugin authors		
 		
