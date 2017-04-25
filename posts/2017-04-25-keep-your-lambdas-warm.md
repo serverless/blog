@@ -91,10 +91,10 @@ module.exports.lambdaToWarm = function(event, context, callback) {
 }
 ```
 
-Perfect! Now you all of your Lambdas are hot, and you have less to worry about.
+Perfect! Now all of your Lambdas are hot, and you have less to worry about.
 
-You can read more information [here](https://github.com/FidelLimited/serverless-plugin-warmup#options) about options, event source and estimated cost. 
+You can find more info [here](https://github.com/FidelLimited/serverless-plugin-warmup#options) about options, event source and estimated cost. 
 
 ## Provider support *- future*
 
-I only work with AWS so adding support to other providers it is a welcome contribution.  
+I only work with AWS, so adding support for other providers is a welcome contribution! 
