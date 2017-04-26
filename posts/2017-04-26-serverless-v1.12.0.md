@@ -197,7 +197,20 @@ This release contains lots of hard work from our awesome community, and wouldn't
 
 Thank You to all of the contributors who submitted changes for this release:
 
-- John Doe
+- Alex Oskotsky
+- Daniel Schep
+- Danny Varner
+- Frank Schmid
+- Hal Massey
+- Huang Yunkun
+- James Thomas
+- Jeremy Thomerson
+- Johannes Schickling
+- Matt Hernandez
+- Me OutPerformIt
+- Rafal Wilinski
+- Ryan Lewis
+- horike37
 
 ### Get Involved
 
