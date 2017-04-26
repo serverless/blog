@@ -1,5 +1,5 @@
 ---
-title: New in Serverless v1.12 - Package / Deploy command separation for better CI / CD support
+title: New in Serverless v1.12 - Package/Deploy command separation for better CI/CD support
 description: New package command, Python 3.6 support, new OpenWhisk runtimes and more in the Serverless Framework v1.12 release.
 date: 2017-04-26
 layout: Post
@@ -17,21 +17,21 @@ It's time for the new Serverless Framework v1.12 release! Let's take a look at a
 
 This long awaited feature has arrived! Serverless v1.12 introduces a way to separate the packaging step from the deployment of your service.
 
-This gives you more control over the build process, which will also improve CI / CD usage in combination with the Serverless Framework.
+This gives you more control over the build process, which will also improve CI/CD usage in combination with the Serverless Framework.
 
-Let's take a closer at look how we can make use of this new feature.
+Let's take a closer at look how we can use this new feature.
 
 #### The `package` command
 
 The `package` command enables you to package all of your service artifacts and store them on your disk.
 
-Running the following command will build and save all of the deployment artifacts in the services `.serverless` directory:
+Running the following command will build and save all of the deployment artifacts in the service's `.serverless` directory:
 
 ```bash
 serverless package
 ```
 
-However you can also use the `--package` option to add a destination path and Serverless will store your deployment artifacts there (`./my-artifacts` in the following case):
+However, you can also use the `--package` option to add a destination path and Serverless will store your deployment artifacts there (`./my-artifacts` in the following case):
 
 ```bash
 serverless package --package my-artifacts
@@ -68,7 +68,7 @@ serverless deploy
 
 ### Python 3.6 support
 
-AWS [recently announced](https://aws.amazon.com/de/about-aws/whats-new/2017/04/aws-lambda-supports-python-3-6/) the support for Python 3.6 and added the corresponding runtime to their Lambda compute service.
+AWS [recently announced](https://aws.amazon.com/de/about-aws/whats-new/2017/04/aws-lambda-supports-python-3-6/) support for Python 3.6 and added the corresponding runtime to their Lambda compute service.
 
 Serverless has you covered and ships with a new `aws-python3` template you can use to deploy your Python 3 services to AWS.
 
@@ -124,7 +124,7 @@ The SNS event source is now updated so that it supports CloudFormation intrinsic
 
 This way you can e.g. reference other resources in your `serverless.yml` `resources` section.
 
-Here's an in-depth example how this looks like in practice:
+Here's an in-depth example of what this looks like in practice:
 
 ```yml
 functions:
@@ -169,7 +169,7 @@ The separation of the `package` and `deploy` command was a tough one since our g
 
 [Frank Schmid](https://github.com/HyperBrain) worked really hard on new concepts around our core plugin system to help plugin authors deprecate and redirect lifecycle usages. This makes it possible to use both old lifecycle events and new lifecycle events alongside each other.
 
-A huge thanks goes out to Frank for all his ideas and help here since these additions made it possible to introduce the package and deploy separation in a non-breaking way! (As a day-to-day Framework user you might not even notice a difference altough the whole system behind the scenes works entirely different)
+A huge thanks goes out to Frank for all his ideas and help here since these additions made it possible to introduce the package and deploy separation in a non-breaking way! (As a day-to-day Framework user you might not even notice a difference altough the whole system behind the scenes works entirely differently)
 
 This release includes the option to show a warning message if a plugin hooks into deprecated lifecycle events.		
 		
@@ -177,13 +177,13 @@ Showing this warning message is disabled by default. You need to enable it by se
 
 After setting this you'll see a message in the console every time your plugin uses an old lifecycle event.		
 
-**We encourage all plugin authors to enable the debugging information and check if their plugin uses old, deprecated lifecycle events.**
+**We encourage all plugin authors to enable the debugging information and check whether their plugin uses old, deprecated lifecycle events.**
 
 You can see all the deprecated lifecycle events with the corresponding redirections Serverless introduces with v1.12 [here](https://github.com/serverless/serverless/blob/07f837ddb67a40cee3e0c6b238e165023b4b7725/lib/plugins/deploy/deploy.js#L14-L19).
 
 Those lines of code also show how the redirection of deprecated lifecycle events works. So you can now use the same mechanism to deprecate your own plugin lifecycle events.
 
-Want to know more about this topic? Read [Franks gist](https://gist.github.com/HyperBrain/bba5c9698e92ac693bb461c99d6cfeec) to learn why this was needed and how it works behind the scenes.
+Want to know more about this topic? Read [Frank's gist](https://gist.github.com/HyperBrain/bba5c9698e92ac693bb461c99d6cfeec) to learn why this was needed and how it works behind the scenes.
 
 ### Enhancements & Bug Fixes
 
@@ -234,7 +234,7 @@ You can use this status board to see all the important things currently happenin
 
 ### Next Steps
 
-We've already started filling in the next [milestones](https://github.com/serverless/serverless/milestones). Check out the [1.13 milestone](https://github.com/serverless/serverless/milestone/28) to see what we've planned for the next release.
+We've already started filling in the next [milestones](https://github.com/serverless/serverless/milestones). Check out the [1.13 milestone](https://github.com/serverless/serverless/milestone/28) to see what we have planned for the next release.
 
 We hope that you like the new release! Let us know if you have any questions or feedback in [our Forum](http://forum.serverless.com/) or [GitHub Issues](https://github.com/serverless/serverless/issues).
 
