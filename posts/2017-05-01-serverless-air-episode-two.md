@@ -19,6 +19,8 @@ In this episode, Jared Short from Trek10 joins us to share his take on the serve
 
 **David:** Yeah, for sure. So before we jump into it, can you give us a little bit of background about yourself? How did you start working in the industry?
 
+### How did you start working in the industry?
+
 **Jared:** That's...it's a good question. It's a little bit of a long story but we'll make it short. So roughly...I don't know. 12, 13 years ago some...probably more than now. I got into programming and I grew up in Indiana. So I went to programming and technology because I did a few years of fieldwork. I literally worked in a cornfield in Indiana. So I did...it was like the worst experience ever. And I liked video games and so I would play video games a lot and my parents told me, "Don't do that. You're never going to make a living just playing video games or sitting on a computer." So I decided as anyone would do to prove my parents wrong. And so, I went through being a developer. I ran a small consulting agency for a little while. I did a short stint in software QA, quality assurance stuff and then had just a meeting with a few folks and I eventually ended up at Trek10 doing the Amazon Web Services stuff working in the Cloud. And then it just kind of progressed from there. From the Cloud, I just kept pushing technology further and further and seeing what I could get out of it and ended up in what we now call Serverless. And so that's..
 
 **David:** Nice, nice.
@@ -30,6 +32,8 @@ In this episode, Jared Short from Trek10 joins us to share his take on the serve
 **Jared:** We love you too.
 
 **David:** Yeah. So like what kind of projects are you guys working on over there?
+
+### What kind of projects are you guys working on over there?
 
 **Jared:** Oh, man. A lot of stuff. There's been some larger Serverless projects and some smaller ones. And then it's not all Serverless, there's certainly still some containers here and there and some legacy infrastructure and...
 
@@ -67,6 +71,8 @@ In this episode, Jared Short from Trek10 joins us to share his take on the serve
 
 **David:** Cool. So being like in this industry for quite some time like what are some of the biggest like shifts and changes you've seen?
 
+### What are some of the biggest shifts & changes you've seen in the space?
+
 **Jared:** Yeah. So I would say what's been quite interesting to us kind of seeing it from all over the board from startups to our internal stuff up to enterprise is that...and certainly there's some self-selection going on here but folks are coming to us and Docker was hot for like a year maybe.
 
 **David:** Yeah.
@@ -94,6 +100,8 @@ There's just this massive like weight lifted off of your ops team shoulders or y
 **Jared:** That said, I really don't want to manage the underlying post and that gets back to that problem.
 
 **David:** Indeed, indeed. Cool, cool. Yeah, so getting back to that Wish List then like what are some of the things...so for those of you that don't know there's #AWS Wish List on Twitter that's really telling it like kind of the missing pieces that AWS...basically the missing features they should build. What are some of those for you? What would you like to see? And it doesn't have to be specifically about AWS. It could be about just the space in general.
+
+### What is on your #AWSWishList?
 
 **Jared:** Yeah. There's a few things and some of them are actually being worked on. One of them was actually fixed yesterday I believe or two days ago. So like just even just something as simple as tagging Lambda functions. So we do a lot of stuff at Trek10 around monitoring and figuring out how to monitor Serverless applications, right. So it changes to some extent. And I think everyone is still trying to figure out what is the actual best way to monitor and respond to Serverless event driven architecture type stuff, right. So if a function starts failing a whole bunch, jump in and start looking at that and it'd be nice for us to have tags rather than relying on like parsing function names or things like that. Because right now we just do some parsing and say, "Well, if it has like service name - prod or service name - you know, production or something like that." Then we actually care if it's starts failing a whole bunch as opposed to service name - David's Dev. Like we don't care if that starts failing. Of course, it's gonna start failing, right? You know, we don't care if...
 
@@ -131,6 +139,8 @@ The other interesting bits I brought up, being able to run your own containers a
 
 **David:** Have you guys done anything with binaries over at Trek10?
 
+### Are you using binaries in Lambda functions?
+
 **Jared:** Yes. Actually, we did some interesting stuff with image resizing. There's some native binding stuff. So image magic is kinda slow. There's some node packages that have native bindings to some specific like image manipulation libraries and so we do do some packaging with that. I actually talked about it at the Serverless Conf. Not the Serverless Conf. The Serverless Meetup in San Francisco. I talked a little bit about how we're doing some interesting image manipulation stuff there.
 
 **David:** Yeah. I think we recorded that as well.
@@ -142,6 +152,8 @@ The other interesting bits I brought up, being able to run your own containers a
 **Jared:** Yes.
 
 **David:** What are some of your other like favorite use cases like for Serverless technology?
+
+### What are some of your favorite use cases for Serverless technology?
 
 **Jared:** Oh, man. Well, see, image resizing, Graph QL, data processing, some analytics type stuff. Those are all kind of the normal target ones. Some other fun ones that I've seen are...and actually...kinda Athena kinda kills part of it was really this ad hoc querying of S3 data, right. So Athena came out and kind of kills part of that use case that we have for it. Because we could quickly aggregate over a whole bunch of S3 files and query data in kind of an ad hoc fashion out of it. That was in which case.
 
@@ -177,7 +189,7 @@ But on the flipside of that though, there is the other alternative where you hav
 
 **Jared:** Right, so we just time it out. And there you go. You took care of 97% of the bad things that could happen in a really like deep nested graph attack.
 
-**David:** Yeah, we notice a little bit of latency on one of our Graph QL end points. And like we basically like implemented data loader to kind of cash it up.
+**David:** Yeah, we notice a little bit of latency on one of our Graph QL end points. And like we basically like implemented data loader to kind of cache it up.
 
 **Jared:** Yep.
 
@@ -211,6 +223,8 @@ I wanted to talk to you about...so I called you out on a previous episode. You s
 
 So yeah. So like give us a little bit of background on that project like what does it do and, you know, how did it start.
 
+### DynamoDB auto scaling? How did that project come about?
+
 **Jared:** Yeah. Yeah, so we did open source it, we got called out and we made good on it. [inaudible 00:27:21]. But yeah. So we actually had a need. It was one of our first...it was actually our very first large implementation of Serverless and we leveraged Dynamo DB and the issue was that it was in a space, enterprise space where people come in in the morning and towards midafternoon are actually using the system very, very heavily and then at night there's like no usage to the point of, you know, millions and millions of hits over like something like 60% that hits are over like a two-hour period in their system. So it's literally like just...every day massive spikes. Like the typical auto scaling scenario, you see for EC2 the AWS is always like, "Oh, if you use auto scaling you'll save billions of dollars." Right? We're like, "Okay. what do we gonna do? Go on a Dynamo and like have...like just create a task or just API like every day we'll just increase and then decrease over the hours but then what happens if it's a holiday? What happens if there's like an unexpected spike?" Right?
 
 Dynamo has no capability of handling that. So we essentially said, "Well, we can look at like Cloud Watch metrics or we could look at metrics so why not just create a Lambda function that looks at those metrics and kind of intelligently decides if we should start scaling up or if it's safe to scale down?"
@@ -238,6 +252,8 @@ If you're at the point that you're auto-scaling Dynamo tables, look at reserved 
 **Jared:** Yeah.
 
 **David:** So yeah. So you just mentioned like you don't care if there is a server, like you mentioned earlier, you know, like in, you know, some of your Serverless projects you guys still end up using a server for something. What are you guys using that server for? You peaked my interest.
+
+### What are you guys still using servers for?
 
 **Jared:** Yeah, so in one of the projects it's because we needed a binary. We needed to be able to accept and return binary traffic. So images.
 
@@ -333,6 +349,8 @@ And if we can look at that part of the system and say...we can enter and look at
 
 **David:** Interesting. Cool, man, yeah. I don't know. It's definitely an exciting space. But yeah. One final question. I wanted to get your take on like, what are your favorite resources to learn about this stuff and like keep up-to-date on what's happening?
 
+### What are your favorite resources to learn about serverless stuff?
+
 **Jared:** Yeah, so there's the awesome Serverless page [inaudible 00:47:25] That's a good one to kind of look over. And then some other...I guess I probably have somewhat of a problem here but I just go to YouTube and type in Serverless and just sort by most recent and I'll just kinda...I'll do that and then there's just...the Serverless blog is a good one and then the Serverless getter on occasion is a good one and kinda just to follow that and get a baseline for what people are talking about to some extent about Serverless and then the Serverless Conf actually tends to be a great resource as well. Even just watching the videos online you can kind of see. Even in like the three or four month increments or whatever that it ends up being. Maybe it's been like what...I think November, December, January. Something like five months since the last Serverless Conf. Those...it's interesting to watch those videos progress and those talks progress where kind of the first Serverless Conf in New York City was like, "What is this thing?" And then there was Tokyo which was still kind of a little bit about, "What is this thing?" And then London was like, "All right. We kinda know what it is now. Now here's how to orchestrate it or how to do it."
 
 So I'm really excited to see what Austin is gonna be about.
@@ -351,15 +369,13 @@ So I'm really excited to see what Austin is gonna be about.
 
 **David:** Every week so...
 
-**Jared:** That's something we need.
-
-**David:** Yeah, Stephanie...
-
-**Jared:** Because I'm tired of wasting time just going through YouTube and...I just want somebody to tell me what I should know.
+**Jared:** That's something we need. Because I'm tired of wasting time just going through YouTube and...I just want somebody to tell me what I should know.
 
 **David:** All right, we're on it, we're on it. All right, awesome. Jared, where can people find you online?
 
-**Jared:** Actually, Jared on Twitter and GitHub and jakeshort@trek10.com is my email address and I'm more than happy to talk with anyone about basically anything. This stuff's exciting and the more people we have in it, the better.
+### Where can people find you online?
+
+**Jared:** Actually, @ShortJared on Twitter and GitHub and jared short a.t. trek10.com is my email address and I'm more than happy to talk with anyone about basically anything. This stuff's exciting and the more people we have in it, the better.
 
 **David:** Yeah, totally, totally. And if you, you know...anything peaked your interest on this interview that you want Jared to open source just hound him and, you know, they'll do it eventually so...
 
@@ -368,5 +384,3 @@ So I'm really excited to see what Austin is gonna be about.
 **David:** Yeah, thanks so much for coming on, Jared. It was a pleasure.
 
 **Jared:** Yes, thanks for having me. I'm excited to see what the future holds for all of us.
-
-**David:** Indeed. All right.
