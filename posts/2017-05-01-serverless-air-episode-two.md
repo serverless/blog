@@ -7,9 +7,15 @@ authors:
   - DavidWells
 ---
 
-In this episode, Jared Short from Trek10 joins us to share his take on the serverless ecosystem and where it's headed into the future
+In this episode, Jared Short from Trek10 joins us to share his take on the serverless ecosystem. We get his take on where he thinks the serverless world is headed.
 
+We dive into current challenges in the space while discussing his #AWSWishlist for 2017 and touch on why servers still have their place in the stack.
 
+He also goes into detail on Trek10's auto scaling dynamoDB project
+
+Enjoy the video or checkout the audio
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oKd47AQW99I" frameborder="0" allowfullscreen></iframe>
 
 ## Transcript
 
