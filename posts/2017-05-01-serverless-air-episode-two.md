@@ -14,9 +14,13 @@ We dive into current challenges in the space while discussing his #AWSWishlist f
 
 He also goes into detail on Trek10's auto scaling dynamoDB project and how it moves dynamoDB towards the set it and forget it end of the serverless spectrum.
 
-Enjoy the video or checkout the audio.
+Enjoy the video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oKd47AQW99I" frameborder="0" allowfullscreen></iframe>
+
+Or listen to the audio
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/320525433&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
 
 ## Transcript
 
