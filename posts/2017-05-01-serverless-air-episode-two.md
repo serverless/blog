@@ -1,5 +1,5 @@
 ---
-title: Serverless Air #2 - The Serverless ecosystem now & where it's going with Jared Short
+title: "Serverless Air #2 - The Serverless ecosystem now & where it's going with Jared Short"
 description: Jared Short from Trek10 joins us to share his take on the serverless ecosystem and where it's going.
 date: 2017-05-01
 layout: Post
