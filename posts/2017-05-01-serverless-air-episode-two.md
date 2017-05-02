@@ -1,5 +1,5 @@
 ---
-title: Serverless Air: Interview with Serverless Expert @ShortJared
+title: Serverless Air - Talking About the Next Wave in Serverless with Guest Expert @ShortJared
 description: Jared Short from Trek10 joins us to share his take on the serverless ecosystem
 date: 2017-05-01
 layout: Post
