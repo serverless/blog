@@ -1,5 +1,5 @@
 ---
-title: VIDEO - Real World Security for your Serverless Apps with FaunaDB
+title: Meetup Video - Real World Security for your Serverless Apps with FaunaDB
 description: FaunaDB's Chris Anderson walks through extending the popular todo list serverless-crud example app to allow sharing and collaboration on lists.
 date: 2017-05-04
 layout: Post
@@ -9,7 +9,7 @@ authors:
 ---
 [Serverless Meetups](https://www.meetup.com/pro/serverless/) are a gathering place for anyone interested in building web, mobile and IoT apps with serverless or event-driven architectures using the Serverless Framework or other tools. During a recent Meetup at [Fauna](https://fauna.com/), their Director of Developer Experience Fauna, Chris Anderson, shared his experience building a real world app with FaunaDB and the Serverless Framework.
 
-Check out the video:
+## Check out the video:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/c_DijBxb7JA" frameborder="0" allowfullscreen></iframe>
 
