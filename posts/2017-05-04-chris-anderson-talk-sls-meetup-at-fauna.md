@@ -73,11 +73,11 @@ Your question?
 
 **Chris:** Yeah, so we've got most languages already covered and they're all on the website. We develop all our own drivers. We have some community folks who are interested in developing drivers and when they get to a certain point we're probably gonna adopt them.
 
-**Person: So you can use this with...like, on the server as well?**
+**Person:** So you can use this with...like, on the server as well?
 
 **Chris:** Yeah. And this is running in the lambda.
 
-**Person: Okay.
+**Person:** Okay.
 
 **Chris:** You could write this and have it be in the browser. Our whole dashboard is just the browser talking directly to FaunaDB. So that's an option, too. Question?
 
