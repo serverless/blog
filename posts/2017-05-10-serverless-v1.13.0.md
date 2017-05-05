@@ -23,6 +23,10 @@ https://github.com/serverless/serverless/pull/3554
 
 https://github.com/serverless/serverless/pull/3548
 
+### Extensible `info` plugin
+
+https://github.com/serverless/serverless/pull/3507
+
 ### `hello-world` starter template
 
 https://github.com/serverless/serverless/pull/3445
