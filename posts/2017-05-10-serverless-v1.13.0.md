@@ -1,5 +1,5 @@
 ---
-title: New in Serverless v1.13 - Use values of async functions in your Serverless variables
+title: New in Serverless v1.13 - v1.13 opens up world of configuration possibilities with new async variable support
 description: Async Serverless variables, Lambda tags, hello-world starter template and more in the Serverless Framework v1.13 release.
 date: 2017-05-10
 layout: Post
@@ -18,6 +18,12 @@ Let's look into the new features and enhancements Serverless v1.13 introduces.
 ### Async value support for Serverless variables
 
 https://github.com/serverless/serverless/pull/3554
+
+We should add list of config possibilities here:
+
+- Connect variables to your teams secret management solution
+- Fetch secrets from a remote database
+- etc.
 
 ### Lambda tags
 
