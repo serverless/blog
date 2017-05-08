@@ -76,7 +76,15 @@ Plugin authors can now e.g. hook into the lifecycle event before functions are d
 
 ### `hello-world` starter template
 
-https://github.com/serverless/serverless/pull/3445
+Serverless v1.13 adds a new, beginner friendly `hello-world` template.
+
+This template is used to streamline the onboarding process.
+
+Just create the new service with `serverless create --template hello-world` and run `serverless deploy` and you're off to the races.
+
+The `hello-world` template includes one function which is hooked up to a CORS enabled API Gateway endpoint.
+
+It uses `nodejs6.10` as the runtime and `aws` as the provider of choice.
 
 ### Enhancements & Bug Fixes
 
