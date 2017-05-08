@@ -17,13 +17,41 @@ Let's look into the new features and enhancements Serverless v1.13 introduces.
 
 ### Async value support for Serverless variables
 
-https://github.com/serverless/serverless/pull/3554
+The widely request support for Async serverless variables landed!
 
-We should add list of config possibilities here:
+Serverless Variables can now refer to functions which return a Promise, making the variable population super powerful.
 
+**You could e.g.:**
+
+- Fetch and include secrets from a remote database
 - Connect variables to your teams secret management solution
-- Fetch secrets from a remote database
-- etc.
+- Pull data from internal resources / APIs
+- Read config data from your CI / CD server
+- ...
+
+The possibilities are endless!
+
+Let's take at a simple example how this looks like:
+
+```yml
+service: serverless-async-vars
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+custom:
+  secret: ${file(./vars.js):fetchSecret} # JS file running async / promised
+```
+
+```javascript
+// vars.js
+
+module.exports.fetchSecret = () => {
+  // async code
+  return Promise.resolve('SomeSecretKey');
+}
+```
 
 ### Lambda tags
 
