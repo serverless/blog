@@ -17,7 +17,7 @@ Let's look into the new features and enhancements Serverless v1.13 introduces.
 
 ### Async value support for Serverless variables
 
-The widely request support for Async serverless variables landed!
+The widely requested support for Async serverless variables landed!
 
 Serverless Variables can now refer to functions which return a Promise, making the variable population super powerful.
 
@@ -53,6 +53,8 @@ module.exports.fetchSecret = () => {
 }
 ```
 
+You can read more about this new feature in the [Serverless Variables docs](https://serverless.com/framework/docs/providers/aws/guide/variables).
+
 ### Lambda tags
 
 AWS recently announced the support for [tagging Lambda functions](https://aws.amazon.com/de/about-aws/whats-new/2017/04/aws-lambda-supports-tagging-and-cost-allocations/).
@@ -80,6 +82,8 @@ functions:
 Tagging Lambda functions opens a wide variety for different, useful use-cases.
 
 You could e.g. analyze your overall costs based on Lambda tags (`production` vs. `development`). Furthermore you could tag Lambda which use soon to be deprecated runtimes or code.
+
+More about Lambda tagging can be found in the [function docs](https://serverless.com/framework/docs/providers/aws/guide/functions/).
 
 ### Extensible `info` plugin
 
