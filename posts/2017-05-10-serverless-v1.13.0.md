@@ -27,7 +27,31 @@ We should add list of config possibilities here:
 
 ### Lambda tags
 
-https://github.com/serverless/serverless/pull/3548
+AWS recently announced the support for [tagging Lambda functions](https://aws.amazon.com/de/about-aws/whats-new/2017/04/aws-lambda-supports-tagging-and-cost-allocations/).
+
+Serverless v1.13 adds native support for this this nifty feature.
+
+Tags can be added with the help of the `tags` property on the function level. Tags are always defined as key-value pairs.
+
+Here's an example which shows how to add the `stage: production` tag to the `hello` function.
+
+```yml
+service: service
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  hello:
+    handler: handler.hello
+    tags:
+      stage: production
+```
+
+Tagging Lambda functions opens a wide variety for different, useful use-cases.
+
+You could e.g. analyze your overall costs based on Lambda tags (`production` vs. `development`). Furthermore you could tag Lambda which use soon to be deprecated runtimes or code.
 
 ### Extensible `info` plugin
 
