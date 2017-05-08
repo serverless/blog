@@ -55,7 +55,24 @@ You could e.g. analyze your overall costs based on Lambda tags (`production` vs.
 
 ### Extensible `info` plugin
 
-https://github.com/serverless/serverless/pull/3507
+The AWS implementation of the `info` command now defines more fine-grained lifecycle events you can hook into.
+
+Every information group which is displayed when all the results are gatheres exposes an own lifecycle event:
+
+```
+-> info:info
+  -> aws:info:validate
+  -> aws:info:gatherData
+  -> aws:info:displayServiceInfo
+  -> aws:info:displayApiKeys
+  -> aws:info:displayEndpoints
+  -> aws:info:displayFunctions
+  -> aws:info:displayStackOutputs
+```
+
+This makes the `info` plugin way more extensible.
+
+Plugin authors can now e.g. hook into the lifecycle event before functions are displayed and modify the data accordingly.
 
 ### `hello-world` starter template
 
