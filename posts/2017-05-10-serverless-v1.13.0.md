@@ -7,9 +7,9 @@ authors:
   - PhilippMuns
 ---
 
-Today we're proud to announce the release of the Serverless Framework v1.13!
+Today we're proud to release v1.13 of the Serverless Framework!
 
-Let's look into the new features and enhancements Serverless v1.13 introduces.
+There's some really exciting new features in this release, let's look into them below.
 
 ## Highlights of 1.13.0
 
@@ -17,16 +17,16 @@ Let's look into the new features and enhancements Serverless v1.13 introduces.
 
 ### Async value support for Serverless variables
 
-The widely requested support for Async serverless variables landed!
+The widely requested support for async serverless variables landed!
 
-Serverless Variables can now refer to functions which return a Promise, making the variable population super powerful.
+Serverless Variables can now refer to functions which return a promise, making the variable population super powerful.
 
-**You could e.g.:**
+**Example use cases**
 
 - Fetch and include secrets from a remote database
-- Connect variables to your teams secret management solution
-- Pull data from internal resources / APIs
-- Read config data from your CI / CD server
+- Connect variables to your team's secret management solution
+- Pull data from internal resources/APIs
+- Read config data from your CI/CD server
 - ...
 
 The possibilities are endless!
@@ -55,19 +55,19 @@ module.exports.fetchSecret = () => {
 
 You can read more about this new feature in the [Serverless Variables docs](https://serverless.com/framework/docs/providers/aws/guide/variables).
 
-### Cross-Service communication
+### Cross-service communication
 
-https://github.com/serverless/serverless/pull/3575
+You can now define CloudFormation outputs in one serverless service and reference it in another. For more details [checkout the pull request](https://github.com/serverless/serverless/pull/3575)
 
 ### Lambda tags
 
-AWS recently announced the support for [tagging Lambda functions](https://aws.amazon.com/de/about-aws/whats-new/2017/04/aws-lambda-supports-tagging-and-cost-allocations/).
+AWS recently announced  support for [tagging Lambda functions](https://aws.amazon.com/de/about-aws/whats-new/2017/04/aws-lambda-supports-tagging-and-cost-allocations/).
 
-Serverless v1.13 adds native support for this this nifty feature.
+Serverless v1.13 adds native support for this nifty feature.
 
 Tags can be added with the help of the `tags` property on the function level. Tags are always defined as key-value pairs.
 
-Here's an example which shows how to add the `stage: production` tag to the `hello` function.
+Here's an example showing how to add the `stage: production` tag to the `hello` function.
 
 ```yml
 service: service
@@ -83,9 +83,9 @@ functions:
       stage: production
 ```
 
-Tagging Lambda functions opens a wide variety for different, useful use-cases.
+Tagging Lambda functions opens a wide variety of different use cases.
 
-You could e.g. analyze your overall costs based on Lambda tags (`production` vs. `development`). Furthermore you could tag Lambda which use soon to be deprecated runtimes or code.
+The most popular use cases seem to be around billing, for example analyzing overall costs based on Lambda tags (`production` vs. `development`). Tagging is also helpful to track Lambdas that use soon to be deprecated runtimes or code or need to be specifically tracked for some other purpose.
 
 More about Lambda tagging can be found in the [function docs](https://serverless.com/framework/docs/providers/aws/guide/functions/).
 
@@ -93,7 +93,7 @@ More about Lambda tagging can be found in the [function docs](https://serverless
 
 The AWS implementation of the `info` command now defines more fine-grained lifecycle events you can hook into.
 
-Every information group which is displayed when all the results are gatheres exposes an own lifecycle event:
+Each information group that is returned when the results are gathered exposes it's own lifecycle event:
 
 ```
 -> info:info
@@ -106,9 +106,9 @@ Every information group which is displayed when all the results are gatheres exp
   -> aws:info:displayStackOutputs
 ```
 
-This makes the `info` plugin way more extensible.
+This makes the `info` plugin far more extensible.
 
-Plugin authors can now e.g. hook into the lifecycle event before functions are displayed and modify the data accordingly.
+Plugin authors can now hook into the lifecycle event before functions are displayed and modify the data accordingly.
 
 ### `hello-world` starter template
 
