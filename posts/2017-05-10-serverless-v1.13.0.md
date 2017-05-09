@@ -55,6 +55,10 @@ module.exports.fetchSecret = () => {
 
 You can read more about this new feature in the [Serverless Variables docs](https://serverless.com/framework/docs/providers/aws/guide/variables).
 
+### Cross-Service communication
+
+https://github.com/serverless/serverless/pull/3575
+
 ### Lambda tags
 
 AWS recently announced the support for [tagging Lambda functions](https://aws.amazon.com/de/about-aws/whats-new/2017/04/aws-lambda-supports-tagging-and-cost-allocations/).
