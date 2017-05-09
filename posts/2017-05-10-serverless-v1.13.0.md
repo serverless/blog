@@ -1,6 +1,6 @@
 ---
 title: New in Serverless v1.13 - v1.13 opens up world of configuration possibilities with new async variable support
-description: Async Serverless variables, Lambda tags, hello-world starter template and more in the Serverless Framework v1.13 release.
+description: Async Serverless variables, Cross-Service communication, Lambda tags and more in the Serverless Framework v1.13 release.
 date: 2017-05-10
 layout: Post
 authors:
