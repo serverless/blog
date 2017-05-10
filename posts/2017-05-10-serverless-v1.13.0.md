@@ -59,13 +59,15 @@ You can read more about this new feature in the [Serverless Variables docs](http
 
 One feature request which received lots of feedback and community-wide attention is the ability to do cross-service communication.
 
-Building complex serverless apps oftentimes requires the application to be split up into separate services / stacks which are then orchestrated in a microservice fashion. However those services need to communicate with each other and e.g. share configuration.
+Building complex serverless apps oftentimes requires the application to be split up into separate services / stacks which are then managed and deployed in a microservice fashion.
 
-Serverless v1.13 adds support for the new Serverless Variable type `cf` with the signature `${cf:service.property}`.
+However those services need to communicate with each other and e.g. share configuration.
 
-This way you can reference CloudFormation `Outputs` from "Stack A" and incldue them in your `serverless.yml` file of "Stack B".
+Serverless v1.13 adds support for the new Serverless Variable type `${cf:}` with the signature `${cf:stack.output-property}`.
 
-Let's take a look at an example to see the how this feature can be used:
+This variable type enables you a way to reference arbitray `Outputs` from CloudFormation stacks in your account.
+
+Let's take a look at an example to see the how this feature can be used in a Serverless service.
 
 In the `serverless.yml` file of "Service A" we add the `memorySize` to the `Outputs` section of our CloudFormation template and deploy the service as usual through `serverless deploy`.
 
