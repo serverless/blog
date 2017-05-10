@@ -4,14 +4,14 @@ Use this Serverless Writer’s Guide as a resource to help you get started. This
 
 ## Suggested Topics
 
-* Serverless Architecture.
+* Serverless or Event-Driven Architectures
 * Serverless Framework How-To posts or Tutorials
 * Answering Forum Questions
 * Startup/Company Culture
 * Meetup, Conference, Event Recaps
 * Developer Community
 * What you’re learning/working on
-* TLDR Posts
+* TL;DR Posts
 * Serverless Weekly Recap
 * Asking for feedback publicly
 * Showing off features
@@ -90,9 +90,9 @@ Check out the following examples for writing inspiration:
 
 # Posting on GitHub
 
-You can post your draft to the [Serverless blog repo](https://www.google.com/url?q=https://github.com/serverless/blog&sa=D&ust=1481063994414000&usg=AFQjCNHvBjg9f2tGwGoVtFGIp4-wHUbVKA) or send a link to a Google Doc to [stefanie@serverless.com](mailto:stefanie@serverless.com) for editing and review. 
+You can post your draft to the [Serverless blog repo](https://www.google.com/url?q=https://github.com/serverless/blog&sa=D&ust=1481063994414000&usg=AFQjCNHvBjg9f2tGwGoVtFGIp4-wHUbVKA) for editing and review. 
 
-Please add your author file to the blog repo, or ping Stefanie for assistance doing so. Your author info will include links to your GitHub, Twitter, personal website (or Serverless.com), in addition to a short and long bio. Your photo will be your GH profile photo and your bio will come from the information you submitted for the company website.
+Please add your author file along with your post. This will include links to your GitHub, Twitter, personal or company website, in addition to a short and long bio. Your photo will be your GitHub avatar
 
 # Writing Resources
 
