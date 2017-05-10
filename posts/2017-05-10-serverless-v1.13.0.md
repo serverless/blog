@@ -183,7 +183,15 @@ This release contains lots of hard work from our awesome community, and wouldn't
 
 Thank You to all of the contributors who submitted changes for this release:
 
-- John Doe
+- Ben New
+- Christos Matskas
+- Frank Schmid
+- Hyunsoo Daniel Kim
+- Jonathan Goldwasser
+- Ken Sykora
+- Ryan Lewis
+- Stewart Lord
+- jarrett jordaan
 
 ### Get Involved
 
