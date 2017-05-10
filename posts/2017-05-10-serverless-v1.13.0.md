@@ -8,9 +8,9 @@ authors:
   - PhilippMuns
 ---
 
-Today we're proud to release v1.13 of the Serverless Framework!
+<img class="center" width="300px" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-v1.13.jpg">
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-v1.13.jpg">
+Today we're proud to release v1.13 of the Serverless Framework!
 
 There's some really exciting new features in this release, let's look into them below.
 
