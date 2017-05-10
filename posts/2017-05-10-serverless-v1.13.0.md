@@ -57,7 +57,54 @@ You can read more about this new feature in the [Serverless Variables docs](http
 
 ### Cross-service communication
 
-You can now define CloudFormation outputs in one serverless service and reference it in another. For more details [checkout the pull request](https://github.com/serverless/serverless/pull/3575)
+One feature request which received lots of feedback and community-wide attention is the ability to do cross-service communication.
+
+Building complex serverless apps oftentimes requires the application to be split up into separate services / stacks which are then orchestrated in a microservice fashion. However those services need to communicate with each other and e.g. share configuration.
+
+Serverless v1.13 adds support for the new Serverless Variable type `cf` with the signature `${cf:service.property}`.
+
+This way you can reference CloudFormation `Outputs` from "Stack A" and incldue them in your `serverless.yml` file of "Stack B".
+
+Let's take a look at an example to see the how this feature can be used:
+
+In the `serverless.yml` file of "Service A" we add the `memorySize` to the `Outputs` section of our CloudFormation template and deploy the service as usual through `serverless deploy`.
+
+```yml
+service: service-a
+
+provider:
+  name: aws
+  memorySize: 512
+
+functions:
+  hello:
+      handler: handler.hello
+
+resources:
+  Outputs:
+    memorySize:
+      Value: ${self:provider.memorySize}
+      Export:
+        Name: memorySize
+```
+
+Next up we have "Service B" in which we're importing the `memorySize` config of our previously deployed "Service A":
+
+```yml
+service: service-b
+
+provider:
+  name: aws
+  memorySize: ${cf:service-a-dev.memorySize}
+
+functions:
+  hello:
+      handler: handler.hello
+```
+
+**Note:** The `cf` Serverless Variable can reference arbitrary `Outputs` from any CloudFormation stack in your account. It doesn't need to be a Serverless service stack.
+
+Interested in more information about this feature? Make sure the check out the [Servereless Variables docs](https://serverless.com/framework/docs/providers/aws/guide/variables/)!.
 
 ### Lambda tags
 
