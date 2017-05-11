@@ -8,16 +8,20 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (TOC:collapse=true&collapseText=Click to expand) -->
 <details>
 <summary>Click to expand</summary>
+
 - [How to contribute content](#how-to-contribute-content)
   * [1. Write your content in markdown!](#1-write-your-content-in-markdown)
   * [2. Name your post file name](#2-name-your-post-file-name)
   * [3. In your post, include post meta information:](#3-in-your-post-include-post-meta-information)
+- [Post Heading](#post-heading)
+- [Post SubSection](#post-subsection)
   * [4. Add your author bio](#4-add-your-author-bio)
   * [5. Submit a PR to the repository](#5-submit-a-pr-to-the-repository)
   * [6. (optional) Preview your post](#6-optional-preview-your-post)
 - [Including Custom Scripts](#including-custom-scripts)
 - [Markdown Resources](#markdown-resources)
 - [Recommended Writing Apps](#recommended-writing-apps)
+
 </details>
 <!-- AUTO-GENERATED-CONTENT:END -->
 
