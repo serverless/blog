@@ -174,6 +174,22 @@ The `hello-world` template includes one function which is hooked up to a CORS en
 
 It uses `nodejs6.10` as the runtime and `aws` as the provider of choice.
 
+Create the hello-world service with these terminal commands
+
+```bash
+# Make the directory
+mkdir my-new-service
+
+# change into the directory
+cd my-new-service
+
+# Create serverless hello world
+serverless create --template hello-world
+
+# Deploy it
+serverless deploy
+```
+
 ### Enhancements & Bug Fixes
 
 This release also includes a bunch of bug fixes and several enhancements.
