@@ -2,7 +2,6 @@
 title: How To Build A Serverless REST API with AWS Lambda & DynamoDB [Video Tutorial]
 description: Serverless lead front-end engineer Nik Graf demonstrates how to build a Serverless REST API with Lambda and DynamoDB.
 date: 2017-05-19
-thumbnail: 
 layout: Post
 authors:
   - NikGraf
