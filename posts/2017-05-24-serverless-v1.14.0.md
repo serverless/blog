@@ -1,5 +1,5 @@
 ---
-title: Google Cloud Functions support added in Serverless v1.14 deploy your functions to the Google Cloud!
+title: Google Cloud Functions support added in Serverless v1.14 deploy your functions to the Google Cloud
 description: Google Cloud Functions, Rollback function, DeadLetterConfig, Automatic stack splitting, Login command and more in the Serverless Framework v1.14 release.
 date: 2017-05-24
 layout: Post
@@ -7,11 +7,11 @@ authors:
   - PhilippMuns
 ---
 
-We're thrilled to announce the release v1.14 of the Serverless Framework!
+We're thrilled to announce the v1.14 release of the Serverless Framework!
 
-This release is yet another special one since we're officially announcing support for Google Cloud Functions with the Serverless Framework.
+This release is yet another special one since we're officially announcing our Google Cloud Functions integration with the Serverless Framework.
 
-But this isn't everything we've been working on. Let's take a look at the full featureset v1.14 introduces.
+But this isn't everything we've been working on. Let's take a look at the full feature set v1.14 introduces.
 
 ## Highlights of 1.14.0
 
@@ -84,10 +84,10 @@ We hope that you like the new release! Let us know if you have any questions or 
 
 The [Serverless Examples Repository](https://github.com/serverless/examples) is an excellent resource if you want to explore some real world examples and learn more about what Serverless architectures look like.
 
-## Serverless plugins
+## Serverless Plugins
 
-Serverless provides a completely customizable and pluggable code base. Our community has written a vast amount of awesome plugins you can add to your `serverless.yml` file and therefore enhance the capabilities of the Framework.
+Serverless provides a completely customizable and pluggable codebase. Our community has written a vast amount of awesome plugins you can install and therefore enhance the capabilities of the Framework.
 
 A list with all the different plugins can be found at our [Serverless Plugins Repository](https://github.com/serverless/plugins)
 
-Don't hestitate to open up a PR there if you've authored or found a new Serverless plugin!
+Don't hestitate to open up a PR over there if you've authored or found a new Serverless plugin!
