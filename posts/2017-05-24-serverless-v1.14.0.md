@@ -42,6 +42,10 @@ But this isn't everything we've been working on. Let's take a look at the full f
 
 - https://github.com/serverless/serverless/pull/3592
 
+### Support for `serverless.json`
+
+- https://github.com/serverless/serverless/pull/3647
+
 ### More API Gateway integration types and AWS_IAM auth support
 
 - https://github.com/serverless/serverless/pull/3534
