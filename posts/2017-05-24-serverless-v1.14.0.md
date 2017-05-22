@@ -98,7 +98,7 @@ Serverless heavily uses [AWS CloudFormation](https://aws.amazon.com/cloudformati
 
 CloudFormation resources will be removed, updated or added whenever you change some of the configuration in your `serverless.yml` file.
 
-It's a common pattern is the increase in generated CloudFormation resources while developing and extending your Serverless service. Soon enough you might hit a wall since CloudFormation has strict limitations regarding the maximun number of resources.
+It's a common pattern is the increase in generated CloudFormation resources while developing and extending your Serverless service. Soon enough you might hit a wall since CloudFormation has strict [limitations](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html) regarding the maximun number of resources.
 
 Serverless v1.14 adds support to mitigate this problem!
 
@@ -116,19 +116,127 @@ You won't notice any difference using this feature since Serverless will treat y
 
 ### Support for `s3` variables
 
-- https://github.com/serverless/serverless/pull/3592
+The new Serverless version adds another Serverless Variable called `s3`. This enables you a way to reference values in a S3 bucket (e.g. stored credentials).
+
+Here's how you can use this new Serverless Variable in your `serverless.yml` file:
+
+```yml
+service: service
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  environment:
+    myKey: ${s3:my-bucket/my-key}
+
+functions:
+  hello:
+    handler: handler.hello
+```
+
+You can read more about this feature in our [docs about Serverless Variables](https://serverless.com/framework/docs/providers/aws/guide/variables#referencing-s3-options).
 
 ### Support for `serverless.json`
 
-- https://github.com/serverless/serverless/pull/3647
+Usually you write your services definition in you `serverless.yml` or `serverless.yaml` file.
+
+v1.14 finally adds support for `serverless.json`. This way you can write your service specification in plain JSON:
+
+```yml
+service: service
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  hello:
+    handler: handler.hello
+```
+
+is the same as:
+
+```json
+{
+  "service": "service",
+  "provider": {
+    "name": "aws",
+    "runtime": "nodejs6.10"
+  },
+  "functions": {
+    "hello": {
+      "handler": "handler.hello"
+    }
+  }
+}
+```
+
+**Note:** You can only have one `serverless.xyz` in your services directory. Serverless will try to load the YAML service at first.
 
 ### More API Gateway integration types and AWS_IAM auth support
 
-- https://github.com/serverless/serverless/pull/3534
+The `http` event definition was updated and now supports the `HTTP`, `HTTP_PROXY` and `MOCK` integration types:
+
+```yml
+functions:
+  create:
+    handler: handler.create
+    events:
+      - http:
+          path: test/create
+          method: GET
+          integration: mock
+          request:
+            headers:
+              Content-Type: "'application/json'"
+            template:
+              application/json: '{ "statusCode": 200 }'
+          response:
+            headers:
+              Content-Type: "'text/html'"
+            template: "Hello World"
+            statusCodes:
+              200: # headers and templates defaults to the values defined above
+                pattern: ''
+```
+
+Furthermore you can use the `aws_iam` authorization type:
+
+```yml
+functions:
+  create:
+    handler: handler.create
+    events:
+      - http:
+          path: create
+          method: POST
+          authorizer: aws_iam
+```
+
+More information about all the new config parameters can be found in our [API Gateway docs](https://serverless.com/framework/docs/providers/aws/events/apigateway/).
 
 ### Access to `IS_LOCAL` environment variable during local invocation
 
-- https://github.com/serverless/serverless/pull/3642
+Ever faced the situation where you've invoked your Lambda function locally with the `invoke local` command and accidentally triggered a request against a service which should only be used in production?
+
+Serverless v1.14 has you covered and adds a `IS_LOCAL` environment variable which is available during local invocation.
+
+Here's an example how you can use this feature:
+
+```javascript
+'use strict';
+
+module.exports.hello = (event, context, callback) => {
+  if (process.env.IS_LOCAL != 'true') {
+    // send some analytics data to the tracking system used in production
+    sendAnalytics({
+      some: 'data',
+    });
+  }
+
+  // ... normal processing
+};
+```
 
 ### Enhancements & Bug Fixes
 
