@@ -19,20 +19,96 @@ But this isn't everything we've been working on. Let's take a look at the full f
 
 ### Google Cloud Functions support
 
-- https://github.com/serverless/serverless/pull/3365
-- https://github.com/serverless/serverless-google-cloudfunctions
+We're proud to announce official support for deployment on the Google Cloud with the help of our [Google Cloud Functions Provider plugin](https://github.com/serverless/serverless-google-cloudfunctions).
+
+Adding the `google` integration continues our multi-provider support story and gives you the 4th provider to choose from when you're about to build your next serverless project.
+
+Curious how to get started? Let's take a look!
+
+The easiest way to get started is to follow our [quickstart guide](https://serverless.com/framework/docs/providers/google/guide/quick-start/) in our docs.
+
+You might also want to check out our [Google HTTP endpoint example](https://github.com/serverless/examples/tree/master/google-node-simple-http-endpoint) in our [Serverless Examples](https://github.com/serverless/examples) repository.
+
+**Protip:** Google offers a free $300 credit if you create a Google Cloud account via their [Free Trial link](https://console.cloud.google.com/freetrial).
 
 ### Rollback function support
 
-- https://github.com/serverless/serverless/pull/3571
+Serverless added the `rollback` command in version `1.1.0`.
+
+The `rollback` command enables you a way to revert stack changes and put your service into a specific state again. This is especially great if you want to rollback infrastructure changes.
+
+However rolling back the whole stack is sometimes unnecessary and slow. Especially in the case when you only want to rollback a single function and it's code changes.
+
+Serverless v1.14 finally adds support for rolling back single functions to a specific version.
+
+Let's take a look at an example to see how this works in practice.
+
+Let's say we've accidentally ran a `serverless deploy` which has update our functions code and introduced a bug.
+
+At first we should to take a look at all the available versions we have for this function to see which version was recently deployed. The `deploy list functions` command shows us the services deployed functions and their corresponding versions:
+
+```bash
+serverless deploy list functions
+```
+
+We can see that our latest versions is `15` so we want to rollback our function to version `14`.
+
+Next up we simply run:
+
+```bash
+serverless rollback function -f hello -v 14
+```
+
+This will roll back our function `hello` to version `14`.
+
+**Important:** Rolling back a single function is an operation which should be used in an emergency situation as it might put the stack into a non atomic state. Serverless will directly push the function code into the function without going through a whole stack deployemnt through CloudFormation (which will be significantly slower).
+
+It's recommended to issue a `serverless deploy` with the updated / fixed code some time after rolling back to put the service into a stable state again.
+
+**Note:** Lambda versioning needs to be enabled to use this feature. Serverless automatically adds versioning support for your Lambda functions if you've not opted out of this. See [our docs](https://serverless.com/framework/docs/providers/aws/guide/functions#versioning-deployed-functions) for more infor about Lambda versioning.
 
 ### DeadLetterConfig support
 
-- https://github.com/serverless/serverless/pull/3609
+You can finally use the `DeadLetterConfig` support natively in Serverless.
+
+We've implemented the `onError` config parameter you can sepcify on a function level. All you need to do is to plug in your `SNS` or `SQS` `arn` and re-redploy your stack.
+
+Once done you can react to failed Lambda calls with your `SNS` topic / `SQS` queue.
+
+Here's an example configuration to showcase the usage:
+
+```yml
+service: service
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  hello:
+    handler: handler.hello
+     onError: arn:aws:sns:us-east-1:XXXXX:test
+```
+
+You can read more about this feature in [our docs](https://serverless.com/framework/docs/providers/aws/guide/functions/#deadletterconfig).
 
 ### Automatic stack splitting to mitigate resource limitations (experimental)
 
-- https://github.com/serverless/serverless/pull/3504
+Serverless heavily uses [AWS CloudFormation](https://aws.amazon.com/cloudformation/) behind the scenes to help you manage and deploy your resources.
+
+CloudFormation resources will be removed, updated or added whenever you change some of the configuration in your `serverless.yml` file.
+
+It's a common pattern is the increase in generated CloudFormation resources while developing and extending your Serverless service. Soon enough you might hit a wall since CloudFormation has strict limitations regarding the maximun number of resources.
+
+Serverless v1.14 adds support to mitigate this problem!
+
+You can use the `useStackSplitting` provider config variable to tell Serverless to automatically split your CloudFormation stack into different nested stacks on a per-function basis.
+
+Serverless will anaylze your `serverless.yml` file and create a dedicated nested stack for each function and their related resources.
+
+You won't notice any difference using this feature since Serverless will treat your `serverless.yml` file as is without any further modification. However behind the scenes the deployment process will be different since your whole service will be deployed with multiple stacks.
+
+**Important:** This feature is still experimental. It was tested with different, really complex services throughout development. However there might be still some edge-cases where it could potentially uncover some bugs. Furthermore this feature is a one-way road. Once enabled it's pretty hard to go back to a single stack deployment. If you're looking for more control of the stack / service splitting process you might want to check out our support for "Cross Service Communication" (https://serverless.com/framework/docs/providers/aws/guide/variables#reference-cloudformation-outputs) or the AWS intrinsic function `Fn::ImportValue`.
 
 ### Login command
 
