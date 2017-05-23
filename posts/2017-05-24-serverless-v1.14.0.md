@@ -69,9 +69,9 @@ It's recommended to issue a `serverless deploy` with the updated / fixed code so
 
 With Serverless v1.14 you can use `DeadLetterConfig` support natively in Serverless.
 
-We've implemented the `onError` config parameter which you can sepcify on a function level. All you need to do is plug in your `SNS` or `SQS` `arn` and re-redploy your stack.
+We've implemented the `onError` config parameter which you can sepcify on a function level. All you need to do is plug in your `SNS` topic `arn` and re-redploy your stack.
 
-Once done you can react to failed Lambda calls with your `SNS` topic or `SQS` queue.
+Once done you can react to failed Lambda calls with your `SNS` topic.
 
 Here's an example configuration to showcase the usage:
 
@@ -89,6 +89,8 @@ functions:
 ```
 
 You can read more about this feature in [our docs](https://serverless.com/framework/docs/providers/aws/guide/functions/#deadletterconfig).
+
+**Note:** Serverless currently only supports `sns` topic arns due to a race condition when using SQS queue arns and updating the permissions in the IAM role. We're currently looking into this so that we can add support for SQS topic arns soon!
 
 ### Automatic stack splitting to mitigate resource limitations (experimental)
 
