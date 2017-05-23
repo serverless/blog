@@ -33,19 +33,17 @@ You might also want to check out our [Google HTTP endpoint example](https://gith
 
 ### Rollback function support
 
-Serverless added the `rollback` command in version `1.1.0`.
+The Serverless Framework has offered the `rollback` command, which rolls your stack back to a specific state, since version `1.1.0`. This command has proven very popular as a way of rolling back infrastructure changes.
 
-The `rollback` command enables you a way to revert stack changes and put your service into a specific state again. This is especially great if you want to rollback infrastructure changes.
+However shortly after we released this command it became apparent that it was not ideal for cases in which users only want to rollback code changes for a single function. Creating an entirely new stack is slow, inconvenient, and overkill for this simply rolling back a single function.
 
-However rolling back the whole stack is sometimes unnecessary and slow. Especially in the case when you only want to rollback a single function and it's code changes.
-
-Serverless v1.14 finally adds support for rolling back single functions to a specific version.
+With Serverless v1.14 we're excited to add support for quickly and easily rolling back single functions to a specific version.
 
 Let's take a look at an example to see how this works in practice.
 
-Let's say we've accidentally ran a `serverless deploy` which has update our functions code and introduced a bug.
+Let's say we've accidentally ran a `serverless deploy` which updated our functions code and introduced a bug.
 
-At first we should to take a look at all the available versions we have for this function to see which version was recently deployed. The `deploy list functions` command shows us the services deployed functions and their corresponding versions:
+First we could take a look at all the functions and their available versions for the service that we're working on by running `deploy list functions`
 
 ```bash
 serverless deploy list functions
@@ -65,15 +63,15 @@ This will roll back our function `hello` to version `14`.
 
 It's recommended to issue a `serverless deploy` with the updated / fixed code some time after rolling back to put the service into a stable state again.
 
-**Note:** Lambda versioning needs to be enabled to use this feature. Serverless automatically adds versioning support for your Lambda functions if you've not opted out of this. See [our docs](https://serverless.com/framework/docs/providers/aws/guide/functions#versioning-deployed-functions) for more infor about Lambda versioning.
+**Note:** Lambda versioning needs to be enabled to use this feature. Serverless automatically adds versioning support for your Lambda functions unless you've opted out. See [our docs](https://serverless.com/framework/docs/providers/aws/guide/functions#versioning-deployed-functions) for more information on Lambda versioning.
 
 ### DeadLetterConfig support
 
-You can finally use the `DeadLetterConfig` support natively in Serverless.
+With Serverless v1.14 you can use `DeadLetterConfig` support natively in Serverless.
 
-We've implemented the `onError` config parameter you can sepcify on a function level. All you need to do is to plug in your `SNS` or `SQS` `arn` and re-redploy your stack.
+We've implemented the `onError` config parameter which you can sepcify on a function level. All you need to do is plug in your `SNS` or `SQS` `arn` and re-redploy your stack.
 
-Once done you can react to failed Lambda calls with your `SNS` topic / `SQS` queue.
+Once done you can react to failed Lambda calls with your `SNS` topic or `SQS` queue.
 
 Here's an example configuration to showcase the usage:
 
@@ -94,11 +92,11 @@ You can read more about this feature in [our docs](https://serverless.com/framew
 
 ### Automatic stack splitting to mitigate resource limitations (experimental)
 
-Serverless heavily uses [AWS CloudFormation](https://aws.amazon.com/cloudformation/) behind the scenes to help you manage and deploy your resources.
+Serverless uses [AWS CloudFormation](https://aws.amazon.com/cloudformation/) behind the scenes to help you manage and deploy your AWS resources.
 
-CloudFormation resources will be removed, updated or added whenever you change some of the configuration in your `serverless.yml` file.
+CloudFormation resources will be removed, updated or added whenever you deploy configuration changes in your `serverless.yml` file.
 
-It's a common pattern is the increase in generated CloudFormation resources while developing and extending your Serverless service. Soon enough you might hit a wall since CloudFormation has strict [limitations](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html) regarding the maximun number of resources.
+One common problem with CloudFormation is that during development developers will create a lot of stacks and quickly run in to CloudFormation's strict [resource limitations](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html).
 
 Serverless v1.14 adds support to mitigate this problem!
 
@@ -106,7 +104,7 @@ You can use the `useStackSplitting` provider config variable to tell Serverless 
 
 Serverless will anaylze your `serverless.yml` file and create a dedicated nested stack for each function and their related resources.
 
-You won't notice any difference using this feature since Serverless will treat your `serverless.yml` file as is without any further modification. However behind the scenes the deployment process will be different since your whole service will be deployed with multiple stacks.
+You won't notice any difference using this feature since Serverless will treat your `serverless.yml` the same way it always has. However behind the scenes the deployment process will be different since your whole service will be deployed with multiple stacks.
 
 **Important:** This feature is still experimental. It was tested with different, really complex services throughout development. However there might be still some edge-cases where it could potentially uncover some bugs. Furthermore this feature is a one-way road. Once enabled it's pretty hard to go back to a single stack deployment. If you're looking for more control of the stack / service splitting process you might want to check out our support for ["Cross Service Communication"](https://serverless.com/framework/docs/providers/aws/guide/variables#reference-cloudformation-outputs) or the AWS intrinsic function `Fn::ImportValue`.
 
@@ -116,7 +114,7 @@ You won't notice any difference using this feature since Serverless will treat y
 
 ### Support for `s3` variables
 
-The new Serverless version adds another Serverless Variable called `s3`. This enables you a way to reference values in a S3 bucket (e.g. stored credentials).
+Serverless v1.14 adds another Serverless Variable called `s3`. This enables  a way to reference values in a S3 bucket (e.g. stored credentials).
 
 Here's how you can use this new Serverless Variable in your `serverless.yml` file:
 
@@ -138,9 +136,7 @@ You can read more about this feature in our [docs about Serverless Variables](ht
 
 ### Support for `serverless.json`
 
-Usually you write your services definition in you `serverless.yml` or `serverless.yaml` file.
-
-v1.14 finally adds support for `serverless.json`. This way you can write your service specification in plain JSON:
+Serverless v1.14 adds support for `serverless.json`. This allows you to write your service specification in plain JSON:
 
 ```yml
 service: service
