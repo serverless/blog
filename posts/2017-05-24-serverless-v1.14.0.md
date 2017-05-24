@@ -94,11 +94,21 @@ You can read more about this feature in [our docs](https://serverless.com/framew
 
 ### Login command
 
-In v1.14 we're introducing the `login` and `logout` commands for the Serverless CLI.
+We're excited to introduce the `serverless login` & `serverless logout` commands for the Serverless CLI.
 
-You can re-use your Serverless account credentials you've obtained by [signing up for our beta](https://serverless.com/) program.
+We are adding these commands in preparation of our upcoming platform release.
 
-After signing in Serverless will help you with some tips and tricks to further enhance your development workflow.
+Run `serverless login` to create your account.
+
+```bash
+serverless login
+```
+
+If you already signed up for a beta account, you can connect the CLI with your beta account with the `sls login` command.
+
+The login functionality also will give us the power to personalize & improve the framework onboarding experience. Our mission is to help users learn and adopt the serverless ecosytem as fast as possible!
+
+We are investing heavily in an improved developer experience for users of the framework and would love to hear [your thoughts on other DX initiatives](https://github.com/serverless/serverless/issues?utf8=%E2%9C%93&q=dx%20)
 
 ### Support for `s3` variables
 
