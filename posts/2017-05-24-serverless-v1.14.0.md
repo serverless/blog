@@ -92,27 +92,13 @@ You can read more about this feature in [our docs](https://serverless.com/framew
 
 **Note:** Serverless currently only supports `sns` topic arns due to a race condition when using SQS queue arns and updating the permissions in the IAM role. We're currently looking into this so that we can add support for SQS topic arns soon!
 
-### Automatic stack splitting to mitigate resource limitations (experimental)
-
-Serverless uses [AWS CloudFormation](https://aws.amazon.com/cloudformation/) behind the scenes to help you manage and deploy your AWS resources.
-
-CloudFormation resources will be removed, updated or added whenever you deploy configuration changes in your `serverless.yml` file.
-
-One common problem with CloudFormation is that during development developers will create a lot of stacks and quickly run in to CloudFormation's strict [resource limitations](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html).
-
-Serverless v1.14 adds support to mitigate this problem!
-
-You can use the `useStackSplitting` provider config variable to tell Serverless to automatically split your CloudFormation stack into different nested stacks on a per-function basis.
-
-Serverless will anaylze your `serverless.yml` file and create a dedicated nested stack for each function and their related resources.
-
-You won't notice any difference using this feature since Serverless will treat your `serverless.yml` the same way it always has. However behind the scenes the deployment process will be different since your whole service will be deployed with multiple stacks.
-
-**Important:** This feature is still experimental. It was tested with different, really complex services throughout development. However there might be still some edge-cases where it could potentially uncover some bugs. Furthermore this feature is a one-way road. Once enabled it's pretty hard to go back to a single stack deployment. If you're looking for more control of the stack / service splitting process you might want to check out our support for ["Cross Service Communication"](https://serverless.com/framework/docs/providers/aws/guide/variables#reference-cloudformation-outputs) or the AWS intrinsic function `Fn::ImportValue`.
-
 ### Login command
 
-- https://github.com/serverless/serverless/pull/3558
+In v1.14 we're introducing the `login` and `logout` commands for the Serverless CLI.
+
+You can re-use your Serverless account credentials you've obtained by [signing up for our beta](https://serverless.com/) program.
+
+After signing in Serverless will help you with some tips and tricks to further enhance you development workflow.
 
 ### Support for `s3` variables
 
