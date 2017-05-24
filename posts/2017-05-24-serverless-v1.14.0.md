@@ -69,7 +69,7 @@ It's recommended to issue a `serverless deploy` with the updated / fixed code so
 
 With Serverless v1.14 you can use `DeadLetterConfig` support natively in Serverless.
 
-We've implemented the `onError` config parameter which you can sepcify on a function level. All you need to do is plug in your `SNS` topic `arn` and re-redploy your stack.
+We've implemented the `onError` config parameter which you can specify at the function level. All you need to do is plug in your `SNS` topic `arn` and re-deploy your stack.
 
 Once done you can react to failed Lambda calls with your `SNS` topic.
 
@@ -98,7 +98,7 @@ In v1.14 we're introducing the `login` and `logout` commands for the Serverless 
 
 You can re-use your Serverless account credentials you've obtained by [signing up for our beta](https://serverless.com/) program.
 
-After signing in Serverless will help you with some tips and tricks to further enhance you development workflow.
+After signing in Serverless will help you with some tips and tricks to further enhance your development workflow.
 
 ### Support for `s3` variables
 
