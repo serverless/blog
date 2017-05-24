@@ -234,7 +234,13 @@ This release contains lots of hard work from our awesome community, and wouldn't
 
 Thank You to all of the contributors who submitted changes for this release:
 
-- John Doe
+- Alex Oskotsky
+- Andre Rabold
+- Doug Moscrop
+- Frank Schmid
+- Helen Yau
+- Mark Chance
+- Tom Saleeba
 
 ### Get Involved
 
