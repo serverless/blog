@@ -231,6 +231,6 @@ The [Serverless Examples Repository](https://github.com/serverless/examples) is 
 
 Serverless provides a completely customizable and pluggable codebase. Our community has written a vast amount of awesome plugins you can install and therefore enhance the capabilities of the Framework.
 
-A list with all the different plugins can be found at our [Serverless Plugins Repository](https://github.com/serverless/plugins)
+A list with all the different plugins can be found at our [Serverless Plugins Repository](https://github.com/serverless/plugins).
 
 Don't hestitate to open up a PR over there if you've authored or found a new Serverless plugin!
