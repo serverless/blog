@@ -1,5 +1,5 @@
 ---
-title: Google Cloud Functions support added in Serverless v1.14 deploy your functions to the Google Cloud
+title: Serverless v1.14 - Deploy to Google Cloud Functions & rollback function support added
 description: Google Cloud Functions, Rollback function, DeadLetterConfig, Login command and more in the Serverless Framework v1.14 release.
 date: 2017-05-24
 layout: Post
