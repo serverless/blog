@@ -122,41 +122,6 @@ functions:
 
 You can read more about this feature in our [docs about Serverless Variables](https://serverless.com/framework/docs/providers/aws/guide/variables#referencing-s3-options).
 
-### Support for `serverless.json`
-
-Serverless v1.14 adds support for `serverless.json`. This allows you to write your service specification in plain JSON:
-
-```yml
-service: service
-
-provider:
-  name: aws
-  runtime: nodejs6.10
-
-functions:
-  hello:
-    handler: handler.hello
-```
-
-is the same as:
-
-```json
-{
-  "service": "service",
-  "provider": {
-    "name": "aws",
-    "runtime": "nodejs6.10"
-  },
-  "functions": {
-    "hello": {
-      "handler": "handler.hello"
-    }
-  }
-}
-```
-
-**Note:** You can only have one `serverless.xyz` in your services directory. Serverless will try to load the YAML service at first.
-
 ### More API Gateway integration types and AWS_IAM auth support
 
 The `http` event definition was updated and now supports the `HTTP`, `HTTP_PROXY` and `MOCK` integration types:
