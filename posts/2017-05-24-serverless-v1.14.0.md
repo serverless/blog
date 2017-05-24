@@ -108,7 +108,7 @@ If you already signed up for a beta account, you can connect the CLI with your b
 
 The login functionality also will give us the power to personalize & improve the framework onboarding experience. Our mission is to help users learn and adopt the serverless ecosytem as fast as possible!
 
-We are investing heavily in an improved developer experience for users of the framework and would love to hear [your thoughts on other DX initiatives](https://github.com/serverless/serverless/issues?utf8=%E2%9C%93&q=dx%20)
+We are investing heavily on improving the overall developer experience of the framework and would love to hear [your thoughts on other UX/DX initiatives](https://github.com/serverless/serverless/issues?utf8=%E2%9C%93&q=dx%20)
 
 ### Support for `s3` variables
 
