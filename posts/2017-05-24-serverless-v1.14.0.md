@@ -205,7 +205,7 @@ This release also includes a bunch of bug fixes and several enhancements.
 
 > Thanks for reporting bugs and opening issues!
 
-### Contributors
+### Contributors 
 
 This release contains lots of hard work from our awesome community, and wouldn't have been possible without passionate people who decided to spend their time contributing to make Serverless better.
 
