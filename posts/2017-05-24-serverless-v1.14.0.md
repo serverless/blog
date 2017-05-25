@@ -11,7 +11,7 @@ We're thrilled to announce the v1.14 release of the Serverless Framework!
 
 This release is yet another special one since we're officially announcing our Google Cloud Functions integration with the Serverless Framework.
 
-But this isn't everything we've been working on. Let's take a look at the full feature set v1.14 introduces.
+But this isn't the only thing we've been working on. Let's take a look at the full feature set v1.14 introduces.
 
 ## Highlights of 1.14.0
 
@@ -20,9 +20,9 @@ But this isn't everything we've been working on. Let's take a look at the full f
 ### Google Cloud Functions support
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-google-cloudfunctions.png">
 
-We're proud to announce official support for deployment on the Google Cloud with the help of our [Google Cloud Functions Provider plugin](https://github.com/serverless/serverless-google-cloudfunctions).
+We're proud to announce official support for deployment the the Google Cloud Platform with the help of our [Google Cloud Functions Provider plugin](https://github.com/serverless/serverless-google-cloudfunctions).
 
-Adding the `google` integration continues our multi-provider support story and gives you the 4th provider to choose from when you're about to build your next serverless project.
+Adding the `google` integration strengthens the multi-provider support of the framework and gives you a 4th provider to choose from when building your next serverless project.
 
 Curious how to get started? Let's take a look!
 
