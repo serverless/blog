@@ -18,6 +18,7 @@ But this isn't everything we've been working on. Let's take a look at the full f
 **Note:** You can find a complete list of all the updates in the [changelog](https://github.com/serverless/serverless/blob/master/CHANGELOG.md).
 
 ### Google Cloud Functions support
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-google-cloudfunctions.png">
 
 We're proud to announce official support for deployment on the Google Cloud with the help of our [Google Cloud Functions Provider plugin](https://github.com/serverless/serverless-google-cloudfunctions).
 
