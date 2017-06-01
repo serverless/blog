@@ -1,7 +1,7 @@
 ---
-title: 4 Tools to Deliver High-Quality Lambda Functions
+title: 4 Tools For Building Production Serverless Arcitectures with Lambda 
 description: Working with serverless is great when you find the right tools that work for you. Check out these tools to take your lambdas to the next level!
-date: 2017-05-31
+date: 2017-06-12
 layout: Post
 authors:
   - TaaviRehemagi
