@@ -18,35 +18,135 @@ This release includes lots of new features, improvements and bugfixes. Let's tak
 
 ### CLI autocomplete
 
-- https://github.com/serverless/serverless/pull/3702
+Ever found yourself looking through the [docs](https://serverless.com/framework/docs/) or the CLI help menu to figure our what the exact command you want to use looks like?
+
+Serverless v1.15 introduces autocomplete which will assist you while working with the CLI tool.
+
+Autocomplete will be enabled automatically once you've upgraded to v1.15. You can make use of it by simply double tapping the Tabulator (tab) key while entering Serverless commands.
+
+`serverless de<tab>` will expand to `serverless deploy`. All possible commands will be displayed if there is no exact match for the query you entered. This will also work for custom commands which are added via Serverless plugins.
+
+Autocomplete is also supported for options `serverless deploy --st<tab>`.
+
+This feature is another step towards are more user-friendly developer experience as it heavily decreases the cognitive load while working on your project.
+
+Are you curious what other DX improvements are currently in the pipeline? Take a look at our [DX issues](https://github.com/serverless/serverless/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20DX%3A%20) and give a thumbsup for your favorite or open up a new issue if you can't find what you're looking for.
 
 ### Cognito User Pool Trigger event
 
-- https://github.com/serverless/serverless/pull/3657
+Serverless v1.15 adds support for the new `cognitoUserPool` event source which enables you a way to react to Cognito User Pool triggers.
+
+Let's take a look at an example where we configure our `greet` function to react to a `PreSignUp` event:
+
+```yml
+service: my-service
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  greet:
+    handler: handler.greet
+    events:
+      - cognitoUserPool:
+          pool: MyUserPool
+          trigger: PreSignUp
+```
+
+The `cognitoUserPool` event source has lots of other configuration parameters. You can read more about those in [our docs](https://www.serverless.com/framework/docs/providers/aws/events/cognito-user-pool).
 
 ### KMS Key support
 
-- https://github.com/serverless/serverless/pull/3672
+Support to define your own KMS keys for encryption was a highly requested feature from our communtiy.
+
+The newly added `awsKmsKey` config parameter finally enables you a way to specify your own custom KMS Key arn to e.g. encrypt your environment variables.
+
+This parameter can be specified on a per-function or service-wide level.
+
+Here's a simple example how this looks like:
+
+```yml
+service:
+  name: my-service
+  awsKmsKeyArn: arn:aws:kms:us-east-1:XXXXX:key/service
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  hello:
+    handler: handler.hello
+    awsKmsKeyArn: arn:aws:kms:us-east-1:XXXXX:key/function
+    environment:
+      KEY1: hello
+  goodbye:
+    handler: handler.goodbye
+    environment:
+      KEY2: goodbye
+```
+
+More information about this config can be found in [KMS key docs](https://serverless.com/framework/docs/providers/aws/guide/functions/#kms-keys).
 
 ### Validation of CloudFormation template
 
-- https://github.com/serverless/serverless/pull/3668
+Serverless v1.15 ships with support to validate CloudFormation before kicking off the deployment phase.
+
+This feature could heavily improve the feedback loop because developers don't have to wait for a failing deployment to see that their CloudFormation template might include some (trivial) errors such as cyclic dependencies.
+
+This feature is enabled by default and is especially helpful when you deploy packages through Serverless which might be generated or modified by another plugin / tool.
 
 ### `serverless.json` support
 
-- https://github.com/serverless/serverless/pull/3647
+Usually you write your services definition in you `serverless.yml` or `serverless.yaml` file.
+
+v1.15 finally adds support for `serverless.json`. This way you can write your service specification in plain JSON:
+
+```yml
+service: my-service
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  hello:
+    handler: handler.hello
+```
+
+is the same as:
+
+```json
+{
+  "service": "my-service",
+  "provider": {
+    "name": "aws",
+    "runtime": "nodejs6.10"
+  },
+  "functions": {
+    "hello": {
+      "handler": "handler.hello"
+    }
+  }
+}
+```
+
+**Note:** You can only have one `serverless.xyz` in your services directory. Serverless will try to load the YAML service at first.
 
 ### `--aws-profile` option support
 
-- https://github.com/serverless/serverless/pull/3701
+AWS profile support was one of the features which shipped with Serverless from the very beginning. However up until now it was not that convenient to switch / use other profiles for deployment.
 
-### Provider-wide `IS_LOCAL` support
+With v1.15 you're able to specify the profile which should be used for the operation you want to perform. This can be done with the help of the `--aws-profile` option.
 
-- https://github.com/serverless/serverless/pull/3700
+A deployment with the help of the `qa` profile would look like this:
 
-### Fix CORS `origin` config to reflect W3C standard
+```bash
+serverless deploy --aws-profile qa
+```
 
-- https://github.com/serverless/serverless/pull/3692
+**Note:** `--aws-profile` support is not limited to the `deploy` command but can be used with every other command as well.
 
 ### Enhancements & Bug Fixes
 
