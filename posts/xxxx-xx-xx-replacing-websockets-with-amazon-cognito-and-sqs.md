@@ -17,8 +17,8 @@ Or perhaps you want to push events to a browser or app through a WebSocket, for 
 To demonstrate the solution, we'll implement a simple shell script to listen for messages, and then discuss the internal workings of the stack.  First, we launch a version of the [SQS-Browser-Events serverless project](https://github.com/ReutersMedia/sqs-browser-events).  We also set a TTL on the session table to facilitate cleanup, which requires at least version 1.11.78 of the AWS CLI, as the feature was only released in February of 2017.  This setting can't yet be managed through CloudFormation templates.
 
 ```bash
-$ curl -sSL https://github.com/ReutersMedia/sqs-browser-events/archive/1.0.24.tar.gz | tar xvz
-$ cd sqs-browser-events-1.0.25
+$ curl -sSL https://github.com/ReutersMedia/sqs-browser-events/archive/master.tar.gz | tar xvz
+$ cd sqs-browser-events-master
 $ sls deploy --env demo --region us-east-2 --poolname sqs_browser_demo
 $ aws dynamodb update-time-to-live --table-name demo-sqs-browser-sessions \
   --time-to-live-specification "Enabled=true, AttributeName=ttl"
