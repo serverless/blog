@@ -1,19 +1,19 @@
 ---
-title: "DevOps Use Cases With Serverless Variables"
+title: DevOps Use Cases With Serverless Variables
 description: Serverless Framework Engineer Eslam Hefnawy explores creative use cases for using Serverless Variables to optimize and automate operations.
-date: 2017-06-02
+date: 2017-06-05
 layout: Post
-thumbnail: https://avatars2.githubusercontent.com/u/2312463?v=3&s=60
+thumbnail: https://avatars2.githubusercontent.com/u/2312463?v=3&s=120
 authors:
-  - eahefnawy
+  - EslamHefnawy
 ---
 
 
-The Serverless Framework has a powerful built-in variable system that helps secure your sensitive data and can be used to keep even the most complex configuration simple and manageable. We pretty comprehensive coverage of all of the features of the variable system in [our documentation](https://serverless.com/framework/docs/providers/aws/guide/variables/#variables), but when combined together in creative ways these features enable some extremely powerful workflows and real world use cases. 
+The Serverless Framework has a powerful built-in variable system that helps secure your sensitive data and can be used to keep even the most complex configuration simple and manageable. We have pretty comprehensive coverage of all of the features of the variable system in [our documentation](https://serverless.com/framework/docs/providers/aws/guide/variables/#variables), but when combined together in creative ways these features enable some extremely powerful workflows and real world use cases. 
 
 In this article we’ll explore some ideas on how you can use these features to better automate your serverless operations.
 
-## Dynamic Configuration
+# Dynamic Configuration
 You can use the variable system to dynamically generate configuration data for your config files with the help of JS scripts, which is normally not supported by YAML/JSON. Some examples include generating random numbers, dates, doing mathematical computation, or fetching remote data. Let’s look at two of these examples..
 
 
