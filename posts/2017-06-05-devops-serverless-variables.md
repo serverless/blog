@@ -36,15 +36,12 @@ And in vars.js
 module.exports.bucketId = (new Date()).getTime().toString();
 ```
 
-
-
-
 ### Fetching Remote Data
 You can go even further with JS scripts by working with promises and async operations, which is supported out of the box by the Framework. That means you can fetch data needed for your configuration from any remote source you want.
 
 For example, if you need to use your Github first name as the function name, you can fetch that data from the Github API using a vars.js file like this:
 
-```
+```js
 module.exports.githubFirstName = () => {
   /*
    * some async logic here calling the Github API...
@@ -55,7 +52,7 @@ module.exports.githubFirstName = () => {
 ```
 Then in serverless.yml you can do something like this:
 
-```
+```yml
 functions:
   myPersonalFunction:
     name: ${file(vars.js):githubFirstName}
@@ -76,7 +73,7 @@ custom:
 Then in vars.js, you can write your logic:
 
 
-```
+```js
 module.exports.setup = () => {
   /*
    * some logic here...
