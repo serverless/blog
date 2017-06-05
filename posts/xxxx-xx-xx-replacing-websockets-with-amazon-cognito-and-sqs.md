@@ -8,7 +8,7 @@ authors:
  - KenEllis
 ---
 
-The advantages of a serverless architecture are, at this point, not really a matter of debate.  Every application or component you develop, we ask, How can I avoid having to manage servers, or even containers?  Sometimes you come across a roadblock.  Perhaps you need a GPU, or it takes 60 seconds just to load a machine learning model.  Maybe your task takes longer than the 300 seconds Amazon gives you for a Lambda process, and you can't figure out how to chop it up.  The excuses never end.
+The advantages of a serverless architecture are, at this point, not really a matter of debate.  For every application or component, you ask, How can I avoid having to manage servers?  Sometimes you come across a roadblock.  Perhaps you need a GPU, or it takes 60 seconds just to load a machine learning model.  Maybe your task takes longer than the 300 seconds Amazon gives you for a Lambda process, and you can't figure out how to chop it up.  The excuses never end.
 
 Or perhaps you want to push events to a browser or app through a WebSocket, for something similar to a chat or email application.  You could use Nginx and Redis to create topics and have applications subscribe to them via a push stream, but that means managing some long-running processes and servers.  You can fake it and pound your backend once a second.  But Amazon SQS and Cognito offer another way.  Each user session can be paired with a Cognito identity and an SQS queue, and applications can use SQS long-polling to receive events in real-time.  At Reuters we use this in production to support messaging in event-driven web applications, and have [open-sourced](https://github.com/ReutersMedia/sqs-browser-events) the underlying Serverless stack.
 
