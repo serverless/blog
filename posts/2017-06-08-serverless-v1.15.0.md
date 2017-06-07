@@ -8,6 +8,8 @@ authors:
   - PhilippMuns
 ---
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-v115.png" width="500px" >
+
 Today we're happy to announce the v1.15 release of the Serverless Framework!
 
 This release includes lots of new features, improvements and bugfixes. Let's take a look at the full feature set v1.15 introduces.
