@@ -34,7 +34,7 @@ In addition Dashbird offers powerful tools to process function logs, like **sear
 ### Setup
 
 Setting up Dashbird takes about 5 minutes and **requires no code changes.**
-[You can read more about setup here](https://dashbird.io/setup.html).
+[You can read more about setup here](https://dashbird.io/setup).
 
 **Dashbird is currently free of charge!**
 
