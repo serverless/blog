@@ -160,7 +160,17 @@ This release contains lots of hard work from our awesome community, and wouldn't
 
 Thank You to all of the contributors who submitted changes for this release:
 
-- John Doe
+- Dan Root
+- David Humphrey (:humph) david.humphrey@senecacollege.ca
+- Frank Schmid
+- Hassan Khan
+- James Thomas
+- RichardSlater
+- Ryan Lewis
+- Sam Marks
+- Taylor Hurt
+- Tom Saleeba
+- depotjoe
 
 ### Get Involved
 
