@@ -2,6 +2,13 @@
 
 Use this Serverless Writer’s Guide as a resource to help you get started contributing to the [Serverless Blog](https://serverless.com/blog/). This guide includes suggested topics, sample outlines, example posts, helpful links & more!
 
+## Content Guidelines 
+- focus on results (our readers are interested in hearing about how serverless allowed you to deliver something great)
+- focus on serverless and event-driven themes (faster time to market, lowest total cost of ownership, microservice architectures, reactive/event-driven design patterns, data as events
+- focus on learnings (it’s still early days for serverless and people want learn from others, especially around operations, as much as possible)
+- provide code examples or tutorials when possible (our audience is technical and likes to get hands on)
+- no overt product pitches, these aren’t received well by our audience and will no be published on our blog
+
 ## Suggested Topics
 
 * Serverless or Event-Driven Architectures

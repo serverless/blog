@@ -17,6 +17,11 @@ const authorData = {
   }
 }
 
+const authorArray = fs.readdirSync(authorDirectory).map((author) =>{
+  return author.replace('.json', '')
+})
+
+
 // test author directory
 globby(['*', '!node_modules'], {
   cwd: authorDirectory
@@ -60,7 +65,7 @@ globby(['*', '!node_modules'], {
       const postData = yml(post).data
       let msg
       if (isEmptyObject(postData)) {
-        msg = `no yaml found in post! Please update ${file}`
+        msg = `no yaml found in post or YAML is malformed! Please update ${file}`
         throw new Error(msg)
       }
 
@@ -103,6 +108,19 @@ authors:
 ${seperator}
 `
         throw new Error(msg)
+      }
+
+      /* validate the author name exists in author directory */
+      if (postData.authors && Array.isArray(postData.authors)) {
+        postData.authors.forEach((author) =>{
+          if (authorArray.indexOf(author) === -1){
+            msg = `${author} name not found in authors directory
+
+Please add a ${author}.json file in /authors directory or fix the typo!
+`
+            throw new Error(msg)
+          }
+        })
       }
       if (postData.description && postData.description.length > 185) {
 msg = `Description in ${file} is too long.
