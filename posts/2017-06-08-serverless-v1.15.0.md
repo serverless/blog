@@ -172,6 +172,7 @@ Thank You to all of the contributors who submitted changes for this release:
 - Sam Marks
 - Taylor Hurt
 - Tom Saleeba
+- Xancar
 - depotjoe
 
 ### Get Involved
