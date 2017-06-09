@@ -8,7 +8,7 @@ authors:
   - PhilippMuns
 ---
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-v115.png" width="500px" >
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-v115.png" width="210px" >
 
 Today we're happy to announce the v1.15 release of the Serverless Framework!
 
