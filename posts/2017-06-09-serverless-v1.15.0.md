@@ -36,7 +36,7 @@ Are you curious what other DX improvements are currently in the pipeline? Take a
 
 ### Cognito User Pool Trigger event
 
-Serverless v1.15 adds support for the new `cognitoUserPool` event source which enables you a way to react to Cognito User Pool triggers.
+Serverless v1.15 adds support for the new `cognitoUserPool` event source which enables a way to react to Cognito User Pool triggers.
 
 Let's take a look at an example where we configure our `greet` function to be called whenever the `PreSignUp` User Pool trigger is triggered:
 
@@ -62,11 +62,11 @@ The `cognitoUserPool` event source has lots of other configuration parameters. Y
 
 Support to define your own KMS keys for encryption was a highly requested feature from our community.
 
-The newly added `awsKmsKey` config parameter finally enables you a way to specify your own custom KMS Key `arn` to e.g. encrypt your environment variables.
+The newly added `awsKmsKey` config parameter finally enables a way to specify your own custom KMS Key `arn` to e.g. encrypt your environment variables.
 
 This parameter can be specified on a per-function or service-wide level.
 
-Here's a simple example how this looks like:
+Here's a simple example of what this looks like:
 
 ```yml
 service:
@@ -101,7 +101,7 @@ This feature is enabled by default and is especially helpful when you `serverles
 
 ### `serverless.json` support
 
-Usually you write your services definition in you `serverless.yml` or `serverless.yaml` file.
+Usually you write your services definition in a `serverless.yml` or `serverless.yaml` file.
 
 v1.15 finally adds support for `serverless.json`. This way you can write your service specification in plain JSON:
 
@@ -134,7 +134,7 @@ is the same as:
 }
 ```
 
-**Note:** You can only have one `serverless.*` file in your services directory. Serverless will try to load the YAML service definition at first.
+**Note:** You can only have one `serverless.*` file in your services directory. Serverless will try to load the YAML service definition first.
 
 ### `--aws-profile` option support
 
