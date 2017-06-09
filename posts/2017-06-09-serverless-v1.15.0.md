@@ -163,7 +163,7 @@ This release contains lots of hard work from our awesome community, and wouldn't
 Thank You to all of the contributors who submitted changes for this release:
 
 - Dan Root
-- David Humphrey (:humph) david.humphrey@senecacollege.ca
+- David Humphrey
 - Frank Schmid
 - Hassan Khan
 - James Thomas
