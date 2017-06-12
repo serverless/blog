@@ -15,7 +15,7 @@ It is also complicated to monitor the functions and have an overview of how each
 
 **Here are some of the tools that help to maintain function based services and improve the development worflow.**
 
-## Dashbird
+## 1. Dashbird
 
 [Dashbird](https://dashbird.io) is a service made to **monitor, debug and improve lambda functions**. 
 
@@ -45,7 +45,7 @@ Setting up Dashbird takes about 5 minutes and **requires no code changes.**
 - 5 minute setup with no code changes
 - **[Dashbird is currently free of charge](https://dashbird.io)**
 
-## SumoLogic
+## 2. SumoLogic
 
 [SumoLogic](https://sumologic.com) is a machine data analytics service for **log management and time series metrics.**
 
@@ -67,7 +67,7 @@ _Be mindful that CloudWatch currently allows only one subscription per log group
 - subscription to CloudWatch required
 - $108/mo for professional, has freemium
 
-## Sentry
+## 3. Sentry
 
 [Sentry](https://sentri.io) is a **real-time error tracking** service.
 
@@ -82,7 +82,7 @@ Sentry also analyzes the impact of each release, so it's easy to later see which
 - implementation required
 - event based pricing, has freemium
 
-## Offline Serverless plugins
+## 4. Offline Serverless plugins
 Serverless has a lot of useful plugins to test code locally before deploying to a remote environment. This helps developers save time of unnecessary deploys.
 
 Here are some of the plugins to use:
