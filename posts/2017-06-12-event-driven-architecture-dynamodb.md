@@ -151,7 +151,7 @@ First, we rollback our user creation function to the original version  under the
           },
           "date_of_birth": {
             "S": "1988-05-26"
-          }
+          },
           "userId": {
             "N": "101"
           }
@@ -183,7 +183,7 @@ First, we rollback our user creation function to the original version  under the
           },
           "date_of_birth": {
             "S": "1988-05-26"
-          }
+          },
           "userId": {
             "N": "101"
           }
@@ -194,7 +194,7 @@ First, we rollback our user creation function to the original version  under the
       },
       "awsRegion": "us-west-2",
       "eventName": "MODIFY",
-      "eventSourceARN": sourcearn,
+      "eventSourceARN": "event"source:ARN",
       "eventSource": "aws:dynamodb"
     }
   ]
