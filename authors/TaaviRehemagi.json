@@ -1,0 +1,12 @@
+{
+  "name": "Taavi Rehemägi",
+  "github": "taavirehemagi",
+  "twitter": "rehemagi",
+  "site": "https://dashbird.io/",
+  "avatar": "https://avatars.githubusercontent.com/taavirehemagi",
+  "bio": {
+    "short": "Taavi is a backend developer passionate about lambda based services.",
+    "long":
+      "Taavi Rehemägi is a back-end engineer for Dashbird and Testlio. Taavi is passionate about Node.js and all things serverless."
+    }
+}
