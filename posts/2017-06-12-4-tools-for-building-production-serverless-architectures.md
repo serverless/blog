@@ -69,9 +69,9 @@ _Be mindful that CloudWatch currently allows only one subscription per log group
 
 ## 3. Sentry
 
-[Sentry](https://sentri.io) is a **real-time error tracking** service.
+[Sentry](https://sentry.io) is a **real-time error tracking** service.
 
-With Sentry, developers get notified instantly when errors occur in live environments. This is crucial for reacting quickly and ensuring customer sadisfaction.
+With Sentry, developers get notified instantly when errors occur in live environments. This is crucial for reacting quickly and ensuring customer satisfaction.
 Along with every report, sentry gathers stack-traces for faster and better debugging.
 
 Sentry also analyzes the impact of each release, so it's easy to later see which release introduced which bugs.
