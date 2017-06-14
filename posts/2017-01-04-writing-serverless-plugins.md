@@ -158,7 +158,7 @@ class ServerlessPlugin {
 }
 ```
 
-**Hooks help us define the implementation of each step.** In the code above, you can discern the command name `hello` and the two lifecycle events we defined for it: `hello` and `world`.
+**Hooks help us define the implementation of each step.** In the code above, you can discern the command name `welcome` and the two lifecycle events we defined for it: `hello` and `world`.
 
 Hook `welcome:hello` defines what to do at step `hello` of command `welcome`; `before:welcome:hello` describes what to do before the first step. Similarly, `after:welcome:world` defines what to do after the last step.
 
