@@ -1,7 +1,7 @@
 ---
 title: How Reuters Replaced WebSockets with Amazon Cognito and SQS
 description: How to implement long-polling via Amazon Cognito and SQS
-date:  2017-06-01
+date:  2017-06-14
 thumbnail: https://user-images.githubusercontent.com/832852/26854484-5457a7e4-4ae4-11e7-8f71-fc51bc710a6b.jpg
 layout:  Post
 authors:
