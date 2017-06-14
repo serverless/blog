@@ -8,13 +8,15 @@ authors:
   - PhilippMuns
 ---
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-v115.png" width="210px" >
+<img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-v115.png" width="210px" >
 
 Today we're happy to announce the v1.15 release of the Serverless Framework!
 
 This release includes lots of new features, improvements and bugfixes. Let's take a look at the full feature set v1.15 introduces.
 
 ## Highlights of 1.15.0
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/o1-vyHJ9J8Y" frameborder="0" allowfullscreen></iframe>
 
 **Note:** You can find a complete list of all the updates in the [changelog](https://github.com/serverless/serverless/blob/master/CHANGELOG.md).
 
