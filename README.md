@@ -37,7 +37,7 @@ Welcome to the serverless blog repo! [Contributions, typo fixes and pull request
 
 ### 2. Name your post file name
 
-`YYYY-MM-DD-blog-post-name.md` :point_right: `2016-01-27-post-title-here.md`**
+`YYYY-MM-DD-blog-post-name.md` :point_right: `2016-01-27-post-title-here.md`
 
 > [handy tool for slugifying titles](https://blog.tersmitten.nl/slugify/)
 
