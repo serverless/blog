@@ -25,9 +25,9 @@ We want to share your expertise with a global audience of serverless pioneers. B
 
 Guest posts include a contributor bio and contact information, including links to social media.
 
-# How to contribute
+# How to Contribute
 
-Drop us a line at stefanie@serverless.com, add an [issue on the blog repo](http://github.com/serverless/blog) or [submit a pull request on our blog repo](http://github.com/serverless/blog)!
+Drop us a line at rupak@serverless.com, add an [issue on the blog repo](http://github.com/serverless/blog) or [submit a pull request on our blog repo](http://github.com/serverless/blog)!
 
 
 
