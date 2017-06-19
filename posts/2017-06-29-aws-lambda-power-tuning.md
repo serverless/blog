@@ -8,7 +8,7 @@ authors:
   - AlexCasalboni
 ---
 
-During the last few months, I realized that most developers using serverless technologies have to rely on **blind choices** or **manual tuning** to optimize their Lambda Functions. In this article, I will present the data I collected, the [open-source project](https://github.com/alexcasalboni/aws-lambda-power-tuning) I created to solve this problem, and the design ideas that guided me.
+During the last few months, I realized that most developers using serverless technologies have to rely on **blind choices** or **manual tuning** to optimize their Lambda Functions. In this article I will present: the data I collected, the [open-source project](https://github.com/alexcasalboni/aws-lambda-power-tuning) I created to solve this problem, and the design ideas that guided me.
 
 ## AWS Lambda optimizations, let's go data-driven
 
@@ -30,28 +30,33 @@ Some functions just involve plain computation and get their job done in a few mi
 
 On the other hand, most functions are meant to interact with other functions and APIs, as a sort of glue code between services. Here is a brief list of the reasons why your functions may slow down:
 
- * **AWS SDK calls**: everytime you invoke an AWS API using the official SDK - for example, to read data from S3 or DynamoDB, or to publish a new SNS message. These calls are usually pretty fast because they are executed locally within AWS's datacenters. You may try to perform bulk read/write operations and further optimize those services configuration, whenever possible.
- * **External HTTP calls**: by invoking external APIs you might incur significant network latency unless the API is hosted on AWS as well and provides regional endpoints. You may try to execute multiple calls in parallel and avoid serial execution, whenever possible (this is trivial in Node.js, but it might become a bit tricky to handle in Python and other languages).
- * **Intense computation**: complex algorithms might take a while to converge, especially if you use libraries that require loading a dataset into memory - for example, Natural Language Processing or Machine Learning models that need to manipulate and normalize textual data, invert matrices, process multimedia files, etc.
- * **Cold starts**: whenever you update your code or your Lambda container gets cold, or even just when AWS decides to swap containers around. Unfortunately, you don't have much control on this, but luckily it happens every once in a while, and we can keep this in mind when evaluating our Functions performance.
+ * **AWS SDK calls**: everytime you invoke an AWS API using the official SDK - for example, to read data from S3 or DynamoDB, or to publish a new SNS message. 
+ 
+These calls are usually pretty fast because they are executed locally within AWS's datacenters. You may try to perform bulk read/write operations and further optimize those services configuration, whenever possible.
+
+ * **External HTTP calls**: By invoking external APIs, you might incur significant network latency unless the API is also hosted on AWS and provides regional endpoints. You may try to execute multiple calls in parallel and avoid serial execution, whenever possible (this is trivial in Node.js, but it might become a bit tricky to handle in Python and other languages).
+ 
+ * **Intense computation**: Complex algorithms might take a while to converge, especially if you use libraries that require loading a dataset into memory. For example: Natural Language Processing or Machine Learning models that need to manipulate and normalize textual data, invert matrices, process multimedia files, etc.
+ 
+ * **Cold starts**: These occur whenever you update your code,when your Lambda container gets cold, or even just when AWS decides to swap containers around. Unfortunately, you don't have much control on this, but luckily it happens every once in awhile, and we can keep this in mind when evaluating our Functions performance.
 
 ### How to achieve objectiveness and repeatability?
 
-My goal was finding an objective way to analyze the performance of any given Lambda Function, and then take informed decisions about the corresponding power configuration based on its priority level in the system.
+My goal was finding an objective way to analyze the performance of any given Lambda Function, and then make informed decisions about the corresponding power configuration based on its priority level in the system.
 
 Such a tool should be cheap and fast to execute, and it should provide repeatable results, taking into consideration the fluctuant trend of CPU, network, external resources, cold starts, etc.
 
 Here is the complete list of requirements I gathered initially:
-
- * **Speed**: similarly to unit tests, you should be able to evaluate the impact of code changes as quickly as possible, which means the tool should run within seconds (not minutes or hours).
- * **Cost**: evaluating performance should be cheap enough to be executed automatically and as often as needed. In some critical and high-throughput scenarios, spending up to $1 could be more than acceptable since the resulting power optimization might generate considerable savings.
- * **Complexity**: the tool should be easy to deploy, understand, extend, and visualize.
- * **Flexibility**: you may want to use the same tool for different functions, and provide different configurations or optimization strategies.
- * **Concreteness**: the tool should provide insights based on a real AWS environment, without limiting assumptions or mocks.
- * **Statistical relevance**: the results should be relevant and robust to random fluctuations of measurement tools and external services.
+ 
+ * **Speed**: similarly to unit tests, you should be able to evaluate the impact of code changes as quickly as possible, which means the tool should run within seconds (not minutes or hours)
+ * **Cost**: evaluating performance should be cheap enough to be executed automatically and as often as needed. In some critical and high-throughput scenarios, spending up to $1 could be more than acceptable since the resulting power optimization might generate considerable savings
+ * **Complexity**: the tool should be easy to deploy, understand, extend, and visualize
+ * **Flexibility**: you may want to use the same tool for different functions, and provide different configurations or optimization strategies
+ * **Concreteness**: the tool should provide insights based on a real AWS environment, without limiting assumptions or mocks
+ * **Statistical relevance**: the results should be relevant and robust to random fluctuations of measurement tools and external services
  * **Multi-language support**: the tool should be language agnostic and provide the same level of accuracy and relevance for Node.js, Java, Python, Ruby, Go, etc.
  
-I easy solved the complexity issue by using the [Serverless Framework](https://serverless.com) for deploying and provisioning all the resources I needed.
+I easily solved the complexity issue by using the [Serverless Framework](https://serverless.com) for deploying and provisioning all the resources I needed.
 
 Since I wanted everything to run in a real AWS environment and generate statistically relevant results, I quickly realized I had to actually execute the Lambda Function provided as input, as opposed to computing a performance estimate based on code static analysis (which wouldn't be easy to achieve across languages).
 
@@ -69,10 +74,10 @@ One more problem: every branch would need to run the same Lambda Function in par
 
 Once the state machine contains the correct number of branches, you can still tune a few parameters at runtime:
 
- * **lambdaARN**: the AWS Lambda ARN of the Function you want to optimize.
+ * **lambdaARN**: the AWS Lambda ARN of the Function you want to optimize
  * **num**: the number of invocations to execute for each branch (recommended between 10 and 100)
- * **payload** (optional): the static payload to be passed as the input of each invocation.
- * **enableParallel** (*false* by default): if *true*, it will enable parallel executions at the branch level (Note: enabling this may cause invocation throttling, depending on the value of *num* and your account soft limit).
+ * **payload** (optional): the static payload to be passed as the input of each invocation
+ * **enableParallel** (*false* by default): if *true*, it will enable parallel executions at the branch level (Note: enabling this may cause invocation throttling, depending on the value of *num* and your account soft limit)
 
 Here is a screenshot of a sample execution, generated with only three power values:
 
@@ -87,7 +92,7 @@ The current optimization strategy is based on cost alone. The state machine will
 
 The real performance evaluation makes sense for those functions that perform intensive computational tasks or time-consuming HTTP/SDK calls.
 
-For example, imagine a Lambda Function that updates a DynamoDB record, and then sends a new SNS message. Your code may look like the following:
+For example, imagine a Lambda Function that updates a DynamoDB record and then sends a new SNS message. Your code may look like the following:
 
 ```js
 const AWS = require("aws-sdk");
@@ -129,11 +134,11 @@ If you instrument this Lambda Function with AWS X-Ray, you will see how long eac
 <img src="http://aws-lambda-xray.s3-website-eu-west-1.amazonaws.com/x-ray-screenshot.png">
 
 
-With a RAM configuration of **1024MB**, the Function spent around **80ms** updating the DynamoDB record, and **70ms** sending the SNS message.
+With a RAM configuration of **1024MB**, the Function spent around **80ms** updating the DynamoDB record and **70ms** sending the SNS message.
 
 With only **128MB**, the DynamoDB call would take approximately **110ms** and the SNS call would take **120ms**. With **1536MB**, the latencies would go down to **35ms and 45ms** (note: the total is less than 100ms!).
 
-In the case of 128MB, we'd be charged for 300ms. In the case of 1024MB, we'd be charged for 200ms, while in the case of 1536MB, we'd be charged for only 100ms.
+In the case of 128MB, we'd be charged for 300ms. In the case of 1024MB, we'd be charged for 200ms; however, in the case of 1536MB, we'd be charged for only 100ms.
 
 In terms of cost, the 128MB configuration would be the cheapest (but very slow!). Interestingly, using **the 1536MB configuration would be both faster and cheaper than using 1024MB**. This happens because the 1536MB configuration is 1.5 times more expensive, but we'll pay for half the time, which means we'd roughly save 25% of the cost overall.
 
@@ -159,7 +164,7 @@ If you need to test more power configurations, or if you'd like to achieve bette
 
 ### Final Thoughts
 
-I believe performance and cost optimization are still quite an open issue in the serverless world. Not only it's hard to estimate costs, but it's even more so without an objective way of measuring and optimizing your code.
+I believe performance and cost optimization are still quite an open issue in the serverless world. Not only is it hard to estimate costs, but it's even more so without an objective way of measuring and optimizing your code.
 
 I hope this tool will help you take more data-driven decisions, and save some time while optimizing your Lambda Functions.
 
