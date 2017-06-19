@@ -1,5 +1,5 @@
 ---
-title: Why we switched from dockers to serverless
+title: Why we switched from docker to serverless
 description: Why we decided to migrate our services running on docker containers to serverless stack using aws lambda functions and aws api gateway
 date: 2017-05-14
 thumbnail: https://cdn-images-1.medium.com/max/1600/1*nCdI-0OU8GI6KZ2BwTvfDQ.png
