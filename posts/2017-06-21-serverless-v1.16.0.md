@@ -1,7 +1,7 @@
 ---
 title: Serverless v1.16 - S3 server-side encryption and default exclusion of Node.js dev dependencies added
 description: S3 server-side encryption, support for API Gateway usage plans, default excludion of Node.js dev dependencies and more in the Serverless Framework v1.16 release.
-date: 2017-06-09
+date: 2017-06-21
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-v116.png
 authors:
