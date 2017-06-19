@@ -1,7 +1,7 @@
 ---
 title: AWS Lambda Power Tuning with AWS Step Functions
 description: Alex Casalboni presents his Serverless Service powered by AWS Step Functions and the Serverless Framework to optimize your Lambda Functions performance and costs.
-date: 2017-06-09
+date: 2017-06-29
 layout: Post
 thumbnail: https://github.com/alexcasalboni/aws-lambda-power-tuning/blob/master/state-machine-screenshot.png?raw=true
 authors:
