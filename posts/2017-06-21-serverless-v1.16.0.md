@@ -83,7 +83,7 @@ You can read more in our docs about [deploying to AWS](https://serverless.com/fr
 
 API keys are a widely used feature to enable / disable access to different endpoints of your API offering.
 
-The [introduction of "API Gateway Usage Plans"](https://aws.amazon.com/de/blogs/aws/new-usage-plans-for-amazon-api-gateway/) makes it possible to control the usage patterns your API should support in a fine grained way.
+The [introduction of "API Gateway Usage Plans"](https://aws.amazon.com/de/blogs/aws/new-usage-plans-for-amazon-api-gateway/) makes it possible to control the usage patterns your API should support in a fine-grained way.
 
 A recent AWS update finally added support for this feature in CloudFormation which makes it possible to automate the setup process. Serverless v1.16 takes advantage of this addition and adds native `serverless.yml` support for it.
 
@@ -121,7 +121,19 @@ functions:
 
 ### Exclude Node.js dev dependencies in services .zip file
 
-https://github.com/serverless/serverless/pull/3737
+The Serverless Frameworks `package` plugin includes a sophisticated zipping utility which gives you control over the .zip creation process through config parameter such as e.g. `exclude` or `include`.
+
+Most of the time the functions you write rely on different 3rd party packages whether they're production relevant packages or packages used to streamline the development process (e.g. test runners, offline utilities, etc.).
+
+In recent versions Serverless included all your Node.js dependencies by default. This means that your production dependencies as well as your development dependencies are included in the final `.zip` aretifact and uploaded to your deployment bucket. 
+
+Such deployment artifacts could easily exceed 2 digits MBs in size.
+
+Serverless v1.16 changes this behavior and introduces a step which will analyze your dependencies and exlcude development dependencies from the final `.zip` deployment artifact.
+
+This feature is currently supported for `Node.js` runtimes and is enabled by default.
+
+Do you have ideas on how we can add support for other runtimes as well? Please let us know by opening up a [new issue](https://github.com/serverless/serverless/issues/new)!
 
 ### Enhancements & Bug Fixes
 
