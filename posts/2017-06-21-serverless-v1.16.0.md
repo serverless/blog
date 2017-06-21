@@ -135,6 +135,8 @@ This feature is currently supported for `Node.js` runtimes and is enabled by def
 
 Do you have ideas on how we can add support for other runtimes as well? Please let us know by opening up a [new issue](https://github.com/serverless/serverless/issues/new)!
 
+**Note:** Serverless analyzes and excludes development dependencies from all your `package.json` files, no matter how many `package.json` files you have or how nested your directory structure is.
+
 ### Enhancements & Bug Fixes
 
 This release also includes lots of bug fixes and several other enhancements.
