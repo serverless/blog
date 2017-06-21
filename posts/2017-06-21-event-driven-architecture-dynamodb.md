@@ -1,11 +1,11 @@
 ---
 title: Event-driven processing with Serverless and DynamoDB streams
-description: Learn how to use DynamoDB streams to build event-driven architectures
-date: 2017-06-12
+description: Learn how to use DynamoDB streams and AWS Lambda to keep your search indexes and CRM tools up to date.
+date: 2017-06-21
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/variables.jpg
+thumbnail: https://user-images.githubusercontent.com/6509926/27362413-f40e4968-55f3-11e7-9c68-65dc1b06f335.jpg
 authors:
-  - alexdebrie
+  - AlexDeBrie
 ---
 
 In the last few years, we've seen an explosion in developers using event streams to power interesting applications. Many companies are turning to Kafka, a persistent, distributed log developed at LinkedIn that is now a top-level Apache project. But Kafka operations aren't free -- you'll need to manage a cluster of brokers as well as a highly-available Zookeeper ensemble. Configuring, monitoring, and repairing this infrastructure can distract you from the value you want to deliver to your customers. In this post, I'll show you how you can use DynamoDB streams to decouple your application, giving you the benefits of an event stream without the maintenance burden. I'll walk though why you might want to use an event-based architecture. In a follow-up post, I'll talk about the challenges of an event-driven architecture and some patterns you can use to build event-driven services.
