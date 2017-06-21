@@ -16,15 +16,72 @@ This release introduces new features, improvements and bugfixes. Let's take a lo
 
 ## Highlights of 1.16.0
 
-You can find a complete list of all the updates in the [changelog](https://github.com/serverless/serverless/blob/master/CHANGELOG.md).
+You can find a complete list of all the updates in the [CHANGELOG](https://github.com/serverless/serverless/blob/master/CHANGELOG.md).
 
 ### S3 server-side encryption options
 
-https://github.com/serverless/serverless/pull/3804
+Serverless uploads and stores different revisions of your deployment artifacts including the services .zip files and the CloudFormation templates in a dedicated S3 bucket.
+
+The Serverless Framework will create this deployment bucket by default for you.
+
+However you can also use the `deploymentBucket` configuration parameter which is nested in the `provider` property to specify a pre-defined S3 bucket which should be used when uploading and storign your deployment artifacts.
+
+With v1.16 we're adding support for server-side encryption options for such buckets which ensures that your artifacts are encrypted in your bucket once uploaded.
+
+Let's take how you could use this feature.
+
+The fist thing we need to do is to create our new S3 bucket which should be used to store our deployment artifacts.
+
+We assume that this bucket is called `serverless.deployment.bucket`. This bucket could e.g. have the following "bucket policy" to ensure that the content is encrypted:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "RequiredEncryptedPutObject",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::serverless.deployment.bucket/*",
+      "Condition": {
+        "StringNotEquals": {
+          "s3:x-amz-server-side-encryption": [
+            "AES256",
+            "aws:kms"
+          ]
+        }
+      }
+    }
+  ]
+}
+```
+
+Next up we simply define that we want to use this bucket in combination with a `AWS256` server-side encryption for our deployments in our `serverless.yml` file:
+
+```yml
+service:
+  name: service
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  deploymentBucket:
+    name: serverless.deployment.bucket
+    serverSideEncryption: AES256
+
+functions:
+  hello:
+    handler: handler.hello
+```
+
+That's it. All files which will be uploaded to this bucket will be encrpyted from now on.
+
+You can read more in our docs about [deploying to AWS](https://serverless.com/framework/docs/providers/aws/guide/deploying/) about this feature.
 
 ### API Gateway usage plans support
 
-https://github.com/serverless/serverless/pull/3715
+Controling the access to your API through API keys 
 
 ### Exclude Node.js dev dependencies in services .zip file
 
