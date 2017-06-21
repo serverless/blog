@@ -149,7 +149,21 @@ This release contains lots of hard work from our awesome community, and wouldn't
 
 Thank You to all of the contributors who submitted changes for this release:
 
-- John Doe
+- Alex Casalboni
+- David Gatti
+- Eetu Tuomala
+- Frank Schmid
+- Geoffrey Wiseman
+- Jeremy Benoist
+- Joey van Dijk
+- Juha Syrjälä
+- Maciej Sobala
+- Matt Hernandez
+- Max Redmond
+- Ryan Lewis
+- Sequoia McDowell
+- Vlad Holubiev
+- zined
 
 ### Get Involved
 
