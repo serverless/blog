@@ -81,7 +81,43 @@ You can read more in our docs about [deploying to AWS](https://serverless.com/fr
 
 ### API Gateway usage plans support
 
-Controling the access to your API through API keys 
+API keys are a widely used feature to enable / disable access to different endpoints of your API offering.
+
+The [introduction of "API Gateway Usage Plans"](https://aws.amazon.com/de/blogs/aws/new-usage-plans-for-amazon-api-gateway/) makes it possible to control the usage patterns your API should support in a fine grained way.
+
+A recent AWS update finally added support for this feature in CloudFormation which makes it possible to automate the setup process. Serverless v1.16 takes advantage of this addition and adds native `serverless.yml` support for it.
+
+The following is a sample `serverless.yml` file which showcases how you can use the new usage plan feature:
+
+```yml
+service:
+  name: service
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  apiKeys:
+    - myAPIKey
+  usagePlan:
+    quota:
+      limit: 5000
+      offset: 2
+      period: MONTH
+    throttle:
+      burstLimit: 200
+      rateLimit: 100
+
+functions:
+  greeter:
+    handler: handler.greeter
+    events:
+      - http:
+          method: POST
+          path: greet
+          private: true
+```
+
+**Note:** Please make sure to enable usage plan support in your [AWS API Gateway console](https://console.aws.amazon.com/apigateway/home) by following the steps in the [announcement blog post](https://aws.amazon.com/de/blogs/aws/new-usage-plans-for-amazon-api-gateway/).
 
 ### Exclude Node.js dev dependencies in services .zip file
 
