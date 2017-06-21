@@ -230,7 +230,7 @@ $ npm install --save bluebird
 $ npm install --save uuid
 ```
 
-Update the `candidate/api.js` as shown below.
+Update the `api/candidate.js` as shown below.
 
 ```javascript
 'use strict';
