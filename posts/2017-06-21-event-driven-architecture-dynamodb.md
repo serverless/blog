@@ -36,14 +36,14 @@ def create_user(event, context):
         logger.error(str(e)
         return {
             'statusCode': 400,
-            'body: json.dumps({
+            'body': json.dumps({
                 'error': str(e)
             })
         }
 
     return {
         'statusCode': 200,
-        'body: json.dumps({
+        'body': json.dumps({
             'id': user.id
         })
     }
@@ -81,7 +81,7 @@ def create_user(event, context):
         logger.error(str(e)
         return {
             'statusCode': 400,
-            'body: json.dumps({
+            'body': json.dumps({
                 'error': str(e)
             })
         }
@@ -103,7 +103,7 @@ def create_user(event, context):
 
     return {
         'statusCode': 200,
-        'body: json.dumps({
+        'body': json.dumps({
             'id': user.id
         })
     }
