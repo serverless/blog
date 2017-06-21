@@ -22,31 +22,31 @@ from models import User, UserCreationException
 
 
 def create_user(event, context):
-	email = event.get('email')
-	fullname = event.get('fullname')
-	date_of_birth = event.get('date_of_birth')
-	
-	try:
-		user = User.create(
-			email=email,
-			fullname=fullname,
-			date_of_birth=date_of_birth
-		)
-	except UserCreationException as e:
-		logger.error(str(e)
-		return {
-			'statusCode': 400,
-			'body: json.dumps({
-				'error': str(e) 
-			})
-		}
-	
-	return {
-		'statusCode': 200,
-		'body: json.dumps({
-			'id': user.id 
-		})
-	}
+    email = event.get('email')
+    fullname = event.get('fullname')
+    date_of_birth = event.get('date_of_birth')
+
+    try:
+        user = User.create(
+            email=email,
+            fullname=fullname,
+            date_of_birth=date_of_birth
+        )
+    except UserCreationException as e:
+        logger.error(str(e)
+        return {
+            'statusCode': 400,
+            'body: json.dumps({
+                'error': str(e)
+            })
+        }
+
+    return {
+        'statusCode': 200,
+        'body: json.dumps({
+            'id': user.id
+        })
+    }
 ```
 
 For brevity, I've left out the logic to actually save the user to DynamoDB. In the sample above, the function parses the user data from the request body and attempts to save it to the database. If it fails, it returns an 400 to the user, while a success returns a 200. Pretty basic.
@@ -66,47 +66,47 @@ from search import index_user, UserIndexException
 
 
 def create_user(event, context):
-	email = event.get('email')
-	fullname = event.get('fullname')
-	date_of_birth = event.get('date_of_birth')
-	
-	# Create your user
-	try:
-		user = User.create(
-			email=email,
-			fullname=fullname,
-			date_of_birth=date_of_birth
-		)
-	except UserCreationException as e:
-		logger.error(str(e)
-		return {
-			'statusCode': 400,
-			'body: json.dumps({
-				'error': str(e) 
-			})
-		}
-	
-	# User indexing section
-	try:
-		index_user(
-			id=user.id,
-			email=email,
-			fullname=fullname
-			date_of_birth=date_of_birth
-		)
-	except UserIndexException as e:
-		# While index errors are important, we don't want to stop
-		# users from signing up if Algolia is down or we've forgotten
-		# to pay our bill. We'll just log the error and still return
-		# a successful response.
-		logger.error(str(e)
-	
-	return {
-		'statusCode': 200,
-		'body: json.dumps({
-			'id': user.id 
-		})
-	}
+    email = event.get('email')
+    fullname = event.get('fullname')
+    date_of_birth = event.get('date_of_birth')
+
+    # Create your user
+    try:
+        user = User.create(
+            email=email,
+            fullname=fullname,
+            date_of_birth=date_of_birth
+        )
+    except UserCreationException as e:
+        logger.error(str(e)
+        return {
+            'statusCode': 400,
+            'body: json.dumps({
+                'error': str(e)
+            })
+        }
+
+    # User indexing section
+    try:
+        index_user(
+            id=user.id,
+            email=email,
+            fullname=fullname
+            date_of_birth=date_of_birth
+        )
+    except UserIndexException as e:
+        # While index errors are important, we don't want to stop
+        # users from signing up if Algolia is down or we've forgotten
+        # to pay our bill. We'll just log the error and still return
+        # a successful response.
+        logger.error(str(e)
+
+    return {
+        'statusCode': 200,
+        'body: json.dumps({
+            'id': user.id
+        })
+    }
 ```
 
 Great! Now users are indexed in Algolia and can be searched from the frontend.
@@ -221,26 +221,26 @@ from search import index_user, remove_user_from_index
 
 def index_users(event, context):
 
-	for record in event.get('Records'):
-		if record.get('eventName') in ('INSERT', 'MODIFY'):
-			user_id = record['NewImage']['userId']['N']
-			email = record['NewImage']['emailAddress']['S']
-			fullname = record['NewImage']['fullname']['S']
-			date_of_birth = record['NewImage']['date_of_birth']['S']
+    for record in event.get('Records'):
+        if record.get('eventName') in ('INSERT', 'MODIFY'):
+            user_id = record['NewImage']['userId']['N']
+            email = record['NewImage']['emailAddress']['S']
+            fullname = record['NewImage']['fullname']['S']
+            date_of_birth = record['NewImage']['date_of_birth']['S']
 
-			index_user(
-				user_id=user_id,
-				email=email,
-				fullname=fullname,
-				date_of_birth=date_of_birth
-			)
+            index_user(
+                user_id=user_id,
+                email=email,
+                fullname=fullname,
+                date_of_birth=date_of_birth
+            )
 			
-			logger.info('Indexed user Id {}'.format(user_id)
-		elif record.get('eventName') == 'DELETE':
-			user_id = record['Keys']['userId']['N']
-			remove_user_from_index(user_id=user_id)
-			
-			logger.info('Removed user Id {} from index'.format(user_id)
+            logger.info('Indexed user Id {}'.format(user_id)
+        elif record.get('eventName') == 'DELETE':
+            user_id = record['Keys']['userId']['N']
+            remove_user_from_index(user_id=user_id)
+
+            logger.info('Removed user Id {} from index'.format(user_id)
 
 ```
 
@@ -263,25 +263,25 @@ from log import logger
 
 def index_users(event, context):
 
-	for record in event.get('Records'):
-		email = record['NewImage']['emailAddress']['S']
+    for record in event.get('Records'):
+        email = record['NewImage']['emailAddress']['S']
+
+        try:
+            if record.get('eventName') in ('INSERT', 'MODIFY'):
+                # Add additional user info from FullContact
+                enriched_user = enrich_user(email=email)
+
+                # Save to our CRM
+                save_user(enriched_user)
+
+                logger.info('Added {} to CRM'.format(email)
+            elif record.get('eventName') == 'DELETE':
+                mark_user_as_deleted(email=email)
+
+                logger.info('Marked {} as deleted in CRM'.format(email)
 		
-		try:	
-			if record.get('eventName') in ('INSERT', 'MODIFY'):
-				# Add additional user info from FullContact
-				enriched_user = enrich_user(email=email)
-				
-				# Save to our CRM
-				save_user(enriched_user)
-				
-				logger.info('Added {} to CRM'.format(email)
-			elif record.get('eventName') == 'DELETE':
-				mark_user_as_deleted(email=email)
-				
-				logger.info('Marked {} as deleted in CRM'.format(email)
-		
-		except Exception as e:
-			logger.error("Failed to update {email} in CRM. Error: {error}".format(email=email, error=str(e))
+    except Exception as e:
+        logger.error("Failed to update {email} in CRM. Error: {error}".format(email=email, error=str(e))
 
 ```
 
