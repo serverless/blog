@@ -12,7 +12,7 @@ authors:
 
 We're proud to announce the v1.16 release of the Serverless Framework!
 
-This release introduces new features, improvements and bugfixes. Let's take a look at all the new features v1.16 offers.
+This release introduces new features, improvements, and bugfixes. Let's take a look at all the new features v1.16 offers.
 
 ## Highlights of 1.16.0
 
@@ -24,15 +24,15 @@ Serverless uploads and stores different revisions of your deployment artifacts i
 
 The Serverless Framework creates and manages this deployment bucket by default.
 
-However you can also use the `deploymentBucket` configuration parameter which is nested in the `provider` property to specify a pre-defined S3 bucket which should be used when uploading and storing your deployment artifacts.
+However you can also use the `deploymentBucket` configuration parameter which is nested in the `provider` property to specify a predefined S3 bucket which should be used when uploading and storing your deployment artifacts.
 
-With v1.16 we're adding support for server-side encryption options for such buckets which ensures that your artifacts are encrypted in your bucket once uploaded.
+With v1.16, we're adding support for server-side encryption options for such buckets which ensures that your artifacts are encrypted in your bucket once uploaded.
 
-Let's take how you could use this feature.
+Let's take a look at how you could use this feature.
 
 The first thing we need to do is to create our new S3 bucket which should be used to store our deployment artifacts.
 
-We assume that this bucket is called `serverless.deployment.bucket`. This bucket could e.g. have the following "bucket policy" to ensure that the content is encrypted:
+We assume that this bucket is called `serverless.deployment.bucket`. For example, this bucket could have the following "bucket policy" to ensure that the content is encrypted:
 
 ```json
 {
@@ -57,7 +57,7 @@ We assume that this bucket is called `serverless.deployment.bucket`. This bucket
 }
 ```
 
-Next up we simply define that we want to use this bucket in combination with a `AWS256` server-side encryption for our deployments in our `serverless.yml` file:
+Next, we simply define that we want to use this bucket in combination with a `AWS256` server-side encryption for our deployments in our `serverless.yml` file:
 
 ```yml
 service:
@@ -75,13 +75,13 @@ functions:
     handler: handler.hello
 ```
 
-That's it. All files which will be uploaded to this bucket will be encrpyted from now on.
+That's it. All files which will be uploaded to this bucket will be encrypted from now on.
 
 You can read more in our [deploying to AWS](https://serverless.com/framework/docs/providers/aws/guide/deploying/) docs about this feature.
 
 ### API Gateway usage plans support
 
-API keys are a widely used feature to enable / disable access to different endpoints of your API offering.
+API keys are a widely used feature to enable/disable access to different endpoints of your API offering.
 
 The [introduction of "API Gateway Usage Plans"](https://aws.amazon.com/de/blogs/aws/new-usage-plans-for-amazon-api-gateway/) makes it possible to control the usage patterns your API should support in a fine-grained way.
 
@@ -121,15 +121,15 @@ functions:
 
 ### Significantly reduced time to deploy by excluding development dependencies
 
-The Serverless Frameworks `package` plugin includes a sophisticated zipping utility which gives you control over the `.zip` file creation process through config parameters such as e.g. `exclude` or `include`.
+The Serverless Frameworks `package` plugin includes a sophisticated zipping utility which gives you control over the `.zip` file creation process through config parameters such as `exclude` or `include`.
 
 Most of the time the serverless functions you work on rely on different 3rd party packages whether they're production relevant packages or packages used to streamline the development process (e.g. test runners, offline utilities, etc.).
 
-In recent versions Serverless included all your Node.js dependencies by default. This means that your production dependencies as well as your development dependencies are included in the final `.zip` artifact and uploaded to your deployment bucket. 
+In recent versions, Serverless included all your Node.js dependencies by default. This means that your production dependencies as well as your development dependencies are included in the final `.zip` artifact and uploaded to your deployment bucket. 
 
-Such deployment artifacts could easily exceed 2 digits MBs in size.
+Such deployment artifacts can easily get quite large in size.
 
-Serverless v1.16 changes this behavior and introduces a step which analyzes your dependencies and exlcudes development dependencies from the final `.zip` deployment artifact.
+Serverless v1.16 changes this behavior and introduces a step which analyzes your dependencies while excluding development dependencies from the final `.zip` deployment artifact.
 
 This feature is currently supported for `Node.js` runtimes and is enabled by default.
 
