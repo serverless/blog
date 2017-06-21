@@ -119,7 +119,7 @@ functions:
 
 **Note:** Please make sure to enable usage plan support in your [AWS API Gateway console](https://console.aws.amazon.com/apigateway/home) by following the steps in the [announcement blog post](https://aws.amazon.com/de/blogs/aws/new-usage-plans-for-amazon-api-gateway/).
 
-### Significantly reduced time to deploy by excluding development dependancies
+### Significantly reduced time to deploy by excluding development dependencies
 
 The Serverless Frameworks `package` plugin includes a sophisticated zipping utility which gives you control over the `.zip` file creation process through config parameters such as e.g. `exclude` or `include`.
 
