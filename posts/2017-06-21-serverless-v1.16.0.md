@@ -1,6 +1,6 @@
 ---
 title: Serverless v1.16 - S3 server-side encryption and default exclusion of Node.js dev dependencies added
-description: S3 server-side encryption, support for API Gateway usage plans, default excludion of Node.js dev dependencies and more in the Serverless Framework v1.16 release.
+description: S3 server-side encryption, support for API Gateway usage plans, default exclusion of Node.js dev dependencies and more in the Serverless Framework v1.16 release.
 date: 2017-06-21
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-v116.png
@@ -12,25 +12,25 @@ authors:
 
 We're proud to announce the v1.16 release of the Serverless Framework!
 
-This release introduces new features, improvements and bugfixes. Let's take a look at all the new features v1.16 includes.
+This release introduces new features, improvements and bugfixes. Let's take a look at all the new features v1.16 offers.
 
 ## Highlights of 1.16.0
 
-You can find a complete list of all the updates in the [CHANGELOG](https://github.com/serverless/serverless/blob/master/CHANGELOG.md).
+You can find a complete list of all the updates in the [CHANGELOG.md](https://github.com/serverless/serverless/blob/master/CHANGELOG.md) file.
 
 ### S3 server-side encryption options
 
-Serverless uploads and stores different revisions of your deployment artifacts including the services .zip files and the CloudFormation templates in a dedicated S3 bucket.
+Serverless uploads and stores different revisions of your deployment artifacts including the services `.zip` files and the CloudFormation templates in a dedicated S3 bucket.
 
-The Serverless Framework will create this deployment bucket by default for you.
+The Serverless Framework creates and manages this deployment bucket by default.
 
-However you can also use the `deploymentBucket` configuration parameter which is nested in the `provider` property to specify a pre-defined S3 bucket which should be used when uploading and storign your deployment artifacts.
+However you can also use the `deploymentBucket` configuration parameter which is nested in the `provider` property to specify a pre-defined S3 bucket which should be used when uploading and storing your deployment artifacts.
 
 With v1.16 we're adding support for server-side encryption options for such buckets which ensures that your artifacts are encrypted in your bucket once uploaded.
 
 Let's take how you could use this feature.
 
-The fist thing we need to do is to create our new S3 bucket which should be used to store our deployment artifacts.
+The first thing we need to do is to create our new S3 bucket which should be used to store our deployment artifacts.
 
 We assume that this bucket is called `serverless.deployment.bucket`. This bucket could e.g. have the following "bucket policy" to ensure that the content is encrypted:
 
@@ -77,7 +77,7 @@ functions:
 
 That's it. All files which will be uploaded to this bucket will be encrpyted from now on.
 
-You can read more in our docs about [deploying to AWS](https://serverless.com/framework/docs/providers/aws/guide/deploying/) about this feature.
+You can read more in our [deploying to AWS](https://serverless.com/framework/docs/providers/aws/guide/deploying/) docs about this feature.
 
 ### API Gateway usage plans support
 
@@ -85,7 +85,7 @@ API keys are a widely used feature to enable / disable access to different endpo
 
 The [introduction of "API Gateway Usage Plans"](https://aws.amazon.com/de/blogs/aws/new-usage-plans-for-amazon-api-gateway/) makes it possible to control the usage patterns your API should support in a fine-grained way.
 
-A recent AWS update finally added support for this feature in CloudFormation which makes it possible to automate the setup process. Serverless v1.16 takes advantage of this addition and adds native `serverless.yml` support for it.
+A recent AWS update finally added support for this feature in CloudFormation which makes it possible to automate the setup process. Serverless v1.16 takes advantage of this addition and adds native `serverless.yml` support for usage plan definitions.
 
 The following is a sample `serverless.yml` file which showcases how you can use the new usage plan feature:
 
@@ -121,15 +121,15 @@ functions:
 
 ### Exclude Node.js dev dependencies in services .zip file
 
-The Serverless Frameworks `package` plugin includes a sophisticated zipping utility which gives you control over the .zip creation process through config parameter such as e.g. `exclude` or `include`.
+The Serverless Frameworks `package` plugin includes a sophisticated zipping utility which gives you control over the `.zip` file creation process through config parameters such as e.g. `exclude` or `include`.
 
-Most of the time the functions you write rely on different 3rd party packages whether they're production relevant packages or packages used to streamline the development process (e.g. test runners, offline utilities, etc.).
+Most of the time the serverless functions you work on rely on different 3rd party packages whether they're production relevant packages or packages used to streamline the development process (e.g. test runners, offline utilities, etc.).
 
-In recent versions Serverless included all your Node.js dependencies by default. This means that your production dependencies as well as your development dependencies are included in the final `.zip` aretifact and uploaded to your deployment bucket. 
+In recent versions Serverless included all your Node.js dependencies by default. This means that your production dependencies as well as your development dependencies are included in the final `.zip` artifact and uploaded to your deployment bucket. 
 
 Such deployment artifacts could easily exceed 2 digits MBs in size.
 
-Serverless v1.16 changes this behavior and introduces a step which will analyze your dependencies and exlcude development dependencies from the final `.zip` deployment artifact.
+Serverless v1.16 changes this behavior and introduces a step which analyzes your dependencies and exlcudes development dependencies from the final `.zip` deployment artifact.
 
 This feature is currently supported for `Node.js` runtimes and is enabled by default.
 
