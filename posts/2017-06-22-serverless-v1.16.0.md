@@ -18,7 +18,7 @@ This release introduces new features, improvements, and bugfixes. Let's take a l
 
 You can find a complete list of all the updates in the [CHANGELOG.md](https://github.com/serverless/serverless/blob/master/CHANGELOG.md) file or watch the video below. Kudos to Ryan H. Lewis ([@ryanmurakami](https://twitter.com/ryanmurakami)) for taking the time to record this video!
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=_F4YO6pi1sg" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_F4YO6pi1sg" frameborder="0" allowfullscreen></iframe>
 
 ### S3 server-side encryption options
 
