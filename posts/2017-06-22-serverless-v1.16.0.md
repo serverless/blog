@@ -57,7 +57,7 @@ We assume that this bucket is called `serverless.deployment.bucket`. For example
 }
 ```
 
-Next, we simply define that we want to use this bucket in combination with a `AWS256` server-side encryption for our deployments in our `serverless.yml` file:
+Next, we simply define that we want to use this bucket in combination with a `AES256` server-side encryption for our deployments in our `serverless.yml` file:
 
 ```yml
 service:
@@ -121,9 +121,9 @@ functions:
 
 ### Significantly reduced time to deploy by excluding development dependencies
 
-The Serverless Frameworks `package` plugin includes a sophisticated zipping utility which gives you control over the `.zip` file creation process through config parameters such as `exclude` or `include`.
+The Serverless Framework's `package` plugin includes a sophisticated zipping utility which gives you control over the `.zip` file creation process through config parameters such as `exclude` or `include`.
 
-Most of the time the serverless functions you work on rely on different 3rd party packages whether they're production relevant packages or packages used to streamline the development process (e.g. test runners, offline utilities, etc.).
+Most of the time the functions you work on rely on different 3rd party packages whether they're production relevant packages or packages used to streamline the development process (e.g. test runners, offline utilities, etc.).
 
 In recent versions, Serverless included all your Node.js dependencies by default. This means that your production dependencies as well as your development dependencies are included in the final `.zip` artifact and uploaded to your deployment bucket. 
 
