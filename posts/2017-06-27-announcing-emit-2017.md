@@ -8,8 +8,6 @@ authors:
   - NickGottlieb
 ---
 
-# Announcing Emit 2017 - the conference on event-driven architectures 
-
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/emit_logo+(1).png">
 
 ## Why
