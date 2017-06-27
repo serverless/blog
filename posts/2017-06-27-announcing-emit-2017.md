@@ -7,7 +7,7 @@ authors:
   - NickGottlieb
 ---
 
-# Announcing Emit 2017 - the conferences on event-driven arcitectures 
+# Announcing Emit 2017 - the conferences on event-driven architectures 
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/emit_logo+(1).png">
 
@@ -33,4 +33,4 @@ We have an extremely exciting group of speakers lined up, made up of leading thi
 Emit will have a small, curated, and relevant crowd made up mostly of technical thought leaders, architects, strategic decision makers, and analysts. Tickets are $595 and available by invite only. If you wish to attend please reserve a spot on the conference site. There is an attendance cap of 200, we apologize in advance to anyone who would like to attend but does not get an invite. Professionally produced videos of all talks and panels will be made available to the public after the conference. 
 
 ## Sponsors
-We have a great group of sponsors, who are passionate about serverless and event-driven arcitectures, helping us make Emit a world-class event. Our intitial sponsors include AWS, A Cloud Guru, and Trek10 with being announced soon on [emitconference.com](http://www.emitconference.com/).
+We have a great group of sponsors, who are passionate about serverless and event-driven architectures, helping us make Emit a world-class event. Our initial sponsors include AWS, A Cloud Guru, and Trek10 with being announced soon on [emitconference.com](http://www.emitconference.com/).
