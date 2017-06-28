@@ -2,7 +2,7 @@
 title: 3 Steps To Faster Serverless Development 
 description: Sometimes the development feedback loop can be slow when working with serverless functions. This posts walks through some quick tips I use to speed things up
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/sls-speed.jpg
-date: 2017-06-28
+date: 2017-06-29
 layout: Post
 authors:
   - DavidWells
