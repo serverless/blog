@@ -20,15 +20,90 @@ You can find a complete list of all the updates in the [CHANGELOG.md](https://gi
 
 ### F# service template
 
-https://github.com/serverless/serverless/pull/3849
+F# is With Serverless v1.17 you can now create and deploy F# service templates to AWS.
+
+You can bootstrap your new F# service with the help of the `serverless create --template` command:
+
+```bash
+serverless create --template aws-fsharp --path my-fsharp-service
+```
+
+Next up you need to build the project:
+
+```bash
+cd my-fsharp-service
+
+./build.sh
+```
+
+After that you're ready to deploy and invoke your first F# service:
+
+```bash
+serverless deploy
+
+serverless invoke --function hello
+```
+
+The F# service template supports all the configs and event sources you can find in [our AWS documentation](https://serverless.com/framework/docs/providers/aws/).
 
 ### Support for shared API Gateways
 
-https://github.com/serverless/serverless/pull/3878
+Serverless helps you encapsulated common business logic into dedicated services.
+
+You could e.g. organize all your user-specific functionality into one `users` Serverless service and put all the comments related business logic into a `comments` service.
+
+This so called microservice pattern helps you especially when you have a fairly large application.
+
+In Serverless a very commonly used event source is the `http` event which enables you a way to invoke functions based on incoming HTTP requests. Your `users`service could e.g. handle incoming `signup` requests via `POST` whereas your `comments` service updates previously written comments with the help of `PUT` or `PATCH` requests.
+
+When orchestrating and exposing your different Serverless services to the world you most likely want to expose one "umbrella" API Gateway which handles and dispatches all the incoming HTTP requests to the different Serverless services.
+
+Serverless v1.17 adds an easy way to define shared API Gateway resources with the help of the `apiGatewayRestApiId` config parameter.
+
+Here's an example how you could re-use an existing API Gateway in your current Serverless service:
+
+```yml
+service:
+  name: test-service
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  apiGatewayRestApiId:
+    Fn::ImportValue: MySharedApiGatewayRestApi
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http: GET hello
+```
+
+Serverless will now automatically replace all the existing API Gateway references for the service with the shared one.
+
+You can read more about the different configuration options in our docs about the [API Gateway event source](https://serverless.com/framework/docs/providers/aws/events/apigateway/).
+
+**Note:** Serverless can be used in a variety of different architectural flavors. You can read more about the different patterns in our blog post about [Serverless code patterns](https://serverless.com/blog/serverless-architecture-code-patterns/).
 
 ### Skip deployment if files not changed
 
-https://github.com/serverless/serverless/pull/3838
+Starting now Serverless will automatically compare you current services files on disk to the remotely uploaded service files of your last deployment.
+
+A re-deployment is only triggerend if at least one of the files are different.
+
+This feature is enabled by default and works for the `serverless deploy` and the `serverless deploy function` command.
+
+However you can still force a deployment by specifying the `--force` option like this:
+
+```
+serverless deploy --force
+```
+
+or
+
+```
+serverless deploy function --function func1 --force
+```
 
 ### Enhancements & Bug Fixes
 
