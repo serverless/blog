@@ -1,6 +1,6 @@
 ---
-title: Serverless v1.17 - F# service template, skip deployment when files not changed, shared API Gateway support added
-description: F# service template, deployment skipping when files not changed, support for shared API Gateways, and more in the Serverless Framework v1.17 release.
+title: Serverless v1.17 - F# service template, skip deployment when files not changed added
+description: F# service template, deployment skipping when files not changed and more in the Serverless Framework v1.17 release.
 date: 2017-07-05
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-v117.png
@@ -12,15 +12,15 @@ authors:
 
 Toaday we're happy to announce the new Serverless Frameowrk v1.17 release!
 
-v1.17 introduces new features, enhancements, and bugfixes. Let's take a deep dive into all the new features v1.17 provides.
+v1.17 provides new features, enhancements, and bugfixes. Let's take a deep dive into the new features v1.17 introduces.
 
 ## Highlights of 1.17.0
 
-You can find a complete list of all the updates in the [CHANGELOG.md](https://github.com/serverless/serverless/blob/master/CHANGELOG.md) file or watch the video below.
+You can find a complete list of all the updates in the [CHANGELOG.md](https://github.com/serverless/serverless/blob/master/CHANGELOG.md) file.
 
 ### F# service template
 
-F# is With Serverless v1.17 you can now create and deploy F# service templates to AWS.
+With Serverless v1.17 you can now create and deploy F# service templates to AWS.
 
 You can bootstrap your new F# service with the help of the `serverless create --template` command:
 
@@ -36,7 +36,7 @@ cd my-fsharp-service
 ./build.sh
 ```
 
-After that you're ready to deploy and invoke your first F# service:
+After that you're ready to deploy and invoke your first F# function:
 
 ```bash
 serverless deploy
@@ -87,7 +87,7 @@ You can read more about the different configuration options in our docs about th
 
 ### Skip deployment if files not changed
 
-Starting now Serverless will automatically compare you current services files on disk to the remotely uploaded service files of your last deployment.
+Starting now, Serverless will automatically compare you current services files on disk to the remotely uploaded service files of your last deployment.
 
 A re-deployment is only triggerend if at least one of the files are different.
 
@@ -119,21 +119,19 @@ Thank You to all of the contributors who submitted changes for this release:
 
 - John Doe
 
-### Get Involved
+## The Road Ahead
 
-Serverless has a really helpful, vibrant and awesome community. Want to help us build the best Serverless tooling out there?
+Serverless has a really open, helpful, and vibrant community which helps building the best Serverless toolings out there.
 
-Contributing isn't just about code! Chime in on [discussions](https://github.com/serverless/serverless/labels/stage%2Fneeds-feedback), help with [documentation updates](https://github.com/serverless/serverless/labels/kind%2Fdocs) or [review Pull Requests](https://github.com/serverless/serverless/pulls).
+We've already started to fill the next [1.18 milestone](https://github.com/serverless/serverless/milestone/33). Feel free to jump into the issue discussions or implementations for the upcoming features!
 
-Just filter by [our labels](https://github.com/serverless/serverless/labels) such as [easy-pick](https://github.com/serverless/serverless/issues?q=is%3Aopen+is%3Aissue+label%3Astatus%2Feasy-pick), [help-wanted](https://github.com/serverless/serverless/issues?q=is%3Aopen+is%3Aissue+label%3Astatus%2Fhelp-wanted) or [needs-feedback](https://github.com/serverless/serverless/labels/stage%2Fneeds-feedback) to find areas where you can help us!
+The current milestone is no the only way to find areas for contributions! We've got a couple of different issues and PRs which are just waiting for a feedback, implemenation or code review.
 
-Furthermore, we're always seeking feedback from our community to build the features in the best way possible. [Here's a list](https://github.com/serverless/serverless/labels/stage%2Fneeds-feedback) with issues where we need your feedback and insights in your real world usage of Serverless.
+Just filter by [our labels](https://github.com/serverless/serverless/labels) to find areas where you can help!
 
-### Next Steps
+**Aside:** Contributing isn't just about writing code! Feel free to chime in on [issue discussions](https://github.com/serverless/serverless/issues) or [review Pull Requests](https://github.com/serverless/serverless/pulls).
 
-We've already started filling in the next [milestones](https://github.com/serverless/serverless/milestones). Check out the [1.18 milestone](https://github.com/serverless/serverless/milestone/33) to see what we have planned for the next release.
-
-We hope that you like the new release! Let us know if you have any questions or feedback in [our Forum](http://forum.serverless.com/) or [GitHub Issues](https://github.com/serverless/serverless/issues).
+We hope that you like the new release! Let us know if you have any questions or feedback in [our Forum](http://forum.serverless.com/) or our [GitHub Issues](https://github.com/serverless/serverless/issues).
 
 ## Serverless Examples
 
