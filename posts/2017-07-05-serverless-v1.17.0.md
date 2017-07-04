@@ -46,45 +46,6 @@ serverless invoke --function hello
 
 The F# service template supports all the configs and event sources you can find in [our AWS documentation](https://serverless.com/framework/docs/providers/aws/).
 
-### Support for shared API Gateways
-
-Serverless helps you encapsulated common business logic into dedicated services.
-
-You could e.g. organize all your user-specific functionality into one `users` Serverless service and put all the comments related business logic into a `comments` service.
-
-This so called microservice pattern helps you especially when you have a fairly large application.
-
-In Serverless a very commonly used event source is the `http` event which enables you a way to invoke functions based on incoming HTTP requests. Your `users`service could e.g. handle incoming `signup` requests via `POST` whereas your `comments` service updates previously written comments with the help of `PUT` or `PATCH` requests.
-
-When orchestrating and exposing your different Serverless services to the world you most likely want to expose one "umbrella" API Gateway which handles and dispatches all the incoming HTTP requests to the different Serverless services.
-
-Serverless v1.17 adds an easy way to define shared API Gateway resources with the help of the `apiGatewayRestApiId` config parameter.
-
-Here's an example how you could re-use an existing API Gateway in your current Serverless service:
-
-```yml
-service:
-  name: test-service
-
-provider:
-  name: aws
-  runtime: nodejs6.10
-  apiGatewayRestApiId:
-    Fn::ImportValue: MySharedApiGatewayRestApi
-
-functions:
-  hello:
-    handler: handler.hello
-    events:
-      - http: GET hello
-```
-
-Serverless will now automatically replace all the existing API Gateway references for the service with the shared one.
-
-You can read more about the different configuration options in our docs about the [API Gateway event source](https://serverless.com/framework/docs/providers/aws/events/apigateway/).
-
-**Note:** Serverless can be used in a variety of different architectural flavors. You can read more about the different patterns in our blog post about [Serverless code patterns](https://serverless.com/blog/serverless-architecture-code-patterns/).
-
 ### Skip deployment if files not changed
 
 Starting now, Serverless will automatically compare you current services files on disk to the remotely uploaded service files of your last deployment.
