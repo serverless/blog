@@ -48,7 +48,7 @@ The F# service template supports all the configs and event sources you can find 
 
 ### Skip deployment if files not changed
 
-Starting now, Serverless will automatically compare you current services files on disk to the remotely uploaded service files of your last deployment.
+Starting now, Serverless will automatically compare you current service files on disk to the remotely uploaded service files of your last deployment.
 
 A re-deployment is only triggerend if at least one of the files are different.
 
@@ -78,7 +78,19 @@ This release contains lots of hard work from our awesome community, and wouldn't
 
 Thank You to all of the contributors who submitted changes for this release:
 
-- John Doe
+- Christopher "Chief" Najewicz
+- Hassan Khan
+- James Thomas
+- John Ferlito
+- Linda Nichols
+- Mike Hostetler
+- Ryan Lewis
+- Scott Willeke
+- Simon Dittlmann
+- Stuart Lang
+- Sunny
+- gorankl
+- k1LoW
 
 ## The Road Ahead
 
