@@ -8,7 +8,7 @@ authors:
   - PhilippMuns
 ---
 
-<img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-v117.png" width="210px" >
+<img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-release-1.17.png" width="210px" >
 
 Toaday we're happy to announce the new Serverless Frameowrk v1.17 release!
 
