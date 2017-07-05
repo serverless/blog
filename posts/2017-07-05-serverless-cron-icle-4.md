@@ -1,7 +1,7 @@
 ---
 title: "Serverless (Cron)icle #4 - News from the Serverless Community"
 description: A roundup of links and videos from the serverless ecosystem that caught our attention this week.
-date: 2017-06-30
+date: 2017-07-05
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/25759320/8bb86c20-3197-11e7-8d3d-5479c197c049.png
 layout: Post
 authors:
