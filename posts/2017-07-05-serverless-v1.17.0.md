@@ -1,5 +1,5 @@
 ---
-title: Serverless v1.17 - F# service template, skip deployment when files not changed added
+title: Serverless v1.17 - F# service template, deployment skipping when files not changed added
 description: F# service template, deployment skipping when files not changed and more in the Serverless Framework v1.17 release.
 date: 2017-07-05
 layout: Post
@@ -74,9 +74,9 @@ This release also includes tons of bug fixes and several other improvements.
 
 ### Contributors 
 
-This release contains lots of hard work from our awesome community, and wouldn't have been possible without passionate people who decided to spend their time contributing to make Serverless better.
+This release contains lots of hard work from our beloved community, and wouldn't have been possible without passionate people who decided to spend their time contributing back to make Serverless better.
 
-Thank You to all of the contributors who submitted changes for this release:
+Thank you to all of the contributors who submitted changes for this release:
 
 - Christopher "Chief" Najewicz
 - Hassan Khan
@@ -94,9 +94,9 @@ Thank You to all of the contributors who submitted changes for this release:
 
 ## The Road Ahead
 
-Serverless has a really open, helpful, and vibrant community which helps building the best Serverless toolings out there.
+Serverless has a really open, helpful, and vibrant community which joins forces to build the best Serverless toolings out there.
 
-We've already started to fill the next [1.18 milestone](https://github.com/serverless/serverless/milestone/33). Feel free to jump into the issue discussions or implementations for the upcoming features!
+We've already started to fill the next [1.18 milestone](https://github.com/serverless/serverless/milestone/33) with issues and Pull Requests. Feel free to jump into the issue discussions or implementations for the upcoming features!
 
 The current milestone is no the only way to find areas for contributions! We've got a couple of different issues and PRs which are just waiting for a feedback, implemenation or code review.
 
@@ -108,7 +108,7 @@ We hope that you like the new release! Let us know if you have any questions or 
 
 ## Serverless Examples
 
-The [Serverless Examples Repository](https://github.com/serverless/examples) is an excellent resource if you want to explore some real world examples and learn more about what Serverless architectures look like.
+The [Serverless Examples Repository](https://github.com/serverless/examples) is an excellent resource if you want to explore some real world examples and learn more about the Serverless Framework and serverless architectures in general.
 
 ## Serverless Plugins
 
