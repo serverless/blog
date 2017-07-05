@@ -3,7 +3,7 @@ title: Serverless v1.17 - F# service template, deployment skipping when files no
 description: F# service template, deployment skipping when files not changed and more in the Serverless Framework v1.17 release.
 date: 2017-07-05
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-v117.png
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-release-1.17.png
 authors:
   - PhilippMuns
 ---
