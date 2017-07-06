@@ -10,7 +10,7 @@ authors:
 
 <img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-release-1.17.png" width="210px" >
 
-Toaday we're happy to announce the new Serverless Frameowrk v1.17 release!
+Toaday we're happy to announce the new Serverless Framework v1.17 release!
 
 v1.17 provides new features, enhancements, and bugfixes. Let's take a deep dive into the new features v1.17 introduces.
 
