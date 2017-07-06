@@ -16,7 +16,11 @@ v1.17 provides new features, enhancements, and bugfixes. Let's take a deep dive 
 
 ## Highlights of 1.17.0
 
-You can find a complete list of all the updates in the [CHANGELOG.md](https://github.com/serverless/serverless/blob/master/CHANGELOG.md) file.
+You can find a complete list of all the updates in the [CHANGELOG.md](https://github.com/serverless/serverless/blob/master/CHANGELOG.md) file or watch the video below.
+
+Kudos to Ryan H. Lewis ([@ryanmurakami](https://twitter.com/ryanmurakami)) for taking the time to record this video!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rmNJCRPzegs" frameborder="0" allowfullscreen></iframe>
 
 ### F# service template
 
