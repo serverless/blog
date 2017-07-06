@@ -101,7 +101,7 @@ provider:
 
 functions:
   candidateSubmission:
-    handler: api/candidates.submit
+    handler: api/candidate.submit
     memorySize: 128
     description: Submit candidate information and starts interview process.
     events:
@@ -114,7 +114,7 @@ Let's go over the YAML configuration:
 1. We defined name of the service -- `candidate-service`. Service name has to be unique for your account.
 2. Next, we defined framework version range supported by this service.
 3. Next, we defined configuration of the cloud provider. As we are using AWS so we defined AWS corresponding configuration.
-4. Finally, we defined `candidateSubmission` function. In the configuration shown above, we declared that when the HTTP POST request is made to `/candidates` then `api/candidates.submit` handler should be invoked. We also specified memory we want to allocate to the function.
+4. Finally, we defined `candidateSubmission` function. In the configuration shown above, we declared that when the HTTP POST request is made to `/candidates` then `api/candidate.submit` handler should be invoked. We also specified memory we want to allocate to the function.
 
 Now, create a new directory `api` inside the `candidate-service` directory. Move the `handler.js` to the `api` directory. Rename `handler.js` to `candidate.js` and rename `handle` to `submit`.
 
@@ -328,7 +328,7 @@ Define a new function in the serverless.yml as shown below.
 
 ```yaml
   listCandidates:
-    handler: api/candidates.list
+    handler: api/candidate.list
     memorySize: 128
     description: List all candidates
     events:
@@ -337,7 +337,7 @@ Define a new function in the serverless.yml as shown below.
           method: get  
 ```
 
-Create new function in the `api/candidates.js` as shown below.
+Create new function in the `api/candidate.js` as shown below.
 
 ```javascript
 module.exports.list = (event, context, callback) => {
@@ -383,14 +383,14 @@ Define a new function in serverless.yml as shown below.
 
 ```Yaml
   candidateDetails:
-    handler: api/candidates.get
+    handler: api/candidate.get
     events:
       - http:
           path: candidates/{id}
           method: get
 ```
 
-Define a new function in `api/candidates.js`
+Define a new function in `api/candidate.js`
 
 ```javascript
 module.exports.get = (event, context, callback) => {
