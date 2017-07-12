@@ -10,7 +10,7 @@ authors:
 
 <img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-release-1.17.png" width="210px" >
 
-Toaday we're happy to announce the new Serverless Framework v1.17 release!
+Today we're happy to announce the new Serverless Framework v1.17 release!
 
 v1.17 provides new features, enhancements, and bugfixes. Let's take a deep dive into the new features v1.17 introduces.
 
@@ -52,11 +52,11 @@ The F# service template supports all the configs and event sources you can find 
 
 ### Skip deployment if files not changed
 
-Starting now, Serverless will automatically compare you current service files on disk to the remotely uploaded service files of your last deployment.
+Starting now, Serverless will automatically compare your current service files on disk to the remotely uploaded service files of your last deployment.
 
-A re-deployment is only triggerend if at least one of the files are different.
+A re-deployment is only triggered if at least one of the files are different.
 
-This feature is enabled by default and works for the `serverless deploy` and the `serverless deploy function` command.
+This feature is enabled by default and works for the `serverless deploy` and the `serverless deploy function` commands.
 
 However you can still force a deployment by specifying the `--force` option like this:
 
@@ -102,7 +102,7 @@ Serverless has a really open, helpful, and vibrant community which joins forces 
 
 We've already started to fill the next [1.18 milestone](https://github.com/serverless/serverless/milestone/33) with issues and Pull Requests. Feel free to jump into the issue discussions or implementations for the upcoming features!
 
-The current milestone is no the only way to find areas for contributions! We've got a couple of different issues and PRs which are just waiting for a feedback, implemenation or code review.
+The current milestone is not the only way to find areas for contributions! We've got a couple of different issues and PRs which are just waiting for feedback, implementation or code review.
 
 Just filter by [our labels](https://github.com/serverless/serverless/labels) to find areas where you can help!
 
@@ -120,4 +120,4 @@ Serverless provides a completely customizable and pluggable codebase. Our commun
 
 A list with all the different plugins can be found at our [Serverless Plugins Repository](https://github.com/serverless/plugins).
 
-Don't hestitate to open up a PR over there if you've authored or found a new Serverless plugin!
+Don't hesitate to open up a PR over there if you've authored or found a new Serverless plugin!
