@@ -5,7 +5,7 @@ date: 2017-07-19
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/variables.jpg
 authors:
-  - alexdebrie
+  - AlexDeBrie
 ---
 
 
