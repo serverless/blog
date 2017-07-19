@@ -3,7 +3,7 @@ title: Challenges and patterns for building event-driven architectures
 description: Learn some tips and tricks as you move to an event-driven architecture
 date: 2017-07-19
 layout: Post
-thumbnail: https://user-images.githubusercontent.com/6509926/27362413-f40e4968-55f
+thumbnail: https://user-images.githubusercontent.com/6509926/27362413-f40e4968-55f3-11e7-9c68-65dc1b06f335.jpg
 authors:
   - AlexDeBrie
 ---
