@@ -1,9 +1,9 @@
 ---
 title: Challenges and patterns for building event-driven architectures
-description: Todo
+description: Learn some tips and tricks as you move to an event-driven architecture
 date: 2017-07-19
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/variables.jpg
+thumbnail: https://user-images.githubusercontent.com/6509926/27362413-f40e4968-55f
 authors:
   - AlexDeBrie
 ---
@@ -15,7 +15,7 @@ In my [previous post](https://serverless.com/blog/event-driven-architecture-dyna
 
 #### Changing Event Schemas
 
-In our user creation example, we've been saving the user's first name and last name together in a single `fullname` field. Perhaps our developers later decide they'd rather have those as two separate fields, `firstname` and `lastname`. They update the user creation function and deploy. Everything is fine -- for them. But downstream, everything is breaking. Look at the code for the Algolia indexing function -- it implicitly assumes that the incoming Item will have a `fullname` field. When it goes to grab that field on a new Item, it will get a `KeyError` exception.
+In our user creation example from the last post, we've been saving the user's first name and last name together in a single `fullname` field. Perhaps our developers later decide they'd rather have those as two separate fields, `firstname` and `lastname`. They update the user creation function and deploy. Everything is fine -- for them. But downstream, everything is breaking. Look at the code for the Algolia indexing function -- it implicitly assumes that the incoming Item will have a `fullname` field. When it goes to grab that field on a new Item, it will get a `KeyError` exception.
 
 How do we handle these issues? There's no real silver bullet, but there are a few ways to address this both from the producer and consumer sides. As a producer, focus on being a polite producer. Treat your event schemas just like you would treat your REST API responses. See if you can make your events backward-compatible, in the sense of not removing or redefining existing fields. In the example above, perhaps the new event would write `firstname`, `lastname`, and `fullname`. This could give your downstream consumers time to switch to the new event format. If this is impossible or infeasible, you could notify your downstream consumers. The AWS CLI has a command for [listing event source mappings](http://docs.aws.amazon.com/cli/latest/reference/lambda/list-event-source-mappings.html), which shows which Lambda functions are triggered by a given DynamoDB stream. If you're a producer that's changing your Item structure, give a heads up to the owners of consuming functions.
 
@@ -74,7 +74,7 @@ def handle_failed_record(record, exception):
     }
     client = boto3.client('sqs')
     client.send_message(
-        QueueUrl=DEAD_LETTER_QUEUE,
+        QueueUrl=queue_url,
         MessageBody=json.dumps(body)
     )
 ...
@@ -129,7 +129,7 @@ Finally, let's talk about concurrency limits with DynamoDB streams. The big bene
 
 However, it's not quite accurate to say that consumers are completely independent. DynamoDB streams are similar to [Kinesis streams](https://aws.amazon.com/kinesis/streams/) under the hood. These streams throttle reads in two ways: throughput and read requests. For throughput, you may read 2 MB per second from a single shard. For read requests, Kinesis streams have a limit of 5 read requests per second on a single shard. For DynamoDB streams, these limits are even more strict -- [AWS recommends](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html#Streams.Processing) to have no more than 2 consumers reading from a DynamoDB stream shard. If you had more than 2 consumers, as in our example from Part I of this blog post, you'll experience throttling.
 
-To me, these read request limits are a defect of the Kinesis and DynamoDB streams. If you are hitting throughput limits on your streams, you can increase the number of shards as the MB limit is on a per-shard basis. However, there's no similar scaling mechanism if you want to increase the number of read requests. Every consumer needs to read from every shard, so increasing the number of shards does not help you scale out consumers. The entire notion of an immutable log like Kinesis or Kafka is to allow for multiple independent consumers (check out Jay Krep's excellent book, [I Heart Logs](http://shop.oreilly.com/product/0636920034339.do), for a better understanding of immutable logs). With the current read request limits in Kinesis and DynamoDB streams, the number of consumers is severely constrained.
+To me, the read request limits are a defect of the Kinesis and DynamoDB streams. If you are hitting throughput limits on your streams, you can increase the number of shards as the MB limit is on a per-shard basis. However, there's no similar scaling mechanism if you want to increase the number of read requests. Every consumer needs to read from every shard, so increasing the number of shards does not help you scale out consumers. The entire notion of an immutable log like Kinesis or Kafka is to allow for multiple independent consumers (check out Jay Krep's excellent book, [I Heart Logs](http://shop.oreilly.com/product/0636920034339.do), for a better understanding of immutable logs). With the current read request limits in Kinesis and DynamoDB streams, the number of consumers is severely constrained.
 
 #### Conclusion
 
