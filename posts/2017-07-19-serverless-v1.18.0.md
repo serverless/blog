@@ -95,7 +95,7 @@ module.exports = MyPlugin;
 
 JavaScript files which e.g. export objects can now be referenced without definig the exported function which should be executed:
 
-```javascript
+```yml
 service:
   name: my-service
 
