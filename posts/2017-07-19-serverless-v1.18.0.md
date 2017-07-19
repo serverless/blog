@@ -20,19 +20,97 @@ You can find a complete list of all the updates in the [CHANGELOG.md](https://gi
 
 ### Request parameter support for Lambda Proxy integration
 
-https://github.com/serverless/serverless/pull/3722
+The `LAMBDA-PROXY` integration type now supports request parameters you can define via your serverless.yml file:
+
+```yml
+service: my-service
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  helloWorld:
+    handler: handlers/handler.hello
+    events:
+      - http:
+          path: /{name}
+          method: GET
+          request:
+            parameters:
+              querystrings:
+                foo: true
+              paths:
+                bar: true
+```
 
 ### Add default value for plugin options
 
-https://github.com/serverless/serverless/pull/3808
+Plugins now support default values for options. If specified the default option is used if the user does not provide a value.
 
-### Add support to use whole JavaScript files via Serverless Variables
+Here's an example how the plugin develop can use this feature:
 
-https://github.com/serverless/serverless/pull/3842
+```javascript
+'use strict';
 
-### Support for absolute paths in Serverless Variables
+class MyPlugin {
+  constructor(serverless, options) {
+    this.serverless = serverless;
+    this.options = options;
 
-https://github.com/serverless/serverless/pull/3888
+    this.commands = {
+      deploy: {
+        lifecycleEvents: [
+          'functions'
+        ],
+        options: {
+          function: {
+            usage: 'Specify the function you want to deploy (e.g. "--function myFunction")',
+            shortcut: 'f',
+            required: true
+          },
+          stage: {
+            usage: 'Specify the stage you want to deploy to. (e.g. "--stage prod")',
+            shortcut: 's',
+            default: 'dev' // the stage will default to dev if no option is provided
+          }
+        }
+      },
+    };
+
+    this.hooks = {
+      'deploy:functions': this.deployFunction.bind(this)
+    }
+  }
+
+  deployFunction() {
+    console.log('Deploying function: ', this.options.function);
+  }
+}
+
+module.exports = MyPlugin;
+```
+
+### Add support to use JavaScript files via Serverless Variables
+
+JavaScript files which e.g. export objects can now be referenced without definig the exported function which should be executed:
+
+```javascript
+service:
+  name: my-service
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  hello:
+    handler: handler.hello
+
+custom: ${file(./unnamedExport.js)}
+```
+
+This comes in handy if you'd like to use traditional config tools such as [node-config](https://github.com/lorenwest/node-config) to configure your Serverless service.
 
 ### Other enhancements & bug fixes
 
