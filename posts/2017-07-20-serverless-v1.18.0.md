@@ -1,6 +1,6 @@
 ---
 title: Serverless v1.18 - Request parameter support for Lambda Proxy, default value for plugin options added
-description: Support for request parameters when using Lambda Proxy and more added in the Serverless Framework v1.18 release.
+description: Support for request parameters when using Lambda Proxy integration and more added in the Serverless Framework v1.18 release.
 date: 2017-07-20
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-release-1.18.png
@@ -24,7 +24,7 @@ Kudos to Ryan H. Lewis [(@ryanmurakami)](https://twitter.com/ryanmurakami) for t
 
 ### Request parameter support for Lambda Proxy integration
 
-The `LAMBDA-PROXY` integration type now supports request parameters you can define via your serverless.yml file:
+The `LAMBDA-PROXY` integration type now supports request parameters you can define in your `http` event definition:
 
 ```yml
 service: my-service
@@ -50,9 +50,9 @@ functions:
 
 ### Add default value for plugin options
 
-Plugins now support default values for options. If specified the default option is used if the user does not provide a value.
+Plugins now support default values for options. If specified the default value is used if the user does not provide a value when using the option via the CLI.
 
-Here's an example how the plugin develop can use this feature:
+Here's an example how a plugin developer can use this feature:
 
 ```javascript
 'use strict';
@@ -122,9 +122,11 @@ This release also includes tons of other improvements and bug fixes.
 
 > Thank you very much for reporting bugs, opening issues and joining the discussions!
 
+We hope that you enjoy this release! Feel free to provide some feedback in our [Forum](https://forum.serverless.com), via [Twitter](https://twitter.com/goserverless) or on [GitHub](https://github.com/serverless/serverless).
+
 ### Contributors 
 
-This release contains lots of hard work from our beloved community, and wouldn't have been possible without passionate people who decided to spend their time contributing back to make Serverless better.
+This release contains lots of hard work from our beloved community, and wouldn't have been possible without passionate people who decided to spend their time contributing back to make the Serverless Framework better.
 
 Thank you to all of the contributors who submitted changes for this release:
 
@@ -153,7 +155,7 @@ That's why upcoming Serverless releases will likely focus on bug fixes and minor
 
 However we could still include major features with the help of our community!
 
-In addition to the [1.19 milestone](https://github.com/serverless/serverless/milestone/34) Issues and PRs we still have lots and lots of other [Issues](https://github.com/serverless/serverless/issues) and [PRs](https://github.com/serverless/serverless/pulls) we'd love to implement and introduce in some of the upcoming releases!
+In addition to the [1.19 milestone](https://github.com/serverless/serverless/milestone/34) and its Issues and PRs we still have lots and lots of other [Issues](https://github.com/serverless/serverless/issues) and [PRs](https://github.com/serverless/serverless/pulls) we'd love to implement and introduce in some of the upcoming releases!
 
 > Do you want to help out and improve the Serverless Framework?
 
@@ -163,7 +165,7 @@ Great! We've compiled a list with some of the most wished features to make it ea
 
 [Issue #3078](https://github.com/serverless/serverless/issues/3078)
 
-We already started a WIP implementation with the following [PR](https://github.com/serverless/serverless/pull/3934). However for now it only provides a partial solution. Do you have any ideas how we can improve the support for this configuration?
+We already started a WIP implementation with the following [PR](https://github.com/serverless/serverless/pull/3934). However for now it only provides a partial solution. Do you have any ideas how we can improve the support for this feature?
 
 ### Unable to create services with a high resource count
 
@@ -185,13 +187,13 @@ We're currently looking for a way to implement basic request validation via raw 
 
 The `ApiGateway::Deployment` resource has a random string in its name so that deployments are re-triggered on AWS end.
 
-This makes it hard to create resources which are dependent on it.
+This makes it hard to create other CloudFormation resources which dependend on it.
 
 ### Skip resource if already exists
 
 [Issue #3183](https://github.com/serverless/serverless/issues/3183)
 
-It would be nice to skip resource delpoyments if the corresponding resource already exists (e.g. when using DynamoDB tables). Could you imagine a reliable way which will detect which resources deployments could be skipped?
+It would be nice to skip resource delpoyments if the corresponding resource already exists (e.g. when using DynamoDB tables). Could you think of a reliable, production ready way which will detect which resources deployments could be skipped?
 
 ### Global arn parser with intrinsic functions (Ref, Fn::GetAtt, Fn::ImportValue, ...) support
 
@@ -199,7 +201,7 @@ It would be nice to skip resource delpoyments if the corresponding resource alre
 
 `arns` are used everywhere in CloudFormation. However some of our event sources don't support all the different types of intrinsic functions which can be used to reference `arns`.
 
-It would be great to have a global `arn` parser which can be re-used throughout the whole codebase. Futhermore this parser could be exposed to the user e.g. via `this.provider.findAllCfReferences()` so that plugin authors can benefit from this functionality as well.
+It would be great to have a global `arn` parser which can be re-used throughout the whole codebase. Futhermore this parser could be exposed to the framework user e.g. via `this.provider.findAllCfReferences()` so that plugin authors can benefit from this functionality as well.
 
 ### Other issues and PRs
 
