@@ -93,7 +93,7 @@ module.exports = MyPlugin;
 
 ### Add support to use JavaScript files via Serverless Variables
 
-JavaScript files which e.g. export objects can now be referenced without definig the exported function which should be executed:
+JavaScript files which e.g. export objects can now be referenced without defining the exported function which should be executed:
 
 ```yml
 service:
