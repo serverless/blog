@@ -1,7 +1,7 @@
 ---
 title: Serverless v1.18 - Request parameter support for Lambda Proxy, default value for plugin options added
 description: Support for request parameters when using Lambda Proxy and more added in the Serverless Framework v1.18 release.
-date: 2017-07-19
+date: 2017-07-20
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-release-1.18.png
 authors:
