@@ -18,7 +18,7 @@ The v1.18 release mostly focuses on enhancements and bug fixes. Let's take a loo
 
 You can find a complete list of all the updates in the [CHANGELOG.md](https://github.com/serverless/serverless/blob/master/CHANGELOG.md) file or watch the video below.
 
-Kudos to Ryan H. Lewis [@ryanmurakami](https://twitter.com/ryanmurakami) for taking the time to record this video!
+Kudos to Ryan H. Lewis [(@ryanmurakami)](https://twitter.com/ryanmurakami) for taking the time to record this video!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0DHT1evCtls" frameborder="0" allowfullscreen></iframe>.
 
