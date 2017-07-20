@@ -128,7 +128,22 @@ This release contains lots of hard work from our beloved community, and wouldn't
 
 Thank you to all of the contributors who submitted changes for this release:
 
-- John Doe
+- Alfred Nutile
+- Anish Karandikar
+- Daniel Schep
+- Filipe Azevedo
+- Greg Thornton
+- Jaik Dean
+- Joe Niland
+- Luke Herrington
+- Oskar Cieslik
+- Ralph Dugue
+- Rob Ribeiro
+- Ryan Lewis
+- Ryan S. Brown
+- Sunny
+- Travis Dimmig
+- horike37
 
 ## Upcoming releases / contributions
 
