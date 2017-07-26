@@ -9,11 +9,9 @@
  
 # Anatomy of a Serverless Application
 
-The path to writing your first application in any new technology is usually steep. The motivation is to quickly get through the initial learning curve and deploy an application. Toolsets can be helpful but they can be equally overwhelming without a step-by-step example.
+We've all been new to serverless before. In this post, I'll walk you through how to get up and running on your first application. Let's cut through the docs, shall we?
 
-In this post, we will build an application with a backend email service that can be called over HTTP from a simple frontend like `curl`. I'll take you through the process of writing your first serverless application and share my experience.
-
-You will learn how to:
+This application will be a backend email service that can be called over HTTP from a simple frontend like `curl`. You will learn how to:
 
 * Setup the development environment
 * Create an application project 
@@ -25,7 +23,7 @@ You will learn how to:
 
 ## Getting Started
 
-I have been following the serverless technologies for a while and skimmed over the provider documentation & examples. It was really helpful to know the lay of the land and what was available out there. AWS Lambda's [getting started](http://docs.aws.amazon.com/lambda/latest/dg/getting-started.html) documentation was helpful but was overwhelming with too many steps and it was tedious to use the AWS Console. I wanted a development workflow that I was already used to - code using my favorite editor, build using an easy to use toolchain, a test/debug cycle, and finally deploy.
+I had been following serverless technologies for a while, and skimmed over the provider documentation and examples. It was really helpful to know the lay of the land and what was available out there. AWS Lambda's [getting started](http://docs.aws.amazon.com/lambda/latest/dg/getting-started.html) documentation was helpful but overwhelming, and it was tedious to use the AWS Console. I wanted to use my own development workflow - code using my favorite editor, build using an easy to use toolchain, do a test/debug cycle, and finally deploy.
 
 I had to make some choices before I started development:
 
@@ -35,7 +33,7 @@ I had to make some choices before I started development:
 
 ## Setup
 
-The setup required to start development was straightforward:
+The intial setup was straightforward:
 
 1. Install NodeJS: [download](https://nodejs.org/en/download/) or [using package manager](https://nodejs.org/en/download/package-manager/#osx)
 2. Install the [Serverless Framework](https://serverless.com/framework/): `npm install -g serverless`
@@ -44,7 +42,7 @@ The setup required to start development was straightforward:
     * [Create an IAM User](http://docs.aws.amazon.com/lambda/latest/dg/setting-up.html#setting-up-iam)
     * [Install and setup AWS CLI](http://docs.aws.amazon.com/lambda/latest/dg/setup-awscli.html)
 
-The AWS setup is necessary so that we can deploy our serverless application on AWS Lambda. After creating the AWS IAM user, you will have to [configure the credentials](https://serverless.com/framework/docs/providers/aws/guide/credentials/) to give access to the Serverless Framework, for creating and managing resources on your behalf.
+The AWS setup is necessary so that we can deploy our serverless application on AWS Lambda. After creating the AWS IAM user,  we'll have to [configure the credentials](https://serverless.com/framework/docs/providers/aws/guide/credentials/) to give access to the Serverless Framework, for creating and managing resources on our behalf.
 
 You can use either of the options to configure the credentials:
 
@@ -69,15 +67,15 @@ where,
   * `frontend` folder holds the frontend application
   * `services` folder holds the serverless service(s)
 
-A structure like this provides clear separation for the non-serverless and serverless code for the overall application. The way the non-serverless portion of the application is written is totally your choice. In this post, we will primarily focus on the serverless portion of the application inside the `services` folder. We will not create a frontend application, so we don't need the `frontend` folder.
+A structure like this provides clear separation for the non-serverless and serverless code for the overall application. The way the non-serverless portion of the application is written is totally your choice. In this post, I will primarily focus on the serverless portion of the application inside the `services` folder. We will not create a frontend application, so we don't need the `frontend` folder.
 
 ## Creating the Email Service
 
-Let's create an email service that will send out emails to users with some text. We will use [Mailgun](https://www.mailgun.com/) as our email service provider. We will shoot for making the email service generic enough to be reused across other applications.
+Let's create an email service that will send out emails to users with some text. We will use [Mailgun](https://www.mailgun.com/) as our email service provider, and shoot for making the email service generic enough to be reused across other applications.
 
 ### Starting With a Boilerplate Template
 
-The Serverless Framework makes it real easy to start off creating a service by using a boilerplate template for a given provider and a language combination. In our case, since we are using AWS as our provider and NodeJS as our language of choice, we will start with:
+The Serverless Framework comes with boilerplate templates that make it really quick to get started. In our case, since we are using AWS as our provider and NodeJS as our language of choice, we will start with:
 
 ```
 $ cd services
@@ -201,7 +199,7 @@ callback(null, { message: 'Go Serverless! Simulating sending emails successful.'
 
 The [HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html) expects a shape that has a status code and a body attribute. So we will change the response shape to follow the HTTP convention.
 
-Testing it locally shows the newly updated response.
+Testing it locally shows the newly-updated response.
 
 ```
 $ serverless invoke local --function send
@@ -303,9 +301,9 @@ Another important aspect to note is the `event` structure coming back from AWS A
 
 So, we have come full circle - starting with some boilerplate code, customizing a function, adding an HTTP endpoint, testing it locally, deploying it to AWS and finally running it live using the HTTP endpoint.
 
-By the way, to remove the service, you can simple do `sls remove`.
+To remove the service, you can simply do `sls remove`.
 
-> **Takeaway**: We did all this without thinking about servers or infrastructure, or how we will deploy the service after we are done with development. It just happened as part of our development workflow. Imagine, the developer just focused on coding his business requirements, experimenting with features, and getting a quick feedback cycle without worrying about deployment or provisioning infrastructure. That is the power and essence of development using serverless. 
+> **Takeaway**: We did all this without thinking about servers or infrastructure, or how we will deploy the service after we are done with development. It just happened as part of our development workflow. The developer just focused on coding their business requirements, experimenting with features, and getting a quick feedback cycle - without worrying about deployment or provisioning infrastructure. That is the power and essence of serverless development. 
 
 ### Implementing the Email Service
 
@@ -524,7 +522,7 @@ Serverless Email Demo
 Sample email sent from Serverless Email Demo.
 ```
 
-Alternatively, if we test for the not-so-happy path i.e. calling without passing in an email address, we get our desired error message:
+Alternatively, if we test for the not-so-happy path, i.e. calling without passing in an email address, we get our desired error message:
 
 ```
 $ sls invoke local --function send
@@ -674,7 +672,7 @@ Leaving an exception unhandled is not acceptable, so let's refactor the code to 
       } else {
         ...
 ```
-Now, when we deploy the function and call it we get a better response.
+Now, when we deploy the function and call it, we get a better response.
 
 ```
 curl -i -X POST -d '{"to_address":"junk"}' https://yt9i5yniu3.execute-api.us-east-1.amazonaws.com/prod/email
@@ -694,4 +692,4 @@ This concludes the development of the application.
 
 ## Summary
 
-We explored the path to creating a serverless application from scratch, starting with a boiler plate template. We then customized the code, tested the code locally, then deployed it to AWS Lambda. Finally, we accessed the public function via the HTTP endpoint, and also looked at some error conditions and use cases. At the end of it all, we created a fully functional serverless backed email service, sending out emails via the Mailgun email service provider.
+We explored the path to creating a serverless application from scratch, starting with a boiler plate template. We then customized the code, tested the code locally, and deployed it to AWS Lambda. Finally, we accessed the public function via the HTTP endpoint, and also looked at some error conditions and use cases. At the end of it all, we created a fully functional serverless backed email service that sent out emails via the Mailgun email service provider.
