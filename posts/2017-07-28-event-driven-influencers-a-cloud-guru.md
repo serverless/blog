@@ -1,6 +1,6 @@
 ---
-title: Event-driven Influencers: A Cloud Guru
-description: Keeping with the serverless pulse. 
+title: Event-driven Influencers - A Cloud Guru
+description: Keeping with the serverless pulse.
 date: 2017-07-28
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/ACloudGuru.png
@@ -8,7 +8,7 @@ authors:
   - AndreaPasswater
 ---
 
-*We’re getting geared up for Emit—a conference that focuses on event-driven architecture. Emit has some of the most prominent speakers and sponsors in the field, and in this five-part ‘Event-driven Influencers’ series we’re highlighting their contributions. Want to know more about where we think event-driven architectures will be in two years? It’s not too late to [join us](http://www.emitconference.com).*
+*We’re getting geared up for Emit—our conference on event-driven architectures. Emit has some of the most prominent speakers and sponsors in the field, and in this five-part ‘Influencers’ series we’re highlighting their contributions. Want to know more about where we think event-driven architectures will be in two years? It’s not too late to [join us](http://www.emitconference.com).*
 
 ## Background
 
