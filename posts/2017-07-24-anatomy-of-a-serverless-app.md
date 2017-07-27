@@ -54,7 +54,7 @@ A little bit of planning on the project structure makes a lot of difference in v
 
 Here is an example that works for me:
 
-```
+```bash
 |-- postman
   |-- README.md
   |-- frontend
@@ -75,13 +75,13 @@ Let's create an email service that will send out emails to users with some text.
 
 The Serverless Framework comes with boilerplate templates that make it really quick to get started. In our case, since we are using AWS as our provider and NodeJS as our language of choice, we will start with:
 
-```
+```bash
 $ cd services
 $ serverless create --template aws-nodejs --path email-service
 ```
 which creates the service for us:
 
-```
+```bash
 Serverless: Generating boilerplate...
 Serverless: Generating boilerplate in "/home/svrless/apps/postman/services/email-service"
  _______                             __
@@ -99,7 +99,7 @@ Serverless: Successfully generated boilerplate for template: "aws-nodejs"
 
 We will briefly look at the generated files and then modify them to suit our requirements.
 
-```
+```bash
 |-- services
     `-- email-service
         |-- handler.js
@@ -107,7 +107,7 @@ We will briefly look at the generated files and then modify them to suit our req
 ```
 Let's look at the `serverless.yml` and the `handler.js` files. I have removed the commented lines for brevity and clarity. **Note**: I have updated the function and handler names, to suit the example.
 
-```
+```yml
 # serverless.yml
 
 service: email-service
@@ -124,7 +124,7 @@ functions:
 
 The **serverless.yml** file describes the service and it's where you define your `provider` settings, `functions` with their corresponding handlers, `events` that trigger them, and provider `resources` needed by the service.
 
-```
+```js
 # handler.js
 
 'use strict';
@@ -135,7 +135,7 @@ module.exports.sendEmail = (event, context, callback) => {
 ```
 The **handler.js** file contains your function code. The function definition in `serverless.yml` will point to this `handler.js` file and the function defined here. **Note**: I have updated the handler name and the code within to suit our example.
 
-```
+```yml
 # serverless.yml
 
 ...
@@ -152,7 +152,7 @@ Also, note that while the handler method defined in `handler.js` file is `sendEm
 
 Let's run the `send` function locally:
 
-```
+```bash
 $ cd services/email-service
 $ serverless invoke local --function send
 {
@@ -166,7 +166,7 @@ We have successfully run a serverless function locally. It is very important to 
 
 To be able to share this service across other applications, it is important that our service can be accessed publicly. Let's map an HTTP endpoint to our function so that we can call our function publicly over the web. Again, the `serverless.yml` file provides the glue to that mapping.
 
-```
+```yml
 # serverless.yml
 
 service: email-service
@@ -191,7 +191,7 @@ The `events` sub-section defines the mapping of the `send` function to the `http
 
 The current code as shown below, has a response which is not good for HTTP results:
 
-```
+```js
 callback(null, { message: 'Go Serverless! Simulating sending emails successful.', event });
 ```
 
@@ -199,7 +199,7 @@ The [HTTP response](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html) expe
 
 Testing it locally shows the newly-updated response.
 
-```
+```bash
 $ serverless invoke local --function send
 
 {
@@ -212,7 +212,7 @@ $ serverless invoke local --function send
 
 Now, let's deploy it to AWS Lambda, so we can invoke the function over the HTTP endpoint we created. 
 
-```
+```bash
 $ sls deploy
 Serverless: Packaging service...
 Serverless: Creating Stack...
@@ -245,7 +245,7 @@ There is a lot going on behind the scenes, which the Serverless Framework does f
 
 Without going into the details of the deployment itself, let's first focus on the usability aspect of the service. The output above gives us the HTTP endpoint for our service.
 
-```
+```bash
 endpoints:
   POST - https://smif3ghy1c.execute-api.us-east-1.amazonaws.com/dev/email
 ```
@@ -253,12 +253,12 @@ endpoints:
 
 Let's test the deployed function by running it via `curl`:
 
-```
+```bash
 curl -X POST https://smif3ghy1c.execute-api.us-east-1.amazonaws.com/dev/email -d '{}'
 ```
 and we get the following response:
 
-```
+```json
 {
    "message":"Go Serverless! Simulating sending emails successful.",
    "input":{
@@ -319,12 +319,13 @@ Let's go back to our handler method `sendEmails` in `handler.js` file and update
 
 Let's add the dependency. **Note**: You can `npm init` and follow the prompts to create your initial `package.json` file.
 
-```
+```bash
 npm install mailgun-js --save
 ```
+
 We should have:
 
-```
+```json
 {
   ...
     "dependencies": {
@@ -335,7 +336,7 @@ We should have:
 
 We need a place to store our configuration settings that the service can use. We will use a JSON formatted config file to stash our settings. The idea is to have one config file per stage of deployment i.e. dev, test, prod etc. Here is the `config.prod.example.json` file with some settings. Rename the file to `config.prod.json` and supply the values.
 
-```
+```json
 # config.prod.example.json
 
 {
@@ -354,7 +355,7 @@ Let's look at some updates to the configuration settings in the `serverless.yml`
 - add `environment` section to add the Mailgun settings
 - update the `provider` section to add a stage and a region
 
-```
+```yml
 ...
 custom:
   defaultStage: prod
@@ -370,13 +371,14 @@ provider:
     MAILGUN_DOMAIN: ${file(./config.${self:custom.currentStage}.json):MAILGUN_DOMAIN}
 ...
 ```
+
 One thing to note here, is the use of `${file(./config.${self:custom.currentStage}` to read the correct config file based on the value of `currentStage` which in turn is defined in the `custom` section. So just by changing the value of the `currentStage` and providing a config file named `config.<stage>.json`, you can have multiple configurations per stage of deployment.
 
 #### Sending Emails
 
 With the configuration out of the way, we can now focus on the actual code to send emails via Mailgun.
 
-```
+```js
 'use strict';
 
 const MAILGUN_APIKEY   = process.env.MAILGUN_APIKEY
@@ -390,7 +392,7 @@ const mailgun = require('mailgun-js')({
 
 First, we initialize the `mailgun-js` module with the API key and domain, retrieving the appropriate values from the process' `env` space.
 
-```
+```js
 const fromAddress    = `<demo@MAILGUN_DOMAIN>`;
 const subjectText    = "Serverless Email Demo";
 const messageText    = 'Sample email sent from Serverless Email Demo.';
@@ -408,7 +410,7 @@ const messageHtml    = `
 ```
 Then, we define some constants, text and HTML content that will form the body of the email.
 
-```
+```js
 module.exports.sendEmail = (event, context, callback) => {
 
   var toAddress = "";
@@ -474,7 +476,7 @@ Before we deploy our function, let's test it locally first.
 
 To make it easier to test, let's create a data file `send-email-data.json` that mocks the `event` data structure passed in by the API Gateway:
 
-```
+```json
 {
   "resource":"/email",
   "path":"/email",
@@ -496,7 +498,7 @@ To make it easier to test, let's create a data file `send-email-data.json` that 
 ```
 Although we have a lot of attributes in the mocked data structure, the bare minimum attribute we need to make it work is the `body` attribute with its value.
 
-```
+```bash
 $ sls invoke local --function send -p send-email-data.json
 
 {
@@ -522,7 +524,7 @@ Sample email sent from Serverless Email Demo.
 
 Alternatively, if we test for the not-so-happy path, i.e. calling without passing in an email address, we get our desired error message:
 
-```
+```bash
 $ sls invoke local --function send
 
 {
@@ -535,7 +537,7 @@ $ sls invoke local --function send
 
 Now that we feel we have the functionality working well, let's deploy the service.
 
-```
+```bash
 $ sls deploy
 
 Serverless: Packaging service...
@@ -564,7 +566,7 @@ Note, that the stage used is `prod` and it is reflected in the function name `em
 
 Let's call the live function that has been deployed to AWS. We will explore the `--log` flag that will output logging information about our invocation.
 
-```
+```bash
 $ sls invoke --function send -p send-email-data.json --log
 
 {
@@ -583,7 +585,7 @@ The email is successfully sent.
 
 Since the deployment output also shows the HTTP endpoint for our email service, we can use `curl` to call that endpoint, passing it an email address.
 
-```
+```bash
 $ curl -X POST https://yt1i5ydiu4.execute-api.us-east-1.amazonaws.com/prod/email -d '{"to_address":"your@email.com"}'
 
 HTTP/1.1 202 Accepted
@@ -592,6 +594,7 @@ HTTP/1.1 202 Accepted
 
 {"message":"Request to send email is successful.","input":{"id":"<20170721005711.6305.4865866169A6F957@sandbox77a6b258412d4bb9a2d12abeb33ac01e.mailgun.org>","message":"Queued. Thank you."}}
 ```
+
 Again, another email is successfully sent.
 
 ### Error Handling
@@ -600,7 +603,7 @@ To have our code gracefully handle errors and bad input, I have added some valid
 
 **No Data**
 
-```
+```bash
 $ curl -i -X POST https://yt1i5ydiu4.execute-api.us-east-1.amazonaws.com/prod/email
 
 {"message":"Bad input data or missing email address.","input":null}
@@ -608,7 +611,7 @@ $ curl -i -X POST https://yt1i5ydiu4.execute-api.us-east-1.amazonaws.com/prod/em
 
 **Bad Data**
 
-```
+```bash
 $ curl -i -X POST -d '{"to_address":""}' https://yt1i5ydiu4.execute-api.us-east-1.amazonaws.com/prod/email
 
 {"message":"Bad input data or missing email address.","input":"{\"to_address\":\"\"}"}
@@ -618,7 +621,7 @@ $ curl -i -X POST -d '{"to_address":""}' https://yt1i5ydiu4.execute-api.us-east-
 
 **Malformed Email Address**
 
-```
+```bash
 $ curl -i -X POST -d '{"to_address":"junk"}' https://yt1i5ydiu4.execute-api.us-east-1.amazonaws.com/prod/email
 
 {"message": "Internal server error"}
@@ -626,7 +629,7 @@ $ curl -i -X POST -d '{"to_address":"junk"}' https://yt1i5ydiu4.execute-api.us-e
 
 `curl` kind of barfs, as the function causes an exception in this case. We can see the exception if we call the function with the framework:
 
-```
+```bash
 $ sls invoke --function send --data '{"body":"{\"to_address\":\"junk\"}"}' --log
 
 {
@@ -648,11 +651,12 @@ END RequestId: 0eb38aeb-6d9d-11e7-9787-2996c7e3fdb0
 REPORT RequestId: 0eb38aeb-6d9d-11e7-9787-2996c7e3fdb0	Duration: 339.84 ms	Billed Duration: 400 ms 	Memory Size: 1024 MB	Max Memory Used: 41 MB
 
 ```
+
 **Note**: We have been passing in data via the `-p` flag in our previous examples but you can also pass in data using the `--data` flag. 
 
 Leaving an exception unhandled is not acceptable, so let's refactor the code to return a proper HTTP response.
 
-```
+```js
     ...
     mailgun.messages().send(emailData, (error, body) => {
       if (error) {
@@ -672,7 +676,7 @@ Leaving an exception unhandled is not acceptable, so let's refactor the code to 
 ```
 Now, when we deploy the function and call it, we get a better response.
 
-```
+```bash
 curl -i -X POST -d '{"to_address":"junk"}' https://yt9i5yniu3.execute-api.us-east-1.amazonaws.com/prod/email
 
 HTTP/1.1 400 Bad Request
