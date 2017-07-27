@@ -1,14 +1,12 @@
 ---
 title: Anatomy of a Serverless Application
 description: A step-by-step look at the development of a serverless application. 
-date: 2017-07-24
+date: 2017-07-27
 layout: Post
 authors:
   - RupakGanguly
 ---
  
-# Anatomy of a Serverless Application
-
 We've all been new to serverless before. In this post, I'll walk you through how to get up and running on your first application. Let's cut through the docs, shall we?
 
 This application will be a backend email service that can be called over HTTP from a simple frontend like `curl`. You will learn how to:
