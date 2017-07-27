@@ -1,10 +1,10 @@
 ---
-  title: Anatomy of a Serverless Application
-  description: A step-by-step look at the development of a serverless application. 
-  date: 2017-07-24
-  layout: Post
-  authors:
-    - rupakg
+title: Anatomy of a Serverless Application
+description: A step-by-step look at the development of a serverless application. 
+date: 2017-07-24
+layout: Post
+authors:
+  - RupakGanguly
 ---
  
 # Anatomy of a Serverless Application
