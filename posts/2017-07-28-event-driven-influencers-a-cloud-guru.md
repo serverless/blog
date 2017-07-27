@@ -1,6 +1,6 @@
 ---
 title: Event-driven Influencers: A Cloud Guru
-description: Keeping with the serverless pulse 
+description: Keeping with the serverless pulse. 
 date: 2017-07-28
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/ACloudGuru.png
