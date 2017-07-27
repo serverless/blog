@@ -10,7 +10,7 @@ authors:
 
 <img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-release-1.18.png" width="210px" >
 
-Toaday we're excited to announce Serverless Framework v1.18!
+Today we're excited to announce Serverless Framework v1.18!
 
 The v1.18 release mostly focuses on enhancements and bug fixes. Let's take a look at some of the changes v1.18 introduces.
 
