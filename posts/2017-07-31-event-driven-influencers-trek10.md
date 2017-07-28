@@ -14,7 +14,7 @@ authors:
 
 Jared Short is a [self-proclaimed](https://twitter.com/shortjared?lang=en) “purveyor of the bleeding edge.” But hey. We’ve known that for a while.
 
-He’s the Director of Innovation at [Trek10](https://www.trek10.com/), who coincidentally is the first [Serverless Partner](https://serverless.com/partners/) company we ever accepted into the program. At Trek10, they saw immediately that building serverless apps was a way to take on minimal development overhead, and still produce a fine-tuned piece of software that would infinitely scale in production.
+He’s the Director of Innovation at [Trek10](https://www.trek10.com/), who coincidentally is the first [Serverless Partner](https://serverless.com/partners/) company we ever accepted into the program. They have been active contributors to our GitHub and maintain a [fantastic blog](https://www.trek10.com/blog/). At Trek10, they saw immediately that building serverless apps was a way to take on minimal development overhead, and still produce a fine-tuned piece of software that would infinitely scale in production.
 
 They have created apps for clients (from small business to enterprise) that do tens of millions of hits per day—all built on serverless infrastructure. So, they have a lot of proof to go off of when they say that going serverless has [cut their infrastructure development time](https://serverless.com/learn/graphql-and-serverless/) in half. 
 
@@ -24,4 +24,4 @@ When we [interviewed Jared](https://serverless.com/blog/serverless-air-episode-t
 
 Serverless computing makes it make more sense to focus on action and reaction. When companies think in terms of events, they can design more along the lines of: Okay, when a user clicks ‘delete account’, we want to get a notification to a specific Slack channel and we want to trigger this specific email survey to them. 
 
-As for where serverless will be in a few more years? An event-driven mindset means Trek10 can continue to release better, more reactive apps. The value is in the action.
+As for where serverless will be in a few more years? An event-driven mindset means Trek10 can continue to release better, more reactive apps. As they saw early on, the real value is in action.
