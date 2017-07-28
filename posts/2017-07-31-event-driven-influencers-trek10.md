@@ -24,4 +24,4 @@ When we [interviewed Jared](https://serverless.com/blog/serverless-air-episode-t
 
 Serverless computing makes it make more sense to focus on action and reaction. When companies think in terms of events, they can design more along the lines of: Okay, when a user clicks ‘delete account’, we want to get a notification to a specific Slack channel and we want to trigger this specific email survey to them. 
 
-As for where serverless will be in a few more years? An event-driven mindset means Trek10 can continue to release better, more reactive apps. As they saw early on, the real value is in action.
+As for where serverless will be in a few more years? An event-driven mindset means Trek10 can continue to release better, more reactive apps. As they saw early on, actions carry the value.
