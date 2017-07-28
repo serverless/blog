@@ -96,13 +96,13 @@ Additionally [PR reviews](https://github.com/serverless/serverless/pulls) are al
 
 ["Emit"](http://www.emitconference.com/), our conference about event-driven architectures is right around the corner!
 
-On August 17th 2017 we'll gather at ["The Pearl SF"](http://thepearlsf.com/) to discuss the future of event driven computing.
+On August 17th 2017 we'll gather at ["The Pearl SF"](http://thepearlsf.com/) to discuss the future of event-driven computing.
 
 Emit is designed to be a single-track, single-room event with a selectively curated audience.
 
 You can read more about "Emit" [here](http://www.emitconference.com/).
 
-Feel free to reach out to us if you're [interested in joining](https://emitconf.typeform.com/to/xUR4cm)!
+Some tickets are still available so feel free to reach out to us if you're [interested in participating](https://emitconf.typeform.com/to/xUR4cm)!
 
 ## Serverless Examples
 
