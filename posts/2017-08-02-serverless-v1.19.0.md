@@ -10,7 +10,7 @@ authors:
 
 <img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-release-1.19.png" width="210px" >
 
-Today we're happy to announce Serverless Framework v1.19.
+Today we're excited to announce Serverless Framework v1.19.
 
 This release mostly focuses on small enhancements and bug fixes (thanks for reporting bugs, opening issues and joining the discussions!).
 
@@ -91,6 +91,18 @@ This list is just a gist with some of the most wished features from our communit
 We have lots of other [issues](https://github.com/serverless/serverless/issues) where you could leave some feedback or jump directly into the implementation.
 
 Additionally [PR reviews](https://github.com/serverless/serverless/pulls) are also highly welcomed as they greatly speed up the "time-to-merge".
+
+## Emit Conference
+
+["Emit"](http://www.emitconference.com/), our conference about event-driven architectures is right around the corner!
+
+On August 17th 2017 we'll gather at ["The Pearl SF"](http://thepearlsf.com/) to discuss the future of event driven computing.
+
+Emit is designed to be a single-track, single-room event with a selectively curated audience.
+
+You can read more about "Emit" [here](http://www.emitconference.com/).
+
+Feel free to reach out to us if you're [interested in joining](https://emitconf.typeform.com/to/xUR4cm)!
 
 ## Serverless Examples
 
