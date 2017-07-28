@@ -8,7 +8,7 @@ authors:
   - AndreaPasswater
 ---
 
-*We’re getting geared up for Emit—our conference on event-driven architectures. Emit has some of the most prominent speakers and sponsors in the field, and in this five-part ‘Influencers’ series we’re highlighting their contributions. Want to know more about where we think event-driven architectures will be in two years? It’s not too late to [join us](http://www.emitconference.com).*
+*We’re getting geared up for Emit—our conference on event-driven architectures. Emit has some of the most prominent speakers and sponsors in the field, and in this five-part ‘Influencers’ series we’re highlighting their contributions. Want to know more about where we think event-driven architectures will be in two years? [Join us on August 17](http://www.emitconference.com).*
 
 ## Background
 
