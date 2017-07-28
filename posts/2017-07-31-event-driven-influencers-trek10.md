@@ -1,7 +1,7 @@
 ---
 title: Event-driven Influencers - Trek10
 description: Keeping with the serverless pulse.
-date: 2017-07-31
+date: 2017-08-02
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/trek10-logo.png
 authors:
