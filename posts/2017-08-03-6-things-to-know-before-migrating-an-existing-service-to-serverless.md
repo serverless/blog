@@ -8,7 +8,7 @@ authors:
   - MarciaVillalba
 ---
 
-Last year, my company decided to make the plunge. We were going to go Serverless. Fantastic! Except...most of the resources about serverless architectures are about how to start from scratch, not how to migrate existing services over.
+Last year, my company decided to make the plunge. We were going to go Serverless! Except...most of the resources about serverless architectures are about how to start from scratch, not how to migrate existing services over.
 
 We spent eight months figuring it out along the way and, for all of you serverless hopefuls, we made a cheat sheet. These are the steps that worked for us:
 
