@@ -10,7 +10,7 @@ authors:
 
 *We’re getting geared up for Emit—our conference on event-driven architectures. Emit has some of the most prominent speakers and sponsors in the field, and in this five-part ‘Influencers’ series we’re highlighting their contributions. Want to know more about where we think event-driven architectures will be in two years? [Join us on August 17](http://www.emitconference.com).*
 
-## Background
+## Background 
 
 Type ‘event-driven architecture’ into your search bar, and you’ll get relevant results all the way back to 2003. We’ve known for centuries (in internet years) that event-driven architectures are powerful. So why is it just now becoming an industry buzzword?
 
