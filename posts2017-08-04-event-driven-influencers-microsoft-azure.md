@@ -16,7 +16,7 @@ We spend a lot of our time talking to engineering teams. One thing that’s been
 
 When Azure Functions busted onto the scene, they had a goal in mind: to be the serverless infrastructure for enterprise. They moved quickly to support a flexible range of deployment options and languages (C#, JavaScript, F#, Python, Batch, PHP, PowerShell); still the most of any serverless provider.
 
-And it makes sense. Having a lot of support and options means that when companies like Geico [decide to migrate their legacy services to serverless](https://customers.microsoft.com/en-US/story/geico), they can do so with minimal friction. Serverless architectures cut operational costs to a fifth of traditional (serverfull) architectures. They shorten development test cycles and scale immediately with demand. Companies want to make the switch, but they also want it to be easy.
+And it makes sense. Having a lot of support and options means that when companies like Geico [decide to migrate their legacy services to serverless](https://customers.microsoft.com/en-US/story/geico), they can do so with minimal friction. Serverless architectures cut operational costs to a fifth of traditional (serverful) architectures. They shorten development test cycles and scale immediately with demand. Companies want to make the switch, but they also want it to be easy.
 
 ## Looking to the future
 
