@@ -14,9 +14,9 @@ authors:
 
 We spend a lot of our time talking to engineering teams. One thing that’s been made clear to us—for organizations across the board, digital products are monopolizing revenue focus. Inside Silicon Valley or not, every company is a tech company. Every company is looking to enhance its digital portfolio.
 
-When Azure Functions busted onto the scene, they had a goal in mind: to be the serverless infrastructure for enterprise. They moved quickly to support a flexible range of deployment options and languages (C#, JavaScript, F#, Python, Batch, PHP, PowerShell); still the most of any serverless provider.
+When Azure Functions busted onto the scene, they had a goal in mind: to be the serverless infrastructure for enterprise. They moved quickly to support a flexible range of deployment options and languages (C#, JavaScript, F#, Python, Batch, PHP, PowerShell); still the most of any serverless provider. They even let you try out Azure functions without making an account, so there’s little in the way of getting started.
 
-And it makes sense. Having a lot of support and options means that when companies like Geico [decide to migrate their legacy services to serverless](https://customers.microsoft.com/en-US/story/geico), they can do so with minimal friction. Serverless architectures cut operational costs to a fifth of traditional (serverful) architectures. They shorten development test cycles and scale immediately with demand. Companies want to make the switch, but they also want it to be easy.
+And it makes sense. Having a lot of support and options means that when companies like Aegex [decide to build new serverless apps](https://microsoft.github.io/techcasestudies/azure%20app%20service/azure%20functions/iot/mobile%20application%20development%20with%20xamarin/2017/06/05/Aegex.html), they can do so with minimal friction. Serverless architectures cut operational costs to a fifth of traditional (serverful) architectures. They shorten development test cycles and scale immediately with demand. Companies want to make the switch, but they also want it to be easy.
 
 ## Looking to the future
 
@@ -24,4 +24,4 @@ When we [talked with Jared Short](https://serverless.com/blog/serverless-air-epi
 
 Logic Apps is built around the idea of events, triggers and workflows. Think something like Zapier or IFTTT, except for cloud services. High level—when you think about building microservices, there are a lot of moving parts to manage. Logic Apps lets you stitch them all together much more easily. It gives you a central place to build and manage all of your event-driven services. As Jared put best: “I want this.”
 
-What this shows is that serverless infrastructure is blooming. From its barebones start, providers are taking broad and detailed strokes to fill out the space of what’s possible. Azure is thinking forward to the unknown unknowns. What will developers need next year? How will their work environments change? How can we facilitate all those things, and make them better?
+What this shows is that serverless infrastructure is blooming. From its barebones start, providers are taking broad and detailed strokes to fill out the space of what’s possible. Azure is thinking forward to the unknown unknowns. What will developers need next year? How will their work environments change? How can we be one step ahead of that?
