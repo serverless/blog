@@ -20,8 +20,8 @@ And it makes sense. Having a lot of support and options means that when companie
 
 ## Looking to the future
 
-When we [talked with Jared Short](https://serverless.com/blog/serverless-air-episode-two/) a few months ago, he said that Azure had done something “really, really well” that not a lot of people had seen yet. He was referring to their [Logic Apps](https://azure.microsoft.com/en-us/services/logic-apps/) service.
+When we [talked with Jared Short](https://serverless.com/blog/serverless-air-episode-two/) a few months ago, he said that Azure was doing something “really, really well” that not a lot of people had seen yet. He was referring to their [Logic Apps](https://azure.microsoft.com/en-us/services/logic-apps/) service.
 
-Logic Apps is built around the idea of events, triggers and workflows. Think something like Zapier or IFTTT, except for cloud services. High level—when you think about building microservices, there are a lot of moving parts to manage. Logic Apps lets you stitch them all together much more easily. As Jared put best: “I want this.”
+Logic Apps is built around the idea of events, triggers and workflows. Think something like Zapier or IFTTT, except for cloud services. High level—when you think about building microservices, there are a lot of moving parts to manage. Logic Apps lets you stitch them all together much more easily. It gives you a central place to build and manage all of your event-driven services. As Jared put best: “I want this.”
 
-What this shows is that serverless infrastructure is blooming. From its barebones start, providers are taking broad and detailed strokes to fill out the space of what’s possible. Azure wants to make it easier for companies to become event-driven, and their dedication to a full-featured system proves it.
+What this shows is that serverless infrastructure is blooming. From its barebones start, providers are taking broad and detailed strokes to fill out the space of what’s possible. Azure is thinking forward to the unknown unknowns. What will developers need next year? How will their work environments change? How can we facilitate all those things, and make them better?
