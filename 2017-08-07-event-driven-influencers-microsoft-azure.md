@@ -1,7 +1,7 @@
 ---
 title: Event-driven Influencers - Microsoft Azure
-description: Making waves in Enterprise.
-date: 2017-08-04
+description: Making transition easy.
+date: 2017-08-07
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/MSAzure.png
 authors:
