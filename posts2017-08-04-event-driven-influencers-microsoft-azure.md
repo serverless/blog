@@ -12,6 +12,16 @@ authors:
 
 ## Background
 
-When Azure busted onto the scene, they had a goal in mind: be *the* serverless infrastructure for enterprise. 
+We spend a lot of our time talking to engineering teams. One thing that’s been made clear to us—for organizations across the board, digital products are monopolizing revenue focus. Inside Silicon Valley or not, every company is a tech company. Every company is looking to enhance its digital portfolio.
+
+When Azure Functions busted onto the scene, they had a goal in mind: to be the serverless infrastructure for enterprise. They moved quickly to support a flexible range of deployment options and languages (C#, JavaScript, F#, Python, Batch, PHP, PowerShell); still the most of any serverless provider.
+
+And it makes sense. Having a lot of support and options means that when companies like Geico [decide to migrate their legacy services to serverless](https://customers.microsoft.com/en-US/story/geico), they can do so with minimal friction. Serverless architectures cut operational costs to a fifth of traditional (serverfull) architectures. They shorten development test cycles and scale immediately with demand. Companies want to make the switch, but they also want it to be easy.
 
 ## Looking to the future
+
+When we [talked with Jared Short](https://serverless.com/blog/serverless-air-episode-two/) a few months ago, he said that Azure had done something “really, really well” that not a lot of people had seen yet. He was referring to their [Logic Apps](https://azure.microsoft.com/en-us/services/logic-apps/) service.
+
+Logic Apps is built around the idea of events, triggers and workflows. Think something like Zapier or IFTTT, except for cloud services. High level—when you think about building microservices, there are a lot of moving parts to manage. Logic Apps lets you stitch them all together much more easily. As Jared put best: “I want this.”
+
+What this shows is that serverless infrastructure is blooming. From its barebones start, providers are taking broad and detailed strokes to fill out the space of what’s possible. Azure wants to make it easier for companies to become event-driven, and their dedication to a full-featured system proves it.
