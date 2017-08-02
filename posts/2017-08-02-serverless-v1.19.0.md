@@ -1,7 +1,7 @@
 ---
 title: Serverless v1.19 - Enhancements, bug fixes and tweaks added
 description: Enhancements, bug fixes and more added in the Serverless Framework v1.19 release.
-date: 2017-08-02
+date: 2017-08-03
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-release-1.19.png
 authors:
