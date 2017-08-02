@@ -26,13 +26,13 @@ This release contains lots of hard work from our beloved community, and wouldn't
 
 Thank you to all of the contributors who submitted changes for this release:
 
-Adrian Hesketh
-David Govea
-Matthew Garmeson
-Rafal Wilinski
-Walery Strauch
-horike37
-indieisaconcept
+- Adrian Hesketh
+- David Govea
+- Matthew Garmeson
+- Rafal Wilinski
+- Walery Strauch
+- horike37
+- indieisaconcept
 
 
 ## Upcoming releases / contributions
