@@ -1,7 +1,7 @@
 ---
 title: How to handle your Python packaging in Lambda with Serverless plugins
 description: Handling Python dependencies in your Lambda functions can be a pain. Here's how I handle Python packaging with Serverless for dev/prod parity.
-date: 2017-08-02
+date: 2017-08-04
 layout: Post
 thumbnail: https://user-images.githubusercontent.com/6509926/28880672-63c395f4-776b-11e7-8bc9-a9c8dff12c12.png
 authors:
@@ -195,4 +195,6 @@ REPORT RequestId: b32af7a8-52fb-4145-9e85-5985a0f64fe4	Duration: 0.52 ms	Billed 
 
 Magic! You've got NumPy in your Lambda!
 
-Many thanks to the United Income team and [@dschep](https://github.com/dschep) in particular for creating the `serverless-python-requirements` package. Be sure to check out the repo for additional functionality, including automatic compression of libraries before deploying, which can be a huge help with the larger numerical libraries in Python.
+Be sure to check out the repo for additional functionality, including automatic compression of libraries before deploying, which can be a huge help with the larger numerical libraries in Python. 
+
+Many thanks to the [United Income](https://unitedincome.com/) team and [Daniel Schep](https://twitter.com/schep_) in particular for creating the `serverless-python-requirements` package. If you want to work on serverless full-time, check out United Income. They use a 100% serverless architecture for everything from serving up their web application to running millions of financial simulations, and they are always looking for talented engineers to join their growing team in Washington, DC.
