@@ -26,7 +26,14 @@ This release contains lots of hard work from our beloved community, and wouldn't
 
 Thank you to all of the contributors who submitted changes for this release:
 
-- John Doe
+Adrian Hesketh
+David Govea
+Matthew Garmeson
+Rafal Wilinski
+Walery Strauch
+horike37
+indieisaconcept
+
 
 ## Upcoming releases / contributions
 
