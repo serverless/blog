@@ -1,0 +1,63 @@
+---
+title: 10 Serverless Heroes We Follow on Twitter
+description: The top Twitter accounts you need to stay on top of relevant serverless, event-driven architecture, and other tech news.
+date: 2017-08-16
+layout: Post
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless_twitter.jpg
+authors:
+  - AndreaPasswater
+---
+
+This list was ordered more or less by a random number generator, so don’t take these as ranked recommendations. They’re all equally worth an add.
+
+## Mark Russinovich ([@markrussinovich](https://twitter.com/markrussinovich))
+Mark is the CTO of Azure, so suffice to say he’s an insider. He’s (obviously) always the first to post about updates from Azure, but what we love most about his feed is that he re-tweets the best stuff from all over. It isn’t all product all the time—there are also server jokes.
+
+[image]
+
+## Marcia Villalba ([@mavi888uy](https://twitter.com/mavi888uy?lang=en))
+Marcia makes some stellar content: she runs the FooBar blog and also creates tech(and serverless)-centric videos for the FooBar YouTube channel. Follow her to make sure you get her latest knowledge nuggets first.
+
+[image]
+
+## David Packman ([@david_packman](https://twitter.com/david_packman))
+David founded Beijing’s AWS meetup group, and somehow has an incredibly in-depth tech news dive happening on his twitter feed, despite having relatively few retweets. He must be reading *everything published on the internet*. It isn’t just serverless and cloud he talks about, but Docker, IoT, and cybersecurity.
+
+[image]
+
+## Linda Nichols ([@lynnaloo](https://twitter.com/lynnaloo))
+Linda is a true technology advocate. She’s active in the open source community and teaches kids how to program robots. Her cred recently got her an interview on the Serverless Podcast. In addition to serverless news, her feed includes, VR, arduino, photos of JavaScript-powered fighting robots and (wait for it…) cats.
+
+[image]
+
+## Ben Kehoe ([@ben11kehoe](https://twitter.com/ben11kehoe))
+Ben makes serverless robots for his day job. Not to mention, he’s an AWS Community Hero. His feed is brimming with serverless and AWS insights. Plus, he’s got a nice perspective on IoT, and is right on the pulse of the greater cloud community.
+
+[image]
+
+## Mx Kas Perch ([@notebotanist](https://twitter.com/nodebotanist))
+Kas was a speaker at the first annual JeffConf, where they gave a talk on serverless and IoT. Their twitter feed is filled with light-hearted humor, frank discussions about tech politics and, of course, helpful tidbits about debugging, JavaScript and robots. 
+
+[image]
+
+## Ryan Scott Brown ([@ryan_sb](https://twitter.com/ryan_sb))
+Ryan is a Red Hatter who has an eye for tech-centric think pieces. He’s a huge advocate of serverless and culls a lot of really helpful resources into his feed. Warning: he’ll convert you to Python.
+
+[image]
+
+## Erica Windisch ([@ewindisch](https://twitter.com/ewindisch))
+Erica is the CTO at IOPipes, and the first thing you’ll see on her Twitter bio is that she’s “making the cloud and destroying monoliths.” She gets into enlightening Twitter conversations with leaders at Azure and Lambda about where serverless is today, and where it is (or should be) going next.
+
+[image]
+
+## Jared Short ([@ShortJared](https://twitter.com/ShortJared))
+Jared is the kind of person that, when he says something sounds ‘interesting’, at least ten people scramble to turn it into a product. He has a hacker’s experimental mindset about all the tools he uses, and tweets directly at the companies to start conversations about new features. Bonus: as a person who actively gives talks and presentations himself, he’ll also let you know about the best ones he’s seen lately.
+
+[image]
+
+## Ryan Lewis ([@ryanmurakami](https://twitter.com/ryanmurakami))
+Ryan makes a lot of content for his tech-centric blog and YouTube channel. He’s often the first person we see post overviews of new tools and frameworks—NPX, Webpack 3, AWS CodeStar. Really useful info for watercooler factoids and bragging rights.
+
+[image]
+
+Now, is this everyone to follow on Twitter? Definitely not. But we hope it'll give you a good start.
