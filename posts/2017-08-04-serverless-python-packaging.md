@@ -35,7 +35,10 @@ For this quick demo, we'll deploy a Lambda function that uses the popular [NumPy
 We can create a service from a template. I'm going to use Python 3, but this works with Python 2 as well.
 
 ```bash
-$ serverless create --template aws-python3 --name numpy-test --path numpy-test
+$ serverless create \
+  --template aws-python3 \
+  --name numpy-test \
+  --path numpy-test
 ```
 
 This will create a Serverless Python 3 template project at the given path (`numpy-test/`) with a service name of `numpy-test`. You'll need to change into that directory and create a virtual environment for developing locally.
@@ -185,7 +188,7 @@ functions:
 
 Great. Let's invoke our `numpy` function and read the logs:
 
-```
+```bash
 (venv) $ serverless invoke -f numpy --log
 --------------------------------------------------------------------
 START RequestId: b32af7a8-52fb-4145-9e85-5985a0f64fe4 Version: $LATEST
