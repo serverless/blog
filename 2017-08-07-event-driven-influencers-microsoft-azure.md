@@ -1,7 +1,7 @@
 ---
 title: Event-driven Influencers - Microsoft Azure
 description: Making it easy to think about events.
-date: 2017-08-07
+date: 2017-08-09
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/MSAzure.png
 authors:
