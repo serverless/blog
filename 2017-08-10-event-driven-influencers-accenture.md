@@ -12,7 +12,7 @@ authors:
 
 ## Background
 
-Change tends to sneak by unnoticed at first. And when things happen fast, as they do in technical fields, that moment of noticing becomes a sudden reckoning. What have we missed? For how long?
+Change tends to sneak by unnoticed at first. And when it happens fast, as it does in technical fields, that moment of noticing becomes a sudden reckoning. What have we missed? For how long?
 
 Accenture does change better than almost anyone. They anticipate it by studying what’s new out there, daily, and asking themselves: What could we do with this? They’ve built cloud applications for everything from healthcare to finance to telecom—services that do things like [monitor insurance claims](https://www.accenture.com/us-en/success-avalon-healthcare-solutions) and detect fraud.
 
