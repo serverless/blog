@@ -22,6 +22,6 @@ Their approach to building new technology is to place themselves in the problem 
 
 It’s an all-too common conception that serverless is a convenient tool for small, disruptive organizations to use in their early stages. But this conception overlooks everything that large enterprises have to gain: much quicker feature release cycles (a.k.a., competitive edge), and slashed infrastructure costs.
 
-Accenture sees that too, and they are building ways for large, established industries to take advantage. One result that we’re already seeing, is that enterprise companies are skipping over the container phase entirely. They are moving straight from their legacy architecture into serverless architectures.
+Accenture sees that too, and they are building ways for more established industries to take advantage. One result that we’re already seeing, is that enterprise companies are skipping over the container phase entirely. They are moving straight from their legacy architecture into serverless architectures.
 
 Our prediction? The strength of serverless technology will pierce through the enterprise sector much faster than most people expect. Except, of course, those who are already vigilant for this change, and who are on the ground, right now, implementing it.
