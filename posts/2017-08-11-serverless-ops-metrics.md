@@ -7,13 +7,9 @@ authors:
   - AlexDeBrie
 ---
 
-Moving from the server-full to the serverless world has a number of benefits -- pay-per-request pricing, faster deploys, easy scaling. There's a lot to like.
+For many users, the biggest benefit of serverless is how _managed_ it is -- developers and designers don't need to waste their time updating system packages or monitoring CPU usage. They can work on what they do best while the cloud provider handles most of the operations work.
 
-For many users, the biggest benefit is how _managed_ serverless is -- developers and designers don't need to waste their time updating system packages or monitoring CPU usage. They can work on what they do best while the cloud provider handles most of the Operations work.
-
-You can't avoid operations entirely though. This is the first post in a series of the basics of serverless operations.
-
-In this post, we'll talk about the basics of monitoring your Lambda functions with CloudWatch metrics. CloudWatch is AWS' built-in monitoring service, with support for metrics, logs, alarms, and more.
+You can't avoid operations entirely though. In this post, we'll talk about the basics of monitoring your Lambda functions with CloudWatch metrics. This is the first post in a series of the basics of serverless operations.
 
 # Basic CloudWatch metrics
 
@@ -56,7 +52,7 @@ custom:
       - functionThrottles
 ```
 
-This setup adds alerts to all of our functions in our service when deployed to the `production` stage. For every one minute period where I have one or more errors or throttles, I'll get at email to `name@domain.com`. Make sure to change the email to your email.
+This setup adds alerts to all of our functions in our service when deployed to the `production` stage. For every one minute period where I have 1+ errors or throttles, I'll get at email to `name@domain.com`. (Make sure to change the email to your email.)
 
 # Advanced Usage: Custom CloudWatch Metrics
 
@@ -134,6 +130,6 @@ custom:
       - tooManyRecordsAlarm
 ```
 
-Once caveat here is that this will add latency to your overall Lambda execution as you will be waiting on the API call to Cloudwatch. If you want to avoid this, you can use CloudWatch log Metric Filters to create metrics from your logs -- more detail [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringLogData.html).
+A caveat here is that this will add latency to your overall Lambda execution as you will be waiting on the API call to CloudWatch. If you'd like, you could avoid this by using CloudWatch log Metric Filters to create metrics from your logs instead -- more detail [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringLogData.html).
 
 As your Serverless application gets more serious, you will want to track metrics more closely using a tool like DataDog, IOPipe, or Honeycomb. But for quick and easy monitoring, it's hard to go wrong with CloudWatch and the [serverless-plugin-aws-alerts](https://github.com/ACloudGuru/serverless-plugin-aws-alerts) plugin.
