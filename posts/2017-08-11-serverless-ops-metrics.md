@@ -3,6 +3,7 @@ title: The Bare Minimum you Need to Know About Serverless Operations -- Metrics 
 description: Level up your serverless ops game with a walkthrough on CloudWatch metrics and alarms
 date: 2017-08-11
 layout: Post
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudwatch+metrics.jpg
 authors:
   - AlexDeBrie
 ---
