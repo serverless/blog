@@ -1,5 +1,5 @@
 ---
-title: Event-driven Influencers - Microsoft Azure
+title: Event-driven Influencers - Accenture
 description: Anticipating change on behalf of the serverless enterprise.
 date: 2017-08-10
 layout: Post
@@ -14,7 +14,7 @@ authors:
 
 Change tends to sneak by unnoticed at first. And when it happens fast, as it does in technical fields, that moment of noticing becomes a sudden reckoning. What have we missed? For how long? What does this thing even do?
 
-Accenture does change better than almost anyone. They anticipate it by studying what’s new out there, daily, and asking themselves: What could we do with this? They’ve built cloud applications for everything from healthcare to finance to telecom—services that do things like [monitor insurance claims](https://www.accenture.com/us-en/success-avalon-healthcare-solutions) and detect fraud.
+[Accenture](https://www.accenture.com/us-en/cloud-index) does change better than almost anyone. They anticipate it by studying what’s new out there, daily, and asking themselves: What could we do with this? They’ve built cloud applications for everything from healthcare to finance to telecom—services that do things like [monitor insurance claims](https://www.accenture.com/us-en/success-avalon-healthcare-solutions) and detect fraud.
 
 Their approach to building new technology is to place themselves in the problem space of an entire industry. From there, they think from the ground up about what those companies need to be able to do that they currently can’t, and what it is they are already doing that they could be doing more efficiently.
 
