@@ -12,7 +12,7 @@ authors:
 
 ## Background
 
-We spend a lot of our time talking to engineering teams. One thing that’s been made clear to us—for organizations across the board, digital products are monopolizing revenue focus. Inside Silicon Valley or not, every company is a tech company. Every company is looking to enhance its digital portfolio.
+We spend a lot of our time talking to engineering teams. One thing that’s been made clear to us—for organizations across the board, digital products are monopolizing revenue focus. Inside Silicon Valley or not, every company is a tech company. Every company is looking to enhance its digital portfolio. 
 
 When Azure Functions busted onto the scene, they had a goal in mind: to be the serverless infrastructure for enterprise. They moved quickly to support a flexible range of deployment options and languages (C#, JavaScript, F#, Python, Batch, PHP, PowerShell); still the most of any serverless provider. They even let you try out Azure functions without making an account, so there’s little in the way of getting started.
 
