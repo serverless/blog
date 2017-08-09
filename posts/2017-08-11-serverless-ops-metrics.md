@@ -1,5 +1,5 @@
 ---
-title: The Bare Minimum you Need to Know About Serverless Operations -- Metrics and Alarms
+title: Serverless Ops 101 - Using CloudWatch Metrics & Alarms with Serverless Functions
 description: Level up your serverless ops game with a walkthrough on CloudWatch metrics and alarms
 date: 2017-08-11
 layout: Post
