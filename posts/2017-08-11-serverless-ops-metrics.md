@@ -17,7 +17,7 @@ You can't avoid operations entirely though. In this post, we'll talk about the b
 CloudWatch helps you by monitoring certain metrics for all of your Lambda functions automatically. These metrics include:
 
 - **Invocations:** The number of times your function is invoked;
-- **Errors:**: The number of times your function fails with an error, due to timeouts, memory issues, unhandled exceptions, or other issues;
+- **Errors:** The number of times your function fails with an error, due to timeouts, memory issues, unhandled exceptions, or other issues;
 - **Throttles:** The number of times your function is throttled. AWS [limits the concurrent number of executions](http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html) across all your functions. If you exceed that, your function will be throttled and won't be allowed to run.
 - **Duration:** How long your function runs.
 
@@ -87,10 +87,16 @@ def main(event, context):
     # After we've processed the records, emit metric
     # for the number of records we've seen.
     CLOUDWATCH.put_metric_data(
-        Namespace='my-function-name',
+        Namespace='AWS/Lambda',
         MetricData=[
             {
                 'MetricName':  'KinesisRecordsSeen',
+                'Dimensions': [
+                    {
+                        'Name': 'FunctionName',
+                        'Value': context.function_name
+                    {
+                ]
                 'Timestamp': datetime.datetime.now(),
                 'Value': len(event['Records'])
             }
@@ -98,7 +104,7 @@ def main(event, context):
     )
 ```
 
-In this example, we're storing a metric named `KinesisRecordsSeen` that stores the number of Kinesis records in each Lambda invocation batch. The metric namespace helps to segregate metrics from one another, so I could have a `KinesisRecordsSeen` metric for each of my different functions.
+In this example, we're storing a metric named `KinesisRecordsSeen` that stores the number of Kinesis records in each Lambda invocation batch. We're storing the metric in the `AWS/Lambda` namespace with a `FunctionName` dimension to segregate metrics from one another, so I could have a `KinesisRecordsSeen` metric for each of my different functions.
 
 I can easily set up alerts on my custom metrics as well. Let's say I want an email alert whenever I see more than 1000 Kinesis records in 5 minutes:
 
@@ -120,7 +126,7 @@ custom:
     definitions:
       tooManyRecordsAlarm:
         description: 'Record overflow'
-        namespace: 'my-function-name'
+        namespace: 'AWS/Lambda'
         metric: KinesisRecordsSeen
         threshold: 1000
         statistic: Sum
