@@ -1,5 +1,5 @@
 ---
-title: Use these 5 AWS Learning Resources to Master the Cloud
+title: Use These 5 AWS Learning Resources to Master the Cloud
 description: 5 must-see AWS Learning Resources
 date: 2017-08-14
 layout: Post
