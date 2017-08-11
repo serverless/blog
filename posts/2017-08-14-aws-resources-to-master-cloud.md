@@ -52,7 +52,7 @@ If you enjoy learning via video, I'd highly recommend checking them out.
 
 Cloud academy offers a ton of top notch video content as well, with a range of learning paths to take you from AWS newbie to AWS Neo.
 
-[neo image]
+![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/5+AWS+Resources+post/neo-640x269.jpg")
 
 https://cloudacademy.com/learning-paths/
 
