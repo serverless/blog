@@ -32,7 +32,7 @@ Huge round of applause to all of the contributors who submitted changes for this
 
 The Serverless Team is currently working on some exciting new projects which will be announced at [Emit conference](http://www.emitconference.com/) on August 17th.
 
-As a result, upcoming Serverless releases will likely focus on bug fixes and minor enhancements. But thanks to our you, our stellar community, we still have some cool stuff coming up.
+As a result, upcoming Serverless releases will likely focus on bug fixes and minor enhancements. But thanks to you, our stellar community, we still have some cool stuff coming up.
 
 In addition to the [1.21 milestone](https://github.com/serverless/serverless/milestone/36) and its Issues and PRs, we still have lots and lots of other [Issues](https://github.com/serverless/serverless/issues) and [PRs](https://github.com/serverless/serverless/pulls). We'd love to implement and introduce these in some of the upcoming releases.
 
