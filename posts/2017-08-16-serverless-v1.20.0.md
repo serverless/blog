@@ -30,9 +30,9 @@ Huge round of applause to all of the contributors who submitted changes for this
 
 ## Upcoming releases / contributions
 
-The Serverless Team is currently working on some new projects which will be announced at the [Emit conference](http://www.emitconference.com/) on August, 17th.
+The Serverless Team is currently working on some exciting new projects which will be announced at [Emit conference](http://www.emitconference.com/) on August 17th.
 
-As a result, upcoming Serverless releases will likely focus on bug fixes and minor enhancements. But thanks to our community, we still have some cool stuff coming up.
+As a result, upcoming Serverless releases will likely focus on bug fixes and minor enhancements. But thanks to our you, our stellar community, we still have some cool stuff coming up.
 
 In addition to the [1.21 milestone](https://github.com/serverless/serverless/milestone/36) and its Issues and PRs, we still have lots and lots of other [Issues](https://github.com/serverless/serverless/issues) and [PRs](https://github.com/serverless/serverless/pulls). We'd love to implement and introduce these in some of the upcoming releases.
 
@@ -90,7 +90,7 @@ Additionally [PR reviews](https://github.com/serverless/serverless/pulls) are al
 
 ## Emit Conference
 
-[Emit](http://www.emitconference.com/) is right around the corner! Tomorrow (17th of August) we'll meet up at [The Pearl SF](http://thepearlsf.com/) to discuss the future of event-driven computing. We'll live-tweet from Emit at [@emitconf](https://twitter.com/emitconf) and [@goserverless](https://twitter.com/goserverless). Furthermore we'll follow-up with videos and blog posts, so make sure to subscribe to our newsletter.
+[Emit](http://www.emitconference.com/) is today! We're meeting up at [The Pearl SF](http://thepearlsf.com/) to discuss the future of serverless architctures. We'll live-tweet from Emit at [@emitconf](https://twitter.com/emitconf) and [@goserverless](https://twitter.com/goserverless). Subscribe to our newsletter to catch all the followup videos and blog posts.
 
 ## Serverless Examples
 
