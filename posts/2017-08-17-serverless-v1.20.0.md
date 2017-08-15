@@ -90,7 +90,7 @@ Additionally [PR reviews](https://github.com/serverless/serverless/pulls) are al
 
 ## Emit Conference
 
-[Emit](http://www.emitconference.com/) is today! We're meeting up at [The Pearl SF](http://thepearlsf.com/) to discuss the future of serverless architctures. We'll live-tweet from Emit at [@emitconf](https://twitter.com/emitconf) and [@goserverless](https://twitter.com/goserverless). Subscribe to our newsletter to catch all the followup videos and blog posts.
+[Emit](http://www.emitconference.com/) is today! We're meeting up at [The Pearl SF](http://thepearlsf.com/) to discuss the future of serverless architectures. We'll live-tweet from Emit at [@emitconf](https://twitter.com/emitconf) and [@goserverless](https://twitter.com/goserverless). Subscribe to our newsletter to catch all the followup videos and blog posts.
 
 ## Serverless Examples
 
