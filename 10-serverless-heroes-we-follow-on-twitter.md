@@ -13,7 +13,7 @@ This list was ordered more or less by a random number generator, so don’t take
 ## Mark Russinovich ([@markrussinovich](https://twitter.com/markrussinovich))
 Mark is the CTO of Azure, so suffice to say he’s an insider. He’s (obviously) always the first to post about updates from Azure, but what we love most about his feed is that he re-tweets the best stuff from all over. It isn’t all product all the time—there are also server jokes.
 
-[image]
+[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/10+Serverless+Heroes/markrussinovich1.png "markrussinovich.jpg")](https://twitter.com/markrussinovich)
 
 ## Marcia Villalba ([@mavi888uy](https://twitter.com/mavi888uy?lang=en))
 Marcia makes some stellar content: she runs the FooBar blog and also creates tech(and serverless)-centric videos for the FooBar YouTube channel. Follow her to make sure you get her latest knowledge nuggets first.
