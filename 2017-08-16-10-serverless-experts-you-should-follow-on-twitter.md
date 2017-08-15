@@ -1,5 +1,5 @@
 ---
-title: 10 Serverless Heroes We Follow on Twitter
+title: 10 Serverless Experts You Should Follow on Twitter
 description: The top Twitter accounts you need to stay on top of relevant serverless, event-driven architecture, and other tech news.
 date: 2017-08-16
 layout: Post
