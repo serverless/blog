@@ -25,10 +25,10 @@ David founded Beijing’s AWS meetup group, and somehow has an incredibly in-dep
 
 [![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/10+Serverless+Heroes/david_packman.png "david_packman.png")](https://twitter.com/david_packman)
 
-## Linda Nichols ([@lynnaloo](https://twitter.com/lynnaloo))
-Linda is a true technology advocate. She’s active in the open source community and teaches kids how to program robots. Her cred recently got her an interview on the Serverless Podcast. In addition to serverless news, her feed includes, VR, arduino, photos of JavaScript-powered fighting robots and (wait for it…) cats.
+## Charity Majors ([@mipsytipsy](https://twitter.com/mipsytipsy))
+Charity is lined up to speak at ServerlessConf 2017, so clearly she's doing several things right. Her feed is all about CloudOps, debugging, AWS and maximizing efficiency with tools. She's incredibly active on twitter, but hardly retweets. All original content here.
 
-[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/10+Serverless+Heroes/lynnaloo.png "lynnaloo.png")](https://twitter.com/lynnaloo)
+[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/10+Serverless+Heroes/mipsytipsy.png "mipsytipsy.png")](https://twitter.com/mipsytipsy)
 
 ## Ben Kehoe ([@ben11kehoe](https://twitter.com/ben11kehoe))
 Ben makes serverless robots for his day job. Not to mention, he’s an AWS Community Hero. His feed is brimming with serverless and AWS insights. Plus, he’s got a nice perspective on IoT, and is right on the pulse of the greater cloud community.
@@ -40,11 +40,6 @@ Ryan is a Red Hatter who has an eye for tech-centric think pieces. He’s a huge
 
 [![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/10+Serverless+Heroes/ryan_sb.png "ryan_sb.png")](https://twitter.com/ryan_sb)
 
-## Erica Windisch ([@ewindisch](https://twitter.com/ewindisch))
-Erica is the CTO at IOPipes, and the first thing you’ll see on her Twitter bio is that she’s “making the cloud and destroying monoliths.” She gets into enlightening Twitter conversations with leaders at Azure and Lambda about where serverless is today, and where it is (or should be) going next.
-
-[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/10+Serverless+Heroes/ewindisch.png "ewindisch.png")](https://twitter.com/ewindisch)
-
 ## Jared Short ([@ShortJared](https://twitter.com/ShortJared))
 Jared is the kind of person that, when he says something sounds ‘interesting’, at least ten people scramble to turn it into a product. He has a hacker’s experimental mindset about all the tools he uses, and tweets directly at the companies to start conversations about new features. Bonus: as a person who actively gives talks and presentations himself, he’ll also let you know about the best ones he’s seen lately.
 
@@ -55,9 +50,14 @@ Ryan makes a lot of content for his tech-centric blog and YouTube channel. He’
 
 [![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/10+Serverless+Heroes/ryanmurakami.png "ryanmurakami.png")](https://twitter.com/ryanmurakami)
 
-## Mx Kas Perch ([@notebotanist](https://twitter.com/nodebotanist))
-Kas was a speaker at the first annual JeffConf, where they gave a talk on serverless and IoT. Their twitter feed is filled with light-hearted humor, frank discussions about tech politics and, of course, helpful tidbits about debugging, JavaScript and robots. 
+## Linda Nichols ([@lynnaloo](https://twitter.com/lynnaloo))
+Linda is a true technology advocate. She’s active in the open source community and teaches kids how to program robots. Her cred recently got her an interview on the Serverless Podcast. In addition to serverless news, her feed includes, VR, arduino, photos of JavaScript-powered fighting robots and (wait for it…) cats.
 
-[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/10+Serverless+Heroes/nodebotanist.png "nodebotanist.png")](https://twitter.com/nodebotanist)
+[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/10+Serverless+Heroes/lynnaloo.png "lynnaloo.png")](https://twitter.com/lynnaloo)
+
+## Erica Windisch ([@ewindisch](https://twitter.com/ewindisch))
+Erica is the CTO at IOPipes, and the first thing you’ll see on her Twitter bio is that she’s “making the cloud and destroying monoliths.” She gets into enlightening Twitter conversations with leaders at Azure and Lambda about where serverless is today, and where it is (or should be) going next.
+
+[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/10+Serverless+Heroes/ewindisch.png "ewindisch.png")](https://twitter.com/ewindisch)
 
 Now, is this everyone to follow on Twitter? Definitely not. But we hope it'll give you a good start.
