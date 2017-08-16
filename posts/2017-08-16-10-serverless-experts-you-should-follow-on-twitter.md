@@ -1,6 +1,6 @@
 ---
 title: 10 Serverless Experts You Should Follow on Twitter
-description: The top Twitter accounts you need to stay on top of relevant serverless, event-driven architecture, and other tech news.
+description: The top Twitter accounts you should follow to stay on top of serverless, event-driven architecture, and other tech news.
 date: 2017-08-16
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/twitter+follow.jpg
