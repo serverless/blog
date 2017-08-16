@@ -40,7 +40,7 @@ This makes businesses completely flexible. Building an events-first experience t
 
 ### Open Source
 
-The Event Gateway is open source and platform agnostic. Use it to create the cohesive nervous system of your digital business.
+The Event Gateway is open-source and platform agnostic. Use it to create the cohesive nervous system of your digital business.
 
 Run it on all the major cloud providers, on-premise or in a hybrid architecture. Unify events from all over your system. Even teams who are working on separate applications can easily share resources that shave time and overhead.
 
@@ -48,10 +48,8 @@ Run it on all the major cloud providers, on-premise or in a hybrid architecture.
 
 The Event Gateway ties right into the Serverless Framework and is available for developers to use locally today.
 
-## Own your cloud
+## Get started
 
 Use the Event Gateway to start taking full advantage of the serverless cloud. Serverless architectures just got their missing backbone.
 
-This is the way cloud should be.
-
-The Event Gateway is currently in beta, and is available locally via the Serverless Framework. To learn more, [see the Event Gateway GitHub project here](https://github.com/serverless/event-gateway).
+The Event Gateway is currently in beta, and is available to use locally via the Serverless Framework. To check out the code, [see the repo here](https://github.com/serverless/event-gateway) and [walk through the example app](https://github.com/serverless/event-gateway-example).
