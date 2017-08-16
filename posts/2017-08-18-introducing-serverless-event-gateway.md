@@ -1,69 +1,57 @@
 ---
 title: The Missing Piece of Serverless Architectures - Event Gateway
-description: Serverless launches Event Gateway is a new tool for operating serverless architectures. React to any event, with any function, on any cloud.
-date: 2017-08-18
+description: Event Gateway is the central nervous system of your serverless architectures. Open-source, platform agnostic, tightly integrated with Serverless Framework, it lets you react to any event, with any function, on any cloud.
+date: 2017-08-17
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Event_gateway_blog_image.jpg
 authors:
   - AndreaPasswater
 ---
 
-## Introduction
+## Introducing: The Serverless Event Gateway
 
-Before we can talk about the future of serverless, we have to touch on the past.
+The innovation of serverless compute (FaaS) dramatically decreased operational complexity and allowed developers to perform compute more easily than ever.
 
-You know the story: In the beginning, there were monolithic architectures. Then the monoliths got broken up into individual microservices—which provided more flexibility, but were painful enough to set up and manage that most people didn’t bother.
+The Serverless Framework provided accessibility to this new kind of compute, by offering an application experience of functions and events around serverless computing. This is now widely known as “serverless architecture”.
 
-And *then* came serverless computing.
+Despite being relatively new, serverless architectures have proven themselves well. Serverless teams consistently exhibit shortened time to market, increased developer productivity and reduced operational overhead.
 
-So here we are. In a serverless world, microservices are easier to implement. But there are still management pain points. For example, How can developers perform service discovery across different teams and applications? What about service communication between various services and cloud providers?
+But there has been a missing piece. Developers have been locked into a single cloud provider, unable to perform service communication between various services. They have been left without a good way to perform service discovery across different teams and applications.
 
 That is exactly why we made Event Gateway.
 
 ## What it is
 
-The Event Gateway combines both API gateway and pub/sub functionality into a single experience.
+The Event Gateway is an open-source communication fabric for serverless architectures. It combines both API gateway and pub/sub functionality into a single experience.
 
-Inside the Event Gateway, all data is considered to be an event. This lets developers react to data flows of all their applications in a centralized way.
+Inside the Event Gateway, all data is considered to be an event. This lets developers react to data flows of all their applications in a centralized way, with serverless compute.
 
 This is powerful; when developers can manage those data flows from a single place, they can take events from one provider and trigger functions on another provider. Serverless architectures become truly cross-cloud.
 
-## What it isn’t
-
-The Event Gateway is *not* a FaaS platform. It integrates with existing FaaS providers (like AWS Lambda, Google Cloud Functions and OpenWhisk Actions) so developers can build large serverless architectures in a unified way.
-
 ## Features
 
-The Serverless Event Gateway has been the missing piece of serverless architectures.
+The Serverless Event Gateway is the missing piece of serverless architectures.
 
-Here’s what it allows you to do-
+### Cross-cloud
 
-### Collect events from anywhere
+Businesses do not want to be limited by where they can access their data. With Event Gateway, any of your events can have multiple subscribers from any other cloud service. Lambda can talk to Azure can talk to OpenWhisk.
 
-The serverless possibility space has historically been smaller than it needed to be. The only events you could react to were locked into a single provider.
+This makes businesses completely flexible. Building an events-first experience that exists cross-cloud and on-premise protects you from lock-in, while also keeping you open for whatever else the future may bring.
 
-But in the Event Gateway, all the data flowing through your system becomes an event, and you can see and react to those events regardless of which cloud they are deployed on. Application events, deployment events, IoT events, everything is game.
+### Open Source
 
-### Subscribe any function to those events
+The Event Gateway is open source and platform agnostic. Use it to create the cohesive nervous system of your digital business.
 
-Any one of your actionable events can have multiple subscribers from any other cloud service. Lambda can talk to Azure can talk to OpenWhisk.
+Run it on all the major cloud providers, on-premise or in a hybrid architecture. Unify events from all over your system. Even teams who are working on separate applications can easily share resources that shave time and overhead.
 
-In practical terms: when a new user account gets created, you can trigger a welcome e-mail and also prompt them to share an invite with their friends, regardless of where those services are hosted or where the event comes from.
+### Tightly integrates with Serverless Framework
 
-Any event in your system can set off a series of cross-cloud reactions. 
+The Event Gateway ties right into the Serverless Framework and is available for developers to use locally today.
 
-### Expose events and functions to your team
+## Own your cloud
 
-Unify events from all over your system. Need a function for a service you’re building? There might be one in deployment already that you can use.
-
-Even teams who are working on separate applications can easily share resources that shave time and overhead.
-
-## Conclusion
-
-In the development environment, things have been getting smaller and more fragmented without a good way to centralize them. Each integration is a siloed service, which is configured separately. This fractured setup creates a lot of friction in the creative process and inhibits productivity.
-
-The Event Gateway is the first step in bringing back the single development experience. Consolidate your integrations, manage everything in one place, and start taking full advantage of the serverless cloud.
+Use the Event Gateway to start taking full advantage of the serverless cloud. Serverless architectures just got their missing backbone.
 
 This is the way cloud should be.
 
-The Event Gateway is currently in beta, and some functionality is available via the Serverless Framework. To learn more, check out our write-up in GitHub on the [challenges of SOA](https://github.com/serverless/event-gateway#background), and the [Event Gateway Product page](https://github.com/serverless/product#event-gateway).
+The Event Gateway is currently in beta, and is available locally via the Serverless Framework. To learn more, [see the Event Gateway GitHub project here](https://github.com/serverless/event-gateway).
