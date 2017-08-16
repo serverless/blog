@@ -5,7 +5,7 @@ date: 2017-08-18
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Event_gateway_blog_image.jpg
 authors:
-  - AndreaPasswater
+  - AustenCollins
 ---
 
 ## Introducing: The Serverless Event Gateway
