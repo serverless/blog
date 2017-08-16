@@ -26,7 +26,12 @@ This release contains lots of hard work from our beloved community, and wouldn't
 
 Huge round of applause to all of the contributors who submitted changes for this release:
 
-- John Doe
+- Alper
+- Geoffrey Wiseman
+- Len Boyette
+- Martin Hartt
+- Sebastien Bramille
+- Sebastien Goasguen
 
 ## Upcoming releases / contributions
 
