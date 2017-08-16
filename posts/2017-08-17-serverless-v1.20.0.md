@@ -3,12 +3,12 @@ title: Serverless v1.20 - Enhancements, bug fixes and tweaks added
 description: Enhancements, bug fixes and more added in the Serverless Framework v1.20 release.
 date: 2017-08-17
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-release-1.20.png
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-release1.20.png
 authors:
   - PhilippMuns
 ---
 
-<img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-release-1.20.png" width="210px" >
+<img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-release1.20.png" width="210px" >
 
 We're excited to announce Serverless Framework v1.20.
 
