@@ -8,6 +8,8 @@ authors:
   - AustenCollins
 ---
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event_gateway_repo.png">
+
 ## Background
 
 The innovation of serverless compute (FaaS) dramatically decreased operational complexity and allowed developers to perform compute more easily than ever.
