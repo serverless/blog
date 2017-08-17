@@ -8,7 +8,7 @@ authors:
   - AustenCollins
 ---
 
-## Introducing: The Serverless Event Gateway
+## History
 
 The innovation of serverless compute (FaaS) dramatically decreased operational complexity and allowed developers to perform compute more easily than ever.
 
@@ -20,7 +20,7 @@ But there has been a missing piece. Developers have been locked into a single cl
 
 That is exactly why we made Event Gateway.
 
-## What it is
+## Introducing: The Serverless Event Gateway
 
 The Event Gateway is an open-source communication fabric for serverless architectures. It combines both API gateway and pub/sub functionality into a single experience.
 
