@@ -1,5 +1,5 @@
 ---
-title: The Missing Piece of Serverless Architectures - Event Gateway
+title: Event Gateway - The Missing Piece of Serverless Architectures
 description: Event Gateway is the open-source central nervous system of your serverless architectures. React to any event, with any function, on any cloud.
 date: 2017-08-18
 layout: Post
