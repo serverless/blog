@@ -12,11 +12,13 @@ authors:
 
 ## Background
 
-The innovation of serverless compute (FaaS) dramatically decreased operational complexity and allowed developers to perform compute more easily than ever.
+The innovation of serverless compute (FaaS) was huge. It dramatically decreased operational complexity and allowed developers to perform compute more easily than ever.
+
+Then entered the Serverless Framework, which offered an application experience of functions and events around serverless computing. This is now widely known as *serverless architecture*.
 
 Despite being relatively new, serverless architectures have proven themselves well. Serverless teams consistently exhibit shortened time to market, increased developer productivity and reduced operational overhead.
 
-We made the Serverless Framework to provide an application of events and functions around serverless compute. But there has been a missing piece. Developers have been locked into a single cloud provider, unable to perform service communication between various services. They have been left without a good way to perform service discovery across different teams and applications.
+But there has been a missing piece. Developers have been locked into a single cloud provider, unable to perform service communication between various services. They have been left without a good way to perform service discovery across different teams and applications.
 
 That is exactly why we made Event Gateway.
 
