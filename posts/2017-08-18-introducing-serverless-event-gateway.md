@@ -8,7 +8,7 @@ authors:
   - AustenCollins
 ---
 
-## History
+## Background
 
 The innovation of serverless compute (FaaS) dramatically decreased operational complexity and allowed developers to perform compute more easily than ever.
 
