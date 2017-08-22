@@ -1,5 +1,5 @@
 ---
-title: Announcing the Guide to Serverless Architectures
+title: The Definitive Guide to Serverless Architectures
 description: The Serverless Guide is the open-source, definitive guide to serverless architectures. A single resource for serverless developers and organizations.
 date: 2017-08-21
 layout: Post
