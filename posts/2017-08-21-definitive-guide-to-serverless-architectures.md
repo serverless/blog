@@ -10,9 +10,9 @@ authors:
 
 [![Serverless Guide](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/guide_hero_big.png)](https://github.com/serverless/guide)
 
-We are excited to announce the release of the **[Serverless Guide](https://github.com/serverless/guide)**: the definitive guide to serverless architectures.
-
 A lot is being written about serverless technology all over the web, and right now that information is fragmented. As a community, we’re bringing it together.
+
+Introducing the **[Serverless Guide](https://github.com/serverless/guide)**: the definitive guide to serverless architectures.
 
 Find everything you need to know about serverless development and organizations-patterns, best practices, case studies and everything in-between. This guide is also a collection and frank discussion about the state and maturity of serverless. 
 
