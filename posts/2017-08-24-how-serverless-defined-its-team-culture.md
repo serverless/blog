@@ -8,7 +8,7 @@ authors:
   - CaseyShultz
 ---
 
-As a solo founder with a lot on his plate, it would have been so easy for our CEO, Austen Collins, to let values and culture take a back seat. But he didn’t.
+As a solo founder with a lot on his plate, it would have been so easy for our CEO, Austen Collins, to let values and culture take a back seat. But he didn’t. 
 
 Austen knew that having a strong mission was the key to attracting top talent, and from day one he was determined to have a clearly-defined culture that resonated with people.
 
