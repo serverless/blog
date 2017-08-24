@@ -1,16 +1,12 @@
 ---
 title: How Serverless Defined Its Team Values
-description: Join us on our journey as we work towards creating a culture that attracts world class talent to the Serverless team.
+description: Follow us on our journey to create a resilient team culture that attracts world class talent to the Serverless team.
 date: 2017-08-24
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/pound-it.jpg
 authors:
   - CaseyShultz
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/pound-it.jpg">
-
-<small>Follow us on our journey to define a strong set of company values and create a resilient team culture. Open source forever.</small>
 
 Our CEO, Austen Collins, created the Serverless Framework after many days of coding solo on an Oakland cafe sofa. Almost out of nowhere, he had a popular open-source project in his hands. It was time to build a company.
 
@@ -82,25 +78,35 @@ It’s easy to overly complicate language, code, and projects. We strive to crea
 #### Work with freedom and responsibility
 
 Be a good teammate, honor your commitments, and strive to exceed all expectations. However you manage to do that is up to you.
-<p>
+
+## Round 3
+Spoiler alert: the v2 of our bottom-up approach still wasn’t quite what we needed.
+
+Our goal was to make our values tell a story that would be digestible—both on our website and to existing team members. In practice, they kind of fell flat.
+
+They didn’t give prospective team members a realistic understanding of what it was like to work at Serverless, or provide clear guidance about company expectations to existing team members. We received feedback from our team that these condensed values were difficult to relate to.
+
+We also went through some painful hiring experiences. We brought on really talented individuals who, in theory were going to be rock stars, but in practice our culture just was not a good fit for them and they struggled before leaving after a few months.
+
+### Trying a top-down approach
+We decided to take a different approach during our July 2017 team retreat. This time we abandoned our bottom-up approach and went top-down. (Don’t worry, tons of sticky notes were still involved.)
+
+Each team member wrote 3-4 things (respectively) that they: love about Serverless, hate about Serverless, and wish we did differently.
+
 <img align="center" width="450" height="309" src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/team-photo.jpg">
 
-The Serverless team works through a top down brainstorm of cultural values at the July 2017 retreat in Morocco.
-</p>
-
-## Trying the top-down approach
-Spoiler alert: the v2 of our bottom-up approach still wasn’t quite what we needed.
-Our goal was to make our values tell a story that would be digestible—both on our website and to existing team members. In practice, they kind of fell flat.
-They didn’t give prospective team members a realistic understanding of what it was like to work at Serverless, or provide clear guidance about company expectations to existing team members. We received feedback from our team that these condensed values were difficult to relate to.
-We also went through some painful hiring experiences. We brought on really talented individuals who, in theory were going to be rock stars, but in practice our culture just was not a good fit for them and they struggled before leaving after a few months.
-### On to round 3
-We decided to take a different approach during our July 2017 team retreat. This time we abandoned our bottom-up approach and went top-down. (Don’t worry, tons of sticky notes were still involved.)
-Each team member wrote 3-4 things (respectively) that they: love about Serverless, hate about Serverless, and wish we did differently.
 We found that several core values fell out in the process.
+
 ### Where we are today
+
 We’ve found ourselves with another list. This time, a list of goals.
+
 We are actively working to weave these values more tightly into our day-to-day: empathy, trust, respect, grit, learning culture and constructive feedback. We are putting them into our our culture handbook and creating tests for each of these in our interview process.
+
 This is certainly our best system so far, but we don’t doubt that we’ll soon be humbled.
+
 ### Where we’re headed
-Our culture process, much like our software, is open to the community. We put our culture handbook in GitHub; it is a living document that, as you can see from this post, is constantly improving.
+
+Our culture process, much like our software, is open to the community. We put our [culture handbook](https://github.com/serverless/culture) in GitHub; it is a living document that, as you can see from this post, is constantly improving.
+
 Feel free to follow along as we continue to flesh it out.
