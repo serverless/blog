@@ -10,11 +10,11 @@ authors:
 
 Our CEO, Austen Collins, created the Serverless Framework after many days of coding solo on an Oakland cafe sofa. Almost out of nowhere, he had a popular open-source project in his hands. It was time to build a company.
 
-If you’ve ever been a solo founder, you should know—it’s a lot for one person to manage everything. It would have been so easy for Austen to let values and culture take a back seat, but he didn’t. He knew that having a strong mission was the key to attracting top talent, and from day one he was determined to have a clearly-defined culture that resonated with people.
+As a solo founder with a lot on his plate, it would have been so easy for Austen to let values and culture take a back seat—but he didn’t. He knew that having a strong mission was the key to attracting top talent, and from day one he was determined to have a clearly-defined culture that resonated with people.
 
-You can’t snap your fingers and define such a lofty thing as culture, though. It took us a few tries to get it right.
+It isn't as straightforward as you'd think to define such a lofty thing as culture, though. It took us a few tries to get it right.
 
-Here’s how the serverless team brought it all together.
+Here’s how the serverless team worked to bring it all together.
 
 ## Dive below the iceberg
 Fun fact: when you see icebergs floating in the water, you’re really only seeing the top 10%. The other 90% is hidden beneath the surface of the water.
@@ -79,7 +79,7 @@ It’s easy to overly complicate language, code, and projects. We strive to crea
 
 Be a good teammate, honor your commitments, and strive to exceed all expectations. However you manage to do that is up to you.
 
-## Round 3
+## On to round 3
 Spoiler alert: the v2 of our bottom-up approach still wasn’t quite what we needed.
 
 Our goal was to make our values tell a story that would be digestible—both on our website and to existing team members. In practice, they kind of fell flat.
