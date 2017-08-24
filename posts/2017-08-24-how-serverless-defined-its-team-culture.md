@@ -8,9 +8,9 @@ authors:
   - CaseyShultz
 ---
 
-Our CEO, Austen Collins, created the Serverless Framework after many days of coding solo on an Oakland cafe sofa. Almost out of nowhere, he had a popular open-source project in his hands. It was time to build a company.
+As a solo founder with a lot on his plate, it would have been so easy for our CEO, Austen Collins, to let values and culture take a back seat. But he didn’t.
 
-As a solo founder with a lot on his plate, it would have been so easy for Austen to let values and culture take a back seat—but he didn’t. He knew that having a strong mission was the key to attracting top talent, and from day one he was determined to have a clearly-defined culture that resonated with people.
+Austen knew that having a strong mission was the key to attracting top talent, and from day one he was determined to have a clearly-defined culture that resonated with people.
 
 It isn't as straightforward as you'd think to define such a lofty thing as culture, though. It took us a few tries to get it right.
 
@@ -29,6 +29,7 @@ In a nutshell? It makes it easier to get what your organization needs when you k
 
 ## Bottom-up approach: round 1
 Defining culture at Serverless has been an ongoing, participative journey.
+
 Our first attempt was at our January 2017 team retreat, where we tried a bottom-up approach. Each team member got a set of sticky notes, where they wrote out first their own personal values, and then their aspirational company values.
 
 We posted each note on whiteboards and clustered them into groups as a team.
@@ -46,7 +47,7 @@ At the end of the exercise, our list looked like this:
 It seemed great! ...at the time. We quickly realized there were weaknesses with the initial list.
 
 ## Bottom-up approach: round 2
-After the retreat, when we were back at the office trying to synthesize everything, it was challenging to make our values fit into neat, actionable boxes. We didn’t know how to apply them to the actual behaviors we wanted to see.
+When we were back at the office trying to synthesize everything after the retreat, we found it challenging to make our values fit into neat, actionable boxes. We didn’t know how to apply them to the actual behaviors we wanted to see.
 
 So we iterated. We took our fuzzy list and teased it into a series of condensed points.
 
@@ -101,7 +102,16 @@ We found that several core values fell out in the process.
 
 We’ve found ourselves with another list. This time, a list of goals.
 
-We are actively working to weave these values more tightly into our day-to-day: empathy, trust, respect, grit, learning culture and constructive feedback. We are putting them into our our culture handbook and creating tests for each of these in our interview process.
+We are actively working to weave these values more tightly into our day-to-day:
+
+- Empathy
+- Trust
+- Respect
+- Grit
+- Learning culture
+- Constructive feedback
+
+We are putting them into our our culture handbook and creating tests for each of these in our interview process.
 
 This is certainly our best system so far, but we don’t doubt that we’ll soon be humbled.
 
