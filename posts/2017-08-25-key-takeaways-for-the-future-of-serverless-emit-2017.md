@@ -8,7 +8,7 @@ authors:
   - NickGottlieb
 ---
 
-Last Thursday, we held [Emit Conf 2017](http://www.emitconference.com/) here in San Francisco. It was a relatively intimate gathering of about 100 people, all of them thought leaders and early pioneers in the serverless space.
+Last Thursday, we held [Emit Conf 2017](http://www.emitconference.com/) here in San Francisco. It was a tight-knit gathering of about 100 people, all of them thought leaders and early pioneers in the serverless space.
 
 We saw some killer presentations and had even better conversations, with topics ranging from theorizing about system limits to practical real-world use cases of serverless architectures.
 
