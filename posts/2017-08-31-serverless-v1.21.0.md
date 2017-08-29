@@ -12,11 +12,11 @@ authors:
 
 It's been a wild two weeks, everyone.
 
-We held [Emit](http://www.emitconference.com/), and showed up with a [whole new look and logo](https://serverless.com). Videos are on their way, and the [slides are already up](https://serverless.com/blog/key-takeaways-for-the-future-of-serverless-emit-2017/).
+We not only held [Emit](http://www.emitconference.com/), but showed up with a [whole new look and logo](https://serverless.com), too. If you weren't there, rest easy. Videos of Emit talks are on their way, and the [speaker slides are already up](https://serverless.com/blog/key-takeaways-for-the-future-of-serverless-emit-2017/).
 
-We announced our new open-source project, [Event Gateway](https://serverless.com/event-gateway/) and the [`serverless run`](https://serverless.com/framework/docs/platform/commands/run/) integration.
+We also announced our new open-source project, [Event Gateway](https://serverless.com/event-gateway/) and the [`serverless run`](https://serverless.com/framework/docs/platform/commands/run/) integration.
 
-What we're trying to say is: sorry for the temporary lull in new action-packed features. But this week, we're back! Please enjoy a really nice feature-set for the Serverless Framework v1.21 release.
+What we're trying to say is: sorry for the temporary lull in new action-packed features for the past couple of releases. But this week, we're back! Please enjoy a really nice feature-set for the Serverless Framework v1.21 release.
 
 ## Noteable changes v1.21 introduces
 
