@@ -10,7 +10,7 @@ authors:
 
 One of the primary goals of the serverless framework is to provide a platform-agnostic experience to our users.
 
-**Cloud freedom**. Write your code once and you choose where it runs.
+**Cloud freedom**. You write your code once and choose where it runs.
 
 That's why we are so excited to announce the latest serverless provider integration: Kubeless
 
