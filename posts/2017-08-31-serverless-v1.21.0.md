@@ -24,30 +24,94 @@ This week we're back with a really nice feature-set for the Serverless Fraemwork
 
 You can find a complete list of all the updates in the [CHANGELOG.md](https://github.com/serverless/serverless/blob/master/CHANGELOG.md) file.
 
-### AWS Credential management through Serverless CLI
+### Raw data passing for `invoke` and `invoke local`
 
-https://github.com/serverless/serverless/pull/3866
+The `invoke` and `invoke local` commands make it easy to invoke and test-drive remote or local functions with custom input.
+
+All the input data is automatically parsed as JSON and handed over to the function as input data.
+
+Sometimes you want to have more control over the way the input data reaches your functions. This is why a `--raw` flas was added to `invoke` and `invoke local`.
+
+Using this flag makes it possible to pass in the invocation data as is without any automatic transformations.
+
+Here's an example how this `--raw` option can be used in practice:
+
+```bash
+serverless invoke --function my_function --data '{"foo":"bar"}' --raw
+```
+
+### Support for custom `context` in `invoke local`
+
+One function parameter which is automatically passed into your Lambda functions is the `context` parameter which encapsulates all the information about the current context of the functions invocation.
+
+It includes information such as the `logGroupName` or `functionVersion`.
+
+With `invoke local` we've implemented a fixed mock object which contains all the information AWS also passes in your Lambda function when it's invoked on their end. This makes the experience comparable AWS behavior even if the function is just invoked locally.
+
+While this `context` object is always passed in as the default it's now possible to specify an own `context` object with the help of the `--context` and `--contextPath` options.
+
+Let's take a look how this `context` object works in practice:
+
+```bash
+serverless invoke local --function my_function --context '{ "data": 1 }'
+```
+
+You could also use a path to a file which describes your `context`:
+
+```bash
+serverless invoke local --function my_function --contextPath ./custom-context.json
+```
+
+### Update AWS profiles through Serverless CLI
+
+Back in an earlier version of Serverless we've added support to setup provider credentials with the help of the Serverless CLI.
+
+This streamlines the onboarding experience since you can do the account configuration with Serverless rather than having to install and use the providers CLI tool to configure the account credentials you want to use when working with the Serverless Framework.
+
+For example setting up AWS credentials is as easy as:
+
+```bash
+serverless config credentials --provider aws --key AKIAIOSFODNN7EXAMPLE --secret wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+```
+
+Serverless v1.21 introduces an enhancement for this `config credentials` command. You are now able to update existing profiles through the Serverless CLI.
+
+The `--overwrite` flag is necessary if you want to update an existing progile. It signals that this is a destructive operation and helps preventing unintended changes:
+
+```bash
+serverless config credentials --provider aws --key 1234 --secret 5678 --profile custom-profile --overwrite
+```
+
+### Display stack name in `info`
+
+Large serverless applications are usually compositions of individual serverless services. That's where the `info` plugin comes in handy as it shows important information about the service the user is currently working on.
+
+Serverless v1.21 has a slight improvement for the `info` plugin so that the stack name will now be displayed as well.
+
+This makes it easier to see and understand which stack information is currently displayed on your terminal.
+
+### TypeScript and ECMAScript AWS service templates
+
+Serverless v1.21 ships with two new service templates for AWS:
+
+- `aws-nodejs-ecma-script`
+- `aws-nodejs-typescript`
+
+Creating new services with the templates is as easy as:
+
+```bash
+serverless create --template aws-nodejs-ecma-script
+```
+
+or:
+
+```bash
+serverless create --template aws-nodejs-typescript
+```
 
 ### Improved configurability and performance for packaging
 
 https://github.com/serverless/serverless/pull/3924
-
-### Raw data passing for `invoke` and `invoke local`
-
-https://github.com/serverless/serverless/pull/4036
-
-### TypeScript and ECMAScript AWS service templates
-
-https://github.com/serverless/serverless/pull/4056
-https://github.com/serverless/serverless/pull/4058
-
-### Display stack name in `info`
-
-https://github.com/serverless/serverless/pull/4088
-
-### Support for custom `context` in `invoke` and `invoke local`
-
-https://github.com/serverless/serverless/pull/4126
 
 ### Other enhancements & bug fixes
 
