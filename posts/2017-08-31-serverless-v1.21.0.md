@@ -10,15 +10,13 @@ authors:
 
 <img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-release1.21.png" width="210px" >
 
-Last week we've successfully held our first installment of [Emit](http://www.emitconference.com/), our conference about event-driven architectures.
+It's been a wild two weeks, everyone.
 
-It was a huge success and we've finally announced the [Event Gateway](https://serverless.com/event-gateway/), our [`serverless run`](https://serverless.com/framework/docs/platform/commands/run/) integration which makes it possible to run and develop Serverless services locally and our [rebranding](https://serverless.com).
+We held [Emit](http://www.emitconference.com/), and showed up with a [whole new look and logo](https://serverless.com). Videos are on their way, and the [slides are already up](https://serverless.com/blog/key-takeaways-for-the-future-of-serverless-emit-2017/).
 
-Stay tuned for upcoming blog posts about the event and videos of the talks. You can take a look at [#emitconf](https://twitter.com/hashtag/EmitConf?src=hash) for some impressions.
+We announced our new open-source project, [Event Gateway](https://serverless.com/event-gateway/) and the [`serverless run`](https://serverless.com/framework/docs/platform/commands/run/) integration.
 
-The conference announcements were some of the major projects we've focused on over the last couple of weeks. While doing that we kept our biweekly release cycle and published Serverless Framework versions with some minor improvements and fixes.
-
-This week we're back with a really nice feature-set for the Serverless Fraemwork v1.21 release!
+What we're trying to say is: sorry for the temporary lull in new action-packed features. But this week, we're back! Please enjoy a really nice feature-set for the Serverless Framework v1.21 release.
 
 ## Noteable changes v1.21 introduces
 
@@ -64,9 +62,9 @@ serverless invoke local --function my_function --contextPath ./custom-context.js
 
 ### Update AWS profiles through Serverless CLI
 
-Back in an earlier version of Serverless we've added support to setup provider credentials with the help of the Serverless CLI.
+Back in an earlier version of Serverless, we added support to set up provider credentials with the help of the Serverless CLI.
 
-This streamlines the onboarding experience since you can do the account configuration with Serverless rather than having to install and use the providers CLI tool to configure the account credentials you want to use when working with the Serverless Framework.
+This streamlines the onboarding experience and lets you do the account configuration with Serverless rather than having to install and use the providers CLI tool.
 
 For example setting up AWS credentials is as easy as:
 
