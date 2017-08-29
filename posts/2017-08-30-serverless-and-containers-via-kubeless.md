@@ -1,11 +1,11 @@
 ---
-title: Serverless + Containers: Kubernetes native functions available via Kubeless
+title: "Serverless + Containers: Kubernetes native functions available via Kubeless"
 description: Kubeless is a Kubernetes-native way to deploy and manage your serverless functions via the serverless framework
 date: 2017-08-30
 layout: Post
 thumbnail: https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png
 authors:
-  - DavidWells
+  - CaseyShultz
 ---
 
 One of the primary goals of the serverless framework is to provide a platform-agnostic experience to our users.
