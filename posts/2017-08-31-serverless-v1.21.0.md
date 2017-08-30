@@ -26,9 +26,9 @@ You can find a complete list of all the updates in the [CHANGELOG.md](https://gi
 
 The `invoke` and `invoke local` commands make it easy to invoke and test-drive remote or local functions with custom input.
 
-All the input data is automatically parsed as JSON and handed over to the function as input data.
+All the input data is automatically parsed as JSON and handed over to the function as it corresponding input data.
 
-Sometimes you want to have more control over the way the input data reaches your functions. This is why a `--raw` flas was added to `invoke` and `invoke local`.
+Sometimes you want to have more control over the way the input data reaches your functions. This is why a `--raw` flag was added to `invoke` and `invoke local`.
 
 Using this flag makes it possible to pass in the invocation data as is without any automatic transformations.
 
@@ -42,9 +42,9 @@ serverless invoke --function my_function --data '{"foo":"bar"}' --raw
 
 One function parameter which is automatically passed into your Lambda functions is the `context` parameter which encapsulates all the information about the current context of the functions invocation.
 
-It includes information such as the `logGroupName` or `functionVersion`.
+It includes information such as e.g. the `logGroupName` or `functionVersion`.
 
-With `invoke local` we've implemented a fixed mock object which contains all the information AWS also passes in your Lambda function when it's invoked on their end. This makes the experience comparable AWS behavior even if the function is just invoked locally.
+With `invoke local` we've implemented a fixed mock object which contains all the information AWS also passes in your Lambda function when it's invoked on their end. This makes the experience comparable to AWS even if the function is just invoked locally.
 
 While this `context` object is always passed in as the default it's now possible to specify an own `context` object with the help of the `--context` and `--contextPath` options.
 
@@ -74,7 +74,7 @@ serverless config credentials --provider aws --key AKIAIOSFODNN7EXAMPLE --secret
 
 Serverless v1.21 introduces an enhancement for this `config credentials` command. You are now able to update existing profiles through the Serverless CLI.
 
-The `--overwrite` flag is necessary if you want to update an existing progile. It signals that this is a destructive operation and helps preventing unintended changes:
+The `--overwrite` flag is necessary if you want to update an existing profile. It signals that this is a "dangerous" operation and helps preventing unintended changes:
 
 ```bash
 serverless config credentials --provider aws --key 1234 --secret 5678 --profile custom-profile --overwrite
@@ -84,7 +84,7 @@ serverless config credentials --provider aws --key 1234 --secret 5678 --profile 
 
 Large serverless applications are usually compositions of individual serverless services. That's where the `info` plugin comes in handy as it shows important information about the service the user is currently working on.
 
-Serverless v1.21 has a slight improvement for the `info` plugin so that the stack name will now be displayed as well.
+Serverless v1.21 has a slight improvement for the `info` plugin so that the stack name is now displayed as well.
 
 This makes it easier to see and understand which stack information is currently displayed on your terminal.
 
@@ -106,10 +106,6 @@ or:
 ```bash
 serverless create --template aws-nodejs-typescript
 ```
-
-### Improved configurability and performance for packaging
-
-https://github.com/serverless/serverless/pull/3924
 
 ### Other enhancements & bug fixes
 
