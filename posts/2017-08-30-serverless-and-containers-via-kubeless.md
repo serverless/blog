@@ -1,28 +1,28 @@
 ---
-title: "Serverless & Containers? Kubeless brings functions as a service to Kubernetes"
+title: "Kubeless brings functions as a service to Kubernetes & on-prem"
 description: Kubeless is a Kubernetes-native way to deploy and manage your serverless functions via the serverless framework
 date: 2017-08-30
 layout: Post
-thumbnail: https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/kubernetes.png
 authors:
   - DavidWells
 ---
 
 One of the primary goals of the serverless framework is to provide a **platform-agnostic cloud experience** for developers.
 
-You write your code once and you have the freedom to choose where it runs.
+We want it to be easy for people to write code once and have the freedom to choose where that code runs.
 
-That's why we are super stoked to to announce the latest serverless provider integration: **[Kubeless](http://kubeless.io/)**
+That is why we are super excited to announce a brand new serverless provider [Kubeless](http://kubeless.io/) to expand where your functions can run.
+
+## Introducing Kubeless
 
 <a href="http://kubeless.io/" target="_blank">
   <img width="360" src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/kubeless.png" />
 </a>
 
-Made by the the fine folks over at [Binami](https://bitnami.com/), Kubeless is a Kubernetes-native way to deploy and manage your serverless functions via the serverless framework.
+Made by the the fine folks over at [Binami](https://bitnami.com/), **[Kubeless](http://kubeless.io/)** is a Kubernetes-native way to deploy and manage your serverless functions via the serverless framework.
 
 [Kubeless](https://github.com/kubeless/kubeless) lets you deploy small bits of code without having to worry about the underlying infrastructure. It leverages Kubernetes resources to provide auto-scaling, API routing, monitoring, troubleshooting and more.
-
-## Introduction to Kubeless
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ROA7Ig7tD5s" frameborder="0" allowfullscreen></iframe>
 
@@ -171,5 +171,6 @@ Here’s what you need to get started with the Kubeless plug-in now:
 - [GitHub repo](https://github.com/kubeless/kubeless)
 - [Kubeless Example](https://github.com/kubeless/kubeless/tree/master/examples)
 - [Kubeless Docs](https://serverless.com/framework/docs/providers/kubeless/)
+- [Kubeless Homepage](http://kubeless.io/)
 
 If you have questions or comments about the integration, we'd love to hear from you in the comments below or over on the [serverless forums](https://forum.serverless.com/).
