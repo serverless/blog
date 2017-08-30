@@ -1,5 +1,5 @@
 ---
-title: "Serverless + Containers: Kubernetes native functions available via Kubeless"
+title: "Serverless & Containers? Kubeless brings functions as a service to Kubernetes"
 description: Kubeless is a Kubernetes-native way to deploy and manage your serverless functions via the serverless framework
 date: 2017-08-30
 layout: Post
@@ -12,33 +12,39 @@ One of the primary goals of the serverless is to provide a **platform-agnostic c
 
 You write your code once and you have the freedom to choose where it runs.
 
-That's why we are super stoked to to announce the latest serverless provider integration: **Kubeless**
+That's why we are super stoked to to announce the latest serverless provider integration: **[Kubeless](http://kubeless.io/)**
+
+<img width="360" src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/kubeless.png" />
 
 Made by the the fine folks over at [Binami](https://bitnami.com/), Kubeless is a Kubernetes-native way to deploy and manage your serverless functions via the serverless framework.
 
 [Kubeless](https://github.com/kubeless/kubeless) lets you deploy small bits of code without having to worry about the underlying infrastructure. It leverages Kubernetes resources to provide auto-scaling, API routing, monitoring, troubleshooting and more.
 
-## About Kubeless
+## Introduction to Kubeless
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ROA7Ig7tD5s" frameborder="0" allowfullscreen></iframe>
 
 This integrations brings **functions** and **events** into your Kubernetes cluster.
 
+**functions** and **events** are logically grouped together in **services**.
+
 Let's explore those two main concepts and how they pertain to Kubeless.
 
-### Functions
+### - Functions
 
-A Function is an Kubeless Function. It's an independent unit of deployment, like a microservice. It's merely code, deployed in the cloud, that is most often written to perform a single job such as:
+A Function is an independent unit of deployment, like a microservice. It's merely code, deployed in the cloud, that is most often written to perform a single job such as:
 
 - Saving a user to the database
 - Processing a file in a database
 - Performing a scheduled task (To be added in newer versions)
 
-You can perform multiple jobs in your code, but we don't recommend doing that without good reason. Separation of concerns is best and the Framework is designed to help you easily develop and deploy Functions, as well as manage lots of them.
+The framework is designed to help you easily develop and deploy **Functions** into your Kubernetes cluster.
 
-### Events
+### - Events
 
-Anything that triggers an Kubeless Event to execute is regarded by the Framework as an Event. Events are platform events on Kubeless such as:
+Anything that triggers a Kubeless Function to execute is regarded by the Framework as an **Event**.
+
+Here are some examples of events:
 
 - An API Gateway HTTP endpoint (e.g., for a REST API)
 - A Kafka queue message (e.g., a message)
@@ -46,7 +52,7 @@ Anything that triggers an Kubeless Event to execute is regarded by the Framework
 
 [See list of supported events](https://serverless.com/framework/docs/providers/kubeless/events/)
 
-### Services
+### - Services
 
 Functions and events are grouped together in services and configured with a `serverless.yml` file. `serverless.yml` is where you define your Functions and the Events that trigger them. Continue reading for an example at the end of this post.
 
