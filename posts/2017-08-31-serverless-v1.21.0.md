@@ -26,7 +26,7 @@ You can find a complete list of all the updates in the [CHANGELOG.md](https://gi
 
 We're thrilled to announce that [Kubeless](http://kubeless.io/) provider support has just landed in the Serverless Framework!
 
-Kubeless is a Kubernetes-Native framework developed by [Bitnami](https://bitnami.com/) which makes it possible to provision and run serverless functions atop Kubernetes.
+Kubeless is a Kubernetes-Native framework developed by [Bitnami](https://bitnami.com/) which makes it possible to provision and run serverless functions atop [Kubernetes](https://kubernetes.io/).
 
 You can create a new `kubeless` service with the help of the `kubeless-nodejs` or `kubeless-python` service templates:
 
