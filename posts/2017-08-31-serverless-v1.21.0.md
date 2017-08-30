@@ -3,12 +3,12 @@ title: Serverless v1.21 - Kubeless provider support, AWS credentials management 
 description: Kubeless support, AWS credentials management, new AWS service templates, invoke improvements, enhancements, bug fixes and more added in the Serverless Framework v1.21 release.
 date: 2017-08-31
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-v1.21.png
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-v1.21.png
 authors:
   - PhilippMuns
 ---
 
-<img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-v1.21.png" width="210px" >
+<img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-v1.21.png" width="210px" >
 
 It's been a wild two weeks, everyone.
 
