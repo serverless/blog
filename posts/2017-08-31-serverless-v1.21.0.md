@@ -135,7 +135,25 @@ This release contains lots of hard work from our beloved community, and wouldn't
 
 Huge round of applause to all of the contributors who submitted changes for this release:
 
-- John Doe
+- Daniel Schep
+- Dmitri Zimine
+- Eoin Shanaghy
+- Francisco Guimarães
+- Gharsallah Mohamed
+- Jacob Massey
+- James Thomas
+- Loren Gordon
+- Mariusz Nowak
+- Rafal Wilinski
+- Sebastien Goasguen
+- Seth
+- Toby Hede
+- Tommy Brunn
+- Vlad Holubiev
+- alokmandloi
+- guyklainer
+- mpuittinen
+- patrickheeney
 
 ## Upcoming releases / contributions
 
