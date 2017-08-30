@@ -20,7 +20,7 @@ That is why we are super excited to announce a brand new serverless provider [Ku
   <img width="360" src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/kubeless.png" />
 </a>
 
-Made by the the fine folks over at [Binami](https://bitnami.com/), **[Kubeless](http://kubeless.io/)** is a Kubernetes-native way to deploy and manage your serverless functions via the serverless framework.
+Made by the the fine folks over at [Bitnami](https://bitnami.com/), **[Kubeless](http://kubeless.io/)** is a Kubernetes-native way to deploy and manage your serverless functions via the serverless framework.
 
 [Kubeless](https://github.com/kubeless/kubeless) lets you deploy small bits of code without having to worry about the underlying infrastructure. It leverages Kubernetes resources to provide auto-scaling, API routing, monitoring, troubleshooting and more.
 
