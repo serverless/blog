@@ -1,6 +1,6 @@
 ---
-title: Serverless v1.21 - TypeScript service template, AWS credentials management and invoke improvements added
-description: AWS credentials management, new AWS service templates, invoke improvements, enhancements, bug fixes and more added in the Serverless Framework v1.21 release.
+title: Serverless v1.21 - Kubeless provider support, AWS credentials management and invoke improvements added
+description: Kubeless support, AWS credentials management, new AWS service templates, invoke improvements, enhancements, bug fixes and more added in the Serverless Framework v1.21 release.
 date: 2017-08-31
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-release1.21.png
@@ -21,6 +21,20 @@ What we're trying to say is: sorry for the temporary lull in new action-packed f
 ## Noteable changes v1.21 introduces
 
 You can find a complete list of all the updates in the [CHANGELOG.md](https://github.com/serverless/serverless/blob/master/CHANGELOG.md) file.
+
+### Kubeless provider support
+
+We're thrilled to announce that [Kubeless](http://kubeless.io/) provider support has just landed in the Serverless Framework!
+
+Kubeless is a Kubernetes-Native framework developed by [Bitnami](https://bitnami.com/) which makes it possible to provision and run serverless functions atop Kubernetes.
+
+You can create a new `kubeless` service with the help of the `kubeless-nodejs` or `kubeless-python` service templates:
+
+```bash
+serverless create --template kubeless-nodejs --path my-kubeless-service
+```
+
+Make sure to read the [announcement blog post](https://serverless.com/blog/serverless-and-kubernetes-via-kubeless/) (which includes a nice showcase video) and check out their [plugin repository](https://github.com/serverless/serverless-kubeless).
 
 ### Raw data passing for `invoke` and `invoke local`
 
