@@ -107,7 +107,7 @@ module.exports = (new UserTableFunc()).exports;
 ```
 ### Client SDK
 
-It is important to encapsulate the API for browser consumers so that when you install the `bellman` package it is very OOP/API-like. For that I generated the AWS SDK but then dolled it up so it looks like the API, not a generic catch-all. Here's a hint: if the process to generate the client is 100% automated, it will feel like that to the caller. Instead, I chose a system that is mostly automated but needs a little guidance. For that there's a (client side helper class)[https://github.com/Movement-2016/bellman/blob/master/clients/lib/Client.js] for all cases and a specialized derivation for (REST/CRUD APIs)[https://github.com/Movement-2016/bellman/blob/master/clients/lib/Service.js].
+It is important to encapsulate the API for browser consumers so that when you install the `bellman` package it is very OOP/API-like. For that I generated the AWS SDK but then dolled it up so it looks like the API, not a generic catch-all. Here's a hint: if the process to generate the client is 100% automated, it will feel like that to the caller. Instead, I chose a system that is mostly automated but needs a little guidance. For that there's a [client side helper class](https://github.com/Movement-2016/bellman/blob/master/clients/lib/Client.js) for all cases and a specialized derivation for [REST/CRUD APIs](https://github.com/Movement-2016/bellman/blob/master/clients/lib/Service.js).
 
 For custom APIs you have to manually create the end point class with the shape of the API:
 ```js
