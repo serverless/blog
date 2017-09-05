@@ -45,7 +45,7 @@ This ability to deploy across clouds improves SLA and offers higher function ava
 
 Reduce data transfer costs with edge location support. Unlike other edge FaaS solutions, Spotinst Functions doesn’t have limitations on external api calls or execution time limits.
 
-They are currently supporting 15 different locations around the U.S and 10+ locations in APAC, SEA & Europe.
+They are currently supporting 15 different locations around the US and 10+ locations in APAC, SEA & Europe.
 
 ### Function Analytics
 
