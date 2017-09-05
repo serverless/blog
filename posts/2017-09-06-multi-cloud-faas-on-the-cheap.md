@@ -46,7 +46,7 @@ They are currently supporting 15 different locations around the US and 10+ locat
 
 ### Function Analytics
 
-- Invocation count & Latency metrics, Errors & HTTP Response codes Analytics
+- Invocation count & latency metrics, errors & HTTP response codes analytics
 - Geo Location analytics
 - Easy log debugging
 
