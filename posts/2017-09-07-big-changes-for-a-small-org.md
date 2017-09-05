@@ -1,6 +1,6 @@
 ---
-title: "Preparing for Big Scale in a Small Shop Using Serverless"
-description: When a group of scrappy activists raise millions of dollars, they need an architecture that never turns a donor away
+title: Scaling the Resistance: a Zero-maintenance Donations Platform with Serverless and AWS
+description: To raise millions of dollars in donations, you need a zero-maintenance architecture that never turns a donor away
 date: 2017-09-07
 layout: Post
 thumbnail: https://movementvote.org/images/Movement-2018-logo-blue.png
@@ -9,7 +9,7 @@ authors:
 ---
 The business of "funding the resistance" is a volatile one. There are big spikes of donations after major events (Charlottesville, Harvey, etc.), followed by relatively quiet periods. And those traffic spikes can be huge.
 
-As a non-profit running on volunteerism and a shoestring budget, it's a lot to manage, and we wondered where to turn. Atomic services (like AWS) were a flexible blessing and a rigid curse. Sometimes they practically require a PhD in configuration files.
+As a non-profit running on volunteerism and a shoestring budget, it's a lot to manage, and we wondered where to turn. Atomic services (like AWS) were both a flexible blessing and a rigid curse. Sometimes they practically require a PhD in configuration files.
 
 When we tried out the Serverless Framework, all that power and flexibility suddenly seemed within reach. Serverless meant we could have a pay-as-you-go, zero-maintanence site that we could build, deploy and host in a single environment. We were pumped to try it out.
 
