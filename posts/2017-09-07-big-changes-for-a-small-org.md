@@ -3,7 +3,7 @@ title: Scaling the Resistance - a Zero-maintenance Donations Platform with Serve
 description: To raise millions of dollars in donations, you need a zero-maintenance architecture that never turns a donor away
 date: 2017-09-07
 layout: Post
-thumbnail: https://movementvote.org/images/Movement-2018-logo-blue.png
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/Movement-2018-logo-square.png
 authors:
   - VictorStone
 ---
