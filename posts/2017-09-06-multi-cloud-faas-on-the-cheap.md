@@ -1,5 +1,5 @@
 ---
-title: "Cheaper functions with spot inst"
+title: "Run Multi-region, Cross Cloud functions at 50-80% the cost w/ Serverless & Spotinst"
 description: New provider added spotinst
 date: 2017-09-06
 layout: Post
