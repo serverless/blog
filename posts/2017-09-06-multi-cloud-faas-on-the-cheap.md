@@ -35,7 +35,7 @@ Spotinst currently supports Node (4, 6, & 8.3), Java, Python, Ruby, Go as functi
 
 ### Cross-cloud deployments
 
-Spotinst functions can be deployed simultaneously in AWS, Azure and Google Cloud Platform. This gives serverless users that cross-cloud deployment story they have been searching for.
+Spotinst functions can be deployed simultaneously in AWS, Azure and Google Cloud Platform.
 
 This ability to deploy across clouds improves SLA and offers higher function availability. If one cloud provider goes down (or pricing is cheaper elsewhere), Spotinst handles this for you under the hood.
 
