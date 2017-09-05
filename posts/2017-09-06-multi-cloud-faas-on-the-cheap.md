@@ -8,7 +8,7 @@ authors:
   - DavidWells
 ---
 
-We've seen it time and time again: companies get tremendous cost savings when they port into the serverless world.
+We've seen it time and time again: companies get tremendous cost savings when they port over into the serverless realm.
 
 **Some real world examples:**
 
