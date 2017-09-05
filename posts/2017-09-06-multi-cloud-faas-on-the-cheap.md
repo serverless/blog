@@ -19,7 +19,7 @@ We've seen it time and time again: companies get tremendous cost savings when th
 - ["moved the work of 40 dedicated servers onto Lambda and in doing so decimated our costs."](http://highscalability.com/blog/2016/7/27/economics-may-drive-serverless.html)
 - and so on.
 
-What if I told you... **it just got even cheaper**? 🎉  
+What if I told you...it just got even cheaper?  
 
 ## Serverless & Spotinst team up
 
