@@ -15,9 +15,6 @@ We've seen it time and time again: companies get tremendous cost savings when th
 - [How I cut my AWS bill by 90% by going serverless](https://medium.freecodecamp.org/how-i-cut-my-aws-bill-by-90-35c937596f0c)
 - [Costs a small fraction (~1%) of the traditional cloud approach](https://www.infoq.com/news/2016/08/serverless-autodesk)
 - [AWS Lambda: 9 million API calls for < $1](https://medium.com/@PaulDJohnston/aws-lambda-9-million-api-calls-for-1-1134243c55d7)
-- [$200/mo server on the task. Replaced with $2/mo Lambda](https://twitter.com/Spruke/status/766021881719885825)
-- ["moved the work of 40 dedicated servers onto Lambda and in doing so decimated our costs."](http://highscalability.com/blog/2016/7/27/economics-may-drive-serverless.html)
-- and so on.
 
 What if I told you...it just got even cheaper?  
 
