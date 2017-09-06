@@ -1,6 +1,6 @@
 ---
-title: "Run Multi-region, Cross Cloud functions at 50-80% the cost w/ Serverless & Spotinst"
-description: New provider added spotinst
+title: "Run Serverless Functions at half the cost with Spotinst & Serverless Framework"
+description: "Using the Spotinst provider integration for serverless you can run multi-region, cross-cloud functions at 50-80% the cost"
 date: 2017-09-06
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/spotinst-thumb.png
@@ -12,9 +12,9 @@ We've seen it time and time again: companies get tremendous cost savings when th
 
 **Some real world examples:**
 
-- [How I cut my AWS bill by 90% by going serverless](https://medium.freecodecamp.org/how-i-cut-my-aws-bill-by-90-35c937596f0c)
-- [Costs a small fraction (~1%) of the traditional cloud approach](https://www.infoq.com/news/2016/08/serverless-autodesk)
-- [AWS Lambda: 9 million API calls for < $1](https://medium.com/@PaulDJohnston/aws-lambda-9-million-api-calls-for-1-1134243c55d7)
+- <a href="https://medium.freecodecamp.org/how-i-cut-my-aws-bill-by-90-35c937596f0c" target="_blank">How I cut my AWS bill by 90% by going serverless</a>
+- <a href="https://www.infoq.com/news/2016/08/serverless-autodesk" target="_blank">Costs a small fraction (~1%) of the traditional cloud approach</a>
+- <a href="https://medium.com/@PaulDJohnston/aws-lambda-9-million-api-calls-for-1-1134243c55d7" target="_blank">AWS Lambda: 9 million API calls for $1</a>
 
 What if I told you...it just got even cheaper?  
 
@@ -62,19 +62,30 @@ With 500,000 Requests per Minute (21,600,000,000 Monthly) with 256MB of RAM & <1
 - IBM Bluemix (Open Whisk): **~$9,000**
 - Spotinst Functions: **~$2,000 (!)**
 
-[View the getting started guide](/framework/docs/providers/spotinst/guide/quick-start/) in our docs, or continue reading this post for a step by step setup guide.
+## Getting started
 
-<br/>
+Here’s what you need to get started with the Spotinst plug-in now:
 
-## Getting Started with Serverless & Spotinst
+[Start here](/framework/docs/providers/spotinst/guide/quick-start/) in our docs.
 
-Below are instructions on how to set up and deploy your first service on SpotInst.
+- [GitHub repo](https://github.com/spotinst/serverless-spotinst-functions)
+- [Spotinst Docs](https://serverless.com/framework/docs/providers/spotinst/)
+- [Spotinst Functions Homepage](https://spotinst.com/products/spotinst-functions/)
+
+Or continue reading for step by step instructions on how to set up and deploy your first service on Spotinst.
+
+Pre-requisites: Make sure you have the latest version of serverless installed on your machine.
+
+```bash
+# install serverless in your command line
+npm install serverless -g
+```
 
 ### 1. Sign up for Spotinst Account
 
 ![](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/spotinst-post/1._Sign_up_for_SpotInst_Account.jpg "1._Sign_up_for_SpotInst_Account.jpg")
 
-https://console.spotinst.com/#/auth/signUp
+You can [sign up for a Spotinst account here](https://console.spotinst.com/#/auth/signUp)
 
 ### 2. Head into the functions console
 
@@ -82,13 +93,15 @@ https://console.spotinst.com/#/auth/signUp
 
 Inside of Spotinst, head into the [Functions console](https://console.spotinst.com/functions).
 
+[https://console.spotinst.com/functions](https://console.spotinst.com/functions)
+
 ### 3. Create a new Spotinst application
 
 ![](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/spotinst-post/3._Create_a_new_SpotInst_application.jpg "3._Create_a_new_SpotInst_application.jpg")
 
 Create a new app and give it a name.
 
-An application in Spotinst is a logical frame that groups several environments of the same relevance. Most commonly, it stores environments that share the same business application (e.g., testing and production of a specific function). [Learn more in the Spotinst docs](https://help.spotinst.com/hc/en-us/articles/115004156989-Application)
+An `application` in Spotinst is a logical group of several environments. Most commonly, it stores environments that share the same business application (e.g., testing and production of a specific function). More on Spotinst applications [in the Spotinst docs](https://help.spotinst.com/hc/en-us/articles/115004156989-Application)
 
 ### 4. Create a new environment in the Spotinst application
 
@@ -96,7 +109,9 @@ An application in Spotinst is a logical frame that groups several environments o
 
 Name the Environment and choose which regions and providers you want to run the function in.
 
-The Environment in Spotinst refers to a configuration group that contains actual Functions. [Learn more in the spotinst docs](https://help.spotinst.com/hc/en-us/articles/115004157229-Environment)
+This is where you can choose to run your function across cloud providers and within multiple regions. 🎉
+
+Inside Spotinst, the `environment` refers to a configuration group that contains actual Functions. [Learn more in the spotinst docs](https://help.spotinst.com/hc/en-us/articles/115004157229-Environment)
 
 ### 5a. Grab an API token in Spotinst settings
 
@@ -178,16 +193,8 @@ Run `sls info` for information and live endpoints of your service.
 
 or via the `sls info` command in your terminal.
 
-## Links and Resources
+## Multi-Cloud & Multi-region functions
 
-Here’s what you need to get started with the Spotinst plug-in now:
-
-[Start here](/framework/docs/providers/spotinst/guide/quick-start/) in our docs.
-
-https://www.npmjs.com/package/serverless-spotinst-functions
-
-- [GitHub repo](https://github.com/spotinst/serverless-spotinst-functions)
-- [Spotinst Docs](https://serverless.com/framework/docs/providers/spotinst/)
-- [Spotinst Functions Homepage](https://spotinst.com/products/spotinst-functions/)
+🎉 Congrats you are now leveraging spot instance prices and running your functions across multiple clouds.
 
 If you have questions or comments about the integration, we'd love to hear from you in the comments below or over on the [serverless forums](https://forum.serverless.com/).
