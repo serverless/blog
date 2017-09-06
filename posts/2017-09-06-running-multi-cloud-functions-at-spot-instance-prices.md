@@ -26,6 +26,8 @@ Introducing the latest serverless provider integration, [Spotinst](https://spoti
 
 Spotinst Functions enables users to deploy multi-cloud functions at Spot Prices. By leveraging spot instances, you could **save 50 to 80%** over standard serverless FaaS pricing.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SZm7SlT3EIQ" frameborder="0" allowfullscreen></iframe>
+
 ### Spotinst supported runtimes
 
 Spotinst currently supports Node (4, 6, & 8.3), Java, Python, Ruby, Go as function runtimes.
