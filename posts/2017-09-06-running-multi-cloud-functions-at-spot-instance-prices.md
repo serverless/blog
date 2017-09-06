@@ -22,11 +22,9 @@ What if I told you...it just got even cheaper?
 
 Introducing the latest serverless provider integration, [Spotinst](https://spotinst.com/products/spotinst-functions/).
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/spotinst-post/sls-and-spotinst.png"/>
+<img align='right' width="300" src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/spotinst-post/sls-and-spotinst.png"/>
 
-Spotinst Functions enables users to deploy multi-cloud functions at Spot Prices. By leveraging spot instances, you could **save 50 to 80%** over standard serverless FaaS pricing.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SZm7SlT3EIQ" frameborder="0" allowfullscreen></iframe>
+[Spotinst Functions](https://spotinst.com/products/spotinst-functions/) enables users to deploy multi-cloud functions at Spot Prices. By leveraging spot instances, you could **save 50 to 80%** over standard serverless FaaS pricing.
 
 ### Spotinst supported runtimes
 
@@ -64,6 +62,10 @@ With 500,000 Requests per Minute (21,600,000,000 Monthly) with 256MB of RAM & <1
 - IBM Bluemix (Open Whisk): **~$9,000**
 - Spotinst Functions: **~$2,000 (!)**
 
+## Demo
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SZm7SlT3EIQ" frameborder="0" allowfullscreen></iframe>
+
 ## Getting started
 
 Here’s what you need to get started with the Spotinst plug-in now:
@@ -73,6 +75,7 @@ Here’s what you need to get started with the Spotinst plug-in now:
 - [GitHub repo](https://github.com/spotinst/serverless-spotinst-functions)
 - [Spotinst Docs](https://serverless.com/framework/docs/providers/spotinst/)
 - [Spotinst Functions Homepage](https://spotinst.com/products/spotinst-functions/)
+- Ping us on [@goserverless](https://twitter.com/goserverless) or [@spotinst](https://twitter.com/spotinst)
 
 Or continue reading for step by step instructions on how to set up and deploy your first service on Spotinst.
 
