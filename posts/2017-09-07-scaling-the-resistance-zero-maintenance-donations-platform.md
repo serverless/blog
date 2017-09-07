@@ -8,6 +8,8 @@ authors:
   - VictorStone
 ---
 
+Hey folks, I'm Victor Stone, technology lead for [MovementVote.org](https://movementvote.org/).
+
 The business of "funding the resistance" is a volatile one. There are big spikes of donations after major events (Charlottesville, Harvey, etc.), followed by relatively quiet periods. And those traffic spikes can be huge.
 
 As a non-profit running on volunteerism and a shoestring budget, it's a lot to manage, and we wondered where to turn. Atomic services (like AWS) were both a flexible blessing and a rigid curse. Sometimes they practically require a PhD in configuration files.
