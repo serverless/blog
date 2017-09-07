@@ -10,13 +10,13 @@ authors:
 
 In our [last ops post](https://serverless.com/blog/serverless-ops-metrics/), we set up simple alarms to monitor your Lambda functions with CloudWatch metrics and alarms. This gives you a baseline understanding of what is happening in your functions.
 
-But metrics can only take you so far. When errors are firing and alarms are triggering, you need visibility how and why your functions are failing.
+But metrics can only take you so far. When errors are firing and alarms are triggering, you need visibility into how and why your functions are failing.
 
 Enter an old friend of every developer: the log. Logging lets you drop status updates from your code and provide additional detail around errors. 
 
-Inspecting logs in a serverless world uses some different patterns -- no SSH-ing onto a production box and grep-ing through text files for you. In this post, I'll talk about the basic logging mechanisms with AWS Lambda and dive into some advanced practices for understanding your functions.
+Inspecting logs in a serverless world uses some different patterns -- no SSH-ing onto a production box and grep-ing through text files for you. In this post, we'll talk about the basic logging mechanisms with AWS Lambda and dive into some advanced practices for understanding your functions.
 
-# The Basics: Logging to CloudWatch
+## The Basics: Logging to CloudWatch
 
 First, let's start with a walkthrough of how logging works with AWS Lambda. We'll create a Serverless service to test logging. I like to use Python, but the mechanics are similar with Javascript or the other supported languages.
 
@@ -96,7 +96,7 @@ In the logs, we can see two logging statements. The first is from the print stat
 
 This is similar for other runtimes. For example, in Node, use `console.log()` for logging to CloudWatch.
 
-# Viewing your logs
+## Viewing your logs
 
 If you're actively developing a function, the fastest way to view your logs is with the Serverless Framework itself. As shown above, you can invoke a function and get logs for that specific invocation:
 
@@ -122,7 +122,9 @@ This will show all of your Log Groups in the region. Use the search box to filte
 
 <img width="1392" alt="CloudWatch Logs Filter" src="https://user-images.githubusercontent.com/6509926/30168071-f7234c96-93ad-11e7-9a7d-e0534425d059.png">
 
-Click on your Log Group. You will see a list of Log Streams listed. Each function "container" that spins up for your function will get its own Log Stream, but they will all feed into the same Log Group. If you want to look at logs across all instances of your function, click "Search Log Group". You'll see a screen like the following:
+Click on your Log Group. You will see a list of Log Streams listed. Each function "container" that spins up for your function will get its own Log Stream, but they will all feed into the same Log Group. If you want to look at logs across all instances of your function, click "Search Log Group".
+
+You'll see a screen like the following:
 
 <img width="1388" alt="CloudWatch Raw Logs" src="https://user-images.githubusercontent.com/6509926/30168167-31033868-93ae-11e7-8f5c-65290304aeb3.png">
 
@@ -134,7 +136,7 @@ The Lambda logs usually aren't useful for debugging, so I filter them out at the
 
 Once you've done that, it's easier to browse your logs for the information you want.
 
-# Advanced Usage: Centralized Logging
+## Advanced Usage: Centralized Logging
 
 The terminal and CloudWatch console are fine for small-scale debugging purposes, but they quickly break down. If you're looking through high volumes of log messages or correlating errors across multiple Lambda functions, you'll be pulling your hair out with the CloudWatch console. 
 
@@ -228,6 +230,6 @@ Use the ARN from your log forwarding function previously as the `destinationARN`
 
 Once you `sls deploy` your function, your CloudWatch Log Groups will be wired up to send to your forwarding function to be shipped to your log aggregator!
 
-# Additional Reading
+## Additional Reading
 
 [Yan Cui](https://twitter.com/theburningmonk) recently did an [excellent series on managing CloudWatch logs with Lambda](https://hackernoon.com/centralised-logging-for-aws-lambda-b765b7ca9152). He goes further in depth with logging, including using correlation Ids to trace requests across function boundaries. Yan is an excellent resource on Lambda in general, having managed some large Lambda-backed deployments at Yubl. His series on Yubl's [road to Serverless architecture](http://theburningmonk.com/yubls-road-to-serverless-architecture/) is well worth reading.
