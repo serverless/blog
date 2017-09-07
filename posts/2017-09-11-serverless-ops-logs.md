@@ -3,7 +3,7 @@ title: Serverless Ops 102 - CloudWatch Logs and Centralized Logging with AWS Lam
 description: Monitor and Debug your Serverless Lambda functions with CloudWatch and centralized logging.
 date: 2017-09-11	
 layout: Post
-thumbnail: TODO
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/centralized-logging-aws-lambda.jpg
 authors:
   - AlexDeBrie
 ---
@@ -233,3 +233,6 @@ Once you `sls deploy` your function, your CloudWatch Log Groups will be wired up
 ## Additional Reading
 
 [Yan Cui](https://twitter.com/theburningmonk) recently did an [excellent series on managing CloudWatch logs with Lambda](https://hackernoon.com/centralised-logging-for-aws-lambda-b765b7ca9152). He goes further in depth with logging, including using correlation Ids to trace requests across function boundaries. Yan is an excellent resource on Lambda in general, having managed some large Lambda-backed deployments at Yubl. His series on Yubl's [road to Serverless architecture](http://theburningmonk.com/yubls-road-to-serverless-architecture/) is well worth reading.
+
+### Other posts in the Serverless Ops series:
+[Serverless Ops 101: CloudWatch Metrics and Alarms](https://serverless.com/blog/serverless-ops-metrics/)
