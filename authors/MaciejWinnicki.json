@@ -6,7 +6,6 @@
   "avatar": "https://avatars.githubusercontent.com/mthenw?v=3&s=60",
   "bio": {
     "short": "Maciej Winnicki is a principal software engineer at Serverless, Inc.",
-    "long":
-      "Maciej Winnicki is a senior backend engineer at Serverless Inc. He works on a platform that helps developers build serverless architectures."
-    }
+    "long": "Maciej Winnicki is a principal software engineer at Serverless Inc. He works on the Event Gateway that helps developers build event-driven serverless architectures."
+  }
 }
