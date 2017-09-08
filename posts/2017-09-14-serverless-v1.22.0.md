@@ -1,5 +1,5 @@
 ---
-title: Serverless v1.22 - CLI based plugin discovery and mgmt., Spotinst Functions support, AWS Kotlin JVM template, SSM parameters in Serverless Variables added
+title: Serverless v1.22 - CLI-based plugin discovery, Spotinst Functions support and more
 description: CLI based plugin management, SSM via Serverless Variables, Spotinst Functions support, enhancements, bug fixes and more added in the Serverless Framework v1.22 release.
 date: 2017-09-14
 layout: Post
