@@ -140,3 +140,7 @@ custom:
 A caveat here is that this will add latency to your overall Lambda execution as you will be waiting on the API call to CloudWatch. If you'd like, you could avoid this by using CloudWatch log Metric Filters to create metrics from your logs instead -- more detail [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringLogData.html).
 
 As your Serverless application gets more serious, you will want to track metrics more closely using a tool like DataDog, IOPipe, or Honeycomb. But for quick and easy monitoring, it's hard to go wrong with CloudWatch and the [serverless-plugin-aws-alerts](https://github.com/ACloudGuru/serverless-plugin-aws-alerts) plugin.
+
+## Next post in the Serverless Ops series:
+
+- [Serverless Ops 102: CloudWatch Logs and Centralized Logging with AWS Lambda](https://serverless.com/blog/serverless-ops-logs/)
