@@ -10,7 +10,7 @@ authors:
 
 # How to add a custom domain to API Gateway with Serverless
 
-With Serverless, it's easier than ever to deploy production-ready API endpoints. However, using AWS API Gateway results in odd hostnames for your endpoints. Further, these hostnames can change if you remove and redeploy your service, which can cause problems for existing clients.
+With Serverless, it's easier than ever to deploy production-ready API endpoints. However, using AWS API Gateway results in odd hostnames for your endpoints. Further, these hostnames will change if you remove and redeploy your service, which can cause problems for existing clients.
 
 In this guide, I'll show you how to map a custom domain name to your endpoints.
 
@@ -131,7 +131,9 @@ Once the deploy is finished, you will see the Service Information output. This i
 
 and I get my `Hello, world!` response. If I change to the `/goodbye` endpoint, I'll get the `Goodbye, world!` response.
 
-It's nice how easy this is to get a production API endpoint, but this still isn't ideal. My domain is impossible to remember (`4aan6avk54.execute-api.us-east-1.amazonaws.com`). Plus, if I ever remove my service and then redeploy, I'll get a new random domain. Finally, the path is odd as well -- `/dev/hello` includes my stage as well as my actual page. I'd rather have a cleaner path. This shows the need for using a custom domain.
+It's nice how easy this is to get a production API endpoint, but this still isn't ideal. My domain is impossible to remember (`4aan6avk54.execute-api.us-east-1.amazonaws.com`). Plus, if I ever remove my service and then redeploy, I'll get a new random domain. 
+
+Finally, the path is odd as well -- `/dev/hello` includes my stage as well as my actual page. I'd rather have a cleaner path. This shows the need for using a custom domain.
 
 # Create a custom domain in API Gateway
 
