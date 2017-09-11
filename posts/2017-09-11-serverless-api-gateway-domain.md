@@ -1,6 +1,6 @@
 ---
-title: How to set up a custom domain name for Lambda and API Gateway with Serverless
-description: Use the Serverless Framework to configure a clean domain name on API Gateway.
+title: How to set up a custom domain name for Lambda & API Gateway with Serverless
+description: Learn how to set up a custom domain name for AWS Lambda & API Gateway using the Serverless Framework to configure a clean domain name for your services.
 date: 2017-09-11
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/aws-api-gateway-icon.png
