@@ -144,7 +144,7 @@ The workflow of the users service is:
 
 Let's look at the functions section of the `serverless.yml`:
 
-```bash
+```yaml
 # users-api crud service
 
 ...
@@ -171,7 +171,7 @@ We will visualize this when we run the service and talk about it, in the next se
 
 Now, let's look at the handler code:
 
-```bash
+```js
 'use strict';
 
 const fdk = require('@serverless/fdk');
@@ -189,7 +189,7 @@ const eventGateway = fdk.eventGateway({
 ```
 In this portion of the code, we use the Serverless FDK to initialize the Event Gateway.
 
-```bash
+```js
 // register function
 module.exports.register = (event, context, callback) => {
 
@@ -233,7 +233,8 @@ The workflow of the email service is:
 
 Let's look at the functions section of the `serverless.yml`:
 
-```bash
+```yaml
+...
 functions:
   sendWelcomeEmail:
     handler: handler.sendWelcomeEmail
@@ -249,7 +250,7 @@ We will visualize this when we run the service and talk about it, in the next se
 
 Now, let's look at the handler code, specifically the `sendWelcomeEmail` function:
 
-```bash
+```js
 ...
 ...
 module.exports.sendWelcomeEmail = (event, context, callback) => {
@@ -349,7 +350,7 @@ To simulate an application user interface, we will use `curl` to call the user s
 
 Run the following `curl` command on the other pane:
 
-```
+```bash
 $ cd mailman/frontend 
 $ curl -X POST \
   http://localhost:4000/users \
