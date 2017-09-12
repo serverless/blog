@@ -12,13 +12,13 @@ authors:
 
 In my previous post on [Anatomy of a Serverless Application](https://serverless.com/blog/anatomy-of-a-serverless-app/), I lay the foundation for building a very simple application with an email service using the Serverless Framework, deployed to AWS Lambda. 
 
-In this post, we will build `mailman`, an event-driven serverless application. The application has a simple frontend using `curl` that calls into a couple of backend services: an users service and an email service. The post will highlight event-driven application development with focus on full local development experience. We will look at services emitting, subscribing and reacting to events in a seamless manner using the Serverless Application Platform.
+In this post, we will build `mailman`, an event-driven serverless application. The application has a simple frontend using `curl` that calls into a couple of backend services: a users service and an email service. The post will highlight event-driven application development with focus on full local development experience. We will look at services emitting, subscribing and reacting to events in a seamless manner using the Serverless Application Platform.
 
 You will learn how to:
 
 - Setup the development environment
 - Create an application project
-- Create an users service
+- Create a users service
 - Create an email service
 - Write an event-driven application
 - Run the serverless services locally
@@ -121,7 +121,7 @@ Let's create a couple of the backend services and then we will explore the local
 
 The application has a few business goals:
 
-- register an user via a HTTP POST API call from the frontend
+- register a user via a HTTP POST API call from the frontend
 - on registration, send a welcome email to the user
 
 The application has a few technical goals as well:
@@ -132,14 +132,14 @@ The application has a few technical goals as well:
 
 ## Building the Services
 
-We will not get into the details of creating the services, but we will explore the code, dig deep into the functionality that is offered. Also, the gut of the services are mocked up, but the intention of the example is to showcase the event-driven nature of the services, so we will just focus on that.
+We will not get into the details of creating the services, but we will explore the code, dig deep into the functionality that is offered. Also, the guts of the services are mocked up, but the intention of the example is to showcase the event-driven nature of the services, so we will just focus on that.
 
 ### Building the Users Service
 
 The workflow of the users service is:
 
 - expose an HTTP endpoint for user registration,
-- register an user, and finally
+- register a user, and finally
 - **emit** an event `user.registered`
 
 Let's look at the functions section of the `serverless.yml`:
@@ -346,7 +346,7 @@ Then the `sendWelcomeEmail` function from the `email` service is registered with
 
 ### Calling the Services
 
-To simulate an application user interface, we will use `curl` to call the user service API for registering an user. We have the current `serverless run` session running on one pane and we will run the frontend curl commands on another pane.
+To simulate an application user interface, we will use `curl` to call the user service API for registering a user. We have the current `serverless run` session running on one pane and we will run the frontend curl commands on another pane.
 
 Run the following `curl` command on the other pane:
 
