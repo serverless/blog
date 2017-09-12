@@ -8,8 +8,6 @@ authors:
   - RupakGanguly
 ---
 
-# Writing an Event-driven Serverless Application with Full Local Development Experience
-
 In my previous post on [Anatomy of a Serverless Application](https://serverless.com/blog/anatomy-of-a-serverless-app/), I lay the foundation for building a very simple application with an email service using the Serverless Framework, deployed to AWS Lambda. 
 
 In this post, we will build `mailman`, an event-driven serverless application. The application has a simple frontend using `curl` that calls into a couple of backend services: a users service and an email service. The post will highlight event-driven application development with focus on full local development experience. We will look at services emitting, subscribing and reacting to events in a seamless manner using the Serverless Application Platform.
@@ -64,15 +62,15 @@ Serverless: You are now logged in
 
 ## Event-driven Serverless Application
 
-Let's look at three core capabilities that we need, to write, test and run a serverless event-driven application: event-driven workflow, programmatic access, and full local development support.
+Let's look at three core capabilities that we need, to write, test and run a serverless event-driven application: event-driven workflow, programmatic access, and full local development experience.
 
 ### Event-driven Workflow
 
-The tenet of a event-driven application is that the components interact with each other aynchronously via events. The components are not aware of each other and rely on a central event communication hub for relaying events across the application.  
+The tenet of an event-driven application is that the components interact with each other asynchronously via events. The components are not aware of each other and rely on a central event communication hub for relaying events across the application.  
 
-The Event Gateway, serves as the central event communication fabric for serverless applications. It acts as the broker for all event communication, and allows services to publish and subscribe to events. Additionally, it acts as an API Gateway for all HTTP communication. 
+The Event Gateway serves as the central event communication fabric for serverless applications. It acts as the broker for all event communication and allows services to publish and subscribe to events. Additionally, it acts as an API Gateway for all HTTP communication. 
 
-The Event Gateway uses a special `http` event-type to recognise standard HTTP requests. It standardizes both pub/sub and HTTP communication to be represented as events, combining them into a single experience. Services can send custom events and the Event Gateway wraps them up in a standard event envelope passing the payload along as-is. Events from well-known SaaS providers will be recognized as first-class event-types in the near future. **Everything as events is the mantra.**
+The Event Gateway uses a special `http` event-type to recognize standard HTTP requests. It standardizes both pub/sub and HTTP communication to be represented as events, combining them into a single experience. Services can send custom events and the Event Gateway wraps them up in a standard event envelope passing the payload along as-is. Events from well-known SaaS providers will be recognized as first-class event-types in the near future. **Everything as events is the mantra.**
 
 > Read [Event Gateway - The Missing Piece of Serverless Architectures](https://serverless.com/blog/introducing-serverless-event-gateway) for more details.
  
@@ -84,17 +82,17 @@ To write event-driven serverless applications, it's individual services need to 
 
 ### Local Development Support
 
-One of the biggest challenges with developing serverless applications, is to run and test the application locally. Since serverless applications are hosted on the cloud, it makes it very tedious to debug, test and develop code in an iterative manner. Although, all cloud providers and the Serverless Framework allows invoking one function at a time locally, the developer wishes to run the full application locally on thier machine.
+One of the biggest challenges with developing serverless applications is to run and test the application locally. Since serverless applications are hosted on the cloud, it makes it very tedious to debug, test and develop code in an iterative manner. Although all cloud providers and the Serverless Framework allows invoking one function at a time locally, the developer wishes to run the full application locally on their machine.
 
 The Serverless Emulator emulates different cloud provider FaaS offerings (currently AWS Lambda or Google Cloud Functions) on your local machine in an offline-focused manner. It provides that missing piece of tooling that makes application development with serverless so productive and exciting. It enables deploying and invoking serverless functions without the need of a setting up and deploying your serverless application to the cloud provider.
 
-> Checkout the [Emulator source](https://github.com/serverless/emulator) for more details. 
+> Check out the [Emulator source](https://github.com/serverless/emulator) for more details. 
 
 ### Seamless Developer Experience
 
 To empower the developer with a great development experience, the Serverless Framework brings it all together in a very simple and intuitive interface: the `serverless run` command.
 
-The `serverless run` command, detects and installs or spins up the latest version of the Event Gateway and the Emulator. It provides an unified visual interface for the event-driven workflow for the application as they happen. It provides an intuitive and decoupled interface for the services of an application to communicate with.
+The `serverless run` command, detects and installs or spins up the latest version of the Event Gateway and the Emulator. It provides a unified visual interface for the event-driven workflow for the application as they happen. It provides an intuitive and decoupled interface for the services of an application to communicate with.
 
 In the sections that follow, we will use the example application to demonstrate these killer features.
 
@@ -113,7 +111,7 @@ where,
 - `frontend` folder holds the frontend
 - `services` folder holds the serverless service(s)
 
-> With `sls invoke` you could test one single function at a time. But, with the Serverless Application Platofrm, you can run the full event-driven serverless application, with events interacting across the application, locally on your machine, without signup up for any cloud provider. YEAH!
+> With `sls invoke` you could test one single function at a time. But, with the Serverless Application Platform, you can run the full event-driven serverless application, with events interacting across the application, locally on your machine, without signup up for any cloud provider. YEAH!
  
 Let's create a couple of the backend services and then we will explore the local experience when we run the application. The way the non-serverless frontend portion of the application is written is totally your choice. In this post, I will primarily focus on the serverless portion of the application inside the `services` folder, and use a basic `curl` script to simulate the frontend.
 
@@ -121,7 +119,7 @@ Let's create a couple of the backend services and then we will explore the local
 
 The application has a few business goals:
 
-- register a user via a HTTP POST API call from the frontend
+- register a user via an HTTP POST API call from the frontend
 - on registration, send a welcome email to the user
 
 The application has a few technical goals as well:
@@ -136,7 +134,7 @@ We will not get into the details of creating the services, but we will explore t
 
 ### Building the Users Service
 
-The workflow of the users service is:
+The workflow of the `users` service is:
 
 - expose an HTTP endpoint for user registration,
 - register a user, and finally
@@ -161,7 +159,7 @@ functions:
 ```
 Nothing different than what you are used to. 
 
-> The important aspect to note is that the Serverless Application Platform with all its new products and enhancements, is still compatible with existing serverless applications that you have built. 
+> The important aspect to note is that the Serverless Application Platform with all its new products and enhancements is still compatible with existing serverless applications that you have built. 
 
 **Behind the scenes**
  
@@ -226,7 +224,7 @@ This portion shows the `register` function, that first checks if an email was pa
 
 ### Building the Email Service
 
-The workflow of the email service is:
+The workflow of the `email` service is:
 
 - send a welcome email to the registered user, and
 - **emit** an event `email.sent`
@@ -289,7 +287,7 @@ Now that we understand what the application is meant to do, and having looked at
 
 ### The Local Development Experience
 
-First time you **run** any service using `serverless run`, you will get a slightly different experience. Let's run the users service, and look at the visualization on the terminal:
+The first time you **run** any service using `serverless run`, you will get a slightly different experience. Let's run the users service, and look at the visualization on the terminal:
 
 ```bash
  $ cd mailman/services/users
@@ -304,13 +302,13 @@ First time you **run** any service using `serverless run`, you will get a slight
  Serverless     Event Gateway initialized
  ...
 ```
-The required components of the Serverless Application Platform, namely the Event Gateway and the Emulator are downloaded and installed locally on your machine, unless already installed. Also, note that the individual components advertise their API endpoints. Then, these components stay in the background listening for  events and ready for action.
+The required components of the Serverless Application Platform, namely the Event Gateway and the Emulator are downloaded and installed locally on your machine unless already installed. Also, note that the individual components advertise their API endpoints. Then, these components stay in the background listening for events and ready for action.
 
 I want to point out that this is how the **local development experience** starts for a developer. It is all inclusive, seamless and is just there for you.
 
 ### Running the Users Service
 
-With the local development setup done, we are ready to run our users service.
+With the local development setup done, we are ready to run our `users` service.
 
 ![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/blog_app_sls_run_users.gif)
 
@@ -328,7 +326,7 @@ Then the `register` function from the `users` service is registered with the Eve
 
 ### Running the Email Service
 
-Let's run the email service now.
+Let's run the `email` service now.
 
 ![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/blog_app_sls_run_email.gif)
 
@@ -460,7 +458,7 @@ Let's break it up and discuss what just happened.
 
 That concludes the discussion about the application. 
 
-Hopefully you followed the workflow of the application, and can see how easy it is to write an event-driven serverless application. That too, all locally tested and run. 
+Hopefully, you followed the workflow of the application and can see how easy it is to write an event-driven serverless application. That too, all locally tested and run. 
 
 The visualization at development time is crucial to debugging and tracing async event-driven applications, and can greatly help speed up application development cycles. 
 
