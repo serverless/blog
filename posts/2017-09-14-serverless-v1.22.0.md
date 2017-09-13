@@ -152,7 +152,18 @@ This release contains lots of hard work from our beloved community, and wouldn't
 
 Huge round of applause to all of the contributors who submitted changes for this release:
 
-- John Doe
+- Daniel Schep
+- Frank Schmid
+- Iddar Olivares
+- Javier Arellano
+- Loren Gordon
+- Marc Sluiter
+- Mariusz Nowak
+- Mislav Cimperšak
+- Rafal Wilinski
+- Takahiro Horike
+- Toby Hede
+- forevermatt
 
 ## Upcoming releases / contributions
 
