@@ -146,7 +146,7 @@ AWS allows you to invoke a Lambda function whenever a particular Log Group recei
 
 To get started, you should first deploy a Serverless service with your log forwarding function. Your `serverless.yml` should be similar to:
 
-```
+```yml
 # serverless.yml
 
 service: log-forwarder
