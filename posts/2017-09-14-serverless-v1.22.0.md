@@ -27,11 +27,11 @@ This time we're proud to announce the official "Spotinst Functions" provider int
 
 Eager to give it a try?
 
-Just follow the ["Getting started"](https://serverless.com/framework/docs/providers/spotinst/guide/quick-start/) instructions in our docs!
+Just follow the ["Quick Start"](https://serverless.com/framework/docs/providers/spotinst/guide/quick-start/) instructions in our docs!
 
 Also make sure to read the [announcement blog post](https://serverless.com/blog/running-multi-cloud-functions-at-spot-instance-prices/) to learn more about [Spotinst Functions](https://spotinst.com/products/spotinst-functions/).
 
-### CLI based plugin management with `serverless plugin` command
+### CLI based plugin management with the `serverless plugin` command
 
 It's finally here! Serverless supports a way to browse, install and uninstall Serverless plugins from within the CLI.
 
@@ -39,7 +39,7 @@ No need to add the plugin of your choice manually to `serverless.yml` or run `np
 
 Let's assume we want to install a `Webpack` plugin for our Serverless service.
 
-We can run `serverless plugin seach --query webpack` to search for all the available Serverless plugins which offer a Webpack integration:
+We can run `serverless plugin seach --query webpack` to search for all the available Serverless plugins which add Webpack support to the Serverless Framework:
 
 ```bash
 root@64d555c6e40a:/app# serverless plugin search --query webpack
@@ -64,7 +64,7 @@ Serverless: Successfully installed "serverless-webpack@latest"
 
 That's it. Serverless will do all the heavy lifting behind the scenes (creating an empty `package.json` file (if not yet present), installing the plugin with its peer dependencies, adding the plugin to the `serverless.yml` file, ...). After doing that we're off the races.
 
-If we want to remove a plugin from a service we simply run the `serverless plugin uninstall` command:
+If we want to remove a plugin from our service we simply run the `serverless plugin uninstall` command:
 
 ```bash
 root@64d555c6e40a:/app# serverless plugin uninstall --name serverless-webpack
@@ -82,7 +82,7 @@ AWS SSM Parameters are a great and recommended way to share encrypted variables 
 
 Serverless v1.22 introduces support for SSM Parameters via the Serverless Variables system.
 
-Let's assume that you've set the following SSM Parameters:
+Let's assume that we've set the following SSM Parameters:
 
 ```bash
 aws ssm put-parameter --name foo --value bar --type SecureString
@@ -91,7 +91,7 @@ aws ssm put-parameter --name /foo/bar --value bar --type SecureString
 aws ssm put-parameter --name /bar/foo --value foo --type String
 ```
 
-You could access those values in your `serverless.yml` file as follows (where `~` means that the value will be decrypted):
+We could access those values in your `serverless.yml` file as follows (where `~` means that the value will be decrypted):
 
 ```yml
 service:
@@ -116,7 +116,7 @@ You can read more about the SSM Parameter support in Serverless Variables in the
 
 The `deploy function` command is an easy and fast way to update the functions code without the need to go through a full `serverless deploy`. `deploy function` will push the functions code directly into the Lamdba function making it way faster than a CloudFormation stack update.
 
-From now on `deploy function` will also update the functions configuration. So making quick changes to your functions behavior is even easier.
+From now on `deploy function` will also update the functions configuration. So making quick changes to your functions settings is even easier.
 
 **Note:** Remember that doing a `deploy function` will put your Stack into an inconsistent state since the function and its configuration is different than the one which is described via CloudFormation. A subsequent `serverless deploy` will overwrite this state completely.
 
@@ -124,11 +124,11 @@ From now on `deploy function` will also update the functions configuration. So m
 
 ### New `aws-kotlin-jvm-maven` service template
 
-[Kotlin](https://kotlinlang.org/) is a new programming language which gained traction when Google announced the partnership for their Android project.
+[Kotlin](https://kotlinlang.org/) is a new programming language which gained significant traction when Google announced the partnership for their Android project.
 
 Since Kotlin can run on different platforms such as the JVM it's theoretically possible to run it on AWS Lambda as well.
 
-Serverless v1.22 ships with the new `aws-kotlin-jvm-maven` template which makes it possible to create Kotlin based Serverless services!
+Serverless v1.22 ships with the new `aws-kotlin-jvm-maven` template which makes it possible to create Kotlin-based Serverless services!
 
 Creating a new Kotlin service is as easy as:
 
@@ -136,7 +136,7 @@ Creating a new Kotlin service is as easy as:
 serverless create --template aws-kotlin-jvm-maven
 ```
 
-There's already a [WIP PR](https://github.com/serverless/serverless/pull/4239) which adds support for a Kotlin service template which will utilize the Node.js runtime.
+**Aside:** There's already a [WIP PR](https://github.com/serverless/serverless/pull/4239) which adds support for a Kotlin service template which utilizes the Node.js runtime.
 
 ### Other enhancements & bug fixes
 
