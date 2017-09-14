@@ -39,7 +39,7 @@ No need to add the plugin of your choice manually to `serverless.yml` or run `np
 
 Let's assume we want to install a `Webpack` plugin for our Serverless service.
 
-We can run `serverless plugin seach --query webpack` to search for all the available Serverless plugins which add Webpack support to the Serverless Framework:
+We can run `serverless plugin search --query webpack` to search for all the available Serverless plugins which add Webpack support to the Serverless Framework:
 
 ```bash
 root@64d555c6e40a:/app# serverless plugin search --query webpack
@@ -91,7 +91,7 @@ aws ssm put-parameter --name /foo/bar --value bar --type SecureString
 aws ssm put-parameter --name /bar/foo --value foo --type String
 ```
 
-We could access those values in your `serverless.yml` file as follows (where `~` means that the value will be decrypted):
+We could access those values in your `serverless.yml` file as follows (where `~true` means that the value will be decrypted):
 
 ```yml
 service:
@@ -114,11 +114,11 @@ You can read more about the SSM Parameter support in Serverless Variables in the
 
 ### Update function config when running `deploy function`
 
-The `deploy function` command is an easy and fast way to update the functions code without the need to go through a full `serverless deploy`. `deploy function` will push the functions code directly into the Lamdba function making it way faster than a CloudFormation stack update.
+The `deploy function` command is an easy and fast way to update the functions code without the need to go through a full `serverless deploy`. `deploy function` will push a function's code directly into the Lamdba function making it way faster than a CloudFormation stack update.
 
-From now on `deploy function` will also update the functions configuration. So making quick changes to your functions settings is even easier.
+From now on `deploy function` will also update the function's configuration. So making quick changes to your function's settings is even easier.
 
-**Note:** Remember that doing a `deploy function` will put your Stack into an inconsistent state since the function and its configuration is different than the one which is described via CloudFormation. A subsequent `serverless deploy` will overwrite this state completely.
+**Note:** Remember that doing a `deploy function` will put your Stack into an inconsistent state since the function and it's configuration is different than the one which is described via CloudFormation. A subsequent `serverless deploy` will overwrite this state completely.
 
 `deploy function` should only be used for faster development cycles. Production deployments should always be done via `deploy` (and therefore through CloudFormation).
 
@@ -159,7 +159,7 @@ Huge round of applause to all of the contributors who submitted changes for this
 - Loren Gordon
 - Marc Sluiter
 - Mariusz Nowak
-- Mislav Cimperšak
+- Mislav Cimperšak
 - Rafal Wilinski
 - Takahiro Horike
 - Toby Hede
