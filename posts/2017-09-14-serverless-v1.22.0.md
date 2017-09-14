@@ -8,12 +8,16 @@ authors:
   - PhilippMuns
 ---
 
-<img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-v1.22.png" width="210px" >
+<img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-v1.22.png" width="130px" >
 
 Today we're proud to announce Serverless Framework v1.22.
 
 This release is another one which is packed with a lot of great features and enhancements! Let's take a closer look at all
 the changes v1.22 introduces.
+
+## Whats new
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ykkeliDAs-c" frameborder="0" allowfullscreen></iframe>
 
 ## Noteable changes v1.22 introduces
 
