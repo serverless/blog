@@ -53,7 +53,7 @@ To install a plugin run 'serverless plugin install --name plugin-name-here'
 It will be automatically downloaded and added to your package.json and serverless.yml file
 ```
 
-After deciding which plugin to use we simply run `serverless install --name serverless-webpack`:
+After deciding which plugin to use we simply run `serverless plugin install --name serverless-webpack`:
 
 ```bash
 root@64d555c6e40a:/app# serverless plugin install --name serverless-webpack
