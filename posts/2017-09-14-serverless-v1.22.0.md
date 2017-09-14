@@ -1,5 +1,5 @@
 ---
-title: Serverless v1.22 - CLI-based plugin discovery, Spotinst Functions support and more
+title: Serverless v1.22 - CLI-based plugin discovery, encrypted variables support and new provider SpotInst
 description: CLI based plugin management, SSM via Serverless Variables, Spotinst Functions support, enhancements, bug fixes and more added in the Serverless Framework v1.22 release.
 date: 2017-09-14
 layout: Post
