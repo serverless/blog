@@ -110,7 +110,7 @@ custom:
 # ...snip...
 ```
 
-You can read more about the SSM Parameter support in Serverless Variables in the [corresponding documentation](https://serverless.com/framework/docs/providers/aws/guide/variables#reference-variables-using-the-ssm-parameter-store).
+You can read more about the AWS SSM Parameter support in Serverless Variables in the [corresponding documentation](https://serverless.com/framework/docs/providers/aws/guide/variables#reference-variables-using-the-ssm-parameter-store).
 
 ### Update function config when running `deploy function`
 
