@@ -3,7 +3,7 @@ title: Understanding and Controlling AWS Lambda Costs
 description: Understand the cost structure of AWS Lambda and related products, and when they can lead to unpleasant billing surprises.
 date: 2017-09-14
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/thumbnail_domino.jpg
+thumbnail: https://cdn-images-1.medium.com/max/800/0*kxZTolFAtiBCWr3C.
 authors:
   - MayankLahiri
 ---
