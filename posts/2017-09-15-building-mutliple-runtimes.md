@@ -1,5 +1,5 @@
 ---
-title: How to use mulitple runtimes in a single serverless service
+title: How to use multiple runtimes in a single serverless microservice
 description: 'How to build an application using multiple runtimes to supported mixed-language development with the Serverless Framework'
 date: 2017-09-15
 layout: Post
