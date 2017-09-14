@@ -1,9 +1,9 @@
 ---
 title: Understanding and Controlling AWS Lambda Costs
 description: Understand the cost structure of AWS Lambda and related products, and when they can lead to unpleasant billing surprises.
-date: 2017-09-14
+date: 2017-09-15
 layout: Post
-thumbnail: https://cdn-images-1.medium.com/max/800/0*kxZTolFAtiBCWr3C.
+thumbnail: https://cdn-images-1.medium.com/max/800/0*kxZTolFAtiBCWr3C%2E
 authors:
   - MayankLahiri
 ---
@@ -42,7 +42,7 @@ Spreadsheet-inclined users may want to look at the data in this [public, read-on
 * **Costs are multiplicative in function memory size and execution time**. Suppose that a Lambda function uses 512 MB of memory and executes in slightly less than 200 milliseconds. After a code change, the function now needs 400 milliseconds to run (double), and 1024 MB of memory (double). The total compute cost increases **4 times**. If the memory requirement is instead tripled to 1536 MB, the total cost increases **6 times**. If both the memory requirement and execution time are tripled, the total cost increases **9 times** ([spreadsheet](https://docs.google.com/spreadsheets/d/1xh_rNQwGVLos7Fshq2eM4gbIz546LwvrY1fMcLGqPmw/edit?zx=p7c6vgh0j97k#gid=541900098)). The impact of multiplicative costs may not be intuitive in that small changes to *either* function memory size or execution time can cause large changes in the total billable cost.
 
 
-* **Processing delays can be expensive**. Suppose that a 512 MB Lambda function uses executes in slightly less than **200 milliseconds**, with a hard limit of 5 seconds. As part of its processing, the function calls an external service over HTTPS and waits for a response before ending. Suppose that network congestion or an external service degradation adds a spike of **2 seconds** to each network call. For the duration of the latency spike, **the extra 2 seconds of Lambda running time will increase cost *11 times***, from \$0.17 per 100k requests to \$1.83 ([spreadsheet](https://docs.google.com/spreadsheets/d/1xh_rNQwGVLos7Fshq2eM4gbIz546LwvrY1fMcLGqPmw/edit?zx=p7c6vgh0j97k#gid=541900098)).
+* **Processing delays can be expensive**. Suppose that a 512 MB Lambda function executes in slightly less than **200 milliseconds**, with a hard limit of 5 seconds. As part of its processing, the function calls an external service over HTTPS and waits for a response before ending. Suppose that network congestion or an external service degradation adds a spike of **2 seconds** to each network call. For the duration of the latency spike, **the extra 2 seconds of Lambda running time will increase cost *11 times***, from \$0.17 per 100k requests to \$1.83 ([spreadsheet](https://docs.google.com/spreadsheets/d/1xh_rNQwGVLos7Fshq2eM4gbIz546LwvrY1fMcLGqPmw/edit?zx=p7c6vgh0j97k#gid=541900098)).
 
 
 * **The free tier can run out quickly**. Suppose that a service must support a sustained request rate of 100,000 requests per hour (sustained 27 requests per second). At this rate, the free tier of 400,000 GB-sec per month will run out in approximately **1 hour** for the following function sizes ([spreadsheet](https://docs.google.com/spreadsheets/d/1xh_rNQwGVLos7Fshq2eM4gbIz546LwvrY1fMcLGqPmw/edit?zx=p7c6vgh0j97k#gid=240985719)):
@@ -55,9 +55,10 @@ Spreadsheet-inclined users may want to look at the data in this [public, read-on
 
 As a concrete example of the observation on spot pricing, consider the following numbers, drawn from the [Baresoil Image Resizing Benchmark](https://iceroad.github.io/baresoil-benchmark-image-resizer/):
 
-* A fixed-sized cluster of 20 c4.2xlarge spot instances can resize at least 120,449 images per hour for a total cost of \$1.82 per hour.
+* A fixed-sized cluster of 20 c4.2xlarge spot instances can resize at least 120,449 images per hour for a total cost of **\$1.82 per hour**, using a median of 1 second of processing time per image ([code and data](https://github.com/iceroad/baresoil-benchmark-image-resizer)). This can be taken as a lower bound on the performance of an EC2 spot fleet where work is distributed evenly across nodes.
 
-* The exact same code and workload on Lambda costs $2.28 to run using a 320 MB function memory size (the smallest possible for this task), which is **33% higher** than the spot fleet. With the largest 1536 MB function size, the Lambda cost is **59% higher** than the spot fleet ([spreadsheet](https://docs.google.com/spreadsheets/d/1xh_rNQwGVLos7Fshq2eM4gbIz546LwvrY1fMcLGqPmw/edit?zx=p7c6vgh0j97k#gid=0)).
+
+* The exact same code and workload on Lambda costs **\$2.28** to run using a 320 MB function memory size (the smallest possible for this task), which is **33% higher** than the spot fleet. With the largest 1536 MB function size, the Lambda cost is **59% higher** than the spot fleet ([spreadsheet](https://docs.google.com/spreadsheets/d/1xh_rNQwGVLos7Fshq2eM4gbIz546LwvrY1fMcLGqPmw/edit?zx=p7c6vgh0j97k#gid=0)). Processing times ranged from 800 ms to 3700 ms depending on the Lambda function size, as reported by Lambda's "billable duration" metric ([raw data](https://docs.google.com/spreadsheets/d/1xh_rNQwGVLos7Fshq2eM4gbIz546LwvrY1fMcLGqPmw/edit?zx=p7c6vgh0j97k#gid=1387756407)).
 
 On the other hand, if you are currently processing 120,449 images per hour using spot priced queue workers, you may be able to process the same actual workload in **minutes rather than an hour** for just a 33% increase in costs, using Lambda’s default concurrency limit of 1000.
 
