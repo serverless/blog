@@ -3,6 +3,7 @@ title: Single Application with mix of runtimes for functions
 description: 'How to build an application using multiple runtimes to supported mixed-language development with the Serverless Framework'
 date: 2017-09-14
 layout: Post
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/runtimes-man.jpg
 authors:
   - JeremyCoffield
 ---
@@ -14,12 +15,12 @@ To manage these related codebases, you might choose to divide your application�
 Let’s consider a small application that uses two runtimes and provides two functions. This example will use Python and Node targeting AWS, but the concepts will be broadly applicable in other circumstances.
 
 We’ll create an application that has an endpoint that reports the current system timestamp, and a web controller that displays the time in the browser. The configuration will look largely similar to a single-runtime application. We specify the name of the service and the target provider in our `serverless.yml`:
+
 ```yml
 service: hellotime-app
 provider:
   name: aws
 ```
-
 
 Note that I omitted the usual declaration of runtime inside the provider section. If you specify it here, it will serve as a fallback for any functions that do not have a runtime specified individually.
 
@@ -35,10 +36,10 @@ functions:
     handler: web/handler.hello
 ```
 
-
 This web controller is a Python module, so I specify the `python3.6` runtime. The handler field points to the module located in my project at `web/handler.py` and names the function `hello` as the handler for received events.
 
 Here’s what the implementation looks like:
+
 ```python
 # web/handler.py
 
@@ -64,10 +65,8 @@ def hello(event, context):
     }
 ```
 
-
-
-
 The other function is a Node-backed endpoint that reports a timestamp:
+
 ```yml
   time:
     runtime: nodejs6.10
@@ -82,8 +81,9 @@ The other function is a Node-backed endpoint that reports a timestamp:
 Again, this looks the same as in a single-runtime service, with the exception that it specifies the runtime `nodejs6.10` alongside the function declaration. The module for this function is located at `api/handler.js`, and exports a function named `timestamp`. It is not necessary to move files of different languages to separate folders, but depending on complexity and build procedure, you may find it useful.
 
 The function responds with the millisecond timestamp:
+
 ```javascript
-// api/handler.js
+/* api/handler.js */
 
 module.exports.timestamp = (event, context, callback) => {
   const response = {
@@ -100,7 +100,7 @@ module.exports.timestamp = (event, context, callback) => {
 
 Deploying the service with `serverless deploy` tells us the URL of the page at `/greet`. 
 
-```
+```bash
 Serverless: Packaging service...
 Serverless: Excluding development dependencies...
 Serverless: Creating Stack...
@@ -132,7 +132,6 @@ Serverless: Publish service to Serverless Platform...
 Service successfully published! Your service details are available at:
 https://platform.serverless.com/services/FavsagaSaban/hellotime-app
 ```
-
 
 Accessing the page shows the greeting message and tells us the date.
 
