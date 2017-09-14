@@ -1,7 +1,7 @@
 ---
-title: Single Application with mix of runtimes for functions
+title: How to use mulitple runtimes in a single serverless service
 description: 'How to build an application using multiple runtimes to supported mixed-language development with the Serverless Framework'
-date: 2017-09-14
+date: 2017-09-15
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/runtimes-man.jpg
 authors:
@@ -12,7 +12,7 @@ As a developer on the cloud, there are many tools at your disposal. The Serverle
 
 To manage these related codebases, you might choose to divide your application’s functions into a number of different services. However, if you prefer to deploy a single service for all your functions, regardless of what language they are written in, the Serverless Framework empowers you to do just that.
 
-Let’s consider a small application that uses two runtimes and provides two functions. This example will use Python and Node targeting AWS, but the concepts will be broadly applicable in other circumstances.
+Let’s consider a small application that uses two runtimes and provides two functions. This example will use Python and Node targeting AWS, but the concepts will be broadly applicable in other circumstances. The full the project files can be [found here](https://github.com/serverless/examples/tree/master/aws-multiple-runtime) 
 
 We’ll create an application that has an endpoint that reports the current system timestamp, and a web controller that displays the time in the browser. The configuration will look largely similar to a single-runtime application. We specify the name of the service and the target provider in our `serverless.yml`:
 
