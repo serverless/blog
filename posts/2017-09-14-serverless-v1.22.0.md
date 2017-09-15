@@ -122,7 +122,7 @@ The `deploy function` command is an easy and fast way to update the functions co
 
 From now on `deploy function` will also update the function's configuration. So making quick changes to your function's settings is even easier.
 
-**Note:** Remember that doing a `deploy function` will put your Stack into an inconsistent state since the function and it's configuration is different than the one which is described via CloudFormation. A subsequent `serverless deploy` will overwrite this state completely.
+**Note:** Remember that doing a `deploy function` will put your Stack into an inconsistent state since the function and its configuration is different than the one which is described via CloudFormation. A subsequent `serverless deploy` will overwrite this state completely.
 
 `deploy function` should only be used for faster development cycles. Production deployments should always be done via `deploy` (and therefore through CloudFormation).
 
