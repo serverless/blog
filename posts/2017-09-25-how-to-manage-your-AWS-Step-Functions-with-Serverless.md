@@ -1,7 +1,7 @@
 ---
 title: How To Manage Your AWS Step Functions With Serverless
 description: Introducing Serverless Step Functions plugin.
-date: xxxx-xx-xx
+date: 2017-09-25
 layout: Post
 thumbnail: https://dl.dropboxusercontent.com/s/fhjf0onx9adefur/ApplicationServices_AWSStepFunctions_LARGE.png
 authors:
