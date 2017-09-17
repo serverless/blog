@@ -1,3 +1,13 @@
+---
+title: How To Manage Your AWS Step Functions With Serverless
+description: Introducing Serverless Step Functions plugin.
+date: xxxx-xx-xx
+layout: Post
+thumbnail: https://dl.dropboxusercontent.com/s/fhjf0onx9adefur/ApplicationServices_AWSStepFunctions_LARGE.png
+authors:
+  - TakahiroHorike
+---
+
 ## Overview
 
 [AWS Step Functions](https://aws.amazon.com/step-functions/) allows you to control workflows with using Lambda functions.
