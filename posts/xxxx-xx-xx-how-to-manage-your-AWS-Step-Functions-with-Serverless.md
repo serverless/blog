@@ -248,6 +248,9 @@ curl -XPOST https://ae0dyh8676.execute-api.us-east-1.amazonaws.com/dev/startEC2 
 You should see that specified EC2 will be started and a log will be written to S3 Bucket.
 
 
-## Video Tutorial
-Tutorial on how to use the plugin has been coverd on [FOOBAR](https://www.youtube.com/channel/UCSLIvjWJwLRQze9Pn4cectQ) youtube channel. You can also learn it there. Thanks [@mavi888uy](https://twitter.com/mavi888uy) for making the great video!
+## Summary
+Serverless Step Function makes it easier to manage and deploy your Step Functions as explained above.
+If you have any comments or feedback, please create a new [issue](https://github.com/horike37/serverless-step-functions/issues/new) or send a Pull Request. I always welcome them!!
+
+One more thing, tutorial on how to use the plugin has been coverd on [FOOBAR](https://www.youtube.com/channel/UCSLIvjWJwLRQze9Pn4cectQ) youtube channel. You can also learn it there. Thanks [@mavi888uy](https://twitter.com/mavi888uy) for making the great video!
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bEB0zDHXXG4" frameborder="0" allowfullscreen></iframe>
