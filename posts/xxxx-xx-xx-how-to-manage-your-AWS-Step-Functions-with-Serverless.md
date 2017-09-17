@@ -1,0 +1,243 @@
+## Overview
+
+[AWS Step Functions](https://aws.amazon.com/step-functions/) allows you to control workflows with using Lambda functions.
+It can manage states and coordinate components of a built application which separate several steps with Lambda.
+
+If you are familiar with Serverless, you would want to deploy and manage both of Step Functions and a bunch of composed Lambda functions via Serverless.
+To accomplish that, I have created [Serverless Step Functions](https://github.com/horike37/serverless-step-functions) plugin.
+
+In this post, I will share the functionality and usage of the plugin, and a workflow for your development.
+so let's get down to the main topic!
+
+## Install
+Before getting started, you need to install the plugin. This is hosted on the [Serverless Plugins registory](https://github.com/serverless/plugins), so you can install this via the plugin install command which is introduced since v1.22.0.
+
+Please run the following command in your service, then the plugin will be added automatically in plugins array in your serverless.yml. 
+
+```
+$ serverless plugin install --name serverless-step-functions
+```
+
+If you run `serverless --help` command and you can see an explanation of subcommands for the plugin like `serverless invoke stepf, installing is successful.
+
+## Geting Started
+### Define AWS state language
+
+To define a workflow with Step Functions, you need write a structured language called [Amazon States Language](http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html), which can be defined within `definition` section with yaml format in your `serverless.yml`.
+
+I recommend using in combination with [Serverless AWS Pseudo Parameters](https://www.npmjs.com/package/serverless-pseudo-parameters) since it makes it easy to set up in `Resource` section in serverless.yml.
+The following is an example which is a simplest state machine definition, which is composed of a single lambda function.
+
+```yaml
+stepFunctions:
+  stateMachines:
+    hellostepfunc1:
+      definition:
+        Comment: "A Hello World example of the Amazon States Language using an AWS Lambda Function"
+        StartAt: HelloWorld1
+        States:
+          HelloWorld1:
+            Type: Task
+            Resource: "arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-foobar-baz"
+            End: true
+
+plugins:
+  - serverless-step-functions
+  - serverless-pseudo-parameters
+```
+### Event
+You can define events to invoke your Step Functions. Currently, `http` and `scheduled` events have been supported.
+The configuration syntax is similar to the Lambda events provided by the framework core.
+
+Here’s what the setting up looks like:
+```yaml
+stepFunctions:
+  stateMachines:
+    hello:
+      events:
+        - http:
+            path: hello
+            method: GET
+        - schedule: rate(2 hours)
+      definition:
+```
+### Use triggerd Lambda events
+If you want to use events other than `http` and `scheduled`, you can create a Lambda function which only run your statemachine something like this:
+
+```javascript
+'use strict';
+const AWS = require('aws-sdk');
+const stepfunctions = new AWS.StepFunctions();
+
+module.exports.start = (event, context, callback) => {
+  const stateMachineArn = process.env.statemachine_arn;
+  const params = {
+    stateMachineArn
+  }
+
+  return stepfunctions.startExecution(params).promise().then(() => {
+    callback(null, `Your statemachine ${stateMachineArn} executed successfully`);
+  }).catch(error => {
+    callback(error.message);
+  });
+};
+
+```
+
+Then, you set up the Lambda will be triggered by events what you want. `startExecution` API requires a stetamachine ARN so you can pass that via environment variables system. Here’s serverless.yml sample which a triggered stetamachine by S3 event.
+
+```yaml
+service: example-stepf-nodejs
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "states:StartExecution"
+      Resource:
+        - "*"
+
+functions:
+  startExecution:
+    handler: handler.start
+    events:
+      - s3: photos
+    environment:
+      statemachine_arn: ${self:resources.Outputs.MyStateMachine.Value}
+
+stepFunctions:
+  stateMachines:
+    hellostepfunc1:
+      name: myStateMachine
+      definition:
+        Comment: "A Hello World example of the Amazon States Language using an AWS Lambda Function"
+        StartAt: HelloWorld1
+        States:
+          HelloWorld1:
+            Type: Task
+            Resource: "arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-hello"
+            End: true
+resources:
+  Outputs:
+    MyStateMachine:
+      Description: The ARN of the example state machine
+      Value:
+        Ref: MyStateMachine
+
+plugins:
+  - serverless-step-functions
+  - serverless-pseudo-parameters
+
+```
+
+## Create a sample application
+Let’s consider a small 2 step application that starts EC2 and write the result on S3 bucket.
+First, we will create a Lambda function that only starts an EC2 instance, to which will be passed instanceId via API Body request parameter.
+
+```javascript
+'use strict';
+const AWS = require('aws-sdk');
+
+module.exports.startEC2 = (event, context, callback) => {
+  const ec2 = new AWS.EC2();
+  const params = {
+    InstanceIds: [
+      event.instanceId
+    ]
+  }
+
+  return ec2.startInstances(params).promise().then(() => {
+    callback(null, `Your ${event.instanceId} instance started successfully`);
+  }).catch(error => {
+    callback(error.message);
+  });
+};
+```
+
+Then, here is another Lambda function which writes a log to S3 Bucket.
+```javascript
+'use strict';
+const AWS = require('aws-sdk');
+
+module.exports.wtiteS3 = (event, context, callback) => {
+  const s3 = new AWS.S3();
+  const params = {
+    Bucket: 'sls-logs-bukect',
+    Key: 'success!!'
+ }
+
+  return s3.putObject(params).promise().then(() => {
+    callback(null, `a log writed successfully`);
+  }).catch(error => {
+    callback(error.message);
+  });
+};
+```
+
+In the end, describe your serverless.yml looks like, and deploy with `serverless deploy`.
+```yaml
+service: example-stepf-nodejs
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "ec2:*"
+        - "s3:*"
+      Resource:
+        - "*"
+
+functions:
+  startEC2:
+    handler: handler.startEC2
+  writeS3:
+    handler: handler.wtiteS3
+
+stepFunctions:
+  stateMachines:
+    hellostepfunc1:
+      events:
+        - http:
+            path: startEC2
+            method: post
+      definition:
+        Comment: "A sample application"
+        StartAt: StartEC2
+        States:
+          StartEC2:
+            Type: Task
+            Resource: "arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-startEC2"
+            Next: WriteS3
+          WriteS3:
+            Type: Task
+            Resource: "arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-writeS3"
+            End: true
+
+plugins:
+  - serverless-step-functions
+  - serverless-pseudo-parameters
+
+```
+
+If you can see the API Gateway endpoint on your console, it means to deploy successfully。
+```
+Serverless StepFunctions OutPuts
+endpoints:
+  POST - https://ae0dyh8676.execute-api.us-east-1.amazonaws.com/dev/startEC2
+
+```
+
+Please send a request as follow.
+```
+curl -XPOST https://ae0dyh8676.execute-api.us-east-1.amazonaws.com/dev/startEC2 -d '{"instanceId":"<your instance ID>"}'
+```
+You should see that specified EC2 will be started and a log will be written to S3 Bucket.
+
+
+## Video Tutorial
+Tutorial on how to use the plugin has been coverd on [FOOBAR](https://www.youtube.com/channel/UCSLIvjWJwLRQze9Pn4cectQ) youtube channel. You can also learn it there. Thanks [@mavi888uy](https://twitter.com/mavi888uy) for making the great video!
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bEB0zDHXXG4" frameborder="0" allowfullscreen></iframe>
