@@ -12,8 +12,6 @@ authors:
 <img src='https://media.giphy.com/media/VtR7L2GCNQB56/giphy.gif' width="100%">
 </p>
 
-# Serverless monitoring, the good, the bad and the ugly
-
 Not so long ago, a job requirement pushed me into the world of FaaS. I was thrilled to the notion of abstracting away even more of the tedious work we developers should not need to know. "We are not operations engineers!" I exclaimed proudly. "We should not need to dabble in the dark arts of the Linux Shell."
 
 Little did I know how wrong I was. The Linux Shell is a tool that will never be replaced. Learning it today will mean you'll use it in years to come. Having a "real" server (it's not real, it's VM, I know) where you interact with the Operating System, install what you please and run applications how you see fit is a walk in the park.
