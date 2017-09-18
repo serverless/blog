@@ -3,7 +3,7 @@ title: How To Manage Your AWS Step Functions With Serverless
 description: Introducing Serverless Step Functions plugin.
 date: 2017-09-25
 layout: Post
-thumbnail: https://dl.dropboxusercontent.com/s/fhjf0onx9adefur/ApplicationServices_AWSStepFunctions_LARGE.png
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/step-functions.png
 authors:
   - TakahiroHorike
 ---
@@ -12,7 +12,7 @@ When diving into the Function as a service (FAAS) world, a question that often p
 
 > If serverless functions are stateless, how do I manage state?
 
-There are a number of ways to manage state with backend data stores, tmp directories & building this logic into your existing lambda functions but there is a simpler alternative provided by **AWS: Step functions**.
+There are a number of ways to manage state with backend data stores, `tmp` directories & building this logic into your existing lambda functions but there is a simpler alternative provided by **AWS: Step functions**.
 
 [Step Functions](https://aws.amazon.com/step-functions/) allows you to control complex workflows using Lambda functions without the underlying application managing and orchestrating the state. In essence, it's a state machine to help with complex workflows and aims at keeping your lambda functions free of this additional logic.
 
