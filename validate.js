@@ -167,6 +167,16 @@ ${seperator}
 `
       throw new Error(msg);
     }
+    // Only allow lowercase file names
+    if(file.match(/[A-Z]/)) {
+msg = `Error: file name needs to be in all lowercase
+
+Please remove uppercase letters from filename ${file}
+
+${seperator}
+`
+      throw new Error(msg);
+    }
   })
 }).catch((e) => {
   console.log(e)
