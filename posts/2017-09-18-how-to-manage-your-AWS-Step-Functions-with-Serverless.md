@@ -1,7 +1,7 @@
 ---
 title: How To Manage Your AWS Step Functions With Serverless
-description: Introducing Serverless Step Functions plugin.
-date: 2017-09-25
+description: Managing complex workflows with Serverless and AWS Step Functions
+date: 2017-09-18
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/step-functions.png
 authors:
@@ -28,7 +28,7 @@ So let's get down to business!
 
 Before getting started, you need to install the plugin. This is hosted on the [Serverless Plugins registry](https://github.com/serverless/plugins), so you can install this via the plugin install command which is introduced since v1.22.0.
 
-Please run the following command in your service, then the plugin will be added automatically in plugins array in your `serverless.yml` file. 
+Please run the following command in your service, then the plugin will be added automatically in plugins array in your `serverless.yml` file.
 
 ```
 $ serverless plugin install --name serverless-step-functions
@@ -85,7 +85,7 @@ stepFunctions:
 
 ### Use triggered Lambda events
 
-If you want to use events other than `http` and `scheduled`, you can create a Lambda function which only run your statemachine 
+If you want to use events other than `http` and `scheduled`, you can create a Lambda function which only run your statemachine
 
 Using the AWS SDK, you can trigger your step functions like:
 
@@ -108,7 +108,7 @@ module.exports.start = (event, context, callback) => {
 };
 ```
 
-Then, you set up the Lambda will be triggered by events what you want. `startExecution` API requires a stetamachine ARN so you can pass that via environment variables system. 
+Then, you set up the Lambda will be triggered by events what you want. `startExecution` API requires a stetamachine ARN so you can pass that via environment variables system.
 
 Here’s serverless.yml sample which a triggered stetamachine by S3 event.
 
