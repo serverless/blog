@@ -8,21 +8,27 @@ authors:
   - TakahiroHorike
 ---
 
-## Overview
+When diving into the Function as a service (FAAS) world, a question that often pops up is:
 
-[AWS Step Functions](https://aws.amazon.com/step-functions/) allows you to control workflows with using Lambda functions.
-It can manage states and coordinate components of a built application which separate several steps with Lambda.
+> If serverless functions are stateless, how do I manage state?
 
-If you are familiar with Serverless, you would want to deploy and manage both of Step Functions and a bunch of composed Lambda functions via Serverless.
-To accomplish that, I have created [Serverless Step Functions](https://github.com/horike37/serverless-step-functions) plugin.
+There are a number of ways to manage state with backend data stores, tmp directories & building this logic into your existing lambda functions but there is a simpler alternative provided by **AWS: Step functions**.
+
+[Step Functions](https://aws.amazon.com/step-functions/) allows you to control complex workflows using Lambda functions without the underlying application managing and orchestrating the state. In essence, it's a state machine to help with complex workflows and aims at keeping your lambda functions free of this additional logic.
+
+## Serverless + Step Functions
+
+A couple months ago, I created the [Serverless Step Functions](https://github.com/horike37/serverless-step-functions) plugin to deploy and manage Step Functions and a bunch of composed Lambda functions via the Serverless Framework.
 
 In this post, I will share the functionality and usage of the plugin, and a workflow for your development.
-so let's get down to the main topic!
+
+So let's get down to business!
 
 ## Install
-Before getting started, you need to install the plugin. This is hosted on the [Serverless Plugins registory](https://github.com/serverless/plugins), so you can install this via the plugin install command which is introduced since v1.22.0.
 
-Please run the following command in your service, then the plugin will be added automatically in plugins array in your serverless.yml. 
+Before getting started, you need to install the plugin. This is hosted on the [Serverless Plugins registry](https://github.com/serverless/plugins), so you can install this via the plugin install command which is introduced since v1.22.0.
+
+Please run the following command in your service, then the plugin will be added automatically in plugins array in your `serverless.yml` file. 
 
 ```
 $ serverless plugin install --name serverless-step-functions
@@ -30,12 +36,14 @@ $ serverless plugin install --name serverless-step-functions
 
 If you run `serverless --help` command and you can see an explanation of subcommands for the plugin like `serverless invoke stepf, installing is successful.
 
-## Geting Started
+## Getting Started
+
 ### Define AWS state language
 
 To define a workflow with Step Functions, you need write a structured language called [Amazon States Language](http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html), which can be defined within `definition` section with yaml format in your `serverless.yml`.
 
 I recommend using in combination with [Serverless AWS Pseudo Parameters](https://www.npmjs.com/package/serverless-pseudo-parameters) since it makes it easy to set up in `Resource` section in serverless.yml.
+
 The following is an example which is a simplest state machine definition, which is composed of a single lambda function.
 
 ```yaml
@@ -55,11 +63,14 @@ plugins:
   - serverless-step-functions
   - serverless-pseudo-parameters
 ```
+
 ### Event
+
 You can define events to invoke your Step Functions. Currently, `http` and `scheduled` events have been supported.
 The configuration syntax is similar to the Lambda events provided by the framework core.
 
-Here’s what the setting up looks like:
+Here’s how to define those events:
+
 ```yaml
 stepFunctions:
   stateMachines:
@@ -71,8 +82,12 @@ stepFunctions:
         - schedule: rate(2 hours)
       definition:
 ```
-### Use triggerd Lambda events
-If you want to use events other than `http` and `scheduled`, you can create a Lambda function which only run your statemachine something like this:
+
+### Use triggered Lambda events
+
+If you want to use events other than `http` and `scheduled`, you can create a Lambda function which only run your statemachine 
+
+Using the AWS SDK, you can trigger your step functions like:
 
 ```javascript
 'use strict';
@@ -91,10 +106,11 @@ module.exports.start = (event, context, callback) => {
     callback(error.message);
   });
 };
-
 ```
 
-Then, you set up the Lambda will be triggered by events what you want. `startExecution` API requires a stetamachine ARN so you can pass that via environment variables system. Here’s serverless.yml sample which a triggered stetamachine by S3 event.
+Then, you set up the Lambda will be triggered by events what you want. `startExecution` API requires a stetamachine ARN so you can pass that via environment variables system. 
+
+Here’s serverless.yml sample which a triggered stetamachine by S3 event.
 
 ```yaml
 service: example-stepf-nodejs
@@ -143,7 +159,9 @@ plugins:
 ```
 
 ## Create a sample application
+
 Let’s consider a small 2 step application that starts EC2 and write the result on S3 bucket.
+
 First, we will create a Lambda function that only starts an EC2 instance, to which will be passed instanceId via API Body request parameter.
 
 ```javascript
@@ -167,6 +185,7 @@ module.exports.startEC2 = (event, context, callback) => {
 ```
 
 Then, here is another Lambda function which writes a log to S3 Bucket.
+
 ```javascript
 'use strict';
 const AWS = require('aws-sdk');
@@ -187,6 +206,7 @@ module.exports.wtiteS3 = (event, context, callback) => {
 ```
 
 In the end, describe your serverless.yml looks like, and deploy with `serverless deploy`.
+
 ```yaml
 service: example-stepf-nodejs
 
@@ -234,6 +254,7 @@ plugins:
 ```
 
 If you can see the API Gateway endpoint on your console, it means to deploy successfully。
+
 ```
 Serverless StepFunctions OutPuts
 endpoints:
@@ -241,16 +262,20 @@ endpoints:
 
 ```
 
-Please send a request as follow.
-```
+Send a CURL request to your live endpoint:
+
+```bash
 curl -XPOST https://ae0dyh8676.execute-api.us-east-1.amazonaws.com/dev/startEC2 -d '{"instanceId":"<your instance ID>"}'
 ```
+
 You should see that specified EC2 will be started and a log will be written to S3 Bucket.
 
-
 ## Summary
-Serverless Step Function makes it easier to manage and deploy your Step Functions as explained above.
+
+The Serverless Step Functions plugin makes it easier to manage and deploy your Step Functions.
+
 If you have any comments or feedback, please create a new [issue](https://github.com/horike37/serverless-step-functions/issues/new) or send a Pull Request. I always welcome them!!
 
 One more thing, tutorial on how to use the plugin has been coverd on [FOOBAR](https://www.youtube.com/channel/UCSLIvjWJwLRQze9Pn4cectQ) youtube channel. You can also learn it there. Thanks [@mavi888uy](https://twitter.com/mavi888uy) for making the great video!
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bEB0zDHXXG4" frameborder="0" allowfullscreen></iframe>
