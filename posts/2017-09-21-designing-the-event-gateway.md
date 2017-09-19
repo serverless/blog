@@ -1,5 +1,5 @@
 ---
-title: Designing The Event Gateway
+title: Designing the Event Gateway
 description:
 date: 2017-09-21
 layout: Post
