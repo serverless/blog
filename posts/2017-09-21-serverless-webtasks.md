@@ -8,7 +8,7 @@ authors:
   - DavidWells
 ---
 
-When we set out to build the serverless framework, we wanted to streamline how developers build things and how they interact with cloud providers.
+When we set out to build the Serverless Framework, we wanted to streamline how developers build things and how they interact with cloud providers.
 
 We strive to get developers to the "aha" 💡 moment of the serverless experience as soon a possible. This moment where their eyes light up & they see the world of possibilities that functions-as-a-service world opens to them.
 
@@ -16,7 +16,7 @@ We work day and night (thanks team Europe), towards streamlining the developer e
 
 It's not impossible but it sure ain't easy. **Until now.**
 
-Welcome [Auth0 Webtasks](https://webtask.io/) as a the newest deployment targets and [functions provider](https://serverless.com/framework/docs/providers/) to the serverless framework 🎉.
+Welcome [Auth0 Webtasks](https://webtask.io/) as a the newest deployment targets and [functions provider](https://serverless.com/framework/docs/providers/) to the Serverless Framework 🎉.
 
 <a href="https://webtask.io/">
   <img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/webtasks-logo.png">
@@ -46,7 +46,7 @@ There is also small [persisted state](https://webtask.io/docs/storage) that you 
 
 ### 4. No cold starts
 
-Well for starters, **no cold starts** (*drops mic*). If you have something that needs to be super snappy, say a backend API, I'd suggest running that through a Webtasks function to avoid cold start latency.
+That's right, **no cold starts** (*drops mic*). If you have something that needs to be super snappy, say a backend API, I'd suggest running that through a Webtasks function to avoid cold start latency.
 
 One thing to note: There is a soft limit of 1 request per second on the Auth0 Webtasks free tier.
 
@@ -73,7 +73,7 @@ It's incredibly easy to get started with Webtasks. You can be up and running in 
 
 ### Pre-requisites
 
-Make sure you have nodeJS installed on your machine and also the serverless framework
+Make sure you have nodeJS installed on your machine and also the Serverless Framework
 
 ```bash
 # install serverless globally
@@ -82,13 +82,9 @@ npm install serverless -g
 
 ### Create Your Webtask service
 
-```
-# make a directory
-mkdir my-new-webtask-service
-# change into that directory
-cd my-new-webtask-service
+```bash
 # generate a webtasks starter template
-serverless create --template webtasks-nodejs
+serverless create --template webtasks-nodejs --path my-new-webtask-service
 ```
 
 ### Config your Webtasks account
