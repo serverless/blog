@@ -28,6 +28,8 @@ Welcome [Auth0 Webtasks](https://webtask.io/) as a the newest deployment targets
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vy4aUajDShQ" frameborder="0" allowfullscreen></iframe>
 
+Using the [serverless webtasks integration](https://github.com/auth0/serverless-Webtasks/) allows framework users to write their serverless services using the standard `serverless.yml` configuration and deploy functions into Auth0 Webtasks.
+
 ## How is Webtasks different?
 
 ### 1. No cold starts
