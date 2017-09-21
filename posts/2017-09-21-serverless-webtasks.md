@@ -1,6 +1,6 @@
 ---
 title: Webtasks brings node 8, no cold starts, and streamlined on-boarding to Serverless
-description: Get from zero to deploy in under 3 minutes with the Webtasks provider integration
+description: Eliminate cold starts and get from zero to deploy in under 3 minutes with the Auth0 Webtasks provider integration
 date: 2017-09-21
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/webtasks-icon.png
@@ -27,6 +27,8 @@ Welcome [Auth0 Webtasks](https://webtask.io/) as a the newest deployment targets
 [Born out of Auth0 rules](https://www.youtube.com/watch?v=a7FnBNzUj70), Webtasks allows users to write & deploy nodeJS code without having to think about the underlying server.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vy4aUajDShQ" frameborder="0" allowfullscreen></iframe>
+
+Using the [serverless webtasks integration](https://github.com/auth0/serverless-Webtasks/) allows framework users to write their serverless services using the standard `serverless.yml` configuration and deploy functions into Auth0 Webtasks.
 
 ## How is Webtasks different?
 
