@@ -32,21 +32,23 @@ Using the [serverless webtasks integration](https://github.com/auth0/serverless-
 
 ## How is Webtasks different?
 
-### 1. No cold starts
-
-Well for starters, **no cold starts** (*drops mic*). If you have something that needs to be super snappy, say a backend API, I'd suggest running that through a Webtasks function to avoid cold start latency.
-
-### 2. Setup takes about a minute and 30 seconds
+### 1. Setup takes about a minute and 30 seconds
 
 Setup takes about a minute and 30 seconds. Watch the video above.
 
-### 3. Node 8 support
+### 2. Node 8 support
 
 Node 8 runtime support. This allows users to use the latest and greatest JS today without needing to transpile their code. 🎉
 
-### 4. Persistent storage
+### 3. Persistent storage
 
 There is also small [persisted state](https://webtask.io/docs/storage) that you can re-use within functions. This is currently limited to a 500k json doc.
+
+### 4. No cold starts
+
+Well for starters, **no cold starts** (*drops mic*). If you have something that needs to be super snappy, say a backend API, I'd suggest running that through a Webtasks function to avoid cold start latency.
+
+One thing to note: There is a soft limit of 1 request per second on the Auth0 Webtasks free tier.
 
 ## Some Webtasks Use Cases
 
