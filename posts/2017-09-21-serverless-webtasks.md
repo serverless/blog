@@ -3,7 +3,7 @@ title: Webtasks brings node 8, no cold starts, and streamlined on-boarding to th
 description: Get from zero to deploy in under 3 minutes with the Webtasks provider integration
 date: 2017-09-21
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/Webtasks-icon.png
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/webtasks-icon.png
 authors:
   - DavidWells
 ---
@@ -19,7 +19,7 @@ It's not impossible but it sure ain't easy. **Until now.**
 Welcome [Auth0 Webtasks](https://webtask.io/) as a the newest deployment targets and [functions provider](https://serverless.com/framework/docs/providers/) to the serverless framework 🎉.
 
 <a href="https://webtask.io/">
-  <img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/Webtasks-logo.png">
+  <img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/webtasks-logo.png">
 </a>
 
 ## Auth0 Webtasks
@@ -118,7 +118,7 @@ Service Information
 service: webtasks-nodejs
 stage: dev
 endpoints:
-  * - https://wt-31e2a4fad2cf6c3cf0339452391d99fb-0.sandbox.auth0-extend.com/Webtasks-nodejs-dev-main
+  * - https://wt-31e332423432391d99fb-0.sandbox.auth0-extend.com/Webtasks-nodejs-dev-main
 functions:
   main: webtasks-nodejs-dev-main
 ```
