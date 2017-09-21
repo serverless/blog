@@ -1,9 +1,9 @@
 ---
 title: Designing the Event Gateway
-description:
+description: Event Gateway is the backbone of your serverless architectures. Learn how we approached designing this new piece of infrastructure.
 date: 2017-09-21
 layout: Post
-thumbnail: TODO
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-thumbnail.png
 authors:
   - MaciejWinnicki
 
@@ -32,13 +32,9 @@ The event gateway is designed to be a stateless service backed by an external ke
 
 In terms of storing configuration, we relied on existing solutions. There are at least few battle-tested key-value stores out there. [Etcd](https://coreos.com/etcd/), [Consul](https://www.consul.io/), and [Zookeeper](https://zookeeper.apache.org/) are definitely the most popular. They are used for storing configuration in very successful, production-grade systems like Kubernetes or Kafka. Instead of picking one of them as a backing store for the event gateway, we decided to use the [libkv](https://github.com/docker/libkv) library for supporting all of them. Libkv is an abstraction layer over popular key-value stores providing a simple interface for common operations. It has some limitations like lack of atomic operations on multiple keys, but its good for a start and we might start contributing to it once our needs will exceed provided functionality. Purely for demo and trial purposes, the event gateway can be started with a special flag which starts an embedded etcd instance. This allows users to test drive  the system without standing up a key-value store cluster first.
 
-TODO - diagram here
-
 ### Eventual Consistency
 
 Another choice that we’ve made, that highly influence overall architecture is making the event gateway an [eventually consistent](https://en.wikipedia.org/wiki/Eventual_consistency) system. When the user registers a function or subscribes a function to some event this configuration is saved in the backing key-value store in a synchronous way. In the next step, the data is spread across all instances in an asynchronous way using the event-driven approach. All key-value stores that we support, thanks to libkv, have an ability to watch for changes. During startup, every instance fetches all configuration data and then watches for changes happening during the instance runtime. We use that to build an internal cache that routing logic depends on. It means that when the event gateway needs to decide which function to call for a specific event it doesn't need to do any remote calls to the backing store. All configuration data used by routing logic is stored locally. Without watches, we would have to continuously scan ranges of keys in the database until we find new data, which is enormously expensive, slow, and hard to scale.
-
-TODO - diagram here
 
 ### Language Choice
 
