@@ -101,7 +101,7 @@ Thats it. You are setup and ready to deploy live code.
 
 ### Deploy your Webtasks service
 
-Inside the `my-new-webtask-service` run:
+Inside the `my-new-webtask-service` directory run:
 
 ```bash
 serverless deploy
