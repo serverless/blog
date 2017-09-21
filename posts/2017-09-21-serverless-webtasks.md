@@ -71,6 +71,8 @@ It's incredibly easy to get started with Webtasks. You can be up and running in 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zHp4OO8xfkY" frameborder="0" allowfullscreen></iframe>
 
+We will be setting up Webtasks with the `sls create` service command. You can also install the [serverless-webtasks plugin](https://github.com/auth0/serverless-Webtasks/) in an existing service to deploy your functions to Webtasks.
+
 ### Pre-requisites
 
 Make sure you have nodeJS installed on your machine and also the serverless framework
@@ -130,5 +132,5 @@ functions:
 ## Resources and links
 
 - [Serverless + Webtasks Docs](https://serverless.com/framework/docs/providers/Webtasks/)
-- [serverless-Webtasks plugin repo](https://github.com/auth0/serverless-Webtasks/)
+- [serverless-webtasks plugin repo](https://github.com/auth0/serverless-Webtasks/)
 - [Webtasks Main Docs](https://webtask.io/docs/101)
