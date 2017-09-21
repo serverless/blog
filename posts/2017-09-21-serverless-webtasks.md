@@ -1,5 +1,5 @@
 ---
-title: Webtasks brings node 8, no cold starts, and streamlined on-boarding to the Serverless
+title: Webtasks brings node 8, no cold starts, and streamlined on-boarding to Serverless
 description: Get from zero to deploy in under 3 minutes with the Webtasks provider integration
 date: 2017-09-21
 layout: Post
