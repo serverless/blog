@@ -1,24 +1,25 @@
 ---
-title: Designing the Event Gateway
+title: Designing an Event Gateway
 description: Event Gateway is the backbone of your serverless architectures. Learn how we approached designing this new piece of infrastructure.
 date: 2017-09-21
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-thumbnail.png
 authors:
   - MaciejWinnicki
-
 ---
 
 [Our recently announced Event Gateway](https://serverless.com/blog/introducing-serverless-event-gateway/) is a new piece of infrastructure that lets developers react to data flows with serverless functions. Before starting the project we established core principles that we want to follow. It doesn't mean that they won't change in the future -- they surely will -- but we wanted to have something that will guide us during the implementation phase and in general, during the project development.
 
 ## Design Considerations
 
-We consider them in two dimensions. One is developer experience when using the event gateway. The second is developer experience when operating a cluster of event gateway instances. Those principles are:
+We consider them in two dimensions. One is developer experience when using the event gateway. The second is developer experience when operating a cluster of event gateway instances.
 
-- simplicity - first of all, we want to keep the number of new concepts low. We don't want to rename existing concepts for the sake of it. There are only events, functions, and subscriptions - as easy as possible. In terms of operational simplicity, our goal is to make it easy to run the event gateway locally, during development, at the same time making it easy to run, manage and scale in production environments.
-- cross-cloud - same as with the Serverless Framework, the event gateway has to provide a seamless user experience no matter where user deploys its functions or where the user wants to deploy the event gateway itself. In the latter case, we also need to support on-premise deployments.
-- event-driven - we strongly believe that event-driven is the right approach for building software systems. The event gateway not only enables developers to build them, but it also has to follow this paradigm internally.
-- optimized for fast delivery - the main goal of the project is event delivery. We want to make it instant.
+Those principles are:
+
+- **simplicity** - first of all, we want to keep the number of new concepts low. We don't want to rename existing concepts for the sake of it. There are only events, functions, and subscriptions - as easy as possible. In terms of operational simplicity, our goal is to make it easy to run the event gateway locally, during development, at the same time making it easy to run, manage and scale in production environments.
+- **cross-cloud** - same as with the Serverless Framework, the event gateway has to provide a seamless user experience no matter where user deploys its functions or where the user wants to deploy the event gateway itself. In the latter case, we also need to support on-premise deployments.
+- **event-driven** - we strongly believe that event-driven is the right approach for building software systems. The event gateway not only enables developers to build them, but it also has to follow this paradigm internally.
+- **optimized for fast delivery** - the main goal of the project is event delivery. We want to make it instant.
 
 ## Architectural Choices
 
@@ -26,11 +27,13 @@ Having all those principles in mind we’ve made a few explicit, architectural c
 
 ### Stateless
 
-The event gateway is designed to be a stateless service backed by an external key-value store. It makes it easy to operate and reason about. Assuming that we want to build a horizontally scalable system, making the event gateway stateful service means that we would start implementing yet another distributed database. As it's not the core value that we want to provide to the users, we avoided it. One important consequence of that choice is lack of events persistence. Having a plugin system that enables integrating with existing storage systems (e.g. AWS S3, Kafka) is a solution here.
+The event gateway is designed to be a stateless service backed by an external key-value store. This makes it easy to operate and reason about. Assuming that we want to build a horizontally scalable system, making the event gateway stateful service means that we would start implementing yet another distributed database. As it's not the core value that we want to provide to the users, we avoided it. One important consequence of that choice is lack of events persistence. Having a plugin system that enables integrating with existing storage systems (e.g. AWS S3, Kafka) is a solution here.
 
 ### Configuration Store
 
 In terms of storing configuration, we relied on existing solutions. There are at least few battle-tested key-value stores out there. [Etcd](https://coreos.com/etcd/), [Consul](https://www.consul.io/), and [Zookeeper](https://zookeeper.apache.org/) are definitely the most popular. They are used for storing configuration in very successful, production-grade systems like Kubernetes or Kafka. Instead of picking one of them as a backing store for the event gateway, we decided to use the [libkv](https://github.com/docker/libkv) library for supporting all of them. Libkv is an abstraction layer over popular key-value stores providing a simple interface for common operations. It has some limitations like lack of atomic operations on multiple keys, but it's a good start, and we might start contributing to it once our needs will exceed provided functionality. Purely for demo and trial purposes, the event gateway can be started with a special flag which starts an embedded etcd instance. This allows users to test drive  the system without standing up a key-value store cluster first.
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/event-gateway-blog.jpg"/>
 
 ### Eventual Consistency
 
