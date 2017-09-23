@@ -89,6 +89,14 @@ npm install serverless -g
 serverless create --template webtasks-nodejs --path my-new-webtask-service
 ```
 
+### Install the Webtask plugin
+
+Inside the `my-new-webtask-service` directory run:
+
+```bash
+npm install
+```
+
 ### Config your Webtasks account
 
 ```bash
