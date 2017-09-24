@@ -14,7 +14,7 @@ With Serverless, it's easier than ever to deploy production-ready API endpoints.
 
 In this guide, I'll show you how to map a custom domain name to your endpoints.
 
-This post is the first in a three-part series. The next post will help you set up a Serverless web backend with [Flask](http://flask.pocoo.org/), a popular Python microframework. The last post will help you configure multiple Serverless services on the same domain name for maximum microservice awesomeness.
+This post is the first in a two-part series. The next post will help you configure multiple Serverless services on the same domain name for maximum microservice awesomeness.
 
 # Before you start
 
