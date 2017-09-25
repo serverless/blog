@@ -8,9 +8,7 @@ authors:
  - AdnanRahic
 ---
 
-<p>
-<img src='https://media.giphy.com/media/VtR7L2GCNQB56/giphy.gif' width="60%">
-</p>
+<img align="right" src='https://media.giphy.com/media/VtR7L2GCNQB56/giphy.gif' width="20%">
 
 Not so long ago, a job requirement pushed me into the world of FaaS. I was thrilled abstract away even more tedious work we developers all want off our plates. "We are not operations engineers!" I exclaimed proudly. "We should not need to dabble in the dark arts of the Linux Shell."
 
@@ -21,7 +19,7 @@ Now comes the difficult question: How does monitoring work when using AWS Lambda
 ## Monitoring 101
 All applications have metrics we, as developers, need to monitor. This is crucial: downtime and slow apps can create some pretty grumpy customers.
 
-Trust me, I know. I get angry phone calls and rage mail every once in a while. So how can you avoid getting yelled at by customers? Track your errors and monitor your software!
+Trust me, I get angry phone calls and rage mail every once in a while. So how can you avoid getting yelled at by customers? Track your errors and monitor your software!
 
 Implement a good notification system that lets you know when and where an error occurred. Make sure to have good and easy to view logs of all errors, warnings and other crucial data your application creates. Be responsible for the software you write. Because it is our legacy as developers. We have made an oath, to be creators of awesome stuff!
 
