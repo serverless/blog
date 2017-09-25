@@ -8,8 +8,6 @@ authors:
   - AlexDeBrie
 ---
 
-# How to deploy multiple services to one API Gateway with Serverless
-
 In this post, I'll show you how to put multiple Serverless services on the same domain name. This is the [most requested issue in the Serverless repo](https://github.com/serverless/serverless/issues/3078) right now but is a tricky feature to implement directly within the Framework.
 
 Using the power of Serverless and the [serverless-domain-manager](https://github.com/amplify-education/serverless-domain-manager) plugin, we can use API Gateway's [base path mappings](http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html#how-to-custom-domains-mapping-console) to handle this. Follow the instructions below to deploy your two services to the same domain.
