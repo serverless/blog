@@ -1,31 +1,29 @@
 ---
-title:  Serverless monitoring, the good, the bad and the ugly
+title:  Serverless monitoring - the good, the bad and the ugly
 description:  How to re-wire your brain to learn Serverless monitoring.
-date:  2017-09-18
-thumbnail: https://media.giphy.com/media/VtR7L2GCNQB56/giphy.gif
+date:  2017-09-26
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/good+bad+ugly.jpg
 layout:  Post 
 authors:
  - AdnanRahic
 ---
 
 <p>
-<img src='https://media.giphy.com/media/VtR7L2GCNQB56/giphy.gif' width="100%">
+<img src='https://media.giphy.com/media/VtR7L2GCNQB56/giphy.gif' width="60%">
 </p>
 
-Not so long ago, a job requirement pushed me into the world of FaaS. I was thrilled to the notion of abstracting away even more of the tedious work we developers should not need to know. "We are not operations engineers!" I exclaimed proudly. "We should not need to dabble in the dark arts of the Linux Shell."
+Not so long ago, a job requirement pushed me into the world of FaaS. I was thrilled abstract away even more tedious work we developers all want off our plates. "We are not operations engineers!" I exclaimed proudly. "We should not need to dabble in the dark arts of the Linux Shell."
 
-Little did I know how wrong I was. The Linux Shell is a tool that will never be replaced. Learning it today will mean you'll use it in years to come. Having a "real" server (it's not real, it's VM, I know) where you interact with the Operating System, install what you please and run applications how you see fit is a walk in the park.
+But little did I know how wrong I was. We humans are creatures of habit, and one of my habits as an AWS user is checking the AWS Console religiously. It was my central place to monitor everything I needed to know about my servers' health.
 
-We, humans, are creatures of habit. Managing your own server with the tools you like and are used to, scaling it as you wish, is convenient, but only a habit. Monitoring your software is easy because everything is in one place. You will know if something is wrong because you use adequate tools provided by respected companies. As an AWS user, I can find whatever I need regarding my servers in the AWS Console. Now comes the difficult question. How does this all add up when using AWS Lambda and Serverless?
+Now comes the difficult question: How does monitoring work when using AWS Lambda and Serverless?
 
 ## Monitoring 101
-How to define what monitoring is for the average developer? 
+All applications have metrics we, as developers, need to monitor. This is crucial: downtime and slow apps can create some pretty grumpy customers.
 
-> Application Performance Management (APM) is the monitoring and management of performance and availability of software applications.
+Trust me, I know. I get angry phone calls and rage mail every once in a while. So how can you avoid getting yelled at by customers? Track your errors and monitor your software!
 
-Okay, that sounds complicated. Let's break it down. All applications have metrics we as developers can monitor. Meaning we have insight in how the software we created behaves. This is crucial in creating healthy user satisfaction. Downtime and slow apps can create some pretty grumpy customers. Trust me, I know. I get angry phone calls and rage mail every once in a while.
-
-How to avoid getting yelled at by customers? Track your errors and monitor your software! Implement a good notification system that lets you know when and where an error occurred. Make sure to have good and easy to view logs of all errors, warnings and other crucial data your application creates. Be responsible for the software you write. Because it is our legacy as developers. We have made an oath, to be creators of awesome stuff!
+Implement a good notification system that lets you know when and where an error occurred. Make sure to have good and easy to view logs of all errors, warnings and other crucial data your application creates. Be responsible for the software you write. Because it is our legacy as developers. We have made an oath, to be creators of awesome stuff!
 
 But user experience is only one side of the performance metrics. The second crucial metric is the measure of computational resources. How much resources is the app consuming. If it is too much you need to scale down your servers, otherwise, if the app is capping all resources you may consider larger servers or more of them.
 
@@ -37,9 +35,13 @@ Excuse me...? Can I have some monitoring, please? But, without being a burden on
 We're lucky that, in 2017, this is a given. Monitoring software has become so advanced that in today's world of programming the overhead is minimal. The sun was not shining so bright back in the day. Monitoring applications was followed by a known fact that it would impact your app's performance significantly.
 
 ### How does this translate to Serverless?
-The Serverless revolution has been gaining strength for the past few years. I see no reason for it to stop. The hype is real. Developers are starting to view the **F**unction as a **S**ervice architecture as a savior. Making it possible to scale applications automatically serving only as many users as needed. The pay as you go method has cut costs drastically, making it possible for startups to create awesome software for the fraction of the cost it would "normally" cost.
+The Serverless revolution has been gaining strength for the past few years. I see no reason for it to stop. The hype is real.
 
-But, wait a minute. What else was needed to be cut, for it to become a possibility? A couple of things come to mind. The overview of your code performance and tracking errors are first. Silent failures as well. How do you monitor the performance of a server that is not a server? Schrödinger's server? Okay, now my head hurts.
+Developers are starting to view the **F**unction as a **S**ervice architecture as a savior, something that makes it possible to scale applications automatically and serve only as many users as needed. The pay-as-you-go method cuts costs drastically and makes it possible for startups to create awesome software for a fraction of the cost.
+
+But, wait a minute. What else needs to be cut for that to become a possibility?
+
+A couple of things come to mind. The overview of your code performance and tracking errors are first. Silent failures as well. How do you monitor the performance of a server that is not a server? Schrödinger's server? Okay, now my head hurts.
 
 This paradox needs a new perspective. Monitoring Serverless is a new beast in itself. Traditional methods will not work. A new mindset is in order.
 
@@ -113,7 +115,9 @@ I still can't get over the fact how bland the logs are. Not to mention the lack 
 
 What did I do? I went hunting. There has to be something out there on the web that can help me out. I was looking for a way to simulate the monitoring and logging of a server. I thought maybe there's a way to create a broader perspective over the whole serverless system. What I found blew me away, in a good way. A bunch of tools exist that parse and analyze logs from all functions in a system on the account level. Now that's cool.
 
-I decided to try our [Dashbird]() because it's free and seems promising. They're not asking for a credit card either, making it a "why not try it out" situation. Allegedly it only takes 5 minutes to hook up with your AWS account and be ready to go. I'm skeptic. I timed myself.
+I decided to try our [Dashbird]() because it's free and seems promising. They're not asking for a credit card either, making it a "why not try it out" situation.
+
+They say it only takes 5 minutes to hook up with your AWS account and be ready to go, but hey. I'm a skeptic. I timed myself.
 
 The onboarding process was very straightforward. You just add a new policy and role on your AWS account, hook it to your Dashbird account and that's it. They even have a great [getting started tutorial](https://dashbird.io/help/getting-started/setting-up-dashbird/).
 
@@ -130,7 +134,9 @@ Errors are highlighted, and I can see the overall health of my system. I feel gr
 With this watching my back I'd be comfortable with using Serverless for any large-scale application. The word relief comes to mind.
 
 ## Final thoughts
-Whoa... This has been an emotional roller-coaster. Starting out as a skeptic about the ability to monitor and track large-scale Serverless apps, I've turned into a believer. It all boils down to the developer mindset. It takes a while to switch from the mental image of a server to FaaS. With much reason indeed. Serverless is an incredible piece of technology, and I can only see a bright future if we keep pushing the borders with awesome tools like Serverless Offline, Dashbird, CloudWatch, and many others.
+Whoa... This has been an emotional roller-coaster. Starting out as a skeptic about the ability to monitor and track large-scale Serverless apps, I've turned into a believer.
+
+It all boils down to the developer mindset. It takes a while to switch from the mental image of a server to FaaS. Serverless is an incredible piece of technology, and I can only see a bright future if we keep pushing the borders with awesome tools like Serverless Offline, Dashbird, CloudWatch, and many others.
 
 I urge you to check out the tools I used above, as they have been of great help to me.
 
@@ -138,12 +144,12 @@ Hope you guys and girls enjoyed reading this as much as I enjoyed writing it. Un
 
 *Do you think this tutorial will be of help to someone? Do not hesitate to share. If you liked it, let me know in the comments below.*
 
-Tools:
+**Tools:**
  - [Serverless offline](https://github.com/dherault/serverless-offline)
  - [Dashbird](https://www.dashbird.io/)
  - [CloudWatch](https://aws.amazon.com/cloudwatch/)
 
-Resources:
+**Resources:**
  - https://hackernoon.com/node-js-monitoring-done-right-70418ecbbff9
  - https://blog.risingstack.com/monitoring-nodejs-applications-nodejs-at-scale/
  - https://en.wikipedia.org/wiki/Application_performance_management
