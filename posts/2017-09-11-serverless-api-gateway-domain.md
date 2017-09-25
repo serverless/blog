@@ -14,7 +14,7 @@ With Serverless, it's easier than ever to deploy production-ready API endpoints.
 
 In this guide, I'll show you how to map a custom domain name to your endpoints.
 
-This post is the first in a two-part series. The next post will help you configure multiple Serverless services on the same domain name for maximum microservice awesomeness.
+This post is the first in a two-part series. Check out the next post to configure [multiple Serverless services on the same domain name](https://serverless.com/blog/api-gateway-multiple-services/) for maximum microservice awesomeness.
 
 # Before you start
 
@@ -207,4 +207,4 @@ At the end of the `Service Information` block, you'll also get a `Serverless Dom
 
 Voila! You have a much cleaner URL for your endpoints.
 
-Be sure to check back later this week for posts on deploying multiple Serverless services to the same domain!
+If you want to put multiple services on the same domain, be sure to check out the [follow up post](https://serverless.com/blog/api-gateway-multiple-services/)!

@@ -21,7 +21,7 @@ If you already have your own services set up and just want the simple instructio
 
 To get started, you'll need the [Serverless Framework](https://serverless.com/framework/docs/providers/aws/guide/quick-start/) installed.
 
-You should also have your desired domain name registered through AWS. Read the documentation on that [here](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar.html). You should also register a certificate for that domain through the AWS Certificate Manager. If you need help with that, read the Getting a certificate for your domain section of my previous post on [using API Gateway with Serverless](https://serverless.com/blog/serverless-api-gateway-domain/).
+You should also have your desired domain name registered through AWS. Read the documentation on that [here](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar.html). You should also register a certificate for that domain through the AWS Certificate Manager. If you need help with that, read the _Getting a certificate for your domain_ section of my previous post on [using API Gateway with Serverless](https://serverless.com/blog/serverless-api-gateway-domain/).
 
 # Deploying your two services
 
@@ -255,7 +255,7 @@ Run `sls deploy` to deploy the users service, then check it in your browser:
 
 <img width="604" alt="Users Service Base Path" src="https://user-images.githubusercontent.com/6509926/30783122-81ead4f4-a103-11e7-9809-75e108e5506e.png">
 
-That's it! Now you easily separate your functions into services while still keeping them on the same domain. As you add additional services, you can add them to your custom domain as well. 
+That's it! Now you easily separate your functions into services while still keeping them on the same domain. You're not limited to two services on this domain -- as you add additional services, just use a new `basePath` to add it to your domain.
 
 # TL;DR
 
