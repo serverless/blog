@@ -10,7 +10,7 @@ authors:
 
 <img align="right" src='https://media.giphy.com/media/VtR7L2GCNQB56/giphy.gif' width="20%">
 
-Not so long ago, a job requirement pushed me into the world of FaaS. I was thrilled abstract away even more tedious work we developers all want off our plates. "We are not operations engineers!" I exclaimed proudly. "We should not need to dabble in the dark arts of the Linux Shell."
+Not so long ago, a job requirement pushed me into the world of FaaS, and I was thrilled. I had dreams of abstraction -- eliminating all that tedious work no developer likes doing. "We are not operations engineers!" I exclaimed proudly. "We should not need to dabble in the dark arts of the Linux Shell."
 
 But little did I know how wrong I was. We humans are creatures of habit, and one of my habits as an AWS user is checking the AWS Console religiously. It was my central place to monitor everything I needed to know about my servers' health.
 
