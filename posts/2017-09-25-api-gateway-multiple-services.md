@@ -1,5 +1,5 @@
 ---
-title: How to deploy multiple services to one API Gateway with Serverless
+title: How to deploy multiple micro-services under one API domain with Serverless
 description: Learn how to use the same domain name for multiple Serverless services with API Gateway base path mappings.
 date: 2017-09-25
 layout: Post
@@ -12,49 +12,18 @@ authors:
 
 In this post, I'll show you how to put multiple Serverless services on the same domain name. This is the [most requested issue in the Serverless repo](https://github.com/serverless/serverless/issues/3078) right now but is a tricky feature to implement directly within the Framework.
 
-Using the power of Serverless and the [serverless-domain-manager](https://github.com/amplify-education/serverless-domain-manager) plugin, we can use API Gateway's [base path mappings](http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html#how-to-custom-domains-mapping-console) to handle this. Follow the instructions below to deploy your own services to the same domain.
+Using the power of Serverless and the [serverless-domain-manager](https://github.com/amplify-education/serverless-domain-manager) plugin, we can use API Gateway's [base path mappings](http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html#how-to-custom-domains-mapping-console) to handle this. Follow the instructions below to deploy your two services to the same domain.
 
-The TL;DR version is for those that already have services ready and just want the steps to configure them. If you want a better understanding of how this works, scroll to the Full Walkthrough section below.
+If you already have your own services set up and just want the simple instructions, skip to the [TL;DR section](#tldr) below.
 
-# TL;DR version
 
-If you already have multiple services set up and are looking to add them to the same domain, follow these steps.
-
-Before you begin, you'll need to get a certificate for your domain with the AWS Certificate Manager and register your domain with API Gateway. To do that, follow the steps in my previous post on [using a custom domain with API Gateway and Serverless](https://serverless.com/blog/serverless-api-gateway-domain/). Stop after the step that says `sls create_domain`.
-
-In each service, install the [serverless-domain-manager](https://github.com/amplify-education/serverless-domain-manager) plugin:
-
-```bash
-$ npm install serverless-domain-manager
-```
-
-Then, add the following configuration to your `serverless.yml`:
-
-```yml
-# serverless.yml
-
-plugins:
-  - serverless-domain-manager
-
-custom:
-  customDomain:
-    domainName: 'api.mycompany.com' # Change this to your domain.
-    basePath: 'myprefix' # This will be prefixed to all routes
-    stage: ${self:provider.stage}
-    createRoute53Record: true
-```
-
-Make sure you change the `domainName` value to the domain name you want to use. Change the `basePath` value to the prefix you want for your routes in that service. For example, if you want your routes to start with `/products/`, the `basePath` value should be `products`.
-
-Then, run `sls deploy` to get your service deployed to your custom domain with a base path!
-
-# Full walkthrough
+# Getting Started
 
 To get started, you'll need the [Serverless Framework](https://serverless.com/framework/docs/providers/aws/guide/quick-start/) installed.
 
 You should also have your desired domain name registered through AWS. Read the documentation on that [here](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar.html). You should also register a certificate for that domain through the AWS Certificate Manager. If you need help with that, read the Getting a certificate for your domain section of my previous post on [using API Gateway with Serverless](https://serverless.com/blog/serverless-api-gateway-domain/).
 
-# Background
+# Deploying your two services
 
 Before we dive it, let's discuss exactly what we're trying to build. Imagine you have an e-commerce store which is a single-page application that consumes a backend REST API. Your REST API is hosted at `api.mycompany.com`, and you have two services: `users` and `products`. 
 
@@ -173,7 +142,7 @@ Run `sls deploy` to deploy the products-service, and make sure it's working in y
 
 Again, it's an ugly URL, which we're going to change soon.
 
-# Deploying to a custom domain with base path mappings
+# Adding your services to your custom domain
 
 Now that we have our two services set up, let's add them to a custom domain. You should still be in your `products-service`. Let's install the [serverless-domain-manager](https://github.com/amplify-education/serverless-domain-manager) plugin:
 
@@ -286,4 +255,36 @@ Run `sls deploy` to deploy the users service, then check it in your browser:
 
 <img width="604" alt="Users Service Base Path" src="https://user-images.githubusercontent.com/6509926/30783122-81ead4f4-a103-11e7-9809-75e108e5506e.png">
 
-That's it! Now you easily separate your functions into services while still keeping them on the same domain.
+That's it! Now you easily separate your functions into services while still keeping them on the same domain. As you add additional services, you can add them to your custom domain as well. 
+
+# TL;DR
+
+If you already have multiple services set up and are looking to add them to the same domain, follow these steps.
+
+Before you begin, you'll need to get a certificate for your domain with the AWS Certificate Manager and register your domain with API Gateway. To do that, follow the steps in my previous post on [using a custom domain with API Gateway and Serverless](https://serverless.com/blog/serverless-api-gateway-domain/). Stop after the step that says `sls create_domain`.
+
+In each service, install the [serverless-domain-manager](https://github.com/amplify-education/serverless-domain-manager) plugin:
+
+```bash
+$ npm install serverless-domain-manager
+```
+
+Then, add the following configuration to your `serverless.yml`:
+
+```yml
+# serverless.yml
+
+plugins:
+  - serverless-domain-manager
+
+custom:
+  customDomain:
+    domainName: 'api.mycompany.com' # Change this to your domain.
+    basePath: 'myprefix' # This will be prefixed to all routes
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+```
+
+Make sure you change the `domainName` value to the domain name you want to use. Change the `basePath` value to the prefix you want for your routes in that service. For example, if you want your routes to start with `/products/`, the `basePath` value should be `products`.
+
+Then, run `sls deploy` to get your service deployed to your custom domain with a base path!
