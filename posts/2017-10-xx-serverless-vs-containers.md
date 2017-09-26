@@ -8,7 +8,7 @@ authors:
   - PhilippMuns
 ---
 
-Serverless and containers seem pretty different, but they have some pretty important things in common.
+Serverless and containers seem pretty different, but they also have some important things in common.
 
 You want a modern, future-proof architecture? They both have it. You want to build that slick architecture while also leveraging the latest innovations in distributed systems and large-scale application development? Yep, they both have that too.
 
