@@ -12,7 +12,7 @@ Contrary to popular thought, FaaS and CaaS have some pretty important things in 
 
 You want a modern, future-proof architecture? They both have it. You want to build that slick architecture while also leveraging the latest innovations in distributed systems and large-scale application development? Yep, they both have that too.
 
-It makes it hard to decide which one is best for _you_. But friend, you deserve to know. So we're taking off the gloves and laying it all on the line.
+It makes it hard to decide which one is best for *you*. But friend, you deserve to know. So we're taking off the gloves and laying it all on the line.
 
 What are the commonalities and distinctions? What are the advantages and disadvantages of each?
 
@@ -44,13 +44,13 @@ Why not rent your servers and operational services individually, for a monthly f
 
 While cloud environments made it convenient to build large-scale applications, they still came saddled with the downsides of manual administration:
 
-_"Are the latest security fixes installed?"
+*"Are the latest security fixes installed?"*
 
-"When should we scale down/up?"
+*"When should we scale down/up?"*
 
-"How many more servers do we need?"_
+*"How many more servers do we need?"*
 
-Wouldn’t it be great if all those administrative hassles were taken off of developers' plates, and they could simply focus on applications and business value?
+Wouldn’t it be great if all those administrative hassles were taken off of our plates, and we could simply focus on applications and business value?
 
 Yep! That's what some other folks started thinking, too.
 
@@ -77,17 +77,18 @@ More and more enterprises adopted containers, and standards around this new tech
 
 ### Disadvantages of containers
 
-More flexibility also means more manual intervention and other downsides:
-
 - Administrative work (e.g. apply security fixes for containers)
 - Scaling is slower
 - Running costs
 - Hard to get started
 - Too many choices for container runtimes and tooling
+- More manual intervention
 
 ## In corner 2: Serverless compute (FaaS)
 
-About a year later, AWS introduced the first serverless compute service ever: AWS Lambda. The most basic premise of a serverless setup is that the whole application--all its business logic--is implemented as _functions_ and _events_.
+About a year later, AWS introduced the first serverless compute service ever: AWS Lambda.
+
+The most basic premise of a serverless setup is that the whole application--all its business logic--is implemented as _functions_ and _events_.
 
 Here's the full break-down. Applications get split up into different functionalities (or services), which are in turn triggered by events. You upload your function code and attach an event source to it.
 
