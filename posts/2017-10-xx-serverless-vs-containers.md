@@ -12,9 +12,9 @@ Contrary to popular thought, FaaS and CaaS have some pretty important things in 
 
 You want a modern, future-proof architecture? They both have it. You want to build that slick architecture while also leveraging the latest innovations in distributed systems and large-scale application development? Yep, they both have that too.
 
-It makes it hard to decide which one is best for _you_ and _your project_. But friend, you deserve to know. So we're taking off the gloves and laying it all on the line. What are their commonalities and distinctions? What are the advantages and disadvantages of each?
+It makes it hard to decide which one is best for _you_. But friend, you deserve to know. So we're taking off the gloves and laying it all on the line.
 
-It's serverless computing vs containerization, right now. Read on.
+What are the commonalities and distinctions? What are the advantages and disadvantages of each? It's serverless computing vs containerization, right now. Read on.
 
 ## How did we get here?
 
