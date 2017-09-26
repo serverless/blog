@@ -14,7 +14,9 @@ You want a modern, future-proof architecture? They both have it. You want to bui
 
 It makes it hard to decide which one is best for _you_. But friend, you deserve to know. So we're taking off the gloves and laying it all on the line.
 
-What are the commonalities and distinctions? What are the advantages and disadvantages of each? It's serverless computing vs containerization, right now. Read on.
+What are the commonalities and distinctions? What are the advantages and disadvantages of each?
+
+It's serverless computing vs containerization, right now. Read on.
 
 ## How did we get here?
 
@@ -38,12 +40,14 @@ Setting up and operating your own datacenter came with new operational challenge
 
 Why not rent your servers and operational services individually, for a monthly fee? This approach made it way easier to scale up or down, and let teams move faster.
 
-### 4. PaaS, CaaS, Faas, XaaS
+### 4. PaaS, CaaS, FaaS, XaaS
 
 While cloud environments made it convenient to build large-scale applications, they still came saddled with the downsides of manual administration:
 
 _"Are the latest security fixes installed?"
+
 "When should we scale down/up?"
+
 "How many more servers do we need?"_
 
 Wouldn’t it be great if all those administrative hassles were taken off of developers' plates, and they could simply focus on applications and business value?
