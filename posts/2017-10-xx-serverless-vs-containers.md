@@ -40,7 +40,7 @@ Setting up and operating your own datacenter came with new operational challenge
 
 Why not rent your servers and operational services individually, for a monthly fee? This approach made it way easier to scale up or down, and let teams move faster.
 
-### 4. PaaS, CaaS, FaaS, XaaS
+### 4. PaaS, FaaS, XaaS
 
 While cloud environments made it convenient to build large-scale applications, they still came saddled with the downsides of manual administration:
 
@@ -81,7 +81,6 @@ More and more enterprises adopted containers, and standards around this new tech
 - Scaling is slower
 - Running costs
 - Hard to get started
-- Too many choices for container runtimes and tooling
 - More manual intervention
 
 ## In corner 2: Serverless compute (FaaS)
@@ -126,4 +125,48 @@ But what is a serverless application, exactly? In sum, an architecture is server
 
 ## When to choose what?!
 
-TBD
+Now that we've learned more about those two exciting new technologies it's time to ask ourselves:
+
+> "Which technology should I pick for my next cloud project"?
+
+As with most technology-related choices the answer is simply: "It depends..."
+
+Containers are great if one needs the full flexibility to install and use specific software. This flexibility ranges from
+the choice of the underlying operating up to the full control of the installed programming language and runtime version.
+
+It's even possible to operate containers with different software stacks throughout a whole container fleet. This makes it 
+especially interesting if an old, legacy system should be migrated into a containerized environment.
+
+Container scheduling and management systems such as [Kubernetes](https://kubernetes.io/) are the de-facto standard to operate
+large-scale container environments. It's one of the most active projects on GitHub and was started by Google employees who
+were heavily involved into the first iterations of Googles own homebrew container platform which means that best-practices
+are already built-in.
+
+However this flexibility comes with a price tag. To fully benefit from containers one needs to split up the monolithic
+application into separate microservices which in turn need to be rolled-out as individual groups of containers. Those
+containers need to communicate with each other which involves more toolings to be setup and operated. Other than that one
+needs to keep the containers and their operating systems up-to-date which means that security fixes for the operating system
+and other software which runs inside of the container needs to be installed.
+
+A containerized application can be configured to be self-healing and auto-scaling which means that traffic increased or
+decreases are automatically handled by the container orchestration software. However detecting changes in traffic patterns
+and therefore spinning up / down the containers takes some time.
+
+A complete turn-off where no containers are running it all (e.g. when there's no traffic) is not possible which means that
+there are always costs involved when operating a such a container-based setup.
+
+On the other hand serverless applications are great if you need something which is can handle changes in traffic patterns in
+milliseconds and will scale down (or completely "off") if there's little to no traffic. With serverless applications one only
+pays for the resources he needs and uses. No usage equals no costs.
+
+As a serverless user you don't have to care about the tedious task to administrate the underlying infrastructure of your
+serverless application. You just need to care about your code which means that it's way faster to provide real business value
+to end-users.
+
+Having this clear separation between managed infrastructure and the focus on code results in a less flexible cloud
+environment. The programming languages and runtimes are limited to the ones the provider supports (however there are 
+workaround / "shims" available to overcome those restrictions). The event sources which will trigger the functions are usually
+services the cloud provider offers. Reasoning about all those individual pieces of your application becomes harder.
+
+We at Serverless, inc. are tackling those problems and missing pieces to make it more convenient and easier than ever to build 
+and run large-scale serverless applications.
