@@ -135,12 +135,12 @@ Containers are great if one needs the full flexibility to install and use softwa
 This flexibility ranges from the choice of the underlying operating system up to the full control of the installed
 programming language and runtime version.
 
-It's even possible to operate containers with different software stacks throughout a whole container fleet. This makes it 
+It's even possible to operate containers with different software stacks throughout a large container fleet. This makes it 
 especially interesting if an old, legacy system should be migrated into a containerized environment.
 
 Container scheduling and management systems such as [Kubernetes](https://kubernetes.io/) are the de-facto standard to manage
 large-scale container setups. It's one of the most active projects on GitHub and was started by Google employees who
-were heavily involved with the first iterations of Googles own homebrew container platform "Bord". This means that
+were heavily involved with the first iterations of Googles own homebrew container platform called "Bord". This means that
 best-practices are already built-in.
 
 However this flexibility comes with a price tag. To fully benefit from containers one needs to split up the monolithic
@@ -149,26 +149,27 @@ containers need to communicate with each other which involves more tooling to be
 important to keep the containers and their operating systems up-to-date. This means that security fixes and other updates
 need to be installed.
 
-A containerized application can be configured to be self-healing and auto-scaling. Therefore traffic increased or
+A containerized application can be configured to be self-healing and auto-scaling. Therefore traffic increases or
 decreases are automatically handled by the container orchestration platform. However detecting changes in traffic patterns
-and spinning up / down the containers takes some time.
+and spinning up / down the containers takes some time to take effect.
 
-A complete shutdown where no containers are running at all (e.g. when there's no traffic) is not possible which means that
-there are always running-costs involved when operating a such a container-based setup.
+A complete shutdown where no container-related infrastructure is running at all (e.g. when there's no traffic) is not
+possible which means that there are always running-costs involved when operating a such a container-based setup.
 
-On the other hand serverless applications are great if you need something which can handle changes in traffic patterns in
-milliseconds and will scale down (or completely "off") if there's little to no traffic. With serverless applications one only
-pays for the resources he needs and uses. No usage equals no costs.
+On the other hand serverless applications are great if changes in traffic patterns should be automatically detected and
+handled in a blazing fast fashion. It's even possible to completely "shutdown" the application if there's no traffic at all.
+With serverless applications one only pays for the resources he needs and uses. No usage equals no costs.
 
 As a serverless developer one doesn't have to care about the tedious task to administrate the underlying infrastructure the 
-serverless application runs on (given this abstracted behavior it's even "a mystery" how this infrastructure looks like).
-A serverless developer just needs to care about the code which means that it's way faster to provide real business value
-to end-users.
+serverless application runs on (given this abstracted behavior it's even "a mystery" how the underlying infrastructure looks
+like). A serverless developer just needs to care about the code which means that it's way faster to provide real business
+value to end-users.
 
-Having this clear separation between managed infrastructure and the focus on code / the provided value results in a less
-flexible cloud setup. The programming languages and runtimes are limited to the ones the provider supports (however there are 
-workaround / "shims" available to overcome those restrictions). The event sources which will trigger the functions are usually
-services the cloud provider offers. Reasoning about all those individual pieces of the application stack becomes harder.
+Having this clear separation between managed infrastructure and the solely focus on code results in a less flexible cloud
+setup. The programming languages and runtimes are limited to the ones the provider supports (however there are 
+workarounds / "shims" available to overcome those restrictions). The event sources which will trigger the functions are
+usually services the cloud provider offers. Reasoning about all those individual pieces of the application stack becomes
+harder.
 
-We at Serverless, inc. are tackling those problems and missing pieces to make it more convenient and easier than ever to build 
-and run large-scale serverless applications.
+We here at Serverless, inc. are tackling those problems and missing pieces to make it more convenient and easier than ever
+to build and run large-scale serverless applications.
