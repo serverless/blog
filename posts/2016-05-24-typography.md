@@ -54,9 +54,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae mauris ar
 
 ## Unordered List
 
-* Unordered list can use asterisks
-- Or minuses
-+ Or pluses
+- Item
+- Another item
+- Another item
 
 ## Nested List
 
