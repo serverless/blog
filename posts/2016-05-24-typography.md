@@ -49,21 +49,39 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae mauris ar
 
 1. First ordered list item
 2. Another item
-3. Another item
+3. Another item here
+  1. child 1
+  2. child 2
+  3. child 3
+    1. grandchild 1
+    2. grandchild 2
+    3. grandchild 3
 4. Another item
+  - unordered child
+  - unordered child 2
+    1. ordered grandchild 1
+    2. ordered grandchild 2
+    3. ordered grandchild 3
+  - unordered child 3
 
 ## Unordered List
 
 - Item
 - Another item
-- Another item
-- Another item with nested children
+- Another item here
+- Another item with nested unordered children
   - child 1
   - child 2
   - child 3
   - child 4 with children
     - grand child
     - grand child 2
+- Another item with nested ordered children
+  1. child 1
+  2. child 2
+    - unordered grandchild 1
+    - unordered grandchild 2
+    - unordered grandchild 3
 - Last item
 
 ## Nested List
