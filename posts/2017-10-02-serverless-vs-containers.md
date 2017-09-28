@@ -123,53 +123,36 @@ But what is a serverless application, exactly? In sum, an architecture is server
 - Cold starts
 - Complex apps can be hard to build
 
-## When to choose what?!
+## When to choose what?
 
-Now that we've learned more about those two exciting new technologies it's time to ask ourselves:
+Now it's time for the big question:
 
 > "Which technology should I pick for my next project"?
 
-As with most technology-related choices the answer is: "It depends..."
+Truthfully, it depends.
 
-Containers are great if one needs the full flexibility to install and use software with specific version requirements.
-This flexibility ranges from the choice of the underlying operating system up to the full control of the installed
-programming language and runtime version.
+### When to choose containers
 
-It's even possible to operate containers with different software stacks throughout a large container fleet. This makes it 
-especially interesting if an old, legacy system should be migrated into a containerized environment.
+Containers are great if you need the flexibility to install and use software with specific version requirements. With containers, you can choose the underlying operating system and have full control of the installed programming language and runtime version.
 
-Container scheduling and management systems such as [Kubernetes](https://kubernetes.io/) are the de-facto standard to manage
-large-scale container setups. It's one of the most active projects on GitHub and was started by Google employees who
-were heavily involved with the first iterations of Googles own homebrew container platform called "Bord". This means that
-best-practices are already built-in.
+It's even possible to operate containers with different software stacks throughout a large container fleet--especially interesting if you need to migrate an old, legacy system into a containerized environment. As an added bonus, many tools for managing large-scale container set-ups (like [Kubernetes(https://kubernetes.io/)) come with all the best practices already baked in.
 
-However this flexibility comes with a price tag. To fully benefit from containers one needs to split up the monolithic
-application into separate microservices which in turn need to be rolled-out as individual groups of containers. Those
-containers need to communicate with each other which involves more tooling to be setup and operated. Other than that it's
-important to keep the containers and their operating systems up-to-date. This means that security fixes and other updates
-need to be installed.
+This flexibility *does* come with an operational price tag, though. Containers still require a lot of maintenance and set-up.
 
-A containerized application can be configured to be self-healing and auto-scaling. Therefore traffic increases or
-decreases are automatically handled by the container orchestration platform. However detecting changes in traffic patterns
-and spinning up / down the containers takes some time to take effect.
+For maximum benefit, you'll need to split up your monolithic application into separate microservices, which in turn need to be rolled out as individual groups of containers. That means you'll need tooling that allows all those containers to talk to each other. You'll also need to do the grunt work of keeping their operating systems current with regular security fixes and other updates.
 
-A complete shutdown where no container-related infrastructure is running at all (e.g. when there's no traffic) is not
-possible which means that there are always running-costs involved when operating a such a container-based setup.
+While you *can* configure the container orchestration platform to automatically handle traffic fluctuations for you (a.k.a, self-healing and auto-scaling), the process of detecting those traffic pattern changes and spinning the containers up or down won't be instantaneous. A complete shutdown where no container-related infrastructure is running at all (e.g. when there's no traffic) will also not be possible. There will always be runtime costs.
 
-On the other hand serverless applications are great if changes in traffic patterns should be automatically detected and
-handled in a blazing fast fashion. It's even possible to completely "shutdown" the application if there's no traffic at all.
-With serverless applications one only pays for the resources he needs and uses. No usage equals no costs.
+### When to choose serverless
 
-As a serverless developer one doesn't have to care about the tedious task to administrate the underlying infrastructure the 
-serverless application runs on (given this abstracted behavior it's even "a mystery" how the underlying infrastructure looks
-like). A serverless developer just needs to care about the code which means that it's way faster to provide real business
-value to end-users.
+In that vein, serverless is great if you need traffic pattern changes to be automatically detected and handled instantly. You can even completely shut down the application if there's no traffic at all. With serverless applications, you pay only for the resources you use; no usage, no costs.
 
-Having this clear separation between managed infrastructure and the solely focus on code results in a less flexible cloud
-setup. The programming languages and runtimes are limited to the ones the provider supports (however there are 
-workarounds / "shims" available to overcome those restrictions). The event sources which will trigger the functions are
-usually services the cloud provider offers. Reasoning about all those individual pieces of the application stack becomes
-harder.
+The serverless developer doesn't have to care about administrating underlying infrastructure; they just need to care about the code and the business value to end users. Iteration can be more rapid, as code can be shipped faster, without set-up or provisioning. In fact, because the underlying infrastructure is abstracted, the developer may not even know what it looks like. They won't really need to.
 
-We here at Serverless, inc. are tackling those problems and missing pieces to make it more convenient and easier than ever
-to build and run large-scale serverless applications.
+But currently, there are some limitations with vendor support and ecosystem lock-in. Programming languages and runtimes are limited to whichever the provider supports (though there are  some workarounds (or "shims") available to overcome those restrictions). Event sources (which trigger all your functions) are usually services that the specific cloud provider offers. 
+
+Reasoning about all the individual pieces of the application stack becomes harder when the infrastructure and the code are so separate. Serverless is a bit more new, and its tools still have room to evolve. That's what we're actively working on here at Serverless, anyway. 😉
+
+### Final verdict?
+
+Choose containers when you need flexibility, or when you need to migrate legacy services. Choose serverless when you need speed of development, automatic scaling and significantly lowered runtime costs.
