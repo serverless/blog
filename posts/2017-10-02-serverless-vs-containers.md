@@ -135,7 +135,7 @@ Truthfully, it depends.
 
 Containers are great if you need the flexibility to install and use software with specific version requirements. With containers, you can choose the underlying operating system and have full control of the installed programming language and runtime version.
 
-It's even possible to operate containers with different software stacks throughout a large container fleet--especially interesting if you need to migrate an old, legacy system into a containerized environment. As an added bonus, many tools for managing large-scale container set-ups (like [Kubernetes(https://kubernetes.io/)) come with all the best practices already baked in.
+It's even possible to operate containers with different software stacks throughout a large container fleet--especially interesting if you need to migrate an old, legacy system into a containerized environment. As an added bonus, many tools for managing large-scale container set-ups (like [Kubernetes](https://kubernetes.io/)) come with all the best practices already baked in.
 
 This flexibility *does* come with an operational price tag, though. Containers still require a lot of maintenance and set-up.
 
