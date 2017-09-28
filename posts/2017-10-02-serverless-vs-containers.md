@@ -8,7 +8,7 @@ authors:
   - PhilippMuns
 ---
 
-Contrary to popular thought, FaaS and CaaS have some pretty important things in common.
+Contrary to popular thought, Functions-as-a-Service (FaaS) and Containers-as-a-Service (CaaS) have some pretty important things in common.
 
 You want a modern, future-proof architecture? They both have it. You want to build that slick architecture while also leveraging the latest innovations in distributed systems and large-scale application development? Yep, they both have that too.
 
