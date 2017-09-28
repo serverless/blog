@@ -1,5 +1,5 @@
 ---
-title: Serverless (FaaS) vs. Containers (CaaS) - when to pick which?
+title: Serverless (FaaS) vs. Containers - when to pick which?
 description: Docker, Kubernetes, Serverless? Let's discuss the different technologies and discover their up- and downsides. 
 date: 2017-10-02
 layout: Post
@@ -8,7 +8,7 @@ authors:
   - PhilippMuns
 ---
 
-Contrary to popular thought, Functions-as-a-Service (FaaS) and Containers-as-a-Service (CaaS) have some pretty important things in common.
+Contrary to popular thought, Functions-as-a-Service (FaaS) and Containers have some pretty important things in common.
 
 You want a modern, future-proof architecture? They both have it. You want to build that slick architecture while also leveraging the latest innovations in distributed systems and large-scale application development? Yep, they both have that too.
 
@@ -54,7 +54,7 @@ Wouldn’t it be great if all those administrative hassles were taken off of our
 
 Yep! That's what some other folks started thinking, too.
 
-## In corner 1: Containers (CaaS)
+## In corner 1: Containers
 
 Wouldn’t it be nice if one could pack the application, with alllllll its dependencies, into a dedicated box and run it anywhere? No matter what software dependencies the host system has installed, or where and what the host system actually is?
 
