@@ -58,7 +58,7 @@ Yep! That's what some other folks started thinking, too.
 
 Wouldn’t it be nice if one could pack the application, with alllllll its dependencies, into a dedicated box and run it anywhere? No matter what software dependencies the host system has installed, or where and what the host system actually is?
 
-That’s the idea of containerization. Create a container which has all the required dependencies pre-installed, put your application code inside of it and run it everywhere the container runtime is installed.
+That’s the idea of containerization. Create a container which has all the required dependencies pre-installed, put your application code inside of it and run it everywhere the container runtime is installed. No more devs saying: "Well, it works on my machine!"
 
 Containerization gained attention when it came to light that Google used such technologies to power some of their services (such as Gmail or Maps). Using containers was initially pretty cumbersome, however; it required deep knowledge about Linux kernel internals and making home-grown scripts to put an application in a container and run it on a host machine.
 
