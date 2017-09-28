@@ -151,7 +151,7 @@ The serverless developer doesn't have to care about administrating underlying in
 
 But currently, there are some limitations with vendor support and ecosystem lock-in. Programming languages and runtimes are limited to whichever the provider supports (though there are  some workarounds (or "shims") available to overcome those restrictions). Event sources (which trigger all your functions) are usually services that the specific cloud provider offers. 
 
-Reasoning about all the individual pieces of the application stack becomes harder when the infrastructure and the code are so separate. Serverless is a bit more new, and its tools still have room to evolve. That's what we're actively working on here at Serverless, anyway. 😉
+Reasoning about all the individual pieces of the application stack becomes harder when the infrastructure and the code are so separate. Serverless is a bit more new, and its tools still have room to evolve. That's what we're actively working on here at [Serverless, Inc](https://serverless.com/), anyway. 😉
 
 ### Final verdict?
 
