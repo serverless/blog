@@ -18,9 +18,9 @@ Let's do this.
 
 ### Table of contents
 
-* Command aliases
-* Command delegates
-* Enhanced logging
+- [Command aliases](https://serverless.com/blog/plugin-system-extensions/#command-aliases)
+- [Command delegates](https://serverless.com/blog/plugin-system-extensions/#command-delegates-lifecycle-termination)
+- [Enhanced logging](https://serverless.com/blog/plugin-system-extensions/#enhanced-logging)
 
 ## Command aliases
 
