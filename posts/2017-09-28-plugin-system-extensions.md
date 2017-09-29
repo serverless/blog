@@ -1,7 +1,7 @@
 ---
 title: What's new for Serverless plugins?
 description: Being a Serverless plugin author has never been easier. Take advantage of these awesome new features to write your very own plugin.
-date: 2017-09-28
+date: 2017-09-29
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/plugin.jpg
 layout: Post
 authors:
