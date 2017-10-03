@@ -1,5 +1,5 @@
 ---
-title: 3 things I learned designing developer-centric tools
+title: 3 things I learned designing developer-centric tools at Serverless
 description: As the newest product designer at Serverless, I had to ramp fast. Here's what I learned about keeping developers at the center of my design strategy.
 date: 2017-10-03
 layout: Post
@@ -8,17 +8,17 @@ authors:
   - FelixDesroches
 ---
 
-I joined the Serverless family about a month ago (in startup months, so make that 14 in enterprise company months). Let’s just say the ramp-up curve has been...intense. I’ve built complex developer tools before, but never for open source, and never with this many moving parts. But hey, when you gain knowledge fast, might as well share it around, right?
+I joined the Serverless family about a month ago (in startup months, so make that 14 in enterprise company months). Let’s just say the ramp-up curve has been...intense. I’ve built complex developer tools before, but never for open source, and never with this many moving parts.
 
-Here are 3 things to keep in mind when it comes to designing dev tools in this new (to me, anyway) context.
+But hey, when you gain knowledge fast, might as well share it around, right? Here are 3 things to keep in mind when it comes to designing dev tools in this new (to me, anyway) context.
 
 ## 1. Engineers need two screens for a reason
 
 Code wrangling comes with a full posse of devious collaborators. You’ve got:
-multiple terminal windows for writing code and accessing file structures
-additional browser windows for viewing live changes
-[GitHub](https://github.com/) and [Waffle](https://waffle.io/) (or if you prefer, [waffle](https://i.ytimg.com/vi/ZxF9RH_SRfQ/maxresdefault.jpg)) for project tracking and asynchronous comms
-plus a couple extra windows for those reams of documentation (try using AWS without docs, certainly not pretty)
+- multiple terminal windows for writing code and accessing file structures
+- additional browser windows for viewing live changes
+- [GitHub](https://github.com/) and [Waffle](https://waffle.io/) (or if you prefer, [waffle](https://i.ytimg.com/vi/ZxF9RH_SRfQ/maxresdefault.jpg)) for project tracking and asynchronous comms
+- plus a couple extra windows for those reams of documentation (try using AWS without docs, certainly not pretty)
 
 Once you add in Google Drive, Slack and break-time Twitter, a savvy developer needs *at least* 2 screens, if not 3. 
 
