@@ -15,10 +15,10 @@ But hey, when you gain knowledge fast, might as well share it around, right? Her
 ## 1. Engineers need two screens for a reason
 
 Code wrangling comes with a full posse of devious collaborators. You’ve got:
-- multiple terminal windows for writing code and accessing file structures
-- additional browser windows for viewing live changes
-- [GitHub](https://github.com/) and [Waffle](https://waffle.io/) (or if you prefer, [waffle](https://i.ytimg.com/vi/ZxF9RH_SRfQ/maxresdefault.jpg)) for project tracking and asynchronous comms
-- plus a couple extra windows for those reams of documentation (try using AWS without docs, certainly not pretty)
+multiple terminal windows for writing code and accessing file structures
+additional browser windows for viewing live changes
+[GitHub](https://github.com/) and [Waffle](https://waffle.io/) (or if you prefer, [waffle](https://i.ytimg.com/vi/ZxF9RH_SRfQ/maxresdefault.jpg)) for project tracking and asynchronous comms
+plus a couple extra windows for those reams of documentation (try using AWS without docs, certainly not pretty)
 
 Once you add in Google Drive, Slack and break-time Twitter, a savvy developer needs *at least* 2 screens, if not 3. 
 
