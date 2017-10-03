@@ -22,7 +22,7 @@ Let's do this.
 - [Command delegates](https://serverless.com/blog/plugin-system-extensions/#command-delegates-lifecycle-termination)
 - [Enhanced logging](https://serverless.com/blog/plugin-system-extensions/#enhanced-logging)
 
-## Command aliases
+## Command aliases 
 
 ### Before
 
