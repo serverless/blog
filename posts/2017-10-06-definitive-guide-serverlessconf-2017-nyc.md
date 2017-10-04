@@ -1,9 +1,9 @@
 ---
 title: Your definitive guide to ServerlessConf 2017 in NYC
-description: So many talks, which to choose? This is your field guide to getting the most out of ServerlessConf NYC: what to see, who to meet, where to get the best t-shirts.
+description: So many talks, which to choose? This is your field guide to getting the most out of ServerlessConf NYC - what to see, who to meet, where to get the best t-shirts.
 date: 2017-10-06
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf_nyc.jpg
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf_nyc.jpg'
 authors:
   - AndreaPasswater
 ---
