@@ -1,6 +1,6 @@
 ---
 title: Deploy a REST API using Serverless, Express, and Node.js
-description: Learn how to use the popular Express.js framework to deploy a REST API with Serverless
+description: Learn how to use the popular Express.js framework to deploy a REST API with Serverless, DynamoDB, + API Gateway
 date: 2017-10-04
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/express.png
@@ -14,7 +14,12 @@ But moving to serverless has a learning curve as well. You need to learn the int
 
 Today, I come with good news: your existing web framework tooling will work seamlessly with Serverless. In this post, I'll show you how to use the popular Node web framework [Express.js](https://expressjs.com/) to deploy a Serverless REST API. This means you can use your existing code + the vast Express.js ecosystem while still getting all the benefits of Serverless 💥!
 
-Below is a step-by-step walkthrough of creating a new Serverless service using Express.js. 
+Below is a step-by-step walkthrough of creating a new Serverless service using Express.js. In this walkthrough, we will:
+
+- Deploy a simple API endpoint;
+- Add a DynamoDB table and two endpoints to create and retrieve a User object;
+- Set up path-specific routing for more granular metrics and monitoring; and
+- Configure your environment for local development for a faster development experience.
 
 If you already have an Express application that you want to convert to Serverless, skip to the [Converting an existing Express application](#converting-an-existing-express-application) section below. 
 
@@ -124,6 +129,9 @@ Change your `serverless.yml` to look as follows:
 
 service: my-express-application
 
+custom:
+  tableName: 'users-table-${self:provider.stage}'
+
 provider:
   name: aws
   runtime: nodejs6.10
@@ -141,7 +149,7 @@ provider:
       Resource:
         - { "Fn::GetAtt": ["UsersDynamoDBTable", "Arn" ] }
   environment:
-    USERS_TABLE: { "Ref": "UsersDynamoDBTable" }
+    USERS_TABLE: ${self:custom.tableName}
 
 functions:
   app:
@@ -166,6 +174,7 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
+        TableName: ${self:custom.tableName}
 ```
 
 We provisioned the table in the `resources` section using CloudFormation syntax. We also added IAM permissions for our functions under the `iamRoleStatements` portion of the `provider` block. Finally, we passed the table name as the environment variable `USERS_TABLE` in the `environment` portion of the `provider` block.
@@ -213,8 +222,12 @@ app.get('/users/:userId', function (req, res) {
       console.log(error);
       res.status(400).json({ error: 'Could not get user' });
     }
-    const {userId, name} = result.Item;
-    res.json({ userId, name });
+    if (result.Item) {
+      const {userId, name} = result.Item;
+      res.json({ userId, name });
+    } else {
+      res.status(404).json({ error: "User not found" });
+    }
   });
 })
 
@@ -327,6 +340,155 @@ functions:
 Now, all requests to `GET /users/:userId` will be handled by the `getUser` instance of your application, and all requests to `POST /users/` will be handled by the `createUser` instance. For any other requests, they'll be handled by the main `app` instance of your function.
 
 Again, none of this is required, and it's a bit of an overweight solution since each specific endpoint will include the full application code for your other endpoints. However, it's a good balance between speed of development by using the tools you're used to along with the per-endpoint granularity that serverless application patterns provide.
+
+# Local development configuration
+
+When developing an application, it's nice to rapidly iterate by developing and testing locally rather than doing a full deploy betwen changes. In this section, I'll show you how to configure your environment for local development.
+
+First, let's use the [`serverless-offline`](https://github.com/dherault/serverless-offline) plugin. This plugin helps to emulate the API Gateway environment for local development.
+
+Install the `serverless-offline` plugin:
+
+```bash
+$ npm install --save-dev serverless-offline
+```
+
+Then add the plugin to your `serverless.yml`:
+
+```yml
+# serverless.yml
+
+plugins:
+  - serverless-offline
+```
+
+Then, start the serverless-offline server:
+
+```bash
+$ sls offline start
+Serverless: Starting Offline: dev/us-east-1.
+
+Serverless: Routes for app:
+Serverless: ANY /
+Serverless: ANY /{proxy*}
+
+Serverless: Routes for getUser:
+Serverless: GET /users/{proxy*}
+
+Serverless: Routes for createUser:
+Serverless: POST /users
+
+Serverless: Offline listening on http://localhost:3000
+```
+
+Then navigate to your root page on `localhost:3000` in your browser:
+
+<img width="541" alt="Serverless Offline" src="https://user-images.githubusercontent.com/6509926/31183451-3d7c6a08-a8ec-11e7-9282-0e474b68caf6.png">
+
+It works! If you make a change in your `index.js` file, it will be updated the next time you hit your endpoint. This rapidly improves development time.
+
+While this works easily for a stateless endpoint like "Hello World!", it's a little trickier for our `/users` endpoints that interact with a database.
+
+Luckily, there's a plugin for doing local development with a local DynamoDB emulator! We'll use the [`serverless-dynamodb-local`](https://github.com/99xt/serverless-dynamodb-local) plugin for this.
+
+First, let's install the plugin:
+
+```
+$ npm install --save-dev serverless-dynamodb-local
+```
+
+Then, let's add the plugin to our `serverless.yml`. Note that it must come before the `serverless-offline` plugin. We'll also add some config in the `custom` block so that it locally creates our tables defined in the `resources` block:
+
+```yml
+# serverless.yml
+
+plugins:
+  - serverless-dynamodb-local
+  - serverless-offline #serverless-offline needs to be last in the list
+
+custom:
+  tableName: 'users-table-${self:provider.stage}'
+  dynamodb:
+    start:
+      migrate: true
+```
+
+Then, run a command to install DynamoDB local:
+
+```bash
+$ sls dynamodb install
+```
+
+Finally, we need to make some small changes to our application code. When instantiating our DynamoDB client, we'll add in some special configuration if we're in a local, offline environment. The `serverless-offline` plugin sets an environment variable of `IS_OFFLINE` to `true`, so we'll use that to handle our config. Change the beginning of `index.js` to the following:
+
+```javascript
+// index.js
+
+const serverless = require('serverless-http');
+const bodyParser = require('body-parser');
+const express = require('express')
+const app = express()
+const AWS = require('aws-sdk');
+
+const USERS_TABLE = process.env.USERS_TABLE;
+
+const IS_OFFLINE = process.env.IS_OFFLINE;
+let dynamoDb;
+if (IS_OFFLINE === 'true') {
+  dynamoDb = new AWS.DynamoDB.DocumentClient({
+    region: 'localhost',
+    endpoint: 'http://localhost:8000'
+  })
+  console.log(dynamoDb);
+} else {
+  dynamoDb = new AWS.DynamoDB.DocumentClient();
+};
+
+app.use(bodyParser.json({ strict: false }));
+
+... rest of application code ...
+```
+
+Now, our DocumentClient constructor is configured to use DynamoDB local if we're running locally or uses the default options if running in Lambda.
+
+Let's see it if works. Start up your offline server again:
+
+```bash
+$ sls offline start
+Dynamodb Local Started, Visit: http://localhost:8000/shell
+Serverless: DynamoDB - created table users-table-dev
+Serverless: Starting Offline: dev/us-east-1.
+
+Serverless: Routes for app:
+Serverless: ANY /
+Serverless: ANY /{proxy*}
+
+Serverless: Routes for getUser:
+Serverless: GET /users/{proxy*}
+
+Serverless: Routes for createUser:
+Serverless: POST /users
+
+Serverless: Offline listening on http://localhost:3000
+```
+
+Let's run our `curl` command from earlier to hit our local endpoint and create a user:
+
+```bash
+$ curl -H "Content-Type: application/json" -X POST http://localhost:3000/users -d '{"userId": "alexdebrie1", "name": "Alex DeBrie"}'
+{"userId":"alexdebrie1","name":"Alex DeBrie"}
+```
+
+And then retrieve the user:
+
+```bash
+$ curl -H "Content-Type: application/json" -X GET http://localhost:3000/users/alexdebrie1
+{"userId":"alexdebrie1","name":"Alex DeBrie"}
+```
+
+It works just like it did on Lambda!
+
+This local setup can really speed up your workflow while still allowing you to emulate a close approximation of the Lambda environment.
 
 # Converting an existing Express application
 
