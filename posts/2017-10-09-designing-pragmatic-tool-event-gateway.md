@@ -1,5 +1,5 @@
 ---
-title: The Event Gateway - how we designed with pragmatism
+title: The Event Gateway - how we kept big ideas pragmatic
 description: How do you design a pragmatic tool that also tries to break new ground? We found ourselves towing that line when we designed the Event Gateway.
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-thumbnail.png
