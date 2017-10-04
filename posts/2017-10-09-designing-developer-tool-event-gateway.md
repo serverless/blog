@@ -17,7 +17,7 @@ No one likes to hear that. Event-driven is a new paradigm, and new paradigms mea
 
 The Event Gateway is step 1: a new piece of infrastructure that treats all data flows as events, and lets developers react to those flows with serverless functions.
 
-See how we treaded the intersection of 'passion project' and 'real world practicality'. This was our design process from planning to execution to getting the tool in your hands.
+See how we treaded the intersection of 'passion project' and 'real world practicality'. Here, we lay out our design process from planning to execution to getting the tool in your hands.
 
 # Design Considerations
 
