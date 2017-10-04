@@ -1,6 +1,6 @@
 ---
-title: How we married passion and pragmatism to create our latest dev tool - the Event Gateway 
-description: How do you tow the line between passion projects and practical developer tools? We break down the guiding principles and executable steps we used to design the Event Gateway.
+title: The Event Gateway - designing tools with big thinking and pragmatism
+description: How do you design a pragmatic tool that also tries to break new ground? We found ourselves towing that line when we designed the Event Gateway.
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-thumbnail.png
 authors:
@@ -15,9 +15,9 @@ Our job at Serverless is to remove that pain: fight for standardization, think f
 
 No one likes to hear that. Event-driven is a new paradigm, and new paradigms mean change. But to move serverless forward, we as a community have to embrace event-driven design. Our job at Serverless is to make it painless. As we can, at least.
 
-The Event Gateway is step 1: a new piece of infrastructure that treats all data flows as events, and lets developers react to those flows with serverless functions.
+The Event Gateway is a big step for us: a new piece of infrastructure that treats all data flows as events, and lets developers react to those flows with serverless functions.
 
-See how we treaded the intersection of 'passion project' and 'real world practicality'. Here, we lay out our design process from planning to execution to getting the tool in your hands.
+See how we treaded the intersection of 'exciting new ground' and 'real world practicality'. Here, we lay out our design process from planning to execution to getting the tool in your hands.
 
 # Design Considerations
 
