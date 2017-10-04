@@ -17,49 +17,93 @@ Here’s what we plan on prioritizing. This is the Serverless team guide to gett
 ## Day 1
 
 **9:45-10:15 - theatre I**
-*10 tips for running a serverless business... number #6 will blow your mind!*: [Sam Kroonenburg](https://twitter.com/samkroon?lang=en) of A Cloud Guru.
+
+*10 tips for running a serverless business... number #6 will blow your mind!*:
+
+[Sam Kroonenburg](https://twitter.com/samkroon?lang=en) of A Cloud Guru.
+
 > Seriously, how can anybody skip the founder of the conference? Sam knows what’s up. Also, that tongue-in-cheek title.
 
 **11:15-11:30 - theatre I**
-*Harmonizing Serverless and Traditional Applications*: [Ryan Scott Brown](https://twitter.com/ryan_sb?lang=en)
+
+*Harmonizing Serverless and Traditional Applications*:
+
+[Ryan Scott Brown](https://twitter.com/ryan_sb?lang=en)
+
 > Ryan publishes a lot of great serverless content, and we have no doubts that his talk will be just as fierce.
 
 **3:10-3:40 - theatre I**
-*Serverless Design Patterns*: [Tim Wagner](https://twitter.com/timallenwagner?lang=en), [Yochay Kiriaty](https://twitter.com/yochayk?lang=en) & [Peter Sbarski](https://twitter.com/sbarski?lang=en)
+
+*Serverless Design Patterns*:
+
+[Tim Wagner](https://twitter.com/timallenwagner?lang=en), [Yochay Kiriaty](https://twitter.com/yochayk?lang=en) & [Peter Sbarski](https://twitter.com/sbarski?lang=en)
+
 > A panel with AWS, Azure and A Cloud Guru hotshots.
 
 **4:20-4:50 - theatre II**
-*The Best Practices and Hard Lessons Learned of Serverless Applications*: [Chris Munns](https://twitter.com/chrismunns)
+
+*The Best Practices and Hard Lessons Learned of Serverless Applications*:
+
+[Chris Munns](https://twitter.com/chrismunns)
+
 > Chris always manages to give out smart, practical tidbits you wish you’d thought of yourself.
 
 **5:00-5:30 - theatre I**
-*Event-driven Architectures: Are We Ready for the Paradigm Shift?*: [Ben Kehoe](https://twitter.com/ben11kehoe?lang=en)
+
+*Event-driven Architectures: Are We Ready for the Paradigm Shift?*:
+
+[Ben Kehoe](https://twitter.com/ben11kehoe?lang=en)
+
 > What we love most about Ben is that he doesn’t put icing on anything. Not donuts, not birthday cake, and especially not his serverless opinions. Get ready to be told what’s up.
 
 ## Day 2
 
 **9:30-10:00 - theatre I**
-*Why the Fuss About Serverless?*: Simon Wardley
+
+*Why the Fuss About Serverless?*:
+
+Simon Wardley
+
 > If you’ve never heard Simon speak before, trust us: you will mistake his talk for no one else’s.
 
 **10:00-10:30 - theatre I**
-*Unicorns Poop Too: A Field Guide To Serverless Observability*: [Charity Majors](https://twitter.com/mipsytipsy)
+
+*Unicorns Poop Too: A Field Guide To Serverless Observability*
+
+[Charity Majors](https://twitter.com/mipsytipsy)
+
 > After Simon, stay in your seats. Charity is a downright awesome speaker. We’d stand in line to hear her talk about basically anything—especially serverless unicorns.
 
 **1:50-2:20 - theatre I**
-*Going serverless at a bank*: [Sander van de Graaf](https://twitter.com/svdgraaf)
+
+*Going serverless at a bank*:
+
+[Sander van de Graaf](https://twitter.com/svdgraaf)
+
 > We heard rumors that they're running a ton of Lambdas at a time. Plus, banks have some pretty interesting problems to solve.
 
 **2:25-2:55 - theatre I**
-*Global Resiliency when going Serverless*: [Jared Short](https://twitter.com/ShortJared)
+
+*Global Resiliency when going Serverless*:
+
+[Jared Short](https://twitter.com/ShortJared)
+
 > When Jared talks, if you don’t listen, you are wrong.
 
 **4:00-4:15 - theatre I**
-*The CNCF (Cloud Native Computing Foundation) point of view on Serverless*: [Daniel Krook](https://twitter.com/danielkrook?lang=en)
+
+*The CNCF (Cloud Native Computing Foundation) point of view on Serverless*:
+
+[Daniel Krook](https://twitter.com/danielkrook?lang=en)
+
 > If you want the *real* latest word, better hear it from the foundation.
 
 **4:30-4:45 - theatre I**
-*Data Layer in the Serverless World*, by [Alex DeBrie](https://twitter.com/alexbdebrie)
+
+*Data Layer in the Serverless World*:
+
+[Alex DeBrie](https://twitter.com/alexbdebrie)
+
 > How our different data persistence options fit (or don’t) in a serverless world. From MySQL to MongoDB to DynamoDB to Google Firebase/Firestore.
 
 # Swag guide
