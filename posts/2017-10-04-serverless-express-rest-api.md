@@ -1,6 +1,6 @@
 ---
-title: Deploy a REST API using Serverless, Express, and Node.js
-description: Learn how to use the popular Express.js framework to deploy a REST API with Serverless, DynamoDB, + API Gateway
+title: Deploy a REST API using Serverless, Express and Node.js
+description: Learn how to use the popular Express.js framework to deploy a REST API with Serverless, DynamoDB and API Gateway.
 date: 2017-10-04
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/express.png
@@ -8,13 +8,13 @@ authors:
   - AlexDeBrie
 ---
 
-We're seeing more and more people using Serverless to deploy web applications. The benefits are huge -- lightning-fast deployments, automatic scaling, and pay-per-execution pricing.
+We're seeing more and more people using Serverless to deploy web applications. The benefits are huge—lightning-fast deployments, automatic scaling, and pay-per-execution pricing.
 
 But moving to serverless has a learning curve as well. You need to learn the intricacies of the platform you're using, including low-level details like format of the request input and the required shape of the response output. This can get in the way and slow your development process.
 
 Today, I come with good news: your existing web framework tooling will work seamlessly with Serverless. In this post, I'll show you how to use the popular Node web framework [Express.js](https://expressjs.com/) to deploy a Serverless REST API. This means you can use your existing code + the vast Express.js ecosystem while still getting all the benefits of Serverless 💥!
 
-Below is a step-by-step walkthrough of creating a new Serverless service using Express.js. In this walkthrough, we will:
+Below is a step-by-step walkthrough of creating a new Serverless service using Express.js. We will:
 
 - Deploy a simple API endpoint;
 - Add a DynamoDB table and two endpoints to create and retrieve a User object;
@@ -29,7 +29,7 @@ To get started, you'll need the [Serverless Framework](https://serverless.com/fr
 
 # Creating and deploying a single endpoint
 
-Let's start with something easy - deploying a single endpoint. First, create a new directory with a `package.json` file:
+Let's start with something easy—deploying a single endpoint. First, create a new directory with a `package.json` file:
 
 ```bash
 $ mkdir my-express-application && cd my-express-application
@@ -42,7 +42,7 @@ Then, let's install a few dependencies. We'll install the `express` framework, a
 $ npm install --save express serverless-http
 ```
 
-The `serverless-http` package is a handy piece of middleware that handles the interface between your Node.js application and the specifics of API Gateway. Huge thanks to Doug Moscrop for developing it.
+The `serverless-http` package is a handy piece of middleware that handles the interface between your Node.js application and the specifics of API Gateway. Huge thanks to [Doug Moscrop](https://github.com/dougmoscrop) for developing it.
 
 With our libraries installed, let's create an `index.js` file that has our application code:
 
@@ -60,7 +60,9 @@ app.get('/', function (req, res) {
 module.exports.handler = serverless(app);
 ```
 
-This is a very simple application that returns `"Hello World!"` when a request comes in on the root path `/`. It's straight out of the [Express documentation](https://expressjs.com/en/starter/hello-world.html) with two small additions. First, we imported the `serverless-http` package at the top. Second, we exported a `handler` function which is our application wrapped in the `serverless` package.
+This is a very simple application that returns `"Hello World!"` when a request comes in on the root path `/`.
+
+It's straight out of the [Express documentation](https://expressjs.com/en/starter/hello-world.html) with two small additions. First, we imported the `serverless-http` package at the top. Second, we exported a `handler` function which is our application wrapped in the `serverless` package.
 
 To get this application deployed, let's create a `serverless.yml` in our working directory:
 
@@ -83,7 +85,9 @@ functions:
       - http: 'ANY {proxy+}'
 ```
 
-This is a pretty basic configuration. We've created one function, `app`, which uses the exported handler from our `index.js` file. Finally, it's configured with some HTTP triggers. We've used a very broad path matching so that all requests on this domain are routed to this function. All of the HTTP routing logic will be done inside the Express application.
+This is a pretty basic configuration. We've created one function, `app`, which uses the exported handler from our `index.js` file. Finally, it's configured with some HTTP triggers.
+
+We've used a very broad path matching so that all requests on this domain are routed to this function. All of the HTTP routing logic will be done inside the Express application.
 
 Now, deploy your function:
 
@@ -308,15 +312,17 @@ functions:
       - http: 'ANY {proxy+}'
 ```
 
-We're forwarding all traffic on the domain to our application and letting Express handle the entirety of the routing logic. There is a benefit to this -- I don't have to manually string up all my routes and functions. I can also limit the impact of cold-starts on lightly-used routes.
+We're forwarding all traffic on the domain to our application and letting Express handle the entirety of the routing logic. There is a benefit to this—I don't have to manually string up all my routes and functions. I can also limit the impact of cold-starts on lightly-used routes.
 
 However, we also lose some of the benefits of the serverless architecture. I can isolate my bits of logic into separate functions and get a decent look at my application from standard metrics. If each route is handled by a different Lambda function, then I can see:
 
-- How many times each route is invoked;
-- How many errors I have for each route;
-- How long each route takes (and how much money I could save if I made that route faster).
+- How many times each route is invoked
+- How many errors I have for each route
+- How long each route takes (and how much money I could save if I made that route faster)
 
-Luckily, you can still get these things if you want them! You can configure your `serverless.yml` so that different routes are routed to different instances of your function. Each function instance will have the same code, but they'll be segmented for metrics purposes:
+Luckily, you can still get these things if you want them! You can configure your `serverless.yml` so that different routes are routed to different instances of your function.
+
+Each function instance will have the same code, but they'll be segmented for metrics purposes:
 
 ```yml
 # serverless.yml
@@ -341,7 +347,7 @@ Now, all requests to `GET /users/:userId` will be handled by the `getUser` insta
 
 Again, none of this is required, and it's a bit of an overweight solution since each specific endpoint will include the full application code for your other endpoints. However, it's a good balance between speed of development by using the tools you're used to along with the per-endpoint granularity that serverless application patterns provide.
 
-# Local development configuration
+# Local development configuration with Serverless offline plugin
 
 When developing an application, it's nice to rapidly iterate by developing and testing locally rather than doing a full deploy betwen changes. In this section, I'll show you how to configure your environment for local development.
 
