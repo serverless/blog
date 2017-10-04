@@ -26,11 +26,11 @@ Here’s what we plan on prioritizing. This is the Serverless team guide to gett
 
 **3:10-3:40 - theatre I**<br>
 *Serverless Design Patterns* by [Tim Wagner](https://twitter.com/timallenwagner?lang=en), [Yochay Kiriaty](https://twitter.com/yochayk?lang=en) & [Peter Sbarski](https://twitter.com/sbarski?lang=en)<br>
-> A panel with AWS, Azure and A Cloud Guru hotshots.
+> Panels can be hit or miss, but we like the names attached to this one. Worth a listen: AWS, Azure and A Cloud Guru hotshots.
 
 **4:20-4:50 - theatre II**<br>
 *The Best Practices and Hard Lessons Learned of Serverless Applications* by [Chris Munns](https://twitter.com/chrismunns)<br>
-> Chris always manages to give out smart, practical tidbits you wish you’d thought of yourself.
+> Chris always manages to give out tidbits that are so smart, and so practical, you don't know how you never thought of them yourself.
 
 **5:00-5:30 - theatre I**<br>
 *Event-driven Architectures: Are We Ready for the Paradigm Shift?* by [Ben Kehoe](https://twitter.com/ben11kehoe?lang=en)<br>
@@ -44,7 +44,7 @@ Here’s what we plan on prioritizing. This is the Serverless team guide to gett
 
 **10:00-10:30 - theatre I**<br>
 *Unicorns Poop Too: A Field Guide To Serverless Observability* by [Charity Majors](https://twitter.com/mipsytipsy)<br>
-> After Simon, stay in your seats. Charity is a downright awesome speaker. We’d stand in line to hear her talk about basically anything—especially serverless unicorns.
+> Charity is a downright awesome speaker. We’d stand in line to hear her talk about basically anything—especially serverless unicorns.
 
 **1:50-2:20 - theatre I**<br>
 *Going serverless at a bank* by [Sander van de Graaf](https://twitter.com/svdgraaf)<br>
