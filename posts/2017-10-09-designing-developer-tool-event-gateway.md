@@ -1,7 +1,6 @@
 ---
-title: How we married passion and practicality to create our latest dev tool - the Event Gateway 
-description: We break down the guiding principles and executable steps we used to design our latest dev tool: the Event Gateway. This is how we towed the line between a passion project and a practical tool for every serverless developer.
-date: 2017-09-27
+title: How we married passion and pragmatism to create our latest dev tool - the Event Gateway 
+description: How do you tow the line between passion projects and practical developer tools? We break down the guiding principles and executable steps we used to design the Event Gateway.
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-thumbnail.png
 authors:
