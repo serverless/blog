@@ -547,7 +547,7 @@ If you already have an existing Express application, it's very easy to convert t
 	    events:
 	      - http: ANY /
 	      - http: 'ANY {proxy+}'
-```
+	```
 
 That's it! Run `sls deploy` and your app will deploy!
 
