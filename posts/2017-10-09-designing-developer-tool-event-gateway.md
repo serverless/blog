@@ -1,5 +1,5 @@
 ---
-title: The Event Gateway - designing tools with big thinking and pragmatism
+title: The Event Gateway - how we designed with pragmatism
 description: How do you design a pragmatic tool that also tries to break new ground? We found ourselves towing that line when we designed the Event Gateway.
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-thumbnail.png
@@ -11,9 +11,9 @@ authors:
 
 Serverless development is still fresh, lacking in best practices and tooling. But people use it because the payoffs are worth the pain.
 
-Our job at Serverless is to remove that pain: fight for standardization, think from the top-down about what a serverless application should look like, make its development seamless. The biggest sticking point we see here is that serverless development is fundamentally event-driven development. Every function you deploy to your FaaS provider will remain idle until woken up by an event.
+Our job at Serverless.com is to remove that pain: fight for standardization, think from the top-down about what a serverless application should look like, make its development seamless. The biggest sticking point we see here is that serverless development is fundamentally event-driven development. Every function you deploy to your FaaS provider will remain idle until woken up by an event.
 
-No one likes to hear that. Event-driven is a new paradigm, and new paradigms mean change. But to move serverless forward, we as a community have to embrace event-driven design. Our job at Serverless is to make it painless. As we can, at least.
+No one likes to hear that. Event-driven is a new paradigm, and new paradigms mean change. But to move serverless forward, we as a community have to embrace event-driven design. Our job at Serverless.com is to make it painless. As we can, at least.
 
 The Event Gateway is a big step for us: a new piece of infrastructure that treats all data flows as events, and lets developers react to those flows with serverless functions.
 
