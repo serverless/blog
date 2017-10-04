@@ -1,14 +1,14 @@
 ---
 title: Serverless (FaaS) vs. Containers - when to pick which?
 description: Docker, Kubernetes, Serverless? Let's discuss the ups and downs of each. 
-date: 2017-10-02
+date: 2017-10-04
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-vs-containers.png
 authors:
   - PhilippMuns
 ---
 
-Contrary to popular thought, Functions-as-a-Service (FaaS) and Containers have some pretty important things in common.
+Contrary to popular thought, Serverless (FaaS) and Containers (Container Orchestration) have some pretty important things in common.
 
 You want a modern, future-proof architecture? They both have it. You want to build that slick architecture while also leveraging the latest innovations in distributed systems and large-scale application development? Yep, they both have that too.
 
@@ -21,8 +21,6 @@ It's serverless computing vs containerization, right now. Read on.
 ## How did we get here?
 
 Before we jump right into the details, let’s cover some very important history.
-
-[INSERT IMAGE OF THE EVOLUTION HERE?!]
 
 ### 1. Physical servers
 
@@ -40,7 +38,7 @@ Setting up and operating your own datacenter came with new operational challenge
 
 Why not rent your servers and operational services individually, for a monthly fee? This approach made it way easier to scale up or down, and let teams move faster.
 
-### 4. PaaS, FaaS, XaaS
+### 4. PaaS
 
 While cloud environments made it convenient to build large-scale applications, they still came saddled with the downsides of manual administration:
 
@@ -118,7 +116,7 @@ But what is a serverless application, exactly? In sum, an architecture is server
 ### Disadvantages of serverless
 
 - No standardization (though the CNCF is working on this)
-- Black box
+- "Black box" environment
 - Vendor lock-in
 - Cold starts
 - Complex apps can be hard to build
@@ -131,7 +129,7 @@ Now it's time for the big question:
 
 Truthfully, it depends.
 
-### When to choose containers
+### When to choose containerization
 
 Containers are great if you need the flexibility to install and use software with specific version requirements. With containers, you can choose the underlying operating system and have full control of the installed programming language and runtime version.
 
@@ -145,7 +143,7 @@ While you *can* configure the container orchestration platform to automatically 
 
 ### When to choose serverless
 
-In that vein, serverless is great if you need traffic pattern changes to be automatically detected and handled instantly. You can even completely shut down the application if there's no traffic at all. With serverless applications, you pay only for the resources you use; no usage, no costs.
+In that vein, serverless is great if you need traffic pattern changes to be automatically detected and handled instantly. The application is even completely shut down if there's no traffic at all. With serverless applications, you pay only for the resources you use; no usage, no costs.
 
 The serverless developer doesn't have to care about administrating underlying infrastructure; they just need to care about the code and the business value to end users. Iteration can be more rapid, as code can be shipped faster, without set-up or provisioning. In fact, because the underlying infrastructure is abstracted, the developer may not even know what it looks like. They won't really need to.
 
@@ -155,4 +153,4 @@ Reasoning about all the individual pieces of the application stack becomes harde
 
 ### Final verdict?
 
-Choose containers when you need flexibility, or when you need to migrate legacy services. Choose serverless when you need speed of development, automatic scaling and significantly lowered runtime costs.
+Choose containers and container orchestrators when you need flexibility, or when you need to migrate legacy services. Choose serverless when you need speed of development, automatic scaling and significantly lowered runtime costs.
