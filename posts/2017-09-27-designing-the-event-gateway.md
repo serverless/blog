@@ -1,6 +1,6 @@
 ---
-title: How we approached designing our latest developer tool - the Event Gateway 
-description: Learn how our full approach to designing the Event Gateway, the backbone of your serverless architectures.
+title: How we married passion and practicality to create our latest dev tool - the Event Gateway 
+description: We break down the guiding principles and executable steps we used to design our latest dev tool: the Event Gateway. This is how we towed the line between a passion project and a practical tool for every serverless developer.
 date: 2017-09-27
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-thumbnail.png
@@ -8,48 +8,56 @@ authors:
   - MaciejWinnicki
 ---
 
-[The Event Gateway](https://serverless.com/blog/introducing-serverless-event-gateway/) is our most recent announcement: a new piece of infrastructure that lets developers react to data flows with serverless functions.
+[The Event Gateway](https://serverless.com/blog/introducing-serverless-event-gateway/) is our most recent announcement—and honestly, building it was as much a passion project as it was motivated by an industry need.
 
-See how we did it! This was our design process from planning to execution.
+Serverless development is still fresh, lacking in best practices and tooling. But people use it because the payoffs are worth the pain.
 
-## Design Considerations
+Our job at Serverless is to remove that pain: fight for standardization, think from the top-down about what a serverless application should look like, make its development seamless. The biggest sticking point we see here is that serverless development is fundamentally event-driven development. Every function you deploy to a serverless instance will remain stateless until woken up by an event.
+
+No one likes to hear that. Event-driven is a new paradigm, and new paradigms mean change. But to move serverless forward, we as a community have to embrace event-driven design. Our job at Serverless is to make it painless. As we can, at least.
+
+The Event Gateway is step 1: a new piece of infrastructure that treats all data flows as events, and lets developers react to those flows with serverless functions.
+
+See how we treaded the thin line between 'passion project' and 'real world practicality'. This was our design process from planning to execution to getting the tool in your hands.
+
+# Design Considerations
 
 We had two primary considerations: the developer experience when using the Event Gateway, and the developer experience when operating a cluster of Event Gateway instances.
 
-To keep us on track, we decided to establish four core guiding principles. It doesn't mean that they won't change in the future -- they surely will -- but we wanted to have something that would give us a jump start during the implementation phase and carry throughout the project development.
+To keep us on track, we decided to establish four core guiding principles. It doesn't mean that they won't change in the future—they surely will—but we wanted to have something that would give us a jump start during the implementation phase and carry throughout the project development.
 
 Those guiding principles were:
 
-- **Simplicity** - Keep the number of new concepts low. We didn't want to rename existing concepts just for the sake of it. There would be only events, functions, and subscriptions - as easy as possible. In terms of operational simplicity, our goal was to make it easy to run the event gateway locally, during development, while also making it easy to run, manage and scale in production environments.
+- **Simplicity** - Keep the number of new concepts low. We didn't want to rename existing concepts just for the sake of it. There would be only events, functions, and subscriptions—as easy as possible. In terms of operational simplicity, our goal was to make it easy to run the event gateway locally during development, while also making it easy to run, manage and scale in production environments.
 - **Cross-cloud** - Same as with the Serverless Framework, the event gateway had to provide a seamless user experience, no matter where the user deploys their functions or where they want to deploy the Event Gateway itself. In the latter case, we also needed to support on-premise deployments.
 - **Event-driven** - We strongly believed that event-driven was the right approach for building software systems. The Event Gateway should not only enable developers to build them, but should also follow this paradigm internally.
 - **Optimized for fast delivery** - The main goal of the project was event delivery. We wanted to make it instant.
 
-## Architectural Choices
+# Architectural Choices
 
-Having all those principles in mind we made a few explicit, architectural choices that drove the implementation.
+With those principles in mind we made a few explicit, architectural choices that drove the implementation.
 
-### Stateless
+## Stateless
 
-The event gateway was designed to be a stateless service backed by an external key-value store. This makes it easy to operate and reason about.
+The event gateway was designed to be a stateless service backed by an external key-value store. This was to make it easy to operate and reason about.
 
-Assuming that we want to build a horizontally scalable system, making the event gateway a stateful service meant that we would need to implement yet another distributed database. As that did not fit with our core values (remember: Simplicity!), we deciced to avoid it.
+Assuming that we want to build a horizontally scalable system, making the event gateway a stateful service meant that we'd need to implement yet another distributed database. As that did not fit with our core values (remember: Simplicity!), we decided to avoid it.
 
-One important consequence of that choice is that events lack persistence. There are possible solutions to this, though. For instance, a plugin system that enables integrating with existing storage systems (e.g. AWS S3, Kafka).
+One important consequence of that choice is that events lack persistence. There are possible solutions to this, though—e.g., a plugin system that enables integration with existing storage systems (like AWS S3, Kafka).
 
-### Configuration Store
+## Configuration Store
 
 Here, we relied on existing solutions. There are at least few battle-tested key-value stores out there already.
 
 [Etcd](https://coreos.com/etcd/), [Consul](https://www.consul.io/), and [Zookeeper](https://zookeeper.apache.org/) are definitely the most popular for storing configuration in very successful, production-grade systems like Kubernetes or Kafka. But we decided to use the [libkv](https://github.com/docker/libkv) library for supporting all of them.
 
-Libkv is an abstraction layer over popular key-value stores that provides a simple interface for common operations. It has some limitations like lack of atomic operations on multiple keys, but it was a good start, and we might start contributing to it once our needs exceed its provided functionality.
+Libkv is an abstraction layer over popular key-value stores that provides a simple interface for common operations. It has some limitations (like lack of atomic operations on multiple keys), but it was a good start, and we might start contributing to it once our needs exceed its provided functionality.
 
-Purely for demo and trial purposes, the Event Gateway can be started with a special flag which starts an embedded etcd instance. This allows users to test drive the system without starting up a key-value store cluster first.
+Purely for demo/trial purposes, the Event Gateway can be started with a special flag which starts an embedded etcd instance. This allows users to test drive the system without starting up a key-value store cluster first.
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/event-gateway-blog.jpg"/>
 
-### Eventual Consistency
+## Eventual Consistency
 
 Another choice that highly influenced our overall architecture was making the Event Gateway an [eventually consistent](https://en.wikipedia.org/wiki/Eventual_consistency) system.
 
@@ -61,18 +69,18 @@ It means that when the Event Gateway needs to decide which function to call for 
 
 Without watches, we would have to continuously scan ranges of keys in the database until we find new data, which is enormously expensive, slow, and hard to scale.
 
-### Language Choice
+## Language Choice
 
 We needed a language with mature production environment. We also needed a strong static type system which supported concurrency well and generated binaries that were simple to distribute.
 
-Go had it all - a rich standard library, a vast ecosystem (libraries, tools, write-ups) and an active community. Building an open source project also meant that we needed to provide a seamless experience for potential contributors. In the infrastructure software space, Go seems to be one of the most popular language choices.
+Go had it all—a rich standard library, a vast ecosystem (libraries, tools, write-ups) and an active community. Building an open source project also meant that we needed to provide a seamless experience for potential contributors. In the infrastructure software space, Go seems to be one of the most popular language choices.
 
-As you can probably already tell, we built the Event Gatewway in Go.
+As you can probably already tell, we built the Event Gateway in Go.
 
-## What next?
+# What's next
 
-The Event Gateway is still in an early phase. We count on you, our community, to provide feedback and influence the project direction.
+The Event Gateway is still in an early phase. We count on you, our community, to provide feedback and give us frank opinions on project direction.
 
-[The roadmap](https://github.com/serverless/event-gateway/projects/2) is publicly available. Feel free to [open an issue in the repo](https://github.com/serverless/event-gateway) or [join contributors’ Slack](https://join.slack.com/t/serverless-contrib/shared_invite/MjI5NzY1ODM2MTc3LTE1MDM0NDIyOTUtMDgxNTcxMTcxNg) and let us know what do you think!
+[The roadmap](https://github.com/serverless/event-gateway/projects/2) is publicly available. Feel free to [open an issue in the repo](https://github.com/serverless/event-gateway) or [join contributors’ Slack](https://join.slack.com/t/serverless-contrib/shared_invite/MjI5NzY1ODM2MTc3LTE1MDM0NDIyOTUtMDgxNTcxMTcxNg) and let us know what you think!
 
 *This is the first blog post of a series on Event Gateway architecture. In the future blog posts I will focus more on internal architecture, cluster architecture and deployments strategies.*
