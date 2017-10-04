@@ -3,7 +3,7 @@ title: Deploy a REST API using Serverless, Express and Node.js
 description: Learn how to use the popular Express.js framework to deploy a REST API with Serverless, DynamoDB and API Gateway.
 date: 2017-10-04
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/express.png
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/express_js.png
 authors:
   - AlexDeBrie
 ---
@@ -16,9 +16,9 @@ Today, I come with good news: your existing web framework tooling will work seam
 
 Below is a step-by-step walkthrough of creating a new Serverless service using Express.js. We will:
 
-- Deploy a simple API endpoint;
-- Add a DynamoDB table and two endpoints to create and retrieve a User object;
-- Set up path-specific routing for more granular metrics and monitoring; and
+- Deploy a simple API endpoint
+- Add a DynamoDB table and two endpoints to create and retrieve a User object
+- Set up path-specific routing for more granular metrics and monitoring
 - Configure your environment for local development for a faster development experience.
 
 If you already have an Express application that you want to convert to Serverless, skip to the [Converting an existing Express application](#converting-an-existing-express-application) section below. 
