@@ -11,7 +11,7 @@ authors:
 
 Serverless development is still fresh, lacking in best practices and tooling. But people use it because the payoffs are worth the pain.
 
-Our job at Serverless is to remove that pain: fight for standardization, think from the top-down about what a serverless application should look like, make its development seamless. The biggest sticking point we see here is that serverless development is fundamentally event-driven development. Every function you deploy to a serverless instance will remain stateless until woken up by an event.
+Our job at Serverless is to remove that pain: fight for standardization, think from the top-down about what a serverless application should look like, make its development seamless. The biggest sticking point we see here is that serverless development is fundamentally event-driven development. Every function you deploy to your FaaS provider will remain idle until woken up by an event.
 
 No one likes to hear that. Event-driven is a new paradigm, and new paradigms mean change. But to move serverless forward, we as a community have to embrace event-driven design. Our job at Serverless is to make it painless. As we can, at least.
 
@@ -40,7 +40,7 @@ With those principles in mind we made a few explicit, architectural choices that
 
 The event gateway was designed to be a stateless service backed by an external key-value store. This was to make it easy to operate and reason about.
 
-Assuming that we want to build a horizontally scalable system, making the event gateway a stateful service meant that we'd need to implement yet another distributed database. As that did not fit with our core values (remember: Simplicity!), we decided to avoid it.
+Assuming that we want to build a horizontally scalable system, making the event gateway a stateful service meant that we'd need to implement yet another distributed database. As that did not fit with our core values (remember: Simplicity and business value!), we decided to avoid it.
 
 One important consequence of that choice is that events lack persistence. There are possible solutions to this, though—e.g., a plugin system that enables integration with existing storage systems (like AWS S3, Kafka).
 
