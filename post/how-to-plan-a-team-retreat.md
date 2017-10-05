@@ -10,7 +10,7 @@ authors:
 
 So about this footer on [Serverless.com](serverless.com):
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/team-retreat/made-with-love.png">
+> <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/team-retreat/made-with-love.png">
 
 Yeah, it’s a long list.
 
