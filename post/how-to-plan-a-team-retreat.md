@@ -1,7 +1,7 @@
 ---
 title: How to plan a team retreat
-description: "A look at how we maximize ROI when bringing our entire team together for a week."
-date: 2017-07-27
+description: Bi-annual retreats - how we improve communication and make remote teams work.
+date: 2017-10-09
 thumbnail: 
 layout: Post
 authors:
@@ -9,7 +9,7 @@ authors:
 ---
 
 So about this footer on [Serverless.com](serverless.com):
-
+[IMAGE]
 
 Yeah, it’s a long list. And we didn’t make it up.
 
@@ -41,13 +41,16 @@ It really helped, and we started making swifter progress toward some aggressive 
 
 Of course, we wouldn't know how successful our team retreats are without analyzing some data. (#DataNerds) We use [Officevibe](https://www.officevibe.com/) to track happiness and engagement on a weekly basis.
 
-Our team trend includes a big spike in satisfaction right after a team retreat, followed by a slow taper-off. It makes sense—face-to-face interaction is good for team morale, but eventually you need a re-up. We've found that the six month cadence is good timing to keep the team at a positive level of engagement.
+Our team trend includes a big spike in satisfaction right after a team retreat, followed by a slow taper-off:
+[IMAGE]
+
+It makes sense—face-to-face interaction is good for team morale, but eventually you need a re-up. We've found that the six month cadence is good timing to keep the team at a positive level of engagement.
 
 We measure the success of our team retreats themselves via ‘before & after’ surveys. We always see a big jump in team members feeling aligned right after a retreat. The change was palpable in post-retreat team meetings: people tended to be more positive, and focus on how to *make* a solution work versus talk about why an idea *couldn't* work.
 
 It isn’t enough to simply look at the data, though. We use these feedback loops to constantly improve our process. We always ask, *What did you love? What could have been better? What should we do next time?* on each of our surveys. It’s already given us a huge actionable insight: at our next retreat, we’re going to try bringing on a facilitator to keep us efficient and focused.
 
-# Have fun! Seriously, relax a little.
+# Remember to relax
 
 All work and no play makes serverless a lustless team. It’d be a bit cruel to have everyone travel halfway around the world just to sit in a conference room all day.
 
