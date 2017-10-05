@@ -78,6 +78,6 @@ All we can divulge in advance is: the Serverless booth will have not only some s
 
 ## Who’s who: find these people and pick their brains
 
-Take a break from donuts and t-shirts to chat with the best serverless minds in the biz. Swing by Trek10’s booth and start a lofty theoretical conversation. Absorb anecdotes and truth pills from Ben Kehoe at iRobot. Try to get secrets out of the developers AWS, Azure and Google are sending.
+Take a break from donuts and t-shirts to chat with the best serverless minds in the biz. Swing by Trek10’s booth and throw them some implementation curveballs. Absorb anecdotes and truth pills from Ben Kehoe at iRobot. Try to get future product secrets out of the developers AWS, Azure, Google and IBM are sending.
 
 [Serverless](serverless.com) is having an open office hours, which you can [sign up for in advance](https://calendly.com/charmmie-hendon/serverless-office-hours-sign-up/10-10-2017). Bring it on. We are so ready to nerd out with you.
