@@ -9,9 +9,10 @@ authors:
 ---
 
 So about this footer on [Serverless.com](serverless.com):
-[IMAGE]
 
-Yeah, it’s a long list. And we didn’t make it up.
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/team-retreat/made-with-love.png">
+
+Yeah, it’s a long list.
 
 We decided early on to embrace having a largely remote team. The reason was pragmatic: as a small company, we’d get access to bright minds while avoiding the intense competition (and requisite salaries) for talent in the Bay Area.
 
