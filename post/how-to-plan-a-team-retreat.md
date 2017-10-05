@@ -8,13 +8,11 @@ authors:
   - CaseyShultz
 ---
 
-So about this footer on [Serverless.com](serverless.com):
+So about this extensive country list in ths [Serverless.com](serverless.com) footer:
 
 > <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/team-retreat/made-with-love.png">
 
-Yeah, it’s a long list.
-
-We decided early on to embrace having a largely remote team. The reason was pragmatic: as a small company, we’d get access to bright minds while avoiding the intense competition (and requisite salaries) for talent in the Bay Area.
+Yeah. We decided early on to embrace having a largely remote team. The reason was pragmatic: as a small company, we’d get access to bright minds while avoiding the intense competition (and requisite salaries) for talent in the Bay Area.
 
 At this point, half our team works from another corner of the world. It’s been a fantastic challenge. Ever tried to find a good time to schedule all-hands meetings when your team spans 18 time zones?
 
