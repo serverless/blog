@@ -18,7 +18,7 @@ Here’s what we plan on prioritizing. This is the Serverless team guide to gett
 
 **9:45-10:15 - theatre I**<br>
 *10 tips for running a serverless business... number #6 will blow your mind!* by [Sam Kroonenburg](https://twitter.com/samkroon?lang=en)<br>
-> Seriously, how can anybody skip the founder of the conference? Sam knows what’s up. Also, that tongue-in-cheek title.
+> Seriously, how can anybody skip an [A Cloud Guru](https://acloud.guru) talk at ServerlessConf? Sam knows what’s up. Also, that tongue-in-cheek title.
 
 **11:15-11:30 - theatre I**<br>
 *Harmonizing Serverless and Traditional Applications* by [Ryan Scott Brown](https://twitter.com/ryan_sb?lang=en)<br>
