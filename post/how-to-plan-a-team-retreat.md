@@ -8,7 +8,7 @@ authors:
   - CaseyShultz
 ---
 
-So about this extensive country list in ths [Serverless.com](serverless.com) footer:
+So about this extensive country list in the [Serverless.com](serverless.com) footer:
 
 > <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/team-retreat/made-with-love.png">
 
