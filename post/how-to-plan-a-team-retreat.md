@@ -41,7 +41,8 @@ It really helped, and we started making swifter progress toward some aggressive 
 Of course, we wouldn't know how successful our team retreats are without analyzing some data. (#DataNerds) We use [Officevibe](https://www.officevibe.com/) to track happiness and engagement on a weekly basis.
 
 Our team trend includes a big spike in satisfaction right after a team retreat, followed by a slow taper-off:
-[IMAGE]
+
+<img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/team-retreat/team-engagement.png">
 
 It makes sense—face-to-face interaction is good for team morale, but eventually you need a re-up. We've found that the six month cadence is good timing to keep the team at a positive level of engagement.
 
