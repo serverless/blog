@@ -57,7 +57,7 @@ Although this topic is not directly related to writing tests, it's always good t
 
 `babel-preset-env` with its `babel-*` related packages. By using the `env` [preset](http://babeljs.io/env) you both gain in less configurations, but also in the amount of code necessary after transpilations for a given target runtime platform. For example, as for the moment of writing this article, [v6](http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html) is the highest version, configuring the preset to target v6 as well makes the resulting bundle far lighter because of the less need to legacy support features already given natively.
 
-- `serverless-webpack` with its webpack settings can further optimize functions when they are [bundled individually](https://github.com/serverless-heaven/serverless-webpack#optimization--individual-packaging-per-function).
+- `serverless-webpack` with its webpack settings can further optimize functions when they are [bundled individually](https://github.com/serverless-heaven/serverless-webpack#optimization--individual-packaging-per-function). Also, a configuration for external resources make the bundled upload lighter, excluding dependencies to [`aws-sdk` already available](http://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html) on AWS premises.
 
 ### Configurations
 
