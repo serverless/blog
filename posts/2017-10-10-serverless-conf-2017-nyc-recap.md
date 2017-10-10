@@ -154,3 +154,19 @@ The book will be vendor agnostic, and they welcome feedback on their curret list
 # Event-driven Architectures: are we ready for the paradigm shift?
 
 by [Ben Kehoe](https://twitter.com/ben11kehoe)
+
+This talk was so good, we really just want you to hang tight for the video and watch it all. Ben had a sobering but uplifting message:
+
+There are some really savvy companies, like Nordstrom, who are doing intricate event-driven design. But it's hard, and it's complicated. Serverless isn't quite there yet. Event-driven isn't quite there yet. So event-driven Serverless? Yeah...not there yet.
+
+<img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/venn.jpg">
+
+Serverless has many problems common to technologies that are still in their infancy. There isn't yet a good solution for service discovery or incremental deployments. Ben notes that he'd love to use VPCs for everything, but many services still don’t have VPC endpoints. The tooling and ecosystem support just isn't quite there.
+
+But! Ben reminds us, "We're all here because we think it's worth it," and improvements are happening incredibly fast. He's already anticipating that, with the current rate of change, his Venn diagram will be out of date by next ServerlessConf.
+
+# Stay tuned for day 2
+
+ServerlessConf isn't nearly over—there's a whole other day of slides and [artful server destruction](https://twitter.com/goserverless/status/917837389560713218).
+
+Check back with us tomorrow.
