@@ -74,13 +74,13 @@ Mark gives it a **B**. (Better, he notes, than containers)
 # 10 tips for running a serverless business... number #6 will blow your mind!
 by [Sam Kroonenburg](https://twitter.com/samkroon)
 
-Sam got started coding a learning platform 4 years ago. He knew he'd need to include video lessons, a quiz engine, an online store and sign up / log in, while having something that scaled effortlessly and had low operational overhead.
+Sam started coding a learning platform 4 years ago. You might know it now as this little company called [A Cloud Guru](acloud.guru). He knew he'd need to include video lessons, a quiz engine, an online store and sign up / log in, while having something that scaled effortlessly and had low operational overhead.
 
-He cared about the fastest, cheapest way to build a company and get his MVP out there. So he went serverless (check out his EC2 for proof):
+Tl;dr: he cared about the fastest, cheapest way to build a company and get his MVP out there. So he went serverless (check out his EC2 for proof):
 
 [IMAGE EC2]
 
-At first, it was a serverless monolith, and Sam still sticks behind that choice. He thinks it was great for getting everything off the ground, and as long as you're starting serverless, the transition to microservices later is pretty straightforward.
+His learning platform started as a serverless monolith, and Sam advocates that choice. It's a great way to launch fast, and as long as you're starting serverless, the transition to microservices later is pretty straightforward.
 
 For all those serverless entrepreneurs out there, Sam has some guiding principles and advice:
 
@@ -94,6 +94,7 @@ For all those serverless entrepreneurs out there, Sam has some guiding principle
 - Test all the things. You can never fully emulate operating environments for development purposes.
 
 # Break-up with Your Server, but Don’t Commit to a Cloud Platform
+
 by [Linda Nichols](https://twitter.com/lynnaloo)
 
 How can you go serverless without vendor lock-in?
