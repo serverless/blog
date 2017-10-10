@@ -16,7 +16,7 @@ In our opinion, it's a hugely positive shift. We've reached the point where ever
 
 We can already tell: ServerlessConf next year will already be a drastically different landscape.
 
-Here are some notes from our favorite Day 1 talks. We'll update this tomorrow with Day 2 talk summaries, so be sure to check back in.
+Here are some notes from our favorite Day 1 talks. We'll update this tomorrow with more info from Day 2, so be sure to check back in.
 
 # The State of Serverless Security
 by [Mark Nunnikhoven](https://twitter.com/marknca)<br>
