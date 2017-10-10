@@ -163,7 +163,11 @@ There are some really savvy companies, like Nordstrom, who are doing intricate e
 
 Serverless has many problems common to technologies that are still in their infancy. There isn't yet a good solution for service discovery or incremental deployments. Ben notes that he'd love to use VPCs for everything, but many services still don’t have VPC endpoints. The tooling and ecosystem support just isn't quite there.
 
-But! Ben reminds us, "We're all here because we think it's worth it," and improvements are happening incredibly fast. He's already anticipating that, with the current rate of change, his Venn diagram will be out of date by next ServerlessConf.
+But! Ben reminds us, "We're all here because we think it's worth it."
+
+Improvements are happening incredibly fast. He's already anticipating that, with the current rate of change, his Venn diagram will be out of date by next ServerlessConf.
+
+As a community, let's band together and make sure that happens.
 
 # Stay tuned for day 2
 
