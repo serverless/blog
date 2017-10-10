@@ -10,7 +10,7 @@ authors:
 
 If the last ServerlessConf was the conference of serverless projects, this one was the conference of serverless tooling.
 
-In our opinion, it's a major shift. We're at the point now where everyone knows they can make cool stuff with serverless, and they want an ecosystem to support serverless development.
+In our opinion, it's a major shift in a positive direction. We've reached the point where everyone knows they can make cool stuff with serverless, and now they want an ecosystem to support serverless development.
 
 Here are some notes from our favorite Day 1 talks. We'll update this tomorrow with Day 2 talk summaries as well.
 
