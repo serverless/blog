@@ -82,3 +82,15 @@ He cared about the fastest, cheapest way to build a company and get his MVP out 
 At first, it was a serverless monolith, and Sam still sticks behind that choice. He thinks it was great for getting everything off the ground, and as long as you're starting serverless, the transition to microservices later is pretty straightforward.
 
 For all those serverless entrepreneurs out there, Sam has some guiding principles and advice:
+
+- It's a myth that serverless means you don't need ops. Of course you need ops, but responsibility *does* shift to the dev team
+- When you need to fill engineering positions, don’t look for serverless developers. They don’t exist yet. Instead, filter for a developer who cares about smooth running code in production.
+- Encourage & reassure job candidates that it's okay if they don't know your stack; you're ready to teach, and it will be exciting for them. Otherwise, they'll be too intimidated to apply at all.
+- Join the community. That's how Sam learned about Algolia back in the day, and began contributing to the Serverless Framework.
+- Expect to pioneer. Serverless teams build more tools, all the time.
+- It’s ok to build a serverless monolith. And when you decide to migrate to a microservices architecture, you can do it without thinking about infrastructure.
+- Automation is not optional. You can’t deploy all these pieces manually once you have several.
+- Test all the things. You can never fully emulate operating environments for development purposes.
+
+# Break-up with Your Server, but Don’t Commit to a Cloud Platform
+by [Linda Nichols](https://twitter.com/lynnaloo)
