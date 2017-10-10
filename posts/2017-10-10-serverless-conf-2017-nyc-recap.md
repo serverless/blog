@@ -8,6 +8,7 @@ authors:
   - AndreaPasswater
 ---
 
+# The high level
 If the last ServerlessConf was the conference of serverless projects, this one was the conference of serverless tooling.
 
 Every presentation has been plugging what they use right now for debugging, monitoring and development ([AWS X-ray](https://aws.amazon.com/xray/), [IOpipe](https://www.iopipe.com/), [Auth0 extend](https://auth0.com/extend/)...)—while in the same breath highlighting areas where we still need more tools and more features in them.
@@ -18,7 +19,9 @@ We can already tell: ServerlessConf next year will already be a drastically diff
 
 Here are some notes from our favorite Day 1 talks. We'll update this tomorrow with more info from Day 2, so be sure to check back in.
 
-**Keep scrolling or click to jump straight to your fave talk:**<br>
+# The gritty details
+
+**Click to jump straight to your fave talk, or scroll down to read them all:**<br>
 - [The State of Serverless Security](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#the-state-of-serverless-security)
 - [10 tips for running a serverless business... number #6 will blow your mind!](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#10-tips-for-running-a-serverless-business-number-6-will-blow-your-mind)
 - [Shipping Containers As Functions](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#shipping-containers-as-functions)
@@ -27,7 +30,7 @@ Here are some notes from our favorite Day 1 talks. We'll update this tomorrow wi
 - [Serverless Design Patterns](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#serverless-design-patterns)
 - [Event-driven Architectures: are we ready for the paradigm shift?](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#event-driven-architectures-are-we-ready-for-the-paradigm-shift)
 
-# The State of Serverless Security
+## The State of Serverless Security
 by [Mark Nunnikhoven](https://twitter.com/marknca)<br>
 
 How does security in the serverless world *really* shape up?
@@ -80,7 +83,7 @@ For now though, we're at a **C-**.
 **Then what's the state of serverless security overall?**<br>
 Mark gives it a **B**. (Better, he notes, than containers)
 
-# 10 tips for running a serverless business... number #6 will blow your mind!
+## 10 tips for running a serverless business... number #6 will blow your mind!
 by [Sam Kroonenburg](https://twitter.com/samkroon)
 
 Sam started coding a learning platform 4 years ago. You might know it now as this little company called [A Cloud Guru](https://acloud.guru). He knew he'd need to include video lessons, a quiz engine, an online store and sign up / log in, while having something that scaled effortlessly and had low operational overhead.
@@ -102,7 +105,7 @@ For all those serverless entrepreneurs out there, Sam has some guiding principle
 - Automation is not optional. You can’t deploy all these pieces manually once you have several.
 - Test all the things. You can never fully emulate operating environments for development purposes.
 
-# Shipping Containers As Functions
+## Shipping Containers As Functions
 
 by [Amiram Shachar](https://twitter.com/amiramshachar)
 
@@ -114,7 +117,7 @@ So what does the future of serverless look like? Here's what Amiram thinks:
 
 As you can see, containers and VMs are still in that chart. He also makes a case for shipping containers as serverless functions. You could, say, use a Docker image as a function. You wouldn't have to zip anything or add dependencies; just put it in a Docker file, package and ship.
 
-# Harmonizing Serverless and Traditional Applications
+## Harmonizing Serverless and Traditional Applications
 
 by [Ryan Scott Brown](https://twitter.com/ryan_sb)
 
@@ -128,7 +131,7 @@ Protip: beware of scaling, and not in the way you think. Lambda will scale just 
 
 Read his full notes over at [serverlesscode](https://serverlesscode.com/slides/serverlessconf-harmonizing-serverless-traditional-apps.pdf).
 
-# Break-up with Your Server, but Don’t Commit to a Cloud Platform
+## Break-up with Your Server, but Don’t Commit to a Cloud Platform
 
 by [Linda Nichols](https://twitter.com/lynnaloo)
 
@@ -148,7 +151,7 @@ As fabulous as her talk was, the twitter conversations around it have been even 
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">No one wants to deal w/ <a href="https://twitter.com/hashtag/containers?src=hash&amp;ref_src=twsrc%5Etfw">#containers</a>— the <a href="https://twitter.com/hashtag/serverless?src=hash&amp;ref_src=twsrc%5Etfw">#serverless</a> path forward is multi-provider frameworks (ie <a href="https://twitter.com/goserverless?ref_src=twsrc%5Etfw">@goserverless</a>)-<a href="https://twitter.com/lynnaloo?ref_src=twsrc%5Etfw">@lynnaloo</a> <a href="https://twitter.com/hashtag/serverlessconf?src=hash&amp;ref_src=twsrc%5Etfw">#serverlessconf</a> <a href="https://t.co/gQG9kUtUkK">pic.twitter.com/gQG9kUtUkK</a></p>&mdash; Joab Jackson (@Joab_Jackson) <a href="https://twitter.com/Joab_Jackson/status/917808443297288192?ref_src=twsrc%5Etfw">October 10, 2017</a></blockquote>
 
-# Serverless Design Patterns
+## Serverless Design Patterns
 
 by Tim Wagner, Yochay Kiriaty & Peter Sbarski
 
@@ -158,7 +161,7 @@ It's called Serverless Design Patterns, and it's slated for release in 2018. *Ye
 
 The book will be vendor agnostic, and they welcome feedback on their curret list of patterns: [serverlessdesignpatterns.com](serverlessdesignpatterns.com)
 
-# Event-driven Architectures: are we ready for the paradigm shift?
+## Event-driven Architectures: are we ready for the paradigm shift?
 
 by [Ben Kehoe](https://twitter.com/ben11kehoe)
 
