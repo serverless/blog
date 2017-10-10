@@ -47,7 +47,7 @@ So what, then, should be our new model? Mark proposes three components to server
 
 Code quality is a problem. Okay...it's *the* problem. If you look at the OWASP top 10 most common vulnerabilities, they've barely changed since 2010.
 
-Dependencies are another factor. Whatever issues they have become your issue; dozens of dependencies mean dozens of possible threat points. And don't think that low-level threats are nothing to worry about—people can get root access by exploiting the right combination of grade 3 threats.
+Dependencies are another factor. Their weakness is your weakness; dozens of dependencies mean dozens of possible threat points. And don't think that low-level threats are nothing to worry about—people can get root access by exploiting the right combination of grade 3 threats.
 
 Still, we're doing pretty good overall here. Mark gives Serverless Fucntions security a **B+**.
 
