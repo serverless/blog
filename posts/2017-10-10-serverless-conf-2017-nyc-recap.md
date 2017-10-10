@@ -53,9 +53,9 @@ Still, we're doing pretty good overall here. Mark gives Serverless Fucntions sec
 
 **2. Services**
 
-How does the provider secure their service? Make sure to check their certifications, and if they don't have certs (reasonably common in newer companies or smaller start-ups), grill them. Make sure they are fully transparent with you.
+How does the provider secure their service? Make sure to check their certifications. If they don't have certs (reasonably common in newer companies and smaller start-ups), then grill them. Make sure they are fully transparent with you.
 
-Also, what kind of security controls do they have? Can you encrypt at rest, use your own keys?
+Also keep in mind what kind of security controls do they have. Can you encrypt at rest, use your own keys?
 
 Vendors have a lot to lose if there's a breach, and they tend to be pretty good about this stuff. Services get a solid **A**.
 
