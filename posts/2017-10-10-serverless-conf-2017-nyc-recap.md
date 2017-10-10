@@ -10,7 +10,7 @@ authors:
 
 If the last ServerlessConf was the conference of serverless projects, this one was the conference of serverless tooling.
 
-Every presentation has been plugging what they use right now for debugging, monitoring and development ([AWS X-ray](https://aws.amazon.com/xray/), [IOpipe](https://www.iopipe.com/), [Auth0 extend](https://auth0.com/extend/)...)—while in the same breath highlighting areas where we still need more tools and more fesatures in them.
+Every presentation has been plugging what they use right now for debugging, monitoring and development ([AWS X-ray](https://aws.amazon.com/xray/), [IOpipe](https://www.iopipe.com/), [Auth0 extend](https://auth0.com/extend/)...)—while in the same breath highlighting areas where we still need more tools and more features in them.
 
 In our opinion, it's a hugely positive shift. We've reached the point where everyone knows they can make cool stuff with serverless, and now they want an ecosystem to support serverless development. Nobody can build fast enough, but they're furiously building anyway. We can already tell: ServerlessConf next year will already be a drastically different landscape.
 
@@ -76,7 +76,7 @@ Mark gives it a **B**. (Better, he notes, than containers)
 # 10 tips for running a serverless business... number #6 will blow your mind!
 by [Sam Kroonenburg](https://twitter.com/samkroon)
 
-Sam started coding a learning platform 4 years ago. You might know it now as this little company called [A Cloud Guru](acloud.guru). He knew he'd need to include video lessons, a quiz engine, an online store and sign up / log in, while having something that scaled effortlessly and had low operational overhead.
+Sam started coding a learning platform 4 years ago. You might know it now as this little company called [A Cloud Guru](https://acloud.guru). He knew he'd need to include video lessons, a quiz engine, an online store and sign up / log in, while having something that scaled effortlessly and had low operational overhead.
 
 Tl;dr: he cared about the fastest, cheapest way to build a company and get his MVP out there. So he went serverless (check out his EC2 for proof):
 
@@ -97,7 +97,7 @@ For all those serverless entrepreneurs out there, Sam has some guiding principle
 
 # Shipping Containers As Functions
 
-by [Amiram Shachar]()
+by [Amiram Shachar](https://twitter.com/amiramshachar)
 
 Remember how, with every technological invention, the word on the street was that the 'old' would completely go away? Computers would kill paper, Microsoft would kill IBM, etc. In reality, this process takes way, way longer than we think.
 
@@ -105,7 +105,7 @@ So what does the future of serverless look like? Here's what Amiram thinks:
 
 <img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/futuresls.jpg">
 
-As you can see, containers and VMs are still in that chart. He also makes a case for shipping containers as serverless functions. You could, say, use Docker image as function. You wouldn't have to zip anything or add dependencies; just put it in a docker file, package and ship.
+As you can see, containers and VMs are still in that chart. He also makes a case for shipping containers as serverless functions. You could, say, use a Docker image as a function. You wouldn't have to zip anything or add dependencies; just put it in a Docker file, package and ship.
 
 # Harmonizing Serverless and Traditional Applications
 
@@ -117,7 +117,7 @@ The hardest part is changing the model of your app to integrate these new event 
 
 <img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/3phase.png">
 
-Protip: beware of scaling, and not in the way you think. Lambda will scale just fine. *Too* fine. Fine enough to completely ruin every downstream service. Get good at prioritizing end-user events to customer impact is minimal. Use Kinesis to denormalize data into messages. Keep a monorepo. Watch everything: Cloudwatch, IOpipes, Honeycomb, Elk Stack...
+Protip: beware of scaling, and not in the way you think. Lambda will scale just fine. *Too* fine. Fine enough to completely ruin every downstream service. Get good at prioritizing end-user events to customer impact is minimal. Use Kinesis to denormalize data into messages. Keep a monorepo. Watch everything: Cloudwatch, IOpipes, Honeycomb, ELK Stack...
 
 Read his full notes over at [serverlesscode](https://serverlesscode.com/slides/serverlessconf-harmonizing-serverless-traditional-apps.pdf).
 
@@ -137,16 +137,17 @@ Her argument was pretty straightforward: look, even if you know AWS really well,
 
 The ideal multi-provider framework should abstract just enough to be useful, without completely abstracting away the native deployment frameworks for each cloud vendor. Otherwise, it's too much to keep up with and the ball will eventually drop.
 
-As fabulous as her talk was, the twitter conversations around it have been even more fun to follow. Check them out.
+As fabulous as her talk was, the twitter conversations around it have been even more fun to follow. [Check them out](https://twitter.com/Joab_Jackson/status/917808443297288192).
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">No one wants to deal w/ <a href="https://twitter.com/hashtag/containers?src=hash&amp;ref_src=twsrc%5Etfw">#containers</a>— the <a href="https://twitter.com/hashtag/serverless?src=hash&amp;ref_src=twsrc%5Etfw">#serverless</a> path forward is multi-provider frameworks (ie <a href="https://twitter.com/goserverless?ref_src=twsrc%5Etfw">@goserverless</a>)-<a href="https://twitter.com/lynnaloo?ref_src=twsrc%5Etfw">@lynnaloo</a> <a href="https://twitter.com/hashtag/serverlessconf?src=hash&amp;ref_src=twsrc%5Etfw">#serverlessconf</a> <a href="https://t.co/gQG9kUtUkK">pic.twitter.com/gQG9kUtUkK</a></p>&mdash; Joab Jackson (@Joab_Jackson) <a href="https://twitter.com/Joab_Jackson/status/917808443297288192?ref_src=twsrc%5Etfw">October 10, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 # Serverless Design Patterns
 
 by Tim Wagner, Yochay Kiriaty & Peter Sbarski
 
-They're releasing a book called Serverless Design Patterns in 2018. Yes to more learning resources, best practices and standards!
+Tim spoke about the need for design patterns for serverless and did a walkthrough of how to implement a map-reduce pattern with serverless. Then, he announced some exciting news—they're releasing a book!
+
+It's called Serverless Design Patterns, and it's slated for release in 2018. *Yes* to more learning resources, best practices and standards.
 
 The book will be vendor agnostic, and they welcome feedback on their curret list of patterns: [serverlessdesignpatterns.com](serverlessdesignpatterns.com)
 
