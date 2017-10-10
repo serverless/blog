@@ -68,7 +68,8 @@ We don't yet have enough tooling for assurance of protections, data flow visibil
 For now though, we're at a **C-**.
 
 **Then what's the state of serverless security overall?**
-Mark gives it a B. (Better, he notes, than containers)
+
+Mark gives it a **B**. (Better, he notes, than containers)
 
 # 10 tips for running a serverless business... number #6 will blow your mind!
 by [Sam Kroonenburg](https://twitter.com/samkroon)
