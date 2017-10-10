@@ -116,4 +116,8 @@ As fabulous as her talk was, the twitter conversations around it have been even 
 
 by Tim Wagner, Yochay Kiriaty & Peter Sbarski
 
-They're releasing a book called Serverless Design Patterns in 2018. Yes to more learning resources, best practices and standards! Check out their list of patterns and offer feedback: [serverlessdesignpatterns.com](serverlessdesignpatterns.com)
+They're releasing a book called Serverless Design Patterns in 2018. Yes to more learning resources, best practices and standards! The book will be vendor agnostic, and they welcome feedback on their curret list of patterns: [serverlessdesignpatterns.com](serverlessdesignpatterns.com)
+
+# Event-driven Architectures: are we ready for the paradigm shift?
+
+by [Ben Kehoe](https://twitter.com/ben11kehoe)
