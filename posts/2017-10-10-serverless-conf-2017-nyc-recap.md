@@ -19,7 +19,7 @@ by [Mark Nunnikhoven](https://twitter.com/marknca)<br>
 
 How does security in the serverless world *really* shape up?
 
-[IMAGE of strong]
+<img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/strong.jpg">
 
 Let's first go back to basics—the 6 part Shared Responsibility Model:
 - data
@@ -78,7 +78,7 @@ Sam started coding a learning platform 4 years ago. You might know it now as thi
 
 Tl;dr: he cared about the fastest, cheapest way to build a company and get his MVP out there. So he went serverless (check out his EC2 for proof):
 
-[IMAGE EC2]
+<img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/ec2.jpg">
 
 His learning platform started as a serverless monolith, and Sam advocates that choice. It's a great way to launch fast, and as long as you're starting serverless, the transition to microservices later is pretty straightforward.
 
@@ -101,7 +101,7 @@ Remember how, with every technological invention, the word on the street was tha
 
 So what does the future of serverless look like? Here's what Amiram thinks:
 
-[IMAGE future]
+<img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/futuresls.jpg">
 
 As you can see, containers and VMs are still in that chart. He also makes a case for shipping containers as serverless functions. You could, say, use Docker image as function. You wouldn't have to zip anything or add dependencies; just put it in a docker file, package and ship.
 
@@ -113,7 +113,7 @@ It's still pretty common that when we talk about serverless, we start off talkin
 
 The hardest part is changing the model of your app to integrate these new event streams, and breaking up coupling of all the jobs that are currently running. Ryan recommends a slow integration flow, from 'incidental glue' to backend tasks (which will be less likely to make users mad if something goes wrong) before finally moving on to end user features.
 
-[IMAGE 3 phase]
+<img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/3phase.png">
 
 Protip: beware of scaling, and not in the way you think. Lambda will scale just fine. *Too* fine. Fine enough to completely ruin every downstream service. Get good at prioritizing end-user events to customer impact is minimal. Use Kinesis to denormalize data into messages. Keep a monorepo. Watch everything: Cloudwatch, IOpipes, Honeycomb, Elk Stack...
 
