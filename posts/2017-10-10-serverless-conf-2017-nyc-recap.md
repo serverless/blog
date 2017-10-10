@@ -53,3 +53,15 @@ Vendors have a lot to lose if there's a breach, and they tend to be pretty good 
 
 **3. Data flows**
 
+Spoiler alert: this is where we're losing.
+
+We don't yet have enough tooling for assurance of protections, data flow visibility or code quality. Though these things seem to be in the works from several people in the space, so we'll see what the state of affairs is by next ServerlessConf.
+
+For now though, we're at a **C-**.
+
+**Then what's the state of serverless security overall?**
+Mark gives it a B. (Better, he notes, than containers)
+
+# 10 tips for running a serverless business... number #6 will blow your mind!
+by [Sam Kroonenburg](https://twitter.com/samkroon)
+
