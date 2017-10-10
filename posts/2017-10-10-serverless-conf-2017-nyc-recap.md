@@ -8,7 +8,7 @@ authors:
   - AndreaPasswater
 ---
 
-# The high level
+# High level takeaways
 If the last ServerlessConf was the conference of serverless projects, this one was the conference of serverless tooling.
 
 Every presentation has been plugging what they use right now for debugging, monitoring and development ([AWS X-ray](https://aws.amazon.com/xray/), [IOpipe](https://www.iopipe.com/), [Auth0 extend](https://auth0.com/extend/)...)—while in the same breath highlighting areas where we still need more tools and more features in them.
@@ -20,6 +20,8 @@ We can already tell: ServerlessConf next year will already be a drastically diff
 Here are some notes from our favorite Day 1 talks. We'll update this tomorrow with more info from Day 2, so be sure to check back in.
 
 # The gritty details
+
+We're giving you the full notes from some of our favorite talks! If you were there, we hope they're a nice refresher. If you were home, we hope it's like you were there.
 
 **Click to jump straight to your fave talk, or scroll down to read them all:**<br>
 - [The State of Serverless Security](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#the-state-of-serverless-security)
