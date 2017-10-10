@@ -39,7 +39,7 @@ And then containers whittled it away a bit more:
 Until  under a serverless paradigm, we are left only with:
 - data
 
-So what, then, are the three components to serverless security?
+So what, then, should be our new model? Mark proposes three components to serverless security:
 
 **1. Functions**
 
