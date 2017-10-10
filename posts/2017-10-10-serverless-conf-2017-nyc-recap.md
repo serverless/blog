@@ -94,3 +94,17 @@ For all those serverless entrepreneurs out there, Sam has some guiding principle
 
 # Break-up with Your Server, but Don’t Commit to a Cloud Platform
 by [Linda Nichols](https://twitter.com/lynnaloo)
+
+How can you go serverless without vendor lock-in?
+
+Linda proposes two possibilities:
+1. containers
+2. multi-provider frameworks
+
+Both totally work, and it all depends on your preference. Linda personally prefers multi-provider frameworks and spent most of her talk focused on the Serverless Framework specifically.
+
+Her argument was pretty straightforward: look, even if you know AWS really well, that knowledge doesn't transfer. GUIs highly vary and can be hard to navigate. If you don't use a multi-provider framework, you're essentially locking yourself in because there's too much friction to use that cool new Azure feature when you don't know Azure well.
+
+The ideal multi-provider framework should abstract just enough to be useful, without completely abstracting away the native deployment frameworks for each cloud vendor. Otherwise, it's too much to keep up with and the ball will eventually drop.
+
+As fabulous as her talk was, the twitter conversations around it have been even more fun to follow. Check them out.
