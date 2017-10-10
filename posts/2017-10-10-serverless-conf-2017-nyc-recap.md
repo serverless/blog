@@ -169,4 +169,4 @@ But! Ben reminds us, "We're all here because we think it's worth it," and improv
 
 ServerlessConf isn't nearly over—there's a whole other day of slides and [artful server destruction](https://twitter.com/goserverless/status/917837389560713218).
 
-Check back with us tomorrow.
+Check back with us tomorrow for the full day 2 download.
