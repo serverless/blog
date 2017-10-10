@@ -19,6 +19,8 @@ by [Mark Nunnikhoven](https://twitter.com/marknca)<br>
 
 How does security in the serverless world *really* shape up?
 
+[IMAGE of strong]
+
 Let's first go back to basics—the 6 part Shared Responsibility Model:
 - data
 - application
@@ -71,3 +73,12 @@ Mark gives it a B. (Better, he notes, than containers)
 # 10 tips for running a serverless business... number #6 will blow your mind!
 by [Sam Kroonenburg](https://twitter.com/samkroon)
 
+Sam got started coding a learning platform 4 years ago. He knew he'd need to include video lessons, a quiz engine, an online store and sign up / log in, while having something that scaled effortlessly and had low operational overhead.
+
+He cared about the fastest, cheapest way to build a company and get his MVP out there. So he went serverless (check out his EC2 for proof):
+
+[IMAGE EC2]
+
+At first, it was a serverless monolith, and Sam still sticks behind that choice. He thinks it was great for getting everything off the ground, and as long as you're starting serverless, the transition to microservices later is pretty straightforward.
+
+For all those serverless entrepreneurs out there, Sam has some guiding principles and advice:
