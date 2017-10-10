@@ -80,7 +80,7 @@ by [Sam Kroonenburg](https://twitter.com/samkroon)
 
 Sam started coding a learning platform 4 years ago. You might know it now as this little company called [A Cloud Guru](https://acloud.guru). He knew he'd need to include video lessons, a quiz engine, an online store and sign up / log in, while having something that scaled effortlessly and had low operational overhead.
 
-Tl;dr: he cared about the fastest, cheapest way to build a company and get his MVP out there. So he went serverless (check out his EC2 for proof):
+Tl;dr: he cared about the fastest, cheapest way to build a company and get his MVP out there. So he went serverless (check out his non-existent EC2 for proof):
 
 <img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/ec2.jpg">
 
