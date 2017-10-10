@@ -108,3 +108,6 @@ Her argument was pretty straightforward: look, even if you know AWS really well,
 The ideal multi-provider framework should abstract just enough to be useful, without completely abstracting away the native deployment frameworks for each cloud vendor. Otherwise, it's too much to keep up with and the ball will eventually drop.
 
 As fabulous as her talk was, the twitter conversations around it have been even more fun to follow. Check them out.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">No one wants to deal w/ <a href="https://twitter.com/hashtag/containers?src=hash&amp;ref_src=twsrc%5Etfw">#containers</a>— the <a href="https://twitter.com/hashtag/serverless?src=hash&amp;ref_src=twsrc%5Etfw">#serverless</a> path forward is multi-provider frameworks (ie <a href="https://twitter.com/goserverless?ref_src=twsrc%5Etfw">@goserverless</a>)-<a href="https://twitter.com/lynnaloo?ref_src=twsrc%5Etfw">@lynnaloo</a> <a href="https://twitter.com/hashtag/serverlessconf?src=hash&amp;ref_src=twsrc%5Etfw">#serverlessconf</a> <a href="https://t.co/gQG9kUtUkK">pic.twitter.com/gQG9kUtUkK</a></p>&mdash; Joab Jackson (@Joab_Jackson) <a href="https://twitter.com/Joab_Jackson/status/917808443297288192?ref_src=twsrc%5Etfw">October 10, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
