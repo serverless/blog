@@ -10,7 +10,9 @@ authors:
 
 If the last ServerlessConf was the conference of serverless projects, this one was the conference of serverless tooling.
 
-In our opinion, it's a hugely positive shift. We've reached the point where everyone knows they can make cool stuff with serverless, and now they want an ecosystem to support serverless development.
+Everyone is talking about what tools we still need in order to make serverless easier to build with, debug and secure. And every presentation has been plugging which tools they use right now and doling out wish lists for new features. We've had talks about new tools everyone is pumped to try or has already tried and loved—[AWS X-ray](https://aws.amazon.com/xray/), [IOpipe](https://www.iopipe.com/), [Auth0 extend](https://auth0.com/extend/)...
+
+In our opinion, it's a hugely positive shift. We've reached the point where everyone knows they can make cool stuff with serverless, and now they want an ecosystem to support serverless development. Nobody can build fast enough, but they're furiously building anyway. We can already tell: ServerlessConf next year will already be a drastically different landscape.
 
 Here are some notes from our favorite Day 1 talks. We'll update this tomorrow with Day 2 talk summaries, so be sure to check back in.
 
