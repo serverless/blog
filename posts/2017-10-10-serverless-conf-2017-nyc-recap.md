@@ -93,6 +93,18 @@ For all those serverless entrepreneurs out there, Sam has some guiding principle
 - Automation is not optional. You can’t deploy all these pieces manually once you have several.
 - Test all the things. You can never fully emulate operating environments for development purposes.
 
+# Shipping Containers As Functions
+
+by [Amiram Shachar]()
+
+Remember how, with every technological invention, the word on the street was that the 'old' would completely go away? Computers would kill paper, Microsoft would kill IBM, etc. In reality, this process takes way, way longer than we think.
+
+So what does the future of serverless look like? Here's what Amiram thinks:
+
+[IMAGE future]
+
+As you can see, containers and VMs are still in that chart. He also makes a case for shipping containers as serverless functions. You could, say, use Docker image as function. You wouldn't have to zip anything or add dependencies; just put it in a docker file, package and ship.
+
 # Break-up with Your Server, but Don’t Commit to a Cloud Platform
 
 by [Linda Nichols](https://twitter.com/lynnaloo)
