@@ -105,6 +105,20 @@ So what does the future of serverless look like? Here's what Amiram thinks:
 
 As you can see, containers and VMs are still in that chart. He also makes a case for shipping containers as serverless functions. You could, say, use Docker image as function. You wouldn't have to zip anything or add dependencies; just put it in a docker file, package and ship.
 
+# Harmonizing Serverless and Traditional Applications
+
+by [Ryan Scott Brown](https://twitter.com/ryan_sb)
+
+It's still pretty common that when we talk about serverless, we start off talking about a greenfield project. But that's not most people's reality. How do you plug serverless functions into an existing application, bit by bit?
+
+The hardest part is changing the model of your app to integrate these new event streams, and breaking up coupling of all the jobs that are currently running. Ryan recommends a slow integration flow, from 'incidental glue' to backend tasks (which will be less likely to make users mad if something goes wrong) before finally moving on to end user features.
+
+[IMAGE 3 phase]
+
+Protip: beware of scaling, and not in the way you think. Lambda will scale just fine. *Too* fine. Fine enough to completely ruin every downstream service. Get good at prioritizing end-user events to customer impact is minimal. Use Kinesis to denormalize data into messages. Keep a monorepo. Watch everything: Cloudwatch, IOpipes, Honeycomb, Elk Stack...
+
+Read his full notes over at [serverlesscode](https://serverlesscode.com/slides/serverlessconf-harmonizing-serverless-traditional-apps.pdf).
+
 # Break-up with Your Server, but Don’t Commit to a Cloud Platform
 
 by [Linda Nichols](https://twitter.com/lynnaloo)
