@@ -20,13 +20,13 @@ Maps are more than just a visual; they also need to take into account anchor, po
 
 So back to our systems 'map'. It doesn’t have any of those characteristics. Move CRM over to the right? Nothing about the relationship between components change (as there’s no anchor).
 
-<img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/crm-diagram.jpg">
+<img width="500" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/crm-diagram.jpg">
 
 We constantly make business decisions using diagrams and not maps, and then are surprised when a gap emerges. We've been doing it wrong. Our diagrams aren't painting a picture of the market landscape.
 
 Simon's solution was to start with a User as his anchor, and draw his map trickling down from that user, on to what that user wanted and needed, then what those needs would require, and so on, until he ended up at the technology that would support those needs.
 
-<img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/user-map.jpg">
+<img width="500" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/user-map.jpg">
 
 **We're still following the same patterns**<br>
 With every new technology we say: "It'll reduce the budget! It'll eliminate such-and-such role!"
@@ -39,4 +39,4 @@ Hold tight. Serverless is a great wave, and it's coming. But adoption takes 10-1
 
 So here's where can we expect to be in 2025:
 
-<img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/2025.jpg">
+<img width="500" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/2025.jpg">
