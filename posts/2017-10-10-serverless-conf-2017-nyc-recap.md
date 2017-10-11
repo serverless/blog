@@ -26,6 +26,7 @@ Here are some notes from our favorite Day 1 talks. We'll update this tomorrow wi
 We're giving you the full notes from some of our favorite talks! If you were there, we hope they're a nice refresher. If you were home, we hope it's like you were there.
 
 **Click to jump straight to your fave talk, or scroll down to read them all:**<br>
+**Day 1**<br>
 - [The State of Serverless Security](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#the-state-of-serverless-security)
 - [10 tips for running a serverless business... number #6 will blow your mind!](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#10-tips-for-running-a-serverless-business-number-6-will-blow-your-mind)
 - [Shipping Containers As Functions](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#shipping-containers-as-functions)
@@ -33,6 +34,13 @@ We're giving you the full notes from some of our favorite talks! If you were the
 - [Break-up with Your Server, but Don’t Commit to a Cloud Platform](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#break-up-with-your-server-but-dont-commit-to-a-cloud-platform)
 - [Serverless Design Patterns](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#serverless-design-patterns)
 - [Event-driven Architectures: are we ready for the paradigm shift?](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#event-driven-architectures-are-we-ready-for-the-paradigm-shift)
+
+**Day 2**<br>
+- [Why the Fuss about Serverless?](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#why-the-fuss-about-serverless)
+- [Serverless and Software Craftsmanship](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#serverless-and-software-craftsmanship)
+- [Global Resiliency when going Serverless](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#global-resiliency-when-going-serverless)
+- [The CNCF (Cloud Native Computing Foundation) point of view on Serverless](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#the-cncf-cloud-native-computing-foundation-point-of-view-on-serverless)
+- [Data Layer in the Serverless World](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#data-layer-in-a-serverless-world)
 
 ## The State of Serverless Security
 by [Mark Nunnikhoven](https://twitter.com/marknca)<br>
@@ -183,8 +191,81 @@ Improvements are happening incredibly fast. He's already anticipating that, with
 
 As a community, let's band together and make sure that happens.
 
-# Stay tuned for day 2
+## Why the Fuss About Serverless?
+by [Simon Wardley](https://twitter.com/swardley)
 
-ServerlessConf isn't nearly over—there's a whole other day of slides and [artful server destruction](https://twitter.com/goserverless/status/917837389560713218).
+Simon regaled the crowd with a thoughtful appraisal of how we think about systems—and what this all means for serverless. It was densely packed and every slide was good, so information was kind of flying at our heads. But here are some of his key points: 
 
-Check back with us tomorrow for the full day 2 download.
+**Maps don’t equal Diagrams**<br>
+Maps help us better conceptualize problem spaces; we should all be making them. But what most developers call 'maps' (systems maps, anyone?), aren't actually maps.
+
+Maps are more than just a visual; they also need to take into account anchor, position and movement. Imagine if you were to take Australia and plop it down beside Peru. Instantly different globe.
+
+So back to our systems 'map'. It doesn’t have any of those characteristics. Move CRM over to the right? Nothing about the relationship between components change (as there’s no anchor).
+
+<img width="500" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/crm-diagram.jpg">
+
+We've been doing it wrong. These diagrams aren't painting a picture of the market landscape.
+
+Simon's prefers to start with a User as his anchor, and flow down from that user on to what they want and need, then what those needs would require, and so on, until he ends up at the technology that supports those needs.
+
+<img width="500" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/usermap2.jpg">
+
+**We're still following the same patterns**<br>
+With every new technology we say: "It'll reduce the budget! It'll eliminate such-and-such role!"
+
+But look. Serverless won’t reduce your IT budget; you’ll just make more stuff. Just like Cloud didn't reduce your IT budget. You made more stuff.
+
+As technology grows towards the commodity end of the spectrum, more market players build it into their status quo. This is a cyclical process. Each new process begets another, which in turn is supplanted by yet another. Commoditized approaches gather inertia, leaving new technology adoption spotty and often from the bottom-up.
+
+<img width="500" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/tribe.png">
+
+But, when the technology merits, it’s just a case of “when, not if”. The same is certainly true for Serverless.
+
+**Adoption is what it is**<br>
+Hold tight. Serverless is a great wave, and it's coming. But adoption of new technology usually takes 10-15 years.
+
+So here's the adoption curve we can we expect going in to 2025:
+- Increase in efficiency
+- Rapid acceleration in speed of development
+- Explosion of higher order systems of value
+- No reduction in IT spend
+- No choice over adoption (if not when)
+- Non linear, > 50% of all new IT spend
+
+## Serverless and Software Craftsmanship
+by [Florian Motlik](https://twitter.com/flomotlik)
+
+Serverless can get pretty conceptually complex once you have several functions in production. So why are we doing it?
+
+Productivity, plain and simple. But what we need to remember about productivity is that it isn't only about code, it's about pushing things for the end user. Bad code doesn't help *anyone*, and firefighting isn't productive work.
+
+When your infrastructure is an extension of your code code (as it is with Serverless), that means you have to treat your infrastructure as well as your code. This responsibility falls to developers.
+
+<img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/infra-as-code.jpg">                                                                        
+We need to cultivate a culture of focus on Insight, Resource Management and Operations. If you can't answer questions about your deployed resources in less than 3 seconds, it's a problem. If you don't have resource management automated, it might as well not exist because it's not repeatable.
+
+The Cloud has made our infrastructure standardized, but needs aren't uniform; in that case, customize your tools. It's easier now than it's ever been.
+
+## Global Resiliency when going Serverless
+by [Jared Short](https://twitter.com/shortjared)
+
+
+
+## The CNCF (Cloud Native Computing Foundation) point of view on Serverless
+by [Daniel Krook](https://twitter.com/DanielKrook)
+
+The CNCF established a serverless working group 4 months ago. Their very first initiatives are to finalize [a serverless whitepaper](https://docs.google.com/document/d/1UjW8bt5O8QBgQRILJVKZJej_IuNnxl20AJu9wA8wcdI/edit#heading=h.yiaul8is1ki) and advocate a common model for event data.
+
+They're also collecting and publishing community resources—e.g. a matrix of existing serverless providers and tools—and are moving their next focus into examples, patterns and possibly collaborating on packaging specifications.
+
+Even if you're not a CNCF member, you can still attend meetings. So get involved and stay updated! Their [GitHub repo](github.com/cncf/wg-serverless) is here.
+
+## Data Layer in the Serverless World
+by [Alex Debrie](https://twitter.com/alexbdebrie)
+
+
+
+# In sum
+
+It's not NoOps but #DiffOps. We need more tools. Serverless truly is here to stay, and we're all excited about the increases in productivity. It's no longer 'what can we build in a serverless way?' but '*why* can't we make this serverless yet, hurry up already'.
