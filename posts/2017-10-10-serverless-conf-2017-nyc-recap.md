@@ -264,7 +264,36 @@ Even if you're not a CNCF member, you can still attend meetings. So get involved
 ## Data Layer in the Serverless World
 by [Alex Debrie](https://twitter.com/alexbdebrie)
 
+Our very own Alex DeBrie gave a great overview of the data layer of serverless architectures. He broke them down into two segments: server*ful* and server*less*.
 
+**Serverfull databases**<br>
+These are the more traditional databases including Postgres, MySQL, and MongoDB, where you have a defined number of instances running and scaling them up and down is more of a challenge.
+
+Some of the benefits of serverfull databases:
+- They have mature ecosystems
+- Many cloud providers offer them as managed services
+- there is less vendor lock in
+
+Some of the downsides of serverfull databases include:
+- More maintenance, issues with uptime and scaling difficulties up and down
+- Networking concerns in the FAAS space, where cold starts can be an issue when running in VPCs
+- Connection limits and the lack of pooling due to the nature of functions spinning up and down
+
+**Serverless Databases**
+
+With serverless databases, you don't know how many instances are running; that is abstracted away from the developers. Some examples would include DynamoDB, Fauna, Google firebase or firestore.
+
+They typically will auto scale for you and maintenance is less of a burden.
+
+**Serverless Database Benefits:**
+- auto scales up and down for you
+- less maintenance, provider takes care of this for you
+- faster time to market. Spin up instances very quickly
+
+**Downsides:**
+- Less developer familiarity, 
+- Can be harder to query if data models aren't setup correctly
+- vendor lock-in and harder migrations to other non proprietary database engines
 
 # In sum
 
