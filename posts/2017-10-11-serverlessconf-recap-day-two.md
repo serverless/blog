@@ -86,4 +86,3 @@ Expedia gave us the down low on what their architecture patterns look like:
 by [Jared Short](https://twitter.com/shortjared)
 
 notes
-
