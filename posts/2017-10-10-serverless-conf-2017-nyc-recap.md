@@ -161,7 +161,7 @@ Tim spoke about the need for design patterns for serverless and did a walkthroug
 
 It's called Serverless Design Patterns, and it's slated for release in 2018. *Yes* to more learning resources, best practices and standards.
 
-The book will be vendor agnostic, and they welcome feedback on their curret list of patterns: [serverlessdesignpatterns.com](serverlessdesignpatterns.com)
+The book will be vendor agnostic, and they welcome feedback on their curret list of patterns: [serverlessdesignpatterns.com](http://serverlessdesignpatterns.com)
 
 ## Event-driven Architectures: are we ready for the paradigm shift?
 
