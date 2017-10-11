@@ -64,20 +64,24 @@ We need to cultivate a culture of focus on Insight, Resource Management and Oper
 
 The Cloud has made our infrastructure standardized, but needs aren't uniform; in that case, customize your tools. It's easier now than it's ever been.
 
-## Different Serverless Patterns & Arch. At Expedia<br>
+## Different Serverless Patterns & Arcitectures at Expedia<br>
 by [Kuldeep Chowhan](https://twitter.com/this_is_kuldeep)
 
-The following architectural patterns are used in Expedia:
+Expedia gave us the down low on what their architecture patterns look like:
 
-* CI/CD Pipeline, managing their code builds
-* Kinesis Firehose Data Transformation - processing about 130 million events
+* CI/CD Pipeline for managing their code builds
+* Kinesis Firehose Data Transformation: processing about 130 million events
 * Control System for AWS Infrastructure (used internally)
   * 2500 people in org.
   * Uses 1 big account in AWS across stages
 * Test & Learn Dashboard Aggregation
   * A/B testing 
 * Using Lambda to scale up the Autoscaling group
-  * Spins new EC2 instances which pulls data and refreshes it.
+  * Spins new EC2 instances which pulls data and refreshes it
 
 **Benefits**: Cost, Operations, Scale, Opportunity, Time to Market
 **Security**: IAM Roles, integration with Active Directory
+
+## Global Resiliency when going Serverless<br>
+by [Jared Short](https://twitter.com/shortjared)
+
