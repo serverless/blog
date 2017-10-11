@@ -62,7 +62,7 @@ When your infrastructure is an extension of your code code (as it is with Server
 <img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/infra-as-code.jpg">                                                                        
 We need to cultivate a culture of focus on Insight, Resource Management and Operations. If you can't answer questiosn about your deployed resources in less than 3 seconds, it's a problem. If you don't have resource management automated, it might as well not exist.
 
-The Cloud has made our infrastructure standardized, but needs aren't uniform; in that case, customize your tools.
+The Cloud has made our infrastructure standardized, but needs aren't uniform; in that case, customize your tools. It's easier now than it's ever been.
 
 ## Different Serverless Patterns & Arch. At Expedia<br>
 by [Kuldeep Chowhan](https://twitter.com/this_is_kuldeep)
