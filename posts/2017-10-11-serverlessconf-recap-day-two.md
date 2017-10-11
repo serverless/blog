@@ -8,7 +8,7 @@ authors:
   - AndreaPasswater
 ---
 
-## [talk title]
-by [name](https://twitter.com/x)
+## Why the Fuss About Serverless?
+by [Simon Wardley](https://twitter.com/swardley)
 
 [Write-up]
