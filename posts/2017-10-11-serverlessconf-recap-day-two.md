@@ -26,7 +26,7 @@ We constantly make business decisions using diagrams and not maps, and then are 
 
 Simon's solution was to start with a User as his anchor, and draw his map trickling down from that user, on to what that user wanted and needed, then what those needs would require, and so on, until he ended up at the technology that would support those needs.
 
-<img width="500" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/user-map.jpg">
+<img width="500" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/usermap2.jpg">
 
 **We're still following the same patterns**<br>
 With every new technology we say: "It'll reduce the budget! It'll eliminate such-and-such role!"
