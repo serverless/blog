@@ -106,7 +106,8 @@ by [Daniel Krook](https://twitter.com/DanielKrook)
 
 The CNCF established a serverless working group 4 months ago. Their very first initiatives are to finalize [a serverless whitepaper](https://docs.google.com/document/d/1UjW8bt5O8QBgQRILJVKZJej_IuNnxl20AJu9wA8wcdI/edit#heading=h.yiaul8is1ki) and advocate a common model for event data.
 
+Even if you're not a CNCF member, you can still attend meetings. So get involved and stay updated! Their [GitHub repo](github.com/cncf/wg-serverless) is here.
+
 ## Data Layer in the Serverless World<br>
 by [Alex Debrie](https://twitter.com/alexbdebrie)
-
 
