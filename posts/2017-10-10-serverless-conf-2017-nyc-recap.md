@@ -15,6 +15,8 @@ Every presentation has been plugging what they use right now for debugging, moni
 
 In our opinion, it's a hugely positive shift. We've reached the point where everyone knows they can make cool stuff with serverless, and now they want an ecosystem to support serverless development. Nobody can build fast enough, but they're furiously building anyway.
 
+There was also a strong theme of rejecting 'NoOps' in favor of #DiffOps (kudos to Ben Kehoe for that sweet hashtag). Point being, the specific role titles might change, but nobody gets to eliminate ops. If anything, you need developers who are capable of learning how to do smart ops for distributed systems.
+
 We can already tell: ServerlessConf next year will already be a drastically different landscape.
 
 Here are some notes from our favorite Day 1 talks. We'll update this tomorrow with more info from Day 2, so be sure to check back in.
