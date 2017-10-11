@@ -60,7 +60,7 @@ Productivity, plain and simple. But what we need to remember about productivity 
 When your infrastructure is an extension of your code code (as it is with Serverless), that means you have to treat your infrastructure as well as your code. This responsibility falls to developers.
 
 <img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/infra-as-code.jpg">                                                                        
-We need to cultivate a culture of focus on Insight, Resource Management and Operations. If you can't answer questiosn about your deployed resources in less than 3 seconds, it's a problem. If you don't have resource management automated, it might as well not exist.
+We need to cultivate a culture of focus on Insight, Resource Management and Operations. If you can't answer questions about your deployed resources in less than 3 seconds, it's a problem. If you don't have resource management automated, it might as well not exist because it's not repeatable.<p>
 
 The Cloud has made our infrastructure standardized, but needs aren't uniform; in that case, customize your tools. It's easier now than it's ever been.
 
