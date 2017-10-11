@@ -194,7 +194,7 @@ As a community, let's band together and make sure that happens.
 ## Why the Fuss About Serverless?
 by [Simon Wardley](https://twitter.com/swardley)
 
-Simon regaled the crowd with a thoughtful appraisal of how we think about systems—and what this all means for serverless. It was densely packed and every slide was good, so information was kind of flying at our heads. But here are some of his key points: 
+Simon regaled the crowd with a thoughtful appraisal of how we think about systems—and what this all means for serverless. Here are some of his key points: 
 
 **Maps don’t equal Diagrams**<br>
 Maps help us better conceptualize problem spaces; we should all be making them. But what most developers call 'maps' (systems maps, anyone?), aren't actually maps.
