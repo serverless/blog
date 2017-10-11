@@ -297,8 +297,7 @@ Some of the downsides of serverfull databases include:
 - Networking concerns in the FAAS space, where cold starts can be an issue when running in VPCs
 - Connection limits and the lack of pooling due to the nature of functions spinning up and down
 
-**Serverless Databases**
-
+**Serverless Databases**<br>
 With serverless databases, you don't know how many instances are running; that is abstracted away from the developers. Some examples would include DynamoDB, Fauna, Google firebase or firestore.
 
 They typically will auto scale for you and maintenance is less of a burden.
@@ -309,7 +308,7 @@ They typically will auto scale for you and maintenance is less of a burden.
 - faster time to market. Spin up instances very quickly
 
 **Downsides:**
-- Less developer familiarity, 
+- Less developer familiarity 
 - Can be harder to query if data models aren't setup correctly
 - vendor lock-in and harder migrations to other non proprietary database engines
 
