@@ -85,7 +85,7 @@ Expedia gave us the down low on what their architecture patterns look like:
 ## Global Resiliency when going Serverless<br>
 by [Jared Short](https://twitter.com/shortjared)
 
-Jared came at us with some very practical advice. So you're serverless? Be resilient about it. You need failover, and here are some ways I've explored doing it.
+Jared came at us with some very practical advice. So you're serverless? Be resilient about it. You need failover, and here are some ways he's explored doing it.
 
 He breaks it down into active + passive and active + active. The easiest possible scenario, if your business case allows it, is read-only failover. Using AWS CloudFront, you can swap one APIG to another APIG; takes about 3 minutes to fully roll out and is completely invisible to clients.
 
