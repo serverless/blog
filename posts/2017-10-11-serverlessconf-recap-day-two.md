@@ -104,7 +104,7 @@ If you want to go multi-provider, then you will give up some ecosystem benefits 
 ## The CNCF (Cloud Native Computing Foundation) point of view on Serverless
 by [Daniel Krook](https://twitter.com/DanielKrook)
 
-notes
+The CNCF established a serverless working group 4 months ago. Their very first initiatives are to finalize [a serverless whitepaper](https://docs.google.com/document/d/1UjW8bt5O8QBgQRILJVKZJej_IuNnxl20AJu9wA8wcdI/edit#heading=h.yiaul8is1ki) and advocate a common model for event data.
 
 ## Data Layer in the Serverless World<br>
 by [Alex Debrie](https://twitter.com/alexbdebrie)
