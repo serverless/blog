@@ -98,3 +98,8 @@ As for data, how do you manage conflicting edits? There are two bad options: (1)
 These are pretty mathematically complex, but make it so that it's always possible to resolve changes. If you need advice, Jared is already pumped for [a twitter conversation](https://twitter.com/shortjared).
 
 If you want to go multi-provider, then you will give up some ecosystem benefits of staying within a single provider. But if you are going to do it, then abstract events and context early on in the call. He recommends checking out the [Event Gateway](https://serverless.com/event-gateway/) for a peek at a tool that makes multi-provider much easier.
+
+## Data Layer in the Serverless World<br>
+by [Alex Debrie](https://twitter.com/alexbdebrie)
+
+notes
