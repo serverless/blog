@@ -40,3 +40,25 @@ Hold tight. Serverless is a great wave, and it's coming. But adoption takes 10-1
 So here's where can we expect to be in 2025:
 
 
+
+**Different Serverless Patterns & Arch. At Expedia**
+by [Kuldeep Chowhan](https://twitter.com/this_is_kuldeep)
+
+The following architectural patterns are used in Expedia:
+
+* CI/CD Pipeline, managing their code builds
+* Kinesis Firehose Data Transformation - processing about 130 million events
+* Control System for AWS Infrastructure (used internally)
+  * 2500 people in org.
+  * Uses 1 big account in AWS across stages
+* Test & Learn Dashboard Aggregation
+  * A/B testing 
+* Using Lambda to scale up the Autoscaling group
+  * Spins new EC2 instances which pulls data and refreshes it.
+
+**Benefits**: Cost, Operations, Scale, Opportunity, Time to Market
+**Security**: IAM Roles, integration with Active Directory
+
+
+
+
