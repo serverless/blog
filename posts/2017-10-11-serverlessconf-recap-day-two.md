@@ -39,4 +39,4 @@ Hold tight. Serverless is a great wave, and it's coming. But adoption takes 10-1
 
 So here's where can we expect to be in 2025:
 
-<img width="500" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/2025.jpg">
+
