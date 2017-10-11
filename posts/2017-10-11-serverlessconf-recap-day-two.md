@@ -89,7 +89,7 @@ Jared came at us with some very practical advice. So you're serverless? Be resil
 
 He breaks it down into active + passive and active + active. The easiest possible scenario, if your business case allows it, is read-only failover. Using AWS CloudFront, you can swap one APIG to another APIG; takes about 3 minutes to fully roll out and is completely invisible to clients.
 
-<img width="600" src="">
+<img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/readonly.jpg">
 
 Active + active is way more interesting, but also way more difficult, and a lot of the solutions (gasp) use servers.
 
