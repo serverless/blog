@@ -53,7 +53,16 @@ So here's the adoption curve we can we expect going in to 2025:
 ## Serverless and Software Craftsmanship<br>
 by [Florian Motlik](https://twitter.com/flomotlik)
 
+Serverless can get pretty conceptually complex once you have several functions in production. So why are we doing it?
 
+Productivity, plain and simple. But what we need to remember about productivity is that it isn't only about code, it's about pushing things for the end user. Bad code doesn't help *anyone*, and firefighting isn't productive work.
+
+When your infrastructure is an extension of your code code (as it is with Serverless), that means you have to treat your infrastructure as well as your code. This responsibility falls to developers.
+
+<img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/infra-as-code.jpg">                                                                        
+We need to cultivate a culture of focus on Insight, Resource Management and Operations. If you can't answer questiosn about your deployed resources in less than 3 seconds, it's a problem. If you don't have resource management automated, it might as well not exist.
+
+The Cloud has made our infrastructure standardized, but needs aren't uniform; in that case, customize your tools.
 
 ## Different Serverless Patterns & Arch. At Expedia<br>
 by [Kuldeep Chowhan](https://twitter.com/this_is_kuldeep)
