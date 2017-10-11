@@ -101,7 +101,12 @@ These are pretty mathematically complex, but make it so that it's always possibl
 
 If you want to go multi-provider, then you will give up some ecosystem benefits of staying within a single provider. But if you are going to do it, then abstract events and context early on in the call. He recommends checking out the [Event Gateway](https://serverless.com/event-gateway/) for a peek at a tool that makes multi-provider much easier.
 
+## The CNCF (Cloud Native Computing Foundation) point of view on Serverless
+by [Daniel Krook](https://twitter.com/DanielKrook)
+
+notes
+
 ## Data Layer in the Serverless World<br>
 by [Alex Debrie](https://twitter.com/alexbdebrie)
 
-notes
+
