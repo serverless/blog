@@ -93,6 +93,8 @@ He breaks it down into active + passive and active + active. The easiest possibl
 
 Active + active is way more interesting, but also way more difficult, and a lot of the solutions (gasp) use servers.
 
-CRDT
+As for data, how do you manage conflicting edits? There are two bad options: (1) last write wins, (2) write your own painful-to-maintain resolver before giving up and crying. Or! You could try Conflict-free Replicated Data Types (CRDTs).
 
-Wishlist
+These are pretty mathematically complex, but make it so that it's always possible to resolve changes. If you need advice, Jared is already pumped for [a twitter conversation](https://twitter.com/shortjared).
+
+If you want to go multi-provider, then you will give up some ecosystem benefits of staying within a single provider. But if you are going to do it, then abstract events and context early on in the call. He recommends checking out the [Event Gateway](https://serverless.com/event-gateway/) for a peek at a tool that makes multi-provider much easier.
