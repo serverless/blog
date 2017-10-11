@@ -250,7 +250,25 @@ The Cloud has made our infrastructure standardized, but needs aren't uniform; in
 ## Global Resiliency when going Serverless
 by [Jared Short](https://twitter.com/shortjared)
 
+Jared came at us with some very practical advice. So you're serverless? Be resilient about it. You need failover, and here are some ways he's explored doing it. 
 
+He breaks down resiliency into **active + passive** and **active + active**. 
+
+**Active + passive resiliency**<br>
+The easiest possible scenario, if your business case allows it, is read-only failover. Using AWS CloudFront, you can swap one APIG to another APIG; takes about 3 minutes to fully roll out and is completely invisible to clients.
+
+<img width="600" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf+2017+recap/readonly.jpg">
+
+**Active + active resiliency**<br>
+Active + active is way more interesting, but also way more difficult, and a lot of the solutions (gasp) use servers.
+
+As for data, how do you manage conflicting edits? There are two bad options: (1) last write wins, (2) write your own painful-to-maintain resolver before giving up and crying.
+
+Or! (drumroll...) You could try Conflict-free Replicated Data Types (CRDTs).
+
+These are pretty mathematically complex, but make it so that it's always possible to resolve changes. If you need advice, Jared is already pumped for [a twitter conversation](https://twitter.com/shortjared).
+
+If you want to go multi-provider, then you will give up some ecosystem benefits of staying within a single provider. But if you are going to do it, then abstract events and context early on in the call. He recommends checking out the [Event Gateway](https://serverless.com/event-gateway/) for a peek at a tool that makes multi-provider much easier.
 
 ## The CNCF (Cloud Native Computing Foundation) point of view on Serverless
 by [Daniel Krook](https://twitter.com/DanielKrook)
