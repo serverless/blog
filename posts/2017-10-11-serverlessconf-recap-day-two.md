@@ -20,9 +20,9 @@ Except...maps imply that if you alter them, the world also fundamentally changes
 
 <img width="600" src="http://blog.gardeviance.org/2017/05/is-my-diagram-map.html">
 
-So back to our systems "map". It doesn’t have any of those characteristics. Move CRM over to the right? Nothing about the relationship between components change (as there’s no anchor). We constantly make business decisions using diagrams and not maps, and then are surprised when a gap emerges. Our diagrams aren't painting a picture of the market landscape.
+So back to our systems "map". It doesn’t have any of those characteristics. Move CRM over to the right? Nothing about the relationship between components change (as there’s no anchor). We constantly make business decisions using diagrams and not maps, and then are surprised when a gap emerges.
 
-Basically, we've been doing it wrong.
+Basically, we've been doing it wrong. Our diagrams aren't painting a picture of the market landscape.
 
 Simon's approach was to start with a User as his anchor, and draw his map trickling down from that user, on to what that user wanted and needed, then what those needs would require, and so on, until he ended up at the technology that would support those needs.
 
