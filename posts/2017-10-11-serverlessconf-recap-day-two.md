@@ -40,9 +40,9 @@ As technology grows towards the commodity end of the spectrum, more market playe
 But, when the technology merits, it’s just a case of “when, not if”. The same is certainly true for Serverless.
 
 **Adoption is what it is**<br>
-Hold tight. Serverless is a great wave, and it's coming. But adoption takes 10-15 years.
+Hold tight. Serverless is a great wave, and it's coming. But adoption of new technology usually takes 10-15 years.
 
-So here's where can we expect to be in 2025:
+So here's the adoption curve we can we expect going in to 2025:
 - Increase in efficiency
 - Rapid acceleration in speed of development
 - Explosion of higher order systems of value
