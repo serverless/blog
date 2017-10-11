@@ -50,7 +50,12 @@ So here's the adoption curve we can we expect going in to 2025:
 - No choice over adoption (if not when)
 - Non linear, > 50% of all new IT spend
 
-## Different Serverless Patterns & Arch. At Expedia
+## Serverless and Software Craftsmanship<br>
+by [Florian Motlik](https://twitter.com/flomotlik)
+
+
+
+## Different Serverless Patterns & Arch. At Expedia<br>
 by [Kuldeep Chowhan](https://twitter.com/this_is_kuldeep)
 
 The following architectural patterns are used in Expedia:
