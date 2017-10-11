@@ -85,3 +85,5 @@ Expedia gave us the down low on what their architecture patterns look like:
 ## Global Resiliency when going Serverless<br>
 by [Jared Short](https://twitter.com/shortjared)
 
+notes
+
