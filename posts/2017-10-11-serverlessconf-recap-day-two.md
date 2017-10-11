@@ -93,7 +93,9 @@ He breaks it down into active + passive and active + active. The easiest possibl
 
 Active + active is way more interesting, but also way more difficult, and a lot of the solutions (gasp) use servers.
 
-As for data, how do you manage conflicting edits? There are two bad options: (1) last write wins, (2) write your own painful-to-maintain resolver before giving up and crying. Or! You could try Conflict-free Replicated Data Types (CRDTs).
+As for data, how do you manage conflicting edits? There are two bad options: (1) last write wins, (2) write your own painful-to-maintain resolver before giving up and crying.
+
+Or! (drumroll...) You could try Conflict-free Replicated Data Types (CRDTs).
 
 These are pretty mathematically complex, but make it so that it's always possible to resolve changes. If you need advice, Jared is already pumped for [a twitter conversation](https://twitter.com/shortjared).
 
