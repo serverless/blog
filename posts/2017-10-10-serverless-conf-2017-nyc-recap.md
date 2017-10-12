@@ -149,7 +149,7 @@ Linda proposes two possibilities:
 1. containers
 2. multi-provider frameworks
 
-Both totally work, and it all depends on your preference. Linda personally prefers multi-provider frameworks and spent most of her talk focused on the Serverless Framework specifically.
+Both totally work, and it all depends on your preference. Linda personally prefers multi-provider frameworks and spent most of her talk focused on the [Serverless Framework](https://serverless.com/framework/) specifically.
 
 Her argument was pretty straightforward: look, even if you know AWS really well, that knowledge doesn't transfer. GUIs highly vary and can be hard to navigate. If you don't use a multi-provider framework, you're essentially locking yourself in; there's too much friction to use that cool new Azure feature when you don't know Azure well.
 
@@ -165,9 +165,7 @@ by Tim Wagner, Yochay Kiriaty & Peter Sbarski
 
 Tim spoke about the need for design patterns for serverless and did a walkthrough of how to implement a map-reduce pattern with serverless. Then, he announced some exciting news—they're releasing a book!
 
-It's called Serverless Design Patterns, and it's slated for release in 2018. *Yes* to more learning resources, best practices and standards.
-
-The book will be vendor agnostic, and they welcome feedback on their curret list of patterns: [serverlessdesignpatterns.com](http://serverlessdesignpatterns.com)
+It's called Serverless Design Patterns, and it's slated for release in 2018. *Yes* to more vendor-agnostic learning resources, best practices and standards.
 
 ## Event-driven Architectures: are we ready for the paradigm shift?
 
