@@ -1,13 +1,13 @@
 ---
-title: The Event Gateway - how we kept big ideas pragmatic
-description: How do you design a pragmatic tool that also tries to break new ground? We found ourselves towing that line when we designed the Event Gateway.
+title: The Event Gateway - designing a tool that breaks new ground
+description: How do you design a tool that needs to break new ground? We found ourselves towing a line between passion and pragmatism when we built the Event Gateway.
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-thumbnail.png
 authors:
   - MaciejWinnicki
 ---
 
-[The Event Gateway](https://serverless.com/blog/introducing-serverless-event-gateway/) is our most recent announcement—and honestly, building it was as much a passion project as it was motivated by an industry need.
+[The Event Gateway](https://serverless.com/blog/introducing-serverless-event-gateway/) is our most recent announcement—and honestly, building it was as much a project born out of passion for serverless technology as it was a tool motivated by an industry need.
 
 Serverless development is still fresh, lacking in best practices and tooling. But people use it because the payoffs are worth the pain.
 
