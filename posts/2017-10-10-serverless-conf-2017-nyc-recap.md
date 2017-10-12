@@ -277,7 +277,7 @@ The CNCF established a serverless working group 4 months ago. Their very first i
 
 They're also collecting and publishing community resources—e.g. a matrix of existing serverless providers and tools—and are moving their next focus into examples, patterns and possibly collaborating on packaging specifications.
 
-Even if you're not a CNCF member, you can still attend meetings. So get involved and stay updated! Their [GitHub repo](github.com/cncf/wg-serverless) is here.
+Even if you're not a CNCF member, you can still attend meetings. So get involved and stay updated! Their [GitHub repo](https://github.com/cncf/wg-serverless) is here.
 
 ## Data Layer in the Serverless World
 by [Alex Debrie](https://twitter.com/alexbdebrie)
