@@ -1,6 +1,7 @@
 ---
 title: The Event Gateway - designing a tool that breaks new ground
 description: How do you design a tool that needs to break new ground? We found ourselves towing a line between passion and pragmatism when we built the Event Gateway.
+date: 2017-10-13
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-thumbnail.png
 authors:
@@ -60,7 +61,7 @@ Purely for demo/trial purposes, the Event Gateway can be started with a special 
 
 Another choice that highly influenced our overall architecture was making the Event Gateway an [eventually consistent](https://en.wikipedia.org/wiki/Eventual_consistency) system.
 
-When the user registers a function or subscribes a function to some event, the configuration is saved in the backing key-value store in a synchronous way. Then, the data is spread across all instances asynchronously, with an event-driven approach. 
+When the user registers a function or subscribes a function to some event, the configuration is saved in the backing key-value store in a synchronous way. Then, the data is spread across all instances asynchronously, with an event-driven approach.
 
 Thanks to libkiv, all key-value stores that we support have an ability to watch for changes. Every instance fetches all configuration data during startup, and then watches for changes happening during the instance runtime. We use that to build the internal cache that our routing logic depends on.
 
