@@ -1,6 +1,6 @@
 ---
 title: How (and why) we designed the Event Gateway
-description: How do you design a tool that treaded the intersection of 'exciting new ground' and 'real world practicality'? This was the approach we took for designing the Event Gateway.
+description: How do you design a tool that tows the line between 'exciting new ground' and 'real world practicality'? This was the approach we took for designing the Event Gateway.
 date: 2017-10-13
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-thumbnail.png
