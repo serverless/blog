@@ -1,6 +1,6 @@
 ---
-title: The Event Gateway - designing a tool that breaks new ground
-description: How do you design a tool that needs to break new ground? We found ourselves towing a line between passion and pragmatism when we built the Event Gateway.
+title: How (and why) we designed the Event Gateway
+description: How do you design a tool that treaded the intersection of 'exciting new ground' and 'real world practicality'? This was the approach we took for designing the Event Gateway.
 date: 2017-10-13
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-thumbnail.png
@@ -12,7 +12,7 @@ authors:
 
 Serverless development is still fresh, lacking in best practices and tooling. But people use it because the payoffs are worth the pain.
 
-Our job at Serverless.com is to remove that pain: fight for standardization, think from the top-down about what a serverless application should look like, make its development seamless. The biggest sticking point we see here is that serverless development is fundamentally event-driven development. Every function you deploy to your FaaS provider will remain idle until woken up by an event.
+Our job at [Serverless.com](https://serverless.com/) is to remove that pain: fight for standardization, think from the top-down about what a serverless application should look like, make its development seamless. The biggest sticking point we see here is that serverless development is fundamentally event-driven development. Every function you deploy to your FaaS provider will remain idle until woken up by an event.
 
 No one likes to hear that. Event-driven is a new paradigm, and new paradigms mean change. But to move serverless forward, we as a community have to embrace event-driven design. Our job at Serverless.com is to make it painless. As we can, at least.
 
