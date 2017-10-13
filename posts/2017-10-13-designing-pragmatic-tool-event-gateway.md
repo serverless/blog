@@ -1,6 +1,6 @@
 ---
 title: How (and why) we designed the Event Gateway
-description: How do you design a tool that tows the line between 'exciting new ground' and 'real world practicality'? This was the approach we took for designing the Event Gateway.
+description: How do you design a tool that tows the line between 'exciting new ground' and 'real world practicality'? We asked a lot of those questions with the Event Gateway.
 date: 2017-10-13
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-thumbnail.png
@@ -8,7 +8,7 @@ authors:
   - MaciejWinnicki
 ---
 
-[The Event Gateway](https://serverless.com/blog/introducing-serverless-event-gateway/) is our most recent announcement—and honestly, it's a project born out of passion for the serverless movement as much as it is a practical tool motivated by an industry need.
+[The Event Gateway](https://serverless.com/blog/introducing-serverless-event-gateway/) is our most recent announcement. For us, it's a project born out of passion for the serverless movement as much as it is a practical tool motivated by an industry need.
 
 Serverless development is still fresh, lacking in best practices and tooling. But people use it because the payoffs are worth the pain.
 
