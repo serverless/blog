@@ -55,15 +55,13 @@ Libkv is an abstraction layer over popular key-value stores that provides a simp
 
 Purely for demo/trial purposes, the Event Gateway can be started with a special flag which starts an embedded etcd instance. This allows users to test drive the system without starting up a key-value store cluster first.
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/event-gateway-blog.jpg"/>
-
 ## Eventual Consistency
 
 Another choice that highly influenced our overall architecture was making the Event Gateway an [eventually consistent](https://en.wikipedia.org/wiki/Eventual_consistency) system.
 
 When the user registers a function or subscribes a function to some event, the configuration is saved in the backing key-value store in a synchronous way. Then, the data is spread across all instances asynchronously, with an event-driven approach.
 
-Thanks to libkiv, all key-value stores that we support have an ability to watch for changes. Every instance fetches all configuration data during startup, and then watches for changes happening during the instance runtime. We use that to build the internal cache that our routing logic depends on.
+Thanks to libkv, all key-value stores that we support have an ability to watch for changes. Every instance fetches all configuration data during startup, and then watches for changes happening during the instance runtime. We use that to build the internal cache that our routing logic depends on.
 
 It means that when the Event Gateway needs to decide which function to call for a specific event, it doesn't need to do any remote calls to the backing store. All configuration data used by routing logic is stored locally.
 
