@@ -8,7 +8,7 @@ authors:
   - MaciejWinnicki
 ---
 
-[The Event Gateway](https://serverless.com/blog/introducing-serverless-event-gateway/) is our most recent announcement. For us, it's a project born out of passion for the serverless movement as much as it is a practical tool motivated by an industry need.
+[The Event Gateway](https://serverless.com/blog/introducing-serverless-event-gateway/) is our most recent announcement—and honestly, it's a project born out of passion for the serverless movement as much as it is a practical tool motivated by an industry need.
 
 Serverless development is still fresh, lacking in best practices and tooling. But people use it because the payoffs are worth the pain.
 
