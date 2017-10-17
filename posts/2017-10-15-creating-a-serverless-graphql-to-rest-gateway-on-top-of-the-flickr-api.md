@@ -19,8 +19,6 @@ Let's do this.
 
 # Background
 
-First, a little background on the solution we'll be digging into.
-
 As a web developer, I relish the challenge of building my personal website from scratch. It's a great opportunity to test-drive new technologies and spend way too much time on creative solutions to weird problems.
 
 My most recent challenge? Adding a gallery to showcase my photography. I had some strict requirements to work around:
@@ -36,7 +34,7 @@ How could I begin to accomplish all of that without having to write a mountain o
 
 That just left me with one "little" problem: having to use Flickr's horribly outdated REST API.
 
-Let's take a quick look at what that process is like.
+So you fully feel my pain, here's a quick look at what that process is like.
 
 # The Old Way - aka can we please not
 
