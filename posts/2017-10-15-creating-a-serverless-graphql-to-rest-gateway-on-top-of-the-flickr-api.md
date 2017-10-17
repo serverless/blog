@@ -21,16 +21,9 @@ Let's do this.
 
 As a web developer, I relish the challenge of building my personal website from scratch. It's a great opportunity to spend way too much time on creative solutions to weird problems.
 
-My most recent challenge? Adding a gallery to showcase my photography. I had some strict requirements to work around:
+My most recent challenge? Adding a gallery to showcase my photography. How could I begin to accomplish this without having to write a mountain of code? I went with Developer Secret Strategy #5: Use The Thing That Guy Already Built&trade;!
 
-- My [Netlify](https://www.netlify.com/) hosted site had no easy way to add/manage photos.
-- I didn't want to upload my photos along with the rest of the site. That would require me to write scripts to generate different image sizes for mobile.
-- The gallery should display additional information such as titles, descriptions, EXIF metadata, geolocation, tags, comments, etc.
-- Uploading and managing photos should fit into my existing photo editing workflow.
-- The image hosting solution needed to be dirt cheap, preferably free.
-- Most importantly: the site was designed to be a Progressive Web App, so however I retrieved this data, it had to be done in as few network requests as possible.
-
-How could I begin to accomplish this without having to write a mountain of code? I went with Developer Secret Strategy #5: Use The Thing That Guy Already Built&trade;! In this case, Flickr had most of what I needed: free, support for various sizes, public API and Adobe Lightroom integration for single-button-press uploads.
+In this case, Flickr had most of what I needed: free, support for various sizes, public API and Adobe Lightroom integration for single-button-press uploads.
 
 That just left me with one "little" problem: Flickr's horribly outdated REST API.
 
