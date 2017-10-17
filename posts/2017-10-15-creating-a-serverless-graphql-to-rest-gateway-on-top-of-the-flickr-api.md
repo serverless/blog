@@ -48,7 +48,7 @@ Here's the *bare* minimum:
 
 I, however, would need to make even more: a call to `flickr.photosets.getInfo` to get info about the album (title, description, number of views, comments...), a call *per photo* to `flickr.photos.getInfo` to get its title, caption, views, comments & tags, and another call per photo to `flickr.photos.getExif` to get the EXIF metadata, a call to `flickr.photos.getSizes` to build out a response `img` element for each photo in the gallery...
 
-Oy. For a 100 photo album, I'd need 303 network requests. Can I get a collective 'nope'?
+For a 100 photo album, I'd need 303 network requests. Can I get a collective 'nope'?
 
 And it got worse. The response data was a mess to handle. `photos` count was represented as a `string`, `views` was a `number`, the `title` and `description` were nested in an unnecessary object under a `_content` key, and the dates were in a UNIX timestamp format wrapped in a `string`.
 
