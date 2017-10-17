@@ -44,7 +44,7 @@ Here's the *bare* minimum:
 1. Get the `userId` of the Flickr User whose 'photosets' I wanted to grab Photos from
 2. Use `flickr.photosets.getList` with our `userId` to get a list of `photosetId`s for that user
 3. Use `flickr.photosets.getPhotos` using those two ids to get a list of `photoId`s for that Album
-4. Use `flickr.photos.getSizes` for each of those `photoId`s for a list of URLs linking to automatically generated images for those photos (or use the `id`, `secret` and `server` fields from the previous response to construct the URLs manually.)
+4. Use `flickr.photos.getSizes` for each of those `photoId`s for a list of URLs linking to automatically generated images for those photos (or use the `id`, `secret` and `server` fields from the previous response to construct the URLs manually)
 
 I, however, would need to make even more: a call to `flickr.photosets.getInfo` to get info about the album (title, description, number of views, comments...), a call *per photo* to `flickr.photos.getInfo` to get its title, caption, views, comments & tags, and another call per photo to `flickr.photos.getExif` to get the EXIF metadata, a call to `flickr.photos.getSizes` to build out a response `img` element for each photo in the gallery...
 
@@ -54,9 +54,11 @@ And it got worse. The response data was a mess to handle. `photos` count was rep
 
 I could do so much better.
 
-# Building a Better Solution with GraphQL
+# The New Way - GraphQL
 
-I'd been playing around with [Apollo](http://dev.apollodata.com/) a lot for GraphQL APIs, and one of its standout features was that it did [automatic request caching](https://dev-blog.apollodata.com/the-concepts-of-graphql-bc68bd819be3). Since the Flickr API didn't have a GraphQL endpoint, I had to create an API Gateway on top of it in order to make GraphQL queries to their API.
+I'd been playing around with [Apollo](http://dev.apollodata.com/) a lot for GraphQL APIs, and one of its standout features was that it did [automatic request caching](https://dev-blog.apollodata.com/the-concepts-of-graphql-bc68bd819be3).
+
+Since the Flickr API didn't have a GraphQL endpoint, I had to create an API Gateway on top of it in order to make GraphQL queries to their API.
 
 ## Why GraphQL?
 
@@ -94,30 +96,26 @@ query User {
   }
 }
 ```
-If you don't believe me, try out that query in the finished product here: https://flickr.saeris.io/graphiql
+Try it out yourself here: https://flickr.saeris.io/graphiql
 
-Not only did I grab all the data I needed to build out the UI in one request, I also got only the specific fields I asked for in exactly the same shape I requested it in. AND I was able to apply some powerful filtering techniques to boot. Suck it, REST!
+Not only did I grab all the data I needed to build out the UI in one request, I also got only the specific fields I asked for in exactly the same shape I requested it in. AND I was able to apply some powerful filtering techniques to boot.
 
-I won't go into detail about what [GraphQL](http://graphql.org/) is; there have been numerous [talks](https://www.youtube.com/watch?v=wPPFhcqGcvk), [blog posts](https://medium.freecodecamp.org/so-whats-this-graphql-thing-i-keep-hearing-about-baf4d36c20cf), and [tutorials](https://www.howtographql.com/) in the past year already.
+Suck it, REST!
 
-But I do want to address one key point of confusion: GraphQL is not concerned with sourcing your data. It's not an ORM. It's not a query language for a database. It's merely a transport layer that sits in your server behind a single endpoint and takes requests from your clients. You supply GraphQL with a Schema describing the types of data your API can return, and it's through resolver functions that the data is actually retrieved.
+## Building the GraphQL server
 
-You can use resolvers to interface with an ORM library, send queries to your database, or even make HTTP requests to other REST APIs. This solution will use the latter.
+We'll need:
 
-## Building the server
+- An endpoint request handler. I'll be using the [Hapi Node.js server framework](https://hapijs.com/) with [Apollo-Server-Hapi plugin](https://github.com/apollographql/apollo-server#hapi).
+- A GraphQL Schema of queries mapped to Type definitions that describe our different data structures. I'm using the [graphql.js reference implementation](https://github.com/graphql/graphql-js) to build these out in JavaScript.
+- A REST request handler abstraction and method handler functions to programmatically build requests.
+- Resolver functions. I'll need to transform the results from the method handlers into the required Type system shape.
 
-Okay! So what do we need to build out this server? Let's break it down into a few parts:
+## Creating a GraphQL endpoint
 
-- An endpoint request handler. In this case, I'll be using the [Hapi Node.js server framework](https://hapijs.com/) along with the [Apollo-Server-Hapi plugin](https://github.com/apollographql/apollo-server#hapi).
-- A GraphQL Schema consisting of queries mapped to Type definitions describing our different data structures. I'll use the [graphql.js reference implementation](https://github.com/graphql/graphql-js) to build these out in JavaScript. (You can optionally write your Schema in raw GraphQL and use [graphql-tools](https://github.com/apollographql/graphql-tools) instead, but I won't cover how to do that here.)
-- A REST request handler abstraction and method handler functions to programmatically build the requests.
-- Resolver functions which I will use to transform the results from the method handlers into the shape I need it in for the Type system.
+### Request Handler
 
-### Creating a GraphQL endpoint
-
-First thing on our list is setting up a request handler.
-
-While Apollo has a [solution specifically for AWS Lambda](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-lambda), we're going to take a slightly more complicated approach and use Hapi.js instead. Reason being, it'll let us to do custom logging, monitoring and caching (should we ever need to implement those).
+Apollo does have a [solution specifically for AWS Lambda](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-lambda). But we'll be using Hapi.js instead for its custom logging, monitoring and caching.
 
 **note:** the setup outlined below was derived from [this article](http://www.carbonatethis.com/hosting-a-serverless-hapi-js-api-with-aws-lambda/).
 
