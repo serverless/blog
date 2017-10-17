@@ -159,9 +159,9 @@ Pretty basic setup here, except for the handler path being set to `"{proxy+}"`, 
 ```javascript
 import server from "./server"
 
-exports.handler = (event, context, callback) => { // eslint-disable-line
+exports.handler = (event, context, callback) => {
   const { path, queryStringParameters: params, httpMethod: method, body: payload, headers } = event
-  server.makeReady((err) => { //eslint-disable-line
+  server.makeReady(err => {
     if (err) throw err
 
     let url = path
@@ -170,10 +170,10 @@ exports.handler = (event, context, callback) => { // eslint-disable-line
       if (qs.length > 0) url = `${url}?${qs.join(`&`)}`
     }
 
-    server.inject({ method, url, payload, headers, validate: false }, ({ statusCode, headers, result: body }) => { // eslint-disable-line
+    server.inject({ method, url, payload, headers, validate: false }, ({ statusCode, headers, result: body }) => {
       delete headers[`content-encoding`]
       delete headers[`transfer-encoding`]
-      callback(null, { statusCode, headers, body }) // eslint-disable-line
+      callback(null, { statusCode, headers, body })
     })
   })
 }
@@ -654,9 +654,14 @@ Let's break down the main connector class and an example method handler:
 `flickr.js`
 ```javascript
 import "isomorphic-fetch"
-import { invariant, missingArgument, isString } from "@/utilities"
+import { isString } from "lodash"
+import { invariant, missingArgument } from "@/utilities"
 
-const snake = str => str.trim().split(``).map(char => (/[A-Z]/.test(char) ? `_${char.toLowerCase()}` : char)).join(``)
+const snake = str => str
+  .trim()
+  .split(``)
+  .map(char => (/[A-Z]/.test(char) ? `_${char.toLowerCase()}` : char))
+  .join(``)
 
 export class Flickr {
   constructor(apiKey) {
@@ -668,19 +673,21 @@ export class Flickr {
 
   endpoint = `https://api.flickr.com/services/rest/`
 
-  fetchResource = async(method = ``, args = {}, options = {}, requiresAuth = false) => {
+  fetchResource = async (method = ``, args = {}, options = {}, requiresAuth = false) => {
     try {
       invariant(isString(method), missingArgument({ method }))
-      const required = Object.entries(args)
-        .map(([key, value]) => {
-          invariant(isString(value), missingArgument({ [snake(`${key}`)]: key }))
-          return `&${snake(`${key}`)}=${value}`
-        })
-        .join(``) || ``
+      const required =
+        Object.entries(args)
+          .map(([key, value]) => {
+            invariant(isString(value), missingArgument({ [snake(`${key}`)]: key }))
+            return `&${snake(`${key}`)}=${value}`
+          })
+          .join(``) || ``
 
-      const optional = Object.entries(options)
-        .map(([key, value]) => (!!value && isString(value) ? `&${snake(`${key}`)}=${value}` : ``))
-        .join(``) || ``
+      const optional =
+        Object.entries(options)
+          .map(([key, value]) => (value ? `&${snake(`${key}`)}=${value}` : ``))
+          .join(``) || ``
 
       const data = await this.loader.load(`${method}${required}${optional}`)
 
@@ -696,9 +703,9 @@ export class Flickr {
 
   fetch = urls =>
     Promise.all(
-      urls.map(url =>
-        fetch(`${this.endpoint}?method=${url}&api_key=${this.apiKey}&format=json&nojsoncallback=1`)
-          .then(res => res.json()) //eslint-disable-line
+      urls.map(
+        url => fetch(`${this.endpoint}?method=${url}&api_key=${this.apiKey}&format=json&nojsoncallback=1`)
+          .then(res => res.json())
       )
     )
 }
@@ -719,18 +726,16 @@ The default export will be a singleton instance of the connector, which the meth
 ```javascript
 import Flickr from "@/flickr"
 
-async function getPhotos(
+export default function getPhotos(
   { flickr = Flickr, photosetId = ``, userId = `` } = {},
   { privacyFilter = 0, media = `all`, extras = ``, page = 1, perPage = 500 } = {}
 ) {
-  return await flickr.fetchResource(
+  return flickr.fetchResource(
     `flickr.photosets.getPhotos`,
     { photosetId, userId },
     { privacyFilter, media, extras, page, perPage }
   )
 }
-
-export default getPhotos
 ```
 Method handlers are also quite simple. Each is an async function with up to two hash maps for required and optional arguments.
 
@@ -856,10 +861,11 @@ I think there's a lot of room for improvement in these utilities, but let's take
 
 `createFilter.js`
 ```javascript
-import { invariant, missingArgument, isObject } from "@/utilities"
+import { isObject } from "lodash"
+import { invariant, missingArgument } from "@/utilities"
 
-export function createFilters(type) {
-  invariant(isObject(type, true), missingArgument({ type }, `object`))
+export function createFilter(type) {
+  invariant(isObject(type), missingArgument({ type }, `object`))
   return new GqlInput({
     name: `${type._typeConfig.name.toLowerCase()}Filter`,
     fields: () => Object.entries(type._typeConfig.fields(true))
@@ -871,7 +877,7 @@ export function createFilters(type) {
   })
 }
 ```
-Here we have a factory which will generate a new GraphQL Input Object for us from a given type definition. It will iterate over the fields in that type definition, searching for fields with a `filter` property set on them. For each one it finds, it will create a hash of the field names and filter values which the returned input object will use as it's fields property. 
+Here we have a factory which will generate a new GraphQL Input Object for us from a given type definition. It will iterate over the fields in that type definition, searching for fields with a `filter` property set on them. For each one it finds, it will create a hash of the field names and filter values which the returned input object will use as it's fields property.
 
 This will allow us to create query arguments such as the following:
 
@@ -880,7 +886,7 @@ images(filter: { size: [Small, Medium, Large] }) {
   size
 }
 ```
-This will filter a list of Image results to only include images with a `size` value of either `Small`, `Medium`, or `Large`. 
+This will filter a list of Image results to only include images with a `size` value of either `Small`, `Medium`, or `Large`.
 
 Because this particular filter's field has an Enum value, the only possible inputs have been pre-defined and cannot be misspelled if we're using graphiql or a linting plugin such as [`eslint-plugin-graphql`](https://github.com/apollographql/eslint-plugin-graphql). We could also enter a single value without brackets as well. Arrays will always be inclusive.
 
@@ -888,7 +894,8 @@ You can also apply as many filters as you want. Each field you supply a value fo
 
 `createOrder.js`
 ```javascript
-import { invariant, missingArgument, isObject } from "@/utilities"
+import { isObject } from "lodash"
+import { invariant, missingArgument } from "@/utilities"
 
 const Sort = new GqlEnum({
   name: `Sort`,
@@ -896,7 +903,7 @@ const Sort = new GqlEnum({
 })
 
 export function createOrder(type) {
-  invariant(isObject(type, true), missingArgument({ type }, `object`))
+  invariant(isObject(type), missingArgument({ type }, `object`))
   const FieldsEnum = new GqlEnum({
     name: `${type._typeConfig.name.toLowerCase()}OrderByFields`,
     values: Object.entries(type._typeConfig.fields(true))
@@ -967,18 +974,19 @@ This will filter the list of returned photos to those with a view count greater 
 
 `applyFilters.js`
 ```javascript
-import { invariant, missingArgument, isBoolean, isNumber, isString, isArray, isObject, isDate } from "@/utilities"
+import { isBoolean, isNumber, isString, isArray, isObject, isDate } from "lodash"
+import { invariant, missingArgument } from "@/utilities"
 
-export function applyFilters(results = [], args = {}) {
-  invariant(isArray(results, true), missingArgument({ results }, `array`))
-  invariant(isObject(args, true), missingArgument({ args }, `object`))
+export function applyFilters(results, args) {
+  invariant(isArray(results), missingArgument({ results }, `array`))
+  invariant(isObject(args), missingArgument({ args }, `object`))
+  let filtered = results
 
   const withinRange = (rule, res, date = false) => {
     const value = date ? rule?.date?.getTime() : rule?.value
     const min = date ? rule?.startDate?.getTime() : rule?.min
     const max = date ? rule?.endDate?.getTime() : rule?.max
     const { operator } = rule
-    info(`Evaluation if results is within range:`, rule, res)
     if ((!!value && isNumber(value)) && (!!operator && isString(operator))) {
       switch (operator) {
         case `gte`: return res >= value
@@ -991,21 +999,21 @@ export function applyFilters(results = [], args = {}) {
     if ((!!min && isNumber(min)) && (!!max && isNumber(max))) return res >= min && res <= max
   }
 
-  if (!!args.filter) {
+  if (args?.filter) {
     for (const [field, rule] of Object.entries(args.filter)) {
-      results = results.filter(
-        res => isArray(rule)
+      filtered = results.filter(
+        res => (isArray(rule)
           ? rule.includes(res[field])
           : isString(rule) || isBoolean(rule)
             ? res[field] === rule
-            : withinRange(rule, res[field], isDate(rule))
+            : withinRange(rule, res[field], isDate(rule)))
       )
     }
   }
 
-  if (!!args.orderBy) {
+  if (args?.orderBy) {
     const { field, sort } = args.orderBy
-    results.sort((a, b) => {
+    filtered.sort((a, b) => {
       if (isNumber(a[field] && isNumber(b[field]))) return a[field] - b[field]
 
       if (isDate(a[field]) && isDate(b[field])) return a[field].getTime() - b[field].getTime()
@@ -1015,6 +1023,8 @@ export function applyFilters(results = [], args = {}) {
         const fieldB = b[field].toUpperCase()
         return fieldA < fieldB ? -1 : fieldA > fieldB ? 1 : 0
       }
+
+      return 0
     })
     if (sort === `desc`) results.reverse()
   }
@@ -1024,15 +1034,16 @@ export function applyFilters(results = [], args = {}) {
 ```
 Here is where all the magic happens!
 
-In this function we'll parse all of the arguments to apply our filters to the results list, then sort the results by the specified field in the orderBy argument. Filter will behave differently depending on the type of the rule that was passed. 
+In this function we'll parse all of the arguments to apply our filters to the results list, then sort the results by the specified field in the orderBy argument. Filter will behave differently depending on the type of the rule that was passed.
 
-Currently Filter does not support filtering by type definition, only basic scalars and either `Range` or `DateRange`. OrderBy will also behave slightly differently depending on the field type being sorted. It only works on numbers, strings, and dates. 
+Currently Filter does not support filtering by type definition, only basic scalars and either `Range` or `DateRange`. OrderBy will also behave slightly differently depending on the field type being sorted. It only works on numbers, strings, and dates.
 
 Nothing too fancy is going on here, so it should be pretty straightforward:
 
 `pagination.js`
 ```javascript
-import { invariant, missingArgument, isNumber } from "@/utilities"
+import { isNumber } from "lodash"
+import { invariant, missingArgument } from "@/utilities"
 
 export function pagination({ first = 0, last = 0, count = 0, offset = 0, total = 0 } = {}) {
   invariant(isNumber(first) || isNumber(last) || isNumber(count), `Please set either 'first', 'last', or 'count'.`)
