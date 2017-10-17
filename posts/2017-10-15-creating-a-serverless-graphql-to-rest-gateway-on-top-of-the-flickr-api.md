@@ -116,9 +116,9 @@ This, at least, was my original approach to building the gallery UI. While it wo
 
 I could do better than that. I could replace this clunky setup with something more elegant!
 
-# Building a Better Solution
+# Building a Better Solution with GraphQL
 
-I'd been playing around with [Apollo](http://dev.apollodata.com/) a lot for GraphQL APIs, and one of its standout features was that it did [automatic request caching](https://dev-blog.apollodata.com/the-concepts-of-graphql-bc68bd819be3). Since the Flickr API didn't have a GraphQL endpoint, I to had to create an API Gateway on top of it in order to make GraphQL queries to their API.
+I'd been playing around with [Apollo](http://dev.apollodata.com/) a lot for GraphQL APIs, and one of its standout features was that it did [automatic request caching](https://dev-blog.apollodata.com/the-concepts-of-graphql-bc68bd819be3). Since the Flickr API didn't have a GraphQL endpoint, I had to create an API Gateway on top of it in order to make GraphQL queries to their API.
 
 ## Why GraphQL?
 
@@ -160,7 +160,7 @@ If you don't believe me, try out that query in the finished product here: https:
 
 Not only did I grab all the data I needed to build out the UI in one request, I also got only the specific fields I asked for in exactly the same shape I requested it in. AND I was able to apply some powerful filtering techniques to boot. Suck it, REST!
 
-I won't go into detail aobut what [GraphQL](http://graphql.org/) is; there have been numerous [talks](https://www.youtube.com/watch?v=wPPFhcqGcvk), [blog posts](https://medium.freecodecamp.org/so-whats-this-graphql-thing-i-keep-hearing-about-baf4d36c20cf), and [tutorials](https://www.howtographql.com/) in the past year already.
+I won't go into detail about what [GraphQL](http://graphql.org/) is; there have been numerous [talks](https://www.youtube.com/watch?v=wPPFhcqGcvk), [blog posts](https://medium.freecodecamp.org/so-whats-this-graphql-thing-i-keep-hearing-about-baf4d36c20cf), and [tutorials](https://www.howtographql.com/) in the past year already.
 
 But I do want to address one key point of confusion: GraphQL is not concerned with sourcing your data. It's not an ORM. It's not a query language for a database. It's merely a transport layer that sits in your server behind a single endpoint and takes requests from your clients. You supply GraphQL with a Schema describing the types of data your API can return, and it's through resolver functions that the data is actually retrieved.
 
@@ -269,7 +269,7 @@ In `server.js` we're defining a custom method, `makeReady`, on our new Hapi serv
 
 We're separating the two pieces this way because, if we called `server.register()` on every invocation of our Serverless event handler, Hapi would throw an error complaining that we've already registered the given plugins. Even though our function only executes on invocation, on first invocation the `server` newly-created server instance is kept 'frozen' until either more requests come in and the instance is 'thawed', or a period of time passes with no requests and it is destroyed.
 
-Rule of thumb: if your server creates singletons that are expected to live for the duration of the server's uptime, avoid accidentally creating multiple instances of those singletons as a side effect of your event handler.
+> Rule of thumb: if your server creates singletons that are expected to live for the duration of the server's uptime, avoid accidentally creating multiple instances of those singletons as a side effect of your event handler.
 
 (**note:** this also means you can implement an in-memory cache for each of your functions, which may be useful for fulfilling certain common requests for non-sensitive data. One good use case for this is to hydrate an in-memory cache on first invocation. This does come with the trade-off that your function will take longer to spin up from a cold start and incur a higher memory usage, so proceed with caution.)
 
@@ -397,15 +397,15 @@ module.exports = {
 ```
 There are three important things to note here.
 
-One: I specifically include the webpack config for this project highlight webpack's [provide plugin](https://webpack.js.org/plugins/provide-plugin/). It allows you to call exports from node modules without having to explicitly import them in the files in which you use them.
+1. I specifically include the webpack config for this project highlight webpack's [provide plugin](https://webpack.js.org/plugins/provide-plugin/). It allows you to call exports from node modules without having to explicitly import them in the files in which you use them.
 
 This plugin saves me from having to remember to import frequently-used things such as the built-in GraphQL scalar types, which we'll be using often throughout this project. So, **if you are confused why you're seeing things like `GqlString` instead of `GraphQLString`, this is why.**
 
-Two: we're using `babel-plugin-transform-optional-chaining`, which adds support for the TC39 syntax proposal: [Optional Chaining](https://github.com/tc39/proposal-optional-chaining), aka the Existential Operator. You'll see this in the code base in the following format: `obj?.property` which is equivalent to `!!object.property ? object.property : undefined`.
+2. We're using `babel-plugin-transform-optional-chaining`, which adds support for the TC39 syntax proposal: [Optional Chaining](https://github.com/tc39/proposal-optional-chaining), aka the Existential Operator. You'll see this in the code base in the following format: `obj?.property` which is equivalent to `!!object.property ? object.property : undefined`.
 
 This syntactic sugar will test for the existence of a property or method before invocation, evaluating to undefined when a property or method does not exist. Using this syntax requires using [babel 7](https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7), so keep that in mind before attempting to use the plugin in your own projects. It can be tricky to set up as babel 7 is still in beta and the syntax itself is a stage 1 proposal at the time of writing.
 
-Three: we're using a resolve alias, specifying `@` as the project root directory. This lets us do project root relative imports, such as `import { invariant } from "@/utilities"`. I really like the way this webpack helps with code organization and managing relative imports across refactors.
+3. We're using a resolve alias, specifying `@` as the project root directory. This lets us do project root relative imports, such as `import { invariant } from "@/utilities"`. I really like the way this webpack helps with code organization and managing relative imports across refactors.
 
 Now let's take a look at our main GraphQL specific files used to create our endpoint: `api.js`, `graphiql.js`, and `schema.js`:
 
@@ -488,7 +488,7 @@ Not a whole lot out of the ordinary here for configuring our graphiql IDE endpoi
 - If you're not using a custom domain for your function, you'll need to change your `endpointURL` to add the stage prefix on deployment, otherwise graphiql won't be able to find your API when running on AWS. This can be confusing because it will run just fine locally. Had me scratching my head over this one for a little while!
 - If you do want to use a custom domain, I used [this Serverless article](https://serverless.com/blog/serverless-api-gateway-domain/?rd=true) and [this part of the AWS documentation](http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html) to help get mine configured. This will really depend on your domain registrar and configuration, so I'm not going to attempt to cover that rabbit hole here. Good luck!
 
-`scehma.js`
+`schema.js`
 ```javascript
 import Types from './types'
 
