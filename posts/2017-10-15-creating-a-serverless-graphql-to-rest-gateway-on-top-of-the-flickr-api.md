@@ -21,9 +21,9 @@ Let's do this.
 
 First, a little background on the solution we'll be digging into.
 
-If you're a web developer like me, you probably relish the challenge of building your personal website from scratch. It's a great opportunity to test-drive new technologies and explore creative solutions to complicated problems.
+As a web developer, I relish the challenge of building my personal website from scratch. It's a great opportunity to test-drive new technologies and spend way too much time on creative solutions to weird problems.
 
-That recent challenge for me? Adding a gallery to showcase my photography. It was way more complicated than it sounds; I had some strict requirements for the feature that presented some pretty non-trivial problems:
+My most recent weird problem? Adding a gallery to showcase my photography. It was way more complicated than it sounds; I had some strict requirements:
 
 - The site was statically generated and hosted on [Netlify](https://www.netlify.com/), so there was no admin console or upload form to add or manage photos.
 - Because it was being built from a GitHub repo, I didn't want to upload my photos along with the rest of the site. That would require me to write scripts to generate different image sizes for mobile.
@@ -32,89 +32,29 @@ That recent challenge for me? Adding a gallery to showcase my photography. It wa
 - Whatever image hosting solution I went with needed to be dirt cheap, preferably free.
 - Most importantly: the site was designed to be a Progressive Web App, so however I retrieved this data, it had to be done in as few network requests as possible.
 
-How could I begin to accomplish all of that without having to write a mountain of code? I went with The True Developer Way: leveraging existing services!
+How could I begin to accomplish all of that without having to write a mountain of code? I went with Developer Secret Strategy #5: Use The Thing That Guy Already Built&trade;! In this case, Flickr. It most of what I needed: free, support for various sizes, public API and Adobe Lightroom integration for single-button-press uploads.
 
-Flickr already provided most of what I needed:
-- I could upload high resolution photos for absolutely free.
-- Photos automatically get converted to various image sizes.
-- Free-to-use public API for non-commercial uses.
-- Using the API, I could get all the needed gallery metadata.
-- Adobe Lightroom ships with a Flickr plugin, meaning I could upload all of my photos + metadata straight from the application in one button press!
-
-Awesome! That just left me with one little problem: having to use Flickr's horribly outdated REST API.
+That just left me with one "little" problem: having to use Flickr's horribly outdated REST API.
 
 Let's take a quick look at what that process is like.
 
-# The Old Way
+# The Old Way - aka can we please not
 
-In order to build a gallery with data from the Flickr API, I'd need to make a number of different requests:
+Remember, I wanted to minimize my number of requests. Not possible with Flickr.
 
-1. Get the `userId` of the Flickr User whose albums (or in the Flickr-verse, 'photosets') I wanted to grab Photos from. The app could just keep this id in a configuration file, so I wouldn't have to request it.
-2. Use `flickr.photosets.getList` with our `userId` to get a list of `photosetId`s for that user.
-3. Use `flickr.photosets.getPhotos` using those two ids to get a list of `photoId`s for that Album.
-4. Use either `flickr.photos.getSizes` for each of those `photoId`s to get a list of URLs linking to the different automatically generated images for those Photos, or I could use the `id`, `secret` and `server` fields from the previous response to construct the URLs manually.
+Here's the *bare* minimum:
+1. Get the `userId` of the Flickr User whose 'photosets' I wanted to grab Photos from
+2. Use `flickr.photosets.getList` with our `userId` to get a list of `photosetId`s for that user
+3. Use `flickr.photosets.getPhotos` using those two ids to get a list of `photoId`s for that Album
+4. Use `flickr.photos.getSizes` for each of those `photoId`s for a list of URLs linking to automatically generated images for those photos (or use the `id`, `secret` and `server` fields from the previous response to construct the URLs manually.)
 
-This—four—would be the bare minimum number of requests you'd need just to display a list of images on a page. But this is just the bare minimum. If you recall from that handy bulleted list of requirements above, I neeeded more data than that.
+I, however, would need to make even more: a call to `flickr.photosets.getInfo` to get info about the album (title, description, number of views, comments...), a call *per photo* to `flickr.photos.getInfo` to get its title, caption, views, comments & tags, and another call per photo to `flickr.photos.getExif` to get the EXIF metadata, a call to `flickr.photos.getSizes` to build out a response `img` element for each photo in the gallery...
 
-This is where they really start to pile on. I'd also need: a call to `flickr.photosets.getInfo` to get info about the album (title, description, number of views, comments...), a call per photo to `flickr.photos.getInfo` to get its title, caption, views, comments & tags, and another call per photo to `flickr.photos.getExif` to get the EXIF metadata. Oy.
+Oy. For a 100 photo album, I'd need 303 network requests. Can I get a collective 'nope'?
 
-And I'm not quite done. I'd also need the width for each image (to build out a response `img` element for each photo in the gallery). While I could infer this from Flickr's standard generated image sizes, if I wanted to know the width of the original photo, or needed the width x height to generate the layout, I'd have to make that call to `flickr.photos.getSizes` too.
+And it got worse. The response data was a mess to handle. `photos` count was represented as a `string`, `views` was a `number`, the `title` and `description` were nested in an unnecessary object under a `_content` key, and the dates were in a UNIX timestamp format wrapped in a `string`.
 
-Geez, for an album with 100 photos in it, that would require 303 network requests! That's insane!
-
-But it gets better. Let's take a look at a sample of the response data I'd be getting from those calls:
-
-`flickr.photosets.getList` with `146688070@N05` as the `userId` required argument:
-```json
-{
-  "photosets": {
-  "page": 1,
-  "pages": 1,
-  "perpage": 5,
-  "total": 5,
-  "photoset": [{
-    "id": "72157684545100496",
-    "primary": "34700924810",
-    "secret": "d4e1b19455",
-    "server": "4217",
-    "farm": 5,
-    "photos": "110",
-    "videos": 0,
-    "title": { "_content": "Fanime 2017" },
-    "description": { "_content": "" },
-    "needs_interstitial": 0,
-    "visibility_can_see_set": 1,
-    "count_views": 45,
-    "count_comments": 0,
-    "can_comment": 0,
-    "date_create": "1496572176",
-    "date_update": "1496574938"
-  }] },
-  "stat": "ok"
-}
-```
-The `photos` count is represented as a `string`, `views` is a `number`, the `title` and `description` are nested in an unnecessary object under a `_content` key, and the dates are in a UNIX timestamp format wrapped in a `string`. Are your eyes bulging out of your head yet? (*Aside: If you're curious why it's formatted this way, I suspect it's due to the fact that originally the Flickr API was built to return XML. JSON seems to have been added as a response format after the fact.*)
-
-Now! What does an HTTP request for that data look like?
-
-`https://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key=f1887b8db506370a7d08e77aedd1b931&user_id=146688070%40N05&format=json&nojsoncallback=1`
-
-Not that great, though at least it can be broken down into a few parts:
-
-1. The base URL: `https://api.flickr.com/services/rest/`
-2. A request method sting: `?method=${<method>}`
-3. A list of required arguments: `&${<arg_name>}=${<arg_value>}`
-4. A list of optional arguments, same format as above.
-5. Our API Key: `&api_key=${<api_key>}`
-6. If we need to sign the request: `&api_sig=${<api_signature>}`
-7. If we need authorization to make the request: `&auth_token=${<auth_token>}`
-8. Finally, some required format arguments: `&format=json&nojsoncallback=1`
-
-Using the above, I could create a request builder function and pass it the required data for a given request.
-
-This, at least, was my original approach to building the gallery UI. While it worked okay, it was far from mobile friendly. Plus, every time a user navigated back to that part of the app, all the requests would be sent again because I wasn't caching the results.
-
-I could do better than that. I could replace this clunky setup with something more elegant!
+I could do so much better.
 
 # Building a Better Solution with GraphQL
 
