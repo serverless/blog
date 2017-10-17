@@ -21,19 +21,17 @@ Let's do this.
 
 As a web developer, I relish the challenge of building my personal website from scratch. It's a great opportunity to spend way too much time on creative solutions to weird problems.
 
-My most recent challenge? Adding a gallery to showcase my photography. How could I begin to accomplish this without having to write a mountain of code? I went with Developer Secret Strategy #5: Use The Thing That Guy Already Built&trade;!
+My most recent challenge? Adding a gallery to showcase my photography. I decided to piggyback off Flickr for this. It already had most of what I needed: free, support for various sizes, public API and Adobe Lightroom integration for single-button-press uploads.
 
-In this case, Flickr had most of what I needed: free, support for various sizes, public API and Adobe Lightroom integration for single-button-press uploads.
+That just left me with one "little" problem: having to use Flickr's horribly outdated REST API.
 
-That just left me with one "little" problem: Flickr's horribly outdated REST API.
-
-So you fully feel my pain, here's a quick look at what that process is like.
+So you fully feel my pain, here's a quick look at what that process was like.
 
 # The Old Way - aka can we please not
 
-Remember, I wanted to minimize my number of requests. Not possible with Flickr.
+Remember, I wanted to minimize my number of requests.
 
-Here's the *bare* minimum:
+Here's the *bare* minimum with Flickr's REST:
 1. Get the `userId` of the Flickr User whose 'photosets' I wanted to grab Photos from
 2. Use `flickr.photosets.getList` with our `userId` to get a list of `photosetId`s for that user
 3. Use `flickr.photosets.getPhotos` using those two ids to get a list of `photoId`s for that Album
