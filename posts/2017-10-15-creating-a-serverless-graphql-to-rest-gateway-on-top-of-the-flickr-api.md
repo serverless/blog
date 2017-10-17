@@ -89,12 +89,11 @@ Suck it, REST!
 
 Since the Flickr API didn't have a GraphQL endpoint, I had to create an API Gateway on top of it in order to make GraphQL queries to their API.
 
-## [TODO]
+## GraphQL Setup
+
 I needed to choose a GraphQL server. I ended up going with [Apollo](http://dev.apollodata.com/) because it had [automatic request caching](https://dev-blog.apollodata.com/the-concepts-of-graphql-bc68bd819be3).
 
 Apollo does have a [solution specifically for AWS Lambda](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-lambda). But we'll be using Hapi.js instead for its custom logging, monitoring and caching.
-
-## GraphQL Setup
 
 To build the application, we'll need:
 
@@ -199,10 +198,6 @@ In `server.js` we're defining a custom method, `makeReady`, on our new Hapi serv
 
 If we called `server.register()` on every invocation of our Serverless event handler, Hapi would throw an error complaining that we've already registered the given plugins. Our function only executes on invocation, but on first invocation the newly-created `server` instance is kept frozen until 'thawed' by a new request, or else it is destroyed after a long enough period with no requests.
 
-> Rule of thumb: if your server creates singletons that are expected to live for the duration of the server's uptime, avoid accidentally creating multiple instances of those singletons as a side effect of your event handler.
-
-(**note:** this also means you can implement an in-memory cache for each of your functions, which may be useful for fulfilling certain common requests for non-sensitive data. One good use case for this is to hydrate an in-memory cache on first invocation. This does come with the trade-off that your function will take longer to spin up from a cold start and incur a higher memory usage, so proceed with caution.)
-
 #### Creating the GraphQL Endpoint
 
 Now let's take a look at our main GraphQL specific files used to create our endpoint: `api.js`, `graphiql.js`, and `schema.js`:
@@ -260,12 +255,12 @@ export default {
   }
 }
 ```
-Okay so there's a few things going on here to take note of. Let's move through each in detail.
+Okay, so there are a few things going on here:
 
 1. The object we're exporting is a Hapi plugin configuration, which we'll pass along as part of an array to our `server.register()` method on startup.
 2. Our path, `/graphql`, will be prefixed by our deployment stage on AWS, i.e., `/dev/graphql`. This can result in some complications with some plugins, so be aware that passing `/` here will cause issues with the graphiql IDE.
-3. In our context object, we're providing variables that will be available to all of our resolver functions. Typically this is where you would include info such as the current user derived from authorization tokens passed along in the headers of the incoming HTTP request. We'll also use this to pass along a new instance of our Flickr connector, which will perform fetch request level caching over the course of it's lifetime (the duration of the incoming GraphQL query). Along with that we'll pass Dataloader instances, which also perform caching.
-4. Because we're running on Lambda, it's important to perform some [Query Complexity Analysis](https://www.howtographql.com/advanced/4-security/) to ensure incoming queries won't max out our execution times. To accomplish this we're going to use two libraries: [`graphql-depth-limit`](https://github.com/stems/graphql-depth-limit), which will prevent execution of deeply nested queries, and [`graphql-query-complexity`](https://github.com/ivome/graphql-query-complexity) which will use a budgeting strategy using complexity scores assigned to individual fields to prevent expensive queries from being executed.
+3. In our context object, we're providing variables that will be available to all of our resolver functions, such as our Flickr connector and our Dataloader instances for caching.
+4. Because we're running on Lambda, it's important to perform some [Query Complexity Analysis](https://www.howtographql.com/advanced/4-security/) to ensure incoming queries won't max out our execution times. To accomplish this we're going to use two libraries: [`graphql-depth-limit`](https://github.com/stems/graphql-depth-limit) and [`graphql-query-complexity`](https://github.com/ivome/graphql-query-complexity).
 5. You'll notice that we have tracing enabled, which will append performance data to our responses. Check out [Apollo Tracing](https://github.com/apollographql/apollo-tracing) and [Apollo Engine](https://dev-blog.apollodata.com/apollo-engine-and-graphql-error-tracking-e7dd3ce8b99d) for more information on how you can use this to enable performance monitoring on your GraphQL endpoint.
 
 `graphiql.js`
@@ -282,9 +277,11 @@ export default {
   }
 }
 ```
+
 Not a whole lot out of the ordinary here for configuring our graphiql IDE endpoint. Just a few things to note concerning AWS Lambda:
+
 - If you're not using a custom domain for your function, you'll need to change your `endpointURL` to add the stage prefix on deployment, otherwise graphiql won't be able to find your API when running on AWS. This can be confusing because it will run just fine locally. Had me scratching my head over this one for a little while!
-- If you do want to use a custom domain, I used [this Serverless article](https://serverless.com/blog/serverless-api-gateway-domain/?rd=true) and [this part of the AWS documentation](http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html) to help get mine configured. This will really depend on your domain registrar and configuration, so I'm not going to attempt to cover that rabbit hole here. Good luck!
+- If you do want to use a custom domain, I used [this Serverless article](https://serverless.com/blog/serverless-api-gateway-domain/?rd=true) and [this part of the AWS documentation](http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html) to help get mine configured.
 
 `schema.js`
 ```javascript
@@ -305,136 +302,10 @@ If you want to include Mutations in the same manner, simply copy the `query` key
 
 #### Webpack
 
-I'm using the following webpack configuration:
-
-**webpack.config.js**
-```javascript
-const { join } = require(`path`)
-const slsw = require(`serverless-webpack`)
-const nodeExternals = require(`webpack-node-externals`)
-const MinifyPlugin = require(`babel-minify-webpack-plugin`)
-const { DefinePlugin, ProvidePlugin, optimize } = require(`webpack`)
-const { ModuleConcatenationPlugin } = optimize
-
-const dotenv = require(`dotenv`)
-dotenv.config() // import environment variables defined in '.env' located in our project root directory
-
-const ENV = process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase() || (process.env.NODE_ENV = `development`)
-const envProd = ENV === `production`
-const srcDir = join(__dirname, `src`)
-const outDir = join(__dirname, `dist`)
-const npmDir = join(__dirname, `node_modules`)
-
-module.exports = {
-  entry: slsw.lib.entries,
-  target: `node`,
-  externals: [nodeExternals({ modulesFromFile: true })],
-  output: {
-    libraryTarget: `commonjs`,
-    path: outDir,
-    filename: `[name].js`
-  },
-  stats: {
-    colors: true,
-    reasons: false,
-    chunks: false
-  },
-  performance: {
-    hints: false
-  },
-  resolve: {
-    extensions: [`.js`, `.json`, `.gql`, `.graphql`],
-    alias: {
-      '@': srcDir // used to allow root-relative imports, ie: import { invariant } from "@/utilities"
-    }
-  },
-  module: {
-    rules: [
-      { test: /\.js$/, loader: `babel-loader`, exclude: npmDir, options: {
-        plugins: [
-          `transform-optional-chaining`, // enables the usage of Existential Operator, ie: ?.
-          `transform-object-rest-spread`,
-          `transform-es2015-shorthand-properties`
-        ],
-        presets: [
-          [`env`, {
-            targets: { node: `6.10` }, // AWS Lambda uses node v6.10, so transpile our code for that environment
-            useBuiltIns: `usage`
-          }],
-          `stage-0`
-        ]
-      } },
-      { test: /\.json$/, loader: `json-loader` },
-      { test: /\.(graphql|gql)$/, exclude: npmDir, loader: `graphql-tag/loader` }
-    ]
-  },
-  plugins: [
-    new DefinePlugin({ // used to provide environment variables as global variables in our code
-      '__DEV__': !envProd,
-      'ENV': JSON.stringify(ENV),
-      LOGLEVEL: JSON.stringify(process.env.LOGLEVEL),
-      FLICKR_API_KEY: JSON.stringify(process.env.FLICKR_API_KEY)
-    }),
-    new ProvidePlugin({ // used to provide node module exports as global variables in our code
-      // GraphQL
-      GqlBool: [`graphql`, `GraphQLBoolean`],
-      GqlDate: [`graphql-iso-date`, `GraphQLDate`],
-      GqlDateTime: [`graphql-iso-date`, `GraphQLDateTime`],
-      GqlEmail: [`graphql-custom-types`, `GraphQLEmail`],
-      GqlEnum: [`graphql`, `GraphQLEnumType`],
-      GqlError: [`graphql`, `GraphQLError`],
-      GqlFloat: [`graphql`, `GraphQLFloat`],
-      GqlID: [`graphql`, `GraphQLID`],
-      GqlInput: [`graphql`, `GraphQLInputObjectType`],
-      GqlInt: [`graphql`, `GraphQLInt`],
-      GqlInterface: [`graphql`, `GraphQLInterfaceType`],
-      GqlList: [`graphql`, `GraphQLList`],
-      GqlNonNull: [`graphql`, `GraphQLNonNull`],
-      GqlObject: [`graphql`, `GraphQLObjectType`],
-      GqlScalar: [`graphql`, `GraphQLScalarType`],
-      GqlSchema: [`graphql`, `GraphQLSchema`],
-      GqlString: [`graphql`, `GraphQLString`],
-      GqlTime: [`graphql-iso-date`, `GraphQLTime`],
-      GqlUnion: [`graphql`, `GraphQLUnion`],
-      GqlURL: [`graphql-custom-types`, `GraphQLURL`],
-      globalId: [`graphql-relay`, `globalIdField`],
-      toGlobalId: [`graphql-relay`, `toGlobalId`],
-      fromGlobalId: [`graphql-relay`, `fromGlobalId`],
-      // Daraloader
-      Dataloader: `dataloader`,
-      // Winston
-      info: [`winston`, `info`],
-      error: [`winston`, `error`]
-    }),
-    new ModuleConcatenationPlugin(),
-    new MinifyPlugin({
-      keepFnName: true,
-      keepClassName: true,
-      booleans: envProd,
-      deadcode: true,
-      evaluate: envProd,
-      flipComparisons: envProd,
-      mangle: false, // some of our debugging functions require variable names to remain intact
-      memberExpressions: envProd,
-      mergeVars: envProd,
-      numericLiterals: envProd,
-      propertyLiterals: envProd,
-      removeConsole: envProd,
-      removeDebugger: envProd,
-      simplify: envProd,
-      simplifyComparisons: envProd,
-      typeConstructors: envProd,
-      undefinedToVoid: envProd
-    })
-  ]
-}
-```
-There are three important things to note here.
+Here is [the webpack configuration](https://github.com/Saeris/Flickr-Wormhole/blob/develop/webpack.config.js) we're using. There are three important things to note:
 
 1. I specifically include the webpack config for this project highlight webpack's [provide plugin](https://webpack.js.org/plugins/provide-plugin/). It allows you to call exports from node modules without having to explicitly import them in the files in which you use them.
-
 2. We're using `babel-plugin-transform-optional-chaining`, which adds support for the TC39 syntax proposal: [Optional Chaining](https://github.com/tc39/proposal-optional-chaining), aka the Existential Operator. You'll see this in the code base in the following format: `obj?.property` which is equivalent to `!!object.property ? object.property : undefined`. Using this syntax requires using [babel 7](https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7), so keep that in mind before attempting to use the plugin in your own projects.
-
 3. We're using a resolve alias, specifying `@` as the project root directory. This lets us do project root relative imports, such as `import { invariant } from "@/utilities"`. I really like the way this webpack helps with code organization and managing relative imports across refactors.
 
 Now we've built our GraphQL server and endpoint. It's time to fetch data from the Flickr API.
@@ -445,70 +316,7 @@ When I started this project, the first thing I actually put together was the Fli
 
 It's now designed such that you can use it completely independently from GraphQL as a standalone library to interact with the Flickr API. It's also broken up into multiple parts, such that you can import only what you need to keep the bundle size down.
 
-Let's break down the main connector class and an example method handler:
-
-`flickr.js`
-```javascript
-import "isomorphic-fetch"
-import { isString } from "lodash"
-import { invariant, missingArgument } from "@/utilities"
-
-const snake = str => str
-  .trim()
-  .split(``)
-  .map(char => (/[A-Z]/.test(char) ? `_${char.toLowerCase()}` : char))
-  .join(``)
-
-export class Flickr {
-  constructor(apiKey) {
-    invariant(apiKey, missingArgument({ apiKey }))
-    this.apiKey = apiKey
-
-    this.loader = new Dataloader(this.fetch.bind(this), { batch: false })
-  }
-
-  endpoint = `https://api.flickr.com/services/rest/`
-
-  fetchResource = async (method = ``, args = {}, options = {}, requiresAuth = false) => {
-    try {
-      invariant(isString(method), missingArgument({ method }))
-      const required =
-        Object.entries(args)
-          .map(([key, value]) => {
-            invariant(isString(value), missingArgument({ [snake(`${key}`)]: key }))
-            return `&${snake(`${key}`)}=${value}`
-          })
-          .join(``) || ``
-
-      const optional =
-        Object.entries(options)
-          .map(([key, value]) => (value ? `&${snake(`${key}`)}=${value}` : ``))
-          .join(``) || ``
-
-      const data = await this.loader.load(`${method}${required}${optional}`)
-
-      if (data.stat === `fail`) throw new Error(data.message)
-
-      info(`Successfully fetched resource: ${method}`, { method, args, options, requiresAuth })
-      return data
-    } catch (err) {
-      error(`Failed to fetch resource: ${method}`, err)
-      return {}
-    }
-  }
-
-  fetch = urls =>
-    Promise.all(
-      urls.map(
-        url => fetch(`${this.endpoint}?method=${url}&api_key=${this.apiKey}&format=json&nojsoncallback=1`)
-          .then(res => res.json())
-      )
-    )
-}
-
-export default new Flickr(FLICKR_API_KEY)
-```
-Our Flickr connector is fairly simple: on instantiation it creates a new Dataloader instance to cache the results of each REST call.
+Here is the [Flickr connector source code](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/flickr.js). The connector is fairly simple: on instantiation it creates a new Dataloader instance to cache the results of each REST call.
 
 This is basically a hash-map of the request parameters and the result of the fetch request. The `fetch` method is where the actual request is dispatched if a cached result isn't already found.
 
