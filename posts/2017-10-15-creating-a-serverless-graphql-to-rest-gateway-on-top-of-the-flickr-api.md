@@ -19,20 +19,20 @@ Let's do this.
 
 # Background
 
-As a web developer, I relish the challenge of building my personal website from scratch. It's a great opportunity to test-drive new technologies and spend way too much time on creative solutions to weird problems.
+As a web developer, I relish the challenge of building my personal website from scratch. It's a great opportunity to spend way too much time on creative solutions to weird problems.
 
 My most recent challenge? Adding a gallery to showcase my photography. I had some strict requirements to work around:
 
-- The site was statically generated and hosted on [Netlify](https://www.netlify.com/), so there was no admin console or upload form to add or manage photos.
-- Because it was being built from a GitHub repo, I didn't want to upload my photos along with the rest of the site. That would require me to write scripts to generate different image sizes for mobile.
+- My [Netlify](https://www.netlify.com/) hosted site had no easy way to add/manage photos.
+- I didn't want to upload my photos along with the rest of the site. That would require me to write scripts to generate different image sizes for mobile.
 - The gallery should display additional information such as titles, descriptions, EXIF metadata, geolocation, tags, comments, etc.
-- Uploading and managing photos should fit into my existing photo editing workflow; having yet another site to upload to would make the process of sharing the photos tedious.
-- Whatever image hosting solution I went with needed to be dirt cheap, preferably free.
+- Uploading and managing photos should fit into my existing photo editing workflow.
+- The image hosting solution needed to be dirt cheap, preferably free.
 - Most importantly: the site was designed to be a Progressive Web App, so however I retrieved this data, it had to be done in as few network requests as possible.
 
-How could I begin to accomplish all of that without having to write a mountain of code? I went with Developer Secret Strategy #5: Use The Thing That Guy Already Built&trade;! In this case, Flickr. It most of what I needed: free, support for various sizes, public API and Adobe Lightroom integration for single-button-press uploads.
+How could I begin to accomplish this without having to write a mountain of code? I went with Developer Secret Strategy #5: Use The Thing That Guy Already Built&trade;! In this case, Flickr had most of what I needed: free, support for various sizes, public API and Adobe Lightroom integration for single-button-press uploads.
 
-That just left me with one "little" problem: having to use Flickr's horribly outdated REST API.
+That just left me with one "little" problem: Flickr's horribly outdated REST API.
 
 So you fully feel my pain, here's a quick look at what that process is like.
 
@@ -151,7 +151,10 @@ functions:
           method: any
           cors: true
 ```
-Pretty basic setup here, except for the handler path being set to `"{proxy+}"`, which will pass our route to our request handler. In this case, we'll have two routes: `/graphql` and `/graphiql`.
+
+Pretty basic setup here, except for the handler path being set to `"{proxy+}"`, which will pass our route to our request handler.
+
+In this case, we'll have two routes: `/graphql` and `/graphiql`:
 
 **index.js**
 ```javascript
@@ -201,9 +204,10 @@ server.makeReady = (onServerReady) => {
 
 export default server
 ```
+
 In `server.js` we're defining a custom method, `makeReady`, on our new Hapi server instance to register our plugins. Normally, you'd want to call `server.start()` in the callback for `server.register()`, but instead we're using `server.inject()` to inject the HTTP request event from Lambda, because we're not using Hapi to listen to HTTP events.
 
-We're separating the two pieces this way because, if we called `server.register()` on every invocation of our Serverless event handler, Hapi would throw an error complaining that we've already registered the given plugins. Even though our function only executes on invocation, on first invocation the `server` newly-created server instance is kept 'frozen' until either more requests come in and the instance is 'thawed', or a period of time passes with no requests and it is destroyed.
+If we called `server.register()` on every invocation of our Serverless event handler, Hapi would throw an error complaining that we've already registered the given plugins. Our function only executes on invocation, but on first invocation the newly-created `server` instance is kept frozen until 'thawed' by a new request, or else it is destroyed after a long enough period with no requests.
 
 > Rule of thumb: if your server creates singletons that are expected to live for the duration of the server's uptime, avoid accidentally creating multiple instances of those singletons as a side effect of your event handler.
 
