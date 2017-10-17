@@ -23,7 +23,7 @@ First, a little background on the solution we'll be digging into.
 
 As a web developer, I relish the challenge of building my personal website from scratch. It's a great opportunity to test-drive new technologies and spend way too much time on creative solutions to weird problems.
 
-My most recent weird problem? Adding a gallery to showcase my photography. It was way more complicated than it sounds; I had some strict requirements:
+My most recent challenge? Adding a gallery to showcase my photography. I had some strict requirements to work around:
 
 - The site was statically generated and hosted on [Netlify](https://www.netlify.com/), so there was no admin console or upload form to add or manage photos.
 - Because it was being built from a GitHub repo, I didn't want to upload my photos along with the rest of the site. That would require me to write scripts to generate different image sizes for mobile.
