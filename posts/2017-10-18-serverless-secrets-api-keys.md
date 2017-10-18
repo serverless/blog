@@ -1,5 +1,5 @@
 ---
-title: Managing secrets, API keys, and more with Serverless
+title: Managing secrets, API keys and more with Serverless
 description: Use Lambda environment variables and AWS Parameter Store to handle configuration in your Serverless projects
 date: 2017-10-18
 layout: Post
@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-Serverless applications are often _service-full_ applications. This means you use hosted services to augment your applications -- think DynamoDB for data storage or Mailchimp for sending emails.
+Serverless applications are often _service-full_ applications. This means you use hosted services to augment your applications—think DynamoDB for data storage or Mailchimp for sending emails.
 
 When using other services in your Serverless applications, you often need configuration data to make your application work correctly. This includes things like API keys, resource identifiers, or other items. 
 
@@ -22,9 +22,9 @@ Let's get started!
 
 # Using Environment Variables with Lambda
 
-When building my first web applications, Heroku's [12 Factor App](https://12factor.net/) was hugely influential to me. These are a set of twelve principles to deploy stateless, scalable web applications, and many of them are directly applicable to Serverless applications.
+When building my first web applications, Heroku's [12 Factor App](https://12factor.net/) was hugely influential—a set of twelve principles to deploy stateless, scalable web applications. I found many of them were directly applicable to Serverless applications.
 
-One of the twelve factors was to [store config in your environment](https://12factor.net/config). It recommended using environment variables for config such as credentials or hostnames as these are easy to change between deploys without changing code.
+One of the twelve factors was to [store config in your environment](https://12factor.net/config). It recommended using environment variables for config (e.g. credentials or hostnames) as these would be easy to change between deploys without changing code.
 
 Lambda and Serverless provide support for environment variables, and I would recommend using them _in certain situations_. Check out the last section on managing secrets with large projects for when you shouldn't use environment variables and how you should approach configuration in those situations.
 
@@ -100,7 +100,7 @@ functions:
       TWITTER_ACCESS_TOKEN: 'myBatmanToken'
 ```
 
-Now we have two functions -- `superman` and `batman` -- and each one has its unique access token for authenticating with Twitter. Success!
+Now we have two functions—`superman` and `batman`—and each one has its unique access token for authenticating with Twitter. Success!
 
 # Handling Secrets for Small Teams & Projects
 
@@ -108,7 +108,7 @@ Now that we've got the basics down, let's dig a little deeper into handling secr
 
 In the example above, the big problem is that our access token is in plaintext directly in our `serverless.yml`. This is a sensitive secret that we don't want to commit to source control.
 
-A better option is to use [AWS Parameter Store](http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-paramstore.html) to store your secrets. This is a new service provided by AWS that acts as a centralized config store for your applications. It's quickly becoming a popular way to manage secrets -- check out [this post from Segment](https://segment.com/blog/the-right-way-to-manage-secrets/) on how and why you should use it.
+A better option is to use [AWS Parameter Store](http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-paramstore.html) to store your secrets. This is a new service provided by AWS that acts as a centralized config store for your applications. It's quickly becoming a popular way to manage secrets—check out [this post from Segment](https://segment.com/blog/the-right-way-to-manage-secrets/) on how and why you should use it.
 
 We added [integration with Parameter Store](https://github.com/serverless/serverless/pull/4062) (also known as SSM, for Simple Systems Manager) with version 1.22 of the Serverless Framework. This means you can refer to SSM parameters directly in `serverless.yml` using the following syntax:
 
@@ -119,7 +119,7 @@ We added [integration with Parameter Store](https://github.com/serverless/server
 ...
 ```
 
-Let's apply this to our previous example. Use the [AWS CLI](https://aws.amazon.com/cli/) to store two new SSM parameters - one for the Serverless Superman bot and one for the Big Data Batman bot:
+Let's apply this to our previous example. Use the [AWS CLI](https://aws.amazon.com/cli/) to store two new SSM parameters—one for the Serverless Superman bot and one for the Big Data Batman bot:
 
 ```bash
 aws ssm put-parameter --name supermanToken --value mySupermanToken
@@ -168,7 +168,7 @@ Second, environment variables are set at _deploy time_ rather than being evaluat
 
 If this is the case, I would still recommend using AWS Parameter Store to handle your secrets. It's very simple to use and allows for nice access controls on who and what is allowed to access certain secrets.
 
-However, you'll have to write code with your Lambda handler to interact with Parameter Store -- you can't use the easy shorthand from the Serverless Framework.
+However, you'll have to write code with your Lambda handler to interact with Parameter Store—you can't use the easy shorthand from the Serverless Framework.
 
 Here's an example of how you would get a configuration value from SSM in your Lambda function in Python:
 
@@ -190,6 +190,8 @@ database_connection = get_secret('databaseConn')
 ```
 
 We create a simple helper utility that wraps a Boto3 call to the Parameter Store and returns the value for a requested secret. Then we can easily call that helper function by providing the name of the secret we want.
+
+# Other considerations
 
 This is just scratching the surface of handling configuration in a larger Serverless project. Another issue you'll want to consider is refreshing your config within a particular Lambda container. Because a Lambda instance can be reused across many function invocations, you'll want to periodically refresh the configuration in case it changed since the instance was initially started.
 
