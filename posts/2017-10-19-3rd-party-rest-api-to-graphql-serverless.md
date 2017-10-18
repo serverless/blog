@@ -11,7 +11,7 @@ authors:
 
 I've spent a huge chunk of the last year learning how to write GraphQL servers. It took a lot of manual sifting through dozens of blog posts, videos and source code.
 
-I wanted to consolidate all this info into a single walk-through. People—this post is *thorough*. If I've done my job, it's the only post you'll need to get up and running with your own project.
+I wanted to consolidate all this info into a single walk-through. If I've done my job, it's the only post you'll need to get up and running with your own project.
 
 We're going step-by-step through the setup of my most recent project, [Flickr-Wormhole](https://github.com/Saeris/Flickr-Wormhole): a GraphQL to REST API Gateway built on top of Serverless and AWS Lambda, using [Apollo-Server-Hapi](https://github.com/apollographql/apollo-server#hapi) (to provide a modern interface to that aging Flickr API).
 
