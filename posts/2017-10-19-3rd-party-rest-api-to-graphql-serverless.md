@@ -389,7 +389,24 @@ Finally, let's take a look at some of the utilities we've been using in our reso
 
 To keep things as [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) as possible, I created a few abstractions to help with filtering, sorting and pagination in my resolvers.
 
-First, I made a [filter utility](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/resolvers/utilities/createFilter.js) to iterate over the fields in that type definition and search for fields with a `filter` property set on them. For each one it finds, it will create a hash of the field names and filter values which the returned input object will use as its fields property.
+First, I made a [filter utility](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/resolvers/utilities/createFilter.js) (`createFilter.js`) to iterate over the fields in that type definition and search for fields with a `filter` property set on them. For each one it finds, it will create a hash of the field names and filter values which the returned input object will use as its fields property:
+
+```javascript
+import { invariant, missingArgument, isObject } from "@/utilities"
+
+export function createFilters(type) {
+  invariant(isObject(type, true), missingArgument({ type }, `object`))
+  return new GqlInput({
+    name: `${type._typeConfig.name.toLowerCase()}Filter`,
+    fields: () => Object.entries(type._typeConfig.fields(true))
+      .filter(([name, values]) => !!values.filter)
+      .reduce((hash, [name, values]) => {
+        hash[name] = values.filter
+        return hash
+      }, {})
+  })
+}
+```
 
 This will allow us to create query arguments such as the following:
 
@@ -402,7 +419,37 @@ This will filter a list of Image results to only include images with a `size` va
 
 You can also apply as many filters as you want. Each field you supply a value for will be applied in the order you define them.
 
-I also made an [`orderBy` utility](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/resolvers/utilities/createOrder.js). It takes two inputs, `field` and `sort`, where `field` is an enumerable list of all the sortable field names, and `sort` will be the sorting direction, defaulting to ascending.
+I also made an [orderBy utility](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/resolvers/utilities/createOrder.js) (`createOrder.js`). It takes two inputs, `field` and `sort`, where `field` is an enumerable list of all the sortable field names, and `sort` will be the sorting direction, defaulting to ascending:
+
+```javascript
+import { invariant, missingArgument, isObject } from "@/utilities"
+
+const Sort = new GqlEnum({
+  name: `Sort`,
+  values: { asc: {}, desc: {} }
+})
+
+export function createOrder(type) {
+  invariant(isObject(type, true), missingArgument({ type }, `object`))
+  const FieldsEnum = new GqlEnum({
+    name: `${type._typeConfig.name.toLowerCase()}OrderByFields`,
+    values: Object.entries(type._typeConfig.fields(true))
+      .filter(([name, values]) => !!values.sortable)
+      .reduce((hash, [name, values]) => {
+        hash[`${name}`] = {}
+        return hash
+      }, {})
+  })
+
+  return new GqlInput({
+    name: `${type._typeConfig.name.toLowerCase()}OrderBy`,
+    fields: () => ({
+      field: { type: new GqlNonNull(FieldsEnum) },
+      sort: { type: Sort, defaultValue: `asc` }
+    })
+  })
+}
+```
 
 Here's an example of its use in a query:
 
@@ -413,7 +460,48 @@ photos(orderBy: { field: taken sort: desc }) {
 ```
 This will sort the photo results by their taken date in descending order (latest to oldest).
 
-Finally, I made a [`pagination` utility](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/resolvers/utilities/pagination.js). This function will take in query arguments plus a total value, and use those to calculate a `start`, `perPage`, and `skip` value to pass along to the resolver.
+Finally, I made a [pagination utility](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/resolvers/utilities/pagination.js) (`pagination.js`). This function will take in query arguments plus a total value, and use those to calculate a `start`, `perPage`, and `skip` value to pass along to the resolver:
+
+```javascript
+ import { invariant, missingArgument, isNumber } from "@/utilities"
+
+export function pagination({ first = 0, last = 0, count = 0, offset = 0, total = 0 } = {}) {
+  invariant(isNumber(first) || isNumber(last) || isNumber(count), `Please set either 'first', 'last', or 'count'.`)
+  invariant(isNumber(total), missingArgument({ total }, `number`))
+  isNumber(offset)
+  const minPerPage = (totalItems, minLimit) => {
+    if (totalItems === minLimit) return minLimit
+    let perPage = minLimit
+    while (totalItems % perPage !== 0) {
+      perPage++
+    }
+    return perPage
+  }
+  if (!!first) {
+    const perPage = first
+    const start = 1
+    const skip = 0
+
+    return { start, perPage, skip }
+  }
+  if (!!last && !!total) {
+    const cursor = total - last
+    const perPage = minPerPage(total, last)
+    const start = Math.ceil(cursor / perPage) || 1
+    const skip = cursor % perPage
+
+    return { start, perPage, skip }
+  }
+  if (!!count) {
+    const perPage = offset > count ? minPerPage(offset, count) : count
+    const start = offset > count ? Math.ceil(offset / perPage) : 1
+    const skip = perPage - count <= 0 ? 0 : perPage - count
+
+    return { start, perPage, skip }
+  }
+  return {}
+}
+```
 
 It's used as part of the resolver's arguments in the following manner:
 
