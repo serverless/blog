@@ -87,6 +87,8 @@ Not only did I grab all the data I needed to build out the UI in one request, I 
 
 Suck it, REST!
 
+> **note:** While I won't go into detail explaining what [GraphQL](http://graphql.org/) is, I do want to make one thing clear: GraphQL is not concerned with sourcing your data. It's not an ORM; it's not a query language for a database. It's merely a transport layer that sits in your server behind a single endpoint, taking requests from your clients. You supply GraphQL with a Schema describing the types of data your API can return, and it's through resolver functions that the data is actually retrieved.
+
 ## GraphQL Setup
 
 Since the Flickr API didn't have a GraphQL endpoint, I had to create my own GraphQL application that translates GraphQL queries into Flickr's REST interface.
