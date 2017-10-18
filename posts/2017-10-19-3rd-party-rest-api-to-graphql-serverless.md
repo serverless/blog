@@ -21,7 +21,16 @@ Let's do this.
 
 As a web developer, I relish the challenge of building my personal website from scratch. It's a great opportunity to spend way too much time on creative solutions to weird problems.
 
-My most recent challenge? Adding a gallery to showcase my photography. I decided to piggyback off Flickr for this. It already had most of what I needed: free, support for various sizes, public API and Adobe Lightroom integration for single-button-press uploads.
+My most recent challenge? Adding a gallery to showcase my photography. I had a lot of requirements to work around, which will end up being important; meeting all these requirements are ultimately why I decided to switch away from REST and into GraphQL:
+
+- My site is statically generated and hosted on Netlify—no admin console to add/manage photos.
+- I didn't want to upload my photos along with the rest of the site; it's being built from a GitHub repo, and would require me to write scripts for generating different image sizes for mobile.
+- The gallery should be able to display titles, descriptions, EXIF metadata, geolocation, tags, comments, etc.
+- Uploading/managing photos should fit into my existing photo editing workflow—I didn't want to create unnecessary steps.
+- The image hosting solution needed to be dirt cheap to free.
+- Most importantly: as my site was designed to be a Progressive Web App, data retrieval had to be done in as few network requests as possible.
+
+I decided to save myself a lot of coding and piggyback off Flickr for the majority of this work. It already had most of what I needed: free, support for various sizes, public API and Adobe Lightroom integration for single-button-press uploads.
 
 That just left me with one "little" problem: having to use Flickr's horribly outdated REST API.
 
@@ -37,15 +46,17 @@ Here's the *bare* minimum with Flickr's REST:
 3. Use `flickr.photosets.getPhotos` using those two ids to get a list of `photoId`s for that Album
 4. Use `flickr.photos.getSizes` for each of those `photoId`s for a list of URLs linking to automatically generated images for those photos (or use the `id`, `secret` and `server` fields from the previous response to construct the URLs manually)
 
-I, however, would need to make even more: a call to `flickr.photosets.getInfo` to get info about the album (title, description, number of views, comments...), a call *per photo* to `flickr.photos.getInfo` to get its title, caption, views, comments & tags, and another call per photo to `flickr.photos.getExif` to get the EXIF metadata, a call to `flickr.photos.getSizes` to build out a response `img` element for each photo in the gallery...
+I, however, would need to make even more: a call to `flickr.photosets.getInfo` to get info about the album (title, description, number of views, comments...), a call *per photo* to `flickr.photos.getInfo` to get its title, caption, views, comments & tags, and another call per photo to `flickr.photos.getExif` to get the EXIF metadata, a call to `flickr.photos.getSizes` to [build out a responsive `img` element](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) for each photo in the gallery...
 
 For a 100 photo album, I'd need 303 network requests. Can I get a collective 'nope'?
 
-And it got worse. The response data was a mess to handle. `photos` count was represented as a `string`, `views` was a `number`, the `title` and `description` were nested in an unnecessary object under a `_content` key, and the dates were in a UNIX timestamp format wrapped in a `string`.
+And it got worse. The response data was a mess to handle. The `photos` count was represented as a `string`, `views` was a `number`, the `title` and `description` were nested in an unnecessary object under a `_content` key, and the dates were either formatted as a UNIX timestamp or a MySQL DateTime value wrapped in a `string`.
 
-I could do so much better.
+Surely, I thought, there must be a better way.
 
 # The New Way - GraphQL
+
+Enter: GraphQL!
 
 Why GraphQL? So glad you asked. Let's go back to those 300+ requests from earlier. I can now grab all of that data in **one** request using a query that looks a bit like this:
 
@@ -89,6 +100,8 @@ Suck it, REST!
 
 > **note:** While I won't go into detail explaining what [GraphQL](http://graphql.org/) is, I do want to make one thing clear: GraphQL is not concerned with sourcing your data. It's not an ORM; it's not a query language for a database. It's merely a transport layer that sits in your server behind a single endpoint, taking requests from your clients. You supply GraphQL with a Schema describing the types of data your API can return, and it's through resolver functions that the data is actually retrieved.
 
+> If you *do* want/need further background on GraphQL, here are my favorite [talks](https://www.youtube.com/watch?v=wPPFhcqGcvk), [blog posts](https://medium.freecodecamp.org/so-whats-this-graphql-thing-i-keep-hearing-about-baf4d36c20cf), and [tutorials](https://www.howtographql.com/) from the past year.
+
 ## GraphQL Setup
 
 Since the Flickr API didn't have a GraphQL endpoint, I had to create my own GraphQL application that translates GraphQL queries into Flickr's REST interface.
@@ -101,7 +114,7 @@ To build the application, we'll need:
 
 ### Building the Endpoint Request Handler
 
-The first step is to choose a GraphQL server implementation. I ended up going with [Apollo](http://dev.apollodata.com/) because it had [automatic request caching](https://dev-blog.apollodata.com/the-concepts-of-graphql-bc68bd819be3).
+The first step is to choose a GraphQL server implementation and set up the request handler. I'd used [Apollo](http://dev.apollodata.com/) for front-end and really enjoyed it, but Flickr didn't have a GraphQL endpoint I could connect it to so I had to build one myself. Since I had a goal to reduce my network requests, I really liked Apollo for its [automatic request caching](https://dev-blog.apollodata.com/the-concepts-of-graphql-bc68bd819be3).
 
 After choosing Apollo, I needed to adapt it to work within Lambda's function signature. Apollo does have a [solution specifically for AWS Lambda](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-lambda). However, I chose to use the [Hapi Node.js server framework](https://hapijs.com/) with [Apollo-Server-Hapi plugin](https://github.com/apollographql/apollo-server#hapi). I like Hapi for its custom logging, monitoring and caching. 
 
@@ -266,7 +279,7 @@ There are a couple interesting things to note:
 2. Because we're running on Lambda, it's important to perform some [Query Complexity Analysis](https://www.howtographql.com/advanced/4-security/) to ensure incoming queries won't max out our execution times. To accomplish this we're going to use two libraries: [`graphql-depth-limit`](https://github.com/stems/graphql-depth-limit) and [`graphql-query-complexity`](https://github.com/ivome/graphql-query-complexity).
 3. You'll notice that we have tracing enabled, which will append performance data to our responses. Check out [Apollo Tracing](https://github.com/apollographql/apollo-tracing) and [Apollo Engine](https://dev-blog.apollodata.com/apollo-engine-and-graphql-error-tracking-e7dd3ce8b99d) for more information on how you can use this to enable performance monitoring on your GraphQL endpoint.
 
-We also have an `graphiql.js` file which defines the `/graphiql` endpoint for the graphical IDE:
+There's also graphiql.js, which defines the /graphiql endpoint for the [GraphiQL IDE](https://github.com/graphql/graphiql):
 
 `graphiql.js`
 ```javascript
@@ -530,7 +543,7 @@ Here's a short list:
   - Because of the above, requests that require authentication are also unsupported at this time. These include certain read methods (e.g. fetching a user's galleries or a private list of favorites).
   - I would like to add a shared cache between gateway instances using Amazon's Elasticache service. That way it could be possible to implement cursor based pagination and temporary caching of more sensitive data, which would require token based authentication and session tracking.
   - Pagination sucks, a lot. It's got the most room for improvement.
-  - I'm working on adding more logging and monitoring tools, such as additional transports for [Winston](https://github.com/winstonjs/winston) to services like [Loggly](https://www.loggly.com/) or [Sentry](https://sentry.io/), and [Apollo Optic](https://www.apollodata.com/optics/)'s new [Engine](https://dev-blog.apollodata.com/apollo-engine-and-graphql-error-tracking-e7dd3ce8b99d) platform, which requires a Docker Container running on something like [Amazon's EC2 Container Service](https://aws.amazon.com/ecs/). These would help in tuning the performance of the gateway and monitoring for errors.
+  - I'm working on adding more logging and monitoring tools, such as additional transports for [Winston](https://github.com/winstonjs/winston) to services like [Loggly](https://www.loggly.com/) or [Sentry](https://sentry.io/), and [Apollo Optics](https://www.apollodata.com/optics/)' new [Engine](https://dev-blog.apollodata.com/apollo-engine-and-graphql-error-tracking-e7dd3ce8b99d) platform, which requires a Docker Container running on something like [Amazon's EC2 Container Service](https://aws.amazon.com/ecs/). These would help in tuning the performance of the gateway and monitoring for errors.
   - There are currently no tests, so eventually some should be written. Test writing isn't one of my strengths as a developer, unfortunately.
   - I would also like to add typings to the project as well using Flow. That would help to catch some bugs early as I continue development.
 
