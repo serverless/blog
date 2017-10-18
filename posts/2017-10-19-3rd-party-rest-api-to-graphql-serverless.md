@@ -322,9 +322,136 @@ If you want to include Mutations in the same manner, simply copy the `query` key
 
 #### Webpack Notes
 
-I do a few different tricks in my Webpack configuration to ease development. You can check out my [the webpack configuration](https://github.com/Saeris/Flickr-Wormhole/blob/develop/webpack.config.js) for reference. There are three important things to note:
+I do a few different tricks in my Webpack configuration to ease development.
 
-1. I specifically include the webpack config for this project highlight webpack's [provide plugin](https://webpack.js.org/plugins/provide-plugin/). It allows you to call exports from node modules without having to explicitly import them in the files in which you use them.
+Here's my [full webpack configuration](https://github.com/Saeris/Flickr-Wormhole/blob/develop/webpack.config.js) for reference:
+
+**webpack.config.js**
+```javascript
+const { join } = require(`path`)
+const slsw = require(`serverless-webpack`)
+const nodeExternals = require(`webpack-node-externals`)
+const MinifyPlugin = require(`babel-minify-webpack-plugin`)
+const { DefinePlugin, ProvidePlugin, optimize } = require(`webpack`)
+const { ModuleConcatenationPlugin } = optimize
+
+const dotenv = require(`dotenv`)
+dotenv.config() // import environment variables defined in '.env' located in our project root directory
+
+const ENV = process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase() || (process.env.NODE_ENV = `development`)
+const envProd = ENV === `production`
+const srcDir = join(__dirname, `src`)
+const outDir = join(__dirname, `dist`)
+const npmDir = join(__dirname, `node_modules`)
+
+module.exports = {
+  entry: slsw.lib.entries,
+  target: `node`,
+  externals: [nodeExternals({ modulesFromFile: true })],
+  output: {
+    libraryTarget: `commonjs`,
+    path: outDir,
+    filename: `[name].js`
+  },
+  stats: {
+    colors: true,
+    reasons: false,
+    chunks: false
+  },
+  performance: {
+    hints: false
+  },
+  resolve: {
+    extensions: [`.js`, `.json`, `.gql`, `.graphql`],
+    alias: {
+      '@': srcDir // used to allow root-relative imports, ie: import { invariant } from "@/utilities"
+    }
+  },
+  module: {
+    rules: [
+      { test: /\.js$/, loader: `babel-loader`, exclude: npmDir, options: {
+        plugins: [
+          `transform-optional-chaining`, // enables the usage of Existential Operator, ie: ?.
+          `transform-object-rest-spread`,
+          `transform-es2015-shorthand-properties`
+        ],
+        presets: [
+          [`env`, {
+            targets: { node: `6.10` }, // AWS Lambda uses node v6.10, so transpile our code for that environment
+            useBuiltIns: `usage`
+          }],
+          `stage-0`
+        ]
+      } },
+      { test: /\.json$/, loader: `json-loader` },
+      { test: /\.(graphql|gql)$/, exclude: npmDir, loader: `graphql-tag/loader` }
+    ]
+   },
+  plugins: [
+    new DefinePlugin({ // used to provide environment variables as global variables in our code
+      '__DEV__': !envProd,
+      'ENV': JSON.stringify(ENV),
+      LOGLEVEL: JSON.stringify(process.env.LOGLEVEL),
+      FLICKR_API_KEY: JSON.stringify(process.env.FLICKR_API_KEY)
+    }),
+    new ProvidePlugin({ // used to provide node module exports as global variables in our code
+      // GraphQL
+      GqlBool: [`graphql`, `GraphQLBoolean`],
+      GqlDate: [`graphql-iso-date`, `GraphQLDate`],
+      GqlDateTime: [`graphql-iso-date`, `GraphQLDateTime`],
+      GqlEmail: [`graphql-custom-types`, `GraphQLEmail`],
+      GqlEnum: [`graphql`, `GraphQLEnumType`],
+      GqlError: [`graphql`, `GraphQLError`],
+      GqlFloat: [`graphql`, `GraphQLFloat`],
+      GqlID: [`graphql`, `GraphQLID`],
+      GqlInput: [`graphql`, `GraphQLInputObjectType`],
+      GqlInt: [`graphql`, `GraphQLInt`],
+      GqlInterface: [`graphql`, `GraphQLInterfaceType`],
+      GqlList: [`graphql`, `GraphQLList`],
+      GqlNonNull: [`graphql`, `GraphQLNonNull`],
+      GqlObject: [`graphql`, `GraphQLObjectType`],
+      GqlScalar: [`graphql`, `GraphQLScalarType`],
+      GqlSchema: [`graphql`, `GraphQLSchema`],
+      GqlString: [`graphql`, `GraphQLString`],
+      GqlTime: [`graphql-iso-date`, `GraphQLTime`],
+      GqlUnion: [`graphql`, `GraphQLUnion`],
+      GqlURL: [`graphql-custom-types`, `GraphQLURL`],
+      globalId: [`graphql-relay`, `globalIdField`],
+      toGlobalId: [`graphql-relay`, `toGlobalId`],
+      fromGlobalId: [`graphql-relay`, `fromGlobalId`],
+      // Daraloader
+      Dataloader: `dataloader`,
+      // Winston
+      info: [`winston`, `info`],
+      error: [`winston`, `error`]
+    }),
+    new ModuleConcatenationPlugin(),
+    new MinifyPlugin({
+      keepFnName: true,
+      keepClassName: true,
+      booleans: envProd,
+      deadcode: true,
+      evaluate: envProd,
+      flipComparisons: envProd,
+      mangle: false, // some of our debugging functions require variable names to remain intact
+      memberExpressions: envProd,
+      mergeVars: envProd,
+      numericLiterals: envProd,
+      propertyLiterals: envProd,
+      removeConsole: envProd,
+      removeDebugger: envProd,
+      simplify: envProd,
+      simplifyComparisons: envProd,
+      typeConstructors: envProd,
+      undefinedToVoid: envProd
+    })
+  ]
+}
+```
+
+There are three important things to note:
+
+1. I specifically include the webpack config for this project highlight webpack's [provide plugin](https://webpack.js.org/plugins/provide-plugin/). It allows you to call exports from node modules without having to explicitly import them in the files in which you use them. **So when you see things like `GqlString` instead of `GraphQLString`, this is why.**
 2. We're using `babel-plugin-transform-optional-chaining`, which adds support for the TC39 syntax proposal: [Optional Chaining](https://github.com/tc39/proposal-optional-chaining), aka the Existential Operator. You'll see this in the code base in the following format: `obj?.property` which is equivalent to `!!object.property ? object.property : undefined`. Using this syntax requires using [babel 7](https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7), so keep that in mind before attempting to use the plugin in your own projects.
 3. We're using a resolve alias, specifying `@` as the project root directory. This lets us do project root relative imports, such as `import { invariant } from "@/utilities"`. I really like the way this webpack helps with code organization and managing relative imports across refactors.
 
