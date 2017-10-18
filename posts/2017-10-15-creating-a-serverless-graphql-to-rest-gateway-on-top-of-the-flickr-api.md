@@ -87,28 +87,25 @@ Not only did I grab all the data I needed to build out the UI in one request, I 
 
 Suck it, REST!
 
-Since the Flickr API didn't have a GraphQL endpoint, I had to create an API Gateway on top of it in order to make GraphQL queries to their API.
-
 ## GraphQL Setup
 
-I needed to choose a GraphQL server. I ended up going with [Apollo](http://dev.apollodata.com/) because it had [automatic request caching](https://dev-blog.apollodata.com/the-concepts-of-graphql-bc68bd819be3).
-
-Apollo does have a [solution specifically for AWS Lambda](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-lambda). But we'll be using Hapi.js instead for its custom logging, monitoring and caching.
+Since the Flickr API didn't have a GraphQL endpoint, I had to create my own GraphQL application that translates GraphQL queries into Flickr's REST interface.
 
 To build the application, we'll need:
 
-- An endpoint request handler. I'll be using the [Hapi Node.js server framework](https://hapijs.com/) with [Apollo-Server-Hapi plugin](https://github.com/apollographql/apollo-server#hapi).
-- A GraphQL Schema of queries mapped to Type definitions that describe our different data structures. I'm using the [graphql.js reference implementation](https://github.com/graphql/graphql-js) to build these out in JavaScript.
-- A REST request handler abstraction and method handler functions to programmatically build requests.
-- Resolver functions. I'll need to transform the results from the method handlers into the required Type system shape.
+- A GraphQL endpoint request handler;
+- An abstraction layer to programmatically build requests to Flickr's REST API; and
+- A GraphQL Schema of queries mapped to Type definitions that describe our different data structures.
 
 ### Building the Endpoint Request Handler
 
-**note:** the setup outlined below was derived from [this article](http://www.carbonatethis.com/hosting-a-serverless-hapi-js-api-with-aws-lambda/).
+The first step is to choose a GraphQL server implementation. I ended up going with [Apollo](http://dev.apollodata.com/) because it had [automatic request caching](https://dev-blog.apollodata.com/the-concepts-of-graphql-bc68bd819be3).
 
-#### Building the GraphQL Server
+After choosing Apollo, I needed to adapt it to work within Lambda's function signature. Apollo does have a [solution specifically for AWS Lambda](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-lambda). However, I chose to use the [Hapi Node.js server framework](https://hapijs.com/) with [Apollo-Server-Hapi plugin](https://github.com/apollographql/apollo-server#hapi). I like Hapi for its custom logging, monitoring and caching. 
 
-Let's take a look at our `serverless/yml` file, our app `index.js`, `server.js`, and our `webpack.config.js`:
+> **note:** the setup outlined below was derived from [this article](http://www.carbonatethis.com/hosting-a-serverless-hapi-js-api-with-aws-lambda/).
+
+Let's take a look at our `serverless.yml` file:
 
 **serverless.yml**
 ```yml
@@ -141,9 +138,9 @@ functions:
           cors: true
 ```
 
-Pretty basic setup here, except for the handler path being set to `"{proxy+}"`, which will pass our route to our request handler.
+Pretty basic setup here, except for the handler path being set to `"{proxy+}"`, which will pass our route to our request handler. In this case, we'll have two routes: `/graphql` and `/graphiql`, but all routing will be handled within our handler function.
 
-In this case, we'll have two routes: `/graphql` and `/graphiql`:
+Our `index.js` file contains our handler logic. This is doing the work to handle our Lambda function invocation, pull out the necessary HTTP elements that the Apollo server expects, and return the response from the Apollo server:
 
 **index.js**
 ```javascript
@@ -168,6 +165,9 @@ exports.handler = (event, context, callback) => {
   })
 }
 ```
+
+The `server.js` file contains our actual Hapi server:
+
 **server.js**
 ```javascript
 import hapi from "hapi"
@@ -194,13 +194,13 @@ server.makeReady = (onServerReady) => {
 export default server
 ```
 
-In `server.js` we're defining a custom method, `makeReady`, on our new Hapi server instance to register our plugins. Normally, you'd want to call `server.start()` in the callback for `server.register()`, but instead we're using `server.inject()` to inject the HTTP request event from Lambda, because we're not using Hapi to listen to HTTP events.
+In `server.js` we're defining a custom method, `makeReady`, on our new Hapi server instance to register our plugins. In a server-full world, you'd want to call `server.start()` in the callback for `server.register()`. In the serverless world, we're using `server.inject()` to inject the HTTP request event from Lambda, because we're not using Hapi to listen to HTTP events.
 
-If we called `server.register()` on every invocation of our Serverless event handler, Hapi would throw an error complaining that we've already registered the given plugins. Our function only executes on invocation, but on first invocation the newly-created `server` instance is kept frozen until 'thawed' by a new request, or else it is destroyed after a long enough period with no requests.
+Note that we only register our plugins on the initial invocation to a particular Lambda instance. If we called `server.register()` on every invocation of our Serverless event handler, Hapi would throw an error complaining that we've already registered the given plugins.
 
-#### Creating the GraphQL Endpoint
+Now let's take a look at our main GraphQL specific files used to create our endpoint: `api.js`, `graphiql.js`, and `schema.js`.
 
-Now let's take a look at our main GraphQL specific files used to create our endpoint: `api.js`, `graphiql.js`, and `schema.js`:
+First, we have the `api.js` file which will define our main `/graphql` endpoint:
 
 `api.js`
 ```javascript
@@ -255,13 +255,16 @@ export default {
   }
 }
 ```
-Okay, so there are a few things going on here:
 
-1. The object we're exporting is a Hapi plugin configuration, which we'll pass along as part of an array to our `server.register()` method on startup.
-2. Our path, `/graphql`, will be prefixed by our deployment stage on AWS, i.e., `/dev/graphql`. This can result in some complications with some plugins, so be aware that passing `/` here will cause issues with the graphiql IDE.
-3. In our context object, we're providing variables that will be available to all of our resolver functions, such as our Flickr connector and our Dataloader instances for caching.
-4. Because we're running on Lambda, it's important to perform some [Query Complexity Analysis](https://www.howtographql.com/advanced/4-security/) to ensure incoming queries won't max out our execution times. To accomplish this we're going to use two libraries: [`graphql-depth-limit`](https://github.com/stems/graphql-depth-limit) and [`graphql-query-complexity`](https://github.com/ivome/graphql-query-complexity).
-5. You'll notice that we have tracing enabled, which will append performance data to our responses. Check out [Apollo Tracing](https://github.com/apollographql/apollo-tracing) and [Apollo Engine](https://dev-blog.apollodata.com/apollo-engine-and-graphql-error-tracking-e7dd3ce8b99d) for more information on how you can use this to enable performance monitoring on your GraphQL endpoint.
+The exported object from `api.js` is a Hapi plugin configuration, which we'll pass along as part of an array to our `server.register()` method on startup. 
+
+There are a couple interesting things to note:
+
+1. In our context object, we're providing variables that will be available to all of our resolver functions, such as our Flickr connector and our Dataloader instances for caching.
+2. Because we're running on Lambda, it's important to perform some [Query Complexity Analysis](https://www.howtographql.com/advanced/4-security/) to ensure incoming queries won't max out our execution times. To accomplish this we're going to use two libraries: [`graphql-depth-limit`](https://github.com/stems/graphql-depth-limit) and [`graphql-query-complexity`](https://github.com/ivome/graphql-query-complexity).
+3. You'll notice that we have tracing enabled, which will append performance data to our responses. Check out [Apollo Tracing](https://github.com/apollographql/apollo-tracing) and [Apollo Engine](https://dev-blog.apollodata.com/apollo-engine-and-graphql-error-tracking-e7dd3ce8b99d) for more information on how you can use this to enable performance monitoring on your GraphQL endpoint.
+
+We also have an `graphiql.js` file which defines the `/graphiql` endpoint for the graphical IDE:
 
 `graphiql.js`
 ```javascript
@@ -283,6 +286,8 @@ Not a whole lot out of the ordinary here for configuring our graphiql IDE endpoi
 - If you're not using a custom domain for your function, you'll need to change your `endpointURL` to add the stage prefix on deployment, otherwise graphiql won't be able to find your API when running on AWS. This can be confusing because it will run just fine locally. Had me scratching my head over this one for a little while!
 - If you do want to use a custom domain, I used [this Serverless article](https://serverless.com/blog/serverless-api-gateway-domain/?rd=true) and [this part of the AWS documentation](http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html) to help get mine configured.
 
+Finally, let's look at our `schema.js` file which includes our GraphQL Schema for our GraphQL endpoint:
+
 `schema.js`
 ```javascript
 import Types from './types'
@@ -300,29 +305,27 @@ Also pretty straightforward. In each of our Type Definition files, we're going t
 
 If you want to include Mutations in the same manner, simply copy the `query` key and follow its format to import a Mutations object from each of your Type Definitions. I like to do things this way to keep code tidy and co-located.
 
-#### Webpack
+#### Webpack Notes
 
-Here is [the webpack configuration](https://github.com/Saeris/Flickr-Wormhole/blob/develop/webpack.config.js) we're using. There are three important things to note:
+I do a few different tricks in my Webpack configuration to ease development. You can check out my [the webpack configuration](https://github.com/Saeris/Flickr-Wormhole/blob/develop/webpack.config.js) for reference. There are three important things to note:
 
 1. I specifically include the webpack config for this project highlight webpack's [provide plugin](https://webpack.js.org/plugins/provide-plugin/). It allows you to call exports from node modules without having to explicitly import them in the files in which you use them.
 2. We're using `babel-plugin-transform-optional-chaining`, which adds support for the TC39 syntax proposal: [Optional Chaining](https://github.com/tc39/proposal-optional-chaining), aka the Existential Operator. You'll see this in the code base in the following format: `obj?.property` which is equivalent to `!!object.property ? object.property : undefined`. Using this syntax requires using [babel 7](https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7), so keep that in mind before attempting to use the plugin in your own projects.
 3. We're using a resolve alias, specifying `@` as the project root directory. This lets us do project root relative imports, such as `import { invariant } from "@/utilities"`. I really like the way this webpack helps with code organization and managing relative imports across refactors.
 
-Now we've built our GraphQL server and endpoint. It's time to fetch data from the Flickr API.
-
 ### Fetching Data from the Flickr API
+
+Now that we've built our GraphQL server and endpoint, it's time to fetch data from the Flickr API. Remember: Flickr's data is only accessible via a REST API. We've have to write a connector library to interact with Flickr.
 
 When I started this project, the first thing I actually put together was the Flickr connector. I probably refactored it about a dozen times before I got things organized in a way that I liked.
 
 It's now designed such that you can use it completely independently from GraphQL as a standalone library to interact with the Flickr API. It's also broken up into multiple parts, such that you can import only what you need to keep the bundle size down.
 
-Here is the [Flickr connector source code](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/flickr.js). The connector is fairly simple: on instantiation it creates a new Dataloader instance to cache the results of each REST call.
+The connector is fairly simple -- you can check the [code here](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/flickr.js). There are two methods: `fetchResource`, which is invoked by the GraphQL method handlers to get Flickr data, and `fetch` which is used under the hood to make a request to the Flickr API. 
 
-This is basically a hash-map of the request parameters and the result of the fetch request. The `fetch` method is where the actual request is dispatched if a cached result isn't already found.
+The connector includes a Dataloader instance to cache results of each REST call. If a method handler calls `fetchResource` with the same arguments that another method handler has used, it will return the cached results. Otherwise, the connector will call `fetch` to hit the Flickr API, cache the results, and return them to the handler.
 
-`fetchResource`, on the other hand, is the method we'll invoke in our method handlers. It has two required arguments, `method` and an `args` object, which represent the Flickr REST API method string and a hash of the required arguments for that method respectively.
-
-The default export will be a singleton instance of the connector, which the method handlers will use as a fallback if another instance isn't provided when they are invoked. In both cases, we'll grab the API Key from our environment variables, which are provided to use via webpack.
+The Flickr connector can be called as follows:
 
 `getPhotos.js`
 ```javascript
@@ -339,151 +342,21 @@ export default function getPhotos(
   )
 }
 ```
-Method handlers are also quite simple. Each is an async function with up to two hash maps for required and optional arguments.
 
 You'll notice that defaults are set for many of the values, matching the defaults in the Flickr API documentation. This also serves as a type reference, which will later be updated to use Flow typings. I did things this way to minimize the occurrence of typos and referral to the API documentation that would arise from having to invoke `fetchResource` manually.
 
-That it for the Flickr API library! Back to the GraphQL side of things.
+That's it for the Flickr API library! Back to the GraphQL side of things.
 
 ### GraphQL Type Definitions
 
-Let's take a look at a Type Definition, a Resolver, and some utilities for both.
+For each different node type in our GraphQL schema, we'll need to create a Type Definition. There are fifteen Type Definitions in total for types such as Albums, Galleries, Images, and Tags. These Type Definitions are quite long, usually over 100 lines each, so I'll omit them for brevity. You can [explore them here](https://github.com/Saeris/Flickr-Wormhole/tree/develop/src/types) if you're curious.
 
-`album.js`
-```javascript
-import {
-  fetchAlbumPhotos,
-  fetchAlbumComments,
-  fetchAlbumByID,
-  applyFilters,
-  createFilter,
-  createOrderBy,
-  pagination,
-  Range
-} from "@/resolvers"
-import { User } from "./user"
-import { Photo, PhotoFilter, PhotoOrder } from "./photo"
-import { Comment, CommentFilter, CommentOrder } from "./comment"
-
-export const Album = new GqlObject({
-  name: `Album`,
-  fields: disabled => ({
-    id: globalId(`Album`),
-    albumId: { type: new GqlNonNull(GqlID) },
-    title: {
-      type: GqlString,
-      sortable: true,
-      filter: { type: new GqlList(GqlString) }
-    },
-    description: { type: GqlString },
-    owner: {
-      type: !disabled && new GqlNonNull(User),
-      complexity: (args, childScore) => childScore * 5,
-      resolve: ({ owner: userId }, args, { user }) => user.load(userId)
-    },
-    slug: {
-      type: GqlString,
-      sortable: true,
-      filter: { type: new GqlList(GqlString) }
-    },
-    primary: {
-      type: Photo,
-      complexity: (args, childScore) => childScore * 5,
-      resolve: ({ primary: photoId }, args, { photo }) => photo.load(photoId)
-    },
-    url: { type: GqlURL },
-    photoCount: {
-      type: GqlInt,
-      sortable: true,
-      filter: { type: Range }
-    },
-    videoCount: {
-      type: GqlInt,
-      sortable: true,
-      filter: { type: Range }
-    },
-    commentCount: {
-      type: GqlInt,
-      sortable: true,
-      filter: { type: Range }
-    },
-    views: {
-      type: GqlInt,
-      sortable: true,
-      filter: { type: Range }
-    },
-    photos: {
-      type: !disabled && new GqlList(Photo),
-      args: {
-        first: { type: GqlInt },
-        last: { type: GqlInt },
-        count: { type: GqlInt },
-        offset: { type: GqlInt },
-        filter: { type: PhotoFilter },
-        orderBy: { type: PhotoOrder }
-      },
-      complexity: ({ count }, childScore) => childScore * count,
-      resolve: async({ owner: userId, albumId: photosetId, photoCount, videoCount }, args, { flickr, photo }) =>
-        applyFilters(await photo.loadMany(
-          await fetchAlbumPhotos({
-            flickr, userId, photosetId, ...pagination({ ...args, total: photoCount + videoCount })
-          })
-        ), args)
-    },
-    comments: {
-      type: !disabled && new GqlList(Comment),
-      args: {
-        first: { type: GqlInt },
-        count: { type: GqlInt },
-        offset: { type: GqlInt },
-        filter: { type: CommentFilter },
-        orderBy: { type: CommentOrder }
-      },
-      complexity: (args, childScore) => childScore * 5,
-      resolve: async({ albumId: photosetId }, args, { flickr }) =>
-        applyFilters(await fetchAlbumComments({ flickr, photosetId, ...pagination(args) }), args)
-    },
-    created: {
-      type: new GqlNonNull(GqlDateTime),
-      sortable: true
-    },
-    updated: {
-      type: new GqlNonNull(GqlDateTime),
-      sortable: true
-    }
-  })
-})
-
-export const AlbumFilter = createFilter(Album)
-export const AlbumOrder = createOrderBy(Album)
-
-export const Queries = {
-  album: {
-    type: Album,
-    args: {
-      user: { type: new GqlNonNull(GqlID) },
-      album: { type: new GqlNonNull(GqlID) }
-    },
-    resolve: (parent, { user: userId, album: photosetId }, { flickr }) => fetchAlbumByID({ flickr, userId, photosetId })
-  }
-}
-
-export const Definition = Album
-
-export default { Definition, Queries }
-```
-
-For most of our Type Definitions, we're going to have two ID fields:
-  - The first one, `id`, will be a programmatically generated ID that's a hash of the type name along with some other unique identifier sourced from the Flickr API. This field will be used by our client for [cache normalization](http://dev.apollodata.com/react/cache-updates.html#normalization).
-  - The second will be the ID of the data type in the Flickr API, which we'll need to make REST calls, and typically won't be needed by our client.
-
-Let's go over a few important bits about the organization of this file (and those like it), how it differs from the [reference implementation](http://graphql.org/graphql-js/type/#examples) of a GraphQL Type Definition, and how we're structuring resolvers in this project.
-
-> Note: I've removed all the description fields from all the GraphQL Objects shown here for brevity. Always document your GraphQL API with useful descriptions!
+Below, I'll offer a few tips on how I organize my Type Definition files and how they differ from the [reference implementation](http://graphql.org/graphql-js/type/#examples) of a GraphQL Type Definition. Then, I'll cover how I structure resolvers in this project. Finally, I'll show you how I built advanced features like filtering, pagination, and sorting to make it easier to get the exact data I wanted from Flickr.
 
 #### Organization
 
-If you're interested, I like to organize my type definition files as follows:
+I like to organize my type definition files as follows:
+
   - Import any resolver functions and utilities, followed by dependent types.
   - Create the actual type definition, and name the export the same as the type. This makes it easy to reference when using it in other type definitions.
   - Create any number of relevant Queries for this type; these will be the graph 'entry points'. Typically, you'll only need about one per type definition.
@@ -494,7 +367,7 @@ This is my method, but feel free to do whatever works best for you.
 
 #### Differences
 
-You might be confused by a few of the properties on our fields; `complexity`, `sortable`, and `filter` are all custom properties that are not part of the `graphql.js` reference implementation:
+If you look at my Type Definitions, you might be confused by a few of the properties on our fields -- `complexity`, `sortable`, and `filter` are all custom properties that are not part of the `graphql.js` reference implementation. These fields are used for advanced functionality in my application:
 
   - `complexity`: This property is used by the `graphql-query-complexity` library to calculate the complexity score of a field. You provide it with a function that returns an integer value. That function is automatically given your field's query arguments and the computed complexity score of the child type you're fetching. The further we nest our queries, these scores will get exponentially bigger. Requesting too many of these fields will deplete our complexity budget faster.
   - `sortable`: If set to true, this field will be included in our list of sortable fields in the OrderBy input for this type, which is used in query arguments elsewhere in our schema.
@@ -502,7 +375,7 @@ You might be confused by a few of the properties on our fields; `complexity`, `s
 
 You'll notice we're using a `disabled` argument in our Fields thunk. This is to prevent type errors from popping up when we're generating our `filter` and `orderBy` inputs for this type.
 
-### Resolvers, Loaders & Data Models
+#### Resolvers, Loaders & Data Models
 
 While the Flickr connector is concerned with making REST API calls and returning the raw JSON response, our **resolvers** determine how many requests need to be made from the query arguments with some help from our `pagination` utility. The resolvers pass the results off to our models, which will transform the raw data into a shape that can be consumed by our schema.
 
@@ -512,11 +385,11 @@ Loaders will be our first line of defense in ensuring we don't re-fetch data we'
 
 ### Applying Filters, Sorting Results & Pagination
 
-Let's take a look at some of the utilities we've been using in our resolvers.
+Finally, let's take a look at some of the utilities we've been using in our resolvers.
 
 To keep things as [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) as possible, I created a few abstractions to help with filtering, sorting and pagination in my resolvers.
 
-First, I made a [filter utility](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/resolvers/utilities/createFilter.js) to iterate over the fields in that type definition and search for fields with a `filter` property set on them. For each one it finds, it will create a hash of the field names and filter values which the returned input object will use as it's fields property.
+First, I made a [filter utility](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/resolvers/utilities/createFilter.js) to iterate over the fields in that type definition and search for fields with a `filter` property set on them. For each one it finds, it will create a hash of the field names and filter values which the returned input object will use as its fields property.
 
 This will allow us to create query arguments such as the following:
 
@@ -529,9 +402,9 @@ This will filter a list of Image results to only include images with a `size` va
 
 You can also apply as many filters as you want. Each field you supply a value for will be applied in the order you define them.
 
-I also made an [`orderby` utility](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/resolvers/utilities/createOrder.js). It takes two inputs, `field` and `sort`, where `field` is an enumerable list of all the sortable field names, and `sort` will be the sorting direction, defaulting to ascending.
+I also made an [`orderBy` utility](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/resolvers/utilities/createOrder.js). It takes two inputs, `field` and `sort`, where `field` is an enumerable list of all the sortable field names, and `sort` will be the sorting direction, defaulting to ascending.
 
-Here's an example of it's use in a query:
+Here's an example of its use in a query:
 
 ```GraphQL
 photos(orderBy: { field: taken sort: desc }) {
@@ -540,16 +413,7 @@ photos(orderBy: { field: taken sort: desc }) {
 ```
 This will sort the photo results by their taken date in descending order (latest to oldest).
 
-Next we have a [filter utility](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/resolvers/utilities/createFilter.js). Here's an example of how it's used in a query:
-
-```graphql
-photos(filter: { views: { value: 500 operator: gte } }) {
-  views
-}
-```
-This will filter the list of returned photos to those with a view count greater than or equal to 500.
-
-[Pagination](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/resolvers/utilities/pagination.js) is the last utility I made. This function will take in query arguments plus a total value, and use those to calculate a `start`, `perPage`, and `skip` value to pass along to the resolver.
+Finally, I made a [`pagination` utility](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/resolvers/utilities/pagination.js). This function will take in query arguments plus a total value, and use those to calculate a `start`, `perPage`, and `skip` value to pass along to the resolver.
 
 It's used as part of the resolver's arguments in the following manner:
 
