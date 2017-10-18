@@ -321,7 +321,7 @@ When I started this project, the first thing I actually put together was the Fli
 
 It's now designed such that you can use it completely independently from GraphQL as a standalone library to interact with the Flickr API. It's also broken up into multiple parts, such that you can import only what you need to keep the bundle size down.
 
-The connector is fairly simple -- you can check the [code here](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/flickr.js). There are two methods: `fetchResource`, which is invoked by the GraphQL method handlers to get Flickr data, and `fetch` which is used under the hood to make a request to the Flickr API. 
+The connector is fairly simple—you can check the [code here](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/flickr.js). There are two methods: `fetchResource`, which is invoked by the GraphQL method handlers to get Flickr data, and `fetch` which is used under the hood to make a request to the Flickr API. 
 
 The connector includes a Dataloader instance to cache results of each REST call. If a method handler calls `fetchResource` with the same arguments that another method handler has used, it will return the cached results. Otherwise, the connector will call `fetch` to hit the Flickr API, cache the results, and return them to the handler.
 
@@ -367,7 +367,7 @@ This is my method, but feel free to do whatever works best for you.
 
 #### Differences
 
-If you look at my Type Definitions, you might be confused by a few of the properties on our fields -- `complexity`, `sortable`, and `filter` are all custom properties that are not part of the `graphql.js` reference implementation. These fields are used for advanced functionality in my application:
+If you look at my Type Definitions, you might be confused by a few of the properties on our fields—`complexity`, `sortable`, and `filter` are all custom properties that are not part of the `graphql.js` reference implementation. These fields are used for advanced functionality in my application:
 
   - `complexity`: This property is used by the `graphql-query-complexity` library to calculate the complexity score of a field. You provide it with a function that returns an integer value. That function is automatically given your field's query arguments and the computed complexity score of the child type you're fetching. The further we nest our queries, these scores will get exponentially bigger. Requesting too many of these fields will deplete our complexity budget faster.
   - `sortable`: If set to true, this field will be included in our list of sortable fields in the OrderBy input for this type, which is used in query arguments elsewhere in our schema.
