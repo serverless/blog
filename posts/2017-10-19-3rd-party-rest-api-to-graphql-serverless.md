@@ -1,9 +1,9 @@
 ---
-title: Creating a Serverless GraphQL to REST Gateway on top of the Flickr API
-description: A collection of insights gained from building a microservice to interface with the Flickr API using Serverless, GraphQL and Hapi.js.
-date: 2017-10-15
+title: Turning a 3rd party REST API to GraphQL with Serverless
+description: Integrate GraphQL with Lambda; turn a 3rd party REST API to GraphQL. I built a microservice to interface with the Flickr API using Serverless, GraphQL and Hapi.js.
+date: 2017-10-19
 layout: Post
-thumbnail: <needs article thumbnail>
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/graphql.jpeg
 authors:
   - DrakeCosta
 ---
@@ -453,7 +453,7 @@ GraphQL has been a fantastic technology to work with and I firmly believe that i
 I hope this breakdown has been useful to you as an example of how to build a GraphQL server in JavaScript and encourages you to build that server on top of the Serverless platform!
 
 Drake Costa
-Full-Stack JavaScript Engineer and Photographer
+*Full-Stack JavaScript Engineer and Photographer*
 
 [Github](https://github.com/Saeris)
 [LinkedIn](https://www.linkedin.com/in/saeris/)
