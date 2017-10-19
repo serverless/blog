@@ -3,7 +3,7 @@ title: Embrace the mini CEO
 description: Lessons learned in avoiding startup chaos. Embrace the mini CEO.
 date: 2017-10-19
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/devtools.jpg
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/dane-deaner-334260.jpg
 authors:
   - FelixDesroches
 ---
