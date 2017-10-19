@@ -226,6 +226,6 @@ $ curl -G 'https://9qdmq5nvql.execute-api.us-east-1.amazonaws.com/dev/query' --d
 # {"data":{"greeting":"Hello, Jer."}}
 ```
 
-The API will now call anyone named "Jeremy" by the nickname "Jer". This kind of separation of concerns lets you build front-ends and services that offload logic into back-ends that use abstract data access and processing behind one, strongly typed, validated, uniform contract that comes with rich versioning and deprecation strategies.
+The API will now call anyone named "Jeremy" by the nickname "Jer". This kind of separation of concerns lets you build front-ends and services that offload logic into back-ends that encapsulate data access and processing behind a strongly typed, validating, uniform contract that comes with rich versioning and deprecation strategies.
 
-To deploy this service yourself, download the [source code](#todo) and deploy it with the Serverless Framework, or take a look at (a larger example)[https://github.com/boazdejong/serverless-graphql-api] for ideas on project structure. Happy building!
+To deploy this service yourself, download the [source code](https://github.com/serverless/examples/tree/master/aws-node-graphql-api-with-dynamodb) and deploy it with the Serverless Framework, or take a look at [a larger example project](https://github.com/boazdejong/serverless-graphql-api) for ideas on project structure and factoring. Happy building!
