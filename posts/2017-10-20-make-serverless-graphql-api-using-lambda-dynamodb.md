@@ -1,6 +1,6 @@
 ---
 title: How to Make a Serverless GraphQL API using Lambda and DynamoDB
-description: 
+description: GraphQL and Serverless play so well together. Learn how to make your own GraphQL API using Lambda an DynamoDB.
 date: 2017-10-20
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/graphql.jpeg
