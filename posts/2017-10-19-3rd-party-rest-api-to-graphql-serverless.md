@@ -11,44 +11,44 @@ authors:
 
 I've spent a huge chunk of the last year learning how to write GraphQL servers. It took a lot of manual sifting through dozens of blog posts, videos and source code.
 
-I wanted to consolidate all this info into a single walk-through. If I've done my job, it's the only post you'll need to get up and running with your own project.
+I wanted to consolidate all this info into a single walk-through. If I've done my job right, it's the only post you'll need to get up and running with your own project.
 
 We're going step-by-step through the setup of my most recent project, [Flickr-Wormhole](https://github.com/Saeris/Flickr-Wormhole): a GraphQL to REST API Gateway built on top of Serverless and AWS Lambda, using [Apollo-Server-Hapi](https://github.com/apollographql/apollo-server#hapi) (to provide a modern interface to that aging Flickr API).
 
-Let's do this.
+Let's get started!
 
 # Background
 
 As a web developer, I relish the challenge of building my personal website from scratch. It's a great opportunity to spend way too much time on creative solutions to weird problems.
 
-My most recent challenge? Adding a gallery to showcase my photography. I had a lot of requirements to work around, which will end up being important; meeting all these requirements are ultimately why I decided to switch away from REST and into GraphQL:
+My most recent challenge? Adding a gallery to showcase my photography. To ship this feature I had a handful of requirements to work around, which ultimately led me to creating the solution we'll be covering today:
 
 - My site is statically generated and hosted on Netlify—no admin console to add/manage photos.
 - I didn't want to upload my photos along with the rest of the site; it's being built from a GitHub repo, and would require me to write scripts for generating different image sizes for mobile.
 - The gallery should be able to display titles, descriptions, EXIF metadata, geolocation, tags, comments, etc.
 - Uploading/managing photos should fit into my existing photo editing workflow—I didn't want to create unnecessary steps.
-- The image hosting solution needed to be dirt cheap to free.
+- The image hosting solution needed to be dirt cheap, preferably free.
 - Most importantly: as my site was designed to be a Progressive Web App, data retrieval had to be done in as few network requests as possible.
 
-I decided to save myself a lot of coding and piggyback off Flickr for the majority of this work. It already had most of what I needed: free, support for various sizes, public API and Adobe Lightroom integration for single-button-press uploads.
+I decided to save myself a lot of coding and piggyback off Flickr for the majority of this work. It already had most of what I needed: free, generates a range of image sizes, public API and Adobe Lightroom integration for bulk uploads all in the press of a button.
 
 That just left me with one "little" problem: having to use Flickr's horribly outdated REST API.
 
 So you fully feel my pain, here's a quick look at what that process was like.
 
-# The Old Way - aka can we please not
+# The Old Way
 
 Remember, I wanted to minimize my number of requests.
 
 Here's the *bare* minimum with Flickr's REST:
-1. Get the `userId` of the Flickr User whose 'photosets' I wanted to grab Photos from
+1. Get the `userId` of the Flickr user whose albums (referred to as 'photosets') I wanted to grab photos from
 2. Use `flickr.photosets.getList` with our `userId` to get a list of `photosetId`s for that user
-3. Use `flickr.photosets.getPhotos` using those two ids to get a list of `photoId`s for that Album
+3. Use `flickr.photosets.getPhotos` using those two ids to get a list of `photoId`s for that album
 4. Use `flickr.photos.getSizes` for each of those `photoId`s for a list of URLs linking to automatically generated images for those photos (or use the `id`, `secret` and `server` fields from the previous response to construct the URLs manually)
 
 I, however, would need to make even more: a call to `flickr.photosets.getInfo` to get info about the album (title, description, number of views, comments...), a call *per photo* to `flickr.photos.getInfo` to get its title, caption, views, comments & tags, and another call per photo to `flickr.photos.getExif` to get the EXIF metadata, a call to `flickr.photos.getSizes` to [build out a responsive `img` element](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) for each photo in the gallery...
 
-For a 100 photo album, I'd need 303 network requests. Can I get a collective 'nope'?
+For a 100 photo album, I'd need 303 network requests. *\*groans*\* How about we not do that?
 
 And it got worse. The response data was a mess to handle. The `photos` count was represented as a `string`, `views` was a `number`, the `title` and `description` were nested in an unnecessary object under a `_content` key, and the dates were either formatted as a UNIX timestamp or a MySQL DateTime value wrapped in a `string`.
 
@@ -96,15 +96,13 @@ Try it out yourself here: https://flickr.saeris.io/graphiql
 
 Not only did I grab all the data I needed to build out the UI in one request, I also got only the specific fields I asked for in exactly the same shape I requested it in. AND I was able to apply some powerful filtering techniques to boot.
 
-Suck it, REST!
-
 > **note:** While I won't go into detail explaining what [GraphQL](http://graphql.org/) is, I do want to make one thing clear: GraphQL is not concerned with sourcing your data. It's not an ORM; it's not a query language for a database. It's merely a transport layer that sits in your server behind a single endpoint, taking requests from your clients. You supply GraphQL with a Schema describing the types of data your API can return, and it's through resolver functions that the data is actually retrieved.
 
-> If you *do* want/need further background on GraphQL, here are my favorite [talks](https://www.youtube.com/watch?v=wPPFhcqGcvk), [blog posts](https://medium.freecodecamp.org/so-whats-this-graphql-thing-i-keep-hearing-about-baf4d36c20cf), and [tutorials](https://www.howtographql.com/) from the past year.
+> If you *do* want/need further background on GraphQL, there are numerous [talks](https://www.youtube.com/watch?v=wPPFhcqGcvk), [blog posts](https://medium.freecodecamp.org/so-whats-this-graphql-thing-i-keep-hearing-about-baf4d36c20cf), and [tutorials](https://www.howtographql.com/) from the past year.
 
 ## GraphQL Setup
 
-Since the Flickr API didn't have a GraphQL endpoint, I had to create my own GraphQL application that translates GraphQL queries into Flickr's REST interface.
+Since the Flickr API doesn't yet have a GraphQL endpoint, I had to create my own GraphQL gateway server that proxies GraphQL queries into requests to Flickr's REST interface.
 
 To build the application, we'll need:
 
@@ -114,9 +112,9 @@ To build the application, we'll need:
 
 ### Building the Endpoint Request Handler
 
-The first step is to choose a GraphQL server implementation and set up the request handler. I'd used [Apollo](http://dev.apollodata.com/) for front-end and really enjoyed it, but Flickr didn't have a GraphQL endpoint I could connect it to so I had to build one myself. Since I had a goal to reduce my network requests, I really liked Apollo for its [automatic request caching](https://dev-blog.apollodata.com/the-concepts-of-graphql-bc68bd819be3).
+The first step is to choose a GraphQL server implementation and set up the request handler. I'd used [Apollo](http://dev.apollodata.com/) on the front-end and really enjoyed it, but Flickr didn't have a GraphQL endpoint I could connect it to so I had to build one myself. Since I had a goal to reduce my network requests, I really liked Apollo for its [automatic request caching](https://dev-blog.apollodata.com/the-concepts-of-graphql-bc68bd819be3), which helps eliminate re-fetching.
 
-After choosing Apollo, I needed to adapt it to work within Lambda's function signature. Apollo does have a [solution specifically for AWS Lambda](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-lambda). However, I chose to use the [Hapi Node.js server framework](https://hapijs.com/) with [Apollo-Server-Hapi plugin](https://github.com/apollographql/apollo-server#hapi). I like Hapi for its custom logging, monitoring and caching. 
+After choosing Apollo, I needed to adapt it to work within Lambda's function signature. Apollo does have a [solution specifically for AWS Lambda](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-lambda). However, I chose to use the [Hapi Node.js server framework](https://hapijs.com/) with [Apollo-Server-Hapi plugin](https://github.com/apollographql/apollo-server#hapi). I prefer Hapi as it allows for custom logging, monitoring and caching.
 
 > **note:** the setup outlined below was derived from [this article](http://www.carbonatethis.com/hosting-a-serverless-hapi-js-api-with-aws-lambda/).
 
@@ -159,7 +157,7 @@ Our `index.js` file contains our handler logic. This is doing the work to handle
 
 **index.js**
 ```javascript
-import server from "./server"
+import server from "@/server"
 
 exports.handler = (event, context, callback) => {
   const { path, queryStringParameters: params, httpMethod: method, body: payload, headers } = event
@@ -186,8 +184,8 @@ The `server.js` file contains our actual Hapi server:
 **server.js**
 ```javascript
 import hapi from "hapi"
-import api from "./api"
-import graphiql from "./graphiql"
+import api from "@/api"
+import graphiql from "@/graphiql"
 
 const server = new hapi.Server()
 server.connection({ routes: { cors: true } })
@@ -224,8 +222,8 @@ import depthLimit from 'graphql-depth-limit'
 import queryComplexity from "graphql-query-complexity"
 import * as loaders from "@/loaders"
 import { formatError } from "@/utilities"
-import { schema } from "./schema"
-import { Flickr } from "./flickr"
+import { schema } from "@/schema"
+import { Flickr } from "@/flickr"
 
 export default {
   register: graphqlHapi,
@@ -271,7 +269,7 @@ export default {
 }
 ```
 
-The exported object from `api.js` is a Hapi plugin configuration, which we'll pass along as part of an array to our `server.register()` method on startup. 
+The exported object from `api.js` is a Hapi plugin configuration, which we'll pass along as part of an array to our `server.register()` method on startup.
 
 There are a couple interesting things to note:
 
@@ -305,7 +303,7 @@ Finally, let's look at our `schema.js` file which includes our GraphQL Schema fo
 
 `schema.js`
 ```javascript
-import Types from './types'
+import Types from '@/types'
 
 export const schema = new GqlSchema({
   types:  Object.values(Types).filter(type => !!type.Definition).map(type => type.Definition ),
@@ -324,9 +322,9 @@ If you want to include Mutations in the same manner, simply copy the `query` key
 
 I do a few different tricks in my Webpack configuration to ease development.
 
-Here's my [full webpack configuration](https://github.com/Saeris/Flickr-Wormhole/blob/develop/webpack.config.js) for reference:
+Here's my full Webpack configuration for reference:
 
-**webpack.config.js**
+`webpack.config.js`
 ```javascript
 const { join } = require(`path`)
 const slsw = require(`serverless-webpack`)
@@ -353,16 +351,8 @@ module.exports = {
     path: outDir,
     filename: `[name].js`
   },
-  stats: {
-    colors: true,
-    reasons: false,
-    chunks: false
-  },
-  performance: {
-    hints: false
-  },
   resolve: {
-    extensions: [`.js`, `.json`, `.gql`, `.graphql`],
+    extensions: [`.js`, `.gql`, `.graphql`],
     alias: {
       '@': srcDir // used to allow root-relative imports, ie: import { invariant } from "@/utilities"
     }
@@ -383,20 +373,18 @@ module.exports = {
           `stage-0`
         ]
       } },
-      { test: /\.json$/, loader: `json-loader` },
-      { test: /\.(graphql|gql)$/, exclude: npmDir, loader: `graphql-tag/loader` }
+      { test: /\.(graphql|gql)$/, exclude: npmDir, loader: `graphql-tag/loader` } // in case you're using .gql files
     ]
    },
   plugins: [
-    new DefinePlugin({ // used to provide environment variables as global variables in our code
-      '__DEV__': !envProd,
-      'ENV': JSON.stringify(ENV),
+    new DefinePlugin({ // used to provide environment variables as globals in our code
+      ENV: JSON.stringify(ENV),
       LOGLEVEL: JSON.stringify(process.env.LOGLEVEL),
       FLICKR_API_KEY: JSON.stringify(process.env.FLICKR_API_KEY)
     }),
-    new ProvidePlugin({ // used to provide node module exports as global variables in our code
+    new ProvidePlugin({ // used to provide node module exports as globals in our code
       // GraphQL
-      GqlBool: [`graphql`, `GraphQLBoolean`],
+      GqlBool: [`graphql`, `GraphQLBoolean`], // same as import { GraphQLBoolean as GqlBool } from "graphql"
       GqlDate: [`graphql-iso-date`, `GraphQLDate`],
       GqlDateTime: [`graphql-iso-date`, `GraphQLDateTime`],
       GqlEmail: [`graphql-custom-types`, `GraphQLEmail`],
@@ -457,21 +445,21 @@ There are three important things to note:
 
 ### Fetching Data from the Flickr API
 
-Now that we've built our GraphQL server and endpoint, it's time to fetch data from the Flickr API. Remember: Flickr's data is only accessible via a REST API. We've have to write a connector library to interact with Flickr.
+Now that we've built our GraphQL server and endpoint, it's time to fetch data from the Flickr API. Remember: Flickr's data is only accessible via a REST API. We have to write a connector library to interact with Flickr.
 
 When I started this project, the first thing I actually put together was the Flickr connector. I probably refactored it about a dozen times before I got things organized in a way that I liked.
 
 It's now designed such that you can use it completely independently from GraphQL as a standalone library to interact with the Flickr API. It's also broken up into multiple parts, such that you can import only what you need to keep the bundle size down.
 
-The connector is fairly simple—you can check the [code here](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/flickr.js). There are two methods: `fetchResource`, which is invoked by the GraphQL method handlers to get Flickr data, and `fetch` which is used under the hood to make a request to the Flickr API. 
+The connector is fairly simple—you can check the [code here](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/flickr.js). There are two methods: `fetchResource`, which is invoked by the GraphQL method handlers to get Flickr data, and `fetch` which is used under the hood to make a request to the Flickr API.
 
-The connector includes a Dataloader instance to cache results of each REST call. If a method handler calls `fetchResource` with the same arguments that another method handler has used, it will return the cached results. Otherwise, the connector will call `fetch` to hit the Flickr API, cache the results, and return them to the handler.
+The connector includes a Dataloader instance to cache results of each REST call. If a method handler calls `fetchResource` with the same arguments that handler has used before, it will return the cached results. Otherwise, the connector will call `fetch` to hit the Flickr API, cache the results, and return them to the handler.
 
 The Flickr connector can be called as follows:
 
 `getPhotos.js`
 ```javascript
-import Flickr from "@/flickr"
+import Flickr from "@/flickr" // A global instance of the connector is export by default as a fallback for each handler
 
 export default function getPhotos(
   { flickr = Flickr, photosetId = ``, userId = `` } = {},
@@ -534,10 +522,11 @@ To keep things as [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) a
 First, I made a [filter utility](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/resolvers/utilities/createFilter.js) (`createFilter.js`) to iterate over the fields in that type definition and search for fields with a `filter` property set on them. For each one it finds, it will create a hash of the field names and filter values which the returned input object will use as its fields property:
 
 ```javascript
-import { invariant, missingArgument, isObject } from "@/utilities"
+import { isObject } from "lodash"
+import { invariant, missingArgument } from "@/utilities"
 
 export function createFilters(type) {
-  invariant(isObject(type, true), missingArgument({ type }, `object`))
+  invariant(isObject(type), missingArgument({ type }, `object`))
   return new GqlInput({
     name: `${type._typeConfig.name.toLowerCase()}Filter`,
     fields: () => Object.entries(type._typeConfig.fields(true))
@@ -564,7 +553,8 @@ You can also apply as many filters as you want. Each field you supply a value fo
 I also made an [orderBy utility](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/resolvers/utilities/createOrder.js) (`createOrder.js`). It takes two inputs, `field` and `sort`, where `field` is an enumerable list of all the sortable field names, and `sort` will be the sorting direction, defaulting to ascending:
 
 ```javascript
-import { invariant, missingArgument, isObject } from "@/utilities"
+import { isObject } from "lodash"
+import { invariant, missingArgument } from "@/utilities"
 
 const Sort = new GqlEnum({
   name: `Sort`,
@@ -572,7 +562,7 @@ const Sort = new GqlEnum({
 })
 
 export function createOrder(type) {
-  invariant(isObject(type, true), missingArgument({ type }, `object`))
+  invariant(isObject(type), missingArgument({ type }, `object`))
   const FieldsEnum = new GqlEnum({
     name: `${type._typeConfig.name.toLowerCase()}OrderByFields`,
     values: Object.entries(type._typeConfig.fields(true))
@@ -605,7 +595,8 @@ This will sort the photo results by their taken date in descending order (latest
 Finally, I made a [pagination utility](https://github.com/Saeris/Flickr-Wormhole/blob/develop/src/resolvers/utilities/pagination.js) (`pagination.js`). This function will take in query arguments plus a total value, and use those to calculate a `start`, `perPage`, and `skip` value to pass along to the resolver:
 
 ```javascript
- import { invariant, missingArgument, isNumber } from "@/utilities"
+import { isNumber } from "lodash"
+import { invariant, missingArgument } from "@/utilities"
 
 export function pagination({ first = 0, last = 0, count = 0, offset = 0, total = 0 } = {}) {
   invariant(isNumber(first) || isNumber(last) || isNumber(count), `Please set either 'first', 'last', or 'count'.`)
@@ -685,7 +676,4 @@ I hope this breakdown has been useful to you as an example of how to build a Gra
 Drake Costa
 *Full-Stack JavaScript Engineer and Photographer*
 
-[Github](https://github.com/Saeris)
-[LinkedIn](https://www.linkedin.com/in/saeris/)
-[Twitter](https://twitter.com/Saeris)
-[Instagram](https://www.instagram.com/saeris.io/)
+[Github](https://github.com/Saeris) | [LinkedIn](https://www.linkedin.com/in/saeris/) | [Twitter](https://twitter.com/Saeris) | [Instagram](https://www.instagram.com/saeris.io/) | [Flickr](https://www.flickr.com/people/saeris/)
