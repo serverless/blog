@@ -1,22 +1,30 @@
 ---
 title: How to Make a Serverless GraphQL API using Lambda and DynamoDB
+description: 
 date: 2017-10-20
 layout: Post
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/graphql.jpeg
 authors:
   - JeremyCoffield
 ---
 
-GraphQL is cool, and the `graphql` module makes it easy to rapidly create a GraphQL service that validates queries. We use GraphQL at Serverless to query our backend services, and we love how well it fits into the serverless paradigm.
+The `graphql` module makes it easy to rapidly create a GraphQL service that validates queries. We use GraphQL at [Serverless.com](http://www.serverless.com) to query our backend services, and we love how well it fits into the serverless paradigm.
 
-Let's see how easy it is to use GraphQL with the Serverless Framework. In this example, I'll be targeting AWS. Let's build a simplistic version of an API that might be used by the front-end to retrieve a dynamic message to display in the UI, in this case greeting the user by name.
+Interested in building your own GraphQL API? Awesome. Here we go.
 
-Start by initializing a project and installing the [graphql](https://www.npmjs.com/package/graphql) module.
+# Building the API
+
+In this example, I'll be targeting AWS. Let's build a simplistic version of an API that might be used by the front-end to retrieve a dynamic message to display in the UI; in this case, greeting the user by name.
+
+Start by initializing a project and installing the [graphql](https://www.npmjs.com/package/graphql) module:
+
 ```sh
 $ npm init
 $ npm install --save graphql
 ```
 
-Now we can use it in `handler.js`, where we declare a schema and then use it to serve query requests.
+Now we can use it in `handler.js`, where we declare a schema and then use it to serve query requests:
+
 ```js
 /* handler.js */
 const {
@@ -57,7 +65,8 @@ module.exports.query = (event, context, callback) => graphql(schema, event.query
   )
 ```
 
-Pretty simple! To deploy it, define a service in `serverless.yml`, and set the handler to service HTTP requests.
+Pretty simple! To deploy it, define a service in `serverless.yml`, and set the handler to service HTTP requests:
+
 ```yml
 # serverless.yml
 service: graphql-api
@@ -70,7 +79,9 @@ functions:
           path: query
           method: get
 ```
+
 Now we can bring it to life:
+
 ```sh
 $ serverless deploy
 # Serverless: Packaging service...
@@ -99,9 +110,12 @@ $ curl -G 'https://9qdmq5nvql.execute-api.us-east-1.amazonaws.com/dev/query' --d
 # {"data":{"greeting":"Hello, Jeremy."}}
 ```
 
-In the real world, virtually any service that does something valuable has a data store behind it. For example, suppose users have nicknames that should appear in the greeting message. We need a database to store the nicknames, and we can expand our GraphQL API to update them.
+# Creating the database
 
-Let's start by adding a database to the resource definitions in `serverless.yml`. We need a table keyed on the user's first name, which we define using CloudFormation, as well as some provider configuration to allow our function to access it.
+In the real world, virtually any service that does something valuable has a data store behind it. Suppose users have nicknames that should appear in the greeting message; we need a database to store those nicknames, and we can expand our GraphQL API to update them.
+
+Let's start by adding a database to the resource definitions in `serverless.yml`. We need a table keyed on the user's first name, which we define using CloudFormation, as well as some provider configuration to allow our function to access it:
+
 ```yml
 # add to serverless.yml
 
@@ -134,19 +148,23 @@ resources:
         TableName: ${self:provider.environment.DYNAMODB_TABLE}
 ```
 
-To use it we need the [aws-sdk](https://www.npmjs.com/package/aws-sdk), In this example, I use the SDK's vanilla DocumentClient to access DynamoDB records.
+To use it, we'll need the [aws-sdk](https://www.npmjs.com/package/aws-sdk). Here's how you'd use the SDK's vanilla DocumentClient to access DynamoDB records:
+
 ```sh
 $ npm install --save aws-sdk
 ```
 
-Include these in our handler, and then we can get to work.
+Include these in our handler, and then we can get to work:
+
 ```js
 // add to handler.js
 const AWS = require('aws-sdk');
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 ```
 
-Before, we defined a method that just returned a string value for the greeting message. However, the GraphQL library can also use Promises as resolvers. Since the DocumentClient uses a callback pattern, we'll wrap these in promises and use the DynamoDB `get` method to check the database for a nickname for the user.
+We started by defining a method that returned a simple string value for the greeting message. However, the GraphQL library can also use Promises as resolvers.
+
+Since the DocumentClient uses a callback pattern, we'll wrap these in promises and use the DynamoDB `get` method to check the database for a nickname for the user:
 
 ```js
 // add to handler.js
@@ -187,7 +205,9 @@ const changeNickname = (firstName, nickname) => promisify(callback =>
   .then(() => nickname)
 ```
 
-You can see here that we added a method `changeNickname`, but the GraphQL API is not yet using it. We need to declare a mutation that the front-end can use to perform updates. We previously only added a `query` declaration to the schema. Now we need a `mutation` as well.
+You can see here that we added a method `changeNickname`, but the GraphQL API is not yet using it. We need to declare a mutation that the front-end can use to perform updates.
+
+We previously only added a `query` declaration to the schema; now we need a `mutation` as well:
 
 ```js
 // alter schema
@@ -213,12 +233,15 @@ const schema = new GraphQLSchema({
 })
 ```
 
-After these changes, we can make the greeting request again and receive the same result as before.
+After these changes, we can make the greeting request again and receive the same result as before:
+
 ```sh
 $ curl -G 'https://9qdmq5nvql.execute-api.us-east-1.amazonaws.com/dev/query' --data-urlencode 'query={greeting(firstName: "Jeremy")}'
 # {"data":{"greeting":"Hello, Jeremy."}}
 ```
-But if I want the API to call me "Jer", I can update the nickname for "Jeremy".
+
+But if I want the API to call me "Jer", I can update the nickname for "Jeremy":
+
 ```sh
 $ curl -G 'https://9qdmq5nvql.execute-api.us-east-1.amazonaws.com/dev/query' --data-urlencode 'query=mutation {changeNickname(firstName:
  "Jeremy", nickname: "Jer")}'
@@ -226,6 +249,12 @@ $ curl -G 'https://9qdmq5nvql.execute-api.us-east-1.amazonaws.com/dev/query' --d
 # {"data":{"greeting":"Hello, Jer."}}
 ```
 
-The API will now call anyone named "Jeremy" by the nickname "Jer". This kind of separation of concerns lets you build front-ends and services that offload logic into back-ends that encapsulate data access and processing behind a strongly typed, validating, uniform contract that comes with rich versioning and deprecation strategies.
+The API will now call anyone named "Jeremy" by the nickname "Jer".
 
-To deploy this service yourself, download the [source code](https://github.com/serverless/examples/tree/master/aws-node-graphql-api-with-dynamodb) and deploy it with the Serverless Framework, or take a look at [a larger example project](https://github.com/boazdejong/serverless-graphql-api) for ideas on project structure and factoring. Happy building!
+Separation of concerns like this let you build front-ends and services that offload logic into backends. Those backends can then encapsulate data access and processing behind a strongly-typed, validating, uniform contract that comes with rich versioning and deprecation strategies.
+
+# Deploy your own!
+
+To deploy this service yourself, download the [source code](https://github.com/serverless/examples/tree/master/aws-node-graphql-api-with-dynamodb) and deploy it with the [Serverless Framework](https://serverless.com/framework/). Or, take a look at [a larger example project](https://github.com/boazdejong/serverless-graphql-api) for ideas on project structure and factoring.
+
+Happy building!
