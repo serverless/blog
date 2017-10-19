@@ -12,7 +12,7 @@ If you’ve never worked at a venture-backed startup, well—I highly recommend 
 
 This, friends, is my 3rd such startup. I’m a masochist, I know.
 
-On the bright side! These experiences have led me to come up with a conveniently corny acronym for thriving in such chaos: **C.E.O.** These goals might not ensure success, will at least give you a good shot at sanity. 
+On the bright side! These experiences have led me to come up with a conveniently corny acronym for thriving in such chaos: **C.E.O.** These goals might not ensure success, but they'll at least give you a good shot at sanity. 
 
 # Communication
 
