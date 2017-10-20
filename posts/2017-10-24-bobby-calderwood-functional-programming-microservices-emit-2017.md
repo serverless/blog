@@ -8,6 +8,10 @@ authors:
   - AndreaPasswater
 ---
 
+Bobby Calderwood schooled us on functional programming and death stars. The takeaway? Aim to create river deltas instead.
+
+It'll all make sense when you watch the video (or, read the transcript below).
+
 [VIDEO EMBED]
 
 # Transcript
