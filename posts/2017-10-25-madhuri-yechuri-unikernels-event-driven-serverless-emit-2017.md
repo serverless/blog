@@ -10,7 +10,7 @@ authors:
 
 Madhuri Yechuri is the founder of [Elotl](https://angel.co/elotl). She came at us with cost-savings, agility, security and observability. Be sure to hang in there for the post-presentation Q&A.
 
-Full video is below, or scroll on ahead to read the transcript.
+The full video is below, or scroll on ahead to read the transcript.
 
 [VIDEO EMBED]
 
