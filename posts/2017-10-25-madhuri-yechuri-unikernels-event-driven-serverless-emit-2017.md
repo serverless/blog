@@ -12,7 +12,7 @@ Madhuri Yechuri is the founder of [Elotl](https://angel.co/elotl). She came at u
 
 The full video is below, or scroll on ahead to read the transcript.
 
-[VIDEO EMBED]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0uTp8xYvaaY" frameborder="0" allowfullscreen></iframe>
 
 # Transcript
 
