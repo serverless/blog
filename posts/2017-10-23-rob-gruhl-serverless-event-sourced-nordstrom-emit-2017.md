@@ -8,7 +8,7 @@ authors:
   - AndreaPasswater
 ---
 
-Rob kicked off [Emit Conference](http://www.emitconference.com/) with a peek behind the scenes at Nordstrom's architecture. They've got some pretty sophisticated stuff going on with distributed ledgers and streams.
+Rob Gruhl kicked off [Emit Conference](http://www.emitconference.com/) with a peek behind the scenes at Nordstrom's architecture. They've got some pretty sophisticated stuff going on with distributed ledgers and streams, and built their own open-source serverless project called "[Hello, Retail](https://github.com/Nordstrom/hello-retail)".
 
 Watch the video or read the transcript below for a complete run-down.
 
