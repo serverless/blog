@@ -1,5 +1,5 @@
 ---
-title: Ajay Nair - being a good citizen in an event driven world
+title: Ajay Nair - being a good citizen in an event-driven world
 description: We're posting the full videos and transcripts from Emit 2017! Here's Ajay from AWS on being a good citizen in an event-driven world.
 date: 2017-10-27
 layout: Post
@@ -8,7 +8,11 @@ authors:
   - AndreaPasswater
 ---
 
-[VIDEO EMBED]
+Ajay Nair, Lead Product Manager at [AWS Lambda](https://aws.amazon.com/lambda/), talked to us about considerations when designing event-driven systems.
+
+It was definitely a crowd favorite. Watch his talk below, or read the transcript.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YCNbyjN7vMw" frameborder="0" allowfullscreen></iframe>
 
 # Transcript
 
@@ -28,7 +32,7 @@ If folks haven't checked it out, check out this framework called Pyron that one 
 
 Something that's common across events or architectures is the fact that every communication ideally happens through events in APIs. The execution layer is stateless and ephemeral which means there is no concept of anything being retained over there. And that's clear almost a forcing function of separation of logic, data, and state. 
 
-So, we've been so far kind of standard events or architectures. One thing Austin told me when I was talking about the stock was he says, "Well, you can get on stage but you can't talk about Lambda," which cuts out 90% of my material that I have. So, what I'll talk about today was how do you go about being an effective event source provider in this particular model? And the reason I bring this up is many of you will be creating SaaS companies or ISPs or products of your own. And at some point, you're gonna be emitting events which you want to participate in applications that other people build.
+So, we've been so far kind of standard events or architectures. One thing Austin told me when I was talking about this talk was he says, "Well, you can get on stage but you can't talk about Lambda," which cuts out 90% of my material that I have. So, what I'll talk about today was how do you go about being an effective event source provider in this particular model? And the reason I bring this up is many of you will be creating SaaS companies or ISPs or products of your own. And at some point, you're gonna be emitting events which you want to participate in applications that other people build.
 
 So, say you're the next, next Uber, maybe the next Uber is already built and you wanna emit an event stream that allows anyone to create a function for doing something smart with it. Say, creating a strike payment every time someone sits inside Uber or whatever. What are the decisions that you need to make about creating an event source or participating in this event source infrastructure? A lot of the patterns I'm gonna talk about today are ones that we use internally for our internal services for emitting events across S3, Dynamo, and others.
 
