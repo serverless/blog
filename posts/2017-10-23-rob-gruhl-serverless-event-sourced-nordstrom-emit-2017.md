@@ -8,7 +8,11 @@ authors:
   - AndreaPasswater
 ---
 
-[VIDEO EMBED]
+Rob kicked of [Emit Conference](http://www.emitconference.com/) with a peek behind the scenes at Nordstrom's architecture. They've got some pretty sophisticated stuff going on—x, x, x.
+
+Watch the video and/or read the transcripts below for a complete run-down.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WcCErxLKR7g" frameborder="0" allowfullscreen></iframe>
 
 # Transcript
 
