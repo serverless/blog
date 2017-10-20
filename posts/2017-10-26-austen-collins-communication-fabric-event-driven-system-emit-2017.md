@@ -8,7 +8,11 @@ authors:
   - AndreaPasswater
 ---
 
-[VIDEO EMBED]
+Austen Collins launched the latest project from [Serverless.com](https://www.serverless.com), the [Event Gateway](https://www.serverless.com/event-gateway). The Event Gateway facilitates cross-cloud serverless architectures.
+
+Definitely watch the video; there's a sweet demo in there.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wTEADkvUz14" frameborder="0" allowfullscreen></iframe>
 
 # Transcript
 
