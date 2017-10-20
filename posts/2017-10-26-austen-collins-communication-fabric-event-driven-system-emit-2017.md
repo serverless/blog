@@ -1,6 +1,6 @@
 ---
 title: Austen Collins - Building the communication fabric for an event-driven system
-description: We're posting the full videos and transcripts from Emit 2017! Here's Serverless CEO Austen Collins on communication fabrics for event-driven systems.
+description: We're posting the videos from Emit 2017! Here's Serverless CEO Austen Collins on the Event Gateway - a communication fabric for event-driven systems.
 date: 2017-10-26
 layout: Post
 thumbnail: 'http://www.emitconference.com/assets/images/speaker-austen-collins.jpg'
