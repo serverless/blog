@@ -12,7 +12,7 @@ Bobby Calderwood schooled us on functional programming and death stars. The take
 
 It'll all make sense when you watch the video (or, read the transcript below).
 
-[VIDEO EMBED]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/idxguWO6VLE" frameborder="0" allowfullscreen></iframe>
 
 # Transcript
 
