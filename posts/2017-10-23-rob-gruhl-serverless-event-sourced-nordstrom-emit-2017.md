@@ -8,7 +8,7 @@ authors:
   - AndreaPasswater
 ---
 
-Rob kicked of [Emit Conference](http://www.emitconference.com/) with a peek behind the scenes at Nordstrom's architecture. They've got some pretty sophisticated stuff going on with distributed ledgers and streams.
+Rob kicked off [Emit Conference](http://www.emitconference.com/) with a peek behind the scenes at Nordstrom's architecture. They've got some pretty sophisticated stuff going on with distributed ledgers and streams.
 
 Watch the video and/or read the transcripts below for a complete run-down.
 
