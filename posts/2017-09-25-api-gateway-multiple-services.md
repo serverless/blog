@@ -12,6 +12,8 @@ In this post, I'll show you how to put multiple Serverless services on the same 
 
 Using the power of Serverless and the [serverless-domain-manager](https://github.com/amplify-education/serverless-domain-manager) plugin, we can use API Gateway's [base path mappings](http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html#how-to-custom-domains-mapping-console) to handle this. Follow the instructions below to deploy your two services to the same domain.
 
+_Addendum: Many users asked about how to deploy to different domains based on the stage, e.g. `staging-api.mycompany.com` when deploying to staging. I've added a section on [Working with multiple stages](#working-with-multiple-stages) below._
+
 If you already have your own services set up and just want the simple instructions, skip to the [TL;DR section](#tldr) below.
 
 
@@ -254,6 +256,53 @@ Run `sls deploy` to deploy the users service, then check it in your browser:
 <img width="604" alt="Users Service Base Path" src="https://user-images.githubusercontent.com/6509926/30783122-81ead4f4-a103-11e7-9809-75e108e5506e.png">
 
 That's it! Now you easily separate your functions into services while still keeping them on the same domain. You're not limited to two services on this domain -- as you add additional services, just use a new `basePath` to add it to your domain.
+
+# Working with multiple stages
+
+> Addendum: A few people have asked about how to handle this with multiple stages (prod, staging, dev). I've added this section to show how to structure your project to handle this.
+
+When working with Serverless services, you'll often have multiple stages for your project. In this section, I'll show you how to set up your project to deploy to custom domains for different stages.
+
+To set the scene, let's imagine we have three stages:
+
+- `prod`, which is accessible at `api.mycompany.com;
+- `staging`, which is accessible at `staging-api.mycompany.com`; and
+- `dev`, which is accessible at `dev-api.mycompany.com`.
+
+The first thing you need to do is get certificates for each of these domains in Amazon Certificate Manager. Please read the _Getting a certificate for your domain_ section of my previous post on [using API Gateway with Serverless](https://serverless.com/blog/serverless-api-gateway-domain/).
+
+Once you've done that, use the following config for your `custom` block in `serverless.yml`:
+
+```
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  domains:
+    prod: api.mycompany.com
+    staging: staging.mycompany.com
+    dev: dev.mycompany.com
+
+  customDomain:
+    basePath: ""
+    domainName: ${self:custom.domains.${self:custom.stage}}"
+    stage: "${self:custom.stage}"
+    createRoute53Record: true
+```
+
+Pay particular attention to this line: 
+
+`domainName: ${self:custom.domains.${self:custom.stage}}"`
+
+We're using the Serverless Framework's powerful [variable system](https://serverless.com/framework/docs/providers/aws/guide/variables/) to infer the domain name based on the stage. I've set up my three stages in the `domains` block of the `custom` section. This will use my given stage to determine which domain to use.
+
+Once this is set up, you'll need to create your custom domain _for each of your stages_. This is a one-time setup step. If you use the stages I gave above, you would run:
+
+```bash
+$ sls create_domain --stage prod
+$ sls create_domain --stage staging
+$ sls create_domain --stage dev
+```
+
+Once your domains are set up, you can deploy to your proper stages! Use `sls deploy --stage prod` to deploy to `api.mycompany.com` and the other stages to deploy to their respective domains.
 
 # TL;DR
 
