@@ -8,7 +8,15 @@ authors:
   - AndreaPasswater
 ---
 
-[VIDEO EMBED]
+Here we have Dave Copeland, Director of Engineering at [StitchFix](https://www.stitchfix.com/) and purveyor of consumer-driven contracts.
+
+StitchFix is an e-commerce company: they send you clothes through the mail, and if you like them you buy them. If you buy the whole box, you get a discount. So the engineering team is maintaining some logic about how to charge customers and how to apply the approapriate discount for the number of items they buy.
+
+The engineering team manages most of the operational side of the business—warehousing, purchasing, printing packing slips—and each team owns and maintains their own software, and all of this software talks to each other. So it gets complicated to update different parts of the system without harming the core business.
+
+Their solution? Consumer-based contracting. Watch Dave's talk below or peruse the transcript for some real-world examples of how this works.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/54KSJRFv30E" frameborder="0" allowfullscreen></iframe>
 
 # Transcript
 
