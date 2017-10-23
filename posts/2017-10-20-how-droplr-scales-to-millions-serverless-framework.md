@@ -1,6 +1,6 @@
 ---
 title: How Droplr Scales to Millions With The Serverless Framework
-description: TODO
+description: Droplr is used to share 1000s of screencasts and files every day. Here's how they empowered their growth with the Serverless Framework.
 date: 2017-10-20
 thumbnail: 'https://avatars2.githubusercontent.com/u/828077?s=400&v=4'
 layout: Post
@@ -8,15 +8,15 @@ authors:
   - AntoniOrfin
 ---
 
-**Droplr is a tool used by more than 500.000 users. Every day, these users share thousands of screenshots, screencasts and files. We are growing fast and constantly looking for technologies that empowers such growth - that’s why we are talking about Serverless today.**
+I'm Antoni Orfin, a Solution Architect at [Droplr](https://droplr.com/?utm_source=serverlesscom&utm_medium=referral&utm_campaign=blogpost20171020). We're used by more than 500,000 users, who share thousands of screenshots, screencasts and files every day—so we're constantly looking for technologies that empower growth.
 
-I'm Antoni Orfin, a Solution Architect at [Droplr](https://droplr.com/?utm_source=serverlesscom&utm_medium=referral&utm_campaign=blogpost20171020) and I’d like to share with you some thoughts on our experience of moving Droplr’s infrastructure to Lambda. It’s been quite a journey, but well worth setting off in it, so read on! 
+When we first heard about AWS Lambda, we were using a Docker-based microservices architecture. It carried some problems: rapid deployments, complexity of Docker-based microservices architecture and underutilized EC2. Lambda could help us eliminate some of that unneeded complexity.  
 
-When we first heard about AWS Lambda, we were thrilled. At the time, we were using a Docker-based microservices architecture, which entailed problems like rapid deployments, complexity of Docker-based microservices architecture and underutilized EC2. Lambda could help us eliminate some of the unneeded complexity.  
+We immediately knew we wanted to give Lambda a try. Our main goal was to make our development process even as streamlined as possible. Our main goals were to boost productivity and inspire innovation—make it super easy and fun for developers to deploy their own production-grade microservices.
 
-We wanted to give it a try as fast as possible. Our main goal was to make our development process even as streamlined as possible. It had to be super easy and fun for developers to deploy their own production-grade microservices It had to boost productivity and inspire innovation.
+So, we started doing some PoCs on the [Serverless Framework](https://serverless.com/framework/). Today we're leveraging several Lambda-hosted microservices on top of our existing architecture.
 
-So, we started doing some PoCs on the Serverless Framework, and today we're leveraging several Lambda-hosted microservices on top of our existing architecture.
+It's been quite a journey, but well worth setting off on! Read on for a deeper dive.
 
 # Our Serverless architecture
 
