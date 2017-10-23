@@ -8,9 +8,11 @@ authors:
   - AndreaPasswater
 ---
 
-Rob Gruhl kicked off [Emit Conference](http://www.emitconference.com/) with a peek behind the scenes at Nordstrom's architecture. Nordstrom was an early adopter of Serverless for services like personalization to frequently viewed items. They've since contributed some excellent resources to the community, including the "[Hello, Retail](https://github.com/Nordstrom/hello-retail)" project and a Serverless Artillery project for performance testing.
+Rob Gruhl kicked off [Emit Conference](http://www.emitconference.com/) with a peek behind the scenes at Nordstrom's architecture.
 
-In his talk, he discussed Nordstrom's use of the event-sourced architecture with Serverless: what it is and why it's a good fit for the Serverless paradigm. He also notes some difficulties with the event-sourcing pattern, the ways Nordstrom has worked around it, and ends with a few #awswishlist items that would make it easier to develop event-sourced applications with Serverless.
+They were an early adopter of [Serverless.com](http://www.serverless.com) for services from personalization to frequently viewed items. They've since contributed some excellent resources back to the community, including the "[Hello, Retail](https://github.com/Nordstrom/hello-retail)" project and a Serverless Artillery project for performance testing.
+
+In his talk, Rob discussed Nordstrom's use of the event-sourced architecture with Serverless: what it is and why it's a good fit for the Serverless paradigm. He also notes some difficulties with the event-sourcing pattern, the ways Nordstrom has worked around it, and ends with a few #awswishlist items that would make it easier to develop event-sourced applications with Serverless.
 
 Watch the video or read the transcript below for a complete run-down.
 
