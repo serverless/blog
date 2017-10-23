@@ -8,7 +8,13 @@ authors:
   - AndreaPasswater
 ---
 
-[VIDEO EMBED]
+Matthew pulled us out of the tech stack for a second to focus on what's *beneath* it, the foundational layer of the application pyramid: business drivers. This, he says, is what will turn everyone event-driven. Non-tech companies, even in old-school industries like banking, are increasingly becoming tech-centric.
+
+Matt's been working with core banking at Accenture for a while, and it comes with lots of legacy challenges. You can't just wipe everything clean and start over in a greenfield project, you have to respect and learn to integrate with legacy systems, some of which are well over a decade old.
+
+He's got some practical advice from his own forays into bringing banks into the future. Watch below or read the transcript for the juicy details.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OMh8nzqYjHw" frameborder="0" allowfullscreen></iframe>
 
 # Transcript
 
