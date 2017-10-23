@@ -8,7 +8,11 @@ authors:
   - AndreaPasswater
 ---
 
-Bobby Calderwood schooled us on functional programming and death stars. The takeaway? Aim to create river deltas instead.
+Before schooling us on functional programming, Bobby Calderwood hit us with The Big Question: to microservice, or not to microservice? 
+
+Well, he says—let's start from a basic place, something we can all agree on. Death Stars = bad. You know what he's talking about: when your architecture map (er, [diagram](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#why-the-fuss-about-serverless)) looks like a tangled hairy mess that meets in a gigantic black mass in the middle. He talks about a real Death Star architecture out in the wild and poses the question: how did they get here?
+
+His argument is an object-oriented programming mindset. We won't spoil the talk for you, but let's just say he has a possible tidy solution wrapped up in a river delta.
 
 It'll all make sense when you watch the video (or, read the transcript below).
 
