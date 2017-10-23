@@ -12,11 +12,11 @@ authors:
 
 I'm Antoni Orfin, a Solution Architect at [Droplr](https://droplr.com/?utm_source=serverlesscom&utm_medium=referral&utm_campaign=blogpost20171020) and I’d like to share with you some thoughts on our experience of moving Droplr’s infrastructure to Lambda. It’s been quite a journey, but well worth setting off in it, so read on! 
 
-When we first heard about AWS Lambda, we were thrilled. Suddenly most of the common problems related with rapid deployments, complexity of Docker-based microservices architecture and underutilized EC2 servers could go away.
+When we first heard about AWS Lambda, we were thrilled. At the time, we were using a Docker-based microservices architecture, which entailed problems like rapid deployments, complexity of Docker-based microservices architecture and underutilized EC2. Lambda could help us eliminate some of the unneeded complexity.  
 
-We wanted to give it a try as fast as possible. Our main goal was to make our development process even more streamlined. It had to be super easy and fun for developers to deploy their own production-grade microservices without worrying about underlying AWS complexity. It had to enhance productivity and innovation. 
+We wanted to give it a try as fast as possible. Our main goal was to make our development process even as streamlined as possible. It had to be super easy and fun for developers to deploy their own production-grade microservices It had to boost productivity and inspire innovation.
 
-After doing a couple of small proof of concepts, we finally agreed that Serverless would meet all of our requirements and that we should continue with it. Now, after half a year of working with Serverless Framework on production, we know it was the best choice we could take.
+So, we started doing some PoCs on the Serverless Framework, and today we're leveraging several Lambda-hosted microservices on top of our existing architecture.
 
 # Our Serverless architecture
 
