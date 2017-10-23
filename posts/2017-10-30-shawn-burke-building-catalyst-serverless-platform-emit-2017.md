@@ -8,7 +8,7 @@ authors:
   - AndreaPasswater
 ---
 
-Shawn Burke knows something about scale—he works on scalability infrastructure at [Uber](https://www.uber.com/). The number of rides they served roughly quintupled in about 2 years.
+Shawn Burke knows something about scale—he works on scalability infrastructure at [Uber](https://www.uber.com/). The number of total rides they've served has roughly quintupled in a mere ~2 years.
 
 He arrived at Uber to discover a flurry of snowflakes: aka, the visual multiplication that results from having 1000+ microservices and 4 languages in regular use. Serverless was a great way for them to deal with this; they could decouple consumption from production across a variety of domains. That simplicity was a big deal.
 
