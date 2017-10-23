@@ -10,7 +10,7 @@ authors:
 
 [Emit Conference](http://www.emitconference.com/) closed out with a panel on the future of event-driven computing. On the panel, we had Chris Anderson from Azure Functions, Jason Polites from Google Cloud Functions, and Anne Thomas from Gartner. If anyone has solid insight and future predictions, it's this crew.
 
-[Austen Collins](https://twitter.com/austencollins?lang=en) facilitated. He asked them for all kinds of tidbits: whether pricing was really the main driver for serverless adoption, the most common use cases they see (as well as the most interesting—academic use cases for serverless, anyone), and what concerns and problems *they're* dealing with to keep this stuff up and running.
+[Austen Collins](https://twitter.com/austencollins?lang=en) facilitated. He asked them for all kinds of tidbits: whether pricing was really the main driver for serverless adoption, the most common use cases they see (as well as the most interesting—serverless in academia, anyone?), and what concerns and problems *they're* dealing with to keep this stuff up and running.
 
 Watch the panel discussion in the video below, or read on to see the transcript.
 
