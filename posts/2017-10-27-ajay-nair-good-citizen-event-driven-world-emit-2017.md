@@ -20,7 +20,7 @@ It was definitely a crowd favorite. Watch his talk below, or read the transcript
 
 In the course of the conversations today a lot of us have been talking about event of an architecture, the serverless and serverless event of an architectures. I'm taking an opinion in this talk which is while all serverless architectures tend to be event driven not all events of an architectures are serverless. So, I'm gonna try and stick to the word event driven as much as possible but pardon me if I slip up a little bit.
 
-So, to kind of get into it a little bit, we're all here because we're kind of excited about this movement around event of an architecture that this push to serverless has triggered. All of us are excited about the kind of architectures we have seen shared today from Nordstrom and Capitol One. There's one that I really like to kick off talks with which is a company called Uber. 
+So, to kind of get into it a little bit, we're all here because we're kind of excited about this movement around event driven architecture that this push to serverless has triggered. All of us are excited about the kind of architectures we have seen shared today from Nordstrom and Capital One. There's one that I really like to kick off talks with which is a company called Uber. 
 
 Many of you may have seen some of their Twitter posts and others. This is the architecture that we kind of talk about as the before of serverless architectures, your conventional load balancers, a few [inaudible 00:02:04] servers talking to a standard database and this is the future of serverless as some people start talking about it.
 
