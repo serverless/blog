@@ -10,7 +10,11 @@ authors:
 
 Ajay Nair, Lead Product Manager at [AWS Lambda](https://aws.amazon.com/lambda/), talked to us about considerations when designing event-driven systems.
 
-It was definitely a crowd favorite. Watch his talk below, or read the transcript.
+Okay, he says, we can all admit that serverless architectures tend to be event-driven: all logic is embodied as functions (or, events), that talk to something downstream. And eventually, it'll be more and more common that companies want to emit event streams that let anyone do cool things with them. All kinds of SaaS companies and ISPs will be event sources.
+
+So, in Ajay's experience, what are the practicalities and ins-and-outs? This one was definitely a crowd favorite.
+
+Watch his full talk below, or read the transcript.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YCNbyjN7vMw" frameborder="0" allowfullscreen></iframe>
 
