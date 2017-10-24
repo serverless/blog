@@ -10,9 +10,9 @@ authors:
 
 Cornelia, ever the modest one, began her talk by saying that she "probably wouldn't blow any minds here." Au contraire—her talk was one of the most talked-about at the afterparty.
 
-Her talk focused on the way we educate upcoming programmers, and the implications it has down the line for their ease in reasoning about event-driven systems. She happened to learn Pascal first, which gave her primitives of variables and assignments, pushed her straight into iterations and control loops. It forced her very early on to get comfortable with leaps of faith.
+She focused on the way we educate upcoming programmers, and the implications it has down the line for their ease in reasoning about event-driven systems. She happened to learn Pascal first, which gave her primitives of variables and assignments, pushed her straight into iterations and control loops. It forced her very early on to get comfortable with leaps of faith.
 
-What about students who learn object-oriented languages first? They tend have a really hard time reasoning about recursion; it just breaks too far outside the paradigm they were given. When our baseline is object-oriented programming, it structures our mindset such that it can be harder to naturally reason about event-driven systems.
+What about students who start off with object-oriented languages? They tend have a really hard time reasoning about recursion; it just breaks too far outside the paradigm they were given. When our baseline is object-oriented programming, it structures our mindset such that it can be harder to naturally reason about event-driven systems.
 
 Her talk is well worth watching, or read the transcript below.
 
