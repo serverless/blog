@@ -1,6 +1,6 @@
 ---
 title: How to Test Serverless Applications
-description: "A brief reading on how to effectively test serverless applications"
+description: "Tips from the Serverless team - how we test serverless applications."
 date: 2017-10-30
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/testing-apps.jpg'
 layout: Post
