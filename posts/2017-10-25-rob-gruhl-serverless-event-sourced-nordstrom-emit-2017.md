@@ -1,7 +1,7 @@
 ---
 title: Rob Gruhl - towards a serverless event-sourced Nordstrom
 description: We're posting the full videos and transcripts from Emit 2017! Here's Rob with his talk—towards a serverless event-sourced Nordstrom.
-date: 2017-10-23
+date: 2017-10-25
 layout: Post
 thumbnail: 'http://www.emitconference.com/assets/images/speaker-rob-gruhl.jpg'
 authors:
@@ -133,3 +133,7 @@ And we've hosted that inside of a serverless function which can invoke as many s
 What subnet is it in? What are the firewalls? What are my authentication authorization concerns? How do I communicate the search, etc., etc. Once you've solved that, for this testing scenario, you've now also solved it for any functional serverless function that you want to communicate with your service. If you're thinking about event-sourcing, we learned so much when we did the recently viewed tray. It's a very simple use case, but it's one that' very visible. It was easy for us to understand when things went wrong. It's very visible on the website. It's very visible testing.
 
 You can go and hit an A item and a B item and a C item, and see if they show up. So there's a lot of subtle issues that you'll run up against. So if you can find a use case where you have high visibility and maybe low criticality to it, you can get started and start establishing that stream. And as you establish that stream, think of it in terms of a published stream. See if you can get it to that high quality published stream, and think about how you can load all the attributes that were observed at the moment of that event's existence. So thanks. That's all I have today. We'd love to hear from you and here is a list of the open source products that I mentioned. Thank you.
+
+# About Emit Conference
+
+> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures. To find out when tickets go on sale, follow [@emitconf](https://twitter.com/emitconf) and sign up for the [Serverless.com newsletter]().
