@@ -55,7 +55,7 @@ functions:
 
 Now, this service is only useful when it can actually send you a reminder. To do that, we're going to use Twilio. (If you don't have a [Twilio account](https://www.twilio.com/sms), you can set one up for free.)
 
-First up, you’ll need to set both your Twilio accountId and your authToken. You can do this for the testing stage as JavaScript variables in your handler.js file, but for production you’ll want to encrypt them with something like [AWS KMS](https://serverless.com/framework/docs/providers/aws/guide/functions#kms-keys):
+First up, you’ll need to set both your Twilio accountId and your authToken. You can do this for the testing stage as JavaScript variables in your `handler.js` file, but for production you’ll want to encrypt them with something like [AWS KMS](https://serverless.com/framework/docs/providers/aws/guide/functions#kms-keys):
 
 ```js
 // Twilio Credentials 
