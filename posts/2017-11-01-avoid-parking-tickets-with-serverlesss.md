@@ -18,7 +18,9 @@ And learn a little Serverless development at the same time! Today, we're going t
 
 # Set up the environment
 
-This example is done using the [Serverless Framework](https://www.serverless.com/framework), AWS Lambda and Node.js.
+We're going to create a cron job that sends us an sms the night before every street cleaning day.
+
+This example uses the [Serverless Framework](https://www.serverless.com/framework), AWS Lambda and Node.js.
 
 > **Note:** If you've never used these before, [here is a handy guide](https://serverless.com/framework/docs/providers/aws/guide/quick-start/) for getting everything set up on your machine. 
 
