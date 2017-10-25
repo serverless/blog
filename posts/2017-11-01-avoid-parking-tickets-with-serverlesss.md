@@ -8,13 +8,25 @@ authors:
 - NickGottlieb
 ---
 
-If you park on the streets in a city that has street sweeping, you’ve shared felt my frustration a getting a ticket for not moving your car. With everything else going on in life it’s inevitable that you’ll forget to move your car eventually, especially in cities like San Francisco which seem to intentionally create confusing street sweeping schedules.
+If you live in a city, then you are incredibly familiar with these three, terrifying little words: "street cleaning day."
 
-Well here is your chance to fight back and learn a little Serverless development at the same time.
+The days you wake up at 6:00am, groggy, still in pajamas, and run barefoot into the cold streets at their dirtiest. And still, despite your best efforts, there will come a day when you'll forget. Sleep past the alarm. You'll slide behind the driver's seat and there it'll be, nested under your windshiled wiper: another parking ticket.
 
-This example is done using the Serverless Framework, AWS Lambda, and Node.js, so the first thing you’ll need to do is get all three of those setup. [Here is a handy guide for doing that](https://serverless.com/framework/docs/providers/aws/guide/quick-start/). 
+Well. Here is your chance to fight back.
 
-Once you’ve successfully deployed your node template to to AWS you’ll need to properly configure your serverless.yml to include the functions you need for your parking reminder needs. In my neighborhood street sweeping comes in the mornings on the second and fourth Wednesday as well as the second and fourth Friday of each month, so I set up my functions like this:
+And (!) learn a little Serverless development at the same time. Let's make a serverless parking reminder.
+
+# Set up the environment
+
+This example is done using the [Serverless Framework](https://www.serverless.com/framework), AWS Lambda and Node.js.
+
+> **Note:** If you've never used these before, [here is a handy guide](https://serverless.com/framework/docs/providers/aws/guide/quick-start/) for getting everything set up on your machine. 
+
+# Write the reminder function
+
+After you’ve successfully deployed your Node template to to AWS, you’ll need to properly configure your `serverless.yml` to include functions that configure your reminders.
+
+In my neighborhood, the street sweeper comes on each second and fourth Wednesday, and each second and fourth Friday. So I set up my functions like this:
 
 ```js
 functions:
@@ -37,23 +49,28 @@ functions:
       - schedule: cron(00 17 ? * 4#4 *)
 ```
 
-AWS provides really some really expressions for describing your cron jobs, [full documentation is available here](http://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html). 
+> **Note:** AWS provides really some really useful expressions for describing your cron jobs. [Full documentation is available here](http://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html).
 
-Once you’ve set up your serverless.yml, you’ll need to configure your code in your handler.js file. The first step in doing that is setting up a [Twilio account](https://www.twilio.com/sms) (free) and configuring your API credentials in your project. You’ll need to set both your Twilio accountId and your authToken. To get started you can simply set them as JavaScript variables in your handler.js file but for production you’ll want to encrypt them with something like [AWS KMS.](https://serverless.com/framework/docs/providers/aws/guide/functions#kms-keys) 
+# Hooking into Twilio 
+
+Now you’ll need to configure your code in your handler.js file to send you text message reminders using Twilio. (If you don't have a [Twilio account](https://www.twilio.com/sms), you can set one up for free.)
+
+First, you’ll need to set both your Twilio accountId and your authToken. You can do this for the testing stage as JavaScript variables in your handler.js file, but for production you’ll want to encrypt them with something like [AWS KMS](https://serverless.com/framework/docs/providers/aws/guide/functions#kms-keys):
+
 ```js
 // Twilio Credentials 
 var accountSid = 'ACCOUNTID'; 
 var authToken = 'AUTHTOKEN';
 ```
 
-Next you’ll need to require the Twilio module.
+Then, require the Twilio module:
 
 ```js
 //require the Twilio module 
 var client = require('twilio')(accountSid, authToken);
 ```
 
-Then you’ll need to write your reminder function, mine looks like this:
+And write your reminder function. Mine looks like this:
 
 ```js
 module.exports.hello = (event, context, callback) => {
@@ -67,9 +84,18 @@ module.exports.hello = (event, context, callback) => {
 };
 ```
 
-Pretty simple. The last step is to include the Twilio module in your package.json, run ’npm install’ and test our your functions by running ‘sls invoke --function functionName’.
+Pretty simple!
 
-You now have a serverless service for reminding you to move your car for street sweeping! You can run this without paying anything using the free Lambda tier and the Twilio free trial, but even you were paying full price it wouldn’t break the bank. The example here would cost about $.0000002/month in Lambda fees and $.09/month in Twilio fees.
+To finish things up, include the Twilio module in your `package.json`, run `npm install` and test out your functions by running `sls invoke --function functionName`.
 
-[Here is a complete working example up on GitHub.](https://github.com/worldsoup/serverless-parking-reminder)
+# And the cost? Basically free.
 
+You can run this without paying anything. Lambda has a generous free tier, and Twilio offers a free trial. But even if you were paying full price, it would be dirt cheap.
+
+The example here would cost about $.0000002/month in Lambda fees and $.09/month in Twilio fees.
+
+# See it on GitHub
+
+You now have a serverless service for reminding you to move your car for street sweeping! 
+
+Feel free to check out [the complete working example up on GitHub.](https://github.com/worldsoup/serverless-parking-reminder).
