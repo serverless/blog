@@ -10,7 +10,7 @@ authors:
 
 If you live in a city, then you are incredibly familiar with these three, terrifying little words: "street cleaning day."
 
-The days you wake up at 6:00am, groggy, still in pajamas, and run barefoot into the cold streets at their dirtiest. And the worst part is, it's so easy to forget to move your car. Oh, how many mornings you've innocently slid behind the driver's seat to discover, nested under your windshiled wiper: another parking ticket.
+The worst part about street cleaning isn't the days you wake up at 6:00am, groggy, still in pajamas, and run barefoot into the cold streets. Oh no. The worst part are the days you forget. Those mornings you innocently slide behind the driver's seat to discover, nested under your windshiled wiper: another parking ticket.
 
 Well. Here is your chance to fight back.
 
