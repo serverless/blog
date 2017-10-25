@@ -1,7 +1,7 @@
 ---
 title: Bobby Calderwood - toward a functional programming analogy for microservices
 description: We're posting the full videos and transcripts from Emit 2017! Here's Bobby from CapitalOne with his talk on microservices.
-date: 2017-10-24
+date: 2017-10-26
 layout: Post
 thumbnail: 'http://www.emitconference.com/assets/images/speaker-bobby-calderwood.jpg'
 authors:
@@ -89,3 +89,7 @@ Manage side effects carefully, I wish I had more time to dig into this, but it l
 Here, I'm, sort of, defining the call stack as writing to and reading from the log, so that's not side-effecting when you're just, sort of, maintaining state via this log. When you, like, call out to some third-party web service, or when you send an email to your customer, or when you set an SMS message, that's a side effect and you have to manage that carefully. Sagas are a good technique for doing that, writing down the fact that, "Hey, I tried to call this thing, here was the results, maybe you can have some sort of retry pattern." If at some point you need to like reverse that action, you can't reverse the sending of an email, you just have to send a compensate email, like, "I'm sorry, we sent an email on accident." So you have to manage that carefully. 
 
 Tools, like I said, I really like the Kafka Stack very much for this, but there are other tools that do this, right? We talked about Kinesis, there some new log, like, Apache Pulsar and Twitter's distributed log and they all have the same characteristics of being immutable, append-only stores, that then convey those changes out to listeners. And there's good integrations with serverless techniques and tools Apache, OpenWhisk, Kafka package, is one example. Here's some references, I mentioned throughout the course of the talk. The one that I don't have up there is the commander presentation that I gave at Strange Loop and the open source associated with it, you can Google that find it. That's all I have today, thank you very much.
+
+# About Emit Conference
+
+> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures. To stay in the loop about next year's conference, follow [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
