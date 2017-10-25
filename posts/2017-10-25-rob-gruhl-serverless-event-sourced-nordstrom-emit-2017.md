@@ -136,4 +136,4 @@ You can go and hit an A item and a B item and a C item, and see if they show up.
 
 # About Emit Conference
 
-> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures. To find out when tickets go on sale, follow [@emitconf](https://twitter.com/emitconf) and sign up for the [Serverless.com newsletter]().
+> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures. To stay in the loop about next year's conference, follow [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
