@@ -10,11 +10,11 @@ authors:
 
 If you live in a city, then you are incredibly familiar with these three, terrifying little words: "street cleaning day."
 
-The days you wake up at 6:00am, groggy, still in pajamas, and run barefoot into the cold streets at their dirtiest. And still, despite your best efforts, there will come a day when you'll forget. Sleep past the alarm. You'll slide behind the driver's seat and there it'll be, nested under your windshiled wiper: another parking ticket.
+The days you wake up at 6:00am, groggy, still in pajamas, and run barefoot into the cold streets at their dirtiest. And the worst part is, it's so easy to forget to move your car. Oh, how many mornings you've innocently slid behind the driver's seat to discover, nested under your windshiled wiper: another parking ticket.
 
 Well. Here is your chance to fight back.
 
-And (!) learn a little Serverless development at the same time. Let's make a serverless parking reminder.
+And learn a little Serverless development at the same time! Today, we're going to make a super simple serverless parking reminder.
 
 # Set up the environment
 
@@ -53,9 +53,9 @@ functions:
 
 # Hooking into Twilio 
 
-Now you’ll need to configure your code in your handler.js file to send you text message reminders using Twilio. (If you don't have a [Twilio account](https://www.twilio.com/sms), you can set one up for free.)
+Now, this service is only useful when it can actually send you a reminder. To do that, we're going to use Twilio. (If you don't have a [Twilio account](https://www.twilio.com/sms), you can set one up for free.)
 
-First, you’ll need to set both your Twilio accountId and your authToken. You can do this for the testing stage as JavaScript variables in your handler.js file, but for production you’ll want to encrypt them with something like [AWS KMS](https://serverless.com/framework/docs/providers/aws/guide/functions#kms-keys):
+First up, you’ll need to set both your Twilio accountId and your authToken. You can do this for the testing stage as JavaScript variables in your handler.js file, but for production you’ll want to encrypt them with something like [AWS KMS](https://serverless.com/framework/docs/providers/aws/guide/functions#kms-keys):
 
 ```js
 // Twilio Credentials 
