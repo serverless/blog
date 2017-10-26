@@ -19,7 +19,8 @@ Watch the video or read the transcript below for a complete run-down.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WcCErxLKR7g" frameborder="0" allowfullscreen></iframe>
 
 ## Also see:
-- [Bobby Calderwood: toward a functional programming analogy for microservices](https://serverless.com/blog/bobby-calderwood-functional-programming-microservices-emit-2017/)
+
+The entire playlist of talks is available on our YouTube channel here: [Emit Conf 2017](https://serverless.com/blog/bobby-calderwood-functional-programming-microservices-emit-2017/)
 
 # Transcript
 
