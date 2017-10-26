@@ -8,8 +8,6 @@ authors:
   - AndreaPasswater
 ---
 
-# About Emit Conference
-
 > [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures.
 
 Rob Gruhl kicked off [Emit Conference](http://www.emitconference.com/) with a peek behind the scenes at Nordstrom's architecture.
@@ -24,7 +22,7 @@ Watch the video or read the transcript below for a complete run-down.
 
 ## More videos:
 
-The entire playlist of talks is available on our YouTube channel here: [Emit Conf 2017](https://serverless.com/blog/bobby-calderwood-functional-programming-microservices-emit-2017/)
+The entire playlist of talks is available on our YouTube channel here: [Emit Conf 2017](https://www.youtube.com/playlist?list=PLIIjEI2fYC-DBvLGbhw_SkeH_0IgvlFGI)
 
 To stay in the loop about Emit Conf, follow us at [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
 
