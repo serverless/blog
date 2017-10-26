@@ -8,8 +8,6 @@ authors:
   - AndreaPasswater
 ---
 
-# About Emit Conference
-
 > [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures.
 
 Rob Gruhl kicked off [Emit Conference](http://www.emitconference.com/) with a peek behind the scenes at Nordstrom's architecture.
