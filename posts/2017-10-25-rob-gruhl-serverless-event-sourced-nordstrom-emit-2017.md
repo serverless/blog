@@ -10,13 +10,13 @@ authors:
 
 # About Emit Conference
 
-> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures. To stay in the loop about next year's conference, follow [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
+> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures.
 
 Rob Gruhl kicked off [Emit Conference](http://www.emitconference.com/) with a peek behind the scenes at Nordstrom's architecture.
 
-They were an early adopter of [Serverless.com](http://www.serverless.com) for services from personalization to frequently viewed items. They've since contributed some excellent resources back to the community, including the "[Hello, Retail](https://github.com/Nordstrom/hello-retail)" project and a Serverless Artillery project for performance testing.
+In his talk, Rob discussed Nordstrom's use of the event-sourced architecture with [Serverless.com](http://www.serverless.com): what it is and why it's a good fit for the Serverless paradigm. He also notes some difficulties with the event-sourcing pattern, the ways Nordstrom has worked around it, and ends with a few [#awswishlist](https://twitter.com/hashtag/awswishlist) items that would make it easier to develop event-sourced applications with Serverless.
 
-In his talk, Rob discussed Nordstrom's use of the event-sourced architecture with Serverless: what it is and why it's a good fit for the Serverless paradigm. He also notes some difficulties with the event-sourcing pattern, the ways Nordstrom has worked around it, and ends with a few [#awswishlist](https://twitter.com/hashtag/awswishlist) items that would make it easier to develop event-sourced applications with Serverless.
+Nordstrom were an early adopter of the Serverless Framework for services from personalization to frequently-viewed items. They've since contributed some excellent resources back to the community, including the "[Hello, Retail](https://github.com/Nordstrom/hello-retail)" project and a Serverless Artillery project for performance testing.
 
 Watch the video or read the transcript below for a complete run-down.
 
@@ -25,6 +25,8 @@ Watch the video or read the transcript below for a complete run-down.
 ## More videos:
 
 The entire playlist of talks is available on our YouTube channel here: [Emit Conf 2017](https://serverless.com/blog/bobby-calderwood-functional-programming-microservices-emit-2017/)
+
+To stay in the loop about Emit Conf, follow us at [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
 
 # Transcript
 
