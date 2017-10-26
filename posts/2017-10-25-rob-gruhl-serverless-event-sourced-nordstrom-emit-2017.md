@@ -18,6 +18,9 @@ Watch the video or read the transcript below for a complete run-down.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WcCErxLKR7g" frameborder="0" allowfullscreen></iframe>
 
+## Also see:
+- [Bobby Calderwood: toward a functional programming analogy for microservices](https://serverless.com/blog/bobby-calderwood-functional-programming-microservices-emit-2017/)
+
 # Transcript
 
 **Rob:** Good morning, my name is [Rob Gruhl](https://twitter.com/robgruhl) and I support a small team of engineers at Nordstrom called "The Technology Acceleration Group." For the last three years, we've been exclusively focused on serverless patterns and practices both in production, proof of concepts through workshops. In the last year or so, we've become exceptionally fascinated with event sourced architectures. 
