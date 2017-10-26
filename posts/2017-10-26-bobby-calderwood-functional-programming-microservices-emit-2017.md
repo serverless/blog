@@ -8,6 +8,8 @@ authors:
   - AndreaPasswater
 ---
 
+> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures.
+
 Before schooling us on functional programming, Bobby Calderwood hit us with The Big Question: to microservice, or not to microservice? 
 
 Well, he says—let's start from a basic place, something we can all agree on. Death Stars = bad. You know what he's talking about: when your architecture map (er, [diagram](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#why-the-fuss-about-serverless)) looks like a tangled hairy mess that meets in a gigantic black mass in the middle. He talks about a real Death Star architecture out in the wild and poses the question: how did they get here?
@@ -17,6 +19,12 @@ His opinion? An object-oriented mindset. We won't spoil the talk for you, but le
 It'll all make sense when you watch the video (or, read the transcript below).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/idxguWO6VLE" frameborder="0" allowfullscreen></iframe>
+
+## More videos:
+
+The entire playlist of talks is available on our YouTube channel here: [Emit Conf 2017](https://www.youtube.com/playlist?list=PLIIjEI2fYC-DBvLGbhw_SkeH_0IgvlFGI)
+
+To stay in the loop about Emit Conf, follow us at [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
 
 # Transcript
 
