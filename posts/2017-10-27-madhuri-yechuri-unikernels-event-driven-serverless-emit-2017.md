@@ -8,9 +8,11 @@ authors:
   - AndreaPasswater
 ---
 
-Madhuri Yechuri is the founder of [Elotl](https://angel.co/elotl). She came at us with a fly-through of application deployment paradigms and the way they have evolved through time. Where are we now, and how can a serverless, event-driven paradigm take us to an even better place?
+Madhuri Yechuri is the founder of [Elotl](https://angel.co/elotl).
 
-Her talk covers shrink wrap needs for applications, and how serverless ranks in cost-savings, agility, security and observability. Madhuri then delves into some surprising benefits of using unikernels in a serverless world: shorter cold starts, better security, and smaller package sizes. Could unikernels replace containers?
+She talked with us about shrink wrap needs for applications, and how serverless ranks in cost-savings, agility, security and observability. Madhuri then delved into some surprising benefits of using unikernels in a serverless world: shorter cold starts, better security, and smaller package sizes.
+
+Could unikernels replace containers as the engine for FaaS?
 
 The full video is below, or scroll on ahead to read the transcript.
 
