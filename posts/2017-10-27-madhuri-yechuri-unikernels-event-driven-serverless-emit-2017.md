@@ -7,16 +7,21 @@ thumbnail: 'http://www.emitconference.com/assets/images/speaker-madhuri-yechuri.
 authors:
   - AndreaPasswater
 ---
+> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures.
 
-Madhuri Yechuri is the founder of [Elotl](https://angel.co/elotl).
+Madhuri Yechuri is the founder of [Elotl](https://angel.co/elotl). She talked with us about shrink wrap needs for applications, and how serverless ranks in cost-savings, agility, security and observability.
 
-She talked with us about shrink wrap needs for applications, and how serverless ranks in cost-savings, agility, security and observability. Madhuri then delved into some surprising benefits of using unikernels in a serverless world: shorter cold starts, better security, and smaller package sizes.
-
-Could unikernels replace containers as the engine for FaaS?
+Madhuri then delved into some surprising benefits of using unikernels in a serverless world: shorter cold starts, better security, and smaller package sizes. Could unikernels replace containers as the engine for FaaS?
 
 The full video is below, or scroll on ahead to read the transcript.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0uTp8xYvaaY" frameborder="0" allowfullscreen></iframe>
+
+## More videos:
+
+The entire playlist of talks is available on our YouTube channel here: [Emit Conf 2017](https://serverless.com/blog/bobby-calderwood-functional-programming-microservices-emit-2017/)
+
+To stay in the loop about Emit Conf, follow us at [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
 
 # Transcript
 
