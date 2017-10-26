@@ -1,7 +1,7 @@
 ---
 title: Madhuri Yechuri - unikernels and event-driven serverless platforms
 description: We're posting the full videos and transcripts from Emit 2017! Here's Madhuri with her talk on unikernels and event-driven serverless platforms.
-date: 2017-10-23
+date: 2017-10-27
 layout: Post
 thumbnail: 'http://www.emitconference.com/assets/images/speaker-madhuri-yechuri.jpg'
 authors:
@@ -10,7 +10,7 @@ authors:
 
 Madhuri Yechuri is the founder of [Elotl](https://angel.co/elotl). She came at us with a fly-through of application deployment paradigms and the way they have evolved through time. Where are we now, and how can a serverless, event-driven paradigm take us to an even better place?
 
-She covers shrink wrap needs for applications, and talks about how serverless ranks in cost-savings, agility, security and observability. Madhuri then delves into the benefits of unikernels; they can help minimize cold starts, for one. Be sure to hang in there for the post-presentation Q&A.
+Her talk covers shrink wrap needs for applications, and how serverless ranks in cost-savings, agility, security and observability. Madhuri then delves into some surprising benefits of using unikernels in a serverless world: shorter cold starts, better security, and smaller package sizes. Could unikernels replace containers?
 
 The full video is below, or scroll on ahead to read the transcript.
 
