@@ -19,7 +19,7 @@ The full video is below, or scroll on ahead to read the transcript.
 
 ## More videos:
 
-The entire playlist of talks is available on our YouTube channel here: [Emit Conf 2017](https://serverless.com/blog/bobby-calderwood-functional-programming-microservices-emit-2017/)
+The entire playlist of talks is available on our YouTube channel here: [Emit Conf 2017](https://www.youtube.com/playlist?list=PLIIjEI2fYC-DBvLGbhw_SkeH_0IgvlFGI)
 
 To stay in the loop about Emit Conf, follow us at [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
 
