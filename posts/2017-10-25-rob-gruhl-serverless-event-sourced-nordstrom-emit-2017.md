@@ -8,6 +8,10 @@ authors:
   - AndreaPasswater
 ---
 
+# About Emit Conference
+
+> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures. To stay in the loop about next year's conference, follow [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
+
 Rob Gruhl kicked off [Emit Conference](http://www.emitconference.com/) with a peek behind the scenes at Nordstrom's architecture.
 
 They were an early adopter of [Serverless.com](http://www.serverless.com) for services from personalization to frequently viewed items. They've since contributed some excellent resources back to the community, including the "[Hello, Retail](https://github.com/Nordstrom/hello-retail)" project and a Serverless Artillery project for performance testing.
@@ -17,6 +21,10 @@ In his talk, Rob discussed Nordstrom's use of the event-sourced architecture wit
 Watch the video or read the transcript below for a complete run-down.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WcCErxLKR7g" frameborder="0" allowfullscreen></iframe>
+
+## More videos:
+
+The entire playlist of talks is available on our YouTube channel here: [Emit Conf 2017](https://serverless.com/blog/bobby-calderwood-functional-programming-microservices-emit-2017/)
 
 # Transcript
 
@@ -133,7 +141,3 @@ And we've hosted that inside of a serverless function which can invoke as many s
 What subnet is it in? What are the firewalls? What are my authentication authorization concerns? How do I communicate the search, etc., etc. Once you've solved that, for this testing scenario, you've now also solved it for any functional serverless function that you want to communicate with your service. If you're thinking about event-sourcing, we learned so much when we did the recently viewed tray. It's a very simple use case, but it's one that' very visible. It was easy for us to understand when things went wrong. It's very visible on the website. It's very visible testing.
 
 You can go and hit an A item and a B item and a C item, and see if they show up. So there's a lot of subtle issues that you'll run up against. So if you can find a use case where you have high visibility and maybe low criticality to it, you can get started and start establishing that stream. And as you establish that stream, think of it in terms of a published stream. See if you can get it to that high quality published stream, and think about how you can load all the attributes that were observed at the moment of that event's existence. So thanks. That's all I have today. We'd love to hear from you and here is a list of the open source products that I mentioned. Thank you.
-
-# About Emit Conference
-
-> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures. To stay in the loop about next year's conference, follow [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
