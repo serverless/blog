@@ -1,12 +1,14 @@
 ---
 title: Ajay Nair - being a good citizen in an event-driven world
 description: We're posting the full videos and transcripts from Emit 2017! Here's Ajay from AWS on being a good citizen in an event-driven world.
-date: 2017-10-27
+date: 2017-10-31
 layout: Post
 thumbnail: 'http://www.emitconference.com/assets/images/speaker-ajay-nair.jpg'
 authors:
   - AndreaPasswater
 ---
+
+> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures.
 
 Ajay Nair, Lead Product Manager at [AWS Lambda](https://aws.amazon.com/lambda/), talked to us about considerations when designing event-driven systems.
 
@@ -17,6 +19,12 @@ So, in Ajay's experience, what are the practicalities and ins-and-outs? This one
 Watch his full talk below, or read the transcript.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YCNbyjN7vMw" frameborder="0" allowfullscreen></iframe>
+
+## More videos:
+
+The entire playlist of talks is available on our YouTube channel here: [Emit Conf 2017](https://www.youtube.com/playlist?list=PLIIjEI2fYC-DBvLGbhw_SkeH_0IgvlFGI)
+
+To stay in the loop about Emit Conf, follow us at [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
 
 # Transcript
 
