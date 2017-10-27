@@ -1,12 +1,14 @@
 ---
 title: Matthew Lancaster - using even-driven architecture to transform core banking
 description: We're posting the full videos and transcripts from Emit 2017! Here's Matthew from Accenture on transforming core banking with event-driven architectures.
-date: 2017-10-28
+date: 2017-11-01
 layout: Post
 thumbnail: 'http://www.emitconference.com/assets/images/speaker-matthew-lancaster.jpg'
 authors:
   - AndreaPasswater
 ---
+
+> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures.
 
 Matthew pulled us out of the tech stack for a second to focus on what's *beneath* it, the foundational layer of the application pyramid: business drivers. This, he says, is what will turn everyone event-driven. Non-tech companies, even in old-school industries like banking, are increasingly becoming tech-centric.
 
@@ -15,6 +17,12 @@ Matt's been working with core banking at Accenture for a while, and it comes wit
 He's got some practical advice from his own forays into bringing banks into the future. Watch below or read the transcript for the juicy details.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OMh8nzqYjHw" frameborder="0" allowfullscreen></iframe>
+
+## More videos:
+
+The entire playlist of talks is available on our YouTube channel here: [Emit Conf 2017](https://www.youtube.com/playlist?list=PLIIjEI2fYC-DBvLGbhw_SkeH_0IgvlFGI)
+
+To stay in the loop about Emit Conf, follow us at [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
 
 # Transcript
 
