@@ -1,12 +1,14 @@
 ---
 title: Dave Copeland - contract-based testing for event-driven architectures
 description: We're posting the full videos and transcripts from Emit 2017! Here's Dave on contract-based testing for event-driven architectures.
-date: 2017-10-29
+date: 2017-11-02
 layout: Post
 thumbnail: 'http://www.emitconference.com/assets/images/speaker-dave-copeland.jpg'
 authors:
   - AndreaPasswater
 ---
+
+> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures.
 
 Here we have Dave Copeland, Director of Engineering at [StitchFix](https://www.stitchfix.com/) and purveyor of consumer-driven contracts.
 
@@ -17,6 +19,12 @@ The engineering team manages most of the operational side of the business—ware
 Their solution? Consumer-based contracting. Watch Dave's talk below or peruse the transcript for some real-world examples of how this works.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/54KSJRFv30E" frameborder="0" allowfullscreen></iframe>
+
+## More videos:
+
+The entire playlist of talks is available on our YouTube channel here: [Emit Conf 2017](https://www.youtube.com/playlist?list=PLIIjEI2fYC-DBvLGbhw_SkeH_0IgvlFGI)
+
+To stay in the loop about Emit Conf, follow us at [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
 
 # Transcript
 
