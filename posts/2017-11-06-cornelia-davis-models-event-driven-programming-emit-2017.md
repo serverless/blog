@@ -1,12 +1,14 @@
 ---
 title: Cornelia Davis - models for event-driven programming
 description: We're posting the full videos and transcripts from Emit 2017! Here's Cornelia from Pivotal on models for event-driven programming.
-date: 2017-10-31
+date: 2017-11-06
 layout: Post
 thumbnail: 'http://www.emitconference.com/assets/images/speaker-cornelia-davis.jpg'
 authors:
   - AndreaPasswater
 ---
+
+> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures.
 
 Cornelia, ever the modest one, began her talk by saying that she "probably wouldn't blow any minds here." Au contraire—her talk was one of the most talked-about at the afterparty.
 
@@ -17,6 +19,12 @@ What about students who start off with object-oriented languages? They tend have
 Her talk is well worth watching, or read the transcript below.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/W6GAhzfBFik" frameborder="0" allowfullscreen></iframe>
+
+## More videos:
+
+The entire playlist of talks is available on our YouTube channel here: [Emit Conf 2017](https://www.youtube.com/playlist?list=PLIIjEI2fYC-DBvLGbhw_SkeH_0IgvlFGI)
+
+To stay in the loop about Emit Conf, follow us at [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
 
 # Transcript
 
