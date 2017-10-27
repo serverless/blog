@@ -1,12 +1,14 @@
 ---
 title: Shawn Burke - building the Catalyst serverless platform at Uber
 description: We're posting the full videos and transcripts from Emit 2017! Here's Shawn from Uber on building Catalyst, their serverless platform.
-date: 2017-10-30
+date: 2017-11-03
 layout: Post
 thumbnail: 'http://www.emitconference.com/assets/images/speaker-shawn-burke.jpg'
 authors:
   - AndreaPasswater
 ---
+
+> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures.
 
 Shawn Burke knows something about scale—he works on scalability infrastructure at [Uber](https://www.uber.com/). The number of total rides they've served has roughly quintupled in a mere ~2 years.
 
@@ -15,6 +17,12 @@ He arrived at Uber to discover a flurry of snowflakes: aka, the visual multiplic
 They ended up building a very dev-centric serverless platform called [Catalyst](https://thenewstack.io/ubers-catalyst-service-mesh-provides-visibility-speed/), which you can learn all about in Shawn's talk below (or by reading the transcript!).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/szttD_BN_nI" frameborder="0" allowfullscreen></iframe>
+
+## More videos:
+
+The entire playlist of talks is available on our YouTube channel here: [Emit Conf 2017](https://www.youtube.com/playlist?list=PLIIjEI2fYC-DBvLGbhw_SkeH_0IgvlFGI)
+
+To stay in the loop about Emit Conf, follow us at [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
 
 # Transcript
 
