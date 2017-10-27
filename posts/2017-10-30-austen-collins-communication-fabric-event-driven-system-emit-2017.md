@@ -1,20 +1,28 @@
 ---
 title: Austen Collins - Building the communication fabric for an event-driven system
 description: We're posting the videos from Emit 2017! Here's Serverless CEO Austen Collins on the Event Gateway - a communication fabric for event-driven systems.
-date: 2017-10-26
+date: 2017-10-30
 layout: Post
 thumbnail: 'http://www.emitconference.com/assets/images/speaker-austen-collins.jpg'
 authors:
   - AndreaPasswater
 ---
 
+> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures.
+
 Austen Collins launched the latest project from [Serverless.com](https://www.serverless.com), the [Event Gateway](https://www.serverless.com/event-gateway). It blends API Gateways with Pub/Sub functionality to create an event router for serverless compute.
 
-The Event Gateway facilitates cross-cloud serverless architectures: react to any event, with any cloud, on any provider. This could be the backbone of a feasible serverless multi-cloud.
+The Event Gateway facilitates cross-cloud serverless architectures: react to any event, with any cloud, on any provider. It's the backbone of a feasible serverless multi-cloud.
 
 Be sure to watch the talk; there's a sweet demo in there.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wTEADkvUz14" frameborder="0" allowfullscreen></iframe>
+
+## More videos:
+
+The entire playlist of talks is available on our YouTube channel here: [Emit Conf 2017](https://www.youtube.com/playlist?list=PLIIjEI2fYC-DBvLGbhw_SkeH_0IgvlFGI)
+
+To stay in the loop about Emit Conf, follow us at [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
 
 # Transcript
 
