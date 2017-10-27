@@ -1,20 +1,28 @@
 ---
 title: Serverless panel - the future of event-driven compute
 description: We're posting the full videos and transcripts from Emit 2017! Here's our panel on the future of event-driven compute.
-date: 2017-11-01
+date: 2017-11-07
 layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/emit_square.png'
 authors:
   - AndreaPasswater
 ---
 
-[Emit Conference](http://www.emitconference.com/) closed out with a panel on the future of event-driven computing. On the panel, we had Chris Anderson from Azure Functions, Jason Polites from Google Cloud Functions, and Anne Thomas from Gartner. If anyone would have solid insight and future predictions, it'd be this crew.
+> [Emit](http://www.emitconference.com/) is the conference on event-driven, serverless architectures.
+
+Emit Conference closed out with a panel on the future of event-driven computing. On the panel, we had Chris Anderson from Azure Functions, Jason Polites from Google Cloud Functions, and Anne Thomas from Gartner. If anyone would have solid insight and future predictions, it'd be this crew.
 
 [Austen Collins](https://twitter.com/austencollins?lang=en) facilitated. He asked them for all kinds of tidbits: whether pricing was really the main driver for serverless adoption, what were the most common use cases they saw (as well as the most interesting—serverless in academia, anyone?), and what concerns and problems *they* were dealing with to keep this stuff up and running.
 
 Watch the panel discussion in the video below, or read on to see the transcript.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FMn8KYmrVp8" frameborder="0" allowfullscreen></iframe>
+
+## More videos:
+
+The entire playlist of talks is available on our YouTube channel here: [Emit Conf 2017](https://www.youtube.com/playlist?list=PLIIjEI2fYC-DBvLGbhw_SkeH_0IgvlFGI)
+
+To stay in the loop about Emit Conf, follow us at [@emitconf](https://twitter.com/emitconf) and/or sign up for the [Serverless.com newsletter](https://serverless.com/subscribe/).
 
 # Transcript
 
