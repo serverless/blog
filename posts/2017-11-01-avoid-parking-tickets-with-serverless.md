@@ -18,83 +18,101 @@ And learn a little Serverless development at the same time! Today, we're going t
 
 # Set up the environment
 
-We're going to create a cron job that sends us an sms the night before every street cleaning day.
+We're going to create a cron job that sends us an SMS the night before every street cleaning day.
 
-This example uses the [Serverless Framework](https://www.serverless.com/framework), AWS Lambda and Node.js.
+This example uses the [Serverless Framework](https://www.serverless.com/framework), AWS Lambda and Node.js. You can install the Framework with:
+
+```bash
+$ npm install -g serverless
+```
 
 > **Note:** If you've never used these before, [here is a handy guide](https://serverless.com/framework/docs/providers/aws/guide/quick-start/) for getting everything set up on your machine. 
 
-# Write the reminder function
+# Configure your Serverless service
 
-After you’ve successfully deployed your Node template to to AWS, you’ll need to properly configure your `serverless.yml` to include functions that configure your reminders.
+Once we're set up, we'll need to configure our Serverless service. In my neighborhood, the street sweeper comes on each second and fourth Wednesday, and each second and fourth Friday. I'll need to trigger a `schedule` event on each of those four days.
 
-In my neighborhood, the street sweeper comes on each second and fourth Wednesday, and each second and fourth Friday. So I set up my functions like this:
+Create a new directory. Then create a new `serverless.yml` file in your directory with the following configuration: 
 
-```js
+```yml
+service: parking-reminder
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: us-east-1
+
 functions:
-  secondWed:
-    handler: messenger.hello
+  parkingReminder:
+    handler: messenger.reminder
     events:
-    #triggers at 17:00 UTC on the 4th day of the week (Tuesday) and the second occurence each month
+    # triggers at 17:00 UTC on the second and fourth Wednesdays and Fridays. 
       - schedule: cron(00 17 ? * 4#2 *)
-  fourthWed:
-    handler: messenger.hello
-    events:
       - schedule: cron(00 17 ? * 4#4 *)
-  secondFri:
-    handler: messenger.hello
-    events:
       - schedule: cron(00 17 ? * 6#2 *)
-  fourthFri:
-    handler: messenger.hello
-    events:
-      - schedule: cron(00 17 ? * 4#4 *)
+      - schedule: cron(00 17 ? * 6#4 *)
 ```
+
+After giving our service a name and configuring the `provider` section, the key portion is in the `functions` block.
+
+We have one function configured, which we've named `parkingReminder`. It will invoke the `reminder` function in the `messenger.js` module, as noted by the `handler` property.
+
+Finally, we've configured four events to trigger this function. Each of the events is a [schedule](https://serverless.com/framework/docs/providers/aws/events/schedule/) event, meaning they'll be invoked on a given schedule. In this example, I use cron syntax to list the four times on which I need my function to be invoked.
 
 > **Note:** AWS provides really some really useful expressions for describing your cron jobs. [Full documentation is available here](http://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html).
 
 # Hooking into Twilio 
 
-Now, this service is only useful when it can actually send you a reminder. To do that, we're going to use Twilio. (If you don't have a [Twilio account](https://www.twilio.com/sms), you can set one up for free.)
+Now, this service is only useful when it can actually send you a reminder. To do that, we're going to use Twilio inside our Lambda function. (If you don't have a [Twilio account](https://www.twilio.com/sms), you can set one up for free.)
 
-First up, you’ll need to set both your Twilio accountId and your authToken. You can do this for the testing stage as JavaScript variables in your `handler.js` file, but for production you’ll want to encrypt them with something like [AWS KMS](https://serverless.com/framework/docs/providers/aws/guide/functions#kms-keys):
+Let's create a `package.json` file, then install the Twilio SDK:
+
+```bash
+$ npm init -y
+$ npm install twilio
+```
+
+Then, we'll write our `reminder` function in the `messenger.js` module:
 
 ```js
+// messenger.js
+
 // Twilio Credentials 
 var accountSid = 'ACCOUNTID'; 
 var authToken = 'AUTHTOKEN';
-```
 
-Then, require the Twilio module:
-
-```js
 //require the Twilio module 
-var client = require('twilio')(accountSid, authToken);
-```
+var twilio = require('twilio');
+var client = new twilio(accountSid, authToken);
 
-And write your reminder function. Mine looks like this:
-
-```js
-module.exports.hello = (event, context, callback) => {
+module.exports.reminder = (event, context, callback) => {
   client.messages.create({ 
     to: "YOUR NUMBER", 
     from: "TWILIO NUMBER",
     body: "move your car! street sweeping!", 
-}, function(err, message) { 
+  }, function(err, message) { 
     console.log(err); 
-});
+  });
 };
 ```
 
-Pretty simple!
+Pretty simple! I create a Twilio client, then use the client to send a message inside my `reminder` handler function.
 
-To finish things up, include the Twilio module in your `package.json`, run `npm install` and test out your functions by running `sls invoke --function functionName`.
+> Note that I've stored my Twilio credentials directly in my handler file. You can do this for the testing stage as JavaScript variables in your `handler.js` file, but for production you’ll want to take more care with your credentials. Check out our post on [managing secrets with Serverless](https://serverless.com/blog/serverless-secrets-api-keys/) for different approaches.
+
+Let's deploy our function to AWS:
+
+```bash
+$ sls deploy
+```
+
+Now that it's deployed, you can test out your functions by running `sls invoke --function functionName`.
 
 # And the cost? Basically free.
 
 You can run this without paying anything. Lambda has a generous free tier, and Twilio offers a free trial. But even if you were paying full price, it would be dirt cheap.
 
-The example here would cost about $.0000002/month in Lambda fees and $.09/month in Twilio fees.
+The example here would cost about $.0000002/month in Lambda fees and $.09/month in Twilio fees -- much cheaper than the cost of a parking ticket!
 
 # See it on GitHub
 
