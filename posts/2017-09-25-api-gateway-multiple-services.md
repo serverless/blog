@@ -283,7 +283,7 @@ custom:
 
   customDomain:
     basePath: ""
-    domainName: ${self:custom.domains.${self:custom.stage}}"
+    domainName: ${self:custom.domains.${self:custom.stage}}
     stage: "${self:custom.stage}"
     createRoute53Record: true
 ```
