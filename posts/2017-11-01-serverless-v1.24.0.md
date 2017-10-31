@@ -18,6 +18,8 @@ v1.24 is a special release since it's the first release which was entirely run b
 
 ### Frank Schmid
 
+<img align="left" src="https://avatars0.githubusercontent.com/u/5524702?s=400&v=4" width="180px">
+
 Frank is an early serverless enthusiast and started to use serverless technologies when the Framework was in its v0.x infancy. Frank has contributed tons of great enhancements to the different codebases of the Serverless Framework.
 
 His specialality is the v1 plugin system where he managed to introudce the separation of the `package` and `deploy` steps in a non-breaking way with the help of a lifecycle depracation and redirection mechanism.
@@ -25,6 +27,8 @@ His specialality is the v1 plugin system where he managed to introudce the separ
 [GitHub](https://github.com/HyperBrain)
 
 ### Rafal Wilinski
+
+<img align="left" src="https://avatars3.githubusercontent.com/u/3391616?s=400&v=4" width="180px">
 
 Rafal has a deep background in Node.js and loves to play around with new technologies. A while back he stumbled upon the Serverless Framework and immediately jumped in to provide valuable contributions in the form of new features, as well as lending a helping hand in issue discussions.
 
@@ -34,11 +38,15 @@ Rafal loves to push Serverless technolgoies to its limits. That's why he's also 
 
 ### Takahiro Horike
 
+<img align="left" src="https://avatars0.githubusercontent.com/u/1301012?s=400&v=4" width="180px">
+
 Takahiro loves to get his hands dirty and is fearless to try out the most recent services in the serverless landscape to see if and how they can be introduced the Serverless Framework!
 
 You can find him hanging around in GitHub comments or PRs as well as working on bug fixes and various enhancements to make the life of a Serverless developer more productive and enjoyable.
 
 [GitHub](https://github.com/horike37) | [Twitter](https://twitter.com/horike37)
+
+---
 
 We're proud and super happy that our community is so engaged, welcoming and helpful. Thank you everyone for being a part of it!
 
