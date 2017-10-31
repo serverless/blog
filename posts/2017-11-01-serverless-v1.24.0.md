@@ -12,8 +12,35 @@ authors:
 
 Today we're proud to announce Serverless Framework v1.24.
 
-This release is another one which is packed with a lot of great features and enhancements! Let's take a closer look at all
-the changes v1.24 introduces.
+v1.24 is a special release since it's the first release which was entirely run by our recently onboarded Serverless Framework v1 Maintainers.
+
+## Meet our Framework v1 maintainers!
+
+### Frank Schmid
+
+Frank is an early serverless enthusiast and started to use serverless technologies when the Framework was in its v0.x infancy. Frank has contributed tons of great enhancements to the different codebases of the Serverless Framework.
+
+His specialality is the v1 plugin system where he managed to introudce the separation of the `package` and `deploy` steps in a non-breaking way with the help of a lifecycle depracation and redirection mechanism.
+
+[GitHub](https://github.com/HyperBrain)
+
+### Rafal Wilinski
+
+Rafal has a deep background in Node.js and loves to play around with new technologies. A while back he stumbled upon the Serverless Framework and immediately jumped in to provide valuable contributions in the form of new features, as well as lending a helping hand in issue discussions.
+
+Rafal loves to push Serverless technolgoies to its limits. That's why he's also playing around with different project ideas such as a 100% serverless [Medium Text-To-Speech](https://github.com/RafalWilinski/serverless-medium-text-to-speech) application which makes it possible to listen to your favorite Medium posts. Make sure to give it a try [HERE](http://medium-speech.s3.amazonaws.com/index.html).
+
+[GitHub](https://github.com/RafalWilinski) | [Twitter](https://twitter.com/rafalwilinski)
+
+### Takahiro Horike
+
+Takahiro loves to get his hands dirty and is fearless to try out the most recent services in the serverless landscape to see if and how they can be introduced the Serverless Framework!
+
+You can find him hanging around in GitHub comments or PRs as well as working on bug fixes and various enhancements to make the life of a Serverless developer more productive and enjoyable.
+
+[GitHub](https://github.com/horike37) | [Twitter](https://twitter.com/horike37)
+
+We're proud and super happy that our community is so engaged, welcoming and helpful. Thank you everyone for being a part of it!
 
 ## Changes v1.24 introduces
 
