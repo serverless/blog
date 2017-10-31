@@ -1,6 +1,6 @@
 ---
-title: Serverless v1.24 - TBD
-description: Lorem ipsum, enhancements, bug fixes and more added in the Serverless Framework v1.24 release.
+title: Serverless v1.24 - Alexa Smart Home event source, Print content of resolved serverless config file
+description: Alexa Smart Home event source, update checker, enhancements, bug fixes and more added in the Serverless Framework v1.24 release.
 date: 2017-11-01
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-v1.24.png
@@ -69,6 +69,16 @@ serverless create --template-url https://github.com/serverless/examples/tree/mas
 
 **Note:** the `template-url` can be both: A simple Git repository link, as well as a nested directory structure within a Git repository (like we've seen above).
 
+### Print command to generate output of computed serverless.yml file
+
+Ever wondered what the computed values of your Serverless Variables look like?
+
+The new `serverless print` command makes it possible to inspect the computed `serverless.yml` file to see the completely resolved configuration file.
+
+This makes it easier to find bugs during Serverless Variables usage or plugin development.
+
+You can read more about it in our [CLI documentation](https://serverless.com/framework/docs/providers/aws/cli-reference/print/) for the `print` command.
+
 ### Configurable Authorizer Type
 
 Serverless v1.24 introduces a way to configure custom authorizers with the help of the the `type` property.
@@ -94,16 +104,6 @@ functions:
 This configuration ensure that the Authorizer function receives all of the parameters passed to the main function through the `lamba-proxy` integration type.
 
 **Note:** The `type` will default to `TOKEN` if no value is provided.
-
-### Print command to generate output of computed serverless.yml file
-
-Ever wondered what the computed values of your Serverless Variables look like?
-
-The new `serverless print` command makes it possible to inspect the computed `serverless.yml` file to see the completely resolved configuration file.
-
-This makes it easier to find bugs during Serverless Variables usage or plugin development.
-
-You can read more about it in our [CLI documentation](https://serverless.com/framework/docs/providers/aws/cli-reference/print/) for the `print` command.
 
 ### Print message when an update is available
 
