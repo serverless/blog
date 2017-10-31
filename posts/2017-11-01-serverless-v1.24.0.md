@@ -14,7 +14,7 @@ Today we're proud to announce Serverless Framework v1.24.
 
 v1.24 is a special release since it's the first release which was entirely run by our recently onboarded Serverless Framework v1 Maintainers.
 
-## Meet our Framework v1 maintainers!
+## Meet our Serverless Framework maintainers
 
 ### Frank Schmid
 
