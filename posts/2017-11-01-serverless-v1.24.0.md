@@ -3,16 +3,16 @@ title: Serverless v1.24 - Alexa Smart Home event source, Print content of resolv
 description: Alexa Smart Home event source, update checker, enhancements, bug fixes and more added in the Serverless Framework v1.24 release.
 date: 2017-11-01
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-v1.24.png
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework_v1.24.jpg
 authors:
   - PhilippMuns
 ---
 
-<img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-v1.24.png" width="210px" >
+<img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework_v1.24.jpg" width="210px" >
 
 Today we're proud to announce Serverless Framework v1.24.
 
-v1.24 is a special release since it's the first release which was entirely run by our recently onboarded Serverless Framework v1 Maintainers.
+v1.24 is a special release—it's the first one which was entirely run by our recently-onboarded Serverless Framework v1 Maintainers!
 
 ## Meet our Serverless Framework maintainers
 
@@ -20,9 +20,9 @@ v1.24 is a special release since it's the first release which was entirely run b
 
 <img align="left" src="https://avatars0.githubusercontent.com/u/5524702?s=400&v=4" width="180px">
 
-Frank is an early serverless enthusiast and started to use serverless technologies when the Framework was in its v0.x infancy. Frank has contributed tons of great enhancements to the different codebases of the Serverless Framework.
+Frank is an early serverless enthusiast. He got started on serverless technologies when the Framework was in its v0.x infancy. Frank has contributed tons of great enhancements to the different codebases of the Serverless Framework.
 
-His specialality is the v1 plugin system where he managed to introudce the separation of the `package` and `deploy` steps in a non-breaking way with the help of a lifecycle depracation and redirection mechanism.
+His specialality is the v1 plugin system, where he managed to introudce the separation of the `package` and `deploy` steps in a non-breaking way with the help of a lifecycle depracation and redirection mechanism.
 
 [GitHub](https://github.com/HyperBrain)
 
@@ -30,9 +30,9 @@ His specialality is the v1 plugin system where he managed to introudce the separ
 
 <img align="left" src="https://avatars3.githubusercontent.com/u/3391616?s=400&v=4" width="180px">
 
-Rafal has a deep background in Node.js and loves to play around with new technologies. A while back he stumbled upon the Serverless Framework and immediately jumped in to provide valuable contributions in the form of new features, as well as lending a helping hand in issue discussions.
+Rafal has a deep background in Node.js and loves to play around with new technologies. When he stumbled upon the Serverless Framework a while back, he and immediately jumped in to provide new features and lend a hand in issue discussions.
 
-Rafal loves to push Serverless technolgoies to its limits. That's why he's also playing around with different project ideas such as a 100% serverless [Medium Text-To-Speech](https://github.com/RafalWilinski/serverless-medium-text-to-speech) application which makes it possible to listen to your favorite Medium posts. Make sure to give it a try [HERE](http://medium-speech.s3.amazonaws.com/index.html).
+Rafal loves to push Serverless technolgoies to its limits. That's why he's also playing around with different project ideas such as a 100% serverless [Medium Text-To-Speech](https://github.com/RafalWilinski/serverless-medium-text-to-speech) application. Make sure to give it a try [HERE](http://medium-speech.s3.amazonaws.com/index.html).
 
 [GitHub](https://github.com/RafalWilinski) | [Twitter](https://twitter.com/rafalwilinski)
 
@@ -40,7 +40,7 @@ Rafal loves to push Serverless technolgoies to its limits. That's why he's also 
 
 <img align="left" src="https://avatars0.githubusercontent.com/u/1301012?s=400&v=4" width="180px">
 
-Takahiro loves to get his hands dirty and is fearless to try out the most recent services in the serverless landscape to see if and how they can be introduced the Serverless Framework!
+Takahiro loves to get his hands dirty. He's fearless in trying out the most recent services in the serverless landscape to see how they can be introduced the Serverless Framework!
 
 You can find him hanging around in GitHub comments or PRs as well as working on bug fixes and various enhancements to make the life of a Serverless developer more productive and enjoyable.
 
@@ -56,11 +56,13 @@ You can find a complete list of all the updates in the [CHANGELOG.md](https://gi
 
 ### Alexa smartHome event
 
-AWS recently added support for Alexa Smart Home events which means that Lambda functions can be invoked whenever e.g. certain Alexa Smart Home peripherals are used. This way feature-rich Alexa based IoT applications can be built!
+AWS recently added support for Alexa Smart Home events. This means Lambda functions can be invoked whenever, for example, certain Alexa Smart Home peripherals are used.
+
+This opens the door for feature-rich, Alexa-based IoT applications!
 
 Serverless Framework v1.24 adds support for this new event source. Using it is as easy as obtaining the Alexa Smart Home Skill application ID and adding the `alexaSmartHome` event as en event source to your function.
 
-Here's an example setup which shows how this will look like:
+Here's an example setup of what this will look like:
 
 ```yml
 functions:
@@ -70,7 +72,7 @@ functions:
       - alexaSmartHome: amzn1.ask.skill.xx-xx-xx-xx
 ```
 
-You can use additional configuration like this:
+You can utilize additional configuration like this:
 
 ```yml
 functions:
@@ -84,9 +86,9 @@ functions:
 
 Take a look at the [Alexa Smart Home documentation](https://serverless.com/framework/docs/providers/aws/events/alexa-smart-home/) for more information.
 
-### Create service using template from an external repository
+### Create services using templates from an external repository
 
-The `serverless create` command makes it easy to generate a project based on pre-defined templates which ship with every Serverless release.
+The `serverless create` command makes it easy to generate projects based on pre-defined templates, which ship with every Serverless release.
 
 Creating a new AWS project which is powered by the `nodejs` runtime is as easy as entering:
 
@@ -94,7 +96,7 @@ Creating a new AWS project which is powered by the `nodejs` runtime is as easy a
 serverless create --template aws-nodejs --path my-new-project
 ```
 
-Serverless v1.24 extends the functionality of this command so that you can now create services based on a template which is via Git at e.g. GitHub.
+Serverless v1.24 extends the functionality of this command so that you can now create services based on a template via Git.
 
 In this example we install the `aws-node-rest-api-mongodb` template from our [Serverless Examples](https://github.com/serverless/examples) Git repository.
 
@@ -102,7 +104,7 @@ In this example we install the `aws-node-rest-api-mongodb` template from our [Se
 serverless create --template-url https://github.com/serverless/examples/tree/master/aws-node-rest-api-mongodb
 ```
 
-**Note:** the `template-url` can be both: A simple Git repository link, as well as a nested directory structure within a Git repository (like we've seen above).
+**Note:** the `template-url` can be a simple Git repository link, as well as a nested directory structure within a Git repository (as we see above).
 
 ### Print command to generate output of computed serverless.yml file
 
@@ -136,19 +138,19 @@ functions:
             type: request
 ```
 
-This configuration ensure that the Authorizer function receives all of the parameters passed to the main function through the `lamba-proxy` integration type.
+This configuration ensures that the Authorizer function receives all of the parameters passed to the main function through the `lamba-proxy` integration type.
 
 **Note:** The `type` will default to `TOKEN` if no value is provided.
 
 ### Print message when an update is available
 
-It's important to constantly update the Serverless Framework to benefit from the most recent bug fixes, newly added features and enhancements.
+Consistently updating the Serverless Framework lets you benefit from the most recent bug fixes, features, and enhancements.
 
-Since Serverless is distributed via `npm` one could run `npm outdated` to get a list of all the packages on the machine which are ready for an update. However this step is manual and cumbersome.
+Since Serverless is distributed via `npm`, one could run `npm outdated` to get a list of all the packages on the machine which are ready for an update. But this step is manual and cumbersome.
 
 v1.24 ships with an automated, built-in functionality which ensures that you'll receive a CLI message whenever a newer version of the Serverless Framework is available to download.
 
-This way you'll never miss critical bug fixes or all the new goodies which were added to the Framework.
+This way you'll never miss critical bug fixes (or new feature goodies).
 
 ### Conceal API Gateway key values from the output
 
@@ -156,7 +158,7 @@ The Serverless Info plugin ensure that you'll get a short summary of your curren
 
 It's automatically invoked after each deployment but could also be triggered by running `serverless info`.
 
-While it's nice to get a quick overview of the whole service setup it could also introduce potential security issues. One such issue is that the API Keys are automatically shown in the summary.
+While it's nice to get a quick overview of the whole service setup, it could also introduce potential security issues. One such issue is that the API Keys are automatically shown in the summary.
 
 In Serverless Framework v1.24 it's now possible to use the `--conceal` option during deployment to hide sensitive information in the deployment summary.
 
