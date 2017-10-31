@@ -54,7 +54,7 @@ We're proud and super happy that our community is so welcoming and engaged. Than
 
 You can find a complete list of all the updates in the [CHANGELOG.md](https://github.com/serverless/serverless/blob/master/CHANGELOG.md) file.
 
-### Alexa smartHome event
+### Alexa smartHome events
 
 AWS recently added support for Alexa Smart Home events. This means Lambda functions can be invoked whenever, for example, certain Alexa Smart Home peripherals are used.
 
@@ -86,7 +86,7 @@ functions:
 
 Take a look at the [Alexa Smart Home documentation](https://serverless.com/framework/docs/providers/aws/events/alexa-smart-home/) for more information.
 
-### Create services using templates from an external repository
+### Create services with templates from an external repository
 
 The `serverless create` command makes it easy to generate projects based on pre-defined templates, which ship with every Serverless release.
 
