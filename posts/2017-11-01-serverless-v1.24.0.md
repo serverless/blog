@@ -182,7 +182,36 @@ This release contains lots of hard work from our beloved community, and wouldn't
 
 Huge round of applause to all of the contributors who submitted changes for this release:
 
-- John Doe
+- Alessio Coser
+- Andres
+- Andrew Oh
+- Basile Trujilllo
+- Ben Burhans
+- Boaz de Jong
+- Daniel Schep
+- Daron Yondem
+- Frank Schmid
+- James Thomas
+- Jeffrey Noehren
+- Jonathan Spies
+- Kostas Bariotis
+- Mariusz Nowak
+- Matt McCormick
+- Michael Standen
+- Mike Moss
+- Preston Tighe
+- Rafal Wilinski
+- Remon Oldenbeuving
+- Simon Males
+- Takahiro Horike
+- Timothy Stott
+- Ulili
+- Wouter92
+- daviskoh
+- guyklainer
+- jeffnoehren
+- leoybkim
+- sharathm
 
 ## Upcoming releases / contributions
 
