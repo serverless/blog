@@ -12,7 +12,7 @@ authors:
 
 Today we're proud to announce Serverless Framework v1.24.
 
-v1.24 is a special release—it's the first one which was entirely run by our recently-onboarded Serverless Framework v1 Maintainers!
+v1.24 is a special release—it's the first one which was entirely run by our recently-onboarded Serverless Framework v1 maintainers!
 
 ## Meet our Serverless Framework maintainers
 
@@ -32,7 +32,7 @@ His specialality is the v1 plugin system, where he managed to introudce the sepa
 
 Rafal has a deep background in Node.js and loves to play around with new technologies. When he stumbled upon the Serverless Framework a while back, he and immediately jumped in to provide new features and lend a hand in issue discussions.
 
-Rafal loves to push Serverless technolgoies to its limits. That's why he's also playing around with different project ideas such as a 100% serverless [Medium Text-To-Speech](https://github.com/RafalWilinski/serverless-medium-text-to-speech) application. Make sure to give it a try [HERE](http://medium-speech.s3.amazonaws.com/index.html).
+Rafal loves to push Serverless technolgoies to its limits. That's why he's also playing around with different project ideas such as a 100% serverless [Medium Text-To-Speech](https://github.com/RafalWilinski/serverless-medium-text-to-speech) application. Make sure to give it a try [here](http://medium-speech.s3.amazonaws.com/index.html).
 
 [GitHub](https://github.com/RafalWilinski) | [Twitter](https://twitter.com/rafalwilinski)
 
@@ -40,9 +40,11 @@ Rafal loves to push Serverless technolgoies to its limits. That's why he's also 
 
 <img align="left" src="https://avatars0.githubusercontent.com/u/1301012?s=400&v=4" width="180px">
 
-Takahiro loves to get his hands dirty. He's fearless in testing the latest services in the serverless landscape to see how they can be introduced the Serverless Framework!
+Takahiro loves to get his hands dirty. He's fearless in testing the latest services in the serverless landscape to see how they can be introduced the Serverless Framework! Many of the AWS event source plugins Serverless provides were introduced by him.
 
-You can find him hanging around in GitHub comments or PRs. Takahiro is always working on bug fixes and enhancements that make Serverless development life even more productive and enjoyable.
+Make sure to check out his serverless experiments on his [GitHub profile](https://github.com/horike37?utf8=%E2%9C%93&tab=repositories&q=serverless&type=&language=)
+
+In addition to that you can find him hanging around in GitHub comments or PRs. Takahiro is always working on bug fixes and enhancements that make Serverless development life even more productive and enjoyable.
 
 [GitHub](https://github.com/horike37) | [Twitter](https://twitter.com/horike37)
 
