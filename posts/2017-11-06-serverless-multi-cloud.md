@@ -1,5 +1,5 @@
 ---
-title: Pros and Cons of a Serverless Multi-cloud
+title: The Serverless Multi-cloud - risk vs reward
 description: To multi-cloud, or not to multi-cloud? It's time for a frank discussion of the pros and cons.
 date: 2017-11-06
 layout: Post
