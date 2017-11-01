@@ -1,7 +1,7 @@
 ---
-title: Achievability of a Serverless Multi-cloud
-description: todo
-date: 2017-11-07
+title: Pros and Cons of a Serverless Multi-cloud
+description: To multi-cloud, or not to multi-cloud? It's time for a frank discussion of the pros and cons.
+date: 2017-11-06
 layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/multicloud.jpg'
 authors:
@@ -49,7 +49,7 @@ Maybe the answer ends up being: yes, it would be cool to leverage any service I 
 There are a series of things that could happen to make multi-cloud easier.
 
 **Cross-cloud service compatibility**
-Data management and storage, for instance, are ecosystem-dependent. Google has best machine learning right now; and while it’s *feasible* to use GC services on different cloud providers, it isn’t exactly a cake walk.
+Data management and storage, for instance, are ecosystem-dependent. Google has best machine learning right now; and while it’s *feasible* to use GC services on different cloud providers, it isn’t necessarily simple.
 
 To make multi-cloud less work and less compromise, we need to be better ways to share data across cloud providers, and better ways react to any event source regardless of cloud provider.
 
