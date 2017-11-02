@@ -22,7 +22,7 @@ v1.24 is a special release — it's the first one which was entirely run by our 
 
 Frank is an early serverless enthusiast. He got started when the [Serverless Framework](www.serverless.com/framework) was in its v0.x infancy. Frank has contributed tons of great enhancements to the different codebases of the Framework.
 
-His specialality is the v1 plugin system, where he managed to introudce the separation of the `package` and `deploy` steps in a non-breaking way with the help of a lifecycle deprecation and redirection mechanism.
+His speciality is the v1 plugin system, where he managed to introduce the separation of the `package` and `deploy` steps in a non-breaking way with the help of a lifecycle deprecation and redirection mechanism.
 
 [GitHub](https://github.com/HyperBrain)
 
