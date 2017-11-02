@@ -12,7 +12,7 @@ authors:
 
 Today we're proud to announce Serverless Framework v1.24.
 
-v1.24 is a special release—it's the first one which was entirely run by our recently-onboarded Serverless Framework v1 maintainers!
+v1.24 is a special release — it's the first one which was entirely run by our recently-onboarded Serverless Framework v1 maintainers!
 
 ## Meet our Serverless Framework maintainers
 
@@ -22,7 +22,7 @@ v1.24 is a special release—it's the first one which was entirely run by our re
 
 Frank is an early serverless enthusiast. He got started when the [Serverless Framework](www.serverless.com/framework) was in its v0.x infancy. Frank has contributed tons of great enhancements to the different codebases of the Framework.
 
-His specialality is the v1 plugin system, where he managed to introudce the separation of the `package` and `deploy` steps in a non-breaking way with the help of a lifecycle depracation and redirection mechanism.
+His specialality is the v1 plugin system, where he managed to introudce the separation of the `package` and `deploy` steps in a non-breaking way with the help of a lifecycle deprecation and redirection mechanism.
 
 [GitHub](https://github.com/HyperBrain)
 
@@ -40,7 +40,7 @@ Rafal loves to push Serverless technolgoies to its limits. That's why he's also 
 
 <img align="left" src="https://avatars0.githubusercontent.com/u/1301012?s=400&v=4" width="180px">
 
-Takahiro loves to get his hands dirty. He's fearless in testing the latest services in the serverless landscape to see how they can be introduced the Serverless Framework! Many of the AWS event source plugins Serverless provides were introduced by him.
+Takahiro loves to get his hands dirty. He's fearless in testing the latest services in the serverless landscape to see how they can be introduced to the Serverless Framework! Many of the AWS event source plugins Serverless provides were introduced by him.
 
 Make sure to check out his serverless experiments on his [GitHub profile](https://github.com/horike37?utf8=%E2%9C%93&tab=repositories&q=serverless&type=&language=)
 
