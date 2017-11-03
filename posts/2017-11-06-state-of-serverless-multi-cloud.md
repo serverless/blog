@@ -1,6 +1,6 @@
 ---
-title: The Serverless Multi-cloud - risk vs reward
-description: To multi-cloud, or not to multi-cloud? It's time for a frank discussion of the pros and cons.
+title: The State of Serverless Multi-cloud
+description: To multi-cloud, or not to multi-cloud? It's time for a frank discussion of the pros and cons. Here's the current state of affairs.
 date: 2017-11-06
 layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/multicloud.jpg'
