@@ -18,7 +18,9 @@ We designed these workshops to help you (and your whole team) get the best pract
 
 # What you'll learn
 
-Learn how to deploy serverless APIs and applications from start to finish. We'll go into best practices around serverless ops, monitoring, secrets and testing. Our goal is to get you ready to confidently create serverless applications, and be able operationalize serverless across your team.
+Learn how to deploy serverless APIs and applications from start to finish.
+
+We'll also cover serverless ops, monitoring, secrets and testing. Our goal is to get you ready to not only confidently create serverless applications, but to then feel ready to operationalize serverless across your team.
 
 # How to register
 
