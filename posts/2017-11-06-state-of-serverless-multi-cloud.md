@@ -8,17 +8,19 @@ authors:
   - AndreaPasswater
 ---
 
+# To multi-cloud, or not to multi-cloud
+
 Vendor lock-in runs deep in serverless applications. “Cloud provider” used to mean “whoever hosts your servers”. In a serverless paradigm, it means “whoever runs your functions”.
 
 And when the space doesn’t (yet) have standardization, developers must twirl those functions round and round in a whole vendor ecosystem of events and data storage. There’s no way to use Azure Functions and EC2 together.
 
 “But,” you say, “[vendor-agnostic frameworks](https://serverless.com/framework/) let you easily deploy functions across providers, at least.” That they do! But then, there’s the small technicality of language choice. Write your application in Python and you’ll have a hard time moving that over to Google Cloud Functions.
 
-Given all this, what do we make of the multi-cloud? Is it a pipe dream, or an attainable goal—and to address the real elephant in the room: do we *actually* need it?
+Given all this, what do we make of the multi-cloud? Is it a pipe dream, or an attainable goal—and do we *actually* need it?
 
 # Multi-cloud gives you wings
 
-The biggest advantage to serverless multi-cloud we hear in the field is *feature arbitrage*. Imagine plucking all your favorite aspects of each cloud provider and placing them nicely together in your very own, custom-made bouquet.
+The biggest advantage to serverless multi-cloud we hear in the field is feature arbitrage. Imagine plucking all your favorite aspects of each cloud provider and placing them nicely together in your very own, custom-made bouquet.
 
 It’s hard to commit to a single ecosystem, especially when serverless compute vendors are constantly adding new features that change the value equation. AWS Lambda is adding traffic shifting in Lambda aliases any day now; Microsoft Azure has their (still unique) Logic Apps, which lets you manage event-driven services much like you’re composing an IFTTT.
 
