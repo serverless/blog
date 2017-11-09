@@ -26,9 +26,9 @@ We're predicting AWS will have some surprise Lambda updates to talk about. Perha
 
 # Serverless.com's re:Invent Happy Hour
 
-Did we mention we're having our own happy hour? November 29th at the Rhumbar. Drinks! Swag! Serverless!
+Did we mention we're having our own happy hour? November 29th at the Rhumbar.
 
-[RSVP to snag a spot](https://www.eventbrite.com/e/serverless-happy-hour-tickets-39623766753).
+Drinks! Swag! Serverless! [RSVP to snag a spot](https://www.eventbrite.com/e/serverless-happy-hour-tickets-39623766753).
 
 # Your recommended serverless track
 
@@ -87,4 +87,33 @@ Includes: API Gateway, Lambda, DynamoDB
 
 ## Introductory (200 level)
 
+**SRV212 - Build a Scalable Serverless Web Application on AWS That Can Span Millions of Concurrent Users** | Aria<br>
+This session is clearly based off the [Australian census problem](https://serverless.com/blog/building-a-better-australian-census-site/). 😉 You'll learn how to build a highly-available, low latency website that can handle a country-wide public poll.
 
+Includes: Lambda, API Gateway, S3, DynamoDB
+
+**SRV213 - Thirty Serverless Architectures in 30 Minutes** | Aria<br>
+Use Lambda to build slack bots, automate testing, and more. They'll cover basics on deploying, monitoring and profiling serverless applications.
+
+Includes: Lambda, API Gateway, fun serverless projects
+
+**SRV210 - Improving Microservice and Serverless Observability with Monitoring Data** | Aria<br>
+Synthesize best practices around metrics, logs, and observability. Learn how to troubleshoot applications and serverless infrastructure.
+
+**CMP211 - Getting Started with Serverless Architectures** | Venetian<br>
+Curious about what serverless can do for you? Learn about their benefits in handling APIs, data processing, and website backends.
+
+Includes: Lambda, API Gateway, Step Functions
+
+**CTD201 - Introduction to Amazon CloudFront and AWS Lambda@Edge** | Venetian<br>
+Learn how to accelerate delivery of websites, APIs, and streamed media content. Lambda@Edge is a serverless service that lets you customize content delivery through CloudFront.
+
+Includes: Lambda@Edge, CloudFront, CDN strategy
+
+# And finally...
+
+Don't forget to keep your eye on those afterparties and happy hours.
+
+Here's a [pretty good unofficial list of re:Invent happenings](http://reinventparties.com/).
+
+Have fun out there. ⚡️
