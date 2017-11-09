@@ -10,7 +10,7 @@ authors:
 
 # General re:Invent protips
 
-Never been to re:Invent before? Well. Here's what you're in for.
+Never been to re:Invent before? Here's what you're in for.
 
 The venues are pretty spread out, so getting from one to the other can be time-consuming. Try to plan your day such that you stay in the same building if you can.
 
