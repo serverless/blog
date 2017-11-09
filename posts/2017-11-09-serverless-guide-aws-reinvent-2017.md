@@ -8,6 +8,8 @@ authors:
   - AndreaPasswater
 ---
 
+What to expect and which sessions to sign up for.
+
 # General re:Invent protips
 
 Never been to re:Invent before? Here's what you're in for.
@@ -18,9 +20,7 @@ It's tempting to be ambitious and keep your days jam packed, but really, don't w
 
 Remember that the biggest value you'll get out of re:Invent are the conversations you'll have there. So during the breaks, meet people! We really can't emphasize this one enough.
 
-## Go to the keynotes
-
-We put this one in its own header for emphasis. All the cool announcements and launches at re:Invent are going to happen during the keynotes. You probably don't want to miss these.
+**Go to the keynotes.** This one's in bold for emphasis. All the cool announcements and launches at re:Invent are going to happen during the keynotes. You probably don't want to miss these.
 
 We're predicting AWS will have some surprise Lambda updates to talk about. Perhaps more event sources? New language runtimes? Longer time-outs?!
 
