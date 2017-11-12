@@ -36,7 +36,7 @@ First, make sure you have the domain name in your [Registered Domains](https://c
 
 If you have a domain that's registered with a different registrar, you can [transfer registration to Route 53](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html). If you don't have a domain yet, you can purchase one through Route 53.
 
-Once you have your domain, [request a new certificate](https://console.aws.amazon.com/acm/home?region=us-east-1#/wizard/) with the AWS Certificate Manager. **Note that you'll need to be in region us-east-1**. This is the only region that works with API Gateway. 
+Once you have your domain, [request a new certificate](https://console.aws.amazon.com/acm/home?region=us-east-1#/wizard/) with the AWS Certificate Manager.
 
 <img width="1322" alt="Request a Certificate" src="https://user-images.githubusercontent.com/6509926/30004102-a01f7586-908e-11e7-882f-3c72e928f65a.png">
 
