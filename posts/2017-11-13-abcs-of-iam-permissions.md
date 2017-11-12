@@ -1,7 +1,7 @@
 ---
 title: The ABCs of IAM: Managing permissions with Serverless
 description: Learn the basics of IAM permissions with your Serverless projects.
-date: 2017-11-08
+date: 2017-11-13
 layout: Post
 thumbnail: TODO
 authors:
@@ -27,7 +27,7 @@ There are three basic concepts you should understand in the world of IAM: users,
 
 An **IAM user** is pretty close to what it sounds like -- a user that is created to interact with AWS. Usually, this is an actual person that will use the credentials to log into the AWS console. This person often has _access keys_ to programmatically interact with AWS resources. Access keys consist of an "access key ID" and a "secret access key". Together, they can authenticate a particular user to AWS to access certain resources. You might use them to use the [AWS CLI](https://aws.amazon.com/cli/) or a particular language's SDK, like [Boto3](http://boto3.readthedocs.io/en/latest/) for Python.
 
-An **IAM role** is similar to an IAM user but is meant to be assumed by anyone or anything that needs to use it. The IAM user we discussed in the previous paragraph could assume an IAM role for a time to access certain resources. An IAM role could also be assumed by another AWS service, such as an EC2 instance or a Lambda function. Your Lambda function assuming an IAM role will be important later when we discuss [managing permissions with your Lambda functions](TODO).
+An **IAM role** is similar to an IAM user but is meant to be assumed by anyone or anything that needs to use it. The IAM user we discussed in the previous paragraph could assume an IAM role for a time to access certain resources. An IAM role could also be assumed by another AWS service, such as an EC2 instance or a Lambda function. Your Lambda function assuming an IAM role will be important later when we discuss [managing permissions with your Lambda functions](#managing-permissions-for-your-lambda-functions).
 
 Finally, an **IAM permission** is a statement that grants or blocks an action or actions on a resource or set of resources. An IAM permission contains three elements: _Effect_, _Action_, and _Resource_ (it may optionally include a _Condition_ element, but that's outside the scope of this article). 
 
@@ -91,7 +91,7 @@ If you haven't set up permissions before, you'll need to create an IAM user with
 
 - **Fast but risky (aka [YOLO](https://www.youtube.com/watch?v=z5Otla5157c)):** The fastest way to get started with Serverless is to create an IAM user with Administrator Access. This IAM user will have full access to your AWS account and **should not** be used for your company's production AWS account. The best approach here is to create a new AWS account or a new [AWS organization](https://aws.amazon.com/organizations/) with limited ability to affect other resources. This will give you the widest latitude to experiment with Serverless without getting tangled in a web of IAM permissions.
 
-> Check out a video to create a user with Administrator Access [here](TODO).
+> Check out a video to create a user with Administrator Access [here](https://www.youtube.com/watch?v=KngM5bfpttA).
 
 - **Slow but safe:** With security, you generally want to follow the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege). For AWS, this means your Serverless IAM user shouldn't have the ability to alter the Lambda functions and resources of other services in your AWS account. This can be quite difficult but is worth the added security, particularly in a production account. 
 
@@ -119,8 +119,6 @@ If you haven't set up permissions before, you'll need to create an IAM user with
   ```
   
   This will create a JSON file in your working directory with permissions scoped to your service. It's not perfect, but it will get you closer. Create an IAM user with that policy file -- or ship it to the person in charge of IAM security at your company -- and you should be on your way.
-
-> Check out a [video showing how to use the Yeoman generator to create a policy and attach it to an IAM user](TODO).
 
 # Managing permissions for your Lambda Functions
 
@@ -175,3 +173,7 @@ Here, we're dynamically grabbing the DynamoDB table ARN by using `Fn::GetAtt` an
 You can also craft [custom IAM roles](https://serverless.com/framework/docs/providers/aws/guide/iam#custom-iam-roles) for each function in your `serverless.yml`, but be advised this is an advanced feature. You'll need to make sure to specify _all_ permissions of your functions, including some that Serverless usually handles for you, such as the ability to write to CloudWatch logs.
 
 There's a [`serverless-puresec-cli`](https://github.com/puresec/serverless-puresec-cli) plugin that assists in this process. Puresec scans your functions to see which AWS resources they're accessing and how to automatically create least-privilege roles. It doesn't cover all resources yet, but it is a good start if you're interested.
+
+# Conclusion
+
+IAM permissions are complex, and there's a lot more to learn than what is covered in this article. We've covered the basics here and showed a few tips to get you on your way. 
