@@ -62,11 +62,12 @@ For those not into watching a 15 minute video rant on the ins and out of CRDTs, 
 
 The summary is short on text and can be skimmed quickly: you can pick and choose which snippets you watch.
 
-**Full video: CRDTs for non-academics:** http://bit.ly/CRDTs4NonAcademics
+**Full video: CRDTs for non-academics:**
 
-<iframe width="823" height="463" src="https://www.youtube.com/embed/vBU70EjwGfw" frameborder="0" gesture="media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vBU70EjwGfw" frameborder="0" allowfullscreen></iframe>
 
 ## Scene by scene video break-down
+
 ### WTF are CRDTs?
 
 When you ask most engineers about CRDTs, you usually get a reaction like this:
