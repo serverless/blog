@@ -250,7 +250,9 @@ This video is silly, but it does a good job at explaining a difficult distribute
 
 We have examined how CRDT operations work on the 4 operations required to cover the 4 JSON data types. We have explained the convergent property of `set` to be sub-optimal but still useful when utilized correctly.
 
-We walked through examples demonstrating how replication race-conditions are handled by commutative algorithms and lots of versioning. And finally, we (us and the Joes) learned that CRDTs provide causal+ consistency via delta vector clocks representing the delta’s dependencies
+We walked through examples demonstrating how replication race-conditions are handled by commutative algorithms and lots of versioning. And finally, we (us and the Joes) learned that CRDTs provide causal+ consistency via delta vector clocks representing the delta’s dependencies.
+
+## Even more to learn
 
 This is just an introduction to CRDTs; the rabbit hole goes a lot deeper. But it’s a good start, and let’s be honest—it was a ton of content in a short amount of video/text.
 
