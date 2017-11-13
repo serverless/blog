@@ -104,7 +104,9 @@ It does a good job of showing how CRDTs replicate the commutative *addition* ope
 
 **Video 1: CRDT counter increment example**
 
-[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-1.png "video-1")](https://youtu.be/vBU70EjwGfw?t=108)
+<a href="https://youtu.be/vBU70EjwGfw?t=108" target="_blank">
+  <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-1.png">
+</a>
 
 Now that we have shown how commutative replication works for incrementing counters, we will make a bold assertion: Commutative Replication works for all of JSON (nested JSON included). 
 
