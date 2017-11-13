@@ -1,8 +1,11 @@
 ---
 title: Build a Github webhook handler with Serverless & AWS Lambda
 description: Deploy a Serverless service that posts notifications of Github stars in a Slack channel
+date: 2017-11-16
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png'
+authors:
+  - AlexDeBrie
 ---
 
 One of the great applications for Serverless is using it as glue code between different services. You can spin up an endpoint to handle a webhook in seconds without bugging your company's Ops department.
