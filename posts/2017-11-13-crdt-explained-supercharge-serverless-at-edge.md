@@ -140,7 +140,9 @@ This oddity to distributed LWW is something CRDT users must take into account wh
 
 **Video 2: three gurus**
 
-[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-2.png "video-1")](https://youtu.be/vBU70EjwGfw?t=201)
+<a href="https://youtu.be/vBU70EjwGfw?t=201"  target="_blank">
+  <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-2.png">
+</a>
 
 ### Decrementing counters
 
@@ -152,7 +154,9 @@ This shows a simple mechanism CRDTs use for increment/decrement counters. We use
 
 **Video 3: decrement counter example:**
 
-[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-3.png "video-3")](https://youtu.be/vBU70EjwGfw?t=321)
+<a href="https://youtu.be/vBU70EjwGfw?t=321"  target="_blank">
+  <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-3.png">
+</a>
 
 ### SET example
 
@@ -162,7 +166,9 @@ In this case, we’ll do 3 concurrent numerical `SET`s. This example shows how t
 
 **Video 4: SET example:**
 
-[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-4.png "video-1")](https://youtu.be/vBU70EjwGfw?t=352)
+<a href="https://youtu.be/vBU70EjwGfw?t=352"  target="_blank">
+  <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-4.png">
+</a>
 
 ### Resetting a field
 
@@ -172,7 +178,9 @@ Sounds complicated, but the video makes it simple and intuitive.
 
 **Video 5: SET then RESET**
 
-[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-5.png "video-1")](https://youtu.be/vBU70EjwGfw?t=375)
+<a href="https://youtu.be/vBU70EjwGfw?t=375"  target="_blank">
+  <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-5.png">
+</a>
 
 ### CRDTs and versioning
 
@@ -189,7 +197,9 @@ In the next example we `DELETE` a field and then we (RE)`SET` the field. Then, s
 
 **Video 6: DELETE example**
 
-[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-6.png "video-1")](https://youtu.be/vBU70EjwGfw?t=491)
+<a href="https://youtu.be/vBU70EjwGfw?t=491"  target="_blank">
+  <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-6.png">
+</a>
 
 ### Modifying nested JSON
 
@@ -201,7 +211,9 @@ In order to be applied, operations for a nested field must match all UUIDs in th
 
 **Video 7: objects & dictionaries**
 
-[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-7.png "video-1")](https://youtu.be/vBU70EjwGfw?t=550)
+<a href="https://youtu.be/vBU70EjwGfw?t=550"  target="_blank">
+  <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-7.png">
+</a>
 
 ### JSON arrays
 
@@ -211,7 +223,9 @@ Arrays are initialized via set operations (e.g. `SET H=[]`). Array elements can 
 
 **Video 8: arrays & linked lists**
 
-[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-8.png "video-1")](https://youtu.be/vBU70EjwGfw?t=597)
+<a href="https://youtu.be/vBU70EjwGfw?t=597"  target="_blank">
+  <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-8.png">
+</a>
 
 Arrays in JSON are also used to represent causality (such as linked lists). They can represent that something (*A*) happened and then something else (*B*) happened afterwards—represented as A<-B or [A,B].
 
@@ -235,7 +249,9 @@ This next video shows an example of how concurrent inserts work in practice.
 
 **Video 9: concurrent array inserts**
 
-[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-9.png "video-1")](https://youtu.be/vBU70EjwGfw?t=630)
+<a href="https://youtu.be/vBU70EjwGfw?t=630"  target="_blank">
+  <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-9.png">
+</a>
 
 ### CRDT consistency models
 
@@ -248,7 +264,9 @@ This video is silly, but it does a good job at explaining a difficult distribute
 
 **Video 10: causal+ consistency (GO JOE!)**
 
-[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-10.png "video-1")](https://youtu.be/vBU70EjwGfw?t=747)
+<a href="https://youtu.be/vBU70EjwGfw?t=747"  target="_blank">
+  <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-10.png">
+</a>
 
 # Conclusion
 
