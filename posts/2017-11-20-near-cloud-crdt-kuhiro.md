@@ -8,6 +8,18 @@ authors:
   - AndreaPasswater
 ---
 
+[Kuhirō](www.kuhiro.com) founder Russell Sullivan came to chat with us about the latest hot topic in serverless—[CRDTs](https://serverless.com/blog/crdt-explained-supercharge-serverless-at-edge/).
+
+CRDTs got several mentions at ServerlessConf 2017 in NYC, but not many people fully understand what they do, or what their potential is. (...yet.)
+
+Russell's talk will take you through some important concepts. Get up to speed on NearCloud, CRDTs, and Kuhirō.
+
 # Video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/B-qNGytPOEU" frameborder="0" allowfullscreen></iframe>
+
+# Serverless Meetups
+
+Want to join a meetup in your city and hear cool talks like Russell's? Want to *run* a meetup in your city and facilitate cool talks like Russell's?
+
+Head on over to our [Meetups page](https://serverless.com/community/meetups/) to join in.
