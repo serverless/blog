@@ -150,7 +150,7 @@ This shows a simple mechanism CRDTs use for increment/decrement counters. We use
 
 **Video 3: decrement counter example:**
 
-[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-1.png "video-3")](https://youtu.be/vBU70EjwGfw?t=321)
+[![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-3.png "video-3")](https://youtu.be/vBU70EjwGfw?t=321)
 
 ### SET example
 
