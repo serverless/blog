@@ -20,7 +20,7 @@ In this post, we’re going to do two things: set the stage by defining a few hi
 
 # Part 1: CRDT concepts
 
-Here, we’ll set the stage for our deep dive a bit further down. If you already feel pretty primed for CRDTs, then feel free to [skip down to Part 2](https://serverless.com/blog/crdt-explained-supercharge-serverless-at-edge/#part-2-crdts-explained).
+Here, we’ll set the stage for our deep dive a bit further down. If you already feel pretty primed for CRDTs, then feel free to skip down to Part 2.
 
 ## What even is a CRDT?
 
