@@ -1,7 +1,7 @@
 ---
 title: "CRDTs explained - supercharge your serverless with CRDTs at the Edge"
 description: "Want to understand CRDTs? Here's great explainer. Serverless gets even better with CRDTs at the Edge."
-date: 2017-11-13
+date: 2017-11-14
 layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/kuihro-logo.png'
 authors:
