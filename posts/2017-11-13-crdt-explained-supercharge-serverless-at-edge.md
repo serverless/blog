@@ -1,6 +1,6 @@
 ---
 title: "CRDTs explained - supercharge your serverless with CRDTs at the Edge"
-description: "Want to understand CRDTs? Here's great explainer. Serverless gets even better with CRDTs at the Edge."
+description: "How to supercharge your serverless with CRDTs at the edge. Your comprehensive CRDT explainer."
 date: 2017-11-13
 layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/kuihro-logo.png'
@@ -10,9 +10,9 @@ authors:
 
 You all read this blog, and probably consider yourself to be pretty well versed in serverless concepts. But few of you are likely to be fluent in [CRDTs](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type).
 
-It’s okay, they’re new. Like, *new* new. I’m [Kuhirō](http://www.kuhiro.com) founder Russell Sullivan, and I’m here to yank these concepts out of the lofty academia-sphere and place them squarely in the ‘what can I use these for’ engineering-sphere.
+It’s okay, they’re new. Like, *new* new.
 
-By the end of this post, you will be the foremost CRDT expert you know (unless you know [Jared Short](https://twitter.com/ShortJared)).
+I’m [Kuhirō](http://www.kuhiro.com) founder Russell Sullivan, and I’m here to yank these concepts out of the lofty academia-sphere and place them squarely in the ‘what can I use these for’ engineering-sphere. By the end of this post, you will be the foremost CRDT expert you know (unless you know [Jared Short](https://twitter.com/ShortJared)).
 
 In this post, we’re going to do two things: set the stage by defining a few high-level CRDT concepts, and then take a deep dive by walking step-by-step through a CRDT video explainer.
 
