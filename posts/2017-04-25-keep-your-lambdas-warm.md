@@ -16,11 +16,11 @@ In this blog post we'll tackle this issue with AWS Lambda + Serverless.
 
 ## Cold Start in Serverless ❄️ *- problem*
 
-The *Function-as-a-Servive (FaaS)* paradigm allows developers to do more than ever with less resources. Unfortunately, cold start can be an issue.
+The *Function-as-a-Service (FaaS)* paradigm allows developers to do more than ever with less resources. Unfortunately, cold starts can be an issue.
 
-**What is cold start in Serverless?**
+**What is a cold start in Serverless?**
 
-Cold start happens when you execute an inactive *(cold)* function for the first time. It occurs while your cloud provider provisions your selected runtime container and then runs your function. This process, referred to as *cold start*, will increase your execution time considerably.
+A cold start happens when you execute an inactive *(cold)* function for the first time. It occurs while your cloud provider provisions your selected runtime container and then runs your function. This process, referred to as a *cold start*, will increase your execution time considerably.
 
 While you're actually running your function it will stay active *(hot)*, meaning your container stays alive - ready and waiting for execution. But eventually after a period of inactivity, your cloud provider will drop the container and your function will become *cold* again. 
 
