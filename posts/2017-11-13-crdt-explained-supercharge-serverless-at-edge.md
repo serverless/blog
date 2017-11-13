@@ -10,7 +10,7 @@ authors:
 
 You all read this blog, and are probably pretty familiar with serverless concepts. But few of you are likely to be fluent in [CRDTs](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type).
 
-It’s okay, they’re super new. Like, *new* new. But CRDTs are quickly gaining traction, and well worth reading up on.
+It’s okay, they’re super new. Like, *new* new. But CRDTs are quickly gaining traction.
 
 I’m [Kuhirō](http://www.kuhiro.com) founder Russell Sullivan; I’m here to yank these concepts out of the lofty academia-sphere, and place them squarely in the ‘what can I use these for’ engineering-sphere.
 
