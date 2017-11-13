@@ -8,7 +8,7 @@ authors:
   - RussellSullivan
 ---
 
-You all read this blog, and probably consider yourself to be pretty well versed in Serverless concepts. But few of you are likely to be fluent in [CRDTs](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type).
+You all read this blog, and probably consider yourself to be pretty well versed in serverless concepts. But few of you are likely to be fluent in [CRDTs](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type).
 
 It’s okay, they’re new. Like, *new* new. I’m [Kuhirō](http://www.kuhiro.com) founder Russell Sullivan, and I’m here to yank these concepts out of the lofty academia-sphere and place them squarely in the ‘what can I use these for’ engineering-sphere.
 
@@ -113,7 +113,8 @@ JSON consists of 4 data types: `[string, number, object, array]`, for example:
 score      : 123,
 attributes : {occupation : ”coder”},
 history    : [“signed up”, “logged out”]
-}```
+}
+```
 
 These 4 data types only require 4 base operations to build all higher level operations. JSON’s data types and respective operations are shown in the table below:
 
