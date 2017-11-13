@@ -1,0 +1,9 @@
+{
+  "name": "Russell Sullivan",
+  "github": "JakSprats",
+  "avatar": "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/russelsullivan.jpg",
+  "bio": {
+    "short": "Russell Sullivan is co-founder and CTO of Kuhiro",
+    "long": "Russell Sullivan is co-founder and CTO of Kuhiro, the leader in Stateful Serverless at the Edge. He has been creating distributed asynchronous systems since last millenium, recently authoring Datanet, AlchemyDB, and most of Aerospike."
+  }
+}
