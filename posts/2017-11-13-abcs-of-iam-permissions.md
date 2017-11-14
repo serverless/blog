@@ -202,4 +202,6 @@ There's a [`serverless-puresec-cli`](https://github.com/puresec/serverless-pures
 
 # Conclusion
 
-IAM permissions are complex, and there's a lot more to learn than what is covered in this article. We've covered the basics here and showed a few tips to get you on your way. 
+IAM permissions are complex, and there's a lot more to learn than what is covered in this article. But this should be a great starting point.
+
+Live long and permission. 🖖
