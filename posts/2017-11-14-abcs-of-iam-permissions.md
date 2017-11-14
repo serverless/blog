@@ -18,7 +18,7 @@ In this guide, we'll go over:
 
 - Basic IAM concepts
 - The two kinds of IAM entities with the Serverless Framework
-- Managing permissions with the Serverless Framework usage
+- Managing permissions for the Serverless Framework user
 - Managing permissions with your Lambda functions
 
 Let's get started!
@@ -31,7 +31,7 @@ An **IAM user** is pretty close to what it sounds like—a user that is created 
 
 This person often has _access keys_ to programmatically interact with AWS resources. Access keys consist of an "access key ID" and a "secret access key". Together, they can authenticate a particular user to AWS to access certain resources.
 
-You might use them to use the [AWS CLI](https://aws.amazon.com/cli/) or a particular language's SDK, like [Boto3](http://boto3.readthedocs.io/en/latest/) for Python.
+You might use them with the [AWS CLI](https://aws.amazon.com/cli/) or a particular language's SDK, like [Boto3](http://boto3.readthedocs.io/en/latest/) for Python.
 
 An **IAM role** is similar to an IAM user, but is meant to be assumed by anyone or anything that needs to use it.
 
@@ -43,7 +43,7 @@ Finally, an **IAM permission** is a statement that grants/blocks an action(s) on
 
 * **Effect** tells what effect the IAM permission statement has—whether to Allow or Deny access. Generally, an IAM user does not have access to AWS resources. Most IAM permissions have an Effect of "Allow" to grant access to a particular resource. Occasionally, you might have an Effect of "Deny" to override any other "Allow" permissions.
 
-* **Action** tells what action an IAM user or role can take as a result of the IAM permission statement. An Action has two parts: a service namespace and the action in that namespace. For example, the Action of `s3:GetObject` affects the GetObject action in the s3 service namespace. You can use wildcards in the Action, such as `ec2:\*` to allow all actions in the EC2 namespace, or simply `*` to allow all actions anywhere. (Hint: Don't do this).
+* **Action** tells what action an IAM user or role can take as a result of the IAM permission statement. An Action has two parts: a service namespace and the action in that namespace. For example, the Action of `s3:GetObject` affects the GetObject action in the s3 service namespace. You can use wildcards in the Action, such as `ec2:*` to allow all actions in the EC2 namespace, or simply `*` to allow all actions anywhere. (Hint: Don't do this).
 
 * **Resource** tells what resources the permission statement affects. The value is an [ARN](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) or list of ARNs to which the statement applies. This lets you give permissions on a more granular basis, such as limiting the ability to query a particular DynamoDB table rather than granting the ability to query _all_ DynamoDB tables in your account. Like the Action element, you can use the wildcard `*` to apply the statement to _all_ resources in your account.
 
@@ -74,6 +74,8 @@ You would have a policy like:
 We see the three permission elements noted above. The Effect is "Allow", which grants the listed actions on the listed resources.
 
 The Action block contains a list of needed DynamoDB actions, such as GetItem, PutItem, and Query. Notice that it does not include CreateTable and DeleteTable—that is more of an administrative role that your application wouldn't need.
+
+Finally, the Resource block has our table's ARN. This limits the scope of the permissions to our table only, so our application wouldn't have the ability to query other tables in our AWS account.
 
 **IAM permissions** can be attached to **users** or **roles** (or other things that we won't cover here). This means you can create an AWS user and give it the permission to create DynamoDB tables, view CloudWatch logs, or any of the many other things you can do with AWS.
 
@@ -113,9 +115,9 @@ If you haven't set up permissions before, you'll need to create an IAM user with
 
 > Check out a video to create a user with Administrator Access [here](https://www.youtube.com/watch?v=KngM5bfpttA).
 
-- **Slow but safe:** With security, you generally want to follow the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege). For AWS, this means your Serverless IAM user shouldn't have the ability to alter the Lambda functions and resources of other services in your AWS account. This can be quite difficult but is worth the added security, particularly in a production account. 
+- **Slow but safe:** If you're using Serverless in production, you'll want more tightly-scoped permissions. With security, you generally want to follow the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege). For AWS, this means your Serverless IAM user shouldn't have the ability to alter the Lambda functions and resources of other services in your AWS account. This can be quite difficult but is worth the added security, particularly in a production account. 
 
-One of our community members has contribued a [Yeoman generator template](https://github.com/dancrumb/generator-serverless-policy). This generator makes it much easier to create a narrow IAM policy template that will cover many Serverless use cases.
+One of our community members has contributed a [Yeoman generator template](https://github.com/dancrumb/generator-serverless-policy). This generator makes it much easier to create a narrow IAM policy template that will cover many Serverless use cases.
   
 To use it, first install Yeoman and the `serverless-policy` generator:
   
