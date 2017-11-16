@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-Your existing web framework tooling can work seamlessly with Serverless. Let’s go over how to use the Python web framework [Flask](http://flask.pocoo.org/) to deploy a Serverless REST API.
+Your existing web framework tooling can work seamlessly with the [Serverless Framework](serverless.com/framework). Let’s go over how to use the Python web framework [Flask](http://flask.pocoo.org/) to deploy a Serverless REST API.
 
 In this walk-through, we will:
 
@@ -136,7 +136,7 @@ After a minute, the console will show your `endpoints` in the `Service Informati
 
 <img width="783" alt="Flask Hello World" src="https://user-images.githubusercontent.com/6509926/32240372-2ccf439c-be3b-11e7-99ee-00e5b78b1e7d.png">
 
-You did it -- a real, live application on the Internet!
+You did it—a real, live application on the Internet!
 
 # Adding a DynamoDB table with REST-like endpoints
 
@@ -339,7 +339,9 @@ functions:
 
 We're forwarding all traffic on the domain to our application and letting Flask handle the entirety of the routing logic. There is a benefit to this—you don't have to manually string up all my routes and functions. You can also limit the impact of cold-starts on lightly-used routes.
 
-However, we also lose some of the benefits of the serverless architecture. You can isolate your bits of logic into separate functions and get a decent look at your application from standard metrics. If each route is handled by a different Lambda function, then you can see:
+However, we also lose some of the benefits of the serverless architecture. You can isolate your bits of logic into separate functions and get a decent look at your application from standard metrics.
+
+If each route is handled by a different Lambda function, then you can see:
 
 - How many times each route is invoked
 - How many errors you have for each route
@@ -547,9 +549,9 @@ If you already have an existing Flask application, it's very easy to convert to 
 	      - http: 'ANY {proxy+}'
 	```
 
-	Make sure that the value for `app` under the `custom.wsgi` block is configured for your application. It should be `<module.instance>`, where `module` is the name of the Python file with your Flask instance and `instance` is the name of the variable with your Flask application.
+Make sure that the value for `app` under the `custom.wsgi` block is configured for your application. It should be `<module.instance>`, where `module` is the name of the Python file with your Flask instance and `instance` is the name of the variable with your Flask application.
 
-3. Deploy your function with `sls deploy` !
+3. Deploy your function with `sls deploy`!
 
 **Note:** if you use other resources (databases, credentials, etc.), you'll need to make sure those make it into your application. Check out our other material on [managing secrets & API keys with Serverless](https://serverless.com/blog/serverless-secrets-api-keys/).
 
