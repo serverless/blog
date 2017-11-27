@@ -8,7 +8,7 @@ authors:
   - AndreaPasswater
 ---
 
-[Kuhirō](www.kuhiro.com) founder Russell Sullivan came to chat with us about the latest hot topic in serverless—[CRDTs](https://serverless.com/blog/crdt-explained-supercharge-serverless-at-edge/).
+[Kuhirō](http://www.kuhiro.com) founder Russell Sullivan came to chat with us about the latest hot topic in serverless—[CRDTs](https://serverless.com/blog/crdt-explained-supercharge-serverless-at-edge/).
 
 CRDTs got several mentions at ServerlessConf 2017 in NYC, but not many people fully understand what they do, or what their potential is. (...yet.)
 
