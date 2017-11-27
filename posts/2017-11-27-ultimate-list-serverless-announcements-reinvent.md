@@ -3,18 +3,18 @@ title: "The Ultimate Guide to Serverless Announcements @ AWS re:Invent 2017"
 description: "Your go-to resource for all Serverless announcements at AWS re:Invent."
 date: 2017-11-27
 layout: Post
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/aws-logo.png'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/awsreinvent.jpg'
 authors:
   - AlexDeBrie
 ---
 
 **Last Updated:** 11/27/17 @ 8:28AM PST
 
-It's that time of the year.
+It's that time of the year, the Christmas-comes-early for cloud developers.
 
-That's right, [AWS re:Invent](https://reinvent.awsevents.com/). It's Christmas-comes-early for cloud developers. We get to hear about the biggest new products AWS is releasing. It's the place where [Lambda was introduced in 2014](https://www.youtube.com/watch?v=9eHoyUVo-yg). 
+Everyone, are you ready for [AWS re:Invent](https://reinvent.awsevents.com/)?
 
-We're expecting amazing announcements in the serverless realm this year. AWS has gone all-in on serverless, and we can't wait to see the improvements they're making.
+This is where [AWS Lambda was introduced in 2014](https://www.youtube.com/watch?v=9eHoyUVo-yg), and we're expecting more huge announcements in the serverless realm this year. AWS has gone all-in on serverless, and we can't wait to see the improvements they're making.
 
 This post is _the_ place to understand what is announced and why it affects you, the intrepid Serverless developer. We'll be updating throughout the week with all of the latest announcements.
 
