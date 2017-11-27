@@ -1,5 +1,5 @@
 ---
-title: "The Ultimate Guide to Serverless Announcements @ re:Invent
+title: "The Ultimate Guide to Serverless Announcements @ re:Invent"
 description: "Your go-to resource for all Serverless announcements at AWS re:Invent."
 date: 2017-11-27
 layout: Post
@@ -15,6 +15,8 @@ That's right, [AWS re:Invent](https://reinvent.awsevents.com/). It's Christmas-c
 We're expecting amazing announcements in the serverless realm this year. AWS has gone all-in on serverless, and we can't wait to see the improvements they're making.
 
 This post is _the_ place to understand what is announced and why it affects you, the intrepid Serverless developer. We'll be updating throughout the week with all of the latest announcements.
+
+If you're attending re:Invent, be sure to [check out the Serverless guide to re:Invent 2017](https://serverless.com/blog/serverless-guide-aws-reinvent-2017/).
 
 # Overview:
 
