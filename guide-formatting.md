@@ -1,3 +1,7 @@
+# Formatting Guide
+
+[See typography](https://serverless.com/blog/typography/) from this [markdown](https://github.com/serverless/blog/blob/master/posts/2016-05-24-typography.md)
+
 ## Aligning images for posts
 
 ### `left` alignment
