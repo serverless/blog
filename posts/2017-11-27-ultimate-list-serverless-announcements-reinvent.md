@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-**Last Updated:** 11/28/17 @ 1:34AM PST
+**Last Updated:** 11/28/17 @ 11:56AM PST
 
 It's that time of the year, the Christmas-comes-early for cloud developers. Are you ready for [AWS re:Invent](https://reinvent.awsevents.com/)?
 
@@ -21,6 +21,8 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 # Overview:
 
 ### re:Invent announcements (newest to oldest):
+
+- [AWS AppSync](#aws-appsync)
 - [AWS CodeDeploy incremental deployment](#aws-codedeploy-incremental-deployment)
 - [Weighted aliases for Lambda](#weighted-alises-for-lambda)
 - [Canary management for API Gateway](#canary-management-for-api-gateway)
@@ -34,9 +36,18 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # Announcements:
 
+# AWS AppSync
+
+**What:** A GraphQL service that lets you query DynamoDB. They say that preview will be ready later today at [https://aws.amazon.com/appsync/](https://aws.amazon.com/appsync), but as of now that url 404s.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">We’re launching 🚀 AWS AppSync as a new service for preview later today! Here are some of its features! <a href="https://twitter.com/apatel72001?ref_src=twsrc%5Etfw">@apatel72001</a> <a href="https://twitter.com/hashtag/reInvent?src=hash&amp;ref_src=twsrc%5Etfw">#reInvent</a> <a href="https://t.co/fG9thG6sAa">pic.twitter.com/fG9thG6sAa</a></p>&mdash; AWS re:Invent (@AWSreInvent) <a href="https://twitter.com/AWSreInvent/status/935573868260896768?ref_src=twsrc%5Etfw">November 28, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+*credit: [AWSreInvent](https://twitter.com/AWSreInvent) main account.
+
 # AWS CodeDeploy incremental deployment
 
-**What:** CodeDeploy support for incremental deployment of serverless applications.
+**What:** CodeDeploy support for incremental deployment of serverless applications. This is GA today, try it out!
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">New features coming to lambda <a href="https://twitter.com/hashtag/breaking?src=hash&amp;ref_src=twsrc%5Etfw">#breaking</a> <a href="https://twitter.com/hashtag/serverless?src=hash&amp;ref_src=twsrc%5Etfw">#serverless</a> <a href="https://twitter.com/hashtag/reinvent?src=hash&amp;ref_src=twsrc%5Etfw">#reinvent</a> .cc <a href="https://twitter.com/Ninnir?ref_src=twsrc%5Etfw">@Ninnir</a> <a href="https://t.co/bNjL0I78ZU">pic.twitter.com/bNjL0I78ZU</a></p>&mdash; Julien Stanojevic (@GenuineM7) <a href="https://twitter.com/GenuineM7/status/935596271020130304?ref_src=twsrc%5Etfw">November 28, 2017</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -45,7 +56,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # Weighted aliases for Lambda
 
-**What:** This will let you send some percentage of traffic to one version of a Lambda, the rest to another version.
+**What:** This will let you send some percentage of traffic to one version of a Lambda, the rest to another version. This is GA today, try it out!
 
 *Announced by Chris Munns on the Launchpad
 
