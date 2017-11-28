@@ -37,6 +37,9 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 **Why this matters:**
 
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Serverless and micro-services are where it’s at!! <a href="https://twitter.com/hashtag/reinvent?src=hash&amp;ref_src=twsrc%5Etfw">#reinvent</a> <a href="https://twitter.com/hashtag/cloud?src=hash&amp;ref_src=twsrc%5Etfw">#cloud</a> <a href="https://twitter.com/hashtag/soa?src=hash&amp;ref_src=twsrc%5Etfw">#soa</a> <a href="https://twitter.com/hashtag/Microservices?src=hash&amp;ref_src=twsrc%5Etfw">#Microservices</a> <a href="https://t.co/pSyCUK4ENZ">pic.twitter.com/pSyCUK4ENZ</a></p>&mdash; sandy carter (@sandy_carter) <a href="https://twitter.com/sandy_carter/status/935550646995927040?ref_src=twsrc%5Etfw">November 28, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 *credit: [@sandy_carter](https://twitter.com/sandy_carter) for the tweet about this news
 
 # [Lambda at Edge Improvements](https://aws.amazon.com/about-aws/whats-new/2017/11/lambda-at-edge-now-supports-content-based-dynamic-origin-selection-network-calls-from-viewer-events-and-advanced-response-generation/)
