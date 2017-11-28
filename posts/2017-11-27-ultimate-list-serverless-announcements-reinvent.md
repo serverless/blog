@@ -21,7 +21,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 # Overview:
 
 ### re:Invent announcements:
-- [Serverless Aurora coming soon]
+- [Serverless Aurora coming soon](#serverless-aurora-coming-soon)
 
 ### Pre-re:Invent announcements:
 
