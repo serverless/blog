@@ -21,6 +21,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 # Overview:
 
 ### re:Invent announcements (newest to oldest):
+- [AWS CodeDeploy incremental deployment](#aws-codedeploy-incremental-deployment)
 - [Weighted aliases for Lambda](#weighted-alises-for-lambda)
 - [Canary management for API Gateway](#canary-management-for-api-gateway)
 - [Serverless Aurora coming soon](#serverless-aurora-coming-soon)
@@ -32,6 +33,15 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 - [API Gateway Access Logs](#api-gateway-access-logs)
 
 # Announcements:
+
+# AWS CodeDeploy incremental deployment
+
+**What:** CodeDeploy support for incremental deployment of serverless applications.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">New features coming to lambda <a href="https://twitter.com/hashtag/breaking?src=hash&amp;ref_src=twsrc%5Etfw">#breaking</a> <a href="https://twitter.com/hashtag/serverless?src=hash&amp;ref_src=twsrc%5Etfw">#serverless</a> <a href="https://twitter.com/hashtag/reinvent?src=hash&amp;ref_src=twsrc%5Etfw">#reinvent</a> .cc <a href="https://twitter.com/Ninnir?ref_src=twsrc%5Etfw">@Ninnir</a> <a href="https://t.co/bNjL0I78ZU">pic.twitter.com/bNjL0I78ZU</a></p>&mdash; Julien Stanojevic (@GenuineM7) <a href="https://twitter.com/GenuineM7/status/935596271020130304?ref_src=twsrc%5Etfw">November 28, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+*credit: [@GenuineM7](https://twitter.com/GenuineM7)
 
 # Weighted aliases for Lambda
 
