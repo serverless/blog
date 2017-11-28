@@ -35,7 +35,9 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 **What:** Aurora is AWS's relational database in the cloud. It's cheaper and faster than MySQL or PostgreSQL databases.
 
-**Why this matters:**
+**Why this matters:** If done right, this is a dream come true. The data layer is an unsolved problem in the Serverless realm. If you want to use a traditional relational database, you're configuring a lot of network rules and VPC configuration -- just what you want to avoid with serverless architectures. You can avoid this pain by using DynamoDB, but the limited query patterns & hidden foot-guns can cause problems down the road.
+
+Serverless Aurora could change all of that -- a relational database that's accessible over HTTP, doesn't require complicated networking configuration, and uses IAM for authentication? Count me in.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Serverless and micro-services are where it’s at!! <a href="https://twitter.com/hashtag/reinvent?src=hash&amp;ref_src=twsrc%5Etfw">#reinvent</a> <a href="https://twitter.com/hashtag/cloud?src=hash&amp;ref_src=twsrc%5Etfw">#cloud</a> <a href="https://twitter.com/hashtag/soa?src=hash&amp;ref_src=twsrc%5Etfw">#soa</a> <a href="https://twitter.com/hashtag/Microservices?src=hash&amp;ref_src=twsrc%5Etfw">#Microservices</a> <a href="https://t.co/pSyCUK4ENZ">pic.twitter.com/pSyCUK4ENZ</a></p>&mdash; sandy carter (@sandy_carter) <a href="https://twitter.com/sandy_carter/status/935550646995927040?ref_src=twsrc%5Etfw">November 28, 2017</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
