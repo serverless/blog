@@ -8,11 +8,9 @@ authors:
   - AlexDeBrie
 ---
 
-**Last Updated:** 11/27/17 @ 8:28AM PST
+**Last Updated:** 11/28/17 @ 9:59AM PST
 
-It's that time of the year, the Christmas-comes-early for cloud developers.
-
-Everyone, are you ready for [AWS re:Invent](https://reinvent.awsevents.com/)?
+It's that time of the year, the Christmas-comes-early for cloud developers. Are you ready for [AWS re:Invent](https://reinvent.awsevents.com/)?
 
 This is where [AWS Lambda was introduced in 2014](https://www.youtube.com/watch?v=9eHoyUVo-yg), and we're expecting more huge announcements in the serverless realm this year. AWS has gone all-in on serverless, and we can't wait to see the improvements they're making.
 
@@ -22,6 +20,9 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # Overview:
 
+### re:Invent announcements:
+- [Serverless Aurora coming soon]
+
 ### Pre-re:Invent announcements:
 
 - [Lambda@Edge Improvements](#lambda-at-edge-improvements)
@@ -29,6 +30,14 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 - [API Gateway Access Logs](#api-gateway-access-logs)
 
 # Announcements:
+
+# [Serverless Aurora coming soon](https://twitter.com/sandy_carter/status/935550646995927040)
+
+**What:** Aurora is AWS's relational database in the cloud. It's cheaper and faster than MySQL or PostgreSQL databases.
+
+**Why this matters:**
+
+*credit: [@sandy_carter](https://twitter.com/sandy_carter) for the tweet about this news
 
 # [Lambda at Edge Improvements](https://aws.amazon.com/about-aws/whats-new/2017/11/lambda-at-edge-now-supports-content-based-dynamic-origin-selection-network-calls-from-viewer-events-and-advanced-response-generation/)
 
