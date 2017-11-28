@@ -36,9 +36,15 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # Announcements:
 
-# AWS AppSync
+# [AWS AppSync](https://aws.amazon.com/blogs/aws/introducing-amazon-appsync/)
 
-**What:** A GraphQL service that lets you query DynamoDB. They say that preview will be ready later today at [https://aws.amazon.com/appsync/](https://aws.amazon.com/appsync), but as of now that url 404s.
+**What:** A platform for building data-rich apps with offline functionality.
+
+**Why this matters:** This is an interesting, ambitious offering from AWS. Basically, it lets you set up a managed GraphQL endpoint over a variety of data sources. This endpoint can proxy to DynamoDB, ElasticSearch, or your custom Lambda functions. Further, it provides some nice functionality to keep your device synced when moving between online and offline modes. 
+
+I'd compare this to an AWS version of Firebase or Realm with the ability to have multiple different backing data sources. That's pretty powerful. One of the drawbacks to Firebase stems from the limitations of its data model. This offering sidesteps those issues.
+
+They say that preview will be ready later today at [https://aws.amazon.com/appsync/](https://aws.amazon.com/appsync), but as of now that url 404s.
 
 <p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">We’re launching 🚀 AWS AppSync as a new service for preview later today! Here are some of its features! <a href="https://twitter.com/apatel72001?ref_src=twsrc%5Etfw">@apatel72001</a> <a href="https://twitter.com/hashtag/reInvent?src=hash&amp;ref_src=twsrc%5Etfw">#reInvent</a> <a href="https://t.co/fG9thG6sAa">pic.twitter.com/fG9thG6sAa</a></p>&mdash; AWS re:Invent (@AWSreInvent) <a href="https://twitter.com/AWSreInvent/status/935573868260896768?ref_src=twsrc%5Etfw">November 28, 2017</a></blockquote></p>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
