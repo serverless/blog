@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-**Last Updated:** 11/28/17 @ 9:59AM PST
+**Last Updated:** 11/28/17 @ 1:34AM PST
 
 It's that time of the year, the Christmas-comes-early for cloud developers. Are you ready for [AWS re:Invent](https://reinvent.awsevents.com/)?
 
@@ -20,7 +20,9 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # Overview:
 
-### re:Invent announcements:
+### re:Invent announcements (newest to oldest):
+- [Weighted aliases for Lambda](#weighted-alises-for-lambda)
+- [Canary management for API Gateway](#canary-management-for-api-gateway)
 - [Serverless Aurora coming soon](#serverless-aurora-coming-soon)
 
 ### Pre-re:Invent announcements:
@@ -30,6 +32,18 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 - [API Gateway Access Logs](#api-gateway-access-logs)
 
 # Announcements:
+
+# Weighted aliases for Lambda
+
+**What:** This will let you send some percentage of traffic to one version of a Lambda, the rest to another version.
+
+*Announced by Chris Munns on the Launchpad
+
+# Canary management for API Gateway
+
+**What:** This will allow you to send some percentage of API Gateway traffic to one source and the rest to another.
+
+*Announced by Chris Munns on the Launchpad
 
 # [Serverless Aurora coming soon](https://twitter.com/sandy_carter/status/935550646995927040)
 
@@ -50,7 +64,7 @@ Serverless Aurora could change all of that—a relational database that's access
 
 **Why this matters:** This is a big one. Previously, Lambda@Edge functions allowed you to run limited logic at the edge, such as rewriting headers or redirecting unauthenticated users to a login page. However, the functionality was limited, particularly if you wanted to integrate with other services in your architecture.
 
-Now, you can run entire applications at the edge. You can make remote calls to your other services to get dynamic content. You can route requests to different origins based on the request path, making it easier to slowly [migrate to Serverless architectures using the strangler pattern](https://medium.com/@rmmeans/serverless-strangler-pattern-on-aws-31c88191268d). This is a huge deal. It's mind-blowing that this came out _before_ re:Invent -- they must have some other amazing announcements in store.
+Now, you can run entire applications at the edge. You can make remote calls to your other services to get dynamic content. You can route requests to different origins based on the request path, making it easier to slowly [migrate to Serverless architectures using the strangler pattern](https://medium.com/@rmmeans/serverless-strangler-pattern-on-aws-31c88191268d). This is a huge deal. It's mind-blowing that this came out _before_ re:Invent—they must have some other amazing announcements in store.
 
 # [SNS Message Filtering](https://aws.amazon.com/about-aws/whats-new/2017/11/amazon-simple-notification-service-sns-introduces-message-filtering/)
 
@@ -65,4 +79,3 @@ With this new filter policy, you can use the fat topic pattern while only invoki
 **What:** You can now enable detailed access logs from API Gateway, just like you could do with Apache, Nginx, or HAProxy.
 
 **Why this matters:** This enables granular analytics on your web requests. You can feed these into your analytics systems or dump them into S3 to analyze with [Athena](https://aws.amazon.com/athena/).
- 
