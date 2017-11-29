@@ -22,6 +22,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 ### re:Invent announcements (newest to oldest):
 
+- []()
 - [AWS Fargate](#aws-fargate)
 - [AWS AppSync](#aws-appsync)
 - [Weighted aliases for Lambda](#weighted-alises-for-lambda)
@@ -37,9 +38,11 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # Announcements:
 
-# [AWS Fargate]()
+# []()
 
-**What:**
+# AWS Fargate
+
+**What:** Lets you run containers without a cluster.
 
 **Why this matters:**
 
