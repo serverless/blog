@@ -81,32 +81,32 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 **What:** Lets you set up a device to trigger a Lambda with a click.
 
 
-### [Amazon Transcribe](https://aws.amazon.com/blogs/aws/amazon-transcribe-scalable-and-accurate-automatic-speech-recognition/)
+# [Amazon Transcribe](https://aws.amazon.com/blogs/aws/amazon-transcribe-scalable-and-accurate-automatic-speech-recognition/)
 
 **What:** Speech to text
 
 
-### [Amazon Translate](https://aws.amazon.com/blogs/aws/introducing-amazon-translate-real-time-text-language-translation/)
+# [Amazon Translate](https://aws.amazon.com/blogs/aws/introducing-amazon-translate-real-time-text-language-translation/)
 
 **What:** Real-time language translation
 
 
-### [Amazon Comprehend](https://aws.amazon.com/blogs/aws/amazon-comprehend-continuously-trained-natural-language-processing/)
+# [Amazon Comprehend](https://aws.amazon.com/blogs/aws/amazon-comprehend-continuously-trained-natural-language-processing/)
 
 **What:** Natural language processing
 
 
-### [Rekognition Video](https://aws.amazon.com/blogs/aws/launch-welcoming-amazon-rekognition-video-service/)
+# [Rekognition Video](https://aws.amazon.com/blogs/aws/launch-welcoming-amazon-rekognition-video-service/)
 
 **What:** Vision analysis on video streams
 
 
-### [Kinesis Video Streams](https://aws.amazon.com/blogs/aws/amazon-kinesis-video-streams-serverless-video-ingestion-and-storage-for-vision-enabled-apps/)
+# [Kinesis Video Streams](https://aws.amazon.com/blogs/aws/amazon-kinesis-video-streams-serverless-video-ingestion-and-storage-for-vision-enabled-apps/)
 
 **What:** Lets you ingest and store video streams.
 
 
-### [SageMaker](https://aws.amazon.com/blogs/aws/sagemaker/)
+# [SageMaker](https://aws.amazon.com/blogs/aws/sagemaker/)
 
 **What:** Service that assist with the heavy-lifting of machine learning. Helps you author, train, and host your models.
 
