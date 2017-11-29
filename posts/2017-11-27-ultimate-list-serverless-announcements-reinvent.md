@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-**Last Updated:** 11/28/17 @ 11:56AM PST
+**Last Updated:** 11/29/17 @ 4:20AM PST
 
 It's that time of the year, the Christmas-comes-early for cloud developers. Are you ready for [AWS re:Invent](https://reinvent.awsevents.com/)?
 
@@ -23,8 +23,8 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 ### re:Invent announcements (newest to oldest):
 
 - [AWS AppSync](#aws-appsync)
-- [AWS CodeDeploy incremental deployment](#aws-codedeploy-incremental-deployment)
 - [Weighted aliases for Lambda](#weighted-alises-for-lambda)
+- [AWS CodeDeploy incremental deployment](#aws-codedeploy-incremental-deployment)
 - [Canary management for API Gateway](#canary-management-for-api-gateway)
 - [Serverless Aurora coming soon](#serverless-aurora-coming-soon)
 
@@ -51,26 +51,28 @@ They say that preview will be ready later today at [https://aws.amazon.com/appsy
 
 *credit: [AWSreInvent](https://twitter.com/AWSreInvent) main account.
 
-# AWS CodeDeploy incremental deployment
+# [Weighted aliases for Lambda](https://aws.amazon.com/about-aws/whats-new/2017/11/aws-lambda-supports-traffic-shifting-and-phased-deployments-with-aws-codedeploy/)
+
+**What:** This will let you send some percentage of traffic to one version of a Lambda, the rest to another version. This is GA today, try it out!
+
+**Why this matters:** This will make it easier to confidently push new changes to production.  When you push new versions, you can shift a small percentage of users to the new version and monitor for errors, performance metrics, etc. If you're happy with the results, you can gradually ramp up traffic so that all users see the new version. 
+
+# [AWS CodeDeploy incremental deployment](https://aws.amazon.com/about-aws/whats-new/2017/11/aws-lambda-supports-traffic-shifting-and-phased-deployments-with-aws-codedeploy/)
 
 **What:** CodeDeploy support for incremental deployment of serverless applications. This is GA today, try it out!
+
+**Why this matters:** This update fits well with the addition of [weighted aliases for Lambda](#weighted-aliases-for-lambda). In your CodeDeploy configuration, you can use phased rollouts of your applications. [For example](http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html), you could have CodeDeploy make a deploy to 25% of your production traffic at first, then roll it out to the remaining 75% 45 minutes later. If you discover problems during that 45 minutes, you can rollback the deploy to limit problems to your users.
 
 <p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">New features coming to lambda <a href="https://twitter.com/hashtag/breaking?src=hash&amp;ref_src=twsrc%5Etfw">#breaking</a> <a href="https://twitter.com/hashtag/serverless?src=hash&amp;ref_src=twsrc%5Etfw">#serverless</a> <a href="https://twitter.com/hashtag/reinvent?src=hash&amp;ref_src=twsrc%5Etfw">#reinvent</a> .cc <a href="https://twitter.com/Ninnir?ref_src=twsrc%5Etfw">@Ninnir</a> <a href="https://t.co/bNjL0I78ZU">pic.twitter.com/bNjL0I78ZU</a></p>&mdash; Julien Stanojevic (@GenuineM7) <a href="https://twitter.com/GenuineM7/status/935596271020130304?ref_src=twsrc%5Etfw">November 28, 2017</a></blockquote></p>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 *credit: [@GenuineM7](https://twitter.com/GenuineM7)
 
-# Weighted aliases for Lambda
-
-**What:** This will let you send some percentage of traffic to one version of a Lambda, the rest to another version. This is GA today, try it out!
-
-*Announced by Chris Munns on the Launchpad
-
-# Canary management for API Gateway
+# [Canary management for API Gateway](https://aws.amazon.com/about-aws/whats-new/2017/11/amazon-api-gateway-supports-canary-release-deployments/)
 
 **What:** This will allow you to send some percentage of API Gateway traffic to one source and the rest to another.
 
-*Announced by Chris Munns on the Launchpad
+**Why this matters:** Same benefits as the [weighted aliases for Lambda](#weighted-aliases-for-lambda) above -- more fine-grained rollouts of new code to production. This change is at the API Gateway level, rather than for an individual Lambda function. [Canary deployments](https://martinfowler.com/bliki/CanaryRelease.html) are a way to safely roll out new changes to customers.
 
 # [Serverless Aurora coming soon](https://twitter.com/sandy_carter/status/935550646995927040)
 
