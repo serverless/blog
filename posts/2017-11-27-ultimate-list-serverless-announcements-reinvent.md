@@ -39,9 +39,9 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
   - [DynamoDB global tables](#dynamodb-global-tables)
   - [Serverless Aurora](#serverless-aurora)
 - Containers 😱
-  - [AWS Fargate](#aws-fargate)
+  - [AWS Fargate](#aws-fargate)
   - [AWS EKS (Kubernetes-as-a-service)](#aws-eks)
-- [AWS AppSync (Hosted GraphQL!)](#aws-appsync)
+- [AWS AppSync](#aws-appsync) (Hosted GraphQL!)
 - Lambda improvements
   - [Weighted aliases for Lambda](#weighted-alises-for-lambda)
   - [AWS CodeDeploy incremental deployment](#aws-codedeploy-incremental-deployment)
