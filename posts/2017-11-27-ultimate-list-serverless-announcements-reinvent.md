@@ -22,6 +22,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 ### re:Invent announcements (newest to oldest):
 
+- [AWS Fargate](#aws-fargate)
 - [AWS AppSync](#aws-appsync)
 - [Weighted aliases for Lambda](#weighted-alises-for-lambda)
 - [AWS CodeDeploy incremental deployment](#aws-codedeploy-incremental-deployment)
@@ -35,6 +36,12 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 - [API Gateway Access Logs](#api-gateway-access-logs)
 
 # Announcements:
+
+# [AWS Fargate]()
+
+**What:**
+
+**Why this matters:**
 
 # [AWS AppSync](https://aws.amazon.com/blogs/aws/introducing-amazon-appsync/)
 
