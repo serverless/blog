@@ -43,6 +43,10 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 **Why this matters:**
 
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">No longer any need to manage servers and clusters for your containers - AWS Fargate - Run ECS and EKS without managing servers <a href="https://twitter.com/hashtag/reInvent?src=hash&amp;ref_src=twsrc%5Etfw">#reInvent</a> <a href="https://t.co/oPsXdvrSAL">https://t.co/oPsXdvrSAL</a> <a href="https://t.co/lZnS558CXV">pic.twitter.com/lZnS558CXV</a></p>&mdash; AWS re:Invent (@AWSreInvent) <a href="https://twitter.com/AWSreInvent/status/935910336212844544?ref_src=twsrc%5Etfw">November 29, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
 # [AWS AppSync](https://aws.amazon.com/blogs/aws/introducing-amazon-appsync/)
 
 **What:** A platform for building data-rich apps with offline functionality.
