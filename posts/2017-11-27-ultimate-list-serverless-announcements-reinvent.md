@@ -28,9 +28,9 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 - [SageMaker](#sagemaker)
 - [Kinesis Video Streams](#kinesis-video-streams)
 - [Rekognition Video](#rekognition-video)
-- Amazon Transcribe: Speech to text
-- Amazon Translate: Real-time language translation
-- Amazon Comprehend: Natural language processing
+- [Amazon Transcribe](#amazon-transcribe)
+- [Amazon Translate](#amazon-translate)
+- [Amazon Comprehend](#amazon-comprehend)
 - [AWS Neptune](#aws-neptune)
 - [DynamoDB backup and restore](#dynamodb-backup-and-restore)
 - [DynamoDB global tables](#dynamodb-global-tables)
@@ -58,6 +58,21 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 # [IoT 1-Click](https://aws.amazon.com/iot-1-click/)
 
 **What:** Lets you set up a device to trigger a Lambda with a click.
+
+
+# [Amazon Transcribe](https://aws.amazon.com/blogs/aws/amazon-transcribe-scalable-and-accurate-automatic-speech-recognition/)
+
+**What:** Speech to text
+
+
+# [Amazon Translate](https://aws.amazon.com/blogs/aws/introducing-amazon-translate-real-time-text-language-translation/)
+
+**What:** Real-time language translation
+
+
+# [Amazon Comprehend](https://aws.amazon.com/blogs/aws/amazon-comprehend-continuously-trained-natural-language-processing/)
+
+**What:** Natural language processing
 
 
 # [Rekognition Video](https://aws.amazon.com/blogs/aws/launch-welcoming-amazon-rekognition-video-service/)
