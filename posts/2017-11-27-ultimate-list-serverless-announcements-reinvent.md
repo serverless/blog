@@ -43,17 +43,19 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # AWS Neptune
 
-**What:**
+**What:** Fully-managed Graph database. Good for graph relations such as social networks, recommendations, routes, etc. Available in preview.
+
+**Notes:** Probably not serverless-friendly to begin with (e.g. not auto-scaling or pay-per-usage), but it probably won't be too long.
 
 
 # DynamoDB backup and restore
 
-**What:**
+**What:** Much easier restore operations for DynamoDB. Includes the ability to backup to _any second_ in the last 35 days!
 
 
 # DynamoDB global tables
 
-**What:**
+**What:** Multi-region, multi-master tables for having your tables everywhere. For more on why this is important, might want to refresh your memory on [Jared Short's ServerlessConf talk](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#global-resiliency-when-going-serverless).
 
 
 # Serverless Aurora
