@@ -25,6 +25,12 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 - [IoT Device Defender](iot-device-defender)
 - [IoT Device Manager](iot-device-manager)
 - [IoT 1-Click](#iot-1-click)
+- [SageMaker](#sagemaker)
+- [Kinesis Video Streams](#kinesis-video-streams)
+- [Rekognition Video](#rekognition-video)
+- Amazon Transcribe: Speech to text
+- Amazon Translate: Real-time language translation
+- Amazon Comprehend: Natural language processing
 - [AWS Neptune](#aws-neptune)
 - [DynamoDB backup and restore](#dynamodb-backup-and-restore)
 - [DynamoDB global tables](#dynamodb-global-tables)
@@ -52,6 +58,21 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 # [IoT 1-Click](https://aws.amazon.com/iot-1-click/)
 
 **What:** Lets you set up a device to trigger a Lambda with a click.
+
+
+# [Rekognition Video](https://aws.amazon.com/blogs/aws/launch-welcoming-amazon-rekognition-video-service/)
+
+**What:** Vision analysis on video streams
+
+
+# [Kinesis Video Streams](https://aws.amazon.com/blogs/aws/amazon-kinesis-video-streams-serverless-video-ingestion-and-storage-for-vision-enabled-apps/)
+
+**What:** Lets you ingest and store video streams.
+
+
+# [SageMaker](https://aws.amazon.com/blogs/aws/sagemaker/)
+
+**What:** Service that assist with the heavy-lifting of machine learning. Helps you author, train, and host your models.
 
 
 # [AWS Neptune](https://aws.amazon.com/blogs/aws/amazon-neptune-a-fully-managed-graph-database-service/)
