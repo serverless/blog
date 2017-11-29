@@ -38,6 +38,17 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # Announcements:
 
+# Serverless Aurora
+
+**What:** Aurora is AWS's relational database in the cloud. It's cheaper and faster than MySQL or PostgreSQL databases.
+
+**Why this matters:** If done right, this is a dream come true. The data layer is an unsolved problem in the Serverless realm. If you want to use a traditional relational database, you're configuring a lot of network rules and VPC configuration -- just what you want to avoid with serverless architectures. You can avoid this pain by using DynamoDB, but the limited query patterns & hidden foot-guns can cause problems down the road.
+
+Serverless Aurora could change all of that—a relational database that's accessible over HTTP, doesn't require complicated networking configuration, and uses IAM for authentication? Count me in.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Announcing Aurora Serverless. All the capabilities of Aurora, but pay only by the second when your database is being used <a href="https://twitter.com/hashtag/reInvent?src=hash&amp;ref_src=twsrc%5Etfw">#reInvent</a> <a href="https://t.co/AP5R6jf7RB">pic.twitter.com/AP5R6jf7RB</a></p>&mdash; AWS re:Invent (@AWSreInvent) <a href="https://twitter.com/AWSreInvent/status/935913292903604224?ref_src=twsrc%5Etfw">November 29, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 # AWS Fargate
 
 **What:** Run your containers directly without a cluster. Just pay for your compute resources.
@@ -91,18 +102,6 @@ The product page is live at [https://aws.amazon.com/appsync/](https://aws.amazon
 
 **Why this matters:** Same benefits as the [weighted aliases for Lambda](#weighted-aliases-for-lambda) above -- more fine-grained rollouts of new code to production. This change is at the API Gateway level, rather than for an individual Lambda function. [Canary deployments](https://martinfowler.com/bliki/CanaryRelease.html) are a way to safely roll out new changes to customers.
 
-# [Serverless Aurora coming soon](https://twitter.com/sandy_carter/status/935550646995927040)
-
-**What:** Aurora is AWS's relational database in the cloud. It's cheaper and faster than MySQL or PostgreSQL databases.
-
-**Why this matters:** If done right, this is a dream come true. The data layer is an unsolved problem in the Serverless realm. If you want to use a traditional relational database, you're configuring a lot of network rules and VPC configuration -- just what you want to avoid with serverless architectures. You can avoid this pain by using DynamoDB, but the limited query patterns & hidden foot-guns can cause problems down the road.
-
-Serverless Aurora could change all of that—a relational database that's accessible over HTTP, doesn't require complicated networking configuration, and uses IAM for authentication? Count me in.
-
-<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Serverless and micro-services are where it’s at!! <a href="https://twitter.com/hashtag/reinvent?src=hash&amp;ref_src=twsrc%5Etfw">#reinvent</a> <a href="https://twitter.com/hashtag/cloud?src=hash&amp;ref_src=twsrc%5Etfw">#cloud</a> <a href="https://twitter.com/hashtag/soa?src=hash&amp;ref_src=twsrc%5Etfw">#soa</a> <a href="https://twitter.com/hashtag/Microservices?src=hash&amp;ref_src=twsrc%5Etfw">#Microservices</a> <a href="https://t.co/pSyCUK4ENZ">pic.twitter.com/pSyCUK4ENZ</a></p>&mdash; sandy carter (@sandy_carter) <a href="https://twitter.com/sandy_carter/status/935550646995927040?ref_src=twsrc%5Etfw">November 28, 2017</a></blockquote></p>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-*credit: [@sandy_carter](https://twitter.com/sandy_carter) for the tweet about this news
 
 # [Lambda at Edge Improvements](https://aws.amazon.com/about-aws/whats-new/2017/11/lambda-at-edge-now-supports-content-based-dynamic-origin-selection-network-calls-from-viewer-events-and-advanced-response-generation/)
 
