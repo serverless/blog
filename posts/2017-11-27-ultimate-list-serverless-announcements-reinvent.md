@@ -41,24 +41,26 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # Announcements:
 
-# AWS Neptune
+# [AWS Neptune](https://aws.amazon.com/blogs/aws/amazon-neptune-a-fully-managed-graph-database-service/)
 
 **What:** Fully-managed Graph database. Good for graph relations such as social networks, recommendations, routes, etc. Available in preview.
 
 **Notes:** Probably not serverless-friendly to begin with (e.g. not auto-scaling or pay-per-usage), but it probably won't be too long.
 
+Want in? Sign up for the preview [here](https://pages.awscloud.com/NeptunePreview.html).
 
-# DynamoDB backup and restore
+
+# [DynamoDB backup and restore](https://aws.amazon.com/blogs/aws/new-for-amazon-dynamodb-global-tables-and-on-demand-backup/)
 
 **What:** Much easier restore operations for DynamoDB. Includes the ability to backup to _any second_ in the last 35 days!
 
 
-# DynamoDB global tables
+# [DynamoDB global tables](https://aws.amazon.com/blogs/aws/new-for-amazon-dynamodb-global-tables-and-on-demand-backup/)
 
 **What:** Multi-region, multi-master tables for having your tables everywhere. For more on why this is important, might want to refresh your memory on [Jared Short's ServerlessConf talk](https://serverless.com/blog/serverless-conf-2017-nyc-recap/#global-resiliency-when-going-serverless).
 
 
-# Serverless Aurora
+# [Serverless Aurora](https://aws.amazon.com/blogs/aws/in-the-works-amazon-aurora-serverless/)
 
 **What:** Aurora is AWS's relational database in the cloud. It's cheaper and faster than MySQL or PostgreSQL databases. Serverless Aurora brings automatic scaling and per-second billing. MySQL available early 2018 and PostgreSQL later in 2018.
 
