@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-**Last Updated:** 11/29/17 @ 4:20AM PST
+**Last Updated:** 11/29/17 @ 4:25AM PST
 
 It's that time of the year, the Christmas-comes-early for cloud developers. Are you ready for [AWS re:Invent](https://reinvent.awsevents.com/)?
 
@@ -44,7 +44,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 I'd compare this to an AWS version of Firebase or Realm with the ability to have multiple different backing data sources. That's pretty powerful. One of the drawbacks to Firebase stems from the limitations of its data model. This offering sidesteps those issues.
 
-They say that preview will be ready later today at [https://aws.amazon.com/appsync/](https://aws.amazon.com/appsync), but as of now that url 404s.
+The product page is live at [https://aws.amazon.com/appsync/](https://aws.amazon.com/appsync) and you can find docs [here](https://docs.aws.amazon.com/appsync/latest/devguide/welcome.html).
 
 <p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">We’re launching 🚀 AWS AppSync as a new service for preview later today! Here are some of its features! <a href="https://twitter.com/apatel72001?ref_src=twsrc%5Etfw">@apatel72001</a> <a href="https://twitter.com/hashtag/reInvent?src=hash&amp;ref_src=twsrc%5Etfw">#reInvent</a> <a href="https://t.co/fG9thG6sAa">pic.twitter.com/fG9thG6sAa</a></p>&mdash; AWS re:Invent (@AWSreInvent) <a href="https://twitter.com/AWSreInvent/status/935573868260896768?ref_src=twsrc%5Etfw">November 28, 2017</a></blockquote></p>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
