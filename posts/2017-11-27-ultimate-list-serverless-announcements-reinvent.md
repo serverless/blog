@@ -22,6 +22,9 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 ### re:Invent announcements (newest to oldest):
 
+- [AWS Neptune](#aws-neptune)
+- [DynamoDB backup and restore](#dynamodb-backup-and-restore)
+- [DynamoDB global tables](#dynamodb-global-tables)
 - [Serverless Aurora](#serverless-aurora)
 - [AWS Fargate](#aws-fargate)
 - [AWS EKS (Kubernetes-as-a-service)](#aws-eks)
@@ -37,6 +40,21 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 - [API Gateway Access Logs](#api-gateway-access-logs)
 
 # Announcements:
+
+# AWS Neptune
+
+**What:**
+
+
+# DynamoDB backup and restore
+
+**What:**
+
+
+# DynamoDB global tables
+
+**What:**
+
 
 # Serverless Aurora
 
