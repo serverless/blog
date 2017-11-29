@@ -70,7 +70,7 @@ The product page is live at [https://aws.amazon.com/appsync/](https://aws.amazon
 
 # [Canary management for API Gateway](https://aws.amazon.com/about-aws/whats-new/2017/11/amazon-api-gateway-supports-canary-release-deployments/)
 
-**What:** This will allow you to send some percentage of API Gateway traffic to one source and the rest to another.
+**What:** This will allow you to send some percentage of API Gateway traffic to one source and the rest to another. This is GA today, try it out!
 
 **Why this matters:** Same benefits as the [weighted aliases for Lambda](#weighted-aliases-for-lambda) above -- more fine-grained rollouts of new code to production. This change is at the API Gateway level, rather than for an individual Lambda function. [Canary deployments](https://martinfowler.com/bliki/CanaryRelease.html) are a way to safely roll out new changes to customers.
 
