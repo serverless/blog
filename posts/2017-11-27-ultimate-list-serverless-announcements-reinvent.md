@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-**Last Updated:** 11/29/17 @ 4:25AM PST
+**Last Updated:** 11/29/17 @ 8:47AM PST
 
 It's that time of the year, the Christmas-comes-early for cloud developers. Are you ready for [AWS re:Invent](https://reinvent.awsevents.com/)?
 
