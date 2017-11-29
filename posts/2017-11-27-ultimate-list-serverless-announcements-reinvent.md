@@ -23,6 +23,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 ### re:Invent announcements (newest to oldest):
 
 - IoT
+  - [AWS Greengrass](#aws-greengrass)
   - [IoT Device Defender](#iot-device-defender)
   - [IoT Device Management](#iot-device-management)
   - [IoT 1-Click](#iot-1-click)
@@ -54,6 +55,16 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 - [API Gateway Access Logs](#api-gateway-access-logs)
 
 # Announcements:
+
+# [AWS Greengrass](https://aws.amazon.com/about-aws/whats-new/2017/11/aws-greengrass-adds-feature-for-machine-learning-inference/)
+
+**What:** Lets you run machine learning at the edge.
+
+**Why it matters:** It makes it easy to use your machine learning models at the edge, even without internet connectivity. You can do all your training in the cloud (maybe with SageMaker!), then push the model to your edge devices for inference.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Announcing the preview of Greengrass ML Inference. Run Machine Learning at the edge <a href="https://twitter.com/hashtag/reInvent?src=hash&amp;ref_src=twsrc%5Etfw">#reInvent</a> <a href="https://t.co/08EpH4zX8Q">pic.twitter.com/08EpH4zX8Q</a></p>&mdash; AWS re:Invent (@AWSreInvent) <a href="https://twitter.com/AWSreInvent/status/935942065807966209?ref_src=twsrc%5Etfw">November 29, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 # [IoT Device Defender](https://aws.amazon.com/blogs/aws/in-the-works-aws-sepio-secure-your-iot-fleet/)
 
