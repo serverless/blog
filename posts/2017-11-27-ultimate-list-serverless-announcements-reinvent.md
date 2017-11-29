@@ -22,21 +22,25 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 ### re:Invent announcements (newest to oldest):
 
-- [IoT Device Defender](iot-device-defender)
-- [IoT Device Manager](iot-device-manager)
-- [IoT 1-Click](#iot-1-click)
-- [SageMaker](#sagemaker)
-- [Kinesis Video Streams](#kinesis-video-streams)
-- [Rekognition Video](#rekognition-video)
-- [Amazon Transcribe](#amazon-transcribe)
-- [Amazon Translate](#amazon-translate)
-- [Amazon Comprehend](#amazon-comprehend)
-- [AWS Neptune](#aws-neptune)
-- [DynamoDB backup and restore](#dynamodb-backup-and-restore)
-- [DynamoDB global tables](#dynamodb-global-tables)
-- [Serverless Aurora](#serverless-aurora)
-- [AWS Fargate](#aws-fargate)
-- [AWS EKS (Kubernetes-as-a-service)](#aws-eks)
+- IoT
+  - [IoT Device Defender](#iot-device-defender)
+  - [IoT Device Manager](#iot-device-manager)
+  - [IoT 1-Click](#iot-1-click)
+- New services that add to the Serverless ecosystem
+  - [Kinesis Video Streams](#kinesis-video-streams)
+  - [Rekognition Video](#rekognition-video)
+  - [Amazon Transcribe](#amazon-transcribe)
+  - [Amazon Translate](#amazon-translate)
+  - [Amazon Comprehend](#amazon-comprehend)
+  - [SageMaker](#sagemaker)
+- Databases
+  - [AWS Neptune](#aws-neptune)
+  - [DynamoDB backup and restore](#dynamodb-backup-and-restore)
+  - [DynamoDB global tables](#dynamodb-global-tables)
+  - [Serverless Aurora](#serverless-aurora)
+- Serverless containers
+  - [AWS Fargate](#aws-fargate)
+  - [AWS EKS (Kubernetes-as-a-service)](#aws-eks)
 - [AWS AppSync](#aws-appsync)
 - [Weighted aliases for Lambda](#weighted-alises-for-lambda)
 - [AWS CodeDeploy incremental deployment](#aws-codedeploy-incremental-deployment)
