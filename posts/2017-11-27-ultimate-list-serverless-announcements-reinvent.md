@@ -55,9 +55,14 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # Announcements:
 
-# [IoT Device Manager]()
+# IoT Device Defender
 
-**What:** 
+**What:** Define and audit security policies across fleets of devices. Coming early 2018.
+
+
+# IoT Device Manager
+
+**What:** Improves security of IoT implementations. Lets you remotely onboard and manage new IoT devices at scale.
 
 
 # [IoT 1-Click](https://aws.amazon.com/iot-1-click/)
