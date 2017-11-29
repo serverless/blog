@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-**Last Updated:** 11/29/17 @ 8:55AM PST
+**Last Updated:** 11/29/17 @ 10:36AM PST
 
 It's that time of the year, the Christmas-comes-early for cloud developers. Are you ready for [AWS re:Invent](https://reinvent.awsevents.com/)?
 
@@ -22,16 +22,30 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 ### re:Invent announcements (newest to oldest):
 
-- [AWS Neptune](#aws-neptune)
-- [DynamoDB backup and restore](#dynamodb-backup-and-restore)
-- [DynamoDB global tables](#dynamodb-global-tables)
-- [Serverless Aurora](#serverless-aurora)
-- [AWS Fargate](#aws-fargate)
-- [AWS EKS (Kubernetes-as-a-service)](#aws-eks)
+- IoT
+  - [IoT Device Defender](#iot-device-defender)
+  - [IoT Device Manager](#iot-device-manager)
+  - [IoT 1-Click](#iot-1-click)
+- New services that add to the Serverless ecosystem
+  - [Kinesis Video Streams](#kinesis-video-streams)
+  - [Rekognition Video](#rekognition-video)
+  - [Amazon Transcribe](#amazon-transcribe)
+  - [Amazon Translate](#amazon-translate)
+  - [Amazon Comprehend](#amazon-comprehend)
+  - [SageMaker](#sagemaker)
+- Databases
+  - [AWS Neptune](#aws-neptune)
+  - [DynamoDB backup and restore](#dynamodb-backup-and-restore)
+  - [DynamoDB global tables](#dynamodb-global-tables)
+  - [Serverless Aurora](#serverless-aurora)
+- Serverless containers
+  - [AWS Fargate](#aws-fargate)
+  - [AWS EKS (Kubernetes-as-a-service)](#aws-eks)
 - [AWS AppSync](#aws-appsync)
-- [Weighted aliases for Lambda](#weighted-alises-for-lambda)
-- [AWS CodeDeploy incremental deployment](#aws-codedeploy-incremental-deployment)
-- [Canary management for API Gateway](#canary-management-for-api-gateway)
+- Lambda improvements
+  - [Weighted aliases for Lambda](#weighted-alises-for-lambda)
+  - [AWS CodeDeploy incremental deployment](#aws-codedeploy-incremental-deployment)
+  - [Canary management for API Gateway](#canary-management-for-api-gateway)
 
 ### Pre-re:Invent announcements:
 
@@ -40,6 +54,51 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 - [API Gateway Access Logs](#api-gateway-access-logs)
 
 # Announcements:
+
+# IoT Device Defender
+
+**What:** Define and audit security policies across fleets of devices. Coming early 2018.
+
+
+# IoT Device Manager
+
+**What:** Improves security of IoT implementations. Lets you remotely onboard and manage new IoT devices at scale.
+
+
+# [IoT 1-Click](https://aws.amazon.com/iot-1-click/)
+
+**What:** Lets you set up a device to trigger a Lambda with a click.
+
+
+# [Amazon Transcribe](https://aws.amazon.com/blogs/aws/amazon-transcribe-scalable-and-accurate-automatic-speech-recognition/)
+
+**What:** Speech to text
+
+
+# [Amazon Translate](https://aws.amazon.com/blogs/aws/introducing-amazon-translate-real-time-text-language-translation/)
+
+**What:** Real-time language translation
+
+
+# [Amazon Comprehend](https://aws.amazon.com/blogs/aws/amazon-comprehend-continuously-trained-natural-language-processing/)
+
+**What:** Natural language processing
+
+
+# [Rekognition Video](https://aws.amazon.com/blogs/aws/launch-welcoming-amazon-rekognition-video-service/)
+
+**What:** Vision analysis on video streams
+
+
+# [Kinesis Video Streams](https://aws.amazon.com/blogs/aws/amazon-kinesis-video-streams-serverless-video-ingestion-and-storage-for-vision-enabled-apps/)
+
+**What:** Lets you ingest and store video streams.
+
+
+# [SageMaker](https://aws.amazon.com/blogs/aws/sagemaker/)
+
+**What:** Service that assist with the heavy-lifting of machine learning. Helps you author, train, and host your models.
+
 
 # [AWS Neptune](https://aws.amazon.com/blogs/aws/amazon-neptune-a-fully-managed-graph-database-service/)
 
