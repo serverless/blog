@@ -26,7 +26,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
   - [IoT Device Defender](#iot-device-defender)
   - [IoT Device Manager](#iot-device-manager)
   - [IoT 1-Click](#iot-1-click)
-- New services that add to the Serverless ecosystem
+- Managed services
   - [Kinesis Video Streams](#kinesis-video-streams)
   - [Rekognition Video](#rekognition-video)
   - [Amazon Transcribe](#amazon-transcribe)
@@ -38,10 +38,10 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
   - [DynamoDB backup and restore](#dynamodb-backup-and-restore)
   - [DynamoDB global tables](#dynamodb-global-tables)
   - [Serverless Aurora](#serverless-aurora)
-- Serverless containers
-  - [AWS Fargate](#aws-fargate)
+- Containers 😱
+  - [AWS Fargate](#aws-fargate)
   - [AWS EKS (Kubernetes-as-a-service)](#aws-eks)
-- [AWS AppSync](#aws-appsync)
+- [AWS AppSync (Hosted GraphQL!)](#aws-appsync)
 - Lambda improvements
   - [Weighted aliases for Lambda](#weighted-alises-for-lambda)
   - [AWS CodeDeploy incremental deployment](#aws-codedeploy-incremental-deployment)
