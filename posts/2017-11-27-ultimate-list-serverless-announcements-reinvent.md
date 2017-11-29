@@ -23,6 +23,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 ### re:Invent announcements (newest to oldest):
 
 - [AWS Fargate](#aws-fargate)
+- [AWS EKS (Kubernetes-as-a-service)](#aws-eks)
 - [AWS AppSync](#aws-appsync)
 - [Weighted aliases for Lambda](#weighted-alises-for-lambda)
 - [AWS CodeDeploy incremental deployment](#aws-codedeploy-incremental-deployment)
@@ -39,13 +40,18 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # AWS Fargate
 
-**What:** Lets you run containers without a cluster. It's serverless Kubernetes containers.
+**What:** Run your containers directly without a cluster. Just pay for your compute resources.
 
-**Why this matters:**
+**Why this matters:** This drastically lowers the barrier for running containers. You don't need to set up and maintain a cluster for deploying your containers. It's not serverless -- you're still paying for resources even when they're not actively serving requests -- but it does have some of the similar benefits of serverless architectures.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">No longer any need to manage servers and clusters for your containers - AWS Fargate - Run ECS and EKS without managing servers <a href="https://twitter.com/hashtag/reInvent?src=hash&amp;ref_src=twsrc%5Etfw">#reInvent</a> <a href="https://t.co/oPsXdvrSAL">https://t.co/oPsXdvrSAL</a> <a href="https://t.co/lZnS558CXV">pic.twitter.com/lZnS558CXV</a></p>&mdash; AWS re:Invent (@AWSreInvent) <a href="https://twitter.com/AWSreInvent/status/935910336212844544?ref_src=twsrc%5Etfw">November 29, 2017</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+# AWS EKS
+
+**What:** Managed Kubernetes on AWS.
+
+**Why this matters:** AWS will run your Kubernetes for you. It's not a serverless solution by any means, but many companies are interested in containers over straight serverless. For running functions-as-a-service on Kubernetes, check out the [Kubeless integration with the Serverless Framework](https://serverless.com/blog/serverless-and-kubernetes-via-kubeless/). 
 
 # [AWS AppSync](https://aws.amazon.com/blogs/aws/introducing-amazon-appsync/)
 
