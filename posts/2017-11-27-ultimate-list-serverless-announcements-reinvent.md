@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-**Last Updated:** 11/29/17 @ 8:47AM PST
+**Last Updated:** 11/29/17 @ 8:55AM PST
 
 It's that time of the year, the Christmas-comes-early for cloud developers. Are you ready for [AWS re:Invent](https://reinvent.awsevents.com/)?
 
@@ -22,13 +22,13 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 ### re:Invent announcements (newest to oldest):
 
+- [Serverless Aurora](#serverless-aurora)
 - [AWS Fargate](#aws-fargate)
 - [AWS EKS (Kubernetes-as-a-service)](#aws-eks)
 - [AWS AppSync](#aws-appsync)
 - [Weighted aliases for Lambda](#weighted-alises-for-lambda)
 - [AWS CodeDeploy incremental deployment](#aws-codedeploy-incremental-deployment)
 - [Canary management for API Gateway](#canary-management-for-api-gateway)
-- [Serverless Aurora coming soon](#serverless-aurora-coming-soon)
 
 ### Pre-re:Invent announcements:
 
@@ -40,7 +40,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # Serverless Aurora
 
-**What:** Aurora is AWS's relational database in the cloud. It's cheaper and faster than MySQL or PostgreSQL databases.
+**What:** Aurora is AWS's relational database in the cloud. It's cheaper and faster than MySQL or PostgreSQL databases. Serverless Aurora brings automatic scaling and per-second billing. MySQL available early 2018 and PostgreSQL later in 2018.
 
 **Why this matters:** If done right, this is a dream come true. The data layer is an unsolved problem in the Serverless realm. If you want to use a traditional relational database, you're configuring a lot of network rules and VPC configuration -- just what you want to avoid with serverless architectures. You can avoid this pain by using DynamoDB, but the limited query patterns & hidden foot-guns can cause problems down the road.
 
