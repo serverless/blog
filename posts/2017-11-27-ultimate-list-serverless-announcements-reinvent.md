@@ -42,9 +42,10 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
   - [AWS Fargate](#aws-fargate)
   - [AWS EKS (Kubernetes-as-a-service)](#aws-eks)
 - [AWS AppSync](#aws-appsync)
-- [Weighted aliases for Lambda](#weighted-alises-for-lambda)
-- [AWS CodeDeploy incremental deployment](#aws-codedeploy-incremental-deployment)
-- [Canary management for API Gateway](#canary-management-for-api-gateway)
+- Lambda improvements
+  - [Weighted aliases for Lambda](#weighted-alises-for-lambda)
+  - [AWS CodeDeploy incremental deployment](#aws-codedeploy-incremental-deployment)
+  - [Canary management for API Gateway](#canary-management-for-api-gateway)
 
 ### Pre-re:Invent announcements:
 
@@ -56,7 +57,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # [IoT Device Manager]()
 
-**What:** Lets you set up a device to trigger a Lambda with a click.
+**What:** 
 
 
 # [IoT 1-Click](https://aws.amazon.com/iot-1-click/)
