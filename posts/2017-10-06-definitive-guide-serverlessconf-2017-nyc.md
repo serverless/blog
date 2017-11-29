@@ -8,6 +8,8 @@ authors:
   - AndreaPasswater
 ---
 
+*This was written before ServerlessConf 2017 in NYC. If you're looking for the ServerlessConf Recap, head on over [here](https://serverless.com/blog/serverless-conf-2017-nyc-recap/).*
+
 ServerlessConf is a 2-track conference. I.e., you’ll have to make some tough choices.
 
 Here’s what we plan on prioritizing. This is the Serverless team guide to getting the most out of ServerlessConf.
