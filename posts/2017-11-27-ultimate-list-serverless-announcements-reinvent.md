@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-**Last Updated:** 11/29/17 @ 8:55AM PST
+**Last Updated:** 11/29/17 @ 10:36AM PST
 
 It's that time of the year, the Christmas-comes-early for cloud developers. Are you ready for [AWS re:Invent](https://reinvent.awsevents.com/)?
 
@@ -22,6 +22,9 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 ### re:Invent announcements (newest to oldest):
 
+- [IoT Device Defender](iot-device-defender)
+- [IoT Device Manager](iot-device-manager)
+- [IoT 1-Click](#iot-1-click)
 - [AWS Neptune](#aws-neptune)
 - [DynamoDB backup and restore](#dynamodb-backup-and-restore)
 - [DynamoDB global tables](#dynamodb-global-tables)
@@ -40,6 +43,16 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 - [API Gateway Access Logs](#api-gateway-access-logs)
 
 # Announcements:
+
+# [IoT Device Manager]()
+
+**What:** Lets you set up a device to trigger a Lambda with a click.
+
+
+# [IoT 1-Click](https://aws.amazon.com/iot-1-click/)
+
+**What:** Lets you set up a device to trigger a Lambda with a click.
+
 
 # [AWS Neptune](https://aws.amazon.com/blogs/aws/amazon-neptune-a-fully-managed-graph-database-service/)
 
