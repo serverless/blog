@@ -60,7 +60,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # [Cloud9](https://aws.amazon.com/blogs/aws/aws-cloud9-cloud-developer-environments/)
 
-**What:** IDE for writing, running, and debugging code
+**What:** IDE for writing, running, and debugging code. This is GA today!
 
 **Why it matters:** 
 
