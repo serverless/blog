@@ -23,6 +23,9 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 ### re:Invent announcements (newest to oldest):
 
 - Latest
+  - [Concurrency controls](#concurrency-controls)
+  - [3GB memory](#3gb-memory)
+  - [Golang support](#golang-support)
   - [Cloud9](#cloud9)
 - IoT
   - [AWS Greengrass](#aws-greengrass)
@@ -57,6 +60,21 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 - [API Gateway Access Logs](#api-gateway-access-logs)
 
 # Announcements:
+
+# Concurrency controls
+
+**What:** 
+
+
+# 3GB Memory
+
+**What:** Lambda memory upped to 3GB.
+
+
+# Golang support
+
+**What:** You can now write your Lambda functions in Go.
+
 
 # [Cloud9](https://aws.amazon.com/blogs/aws/aws-cloud9-cloud-developer-environments/)
 
