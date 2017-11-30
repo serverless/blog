@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-**Last Updated:** 11/30/17 @ 9:29AM PST
+**Last Updated:** 11/30/17 @ 10:44AM PST
 
 It's that time of the year, the Christmas-comes-early for cloud developers. Are you ready for [AWS re:Invent](https://reinvent.awsevents.com/)?
 
@@ -23,6 +23,10 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 ### re:Invent announcements (newest to oldest):
 
 - Latest
+  - [Golang support 🙌](#golang-support)
+  - [3GB memory](#3gb-memory)
+  - [Concurrency controls](#concurrency-controls)
+  - [Serverless App Repo](#serverless-app-repo)
   - [Cloud9](#cloud9)
 - IoT
   - [AWS Greengrass](#aws-greengrass)
@@ -57,6 +61,33 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 - [API Gateway Access Logs](#api-gateway-access-logs)
 
 # Announcements:
+
+# Golang support
+
+**What:** You can now write your Lambda functions in Go.
+
+**Why it matters:** Like concurrency but hate Node? A typed language without Java? Boom - Golang arrives on Lambda.
+
+__Note__: This is a pre-release and won't be available for a few weeks yet. Patience you must have, my young Padawan.
+
+# 3GB Memory
+
+**What:** Lambda memory limits upped to 3GB.
+
+**Why it matters:** More RAM! This can help for heavier processing tasks or anything that would benefit from more memory.
+
+# Concurrency controls
+
+**What:** Lets you manage invocation concurrency on a per-function basis.
+
+**Why it matters:**  AWS has account-wide limits on how many concurrent Lambdas you can have running—1000 by default, though you can raise that. It could lead to some of your functions getting throttled if one of them got hammered with a bunch of requests. But now, you can set limits so that one function doesn't result in throttles for other functions.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">BREAKING: New <a href="https://twitter.com/hashtag/lambda?src=hash&amp;ref_src=twsrc%5Etfw">#lambda</a> features!!! 🙌 <a href="https://twitter.com/hashtag/reInvent?src=hash&amp;ref_src=twsrc%5Etfw">#reInvent</a> <a href="https://twitter.com/hashtag/Serverless?src=hash&amp;ref_src=twsrc%5Etfw">#Serverless</a> <a href="https://t.co/P8ezbrFKWa">pic.twitter.com/P8ezbrFKWa</a></p>&mdash; Serverless (@goserverless) <a href="https://twitter.com/goserverless/status/936301335338631169?ref_src=twsrc%5Etfw">November 30, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+# [Serverless App Repo](https://aws.amazon.com/blogs/aws/aws-serverless-app-repo/)
+
+**What:** A repository for discovering serverless applications. Preview available [here](https://pages.awscloud.com/serverlessrepo-preview.html).
 
 # [Cloud9](https://aws.amazon.com/blogs/aws/aws-cloud9-cloud-developer-environments/)
 
