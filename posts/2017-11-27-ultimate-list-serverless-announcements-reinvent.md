@@ -23,6 +23,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 ### re:Invent announcements (newest to oldest):
 
 - Latest
+  - [CloudTrail Logging for Lambda Invocations](#cloudtrail-logging-for-lambda-invocations)
   - [Golang support 🙌](#golang-support)
   - [3GB memory](#3gb-memory)
   - [Concurrency controls](#concurrency-controls)
@@ -62,6 +63,12 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 - [API Gateway Access Logs](#api-gateway-access-logs)
 
 # Announcements:
+
+# [CloudTrail Logging for Lambda Invocations](https://aws.amazon.com/about-aws/whats-new/2017/11/aws-cloudtrail-adds-logging-of-execution-activity-for-aws-lambda-functions/)
+
+**What:** Ability to send CloudTrail events for all Lambda function invocations
+
+**Why this matters:** CloudTrail is a great tool for performing security auditing and compliance for your AWS resources. Previously, you could only create CloudTrail events for more management-like features of Lambda, such as creating or deleting a function. Now, you can get information on function invocations as well. This will enable you to record and react to invocations with much more detail.
 
 # Golang support
 
