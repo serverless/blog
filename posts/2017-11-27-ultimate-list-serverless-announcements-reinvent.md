@@ -62,7 +62,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 **What:** IDE for writing, running, and debugging code. This is GA today!
 
-**Why it matters:** 
+**Why it matters:** A developer's editor is a sacred thing—from terminal junkies to full-fledged IDEs. For those less opinionated or that want to be less tethered to a particular development machine, the Cloud9 IDE is interesting. Develop directly in the cloud with an always-available environment. Pair programming is interesting, and something we've seen from VSCode and Atom in the last few weeks as well.
 
 
 # [AWS Greengrass](https://aws.amazon.com/about-aws/whats-new/2017/11/aws-greengrass-adds-feature-for-machine-learning-inference/)
