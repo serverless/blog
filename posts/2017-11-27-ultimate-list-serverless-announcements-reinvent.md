@@ -64,7 +64,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # [Serverless App Repo](https://aws.amazon.com/blogs/aws/aws-serverless-app-repo/)
 
-**What:** A repository for discovering serverless applications.
+**What:** A repository for discovering serverless applications. Preview available [here](https://pages.awscloud.com/serverlessrepo-preview.html).
 
 
 # Concurrency controls
