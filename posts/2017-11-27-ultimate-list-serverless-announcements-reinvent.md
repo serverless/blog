@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-**Last Updated:** 11/30/17 @ 11:03AM PST
+**Last Updated:** 11/30/17 @ 11:18AM PST
 
 It's that time of the year, the Christmas-comes-early for cloud developers. Are you ready for [AWS re:Invent](https://reinvent.awsevents.com/)?
 
@@ -75,7 +75,11 @@ __Note__: This is a pre-release and won't be available for a few weeks yet. Pati
 
 **What:** Lambda memory limits upped to 3GB.
 
-**Why it matters:** More RAM! This can help for heavier processing tasks or anything that would benefit from more memory.
+**Why it matters:** More RAM! This can help for heavier processing tasks or anything that would benefit from more memory. As [Vlad](https://twitter.com/vladholubiev) points out, this also seems to apply to Lambda@Edge:
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">This wasn&#39;t announced explicitly but Lambda@Edge has 3 GB of RAM as well<a href="https://t.co/r7AnmTD6hq">https://t.co/r7AnmTD6hq</a><a href="https://twitter.com/hashtag/aws?src=hash&amp;ref_src=twsrc%5Etfw">#aws</a> <a href="https://twitter.com/hashtag/lambda?src=hash&amp;ref_src=twsrc%5Etfw">#lambda</a> <a href="https://twitter.com/hashtag/serverless?src=hash&amp;ref_src=twsrc%5Etfw">#serverless</a> <a href="https://twitter.com/hashtag/reInvent?src=hash&amp;ref_src=twsrc%5Etfw">#reInvent</a> <a href="https://twitter.com/goserverless?ref_src=twsrc%5Etfw">@goserverless</a> <a href="https://t.co/bHznN4sEIH">pic.twitter.com/bHznN4sEIH</a></p>&mdash; Vlad Holubiev (@vladholubiev) <a href="https://twitter.com/vladholubiev/status/936312517533622272?ref_src=twsrc%5Etfw">November 30, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 # Concurrency controls
 
