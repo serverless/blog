@@ -84,7 +84,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # Golang support
 
-**What:** You can now write your Lambda functions in Go.
+**What:** This was a pre-announcement for Go support. Early next year, you'll be able to write your Lambda functions in Go.
 
 
 # [Cloud9](https://aws.amazon.com/blogs/aws/aws-cloud9-cloud-developer-environments/)
