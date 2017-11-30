@@ -73,6 +73,9 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 **Why it matters:**  AWS has account-wide limits on how many concurrent Lambdas you can have running—1000 by default, though you can raise that. It could lead to some of your functions getting throttled if one of them got hammered with a bunch of requests. But now, you can set limits so that one function doesn't result in throttles for other functions.
 
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">BREAKING: New <a href="https://twitter.com/hashtag/lambda?src=hash&amp;ref_src=twsrc%5Etfw">#lambda</a> features!!! 🙌 <a href="https://twitter.com/hashtag/reInvent?src=hash&amp;ref_src=twsrc%5Etfw">#reInvent</a> <a href="https://twitter.com/hashtag/Serverless?src=hash&amp;ref_src=twsrc%5Etfw">#Serverless</a> <a href="https://t.co/P8ezbrFKWa">pic.twitter.com/P8ezbrFKWa</a></p>&mdash; Serverless (@goserverless) <a href="https://twitter.com/goserverless/status/936301335338631169?ref_src=twsrc%5Etfw">November 30, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 # 3GB Memory
 
