@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-**Last Updated:** 11/30/17 @ 10:44AM PST
+**Last Updated:** 11/30/17 @ 11:03AM PST
 
 It's that time of the year, the Christmas-comes-early for cloud developers. Are you ready for [AWS re:Invent](https://reinvent.awsevents.com/)?
 
@@ -26,6 +26,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
   - [Golang support 🙌](#golang-support)
   - [3GB memory](#3gb-memory)
   - [Concurrency controls](#concurrency-controls)
+  - [VPC integration](#vpc-integration)
   - [Serverless App Repo](#serverless-app-repo)
   - [Cloud9](#cloud9)
 - IoT
@@ -84,6 +85,13 @@ __Note__: This is a pre-release and won't be available for a few weeks yet. Pati
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">BREAKING: New <a href="https://twitter.com/hashtag/lambda?src=hash&amp;ref_src=twsrc%5Etfw">#lambda</a> features!!! 🙌 <a href="https://twitter.com/hashtag/reInvent?src=hash&amp;ref_src=twsrc%5Etfw">#reInvent</a> <a href="https://twitter.com/hashtag/Serverless?src=hash&amp;ref_src=twsrc%5Etfw">#Serverless</a> <a href="https://t.co/P8ezbrFKWa">pic.twitter.com/P8ezbrFKWa</a></p>&mdash; Serverless (@goserverless) <a href="https://twitter.com/goserverless/status/936301335338631169?ref_src=twsrc%5Etfw">November 30, 2017</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+# VPC integration
+
+**What:** VPC integration with API Gateway.
+
+**Why it matters:**
+
 
 # [Serverless App Repo](https://aws.amazon.com/blogs/aws/aws-serverless-app-repo/)
 
