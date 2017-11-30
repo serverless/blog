@@ -69,7 +69,9 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 # Concurrency controls
 
-**What:** 
+**What:** Lets you manage invocation concurrency on a per-function basis.
+
+**Why it matters:**  AWS has account-wide limits on how many concurrent Lambdas you can have running—1000 by default, though you can raise that. It could lead to some of your functions getting throttled if one of them got hammered with a bunch of requests. But now, you can set limits so that one function doesn't result in throttles for other functions.
 
 
 # 3GB Memory
