@@ -23,7 +23,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 ### re:Invent announcements (newest to oldest):
 
 - Latest
-  - [Golang support 🙌](#golang-support)
+  - [Golang support 🙌](#golang-support)
   - [3GB memory](#3gb-memory)
   - [Concurrency controls](#concurrency-controls)
   - [VPC integration](#vpc-integration)
@@ -86,11 +86,15 @@ __Note__: This is a pre-release and won't be available for a few weeks yet. Pati
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">BREAKING: New <a href="https://twitter.com/hashtag/lambda?src=hash&amp;ref_src=twsrc%5Etfw">#lambda</a> features!!! 🙌 <a href="https://twitter.com/hashtag/reInvent?src=hash&amp;ref_src=twsrc%5Etfw">#reInvent</a> <a href="https://twitter.com/hashtag/Serverless?src=hash&amp;ref_src=twsrc%5Etfw">#Serverless</a> <a href="https://t.co/P8ezbrFKWa">pic.twitter.com/P8ezbrFKWa</a></p>&mdash; Serverless (@goserverless) <a href="https://twitter.com/goserverless/status/936301335338631169?ref_src=twsrc%5Etfw">November 30, 2017</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+
 # VPC integration
 
 **What:** VPC integration with API Gateway.
 
-**Why it matters:**
+**Why it matters:** We'll let [Ajay](https://twitter.com/ajaynairthinks) describe why this is important, we couldn't have said it better:
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">VPC integration for API Gateway is massive - front *any* application with API Gateway, Lambda or otherwise, and start using it to manage authN/AuthZ control, and traffic. Want modern APIs for those on prem deployments while you restructure that monolith? Go for it! <a href="https://twitter.com/hashtag/Reinvent2017?src=hash&amp;ref_src=twsrc%5Etfw">#Reinvent2017</a></p>&mdash; Ajay Nair (@ajaynairthinks) <a href="https://twitter.com/ajaynairthinks/status/936307752925720576?ref_src=twsrc%5Etfw">November 30, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 # [Serverless App Repo](https://aws.amazon.com/blogs/aws/aws-serverless-app-repo/)
