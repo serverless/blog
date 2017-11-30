@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-**Last Updated:** 11/29/17 @ 12:28PM PST
+**Last Updated:** 11/30/17 @ 9:29AM PST
 
 It's that time of the year, the Christmas-comes-early for cloud developers. Are you ready for [AWS re:Invent](https://reinvent.awsevents.com/)?
 
@@ -22,6 +22,8 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 ### re:Invent announcements (newest to oldest):
 
+- Latest
+  - [Cloud9](#cloud9)
 - IoT
   - [AWS Greengrass](#aws-greengrass)
   - [IoT Device Defender](#iot-device-defender)
@@ -55,6 +57,13 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 - [API Gateway Access Logs](#api-gateway-access-logs)
 
 # Announcements:
+
+# [Cloud9](https://aws.amazon.com/blogs/aws/aws-cloud9-cloud-developer-environments/)
+
+**What:** IDE for writing, running, and debugging code
+
+**Why it matters:** 
+
 
 # [AWS Greengrass](https://aws.amazon.com/about-aws/whats-new/2017/11/aws-greengrass-adds-feature-for-machine-learning-inference/)
 
