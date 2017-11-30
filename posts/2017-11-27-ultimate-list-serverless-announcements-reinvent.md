@@ -23,6 +23,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 ### re:Invent announcements (newest to oldest):
 
 - Latest
+  - [Serverless App Repo](#serverless-app-repo)
   - [Concurrency controls](#concurrency-controls)
   - [3GB memory](#3gb-memory)
   - [Golang support](#golang-support)
@@ -60,6 +61,11 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 - [API Gateway Access Logs](#api-gateway-access-logs)
 
 # Announcements:
+
+# [Serverless App Repo](https://aws.amazon.com/blogs/aws/aws-serverless-app-repo/)
+
+**What:** A repository for discovering serverless applications.
+
 
 # Concurrency controls
 
