@@ -356,16 +356,16 @@ Each function instance will have the same code, but they'll be segmented for met
 
 functions:
   app:
-    handler: index.handler
+    handler: wsgi.handler
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
   getUser:
-    handler: index.handler
+    handler: wsgi.handler
     events:
       - http: 'GET /users/{proxy+}'
   createUser:
-    handler: index.handler
+    handler: wsgi.handler
     events:
       - http: 'POST /users'
 ```
