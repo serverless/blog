@@ -265,7 +265,7 @@ When working with Serverless services, you'll often have multiple stages for you
 
 To set the scene, let's imagine we have three stages:
 
-- `prod`, which is accessible at `api.mycompany.com;
+- `prod`, which is accessible at `api.mycompany.com`;
 - `staging`, which is accessible at `staging-api.mycompany.com`; and
 - `dev`, which is accessible at `dev-api.mycompany.com`.
 
@@ -278,8 +278,8 @@ custom:
   stage: ${opt:stage, self:provider.stage}
   domains:
     prod: api.mycompany.com
-    staging: staging.mycompany.com
-    dev: dev.mycompany.com
+    staging: staging-api.mycompany.com
+    dev: dev-api.mycompany.com
 
   customDomain:
     basePath: ""
