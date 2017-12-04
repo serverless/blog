@@ -1,6 +1,6 @@
 ---
 title: "Serverless Aurora: What it means and why it's the future of data"
-description: ""
+description: "Learn what Serverless Aurora is, what it means for serverless developers, and why we think it's the future of data. "
 date: 2017-12-04
 layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/awsreinvent.jpg'
@@ -8,15 +8,17 @@ authors:
   - AlexDeBrie
 ---
 
-AWS had their annual re:Invent conference last week (missed it? [Check out our full recap](https://serverless.com/blog/ultimate-list-serverless-announcements-reinvent/)). This is always an exciting time as AWS announces a slew of new products and indicates the areas they're thinking about for the near future.
+AWS had their annual re:Invent conference last week (missed it? [Check out our full recap](https://serverless.com/blog/ultimate-list-serverless-announcements-reinvent/)).
 
-AWS Lambda started the Serverless movement when it was released at re:Invent back at 2014. But the Lambda releases were incremental improvements this year -- [higher memory limits](https://serverless.com/blog/ultimate-list-serverless-announcements-reinvent/#3gb-memory), [concurrency controls](https://serverless.com/blog/ultimate-list-serverless-announcements-reinvent/#concurrency-controls), and of course, [Golang support (coming soon!)](https://serverless.com/blog/ultimate-list-serverless-announcements-reinvent/#golang-support). There was nothing game-changing in the functions-as-a-service (FaaS) world itself. 
+AWS Lambda started the Serverless movement by releasing Lambda at re:Invent 2014. But the Lambda releases this year were run-of-the-mill incremental improvements—[higher memory limits](https://serverless.com/blog/ultimate-list-serverless-announcements-reinvent/#3gb-memory), [concurrency controls](https://serverless.com/blog/ultimate-list-serverless-announcements-reinvent/#concurrency-controls), and of course, [Golang support (coming soon!)](https://serverless.com/blog/ultimate-list-serverless-announcements-reinvent/#golang-support).
 
-Does this mean that AWS is slowing down on serverless?
+All this to say, there was nothing game-changing in the functions-as-a-service (FaaS) world itself. 
+
+Well then. Does this mean that AWS is slowing down on serverless?
 
 Hardly.
 
-We saw AWS reflecting the growing understanding that serverless is more than just functions: 
+We saw AWS asserting that serverless is more than just functions: 
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">serverless != functions, FaaS == functions, serverless == on-demand scaling and pricing characteristics (not limited to functions)</p>&mdash; TJ Holowaychuk 🐥 (@tjholowaychuk) <a href="https://twitter.com/tjholowaychuk/status/902999008674594816?ref_src=twsrc%5Etfw">August 30, 2017</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
