@@ -20,11 +20,13 @@ So we made one. Today, serverless community, we are so, SO proud to announce: Th
 
 ## What is a Serverless Champion?
 
-A [Serverless Champion]() is a hero in the serverless community. They contribute to open-source serverless projects. They speak at serverless conferences and meetups. They help newcomers get excited. They crawl the forums just looking for questions to answer.
+A Serverless Champion is a hero in the serverless community. They contribute to open-source serverless projects. They speak at serverless conferences and meetups. They help newcomers get excited. They crawl the forums just looking for questions to answer.
 
 They are thought leaders, teachers, and builders.
 
-Four times a year, we will select three new Serverless Champions to join the ranks.
+Four times a year, we will select three new Serverless Champions to join the ranks. We are going to put your smiling face on our website and make a Pretty Big Deal about it. We're gonna give you limited-edition swag & access to an invitation-only Slack channel. 
+
+And gosh there are tons more goodies but we kind of don't want to spoil it all in this blog post. Just go check out our [Serverless Champions page]() already.
 
 # And the very first cohort of Serverless Champions are! (drumroll)
 
