@@ -24,7 +24,7 @@ A [Serverless Champion]() is a hero in the serverless community. They contribute
 
 They are thought leaders, teachers, and builders.
 
-Four times a year, we will select 3 new Serverless Champions to join the ranks.
+Four times a year, we will select three new Serverless Champions to join the ranks.
 
 # And the very first cohort of Serverless Champions are! (drumroll)
 
