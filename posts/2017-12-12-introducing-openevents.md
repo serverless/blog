@@ -32,7 +32,7 @@ Enter **OpenEvents**, a specification for describing event data in a common way.
 
 These attributes include information to help title and categorize events, version the event data so that it can evolve without breaking downstream subscribers, and describe where the event came from and where it might be going.  The attributes can be extended for experimental features, and much more.
 
-A variety of traditional use-cases can be improved by this, like service communication, SaaS integrations, webhooks, cloud bursting, functions-as-a-service, and improvements to the overall developer experience.  We're also excited to see what new use-cases emerge as a result of this (link to the event gateway).
+A variety of traditional use-cases can be improved by this, like service communication, SaaS integrations, webhooks, cloud bursting, functions-as-a-service, and improvements to the overall developer experience.  We're also excited to see what new [use-cases emerge](https://www.serverless.com/event-gateway) as a result of this.
 
 OpenEvents is a new effort and it's still under active development.  However, its working group has received a surprising amount of industry interest ranging from major cloud providers to popular SaaS companies. 
 
