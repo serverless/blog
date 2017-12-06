@@ -1,16 +1,16 @@
 ---
-title: "Automating CI/CD Workflow for Serverless Apps"
+title: "Automating CI/CD workflow for serverless apps with CircleCI"
 description: "Learn about continuous integration & deployment processes and implement it for a serverless application. Discuss benefits of using serverless architectures while discussing other advanced deployment patterns."
-date: 2017-12-06
+date: 2017-12-07
 layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/ci-cd-circle.png'
 authors:
   - RupakGanguly
 ---
 
-Getting a [simple Serverless app](https://serverless.com/blog/anatomy-of-a-serverless-app/) deployed is very easy with the [Serverless Framework](https://serverless.com/framework/), but in real-life the process of continuous integration and deployment of an application is much more involved. 
+It's pretty easy to set up a [simple Serverless app](https://serverless.com/blog/anatomy-of-a-serverless-app/) with the [Serverless Framework](https://serverless.com/framework/). _But_—in real life, the process of continuous integration and deployment (CI/CD) of that application can be much more involved. 
 
-In this post, we'll take a deep-dive and look at the end-to-end workflow of automating a CI/CD process via CircleCI for a serverless application.
+Never fear! In this post, we're going to take a deep look at the end-to-end workflow of automating a CI/CD process for a serverless application via CircleCI.
 
 We will cover:
 
