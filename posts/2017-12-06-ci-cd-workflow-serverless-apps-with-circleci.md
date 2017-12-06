@@ -23,7 +23,9 @@ We will cover:
 
 ## The CI/CD Process
 
-In an agile development environment, small teams work autonomously and add a lot of churn to the code base. Each developer works on different aspects of the project and commits code frequently. This is a healthy practice but it comes with its own challenges. Without close watch and proper communication of the changes, the updates can cause existing code to break. To minimize manual scrutiny and redundant communication across teams, we need to invest in automating CI/CD processes.
+In an agile development environment, small teams work autonomously and add a lot of churn to the code base. Each developer works on different aspects of the project and commits code frequently.
+
+This is a healthy practice, but it comes with its own challenges. Without close watch and proper communication of the changes, the updates can cause existing code to break. To minimize manual scrutiny and redundant communication across teams, we need to invest in automating CI/CD processes.
 
 ![The CI/CD Process Flow](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/cicd-process.gif)
 
@@ -31,7 +33,7 @@ In an agile development environment, small teams work autonomously and add a lot
 
 ### Continuous Integration
 
-The CI process starts with the developer checking in code into a code repository. The developer makes their code changes in a local branch, adds units tests, and integration tests. They ensure that the tests don't lower the overall code coverage. Having a common script that can run the unit tests, integration tests and code coverage allows for automating this process.
+The CI process starts with the developer checking in code to a code repository. The developer makes their code changes in a local branch, then adds units tests and integration tests. They ensure that the tests don't lower the overall code coverage. Having a common script that can run the unit tests, integration tests and code coverage allows for automating this process.
 
 Once the code is tested in the context of the local branch, the developer needs to merge in the master branch into their local branch, and then run the tests/code coverage again. The above process happens repeatedly for every code commit and thereby continuously integrating the new code changes into the existing software.
 
