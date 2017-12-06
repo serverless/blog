@@ -234,16 +234,18 @@ jobs:
       ...
 ```
 
-We have a `job` named `build`, and we have a few `steps`. The `checkout` step would checkout the files from the attached source repo. Next, we have a few `run` steps that just execute bash commands. We install the serverless cli and the project dependencies, then run our tests with code coverage enabled, and finally deploy the application.
+We have a `job` named `build`, and we have a few `steps`. The `checkout` step will check out the files from the attached source repo. We also have a few `run` steps that just execute bash commands.
 
-> You can review the full [config file](https://github.com/rupakg/hello-world-ci/blob/master/.circleci/config.yml) for our app. And you can review a full CircleCI [sample configuration](https://circleci.com/docs/2.0/sample-config/) file with more options as well.
+We'll install the serverless cli and the project dependencies, then run our tests with code coverage enabled, and finally deploy the application.
+
+**Note:** You can review the full [config file](https://github.com/rupakg/hello-world-ci/blob/master/.circleci/config.yml) for our app. And you can review a full CircleCI [sample configuration](https://circleci.com/docs/2.0/sample-config/) file with more options as well.
 
 ### Implementing the Workflow
 To add our app project to CircleCI, do the following:
 
 * Push the local app from your machine to your Github account or fork the [sample project](https://github.com/rupakg/hello-world-ci) on your Github account.
 * Go to Projects -> Add Projects, and click the 'Setup project' button next to your project. Make sure the 'Show forks' checkbox is checked.
-* Since we've our CircleCI config file already placed at the root of our project some of the configuration is picked up automatically:
+* Since we have our CircleCI config file already placed at the root of our project, some of the configuration is picked up automatically:
     * Pick 'Linux' as the Operating System.
     * Pick '2.0' as the Platform.
     * Pick 'Node' as the Language.
@@ -284,28 +286,30 @@ Hopefully, the full rundown of the process and its implementation on a CI/CD pla
 
 # Advanced Deployment Patterns
 
-In real-life enterprise scenarios, there's a lot of complexity involved in deploying an application. There are concerns about redundancy, high-availability, versioning & rollback, A/B testing and incremental rollouts. All of this needs to be achieved without sacrificing the flexibility & ease of the deployment process, and at the same time keeping the customer happy.
+In real-life enterprise scenarios, there's a lot of complexity involved in deploying an application. There are concerns about redundancy, high-availability, versioning & rollback, A/B testing and incremental rollouts.
+
+All of this needs to be achieved without sacrificing the flexibility & ease of the deployment process, and at the same time keeping the customer happy.
 
 In this section, we'll look at some of these concerns and ways the Serverless Framework can help solve it.
 
 ### Multi-region Deployments
-
 A popular pattern for introducing redundancy and achieving high-availability is to deploy your application into multiple regions. In our use case, we will deploy our application to two AWS regions - `us-east-1` and `us-east-2`.
 
 #### Multiple Deploys
-
-We can start off with a simple workflow using the Serverless Framework. Using the framework, we can execute multiple `sls deploy` commands targeting a particular region.
+We can start off with a simple workflow using the [Serverless Framework](http://www.serverless.com/framework). Using the framework, we can execute multiple `sls deploy` commands targeting a particular region.
 
 ```
 $ sls deploy --stage qa --region us-east-1
 
 $ sls deploy --stage qa --region us-east-2
 ```
-Although the above way of deploying to multi-region is simple, it poses a challenge. Since they're two different commands the Serverless Framework packages & deploys the app twice. It's practically impossible to make sure that the exact same copy of the code has been deployed.
+
+Although this method for deploying to multi-region is simple, it poses a challenge. Since there are two different commands, the Serverless Framework packages & deploys the app twice. It's practically impossible to make sure that the exact same copy of the code has been deployed.
 
 #### Separating Packaging and Deployment
+Keeping the above challenge in mind, the Serverless Framework provides an advanced workflow for deploying to multiple regions. It provides a way to separate the **packaging** and **deploying** portions of the overall deploy process.
 
-Keeping the above challenge in mind, the Serverless Framework provides an advanced workflow for deploying to multiple regions. It provides a way to separate the **packaging** and **deploying** portions of the overall deploy process. The Serverless Framework provides a `sls package` command to package code and then allows you to use that package in the `sls deploy` command to deploy it.
+The Serverless Framework provides a `sls package` command to package code and then allows you to use that package in the `sls deploy` command to deploy it.
 
 ```
 # package the code once
@@ -328,7 +332,7 @@ Let's look at the implementation of this deployment pattern and ways we can auto
 
 ![Separating packaging and deployment](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/cloudcraft-adv-deployment.png)
 
-**Figure 9: Separating packaging and deployment**
+*Figure 9: Separating packaging and deployment*
 
 Here are the details of the workflow:
 
@@ -339,12 +343,13 @@ Here are the details of the workflow:
 > The Serverless Framework provides an easy & automated way to deploy serverless applications across multiple regions for adding redundancy and achieving high-availability.
 
 ### Canary Deployments
+Another popular deployment pattern is **canary** deployments. Canary releases are used to reduce risk when releasing new software versions.
 
-Another popular deployment pattern is **canary** deployments. Canary releases are used to reduce risk when releasing new software versions. The pattern lays down a workflow that enables the slow and incremental rollout of new versions by gating it to a small subset of end users. Once the new software version has been tested to be satisfactory for mass consumption, the release is opened to all user traffic.
+The pattern lays down a workflow that enables the slow and incremental rollout of new versions by gating it to a small subset of end users. Once the new software version has been tested to be satisfactory for mass consumption, the release is opened to all user traffic.
 
 ![Canary deployment flow](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/canary-deployment.gif)
 
-**Figure 10: Canary deployment flow**
+*Figure 10: Canary deployment flow*
 
 Here are the details of the flow:
 
@@ -361,11 +366,13 @@ An off-shoot use case of canary deployment pattern is, using it for A/B testing 
 
 ### Blue/Green Deployments
 
-Yet another deployment pattern in use is the **blue/green** deployments. The blue/green deployment pattern is very similar to canary deployments, but instead of gating user traffic, two separate identical environments are used in parallel to mitigate risks of introducing new software versions. One environment is used for go-live and the other is used for staging new changes. The workflow dictates switching environments back and forth between staging and live.
+Yet another deployment pattern in use is the **blue/green** deployment. The blue/green deployment pattern is very similar to canary deployments—but instead of gating user traffic, two separate identical environments are used in parallel to mitigate risks of introducing new software versions.
+
+One environment is used for go-live, and the other is used for staging new changes. The workflow dictates switching environments back and forth between staging and live.
 
 ![Blue/Green deployment flow](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/blue-green-deployment.gif)
 
-**Figure 11: Blue/Green deployment flow**
+*Figure 11: Blue/Green deployment flow*
 
 Here are the details of the flow:
 
@@ -375,13 +382,13 @@ Here are the details of the flow:
 4. **Rollback scenario**: Unfortunately, sometimes serious bugs are discovered in the new version (blue) and code have to be rolled back. In this case, all traffic is redirected back to the blue environment. The blue environment is back being the live version. The green environment becomes staging.
 
 ### Routing Mechanics
+The traffic routing is done by setting up a DNS service (AWS Route 53) in front of the API Gateway.
 
-The routing of traffic is done by setting up a DNS service (AWS Route 53) in front of the API Gateway. In case of canary deployments, AWS Route 53 is switched from 'simple routing' to 'weighted routing' to achieve a percentage mix of user traffic between environments. In case of blue/green deployments, the 'weighted routing' is toggled between 0% and 100% across the blue/green environments. 
+In the case of canary deployments, AWS Route 53 is switched from 'simple routing' to 'weighted routing' to achieve a percentage mix of user traffic between environments. In case of blue/green deployments, the 'weighted routing' is toggled between 0% and 100% across the blue/green environments. 
 
-**Update**: AWS announced [API Gateway support for canary deployments](https://aws.amazon.com/about-aws/whats-new/2017/11/amazon-api-gateway-supports-canary-release-deployments/) at AWS re:Invent 2017.
+**Update**: AWS announced [API Gateway support for canary deployments](https://serverless.com/blog/ultimate-list-serverless-announcements-reinvent/#canary-management-for-api-gateway) at AWS re:Invent 2017.
 
 ### Benefits of Serverless
-
 In traditional architectures, the canary and blue/green deployments are used after a lot of consideration and planning. The reason being, high costs of provisioning hardware and maintenance of multiple environments to realize the potential of such deployment patterns. 
 
 The benefits of embracing serverless architectures are immediately evident because of no provisioning and no maintenance costs for multiple environments. To top it, pay-per-execution reduces execution costs significantly and you never pay for any idle infrastructure, in any environment.
