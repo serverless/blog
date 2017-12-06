@@ -389,12 +389,17 @@ In the case of canary deployments, AWS Route 53 is switched from 'simple routing
 **Update**: AWS announced [API Gateway support for canary deployments](https://serverless.com/blog/ultimate-list-serverless-announcements-reinvent/#canary-management-for-api-gateway) at AWS re:Invent 2017.
 
 ### Benefits of Serverless
-In traditional architectures, the canary and blue/green deployments are used after a lot of consideration and planning. The reason being, high costs of provisioning hardware and maintenance of multiple environments to realize the potential of such deployment patterns. 
+In traditional architectures, the canary and blue/green deployments are used after a lot of consideration and planning. The reason being, there's a high cost to provisioning hardware and maintaining multiple environments required in order to realize the potential of such deployment patterns. 
 
-The benefits of embracing serverless architectures are immediately evident because of no provisioning and no maintenance costs for multiple environments. To top it, pay-per-execution reduces execution costs significantly and you never pay for any idle infrastructure, in any environment.
+The benefits of embracing serverless architectures are immediately evident here—it means no provisioning or maintenance costs for multiple environments. On top of that, the fact that serverless is pay-per-execution reduces execution costs significantly; you never pay for any idle infrastructure, in any environment.
 
 > Advanced deployment patterns like canary and blue/green deployments are practically **feasible**, more **cost-effective** and **easily managed** when used with serverless architectures.
 
-## Summary
+# Quick summary
+In this post, we looked at the overall CI/CD process flow, detailing each process step. We then created a serverless application and refactored the code to be testable.
 
-In summary, we looked at the overall CI/CD process flow, detailing each process step. Then we created a serverless application and refactored the code to be testable. We ran the tests and code coverage locally to make sure our code is all working. Once we had our app running locally, we set up an automated CI workflow for our app on CircleCI. At the end of the post, we looked at some of the more complex deployment patterns and how serverless architectures makes them cost-effective & feasible.
+We then ran the tests and code coverage locally to make sure our code was working. Once we had our app running locally, we set up an automated CI workflow for our app on CircleCI.
+
+At the end of the post, we looked at some of the more complex deployment patterns and how serverless architectures could help make them more cost-effective & feasible.
+
+Any comments or questions? Drop them below!
