@@ -1,6 +1,6 @@
 ---
 title: "Automating CI/CD workflow for serverless apps with CircleCI"
-description: "Learn about continuous integration & deployment processes and implement it for a serverless application. Discuss benefits of using serverless architectures while discussing other advanced deployment patterns."
+description: "There are big benefits to using serverless architectures in continuous integration & deployment (CI/CD) processes. We'll show you why, and how to do it."
 date: 2017-12-07
 layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/ci-cd-circle.png'
