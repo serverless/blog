@@ -21,53 +21,53 @@ We will cover:
 * End-to-end automation for our app
 * Advanced deployment patterns
 
-## The CI/CD Process
+If you already know some CI/CD basics, then you'll probably want to skip straight to the [application testing](#application-testing) bit.
+
+# The basics: CI/CD process
 
 In an agile development environment, small teams work autonomously and add a lot of churn to the code base. Each developer works on different aspects of the project and commits code frequently.
 
-This is a healthy practice, but it comes with its own challenges. Without close watch and proper communication of the changes, the updates can cause existing code to break. To minimize manual scrutiny and redundant communication across teams, we need to invest in automating CI/CD processes.
+This is a healthy practice, but it comes with some challenges. Without close watch and proper communication about changes, the updates can cause existing code to break. To minimize manual scrutiny and redundant communication across teams, we need to invest in automating CI/CD processes.
 
 ![The CI/CD Process Flow](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/cicd-process.gif)
 
-**Figure 1: The CI/CD Process Flow**
+*Figure 1: The CI/CD Process Flow*
 
 ### Continuous Integration
+The CI process starts with the developer checking code into a code repository. The developer makes their code changes in a local branch, then adds units tests and integration tests. They ensure that the tests don't lower the overall code coverage. It's possible to automate this process by having a common script that can run the unit tests, integration tests and code coverage.
 
-The CI process starts with the developer checking in code to a code repository. The developer makes their code changes in a local branch, then adds units tests and integration tests. They ensure that the tests don't lower the overall code coverage. Having a common script that can run the unit tests, integration tests and code coverage allows for automating this process.
-
-Once the code is tested in the context of the local branch, the developer needs to merge in the master branch into their local branch, and then run the tests/code coverage again. The above process happens repeatedly for every code commit and thereby continuously integrating the new code changes into the existing software.
+Once the code is tested in the context of the local branch, the developer needs to merge the master branch into their local branch, and then run the tests/code coverage again. The above process happens repeatedly for every code commit and thereby continuously integrates the new code changes into the existing software.
 
 ### Continuous Delivery
-
 Although the continuous integration process ensures that the code in the master branch is always pristine and well-tested, it cannot help catch usability issues. A QA team and other stakeholders are usually responsible for usability and acceptance testing. 
 
 A successful exit from the CI process triggers the continuous delivery process and delivers the software system to a QA staging area. The QA environment usually closely resembles the production environment but with less redundancy. The continuous delivery process can have a mixed bag of automated and manual usability/acceptance testing phases. 
 
-While continuos delivery provides a process to create frequent releases but the releases may not be deployed at all times.
+While continuous delivery provides a process to create frequent releases, the releases may not be deployed at all times.
 
 ### Continuous Deployment
-
 In case of continuous deployment, every change that is made to the code gets deployed to production, unless tests fail the process. This process is highly automated with new code built, tested, versioned, tagged and deployed to the production environment. 
 
 In a special scenario, where major bugs and issues are found in a recently deployed version of the software, a "rollback" can be initiated. A rollback process takes a previous release version and delivers it to the production environment. This process can be automated but is usually manually triggered.
 
-## Application Testing
+# Application Testing
 
-We'll use a serverless app `hello-world-ci` created using the `hello-world` template from the Serverless Framework. We'll keep the app very simple so that we can focus on the CI process. 
+We'll use a serverless app, `hello-world-ci`, created using the `hello-world` template from the Serverless Framework. We'll keep the app very simple so that we can focus on the CI process. 
 
-You can install the sample app from the [source repo](https://github.com/rupakg/hello-world-ci) using the Serverless Framework, simply by:
+You can install the sample app from the [source repo](https://github.com/rupakg/hello-world-ci) using the Serverless Framework, like so:
 
 ```
 sls install --url https://github.com/rupakg/hello-world-ci
 ```
  
-Having proper tests in place safe guards against subsequent code updates. We'd like to run tests and code coverage against our code. If the tests pass, we'll deploy our app. Running tests against our code whenever new code is committed, allows for continuous integration.
+Having proper tests in place safeguards against subsequent code updates. We'd like to run tests and code coverage against our code. If the tests pass, we'll deploy our app.
+
+It's this—running tests against our code whenever new code is committed—that allows for continuous integration.
 
 ### Testable Code
+We have some [tests](https://github.com/rupakg/hello-world-ci/blob/master/tests/hello-world.spec.js) that we'll run as part of the testing phase. Notice that we have a spec that tests if our function is being called. 
 
-We've [tests](https://github.com/rupakg/hello-world-ci/blob/master/tests/hello-world.spec.js) that we'll run as part of the testing phase. Notice that we have a spec that tests if our function is being called. 
-
-We also separated out the actual testable logic of our function into a class. 
+We also separated out the actual testable logic of our function into a class:
 
 ```js
 # /lib/hello-world.js
@@ -83,7 +83,8 @@ class HelloWorld {
     
 module.exports = HelloWorld;
 ```
-The `handler.js` code is refactored to use the above `sayHello` method from the `HelloWorld` class.
+
+The `handler.js` code is refactored to use the above `sayHello` method from the `HelloWorld` class:
 
 ```js
 # handler.js
@@ -103,11 +104,11 @@ module.exports.helloWorld = (event, context, callback) => {
   callback(null, response);
 };
 ```
+
 This makes testing the core logic of the app easy and also decouples it from the provider-specific function signature.
 
 ### Running Tests
-
-Now that we've our tests written up, let's run them locally before we include them as part of our CI/CD process.
+Now that we've got our tests written up, let's run them locally before we include them as part of our CI/CD process.
 
 ```bash
 npm test --coverage
@@ -132,7 +133,7 @@ Time:        0.627s, estimated 1s
 Ran all test suites.
 ```
 
-The code coverage looks like this on the terminal:
+The code coverage looks like this in the terminal:
 
 ```bash
 --------------------|----------|----------|----------|----------|----------------|
@@ -150,13 +151,12 @@ We also get an HTML page with the code coverage results depicted visually, like 
 
 ![Visual Code Coverage Results](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/jest-code-coverage.png)
 
-**Figure 2: Visual code coverage results**
+*Figure 2: Visual code coverage results*
 
 ### Excluding Testing Artifacts
+After running the tests, you should see that a `coverage` folder has been created. This holds the files that are generated by Jest. You'll also have a `.circleci` folder—that one is required to enable build automation with CircleCI. 
 
-After running the tests, we notice that a `coverage` folder is created that holds the files that are generated by Jest. Also, we've a `.circleci` folder that we needed to enable build automation with CircleCI. 
-
-When we deploy our serverless app via Serverless Framework, all files in your current folder will be zipped up and will be part of the deployment to AWS. The above files are not necessary for running our app. So, we will exclude those files from our final deployment, by specifying them in our `serverless.yml` file:
+When we deploy our serverless app via the Serverless Framework, all the files in your current folder will be zipped up and part of the deployment to AWS. Since the `coverage` and `.circleci` files are not necessary for running our app, let's exclude them from our final deployment by excluding them in our `serverless.yml` file:
 
 ```
 service: hello-world-ci
@@ -169,20 +169,17 @@ package:
 ```
 > See more details on [packaging options](https://serverless.com/framework/docs/providers/aws/guide/packaging) with the Serverless Framework.
 
-## Preparing for CI Automation
+# Preparing for CI Automation
 
 In preparation for automating the CI/CD process, we need to perform a few things. We'll be using [CircleCI](https://circleci.com) for automating the CI/CD pipeline for our `hello-world-ci` app.
 
 ### Setting up a CircleCI Account
-
 Before we go any further, we need to [sign up](https://circleci.com/docs/2.0/first-steps/) for a CircleCI account. As part of the sign-up process, we'll authorize CircleCI to access our public Github repo so that it can run builds.
 
 ### Creating an AWS IAM User
-
 It is a good practice to have a separate IAM user just for the CI build process. We'll create a new IAM user `circleci` using the AWS console. Give the user programmatic access and save the AWS credentials, which we'll use later to configure our project in CircleCI.
 
 ### Configuring CircleCI with AWS Credentials
-
 We'll be deploying our app to AWS, so we have to configure AWS credentials with CircleCI. Go to your project `hello-world-ci` -> Project Settings -> AWS Permissions, and add your AWS credentials for the `circleci` IAM user we created earlier.
 
 ![Adding AWS credentials](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/circleci-aws-perms.png)
