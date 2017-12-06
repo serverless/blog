@@ -26,6 +26,7 @@ We will cover:
 In an agile development environment, small teams work autonomously and add a lot of churn to the code base. Each developer works on different aspects of the project and commits code frequently. This is a healthy practice but it comes with its own challenges. Without close watch and proper communication of the changes, the updates can cause existing code to break. To minimize manual scrutiny and redundant communication across teams, we need to invest in automating CI/CD processes.
 
 ![The CI/CD Process Flow](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/cicd-process.gif)
+
 **Figure 1: The CI/CD Process Flow**
 
 ### Continuous Integration
@@ -146,6 +147,7 @@ All files           |      100 |      100 |      100 |      100 |               
 We also get an HTML page with the code coverage results depicted visually, like so:
 
 ![Visual Code Coverage Results](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/jest-code-coverage.png)
+
 **Figure 2: Visual code coverage results**
 
 ## Preparing for CI Automation
@@ -165,6 +167,7 @@ It is a good practice to have a separate IAM user just for the CI build process.
 We'll be deploying our app to AWS, so we have to configure AWS credentials with CircleCI. Go to your project `hello-world-ci` -> Project Settings -> AWS Permissions, and add your AWS credentials for the `circleci` IAM user we created earlier.
 
 ![Adding AWS credentials](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/circleci-aws-perms.png)
+
 **Figure 3: Adding AWS credentials**
 
 ## End-to-End Automation
@@ -225,27 +228,32 @@ To add our app project to CircleCI, do the following:
 You'll see the system running the build for your project.
 
 ![Build running on CircleCI](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/circleci-building.png)
+
 **Figure 4: Build running on CircleCI**
 
 You can drill down to see the steps on the UI that matches our steps in the config file. While it is executing each step, you can see the activity.
 
 ![Build steps for the project](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/circleci-steps.png)
+
 **Figure 5: Build steps for the project**
 
 You can see the tests running as part of the 'Run tests with code coverage' step.
 
 ![Running tests for the project](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/circleci-tests.png)
+
 **Figure 6: Running tests for the project**
 
 And finally, you see that our app has been deployed under the 'Deploy application' step. 
 
 ![Deploying the project](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/circleci-success-1.png)
 ![Deploying the project](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/circleci-success-2.png)
+
 **Figure 7: Deploying the project**
 
 Last but not least, we can copy the endpoint shown in the output onto a browser and see the app run!
 
 ![Running the app](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/circleci-deployed-app.png)
+
 **Figure 8: Running the app**
 
 Hopefully, the full rundown of the process and its implementation on a CI/CD platform such as CircleCI gives you a better understanding of automating your own applications. 
