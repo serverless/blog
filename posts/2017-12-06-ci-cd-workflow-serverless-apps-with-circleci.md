@@ -216,7 +216,13 @@ jobs:
     
     steps:
       - checkout
-      ...
+      
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - dependencies-cache-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - dependencies-cache
       
       - run:
           name: Install Serverless CLI and dependencies
@@ -231,14 +237,20 @@ jobs:
       - run:
           name: Deploy application 
           command: sls deploy 
-      ...
+      
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependencies-cache-{{ checksum "package.json" }}
 ```
 
 We have a `job` named `build`, and we have a few `steps`. The `checkout` step will check out the files from the attached source repo. We also have a few `run` steps that just execute bash commands.
 
 We'll install the serverless cli and the project dependencies, then run our tests with code coverage enabled, and finally deploy the application.
 
-**Note:** You can review the full [config file](https://github.com/rupakg/hello-world-ci/blob/master/.circleci/config.yml) for our app. And you can review a full CircleCI [sample configuration](https://circleci.com/docs/2.0/sample-config/) file with more options as well.
+**Note**: The `save_cache` and `restore_cache` sections in the above config file, allows for caching the `node_modules` between builds, as long as the `package.json` file has not changed. It significantly reduces build times.
+
+**Note** You can review the full [config file](https://github.com/rupakg/hello-world-ci/blob/master/.circleci/config.yml) for our app. And you can review a full CircleCI [sample configuration](https://circleci.com/docs/2.0/sample-config/) file with more options as well.
 
 ## Implementing the Workflow
 To add our app project to CircleCI, do the following:
