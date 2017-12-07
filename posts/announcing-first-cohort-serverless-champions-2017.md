@@ -30,8 +30,23 @@ And gosh there are tons more goodies but we kind of don't want to spoil it all i
 
 # And the very first cohort of Serverless Champions are! (drumroll)
 
-## Ryan Scott Brown
+## Horike Takahiro
+
+[IMAGE]
+
+Horike started out as an electrical engineer, but stumbled into programming as he was writing a simulation for visualizing electromagnetic waves in college.
+
+He stuck with software, and was one of the first people to start using Lambda when it was released in 2014. Even so, he found it tricky to get things deployed with Lambda then. A couple months later, when he heard about the Serverless Framework at a conference, he went all in.
+
+"I noticed serverless computing had various issues and problems, and I wanted to improve them because I could tell my ideal programming world was finally so, so close."
+
+Horike is a Serverless Framework maintainer, and has authored several open-sourced plug-ins and other resources for the community:
+- [CommandLine Event Args](https://github.com/horike37/serverless-command-line-event-args)
+- [Step Functions](https://github.com/horike37/serverless-step-functions)
+- [Serverless Atom Dashboard](https://github.com/horike37/serverless-dashboard-for-atom)
+
+[Twitter](https://twitter.com/horike37) | [GitHub](https://github.com/horike37)
 
 ## Marcia Villalba
 
-## Horike Takahiro
+## Ryan Scott Brown
