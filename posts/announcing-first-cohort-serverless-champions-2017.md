@@ -51,11 +51,11 @@ Horike is a Serverless Framework maintainer, and has authored several open-sourc
 
 Marcia got into programming at the ripe old age of 7—her favorite game used BASIC to navigate a dog through a maze. She had no idea then that what she was doing was coding, but it certainly stuck, and by her teens she was making websites.
 
-When Lambda was first launched, Marcia was building REST backends. She assumed Lambda was mostly an infrastructure tool that, while cool in concept, wasn't super applicable to the work she was doing. And then AWS launched API Gateway.
+When Lambda was first launched, Marcia was building REST backends. She assumed Lambda was mostly an infrastructure tool that, while cool in concept, wasn't super applicable to the work she was doing. And then AWS launched API Gateway support for Lambda.
 
-It's a long story from there, but (spoiler alert!) it ends with Marcia rewriting her entire team's backend to be serverless. 💥
+It's a long story from there, but (spoiler alert!) it ends with Marcia and her team rewriting thier backend to be serverless. 💥
 
-> "At the beginning the experience was tough. It took me a while to learn how to think in an event-driven way, how to create nano services or very minimal micro-services, but with time it became better and better."
+> "The experience was tough at first. It took me a while to learn how to think in an event-driven way, how to create nano services or very minimal micro-services, but with time it became better and better."
 
 Today, Marcia works on game servers, and uses the Framework to rapidly iterate on prototypes. She is an avid serverless educator who regularly posts blogs and YouTube videos to help serverless beginners navigate the waters.
 
