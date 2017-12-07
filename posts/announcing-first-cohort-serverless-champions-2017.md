@@ -14,7 +14,7 @@ We care a lot about open source. Like, a _lot_. You all in the serverless commun
 
 And some of you? Blow our freaking minds with your unrelenting commitment to the future of computing.
 
-It was on a day not so long ago, as we were sweeping our mind-fragments off the floor for the dozenth time, in awe at your majesty, that we realized what we had to do. "These people deserve some recognition!" we said. Just like that. *These people deserve some recognition.*
+It was on a day not so long ago, as we were sweeping our mind-fragments off the floor for the dozenth time, in awe at your majesty, that we realized what we had to do. "These people deserve an award!" we said. Just like that. *These people deserve an award.*
 
 So we made one. Today, serverless community, we are so, SO proud to announce: The **Serverless Champions** program.
 
