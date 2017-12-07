@@ -72,7 +72,7 @@ We have some [tests](https://github.com/rupakg/hello-world-ci/blob/master/tests/
 We are also separating out the actual testable logic of our function into a class:
 
 ```js
-# /lib/hello-world.js
+// lib/hello-world.js
 
 class HelloWorld {
     sayHello(event) {
@@ -89,7 +89,7 @@ module.exports = HelloWorld;
 The `handler.js` code is refactored to use the above `sayHello` method from the `HelloWorld` class:
 
 ```js
-# handler.js
+// handler.js
 
 module.exports.helloWorld = (event, context, callback) => {
 
@@ -201,7 +201,7 @@ Go to your project `hello-world-ci` -> Project Settings -> AWS Permissions, and 
 Now that we've completed our CircleCI setup, let's work on implementing the CI/CD workflow for our project.
 
 ## Configuration
-We'll configure CircleCI via a config file named `config.yml` and keep it at the root of our project folder. Explanation of how CircleCI works is out of scope for this article, but we'll look at the steps needed to automate our deployments.
+We'll configure CircleCI via a config file named `config.yml` and keep it in the `.circleci` directory. Explanation of how CircleCI works is out of scope for this article, but we'll look at the steps needed to automate our deployments.
 
 > If you want some further reading, CircleCI introduces concepts of [Jobs](https://circleci.com/docs/2.0/sample-config/#jobs-overview), [Steps](https://circleci.com/docs/2.0/sample-config/#steps-overview) and [Workflows](https://circleci.com/docs/2.0/workflows/). 
  
