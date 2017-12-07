@@ -226,7 +226,7 @@ jobs:
 
       - run: 
           name: Run tests with code coverage
-          command: npm test --covarage
+          command: npm test --coverage
        
       - run:
           name: Deploy application 
@@ -294,6 +294,8 @@ In this section, we'll look at some of these concerns and ways the Serverless Fr
 
 ## Multi-region Deployments
 A popular pattern for introducing redundancy and achieving high-availability is to deploy your application into multiple regions. In our use case, we will deploy our application to two AWS regions - `us-east-1` and `us-east-2`.
+
+**Note**: It is more complex to do multi-region deployments when databases are involved, as you need to take care of replicating and syncing data across multiple regions. A DNS service like AWS Route 53 with domain mappings would have to be put in place to maintain high availability.
 
 ### Multiple Deploys
 We can start off with a simple workflow using the [Serverless Framework](http://www.serverless.com/framework). Using the framework, we can execute multiple `sls deploy` commands targeting a particular region.
