@@ -3,7 +3,7 @@ title: "The Serverless Champions Program HAS BEGUN!"
 description: "Do you have what it takes to be a Serverless Champion?"
 date: 2017-12-13
 layout: Post
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/champion_logo_square.png'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/champions/champion_logo_square.png'
 authors:
   - RupakGanguly
 ---
@@ -32,6 +32,8 @@ But we kind of don't want to spoil it all in this blog post. Just go check out o
 
 ## Horike Takahiro
 
+<img src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/champions/horiken02.jpg” alilgn="right">
+
 Horike started out as an electrical engineer, but stumbled into programming in his last year of college as he was writing a simulation for visualizing electromagnetic waves.
 
 He stuck with software, and was one of the first people to start using Lambda when it was released in 2014. Even so, he found it tricky to get things deployed with Lambda then. A couple months later, when he heard about the Serverless Framework at a conference, he went all in.
@@ -47,6 +49,8 @@ Horike is a Serverless Framework maintainer, and has authored several open-sourc
 
 ## Marcia Villalba
 
+<img src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/champions/marcia_villalba.jpg” alilgn="right">
+
 Marcia got into programming at the ripe old age of 7—her favorite game used BASIC to navigate a dog through a maze. She had no idea then that what she was doing was coding, but it certainly stuck, and by her teens she was making websites.
 
 When Lambda was first launched, Marcia was building REST backends. She assumed Lambda was mostly an infrastructure tool that, while cool in concept, wasn't super applicable to the work she was doing. And then AWS launched API Gateway support for Lambda.
@@ -60,6 +64,8 @@ Today, Marcia works on game servers, and uses the Framework to rapidly iterate o
 [Twitter](https://twitter.com/mavi888uy) | [GitHub](https://github.com/mavi888) | [YouTube](https://www.youtube.com/foobar-codes)
 
 ## Ryan Scott Brown
+
+<img src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/champions/ryansb_headshot.jpg” alilgn="right">
 
 Ryan has been building out cloud infrastructures since 2010, and has been working with Lambda since it was in developer preview.
 
