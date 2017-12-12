@@ -62,3 +62,11 @@ Today, Marcia works on game servers, and uses the Framework to rapidly iterate o
 [Twitter](https://twitter.com/mavi888uy) | [GitHub](https://github.com/mavi888) | [YouTube](https://www.youtube.com/foobar-codes)
 
 ## Ryan Scott Brown
+
+Ryan has been building out cloud infrastructures since 2010, and has been working with Lambda since it was in developer preview.
+
+He's a Serverless Framework contributor and user, who loves building in the open as much as possible. These days, Ryan spends his time focusing on automation tooling and Infrastructure-as-Code (IaC) practices.
+
+Early on, he started sharing successes (and failed experiments) on [ServerlessCode.com](https://serverlesscode.com/) to help others and push for a common set of practices. One of those practices is the Serverless Framework: a common language spec for multiple providers to smooth the way from idea to implementation.
+
+[Twitter](https://twitter.com/ryan_sb) | [GitHub](https://github.com/ryansb) | [Website](https://rsb.io/)
