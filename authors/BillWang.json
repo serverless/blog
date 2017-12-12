@@ -1,0 +1,12 @@
+{
+  "name": "Bill Wang",
+  "github": "ozbillwang",
+  "twitter": "",
+  "site": "https://ahead.guru/",
+  "avatar": "http://www.ahead.guru/img/logos/logo.png",
+  "bio": {
+    "short": "Bill Wang is senior DevOps consultant who currently working in Sydney Australia",
+    "long":
+      "Bill Wang is Cloud and DevOps consultant, CI/CD specialist, with great enthusiasm for serverless"
+    }
+}
