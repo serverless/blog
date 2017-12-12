@@ -32,8 +32,6 @@ But we kind of don't want to spoil it all in this blog post. Just go check out o
 
 ## Horike Takahiro
 
-[IMAGE]
-
 Horike started out as an electrical engineer, but stumbled into programming in his last year of college as he was writing a simulation for visualizing electromagnetic waves.
 
 He stuck with software, and was one of the first people to start using Lambda when it was released in 2014. Even so, he found it tricky to get things deployed with Lambda then. A couple months later, when he heard about the Serverless Framework at a conference, he went all in.
@@ -65,7 +63,7 @@ Today, Marcia works on game servers, and uses the Framework to rapidly iterate o
 
 Ryan has been building out cloud infrastructures since 2010, and has been working with Lambda since it was in developer preview.
 
-He's a Serverless Framework contributor and user, who loves building in the open as much as possible. These days, Ryan spends his time focusing on automation tooling and Infrastructure-as-Code (IaC) practices.
+He's a Serverless Framework contributor and user who loves building in the open as much as possible. These days, Ryan spends his time focusing on automation tooling and Infrastructure-as-Code (IaC) practices.
 
 Early on, he started sharing successes (and failed experiments) on [ServerlessCode.com](https://serverlesscode.com/) to help others and push for a common set of practices. One of those practices is the Serverless Framework: a common language spec for multiple providers to smooth the way from idea to implementation.
 
