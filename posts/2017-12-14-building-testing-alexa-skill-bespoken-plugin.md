@@ -223,7 +223,7 @@ Here, you’ll need to enter the Skill Information as shown:
 
 Then click “Next”:
 
-[IMAGE]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/skill-information.png">
 
 Copy the contents of `[speechAssets/IntentSchema.json](https://github.com/bespoken/giftionary/blob/master/speechAssets/IntentSchema.json)` into the Intent Schema:
 
