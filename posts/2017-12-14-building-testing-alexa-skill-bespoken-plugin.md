@@ -37,7 +37,7 @@ Once you’ve cloned the repository, go to the directory you cloned it into and 
 
 That will install our dependencies. Just one more thing - while we are on the terminal - go ahead and run `sls proxy`. That will start the Bespoken Proxy, which we will use in just a bit. You should see output like this if everything is working correctly:
 
-[sls-proxy-configuration.png]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/sls-proxy-configuration.png">
 
 We’re now ready to start development!
 
@@ -195,7 +195,7 @@ The `listen` part means that this response is going to wait on the user to respo
 
 As for the `cardRenderer` call—cards are images and text that can accompany the skill. In our case, the card displays the image that the user is asked to guess about. We set this image on the card, and also provide additional instructions to the user on what to do (i.e., guess what the image is) - here is a screenshot of how the cards look in the Alexa app on the phone:
 
-[alexa-app.png]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/alexa-app.png">
 
 # Testing Locally
 Now that we have a basic working skill, let’s test it out locally! To do this, we’re going to run our proxy via the [Bespoken Serverless plugin](https://github.com/bespoken/serverless-plugin-bespoken).
@@ -207,15 +207,15 @@ Before we go further, we need to set up our Alexa skill in the developer console
 
 In the Developer console home, click on “Alexa”:
 
-[skill-console.png]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/skill-console.png">
 
 Then “Get Started” under “Alexa Skills Kit”:
 
-[skill-gettingstarted.png]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/skill-gettingstarted.png">
 
 And finally click “Add New Skill” in the top right:
 
-[skill-list.png]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/skill-list.png">
 
 Here, you’ll need to enter the Skill Information as shown:
 - Name: Giftionary
@@ -227,14 +227,13 @@ Then click “Next”:
 
 Copy the contents of `[speechAssets/IntentSchema.json](https://github.com/bespoken/giftionary/blob/master/speechAssets/IntentSchema.json)` into the Intent Schema:
 
-[skill-interactionmodel-intentschema.png]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/skill-interactionmodel-intentschema.png">
 
 Under “Custom Slot Types” -> “Enter Type”, put “Term”.
 
 Then copy the contents of `[speechAssets/TermsSlot.txt](https://github.com/bespoken/giftionary/blob/master/speechAssets/TermsSlot.txt)` to the “Enter Values” section, and then click “Add”.
 
-[skill-interactionmodel-slot.png]
-
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/skill-interactionmodel-slot.png">
 
 Copy the contents of `[speechAssets/SampleUtterances.txt](https://github.com/bespoken/giftionary/blob/master/speechAssets/SampleUtterances.txt)` to the Sample Utterances section.
 
@@ -242,23 +241,23 @@ And with that, you’ve set up the Interaction Model!
 
 Now click “Next”; it will probably take a moment to process:
 
-[skill-interactionmodel-utterances.png]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/skill-interactionmodel-utterances.png">
 
 Select “HTTPS” for Service Endpoint Type. We are going to use Lambda for deployment, but for local testing we’re using the Bespoken endpoint.
 
 Remember the terminal window we opened earlier, where we ran `sls proxy`? Copy the URL that is printed out there and enter it in the “Default” field:
 
-[sls-proxy-configuration-highlighted.png]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/sls-proxy-configuration-highlighted.png">
 
 Select “No” for “Provide Geographical Endpoints”, and then click “Next”:
 
-[skill-configuration-proxy.png]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/skill-configuration-proxy.png">
 
 Under “Certificate for DEFAULT Endpoint”, select “My development endpoint is a sub-domain of a domain that has a wildcard certificate from a certificate authority”.
 
 Then click “Next”:
 
-[skill-ssl.png]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/skill-ssl.png">
 
 Now we can test!
 
@@ -266,11 +265,11 @@ Now we can test!
 
 We’re going to start with a test that uses the Service Simulator. Type “play” in the “Enter Utterance” field and then click “Ask Giftionary”:
 
-[skill-test.png]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/skill-test.png">
 
 Now take a look at your console where `sls proxy` is running:
 
-[sls-proxy-response.png]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/sls-proxy-response.png">
 
 The same request and response from the “Service Simulator” is now in our terminal window. Neat, huh?
 
@@ -285,11 +284,11 @@ Once that completes, we’ll need to update our skill configuration. Remember, i
 
 To update it, get your Lambda ARN - go to the command-line and enter `sls info -v`. You should see something like this:
 
-[sls-info.png]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/sls-info.png">
 
 Copy the ARN and enter it on the configuration screen, then just click “Save”, like so:
-[skill-configuration-lambda.png]
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/skill-configuration-lambda.png">
 
 Now our skill is all set to be used by others!
 
