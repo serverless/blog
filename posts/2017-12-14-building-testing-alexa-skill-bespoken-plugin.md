@@ -21,17 +21,17 @@ In this walkthrough, we will:
 - Talk about advanced steps and further exploration
 
 # Setting up the environment
-For starters, you’ll need a few things:
+For starters, you’ll need a few things:  
 An Amazon developer account ([sign up here](https://developer.amazon.com))  
 An AWS account with access to Lambda and DynamoDB ([learn how to create your AWS account with IAM roles here](https://www.youtube.com/watch?v=yaLMc7WMmHQ&index=1&list=PLIIjEI2fYC-A5wxo521u6OqAwbsFFQFbW))  
 The Serverless Framework (`npm install serverless -g`)  
 
 Go ahead and get set up with those items if you have not already.
 
-Now, to follow along at home, start by cloning this repo with Alexa sample code:
+Now, to follow along at home, start by cloning this repo with Alexa sample code:  
 `git clone https://github.com/bespoken/giftionary`
 
-This repository contains the example we are going to walk through, already configured with the correct packages and libraries. This includes the [Alexa Node.js SDK from Amazon](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) that we’ll leverage for building skills. 
+This repository contains the example we are going to walk through, already configured with the correct packages and libraries. This includes the [Alexa Node.js SDK from Amazon](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) that we’ll leverage for building a skill. 
 
 Once you’ve cloned the repository, go to the directory you cloned it into and run `npm install` to setup the project.
 
@@ -44,7 +44,7 @@ We’re now ready to start development!
 # Important concepts
 Before we jump in though - there are three very important concepts we want to review. We will cover each in detail as we go along:
 - Session - a conversation with a skill
-- Intents and the Interaction Model - the user interface for your skill
+- Intents and the Interaction Model - the user interface for the skill
 - State Machine - the programming pattern the Node.js SDK is built on
 
 If you feel like you understand sessions and interaction models pretty well, feel free to jump straight down to [State Machine](-LINK-), which is where we begin creating our first skill response.
@@ -62,23 +62,21 @@ As long as our skill is in session, it has the chance to share information with 
 ## Intents and the interaction model
 Another very important aspect to understand with Alexa skills are intents and the interaction model.
 
-Think of the interaction model as the UI for the skill—only in this case, it’s not a visual interface, but a vocal one.
-
-Our interaction model describes:
-What the user can say (utterances)
-What intentions these utterances map to (intents)
+Think of the interaction model as the UI for the skill—only in this case, it’s not a visual interface, but a vocal one. Our interaction model describes:  
+What the user can say (utterances)  
+What intentions these utterances map to (intents)  
 
 **Intents** are essential to the interaction model and Alexa, and to voice- and AI-based programming in general.
 
 For example, a user could say any one of the following: “Help me,” “Help,” or “What is this?” Alexa will interpret all of these as being the **Help** intent. This directly affects which pieces of your code will run.
 
-Here’s a sample of our interaction model - from the [speechAssets/IntentSchema.json](https://github.com/bespoken/giftionary/blob/master/speechAssets/IntentSchema.json):
+Here’s a sample of our interaction model - from the [`speechAssets/IntentSchema.json`](https://github.com/bespoken/giftionary/blob/master/speechAssets/IntentSchema.json#L51):
 ```
 {
  "intent": "Play"
 }
 ```
-And from [speechAssets/SampleUtterances.txt](https://github.com/bespoken/giftionary/blob/master/speechAssets/SampleUtterances.txt):
+And from [`speechAssets/SampleUtterances.txt`](https://github.com/bespoken/giftionary/blob/master/speechAssets/SampleUtterances.txt#L3):
 ```
 Play get started
 Play play
@@ -91,8 +89,8 @@ Easy, right?
 
 Below is another intent, this time containing a **slot**.
 
-Slots are like variables. An intent with a slot—rather than just matching what the user says to one of the sample utterances—will treat the slot as a wildcard. It will pass the value for that wildcard to our code:
-IntentSchema.json
+Slots are like variables. An intent with a slot—rather than just matching what the user says to one of the sample utterances—will treat the slot as a wildcard. It will pass the value for that wildcard to our code:  
+From [`IntentSchema.json`](https://github.com/bespoken/giftionary/blob/master/speechAssets/IntentSchema.json#L54):
 ```
 {
  "intent": "Guess",
@@ -101,7 +99,7 @@ IntentSchema.json
  ]
 }
 ```
-SampleUtterances.txt
+From [`SampleUtterances.txt`](https://github.com/bespoken/giftionary/blob/master/speechAssets/SampleUtterances.txt#L1):
 ```
 Guess is it {Term}
 Guess {Term}
@@ -116,7 +114,7 @@ Besides being enumerable, slots can also have types, which serve to narrow the v
 ## The State Machine
 The Alexa Node.js SDK encourages the use of a state machine for building skills. State machines are a natural fit for skills (and other voice-based apps)—the basic idea is that your app has states and transitions. Any action a user takes is handled based on the state they are currently in, and part of that handling may include transitioning to another state.
 
-This pattern pushes us to think about the discreet states the user will go through in interacting with our app, and how, for each of these scenarios, we will handle what a user might say. This mindset gets us thinking about providing proper, contextualized responses to the user, an important part of voice/conversational interfaces.
+This pattern pushes us to think about the discreet states the user will go through in interacting with our app, and how, for each of these scenarios, we will handle what a user might say. This mindset gets us thinking about providing appropriate, contextualized responses to the user, an important part of voice/conversational interfaces.
  
 To see this in action in our skill, let’s take a look at our state-handlers:
 
@@ -225,17 +223,17 @@ Then click “Next”:
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/skill-information.png">
 
-Copy the contents of `[speechAssets/IntentSchema.json](https://github.com/bespoken/giftionary/blob/master/speechAssets/IntentSchema.json)` into the Intent Schema:
+Copy the contents of [`speechAssets/IntentSchema.json`](https://github.com/bespoken/giftionary/blob/master/speechAssets/IntentSchema.json) into the Intent Schema:
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/skill-interactionmodel-intentschema.png">
 
 Under “Custom Slot Types” -> “Enter Type”, put “Term”.
 
-Then copy the contents of `[speechAssets/TermsSlot.txt](https://github.com/bespoken/giftionary/blob/master/speechAssets/TermsSlot.txt)` to the “Enter Values” section, and then click “Add”.
+Then copy the contents of [`speechAssets/TermsSlot.txt`](https://github.com/bespoken/giftionary/blob/master/speechAssets/TermsSlot.txt) to the “Enter Values” section, and then click “Add”.
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/skill-interactionmodel-slot.png">
 
-Copy the contents of `[speechAssets/SampleUtterances.txt](https://github.com/bespoken/giftionary/blob/master/speechAssets/SampleUtterances.txt)` to the Sample Utterances section.
+Copy the contents of [`speechAssets/SampleUtterances.txt`](https://github.com/bespoken/giftionary/blob/master/speechAssets/SampleUtterances.txt) to the Sample Utterances section.
 
 And with that, you’ve set up the Interaction Model!
 
