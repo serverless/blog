@@ -3,7 +3,7 @@ title: "Building & testing an Alexa Skill with the Serverless Bespoken plugin"
 description: "Building an Alexa skill is easier than you think! And it's even easier with the Serverless Framework and Bespoken plugin."
 date: 2017-12-14
 layout: Post
-thumbnail: 'TODO'
+thumbnail: 'https://bespoken.io/wp-content/uploads/2017/07/Bespoken-Alpaca-RGB-social.png'
 authors:
   - JohnKelvie
 ---
