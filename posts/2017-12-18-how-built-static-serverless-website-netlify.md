@@ -38,6 +38,7 @@ There are two ways (as of this posting) to statically host a site:
 We chose the latter. [Netlify](https://www.netlify.com/) has been getting tons of press and a lot of adoption, and it’s pretty clear why when you realize how powerful it is.
 
 We use it for automating CI/CD & https setup, static site redirects (via `_redirects` file), proxied url handling, deployment notifications, and lots of other stuff we won’t go into right now because all great lists must come to an end somewhere.
+
 ## Deploying a new site with Netlify
 For starters, you’ll need a static site generator. To help you choose one, here is a great list of [open-source static site generators](https://www.staticgen.com/).
 
