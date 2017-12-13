@@ -26,7 +26,7 @@ They are thought leaders, teachers, and builders.
 
 Four times a year, we will select three new Serverless Champions to join the ranks. We are going to put your smiling face on our website and make a Pretty Big Deal about it. We're gonna give you limited-edition swag & access to an invitation-only Slack channel & gosh tons more goodies!
 
-But we kind of don't want to spoil it all in this blog post. Just go check out our [Serverless Champions page]() already.
+But we kind of don't want to spoil it all in this blog post. Just go check out our [Serverless Champions page](https://serverless.com/community/champions/) already.
 
 # And the very first cohort of Serverless Champions are! (drumroll)
 
@@ -74,3 +74,9 @@ He's a Serverless Framework contributor and user who loves building in the open 
 Early on, he started sharing successes (and failed experiments) on [ServerlessCode.com](https://serverlesscode.com/) to help others and push for a common set of practices. One of those practices is the Serverless Framework: a common language spec for multiple providers to smooth the way from idea to implementation.
 
 [Twitter](https://twitter.com/ryan_sb) | [GitHub](https://github.com/ryansb) | [Website](https://rsb.io/)
+
+# More info
+
+Huge congrats to our very first cohort of Serverless Champions!
+
+But they will certainly not be our last. Check out our [Serverless Champions](https://serverless.com/community/champions/) page for more info on the program. 
