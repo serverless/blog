@@ -32,7 +32,7 @@ But we kind of don't want to spoil it all in this blog post. Just go check out o
 
 ## Horike Takahiro
 
-<img src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/champions/horiken02.jpg” width="200px" align="right">
+<img align="left" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/champions/horiken02.jpg" width="210px" >
 
 Horike started out as an electrical engineer, but stumbled into programming in his last year of college as he was writing a simulation for visualizing electromagnetic waves.
 
@@ -49,7 +49,7 @@ Horike is a Serverless Framework maintainer, and has authored several open-sourc
 
 ## Marcia Villalba
 
-<img src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/champions/marcia_villalba.jpg” align="right">
+<img align="left" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/champions/marcia_villalba.jpg" width="210px" >
 
 Marcia got into programming at the ripe old age of 7—her favorite game used BASIC to navigate a dog through a maze. She had no idea then that what she was doing was coding, but it certainly stuck, and by her teens she was making websites.
 
@@ -65,7 +65,7 @@ Today, Marcia works on game servers, and uses the Framework to rapidly iterate o
 
 ## Ryan Scott Brown
 
-<img src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/champions/ryansb_headshot.jpg” align="right">
+<img align="left" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/champions/ryansb_headshot.jpg" width="210px" >
 
 Ryan has been building out cloud infrastructures since 2010, and has been working with Lambda since it was in developer preview.
 
