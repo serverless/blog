@@ -32,7 +32,7 @@ But we kind of don't want to spoil it all in this blog post. Just go check out o
 
 ## Horike Takahiro
 
-<img src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/champions/horiken02.jpg” align="right">
+<img src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/champions/horiken02.jpg” width="200px" align="right">
 
 Horike started out as an electrical engineer, but stumbled into programming in his last year of college as he was writing a simulation for visualizing electromagnetic waves.
 
