@@ -13,8 +13,6 @@ Building an Alexa skill really isn’t so hard! And it’s even easier if you us
 
 To show you how, we’re going to take you through the steps of building your very own Alexa skill, by making a simple guessing game. The game will pull some images from Giphy, then ask users to guess which search term generated those images.
 
-In addition to learning about how voice works, you’ll learn how to take advantage of displays (available on some Amazon devices, such as the Echo Show).
-
 In this walkthrough, we will:
 - Set up an initial project for an Alexa skill
 - Get started using the Alexa Node.js SDK
@@ -305,9 +303,9 @@ Now our skill is all set to be used by others!
 
 ## Further reading
 From here, there are lots of areas to explore further:
-[Set up “Skill Beta Testing”](https://developer.amazon.com/docs/custom-skills/skills-beta-testing-for-alexa-skills.html)
-[Publish the Skill so the world can use it](https://developer.amazon.com/docs/custom-skills/submit-an-alexa-skill-for-certification.html)
-Integrate [longform audio](https://bespoken.io/blog/super-simple-audioplayer/) or [video](https://developer.amazon.com/docs/custom-skills/videoapp-interface-reference.html) into your skill
-[Integrate display capabilities for devices such as the Echo Show](https://developer.amazon.com/docs/custom-skills/build-skills-for-echo-show.html)
+- [Set up “Skill Beta Testing”](https://developer.amazon.com/docs/custom-skills/skills-beta-testing-for-alexa-skills.html)
+- [Publish the Skill so the world can use it](https://developer.amazon.com/docs/custom-skills/submit-an-alexa-skill-for-certification.html)
+- Integrate [longform audio](https://bespoken.io/blog/super-simple-audioplayer/) or [video](https://developer.amazon.com/docs/custom-skills/videoapp-interface-reference.html) into your skill
+- [Integrate display capabilities for devices such as the Echo Show](https://developer.amazon.com/docs/custom-skills/build-skills-for-echo-show.html)
 
 We encourage you to look into all of these. Happy skill development!
