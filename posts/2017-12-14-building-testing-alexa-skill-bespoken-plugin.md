@@ -195,7 +195,7 @@ The `listen` part means that this response is going to wait on the user to respo
 
 As for the `cardRenderer` call—cards are images and text that can accompany the skill. In our case, the card displays the image that the user is asked to guess about. We set this image on the card, and also provide additional instructions to the user on what to do (i.e., guess what the image is) - here is a screenshot of how the cards look in the Alexa app on the phone:
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/alexa-app.png">
+<img width="450" ailgn="middle" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/alexa-app.png">
 
 # Testing Locally
 Now that we have a basic working skill, let’s test it out locally! To do this, we’re going to run our proxy via the [Bespoken Serverless plugin](https://github.com/bespoken/serverless-plugin-bespoken).
