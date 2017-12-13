@@ -8,7 +8,6 @@ authors:
   - DavidWells
 ---
 
-How to build a static Serverless site with Netlify
 The Serverless.com site is (quite obviously, we hope) a serverless site.
 
 The benefits to a serverless website should be pretty well-known in this crowd: cheap to run, scalable out of the box, hands-off administration. But our site isn’t just serverless—it’s a statically hosted serverless site.
