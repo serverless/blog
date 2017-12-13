@@ -34,7 +34,7 @@ There are two ways (as of this posting) to statically host a site:
 1. Build a lot of custom stuff yourself
 2. Use Netlify
 
-We chose the latter. [Netlify](https://www.netlify.com/) has been getting tons of press and a lot of adoption, and it’s pretty clear why when you realize how powerful it is.
+We chose the latter. [Netlify](https://www.netlify.com/) has been getting tons of press and adoption, and it’s pretty clear why when you realize how powerful it is.
 
 We use it for automating CI/CD & https setup, static site redirects (via `_redirects` file), proxied url handling, deployment notifications, and lots of other stuff we won’t go into right now because all great lists must come to an end somewhere.
 
@@ -47,23 +47,23 @@ Once you’ve done that, here’s how easy it is to deploy a new site with Netli
 
 First off, connect it to your GitHub repo:
 
-[IMAGE]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/netlify/netlify-gitprovider.png">
 
 In the Netlify console, click “Create a new site”:
 
-[IMAGE]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/netlify/netlify-newsite.png">
 
 Then “OAuth with Git”:
 
-[IMAGE]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/netlify/netlify-oauth.png">
 
 Search for the repository you want to deploy:
 
-[IMAGE]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/netlify/netlify-choosesite.png">
 
 Build it with `npm run build`:
 
-[IMAGE]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/netlify/netlify-sitedashboard.png">
 
 AND! (jazz hands) Your site is deployed!
 
@@ -72,7 +72,7 @@ As you submit new pull requests and update your site, Netlify can automatically 
 
 On the [Serverless.com](https://www.serverless.com) site, when we create a new branch, Netlify pings us with a GitHub comment on that branch to generate a build preview URL for us:
 
-[IMAGE]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/netlify/deploy+preview+comment.png">
 
 We use these build previews a lot to share in-progress designs and content across teams.
 
@@ -80,6 +80,8 @@ Once it’s good to go, we merge to master and Netlify triggers a new build.
 
 ## Setting up deployment notifications
 We have a dedicated Slack channel for Netlify build notifications.
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/netlify/netlify+slack+channel.png">
 
 This way, we can quickly see when builds succeed or fail, and also access all our latest deploy previews in one spot:
 
