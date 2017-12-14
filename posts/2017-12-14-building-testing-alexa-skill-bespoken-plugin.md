@@ -1,5 +1,5 @@
 ---
-title: "Building & testing an Alexa Skill with the Serverless Bespoken plugin"
+title: "Building & testing an Alexa skill with the Serverless Bespoken plugin"
 description: "Building an Alexa skill is easier than you think! And it's even easier with the Serverless Framework and Bespoken plugin."
 date: 2017-12-14
 layout: Post
@@ -309,4 +309,6 @@ From here, there are lots of areas to explore further:
 - Integrate [longform audio](https://bespoken.io/blog/super-simple-audioplayer/) or [video](https://developer.amazon.com/docs/custom-skills/videoapp-interface-reference.html) into your skill
 - [Integrate display capabilities for devices such as the Echo Show](https://developer.amazon.com/docs/custom-skills/build-skills-for-echo-show.html)
 
-We encourage you to look into all of these. Happy skill development!
+I'm [John](https://twitter.com/jpkbst) from [Bespoken](https://bespoken.io), so feel free to reach out if you have any questions.
+
+Happy skill development!
