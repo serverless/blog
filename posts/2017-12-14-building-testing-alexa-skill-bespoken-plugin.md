@@ -35,19 +35,21 @@ This repository contains the example we are going to walk through, already confi
 
 Once you’ve cloned the repository, go to the directory you cloned it into and run `npm install` to setup the project.
 
-That will install our dependencies. Just one more thing - while we are on the terminal - go ahead and run `sls proxy`. That will start the Bespoken Proxy, which we will use in just a bit. You should see output like this if everything is working correctly:
+That will install our dependencies. Just one more thing—while we are in the terminal, go ahead and run `sls proxy`. That will start the Bespoken Proxy, which we will use in just a bit.
+
+You should see output like this if everything is working correctly:
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/sls-proxy-configuration.png">
 
 We’re now ready to start development!
 
 # Important concepts
-Before we jump in though - there are three very important concepts we want to review. We will cover each in detail as we go along:
+Before we jump in though, there are three very important concepts we want to review. We will cover each in detail as we go along:
 - Session - a conversation with a skill
 - Intents and the Interaction Model - the user interface for the skill
 - State Machine - the programming pattern the Node.js SDK is built on
 
-If you feel like you understand sessions and interaction models pretty well, feel free to jump straight down to [State Machine](-LINK-), which is where we begin creating our first skill response.
+If you feel like you understand sessions and interaction models pretty well, feel free to jump straight down to [State Machine](#the-state-machine), which is where we begin creating our first skill response.
 
 ## The session
 A session is a conversation between a user and our skill. It starts when the user invokes the skill by saying something like “Alexa, open giftionary”.
@@ -112,7 +114,9 @@ Besides being enumerable, slots can also have types, which serve to narrow the v
 **Note:** You can [read more about types here](https://developer.amazon.com/docs/custom-skills/slot-type-reference.html).
 
 ## The State Machine
-The Alexa Node.js SDK encourages the use of a state machine for building skills. State machines are a natural fit for skills (and other voice-based apps)—the basic idea is that your app has states and transitions. Any action a user takes is handled based on the state they are currently in, and part of that handling may include transitioning to another state.
+The Alexa Node.js SDK encourages the use of a state machine for building skills.
+
+State machines are a natural fit for skills (and other voice-based apps). The basic idea is that your app has states and transitions. Any action a user takes is handled based on the state they are currently in, and part of that handling may include transitioning to another state.
 
 This pattern pushes us to think about the discreet states the user will go through in interacting with our app, and how, for each of these scenarios, we will handle what a user might say. This mindset gets us thinking about providing appropriate, contextualized responses to the user, an important part of voice/conversational interfaces.
  
@@ -280,11 +284,11 @@ This step is easy; just open up your terminal and type `sls deploy`.
 
 Once that completes, we’ll need to update our skill configuration. Remember, it’s still pointing at our testing URL. We want to point it to our new Lambda instead.
 
-To update it, get your Lambda ARN - go to the command-line and enter `sls info -v`. You should see something like this:
+To update it, get your Lambda ARN—go to the command-line and enter `sls info -v`. You should see something like this:
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/sls-info.png">
 
-Copy the ARN and enter it on the configuration screen, then just click “Save”, like so:
+Copy the ARN and enter it on the configuration screen, then click “Save”, like so:
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/skill-configuration-lambda.png">
 
