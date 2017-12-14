@@ -22,9 +22,9 @@ In this walkthrough, we will:
 
 # Setting up the environment
 For starters, you’ll need a few things:  
-An Amazon developer account ([sign up here](https://developer.amazon.com))  
-An AWS account with access to Lambda and DynamoDB ([learn how to create your AWS account with IAM roles here](https://www.youtube.com/watch?v=yaLMc7WMmHQ&index=1&list=PLIIjEI2fYC-A5wxo521u6OqAwbsFFQFbW))  
-The Serverless Framework (`npm install serverless -g`)  
+- An Amazon developer account ([sign up here](https://developer.amazon.com))  
+- An AWS account with access to Lambda and DynamoDB ([learn how to create your AWS account with IAM roles here](https://www.youtube.com/watch?v=yaLMc7WMmHQ&index=1&list=PLIIjEI2fYC-A5wxo521u6OqAwbsFFQFbW))  
+- The Serverless Framework (`npm install serverless -g`)  
 
 Go ahead and get set up with those items if you have not already.
 
