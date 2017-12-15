@@ -30,7 +30,7 @@ But we kind of don't want to spoil it all in this blog post. Just go check out o
 
 # And the very first cohort of Serverless Champions are! (drumroll)
 
-## Horike Takahiro
+## Takahiro Horike
 
 <img align="left" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/champions/horiken02.jpg" width="210px" >
 
