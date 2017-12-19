@@ -1,6 +1,6 @@
 ---
-title: Why did we build another AWS Lambda monitoring product — Thundra?
-description: Learn why we built yet another AWS Lambda monitoring product, Thundra
+title: The state of serverless observability—why we built Thundra
+description: Here's where serverless observability is today. Learn why we decided to build yet another AWS Lambda monitoring solution, Thundra.
 date: 2017-12-20
 layout: Post
 thumbnail: https://avatars.githubusercontent.com/u/3143425
@@ -71,8 +71,7 @@ This integration puts us on the road to full observability, by combining distrib
 
 ![xray-integration](https://s3-us-west-2.amazonaws.com/why-thundra-serverless-blog/xray-integration.png)
 
-
-Asynchronous publishing
+## Asynchronous publishing
 Thundra publishes all data through AWS CloudWatch in an asynchronous way, as described as a best practice in [AWS’s white paper](https://d1.awsstatic.com/whitepapers/serverless-architectures-with-aws-lambda.pdf).
 
 Sending data this way allows us to eliminate the concerns mentioned above, and come up with a solution which provides zero overhead:
@@ -80,29 +79,26 @@ Our functions run as fast as they can; there is no additional latency caused by 
 Monitoring does not cost us additional money because of request latency.
 Our functions send monitoring data in a reliable way, making sure we don’t miss any critical information along the way.
 
-In our approach, trace, metric and log data are written in a structured format as JSON to CloudWatch asynchronously via 
-`com.amazonaws.services.lambda.runtime.LambdaLogger`. We also have another Lambda function; let's call it **monitor lambda**,
-which subscribes to log groups of the Lambda functions to be monitored with a subscription filter to be only triggered by monitor data. 
-Then the *monitor lambda* forwards the received monitor data to the ElasticSearch (directly or indirectly through Kinesis or Firehose stream) to be queried & analyzed later. 
-
-Here’s how all that works at a high level:
+Here’s how all that workks at a high level:
 
 ![monitoring-architecture](https://s3-us-west-2.amazonaws.com/why-thundra-serverless-blog/monitoring-arch.png)
 
+Trace, metric and log data are written in a structured format as JSON, and sent to CloudWatch asynchronously via 
+`com.amazonaws.services.lambda.runtime.LambdaLogger`. We also have another Lambda function—let's call it **monitor lambda**—which subscribes to log groups of monitored Lambda functions with a subscription filter that is triggered by monitor data. 
+The *monitor lambda* then forwards the data to ElasticSearch, either directly or indirectly through Kinesis or Firehose stream, where it can be queried and analyzed later. 
 
 ## Correlating traces, metrics, and logs
 To have full system observability, you not only need all the trace, metric, and log data—you need them to be correlated.
 
 You should be able to answer these key questions:
-Which metrics were calculated in which trace? For a specific request, what were the cache metrics, DB access metrics, etc?
-Which logs were printed in which trace? For a specific request, what were the application logs that let you analyze activity during the request?
-If I find a trace that that was much slower than other, what were the metrics and logs flowing from that trace? I need to investigate from the general (slow request) to the specific (a cache miss that resulted in a slow database call).
-If I find some metrics that are abnormal for a set of requests, how can I find their source traces to see the related metrics and logs?
+- Which metrics were calculated in which trace? For a specific request, what were the cache metrics, DB access metrics, etc?
+- Which logs were printed in which trace? For a specific request, what were the application logs that let you analyze activity during the request?
+- If I find a trace that that was much slower than other, what were the metrics and logs flowing from that trace? I need to investigate from the general (slow request) to the specific (a cache miss that resulted in a slow database call).
+- If I find some metrics that are abnormal for a set of requests, how can I find their source traces to see the related metrics and logs?
 
 We modeled our metric and log data to be able to reference the current trace. Check out the [OpenTracing specification and data model documentation](https://github.com/opentracing/specification/blob/master/specification.md) for the Span and Trace concepts if you’d like a bit more info on how we structured things.
 
 ![trace-and-log](https://s3-us-west-2.amazonaws.com/why-thundra-serverless-blog/trace-and-log.png)
-
 
 ## Ability to instrument without messing up your code
 To use existing monitoring tools on AWS Lambda, you need to instrument the code by inserting custom spans (contexts).
@@ -139,7 +135,6 @@ Thundra’s instrumentation agent has the following supports:
 Here’s an example. We can instrument all public methods of a class named `UserService` and trace it by annotation as follows:
 
 ![trace-by-annotation](https://s3-us-west-2.amazonaws.com/why-thundra-serverless-blog/trace-by-annotation.png)
-
 
 ## Detecting long run and taking consequent action
 You can’t instrument everything. And really, you shouldn’t. 
