@@ -129,8 +129,8 @@ Thundra’s instrumentation agent has the following supports:
 - Trace method arguments, return values and thrown errors
 - Measure execution time for each line
 - Track local variable’s states for debugging
-- Execute actions before, after a method call or when an error is thrown
-- Take action when a method call exceed specified limits
+- Execute actions before/after a method call, or when an error is thrown
+- Take action when a method call exceeds specified limits
 
 Here’s an example. We can instrument all public methods of a class named `UserService` and trace it by annotation as follows:
 
