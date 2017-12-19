@@ -52,7 +52,7 @@ Since Lambda functions should be stateless and the container itself can be destr
 # Enter: Thundra
 We ended up implementing an in-house monitoring product, [Thundra](https://www.thundra.io), to bring deeper observability to our Lambdas in deployment.
 
-AWS X-ray already did a great job with end-to-end observability, so we piggybacked on X-ray for visibility. We added a way to enrich X-Ray with trace IDs, so you can view your traces there directly.
+AWS X-ray already did a great job with end-to-end observability, so we piggybacked on X-ray for visibility. We added a way to enrich X-Ray with trace IDs, so we could view our traces there directly.
 
 We also incorporated several additional metrics & logging features into Thundra, to pick up where X-Ray left off.
 
