@@ -162,7 +162,7 @@ Here is a typical example of how our CPU profiler points us that regex related m
 ```
 
 # Interested in Thundra?
-Cool! We’re launching it very soon as a private beta. If you \want to give it a try, [sign up here](http://www.thundra.io/) for early access.
+Cool! We’re launching it very soon as a private beta. If you want to give it a try, [sign up here](http://www.thundra.io/) for early access.
 
 ## Further reading:
 See [how we monitor AWS Lambda at OpsGenie](https://engineering.opsgenie.com/how-we-monitor-aws-lambda-at-opsgenie-with-thundra-ba239fc17863), and check out [our engineering blog](https://engineering.opsgenie.com/thundra/home) to keep up with Thundra’s progress.
