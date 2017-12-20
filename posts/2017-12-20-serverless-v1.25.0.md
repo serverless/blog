@@ -2,12 +2,12 @@
 title: Serverless v1.25 - S3 Transfer Acceleration, API Gateway endpoint type configuration, variable system improvements, enhancements, bug fixes and more added in the Serverless Framework v1.25 release.
 date: 2017-12-20
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework_v1.25.jpg
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework_v1.25_1.jpg
 authors:
   - PhilippMuns
 ---
 
-<img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework_v1.25.jpg" width="210px" >
+<img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework_v1.25_1.jpg" width="210px" >
 
 Here at Serverless, we've been working hard to deliver some holiday goodies. 
 
