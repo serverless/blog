@@ -1,6 +1,6 @@
 ---
 title: How To Manage Your Alexa Skills With Serverless
-description: How to fully manage Alexa Skills and Lambda functions with Serverless Framework + Serverless Alexa Skills Plugin
+description: How to totally manage Alexa Skills and Lambda functions with Serverless Framework + Serverless Alexa Skills Plugin
 date: 2017-12-19
 layout: Post
 thumbnail: https://raw.githubusercontent.com/marcy-terui/serverless-alexa-skills/master/images/serverless-alexa-skills.png
@@ -52,7 +52,7 @@ Go to `Web Settings` of the new security profile.
 
 Remember your `Client ID` and` Client Secret` of the new security profile. And you need `Vendor ID` too. Keep login to Developer Console and check it at [here](https://developer.amazon.com/mycid.html).
 
-This work is only once. If you use the same account, you can continue to use the same profile.
+This work is only once. If you use the same account, you can continue to use the same credentials.
 
 **The troublesome browser working is over!! From now on, we will work with `sls` command!!**
 
@@ -82,7 +82,7 @@ $ sls alexa auth
 
 This command opens the login page of Amazon.com in your  browser. And you will be redirected to `localhost:3000` after the authentication. If the authentication is successful, you can see the message  **"Thank you for using Serverless Alexa Skills Plugin!!"**.
 
-**Warning:** The security token expires in **1 hour**. If authentication error occurs now, please re-execute the command. I plan to implement automatic token refreshing in the future.
+**Warning:** The security token expires in **1 hour**. If authentication error occurs, please re-execute the command. I plan to implement automatic token refreshing in the future.
 
 # Create your skill
 Let's make your skill. Execute the following command.
@@ -211,8 +211,7 @@ interactionModel:
 ```
 
 # And That's It!
-
-There are a few more steps to publish your skills. I plan to integrate the simulation with Alexa Skills Kit in the future. However, I think that it is great to be able to integrate manifests and models. Because, we update them many times. And we should manage them with the source code of Lambda Functions.
+There are a few more steps to publish your skills. I plan to integrate the simulation with Alexa Skills Kit in the future. However, I think that it is great to be able to integrate manifests and models. Because, we update them many times. And we'd better manage them with the source code of Lambda Functions.
 
 # Summary
 We can totally manage our Lambda Functions and Alexa Skills with Serverless Framework + Serverless Alexa Skills Plugin.
