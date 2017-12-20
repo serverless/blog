@@ -1,6 +1,6 @@
 ---
 title: How To Manage Your Alexa Skills With Serverless
-description: How to totally manage Alexa Skills and Lambda functions with Serverless Framework + Serverless Alexa Skills Plugin
+description: How to completely manage Alexa Skills and Lambda functions with Serverless Framework + Serverless Alexa Skills Plugin
 date: 2017-12-19
 layout: Post
 thumbnail: https://raw.githubusercontent.com/marcy-terui/serverless-alexa-skills/master/images/serverless-alexa-skills.png
@@ -12,14 +12,12 @@ authors:
 
 Serverless Framework is the best solution to develop AWS Lambda Function for Alexa Skills.
 
-We can control our Lambda Functions completely using Serverless Framework. But we can't control our Alexa Skills by Serverless Framework.
+We can control our Lambda Functions completely using Serverless Framework. But we can't control Alexa Skills by Serverless Framework since both Alexa Skills Kit webapp and [ask-cli](https://www.npmjs.com/package/ask-cli) don't have the simplicity like that of  Serverless Framework. It had been so stressful !
 
-Both the webapp of Alexa Skills Kit and [ask-cli](https://www.npmjs.com/package/ask-cli) doesn't have the simplicity like Serverless Framework. I'm so stressed!
-
-However, Serverless Framework has a great plugin system and we can solve it with the power of the community!
+However, Serverless Framework has a great plugin system and we can solve it with the power of the community !
 
 # Overview
-[Serverless Alexa Skills Plugin](https://github.com/marcy-terui/serverless-alexa-skills) is a plugin to integrate Alexa Skills into Serverless Framework. We can control the manifest and interaction model of Alexa Skills using `sls` command and `serverless.yml`!
+[Serverless Alexa Skills Plugin](https://github.com/marcy-terui/serverless-alexa-skills) is a plugin to integrate Alexa Skills into Serverless Framework. We can now control the manifest and interaction model of Alexa Skills using `sls` command and `serverless.yml`!
 
 # How to use
 
@@ -32,13 +30,13 @@ $ sls plugin install -n serverless-alexa-skills
 ```
 
 ## Get your credentials
-You should get the credentials for `Login with Amazon`. `Login with Amazon` is a OAuth2.0 single sign-on system using your Amazon.com account.
+You need to get the credentials for `Login with Amazon`. `Login with Amazon` is a OAuth2.0 single sign-on system using your Amazon.com account.
 
-First, Login to [Amazon Developer Console](https://developer.amazon.com/). And go to ` Login with Amazon` from `APPS & SERVICES` and create a new security profile at `Create a New Security Profile`.
+First, Login to [Amazon Developer Console](https://developer.amazon.com/). Then, go to `Login with Amazon` from `APPS & SERVICES` and create a new security profile at `Create a New Security Profile`.
 
 ![](https://raw.githubusercontent.com/marcy-terui/serverless-alexa-skills/master/images/developer_console.png)
 
-Please enter each item freely.
+For following columns, you can enter whatever you like.
 
 ![](https://raw.githubusercontent.com/marcy-terui/serverless-alexa-skills/master/images/create_security_profile.png)
 
@@ -46,18 +44,18 @@ Go to `Web Settings` of the new security profile.
 
 ![](https://raw.githubusercontent.com/marcy-terui/serverless-alexa-skills/master/images/security_profile_menu.png)
 
-`Allowed Origins` can be empty. Enter `http://localhost:3000` in` Allowed Return URLs`. This port number can be changed with `serverless.yml`.
+`Allowed Origins` can be empty. Enter `http://localhost:3000` in` Allowed Return URLs`. This port number can be changed with `serverless.yml`, so if you want to change this, please do so.
 
 ![](https://raw.githubusercontent.com/marcy-terui/serverless-alexa-skills/master/images/web_setting.png)
 
-Remember your `Client ID` and` Client Secret` of the new security profile. And you need `Vendor ID` too. Keep login to Developer Console and check it at [here](https://developer.amazon.com/mycid.html).
+Remember your `Client ID` and `Client Secret` of the new security profile, as well as `Vendor ID`. You can check your `Vendor ID` at [here](https://developer.amazon.com/mycid.html).
 
-This work is only once. If you use the same account, you can continue to use the same credentials.
+You only need to do this process once. and you can continue to use the same credentials as long as you use the same account.
 
-**The troublesome browser working is over!! From now on, we will work with `sls` command!!**
+**The  troublesome browser clilcking work is over! Let's move on to `sls` command !!**
 
 ## Set your credentials to the framework
-Write `Client ID`,` Client Secret` and `Vendor ID` to` serverless.yml`. It is good to use environment variables as below. If you change the port number with `Allowed Return URLs` of` Login with Amazon`, add `localServerPort` and write the port number.
+Write `Client ID`,` Client Secret` and `Vendor ID` to `serverless.yml`. It is good to use environment variables as it shown below. If you change the port number with `Allowed Return URLs` of `Login with Amazon`, add `localServerPort` and write the port number.
 
 ```yaml
 provider:
@@ -74,15 +72,15 @@ custom:
     ClientSecret: ${env:AMAZON_CLIENT_SECRET}
 ```
 
-And execute the following command.
+Then, execute the following command.
 
 ```
 $ sls alexa auth
 ```
 
-This command opens the login page of Amazon.com in your  browser. And you will be redirected to `localhost:3000` after the authentication. If the authentication is successful, you can see the message  **"Thank you for using Serverless Alexa Skills Plugin!!"**.
+This command opens the login page of Amazon.com in your  browser. And you will be redirected to `localhost:3000` after the authentication. If the authentication is successful, you can see the message **"Thank you for using Serverless Alexa Skills Plugin!!"**.
 
-**Warning:** The security token expires in **1 hour**. If authentication error occurs, please re-execute the command. I plan to implement automatic token refreshing in the future.
+**WARNIG:** The security token expires in **1 hour**. Therefore, if authentication error occurs, please re-execute the command. I'm planning to implement automatic token refreshing in the future.
 
 # Create your skill
 Let's make your skill. Execute the following command.
@@ -147,8 +145,7 @@ $ sls alexa update
 You can see the format of the manifest at [here](https://developer.amazon.com/docs/smapi/skill-manifest.html#sample-skill-manifests).
 
 ## Building the interaction model
-
-The skill requires a interaction model. The skill does not have any model at first. So, you need to write a model definition to `serverless.yml` like this.
+The skill does not have any interaction model at first so you need to write a interaction model definition to serverless.yml. Like this !
 
 ```yaml
 custom:
@@ -188,7 +185,7 @@ Execute the following command to build the model after updating your `serverless
 $ sls alexa build
 ```
 
-And you can check the model with the following command.
+Then, you can check the model with the following command.
 
 ```
 $ sls alexa models
@@ -210,10 +207,10 @@ interactionModel:
           type: AMAZON.Food
 ```
 
-# And That's It!
-There are a few more steps to publish your skills. I plan to integrate the simulation with Alexa Skills Kit in the future. However, I think that it is great to be able to integrate manifests and models. Because, we update them many times. And we'd better manage them with the source code of Lambda Functions.
-
+# That's It !
+There are few more steps to publish your skills. I'm planning to integrate the simulation with Alexa Skills Kit in the future. However, I think that it is great to be able to integrate manifests and models since we update those many times.  and we'd better manage them with the source code of Lambda Functions.
+.
 # Summary
-We can totally manage our Lambda Functions and Alexa Skills with Serverless Framework + Serverless Alexa Skills Plugin.
+Now, we can completely manage our Lambda Functions and Alexa Skills with **Serverless Framework + Serverless Alexa Skills Plugin**.
 
 If you have any comments or feedback, please create a [issue](https://github.com/marcy-terui/serverless-alexa-skills/issues) or send a pull request. I always welcome them!!
