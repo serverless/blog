@@ -10,7 +10,7 @@ authors:
 
 For a very long time, monitoring tools were simple. They were mainly used as external pings. 
 
-But monitoring tools have significantly evolved in recent years, They provide things like time series traces, metrics, and logs. This kind of monitoring is called “whitebox monitoring”—a subcategory of monitoring, based on information derived from the internals of systems.
+But monitoring tools have significantly evolved in recent years. They provide things like time series traces, metrics, and logs. This kind of monitoring is called “whitebox monitoring”—a subcategory of monitoring, based on information derived from the internals of systems.
 
 It’s what people have come to expect, and frankly a turn that is much-needed as companies continue to embrace microservice architectures.
 
@@ -79,7 +79,7 @@ Our functions run as fast as they can; there is no additional latency caused by 
 Monitoring does not cost us additional money because of request latency.
 Our functions send monitoring data in a reliable way, making sure we don’t miss any critical information along the way.
 
-Here’s how all that workks at a high level:
+Here’s how all that works at a high level:
 
 ![monitoring-architecture](https://s3-us-west-2.amazonaws.com/why-thundra-serverless-blog/monitoring-arch.png)
 
@@ -93,7 +93,7 @@ To have full system observability, you not only need all the trace, metric, and 
 You should be able to answer these key questions:
 - Which metrics were calculated in which trace? For a specific request, what were the cache metrics, DB access metrics, etc?
 - Which logs were printed in which trace? For a specific request, what were the application logs that let you analyze activity during the request?
-- If I find a trace that that was much slower than other, what were the metrics and logs flowing from that trace? I need to investigate from the general (slow request) to the specific (a cache miss that resulted in a slow database call).
+- If I find a trace that was much slower than other, what were the metrics and logs flowing from that trace? I need to investigate from the general (slow request) to the specific (a cache miss that resulted in a slow database call).
 - If I find some metrics that are abnormal for a set of requests, how can I find their source traces to see the related metrics and logs?
 
 We modeled our metric and log data to be able to reference the current trace. Check out the [OpenTracing specification and data model documentation](https://github.com/opentracing/specification/blob/master/specification.md) for the Span and Trace concepts if you’d like a bit more info on how we structured things.
