@@ -28,7 +28,7 @@ As explained in [Cindy Sridharan’s blog post](https://medium.com/@copyconstruc
 In general, there are three pillars of observability:
 **Traces** provide end-to-end visibility into requests throughout the entire chain. Traces can be used for identifying which parts of the system have performance bottlenecks, detecting which components of the system lead to errors, and debugging the whole request flow for domain-level bugs.
 **Metrics** provide measured or calculated information (mostly numbers) about a particular process or activity in the system over intervals of time—in other words, a time series. A metric can be application/environment specific (CPU metrics, memory metrics), module/layer specific (cache metrics, DynamoDB metrics) or domain specific (user metrics).
-Logs are an immutable and verbose representation of discrete events that happened over time. Logs are used for debugging, auditing, and analyzing system behavior.
+**Logs** are an immutable and verbose representation of discrete events that happened over time. Logs are used for debugging, auditing, and analyzing system behavior.
 
 ## The current state of serverless observability
 At OpsGenie, we’d been implementing new applications as microservices and splitting our existing monolithic architecture into microservices ([more on that here](https://read.acloud.guru/opsgenie-journey-to-serverless-architecture-785540261ec3)). We were using AWS Lambda as FaaS for deploying and running our microservices.
