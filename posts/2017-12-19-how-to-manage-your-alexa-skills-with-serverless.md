@@ -32,7 +32,7 @@ $ sls plugin install -n serverless-alexa-skills
 ## Get your credentials
 You need to get the credentials for `Login with Amazon`. `Login with Amazon` is a OAuth2.0 single sign-on system using your Amazon.com account.
 
-First, Login to [Amazon Developer Console](https://developer.amazon.com/). Then, go to `Login with Amazon` from `APPS & SERVICES` and create a new security profile at `Create a New Security Profile`.
+First, login to [Amazon Developer Console](https://developer.amazon.com/). Then, go to `Login with Amazon` from `APPS & SERVICES` and create a new security profile at `Create a New Security Profile`.
 
 ![](https://raw.githubusercontent.com/marcy-terui/serverless-alexa-skills/master/images/developer_console.png)
 
@@ -121,18 +121,20 @@ Copy `[Skill ID]` and `[Skill Manifest]` and paste it to `serverless.yml` as bel
 ```yaml
 custom:
   alexa:
-    vendorId: $ {env: AMAZON_VENDOR_ID}
-    clientId: $ {env: AMAZON_CLIENT_ID}
-    clientSecret: $ {env: AMAZON_CLIENT_SECRET}
+    vendorId: $ {env:AMAZON_VENDOR_ID}
+    clientId: $ {env:AMAZON_CLIENT_ID}
+    clientSecret: $ {env:AMAZON_CLIENT_SECRET}
     skills:
-      - id: $ {env: ALEXA_SKILL_ID}
+      - id: $ {env:ALEXA_SKILL_ID}
         skillManifest:
           publishingInformation:
             locales:
-              ja-JP:
+              en-US:
                 name: sample
-          apis:
-            custom: {}
+          apis:
+            custom:
+              endpoint:
+                uri: arn:aws:lambda:region:account-id:function:function-name
           manifestVersion: '1.0'
 ```
 
@@ -145,7 +147,7 @@ $ sls alexa update
 You can see the format of the manifest at [here](https://developer.amazon.com/docs/smapi/skill-manifest.html#sample-skill-manifests).
 
 ## Building the interaction model
-The skill does not have any interaction model at first so you need to write a interaction model definition to serverless.yml. Like this !
+The skill does not have any interaction model at first so you need to write a interaction model definition to `serverless.yml`. Like this !
 
 ```yaml
 custom:
@@ -164,7 +166,7 @@ custom:
             custom: {}
           manifestVersion: '1.0'
         models:
-          ja-JP:
+          en-US:
             interactionModel:
               languageModel:
                 invocationName: PPAP
@@ -175,6 +177,8 @@ custom:
                       type: AMAZON.Food
                     - name: Second
                       type: AMAZON.Food
+                    samples:
+                     - 'I have {First} and {Second}'
 ```
 
 You can see the format of the interaction model at [here](https://developer.amazon.com/docs/custom-skills/custom-interaction-model-reference.html).
@@ -205,6 +209,8 @@ interactionModel:
           type: AMAZON.Food
         - name: Second
           type: AMAZON.Food
+        samples:
+         - I have {First} and {Second}
 ```
 
 # That's It !
