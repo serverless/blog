@@ -1,7 +1,7 @@
 ---
 title: Build a Github webhook handler with Serverless & AWS Lambda
 description: Deploy a Serverless service that posts notifications of Github stars in a Slack channel
-date: 2017-11-16
+date: 2018-01-03
 layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png'
 authors:
@@ -42,7 +42,7 @@ Search for the "Incoming Webhook" application, and create a new one for your cha
 
 <img width="997" alt="Create Incoming Webhook app" src="https://user-images.githubusercontent.com/6509926/32444016-bfd1c8a6-c2c6-11e7-89a0-3a6efe4c0a02.png">
 
-After you create it, it will display a Slack webhook URL. This is the URL where you will post data to show in the channel.
+After you create it, it will display a Slack webhook URL. This is the URL where you will post data to show in the channel:
 
 <img width="1010" alt="Webhook URL" src="https://user-images.githubusercontent.com/6509926/32444071-ebec9a92-c2c6-11e7-9e26-bd5a9b4f18a0.png">
 
