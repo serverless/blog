@@ -42,7 +42,7 @@ Search for the "Incoming Webhook" application, and create a new one for your cha
 
 <img width="997" alt="Create Incoming Webhook app" src="https://user-images.githubusercontent.com/6509926/32444016-bfd1c8a6-c2c6-11e7-89a0-3a6efe4c0a02.png">
 
-After you create it, it will display a Slack webhook URL. This is the URL where you will post data to show in the channel.
+After you create it, it will display a Slack webhook URL. This is the URL where you will post data to show in the channel:
 
 <img width="1010" alt="Webhook URL" src="https://user-images.githubusercontent.com/6509926/32444071-ebec9a92-c2c6-11e7-9e26-bd5a9b4f18a0.png">
 
