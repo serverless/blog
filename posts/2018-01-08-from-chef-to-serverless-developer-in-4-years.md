@@ -67,6 +67,7 @@ I watched and rewatched everything the YouTube Channel FooBar had to offer; I co
 
 In the end, I came up with the simple little architecture below:
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/hotdesk.png">
 
 Using Serverless, I was able to create a full flow for users to claim desks and see changes in real time: staff in/out of the office and desks available. All while keeping full control of our data, having a scalable model which practically takes care of itself, and *without* having to worry about our infrastructure and just focus on making something great for people to use.
 
