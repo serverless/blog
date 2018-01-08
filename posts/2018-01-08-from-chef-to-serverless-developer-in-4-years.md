@@ -1,5 +1,12 @@
-My Serverless Path
-
+---
+title: From chef to Severless developer in 4 years
+description: I started out my career as a chef. Now I'm a serverless developer.
+date: 2018-01-08
+layout: Post
+thumbnail: TODO
+authors:
+  - KieranMcCarthy
+---
 I started out my software development career in a funny way—as a chef.
 
 See, I fell in love with cooking and baking in high school. I was fascinated with the way you could experiment by mixing different ingredients to try and make something delicious...sometimes frankenstein-ish. I got a job in my home town in Ireland, my first time actually in a kitchen and supplying food to people, along with washing an insane amount of dishes.
