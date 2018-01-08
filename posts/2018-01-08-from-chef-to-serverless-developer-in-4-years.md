@@ -9,7 +9,7 @@ authors:
 ---
 I started out my software development career in a funny way—as a chef.
 
-See, I fell in love with cooking and baking in high school. I was fascinated with the way you could experiment by mixing different ingredients to try and make something delicious...sometimes frankenstein-ish. I got a job in my home town in Ireland, my first time actually in a kitchen and supplying food to people, along with washing an insane amount of dishes.
+See, I fell in love with cooking and baking in high school. I was fascinated with the way I could experiment by mixing different ingredients to try and make something delicious...sometimes frankenstein-ish. I got a job in my home town in Ireland, my first time actually in a kitchen and supplying food to people, along with washing an insane amount of dishes.
 
 I got really into baking when one of the chefs there showed me how to make Banoffee Pie. It was so simple and tasty that it actually blew my mind. I started baking over the summer to make some extra money while living at home, making cupcakes, cheesecakes and other little desserts.
 
