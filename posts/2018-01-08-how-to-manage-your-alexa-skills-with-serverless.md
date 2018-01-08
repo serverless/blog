@@ -10,7 +10,7 @@ authors:
 
 # Introduction
 
-Marcy here, creator of the Serverless Alexa plug-in.
+Masashi here, creator of the Serverless Alexa plug-in.
 
 Serverless and IoT go hand in hand, and it's easy to use the [Serverless Framework](https://serverless.com/framework/) to develop AWS Lambda functions for Alexa Skills.
 
@@ -42,7 +42,7 @@ For following columns, you can enter whatever you like:
 
 ![](https://raw.githubusercontent.com/marcy-terui/serverless-alexa-skills/master/images/create_security_profile.png)
 
-Go to `Web Settings` of the new security profile:
+Go to the `Web Settings` of the new security profile:
 
 ![](https://raw.githubusercontent.com/marcy-terui/serverless-alexa-skills/master/images/security_profile_menu.png)
 
