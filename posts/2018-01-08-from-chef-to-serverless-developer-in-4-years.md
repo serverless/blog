@@ -79,4 +79,4 @@ I’ve been learning Serverless for the last 5 months, and I’m now planning to
 
 It was a very busy 4 years! From cooking for people, baking cakes for events and growing an addiction to coffee, I never felt I’d be creating things like serverless text adventure chatbots and mobile apps that teach you about our solar system.
 
-Maybe someday I will finish off my recipe maker app :P
+Maybe someday I will finish off my recipe maker app 😝
