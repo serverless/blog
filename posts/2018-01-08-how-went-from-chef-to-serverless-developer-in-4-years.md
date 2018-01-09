@@ -1,5 +1,5 @@
 ---
-title: How I went from chef to Severless developer in 4 years
+title: How I went from chef to Serverless developer in 4 years
 description: I started out my career as a chef. Now I'm a serverless developer.
 date: 2018-01-09
 layout: Post
