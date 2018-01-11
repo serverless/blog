@@ -3,12 +3,10 @@ title: How to run long-running processes with Fargate and Lambda in a Serverless
 description: We'll show you how to process a video file that extracts a thumbnail in Amazon ECS using Fargate and Lambda
 date: 2018-01-11
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/fargate-post/aws-fargate.png
+thumbnail: https://user-images.githubusercontent.com/8188/34815640-0b7ece74-f680-11e7-9f69-ceaa93c044c7.png
 authors:
   - RupakGanguly
 ---
-
-[Icon: Fargate + Lambda + Serverless Framework = Bliss]
 
 AWS dropped so many serverless announcements at re:Invent, the community is still scrambling to make sense of them all. This post is all about AWS Fargate.
 
@@ -19,6 +17,8 @@ This is where Fargate comes in.
 **TL;DR** A Docker container does the processing -> The container extracts the thumbnail and uploads the image to an S3 bucket -> The container is managed by AWS Fargate. All functionality is triggered from AWS Lambda functions and contained within a serverless application written with the [Serverless Framework](https://serverless.com/framework/).
 
 Excited? Me too! Read on. 💥
+
+![Fargate + Lambda + Serverless Framework = Bliss](https://user-images.githubusercontent.com/8188/34815683-3c9ca24c-f680-11e7-9f23-d45bc78f3e37.png)
 
 # Some background & overview
 
@@ -56,8 +56,7 @@ Let's dig in!
 
 The diagram below and the steps that follow describe the overall workflow of the the application we're building.
 
-[diagram of overall workflow]
-
+![Architecture Diagram for processing video to generate thumbnail in AWS ECS using Fargate](https://user-images.githubusercontent.com/8188/34815433-4b277d74-f67f-11e7-83a0-9ac65d630eab.png)
 
 1. Upload video to S3
 2. S3 triggers a Lambda function when the video is uploaded
