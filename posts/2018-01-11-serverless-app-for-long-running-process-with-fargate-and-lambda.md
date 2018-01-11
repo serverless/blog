@@ -10,15 +10,15 @@ authors:
 
 [Icon: Fargate + Lambda + Serverless Framework = Bliss]
 
-**TL;DR** In this article, I will show you how to create an end-to-end serverless application to extract thumbnails from video files. Since processing video files is a long-running process, we will use a Docker container to do the processing. The container will extract the thumbnail and upload the image to an S3 bucket. The container will be managed by AWS Fargate. All of the functionallity will be triggered from AWS Lambda functions and contained within a serverless application written with the [Serverless Framework](https://serverless.com/framework/).
+**TL;DR** In this article, I will show you how to create an end-to-end serverless application to extract thumbnails from video files. Since processing video files is a long-running process, we will use a Docker container to do the processing. The container will extract the thumbnail and upload the image to an S3 bucket. The container will be managed by AWS Fargate. All of the functionality will be triggered from AWS Lambda functions and contained within a serverless application written with the [Serverless Framework](https://serverless.com/framework/).
 
-Still excited, read on... 
+Still excited? Read on... 
 
 ## Overview
 
-With the [execution time limits](https://docs.aws.amazon.com/lambda/latest/dg/limits.html) of the AWS Lambda platform, there are a lot of use cases involving long-running processes that are hard to implement. But, serverless computing offers zero-admin of infrastructure, pay-per-execution and auto-scaling capabilities that are hard to ignore. 
+With the [execution time limits](https://docs.aws.amazon.com/lambda/latest/dg/limits.html) of the AWS Lambda platform, there are a lot of use cases involving long-running processes that are hard to implement. That said, serverless computing offers zero-admin of infrastructure, pay-per-execution and auto-scaling capabilities that are hard to ignore. 
 
-AWS recently announced [AWS Fargate](https://aws.amazon.com/fargate/) to bridge that gap.
+AWS recently announced [AWS Fargate](https://aws.amazon.com/fargate/) to bridge this gap.
 
 > AWS Fargate is a technology that allows you to use containers as a fundamental compute primitive without having to manage the underlying compute instances.
 
@@ -30,7 +30,7 @@ With Fargate, all you have to do is package your application in containers, spec
 
 In this article, we will look at a serverless application built using Fargate and Lambda. 
 
-> **Takeaway**: Most importantly, I have built the application in such a way that it is generic enough to be used as a refeerence template for any long-running process use case that need to be executed as part of a serverless application.
+> **Takeaway**: Most importantly, I have built the application in such a way that it is generic enough to be used as a reference template for any long-running process use-cases that need to be executed as part of a serverless application.
  
 Let's dig in...
 
