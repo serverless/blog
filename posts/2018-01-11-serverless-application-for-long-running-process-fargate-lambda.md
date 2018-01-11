@@ -1,5 +1,5 @@
 ---
-title: How to run long-running processes with Fargate and Lambda in a Serverless app
+title: How to use AWS Fargate and Lambda for long-running processes in a Serverless app
 description: We'll show you how to process a video file that extracts a thumbnail in Amazon ECS using Fargate and Lambda
 date: 2018-01-11
 layout: Post
