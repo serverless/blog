@@ -5,7 +5,7 @@ date: 2018-01-11
 layout: Post
 thumbnail: 
 authors:
-  - Rupak Ganguly
+  - RupakGanguly
 ---
 
 [Icon: Fargate + Lambda + Serverless Framework = Bliss]
@@ -267,12 +267,12 @@ When we created our task definition, AWS created a role `ecsTaskExecutionRole` f
 Let's create a new role. Go to the AWS IAM Console and switch to the 'Roles' tab, as shown below:
 
 ![ECS Task Execution Role](https://user-images.githubusercontent.com/8188/34742757-45c45508-f555-11e7-8cf1-1dcf88ec7e09.png)
-*Figure ??*: ECS Task Execution Role
+*Figure 15*: ECS Task Execution Role
 
 Click on the `ecsTaskExecutionRole` role. On the resulting page, click on the 'Add inline policy' link, as shown below:
 
 ![Add inline policy](https://user-images.githubusercontent.com/8188/34742884-ca9d7bba-f555-11e7-91e3-4116c9e80ba5.png)
-*Figure ??*: Add inline policy
+*Figure 16*: Add inline policy
 
 On the 'Create Policy' screen, click on the JSON tab. I have already created JSON fragment that encapsulates the policy we need. Paste the following JSON in the text area:
 
@@ -306,7 +306,7 @@ And, then click the 'Review policy' button, and give the new role a name `Upload
 You can see the resulting screen below:
 
 ![Attach new role](https://user-images.githubusercontent.com/8188/34743400-9467f4ce-f557-11e7-9f1f-063554ed29a1.png)
-*Figure ??*: Attach new role
+*Figure 17*: Attach new role
 
 With all the pre-requisite setup completed, we can now initiate running the task we created. 
 
@@ -315,12 +315,12 @@ With all the pre-requisite setup completed, we can now initiate running the task
 Now, that we have a task set up, let's run it. We will start by running the task from the AWS Console. Check the box next to the task, click on the 'Actions' dropdown menu, and select the 'Run Task' item.
 
 ![Initiate Run Task](https://user-images.githubusercontent.com/8188/34734206-fb7f4b04-f538-11e7-8744-657b5b574477.png)
-*Figure 15*: Initiate Run Task
+*Figure 18*: Initiate Run Task
 
 In the following screen, we need to specify some settings that are required by the task to run:
 
 ![Task Run Settings](https://user-images.githubusercontent.com/8188/34734570-2f716be4-f53a-11e7-8d54-989a1eef8c08.png)
-*Figure 16*: Task Run settings
+*Figure 19*: Task Run settings
 
 Here are a couple of things that is going on:
 
@@ -339,7 +339,7 @@ Note that a 'Task Execution Role' `currentecsTaskExecutionRole` has been automat
 The 'Container Overrides' section, gives us an opportunity to override any settings for the container we created. It should be populated with the settings that we added while creating the task definition. If you choose to change any of these settings, you can do so now in this section.
 
 ![Container Overrides](https://user-images.githubusercontent.com/8188/34739181-7bc6f45a-f549-11e7-9807-aa4d5b708a2a.png)
-*Figure 17*: Container Overrides
+*Figure 20*: Container Overrides
 
 After you are satisfied with your changes, click the 'Run Task' button.
 
@@ -348,17 +348,17 @@ After you are satisfied with your changes, click the 'Run Task' button.
 After the task is run, you can see an instance of the task being created on the resulting page as shown below:
 
 ![Task Created](https://user-images.githubusercontent.com/8188/34741859-19589662-f552-11e7-983c-5a9d9752d6f4.png)
-*Figure 18*: Task Created
+*Figure 21*: Task Created
 
 Let's click on the task under the column 'Task'. We can see the details of the task in the following screen:
 
 ![Running Task Details](https://user-images.githubusercontent.com/8188/34742073-f0140cae-f552-11e7-85bc-dc3ec34ed6c0.png)
-*Figure 19*: Running Task Details
+*Figure 22*: Running Task Details
 
 Once the 'Last status' field changes to 'STOPPED', you can swithc to the 'Logs' tab to see the logs of the execution output.
 
 ![Log Output](https://user-images.githubusercontent.com/8188/34742331-cade8c88-f553-11e7-9cec-82c980169c0d.png)
-*Figure 20*: Log output
+*Figure 23*: Log output
 
 As you can see in the output, the container we created, generated a thumbnail from the video file it was passed, and uploaded it to the S3 bucket/folder we specified.
 
