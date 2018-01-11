@@ -16,7 +16,7 @@ In this article, I will show you how to create an end-to-end serverless applicat
 
 This is where Fargate comes in.
 
-**TL;DR** A Docker container does the processing -> The container extracts the thumbnail and uploads the image to an S3 bucket -> The container is managed by AWS Fargate. All functionallity is triggered from AWS Lambda functions and contained within a serverless application written with the [Serverless Framework](https://serverless.com/framework/).
+**TL;DR** A Docker container does the processing -> The container extracts the thumbnail and uploads the image to an S3 bucket -> The container is managed by AWS Fargate. All functionality is triggered from AWS Lambda functions and contained within a serverless application written with the [Serverless Framework](https://serverless.com/framework/).
 
 Excited? Me too! Read on. 💥
 
@@ -406,7 +406,7 @@ Here is the workflow:
 
 Let's start by creating a new serverless app using the Serverless Framework's boilerplate template `aws-nodejs`. We will name the app `ffmpeg-video-thumb`.
 
-To follow along, please downlaod or clone the code for the app [ffmpeg-video-thumb](), and open it in an editor.
+To follow along, please download or clone the code for the app [ffmpeg-video-thumb](https://github.com/rupakg/ffmpeg-video-thumb), and open it in an editor.
 
 ## Configuration
 
