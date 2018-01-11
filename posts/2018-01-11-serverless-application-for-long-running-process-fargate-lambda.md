@@ -1,24 +1,30 @@
 ---
 title: How to run a long-running process with Fargate and Lambda in a Serverless app
-description: How to process a video file to extract a thumbnail in Amazon ECS using Fargate and Lambda in a Serverless app
+description: We'll show you how to process a video file that extracts a thumbnail in Amazon ECS using Fargate and Lambda
 date: 2018-01-11
 layout: Post
-thumbnail: 
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/fargate-post/aws-fargate.png
 authors:
   - RupakGanguly
 ---
 
 [Icon: Fargate + Lambda + Serverless Framework = Bliss]
 
-**TL;DR** In this article, I will show you how to create an end-to-end serverless application to extract thumbnails from video files. Since processing video files is a long-running process, we will use a Docker container to do the processing. The container will extract the thumbnail and upload the image to an S3 bucket. The container will be managed by AWS Fargate. All of the functionallity will be triggered from AWS Lambda functions and contained within a serverless application written with the [Serverless Framework](https://serverless.com/framework/).
+AWS dropped so many serverless announcements at re:Invent, the community is still scrambling to make sense of them all. This post is all about AWS Fargate.
 
-Still excited, read on... 
+In this article, I will show you how to create an end-to-end serverless application that extracts thumbnails from video files. But, oh no, processing video files is a long-running process! Whatever will we do?
 
-## Overview
+This is where Fargate comes in.
 
-With the [execution time limits](https://docs.aws.amazon.com/lambda/latest/dg/limits.html) of the AWS Lambda platform, there are a lot of use cases involving long-running processes that are hard to implement. But, serverless computing offers zero-admin of infrastructure, pay-per-execution and auto-scaling capabilities that are hard to ignore. 
+**TL;DR** A Docker container does the processing -> The container extracts the thumbnail and uploads the image to an S3 bucket -> The container is managed by AWS Fargate. All functionallity is triggered from AWS Lambda functions and contained within a serverless application written with the [Serverless Framework](https://serverless.com/framework/).
 
-AWS recently announced [AWS Fargate](https://aws.amazon.com/fargate/) to bridge that gap.
+Excited? Me too! Read on. 💥
+
+## Some background & overview
+
+With the [execution time limits](https://docs.aws.amazon.com/lambda/latest/dg/limits.html) of the AWS Lambda platform, there are a lot of use cases involving long-running processes that are hard to implement.
+
+On the flip side, serverless computing offers benefits (like zero-administration, pay-per-execution, and auto-scaling capabilities) that are hard to ignore. AWS recently announced [AWS Fargate](https://aws.amazon.com/fargate/) to bridge that gap.
 
 > AWS Fargate is a technology that allows you to use containers as a fundamental compute primitive without having to manage the underlying compute instances.
 
@@ -30,11 +36,11 @@ With Fargate, all you have to do is package your application in containers, spec
 
 In this article, we will look at a serverless application built using Fargate and Lambda. 
 
-> **Takeaway**: Most importantly, I have built the application in such a way that it is generic enough to be used as a refeerence template for any long-running process use case that need to be executed as part of a serverless application.
+**Most importantly:** I have built the application so it's generic enough to be used as a reference template for *any* long-running processes that need to be executed as part of a serverless application. 😎
  
-Let's dig in...
+Let's dig in!
 
-**What will be covered:**
+**What we'll cover:**
 
 * Building a container image to extract thumbnails
 * Setting up ECS using Fargate
