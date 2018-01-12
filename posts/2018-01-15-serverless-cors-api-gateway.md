@@ -1,6 +1,6 @@
 ---
-title: Serverless, CORS, and API Gateway: An explainer
-description: Get the basics on Cross-Origin Resource Sharing (CORS) and how to avoid problems with your Serverless web APIs on Lambda.
+title: "Serverless, CORS, and API Gateway: An explainer"
+description: "Get the basics on Cross-Origin Resource Sharing (CORS) and how to avoid problems with your Serverless web APIs on Lambda."
 date: 2018-01-15
 layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png'
