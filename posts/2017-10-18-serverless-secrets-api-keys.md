@@ -122,8 +122,8 @@ We added [integration with Parameter Store](https://github.com/serverless/server
 Let's apply this to our previous example. Use the [AWS CLI](https://aws.amazon.com/cli/) to store two new SSM parameters—one for the Serverless Superman bot and one for the Big Data Batman bot:
 
 ```bash
-aws ssm put-parameter --name supermanToken --value mySupermanToken
-aws ssm put-parameter --name batmanToken --value myBatmanToken
+aws ssm put-parameter --name supermanToken --type String --value mySupermanToken
+aws ssm put-parameter --name batmanToken --type String --value myBatmanToken
 ```
 
 The `name` is how you identify the key you want, and the `value` is the configuration value that you want to store.
