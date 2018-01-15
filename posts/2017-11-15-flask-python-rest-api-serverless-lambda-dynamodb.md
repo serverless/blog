@@ -75,7 +75,7 @@ custom:
     app: app.app
     packRequirements: false
   pythonRequirements:
-    dockerizePip: true
+    dockerizePip: non-linux
 
 provider:
   name: aws
@@ -90,6 +90,8 @@ functions:
       - http: ANY /
       - http: 'ANY {proxy+}'
 ```
+
+_Note: a previous version of this post set `dockerizePip: true` instead of `dockerizePip: non-linux`. You'll need `serverless-python-requirements` v3.0.5 or higher for this option._
 
 This is a pretty basic configuration. We've created one function, `app`. The handler is `handler` function from the `wsgi` module. Note that this module will be added to our deployment package by the `serverless-wsgi` plugin. We configure our application's entry point in the `custom` block under the `wsgi` section. We declare that our app's entrypoint is `app.app`, which means the `app` object in the `app.py` module.
 
@@ -167,7 +169,7 @@ custom:
     app: app.app
     packRequirements: false
   pythonRequirements:
-    dockerizePip: true
+    dockerizePip: non-linux
 
 provider:
   name: aws
@@ -420,7 +422,7 @@ custom:
     app: app.app
     packRequirements: false
   pythonRequirements:
-    dockerizePip: true
+    dockerizePip: non-linux
   dynamodb:
     start:
       migrate: true
@@ -513,7 +515,7 @@ This local setup can really speed up your workflow while still allowing you to e
 
 If you already have an existing Flask application, it's very easy to convert to a Serverless-friendly application. Do the following steps:
 
-1. Install the `serverless-wsgi` package -- `npm install --save serverless-wsgi`
+1. Install the `serverless-wsgi` and `serverless-python-requirements` packages -- `npm install --save serverless-wsgi serverless-python-requirements`
 
 2. Configure your `serverless.yml`:
 
@@ -533,7 +535,7 @@ If you already have an existing Flask application, it's very easy to convert to 
 	    app: app.app
 	    packRequirements: false
 	  pythonRequirements:
-	    dockerizePip: true
+	    dockerizePip: non-linux
 
 	provider:
 	  name: aws
