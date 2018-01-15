@@ -218,7 +218,7 @@ $ aws ssm put-parameter \
 
 After a few minutes, you should get a notification in your Slack channel:
 
-<img width="583" alt="Slack parameter change alert" src="https://user-images.githubusercontent.com/6509926/34678536-4807aa80-f448-11e7-8ab9-9adf9ad2f794.png">
+![SSM Create Slack alert](https://user-images.githubusercontent.com/6509926/34956556-41b964dc-f9ef-11e7-9015-adc119ca8c25.png)
 
 💥 Awesome!
 
