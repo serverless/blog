@@ -157,8 +157,10 @@ plugins:
 
 custom:
   pythonRequirements:
-    dockerizePip: true
+    dockerizePip: non-linux
 ```
+
+_Note: a previous version of this post set `dockerizePip: true` instead of `dockerizePip: non-linux`. You'll need `serverless-python-requirements` v3.0.5 or higher for this option._
 
 The `plugins` section registers the plugin with the Framework. In the `custom` section, we tell the plugin to use Docker when installing packages with pip. It will use a Docker container that's similar to the Lambda environment so the compiled extensions will be compatible. You will need Docker installed for this to work.
 
