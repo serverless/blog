@@ -1,5 +1,5 @@
 ---
-title: "Serverless, CORS, and API Gateway: An explainer"
+title: "Your CORS and API Gateway survival guide"
 description: "Get the basics on Cross-Origin Resource Sharing (CORS) and how to avoid problems with your Serverless web APIs on Lambda."
 date: 2018-01-16
 layout: Post
@@ -342,4 +342,6 @@ This will ensure that the proper response headers are returned from your custom 
 
 # Conclusion
 
-CORS can be a pain, 
+CORS can be a pain, but there are a few straightforward steps you can take to make it much easier to deal with.
+
+You know what that means. Goodbye forever, inexplicable `No 'Access-Control-Allow-Origin' header is present on the requested resource` error. 👋
