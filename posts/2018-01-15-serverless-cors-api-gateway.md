@@ -1,32 +1,32 @@
 ---
 title: "Serverless, CORS, and API Gateway: An explainer"
 description: "Get the basics on Cross-Origin Resource Sharing (CORS) and how to avoid problems with your Serverless web APIs on Lambda."
-date: 2018-01-15
+date: 2018-01-16
 layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png'
 authors:
   - AlexDeBrie
 ---
 
-Building web API backends is one of the most popular use cases for Serverless applications. You can get the benefits of simple, scalable backends powering your static pages or single-page apps for easy scalability without operations overhead.
+Building web API backends is one of the most popular use cases for Serverless applications. You get the benefit of a simple, scalable backend without the operations overhead.
 
-However, if you have a web page that's making calls to a backend API, you'll have to deal with the dreaded [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), or CORS. Basically, this says if your web page makes an HTTP request to a _different domain_ than you're currently on, it needs to be CORS-friendly.
+However, if you have a web page that's making calls to a backend API, you'll have to deal with the dreaded [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), or CORS. If your web page makes an HTTP request to a _different domain_ than you're currently on, it needs to be CORS-friendly.
 
 If you've ever found yourself with the following error:
 
 > No 'Access-Control-Allow-Origin' header is present on the requested resource
 
-this page is just what the doctor ordered!
+then this page is for you!
 
 In this post, we'll cover all you need to know about Serverless + CORS. If you don't care about the specifics, hit the [TL;DR](#tldr) section below. Otherwise, we'll cover:
 
-- [Preflight requests](#cors-preflight-requests),
-- [Response headers](#cors-response-headers), and
-- [CORS with custom authorizers](#cors-with-custom-authorizers).
+- [Preflight requests](#cors-preflight-requests)
+- [Response headers](#cors-response-headers)
+- [CORS with custom authorizers](#cors-with-custom-authorizers)
 
 Let's get started!
 
-## TL;DR
+# TL;DR
 
 If you want the quick and dirty way to solve CORS in your Serverless application, do this.
 
@@ -58,7 +58,9 @@ If you want the quick and dirty way to solve CORS in your Serverless application
              cors: true # <-- CORS!
    ```
    
-2. To handle the [CORS headers](#cors-response-headers), return the CORS headers in your response. The main headers are `Access-Control-Allow-Origin` and `Access-Control-Allow-Credentials` You can use the example below or check out the middleware libraries discussed below to help with this.
+2. To handle the [CORS headers](#cors-response-headers), return the CORS headers in your response. The main headers are `Access-Control-Allow-Origin` and `Access-Control-Allow-Credentials`.
+
+You can use the example below, or check out the middleware libraries discussed below to help with this:
 
 	```javascript
 	'use strict';
@@ -122,25 +124,29 @@ If you want the quick and dirty way to solve CORS in your Serverless application
 	          Ref: 'ApiGatewayRestApi'
 	```
 
-## CORS Preflight Requests
+# CORS Preflight Requests
 
 If you're not making a "simple request", your browser will send a **preflight request** to the resource using the `OPTIONS` method. The resource you're requesting will return with methods that are safe to send to the resource and may optionally return the headers that are valid to send across.
 
 Let's break that down.
 
-#### When does my browser send a preflight request?
+### When does my browser send a preflight request?
 
-Your browser will send a preflight request on almost all cross-origin requests. The exception are "simple requests", but it's a pretty narrow subset of requests. Basically, a simple request is only a `GET` request or a `POST` request with form data that has _no authentication_. If you're outside of that, it will need a preflight.
+Your browser will send a preflight request on almost all cross-origin requests. (The exceptions are "simple requests", but it's a pretty narrow subset of requests.)
+
+Basically, a simple request is only a `GET` request or a `POST` request with form data that has _no authentication_. If you're outside of that, it will need a preflight.
 
 If you use a `PUT` or `DELETE` request, it will send a preflight. If you use a `Content-Type` header outside of `application/x-www-form-urlencoded`, `multipart/form-data`, or `text/plain`, it will send a preflight. If you include any headers outside some very basic ones, such as Authentication headers, it will send a preflight.
 
-#### What's in the response to the preflight request?
+### What's in the response to the preflight request?
 
 The response to a preflight request includes the domains it allows to access the resources and the methods it allows at that resource, such as `GET`, `POST`, `PUT`, etc. It may also include headers that are allowed at that resource, such as `Authentication`.
 
-#### How do I handle preflight requests with Serverless?
+### How do I handle preflight requests with Serverless?
 
-To set up the preflight response, you'll need to configure an `OPTIONS` method handler at your endpoint in API Gateway. Fortunately, this is very simple with the Serverless Framework. Simply add `cors: true` to _each endpoint_ in your `serverless.yml`:
+To set up the preflight response, you'll need to configure an `OPTIONS` method handler at your endpoint in API Gateway. Fortunately, this is very simple with the Serverless Framework.
+
+Simply add `cors: true` to _each endpoint_ in your `serverless.yml`:
 
 ```yml
 # serverless.yml
@@ -198,9 +204,11 @@ functions:
             allowCredentials: false
 ```
 
-## CORS Response Headers
+# CORS Response Headers
 
-While the preflight request only applies to some cross-origin requests, the CORS response headers must be present in _every_ cross-origin request. This means you must add the `Access-Control-Allow-Origin` header to your responses in your handlers. If you're using cookies or other authentication, you'll also need to add the `Access-Control-Allow-Credentials` header to your response.
+While the preflight request only applies to some cross-origin requests, the CORS response headers must be present in _every_ cross-origin request. This means you must add the `Access-Control-Allow-Origin` header to your responses in your handlers.
+
+If you're using cookies or other authentication, you'll also need to add the `Access-Control-Allow-Credentials` header to your response.
 
 To match the `serverless.yml` in the section above, your `handler.js` file should look like:
 
@@ -281,9 +289,9 @@ const handler = middy(processPayment)
 module.exports = { handler }
 ```
 
-Perfect -- automatic CORS headers! Check out the whole Middy library for lots of other nice utilities.
+Perfect—automatic CORS headers! Check out the whole Middy library for lots of other nice utilities.
 
-If you're a Pythonista, [Daniel Schep](https://twitter.com/schep_) has made a nice [`lambda-decorators`](https://github.com/dschep/lambda-decorators) library with the same goals as Middy -- replacing Lambda boilerplate. 
+If you're a Pythonista, [Daniel Schep](https://twitter.com/schep_) has made a nice [`lambda-decorators`](https://github.com/dschep/lambda-decorators) library with the same goals as Middy—replacing Lambda boilerplate. 
 
 Here's an example of using it in your Python functions:
 
@@ -300,13 +308,15 @@ def hello(event, context):
 	}
 ```
 
-Daniel is the creator of the [`serverless-python-requirements`](https://github.com/UnitedIncome/serverless-python-requirements) package, which you should absolutely be using if you're writing Lambda functions in Python. Check out our previous [blog post on Python packaging](https://serverless.com/blog/serverless-python-packaging/).
+**Note:** Daniel is the creator of the [`serverless-python-requirements`](https://github.com/UnitedIncome/serverless-python-requirements) package, which you should absolutely be using if you're writing Lambda functions in Python. Check out our previous [blog post on Python packaging](https://serverless.com/blog/serverless-python-packaging/).
 
-## CORS with custom authorizers
+# CORS with custom authorizers
 
-The final area we need to cover is custom authorizers. [Custom authorizers](https://serverless.com/framework/docs/providers/aws/events/apigateway/#http-endpoints-with-custom-authorizers) allow you to protect your Lambda endpoints with a function that is responsible for handling authorization. If the authorization is successful, it will forward the request onto the Lambda handler. If it's unsuccessful, it will reject the request and return to the user.
+[Custom authorizers](https://serverless.com/framework/docs/providers/aws/events/apigateway/#http-endpoints-with-custom-authorizers) allow you to protect your Lambda endpoints with a function that is responsible for handling authorization.
 
-The CORS difficulty lies in the second scenario -- if you reject an authorization request, you don't have the ability to specify the CORS headers in your response. This can make it difficult for the client browser to understand the response.
+If the authorization is successful, it will forward the request onto the Lambda handler. If it's unsuccessful, it will reject the request and return to the user.
+
+The CORS difficulty lies in the second scenario—if you reject an authorization request, you don't have the ability to specify the CORS headers in your response. This can make it difficult for the client browser to understand the response.
 
 To handle this, you'll need to add a custom GatewayResponse to your API Gateway. You'll add this in the `resources` block of your `serverless.yml`:
 
@@ -330,6 +340,6 @@ resources:
 
 This will ensure that the proper response headers are returned from your custom authorizer rejecting an authorization request.
 
-## Conclusion
+# Conclusion
 
 CORS can be a pain, 
