@@ -283,7 +283,7 @@ const hello = (event, context, callback) => {
 }
 
 // Let's "middyfy" our handler, then we will be able to attach middlewares to it
-const handler = middy(processPayment)
+const handler = middy(hello)
   .use(cors()) // Adds CORS headers to responses
 
 module.exports = { handler }
