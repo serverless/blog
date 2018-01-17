@@ -176,7 +176,7 @@ plugins:
 
 <img src="https://avatars0.githubusercontent.com/u/10208412?s=200&v=4" align="left" height="100px">
 
-[WarmUP Plugin](https://github.com/FidelLimited/serverless-plugin-warmup), by [Fidel](https://github.com/FidelLimited)
+**8. [WarmUP Plugin](https://github.com/FidelLimited/serverless-plugin-warmup)**, by [Fidel](https://github.com/FidelLimited)
 
 Are your Lambda starts feeling a little cold? Snuggle them in this WarmUP plugin and say goodbye to those cold starts. WarmUP invokes your Lambdas in a configured time interval, forcing your containers to stay alive.
 
@@ -192,6 +192,45 @@ plugins:
 ```
 
 [Here's an example on how to use WarmUP.](https://serverless.com/blog/keep-your-lambdas-warm/)
+
+---
+
+# Top plugin for Alexa development
+
+<img src="https://avatars3.githubusercontent.com/u/20362367?s=200&v=4" align="left" height="100px">
+
+**[Bespoken Plugin](https://github.com/bespoken/serverless-plugin-bespoken)**, by [Bespoken](https://github.com/bespoken)
+
+Test your Lambdas during development without having to deploy. The plugin generates a local server that is a attached to a proxy online so you can use that url to access the functionality from your laptop.
+
+A cool walkthrough that uses it:
+- [Building & testing an Alexa skill with the Serverless Bespoken plugin](https://serverless.com/blog/building-testing-alexa-skill-bespoken-plugin/)
+
+---
+
+# Serverless team favorites
+
+<img src="https://avatars3.githubusercontent.com/u/19777?s=400&v=4" align="left" height="100px">
+
+**1. [AWS Pseudo Parameters](https://github.com/svdgraaf/serverless-pseudo-parameters)**, by [Sander van de Graaf](https://github.com/svdgraaf)
+
+This plugin makes it so, so much easier to use CloudFormation Pseudo Parameters in your serverless.yml. Use #{AWS::AccountId}, #{AWS::Region}, etc. in any of your config strings; this plugin replaces those values with the proper pseudo parameter Fn::Sub CloudFormation function.
+
+Install with npm:
+```
+npm install --save-dev serverless-pseudo-parameters
+```
+
+And then add it to your serverless.yml:
+```
+plugins:
+  - serverless-pseudo-parameters
+```
+
+A cool walkthrough that uses it:
+- [How to use AWS Fargate and Lambda for long-running processes in a Serverless app](https://serverless.com/blog/serverless-application-for-long-running-process-fargate-lambda/)
+
+
 
 ---
 
