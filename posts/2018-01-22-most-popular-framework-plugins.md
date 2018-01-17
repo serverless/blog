@@ -12,11 +12,11 @@ authors:
 
 In other words, if you haven't yet checked out this [huge list of Serverless Framework plugins](https://github.com/serverless/plugins), you're missing out. Because they are *slick*. And *useful*. And *pre-made*.
 
-Though, as you may have noticed, there are also close to 150 of them. Yew! Where do you even begin?
+Fortunately and unfortunately, there are also close to 150 of them. Yew! Where do you even begin?
 
 HERE. That's where.
 
-# Our most-loved community plugins (by GitHub stars)
+# The community's most-loved Framework plugins (by GitHub stars)
 
 <img src="https://avatars3.githubusercontent.com/u/438848?s=400&v=4" align="left" height="100px">
 
@@ -109,11 +109,70 @@ plugins:
 
 ---
 
-[serverless-python-requirements](https://github.com/UnitedIncome/serverless-python-requirements), by [United Income](https://github.com/UnitedIncome)
+<img src="https://avatars0.githubusercontent.com/u/19732939?s=200&v=4" align="left" height="100px">
 
-[serverless-dynamodb-local](https://github.com/99xt/serverless-dynamodb-local), by [99X Technology](https://github.com/99xt)
+**5. [Python Requirements Plugin](https://github.com/UnitedIncome/serverless-python-requirements)**, by [United Income](https://github.com/UnitedIncome)
 
-[serverless-plugin-typescript](https://github.com/graphcool/serverless-plugin-typescript), by [Graphcool](https://github.com/graphcool)
+Pythonistas, this one's for you. This plugin automatically bundles dependencies from `requirements.txt` and makes them available in your PYTHONPATH.
+
+Install with npm:
+```
+npm install --save-dev serverless-python-requirements
+```
+
+And then add it to your serverless.yml:
+```
+plugins:
+  - serverless-python-requirements
+```
+
+A cool walkthrough that uses it:
+- [Build a Python REST API with Serverless, Lambda, and DynamoDB](https://serverless.com/blog/flask-python-rest-api-serverless-lambda-dynamodb/)
+
+---
+
+<img src="https://avatars2.githubusercontent.com/u/19850503?s=200&v=4" align="left" height="100px">
+
+**6. [DynamoDB Local](https://github.com/99xt/serverless-dynamodb-local)**, by [99X Technology](https://github.com/99xt)
+
+Pretty much what it says on the tin—run DynamoDB locally. You can start DynamoDB Local with all the parameters supported (e.g port, inMemory, sharedDb), create tables and more.
+
+Install with npm:
+```
+npm install --save-dev serverless-dynamodb-local
+```
+
+And then add it to your serverless.yml:
+```
+plugins:
+  - serverless-dynamodb-local
+```
+
+A cool walkthrough that uses it:
+- [Deploy a REST API using Serverless, Express and Node.js](https://serverless.com/blog/serverless-express-rest-api/)
+
+---
+
+<img src="https://avatars1.githubusercontent.com/u/17219288?s=200&v=4" align="left" height="100px">
+
+**7. [serverless-plugin-typescript](https://github.com/graphcool/serverless-plugin-typescript)**, by [Graphcool](https://github.com/graphcool)
+
+Zero-config Typescript support—*yes* please. Don't need to install any other compiler or plugins; it just works right out of the box.
+
+Install with yarn:
+```
+npm install --save-dev serverless-plugin-typescript
+```
+
+And then add it to your serverless.yml:
+```
+plugins:
+  - serverless-plugin-typescript
+```
+
+[Click here for an example.](https://github.com/graphcool/serverless-plugin-typescript/tree/master/example)
+
+---
 
 [serverless-plugin-warmup](https://github.com/FidelLimited/serverless-plugin-warmup), by [Fidel](https://github.com/FidelLimited)
 
