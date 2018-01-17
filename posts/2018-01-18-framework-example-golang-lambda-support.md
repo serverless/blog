@@ -22,7 +22,7 @@ First things first, you'll be needing the [Serverless Framework](https://serverl
 
 # Use the Go template
 
-The Framework will configure AWS for Go on your behalf. Use this quick [serverless-golang template](https://github.com/serverless/serverless-golang) to deploy your first service!
+The Framework will configure AWS for Go on your behalf. Use this quick [serverless-golang template](https://github.com/serverless/serverless-golang) to deploy your first service.
 
 Open up your terminal and let's create a new service with Go:
 `serverless create -u https://github.com/serverless/serverless-golang/ -p myservice`
@@ -39,4 +39,3 @@ GOOS=linux go build -o bin/main`
 I just deployed a simple service with Go, and it is lightning fast: 0.76ms runtime.
 
 This is really exciting; can't wait to see what the serverless community builds!
-
