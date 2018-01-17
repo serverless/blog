@@ -62,47 +62,47 @@ If you want the quick and dirty way to solve CORS in your Serverless application
 
 You can use the example below, or check out the middleware libraries discussed below to help with this:
 
-	```javascript
-	'use strict';
-	
-	module.exports.getProduct = (event, context, callback) => {
-	
-	  // Do work to retrieve Product
-	  const product = retrieveProduct(event);
-	
-	  const response = {
-	    statusCode: 200,
-	    headers: {
-	      'Access-Control-Allow-Origin': '*',
-	      'Access-Control-Allow-Credentials': '*',
-	    },
-	    body: JSON.stringify({
-	      product: product
-	    }),
-	  };
-	
-	  callback(null, response);
-	};
-	
-	module.exports.createProduct = (event, context, callback) => {
-	
-	  // Do work to create Product
-	  const product = createProduct(event);
-	
-	  const response = {
-	    statusCode: 200,
-	    headers: {
-	      'Access-Control-Allow-Origin': '*',
-	      'Access-Control-Allow-Credentials': '*',
-	    },
-	    body: JSON.stringify({
-	      product: product
-	    }),
-	  };
-	
-	  callback(null, response);
-	};
-	```
+   ```javascript
+   'use strict';
+
+   module.exports.getProduct = (event, context, callback) => {
+
+     // Do work to retrieve Product
+     const product = retrieveProduct(event);
+
+     const response = {
+       statusCode: 200,
+       headers: {
+         'Access-Control-Allow-Origin': '*',
+         'Access-Control-Allow-Credentials': '*',
+       },
+       body: JSON.stringify({
+         product: product
+       }),
+     };
+
+     callback(null, response);
+   };
+
+   module.exports.createProduct = (event, context, callback) => {
+
+     // Do work to create Product
+     const product = createProduct(event);
+
+     const response = {
+       statusCode: 200,
+       headers: {
+         'Access-Control-Allow-Origin': '*',
+         'Access-Control-Allow-Credentials': '*',
+       },
+       body: JSON.stringify({
+         product: product
+       }),
+     };
+
+     callback(null, response);
+   };
+   ```
 
 3. If you're using a custom authorizer, you'll need to add the following CloudFormation in your `resources` block of `serverless.yml`:
 
