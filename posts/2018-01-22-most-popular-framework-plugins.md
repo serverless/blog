@@ -8,7 +8,7 @@ authors:
   - AndreaPasswater
 ---
 
-"Don't build it again if someone else already open-sourced it for you." --said every developer ever.
+"Don't build it again if someone else already open-sourced it for you," said every developer ever.
 
 In other words, if you haven't yet checked out this [huge list of Serverless Framework plugins](https://github.com/serverless/plugins), you're missing out. Because they are *slick*. And *useful*. And *pre-made*.
 
@@ -42,6 +42,8 @@ plugins:
 
 [Click here for Serverless Chrome examples](https://github.com/adieuadieu/serverless-chrome/tree/master/examples/serverless-framework).
 
+---
+
 <img src="https://avatars2.githubusercontent.com/u/4154003?s=400&v=4" align="left" height="100px">
 
 **2. [Serverless Offline](https://github.com/dherault/serverless-offline)**, by [David Héralt](https://github.com/dherault/)
@@ -61,6 +63,8 @@ plugins:
 
 A cool walkthrough that uses it:
 - [Writing a Serverless app with full local development experience](https://serverless.com/blog/event-driven-serverless-app-local-dev-exp/)
+
+---
 
 <img src="https://avatars3.githubusercontent.com/u/30321405?s=200&v=4" align="left" height="100px">
 
@@ -82,7 +86,11 @@ plugins:
 A cool walkthrough that uses it:
 - [Creating a Serverless GraphQL gateway on top of a 3rd party REST API](https://serverless.com/blog/3rd-party-rest-api-to-graphql-serverless/)
 
-**4. [serverless-step-functions](https://github.com/horike37/serverless-step-functions)**, by [Takahiro Horike](https://github.com/horike37)
+---
+
+<img src="https://avatars0.githubusercontent.com/u/1301012?s=400&v=4" align="left" height="100px">
+
+**4. [Serverless Step Functions](https://github.com/horike37/serverless-step-functions)**, by [Takahiro Horike](https://github.com/horike37)
 
 If serverless functions are stateless, how do you manage state? AWS Step Functions! This plugin lets you use Step Functions with the Serverless Framework.
 
@@ -98,6 +106,8 @@ plugins:
 ```
 
 [Click here for a full walkthrough with sample app.](https://serverless.com/blog/how-to-manage-your-aws-step-functions-with-serverless/)
+
+---
 
 [serverless-python-requirements](https://github.com/UnitedIncome/serverless-python-requirements), by [United Income](https://github.com/UnitedIncome)
 
