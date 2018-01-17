@@ -1,18 +1,86 @@
 ---
 title: "Where to start: the most popular Framework plugins"
-description: "Whether you're new to the Serverless Framework or a seasoned pro, our most-loved commmunity plugins will help you level up."
+description: "Take your Serverless development to the next level. Check out our most popular community plugins."
 date: 2018-01-22
 layout: Post
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png'
+thumbnail: 'https://cloud.githubusercontent.com/assets/20538501/21665215/e3c9aae6-d2b0-11e6-9865-498d91318e7a.png'
 authors:
   - AndreaPasswater
 ---
 
-[serverless-plugin-chrome](https://github.com/adieuadieu/serverless-chrome/tree/master/packages/serverless-plugin), by [Marco Lüthy](https://github.com/adieuadieu)
+"Don't build it again if someone else already open-sourced it for you." --said every developer ever.
 
-[serverless-offline](https://github.com/dherault/serverless-offline), by [David Héralt](https://github.com/dherault/)
+In other words, if you haven't yet checked out this [huge list of Serverless Framework plugins](https://github.com/serverless/plugins), you're missing out. Because they are *slick*. And *useful*. And *pre-made*.
 
-[serverless-webpack](https://github.com/serverless-heaven/serverless-webpack), by [Serverless Heaven](https://github.com/serverless-heaven)
+Though, as you may have noticed, there are also close to 150 of them. Yew! Where do you even begin?
+
+HERE. That's where.
+
+# Our most-loved community plugins (by GitHub stars)
+
+<img src="https://avatars3.githubusercontent.com/u/438848?s=400&v=4" align="left" height="100px">
+
+**1. [Headless Chrome Plugin](https://github.com/adieuadieu/serverless-chrome/tree/master/packages/serverless-plugin)**, by [Marco Lüthy](https://github.com/adieuadieu)
+
+The Headless Chrome Plugin bundles the [serverless-chrome/lambda](https://github.com/adieuadieu/serverless-chrome/tree/master/packages/lambda) package and ensures that Headless Chrome is running when your function handler is invoked.
+
+Install with yarn:
+```
+yarn add --dev serverless-plugin-chrome
+```
+
+Install with npm (requires Node 6.10 runtime):
+```
+npm install --save-dev serverless-plugin-chrome
+```
+
+And then add it to your serverless.yml:
+```
+plugins:
+  - serverless-plugin-chrome
+```
+
+[Click here for Serverless Chrome examples](https://github.com/adieuadieu/serverless-chrome/tree/master/examples/serverless-framework).
+
+<img src="https://avatars2.githubusercontent.com/u/4154003?s=400&v=4" align="left" height="100px">
+
+**2. [Serverless Offline](https://github.com/dherault/serverless-offline)**, by [David Héralt](https://github.com/dherault/)
+
+The Serverless Offline plugin saves you tons of dev time by emulating AWS Lambda and API Gateway on your local machine. It works by starting an HTTP server that handles the request's lifecycle (like APIG does) and invoking your handlers.
+
+Install with npm:
+```
+npm install --save-dev serverless-offline
+```
+
+And then add it to your serverless.yml:
+```
+plugins:
+  - serverless-offline
+```
+
+A cool walkthrough that uses it:
+- [Writing a Serverless app with full local development experience](https://serverless.com/blog/event-driven-serverless-app-local-dev-exp/)
+
+<img src="https://avatars3.githubusercontent.com/u/30321405?s=200&v=4" align="left" height="100px">
+
+**3. [Serverless Webpack](https://github.com/serverless-heaven/serverless-webpack)**, by [Serverless Heaven](https://github.com/serverless-heaven)
+
+If you want to use the latest Javascript version with Babel, this plugin is for you! Use custom resource loaders, optimize your packaged functions individually, and more.
+
+Install with npm:
+```
+npm install --save-dev serverless-webpack
+```
+
+And then add it to your serverless.yml:
+```
+plugins:
+  - serverless-webpack
+```
+
+A cool walkthrough that uses it:
+- [Creating a Serverless GraphQL gateway on top of a 3rd party REST API](https://serverless.com/blog/3rd-party-rest-api-to-graphql-serverless/)
 
 [serverless-step-functions](https://github.com/horike37/serverless-step-functions), by [Takahiro Horike](https://github.com/horike37)
 
