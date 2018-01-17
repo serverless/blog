@@ -38,5 +38,5 @@ GOOS=linux go build -o bin/main`
 
 I just deployed a simple service with Go, and it is lightning fast: 0.76ms runtime.
 
-This is really exciting, and can't wait to see what the serverless community builds!
+This is really exciting; can't wait to see what the serverless community builds!
 
