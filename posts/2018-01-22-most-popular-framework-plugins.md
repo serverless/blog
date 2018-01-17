@@ -174,7 +174,26 @@ plugins:
 
 ---
 
-[serverless-plugin-warmup](https://github.com/FidelLimited/serverless-plugin-warmup), by [Fidel](https://github.com/FidelLimited)
+<img src="https://avatars0.githubusercontent.com/u/10208412?s=200&v=4" align="left" height="100px">
+
+[WarmUP Plugin](https://github.com/FidelLimited/serverless-plugin-warmup), by [Fidel](https://github.com/FidelLimited)
+
+Are your Lambda starts feeling a little cold? Snuggle them in this WarmUP plugin and say goodbye to those cold starts. WarmUP invokes your Lambdas in a configured time interval, forcing your containers to stay alive.
+
+Install with npm:
+```
+npm install --save-dev serverless-plugin-warmup
+```
+
+And then add it to your serverless.yml:
+```
+plugins:
+  - serverless-plugin-warmup
+```
+
+[Here's an example on how to use WarmUP.](https://serverless.com/blog/keep-your-lambdas-warm/)
+
+---
 
 [serverless-wsgi](https://github.com/logandk/serverless-wsgi), by [Logan Raarup](https://github.com/logandk)
 
