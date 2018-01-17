@@ -82,7 +82,22 @@ plugins:
 A cool walkthrough that uses it:
 - [Creating a Serverless GraphQL gateway on top of a 3rd party REST API](https://serverless.com/blog/3rd-party-rest-api-to-graphql-serverless/)
 
-[serverless-step-functions](https://github.com/horike37/serverless-step-functions), by [Takahiro Horike](https://github.com/horike37)
+**4. [serverless-step-functions](https://github.com/horike37/serverless-step-functions)**, by [Takahiro Horike](https://github.com/horike37)
+
+If serverless functions are stateless, how do you manage state? AWS Step Functions! This plugin lets you use Step Functions with the Serverless Framework.
+
+Install with npm:
+```
+npm install --save-dev serverless-step-functions
+```
+
+And then add it to your serverless.yml:
+```
+plugins:
+  - serverless-step-functions
+```
+
+[Click here for a full walkthrough with sample app.](https://serverless.com/blog/how-to-manage-your-aws-step-functions-with-serverless/)
 
 [serverless-python-requirements](https://github.com/UnitedIncome/serverless-python-requirements), by [United Income](https://github.com/UnitedIncome)
 
