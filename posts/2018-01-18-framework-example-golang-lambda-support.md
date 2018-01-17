@@ -26,23 +26,20 @@ The Framework will configure AWS for Go on your behalf. Use this quick [serverle
 
 Open up your terminal and let's create a new service with Go. Make sure you're in your [`${GOPATH}/src`](https://github.com/golang/go/wiki/GOPATH) directory, then run:
 
-```
-bash
+```bash
 $ serverless create -u https://github.com/serverless/serverless-golang/ -p myservice
 ```
 
 Change into your new service directory and compile the function:
 
-```
-bash
+```bash
 $ cd myservice
 $ GOOS=linux go build -o bin/main
 ```
 
 That's it! You can deploy now:
 
-```
-bash
+```bash
 $ serverless deploy
 Serverless: Packaging service...
 Serverless: Excluding development dependencies...
@@ -73,8 +70,7 @@ functions:
 
 Finally, invoke your function:
 
-```
-bash
+```bash
 $ serverless invoke -f hello
 {
     "message": "Go Serverless v1.0! Your function executed successfully!"
@@ -95,8 +91,7 @@ We're going to make an HTTP endpoint that accepts a POST request at the path `/e
 
 First, let's fix our `serverless.yml` to attach an HTTP event:
 
-```
-yml
+```yml
 # serverless.yml
 
 service: myservice
@@ -126,8 +121,7 @@ Remember, Golang is a compiled, statically-typed language, so we need to define 
 
 Update your `main.go` to have the following code:
 
-```
-golang
+```golang
 # main.go
 
 package main
@@ -154,8 +148,7 @@ Our `Handler()` function now takes an `APIGatewayProxyRequest` object and return
 
 Recompile & deploy again:
 
-```
-bash
+```bash
 $ GOOS=linux go build -o bin/main
 $ sls deploy
 
@@ -180,8 +173,7 @@ Notice that you now have an `endpoint` listed in your Service Information output
 
 Let's use `curl` to hit your endpoint and get a response:
 
-```
-bash
+```bash
 $ curl -X POST https://8nq19esp39.execute-api.us-east-1.amazonaws.com/dev/echo -d 'Hello, world!'
 Hello, world!
 ```
@@ -208,8 +200,7 @@ There's one final note about the Golang implementation on Lambda that's really i
 
 The `main()` function which is the entrypoint to our Golang binary _isn't_ our Lambda handler function. It's a little RPC server that wraps our handler function:
 
-```
-golang
+```golang
 func main() {
 	lambda.Start(Handler)
 }
