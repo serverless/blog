@@ -16,7 +16,7 @@ Fortunately and unfortunately, there are also close to 150 of them. Yew! Where d
 
 HERE. That's where.
 
-We hereby present the most popular plugins for the Serverless Framework (plus a bonus goodie bag of team favorites).
+We hereby present the most popular plugins for the Serverless Framework (plus a bonus goodie bag of our own team's favorites).
 
 # The community's most-loved Framework plugins (by GitHub stars)
 
