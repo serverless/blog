@@ -8,7 +8,7 @@ authors:
   - AndreaPasswater
 ---
 
-"Don't build it again if someone else already open-sourced it for you," said every developer ever.
+"Don't build it again if someone else already open-sourced it for you." Signed, every developer ever.
 
 In other words, if you haven't yet checked out this [huge list of Serverless Framework plugins](https://github.com/serverless/plugins), you're missing out. Because they are *slick*. And *useful*. And *pre-made*.
 
