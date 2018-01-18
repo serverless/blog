@@ -16,6 +16,8 @@ Fortunately and unfortunately, there are also close to 150 of them. Yew! Where d
 
 HERE. That's where.
 
+We hereby present the most-starred plugins (plus some bonus team favorites).
+
 # The community's most-loved Framework plugins (by GitHub stars)
 
 <img src="https://avatars3.githubusercontent.com/u/438848?s=400&v=4" align="left" height="100px">
