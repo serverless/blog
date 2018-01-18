@@ -157,7 +157,7 @@ A cool walkthrough that uses it:
 
 <img src="https://avatars1.githubusercontent.com/u/17219288?s=200&v=4" align="left" height="100px">
 
-**7. [serverless-plugin-typescript](https://github.com/graphcool/serverless-plugin-typescript)**, by [Graphcool](https://github.com/graphcool)
+**7. [Typescript Plugin](https://github.com/graphcool/serverless-plugin-typescript)**, by [Graphcool](https://github.com/graphcool)
 
 Zero-config Typescript support—*yes* please. Don't need to install any other compiler or plugins; it just works right out of the box.
 
