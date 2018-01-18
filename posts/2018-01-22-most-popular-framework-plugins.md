@@ -10,7 +10,7 @@ authors:
 
 "Don't build it again if someone else already open-sourced it for you." Signed, every developer ever.
 
-In other words, if you haven't yet checked out this [huge list of Serverless Framework plugins](https://github.com/serverless/plugins), you're missing out. Because they are *slick*. And *useful*. And *pre-made*.
+In other words, if you haven't yet checked out this [huge list of Serverless Framework plugins](https://github.com/serverless/plugins), you're missing out. Because they are *slick*. And *useful*. And *ready to use right now*.
 
 Fortunately and unfortunately, there are also close to 150 of them. Yew! Where do you even begin?
 
