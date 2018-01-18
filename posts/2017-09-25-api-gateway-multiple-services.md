@@ -153,7 +153,7 @@ $ npm install serverless-domain-manager
 
 Then add the configuration to your `serverless.yml`:
 
-```
+```yml
 # serverless.yml
 
 service: products-service
@@ -217,7 +217,7 @@ $ npm install serverless-domain-manager
 
 and add the config to your `serverless.yml`:
 
-```
+```yml
 # serverless.yml
 
 service: users-service
@@ -273,7 +273,7 @@ The first thing you need to do is get certificates for each of these domains in 
 
 Once you've done that, use the following config for your `custom` block in `serverless.yml`:
 
-```
+```yml
 custom:
   stage: ${opt:stage, self:provider.stage}
   domains:
