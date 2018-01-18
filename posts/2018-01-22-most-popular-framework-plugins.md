@@ -234,6 +234,19 @@ A cool walkthrough that uses it:
 
 ---
 
+# Have a plugin that's missing from our repo?
+
+Add it! Just submit it to the [Community-contributed plugins repo](https://github.com/serverless/plugins#community-contributed-plugins).
+
+# Want to make your own plugin?
+
+Please do. Here are some resources:
+- [How To Write Your First Plugin For The Serverless Framework - Part 1](https://serverless.com/blog/writing-serverless-plugins/)
+- [How To Write Your First Plugin For The Serverless Framework - Part 2](https://serverless.com/blog/writing-serverless-plugins-2/)
+- [Advanced Plugin Development - Extending The Serverless Core Lifecycle](https://serverless.com/blog/advanced-plugin-development-extending-the-core-lifecycle/)
+- [Advanced Plugin Development Part 2 - Command Alises & Delegates, Enhanced Logging](https://serverless.com/blog/plugin-system-extensions/)
+
+
 [serverless-wsgi](https://github.com/logandk/serverless-wsgi), by [Logan Raarup](https://github.com/logandk)
 
 [serverless-domain-manager](https://github.com/amplify-education/serverless-domain-manager), by [Amplify](https://github.com/amplify-education)
