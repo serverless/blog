@@ -216,21 +216,34 @@ A cool walkthrough that uses it:
 
 This plugin makes it so, so much easier to use CloudFormation Pseudo Parameters in your serverless.yml. Use #{AWS::AccountId}, #{AWS::Region}, etc. in any of your config strings; this plugin replaces those values with the proper pseudo parameter Fn::Sub CloudFormation function.
 
-Install with npm:
-```
-npm install --save-dev serverless-pseudo-parameters
-```
-
-And then add it to your serverless.yml:
-```
-plugins:
-  - serverless-pseudo-parameters
-```
-
-A cool walkthrough that uses it:
+Here's a cool walkthrough that uses it:
 - [How to use AWS Fargate and Lambda for long-running processes in a Serverless app](https://serverless.com/blog/serverless-application-for-long-running-process-fargate-lambda/)
 
+---
 
+<img src="https://avatars2.githubusercontent.com/u/107699?s=200&v=4" align="left" height="100px">
+
+**2. [Domain Manager](https://github.com/amplify-education/serverless-domain-manager)**, by [Amplify](https://github.com/amplify-education)
+
+Manage custom domains with API Gateway. Use this plugin to create custom domain names that your Lambda can deploy to. Domain Manager also supports base path mapping for deploys and domain name deletion.
+
+TWO cool walkthroughs that use it:
+- [How to set up a custom domain name for Lambda & API Gateway with Serverless](https://serverless.com/blog/serverless-api-gateway-domain/)
+- [How to deploy multiple micro-services under one API domain with Serverless](https://serverless.com/blog/api-gateway-multiple-services/)
+
+---
+
+<img src="https://avatars0.githubusercontent.com/u/11278370?s=200&v=4" align="left" height="100px">
+
+**3. [CloudFormation Parameter Setter](https://github.com/trek10inc/serverless-cloudformation-parameter-setter)**, by [Trek10](https://github.com/trek10inc)
+
+This is a big one for security. Set your CloudFormation Parameters when deploying with the Serverless Framework.
+
+---
+
+<img src="" align="left" height="100px">
+
+**4. []()**, by []()
 
 ---
 
@@ -240,16 +253,21 @@ Add it! Just submit it to the [Community-contributed plugins repo](https://githu
 
 # Want to make your own plugin?
 
-Please do. Here are some resources:
+Please do. Every plugin is a glimmering gem in our heart-est of hearts.
+
+Here are some resources to get you started:
 - [How To Write Your First Plugin For The Serverless Framework - Part 1](https://serverless.com/blog/writing-serverless-plugins/)
 - [How To Write Your First Plugin For The Serverless Framework - Part 2](https://serverless.com/blog/writing-serverless-plugins-2/)
 - [Advanced Plugin Development - Extending The Serverless Core Lifecycle](https://serverless.com/blog/advanced-plugin-development-extending-the-core-lifecycle/)
 - [Advanced Plugin Development Part 2 - Command Alises & Delegates, Enhanced Logging](https://serverless.com/blog/plugin-system-extensions/)
 
 
-[serverless-wsgi](https://github.com/logandk/serverless-wsgi), by [Logan Raarup](https://github.com/logandk)
+david 
+- https://github.com/sbstjn/serverless-stack-output
+- https://github.com/weixu365/serverless-scriptable-plugin
 
-[serverless-domain-manager](https://github.com/amplify-education/serverless-domain-manager), by [Amplify](https://github.com/amplify-education)
+
+[serverless-wsgi](https://github.com/logandk/serverless-wsgi), by [Logan Raarup](https://github.com/logandk)
 
 [serverless-aws-documentation](https://github.com/9cookies/serverless-aws-documentation), by [9cookies](https://github.com/9cookies)
 
