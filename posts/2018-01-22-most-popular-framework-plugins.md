@@ -16,7 +16,7 @@ Fortunately and unfortunately, there are also close to 150 of them. Yew! Where d
 
 HERE. That's where.
 
-We hereby present the most popular plugins for the Serverless Framework (plus a bonus goodie bag of our own team's favorites).
+We hereby present the most popular plugins for the Serverless Framework (plus a goodie bag of our own team's favorites).
 
 # The community's most-loved Framework plugins (by GitHub stars)
 
@@ -26,20 +26,9 @@ We hereby present the most popular plugins for the Serverless Framework (plus a 
 
 The Headless Chrome Plugin bundles the [serverless-chrome/lambda](https://github.com/adieuadieu/serverless-chrome/tree/master/packages/lambda) package and ensures that Headless Chrome is running when your function handler is invoked.
 
-Install with yarn:
+Install:
 ```
-yarn add --dev serverless-plugin-chrome
-```
-
-Install with npm (requires Node 6.10 runtime):
-```
-npm install --save-dev serverless-plugin-chrome
-```
-
-And then add it to your serverless.yml:
-```
-plugins:
-  - serverless-plugin-chrome
+serverless plugin install serverless-plugin-chrome
 ```
 
 [Click here for Serverless Chrome examples](https://github.com/adieuadieu/serverless-chrome/tree/master/examples/serverless-framework).
@@ -52,15 +41,9 @@ plugins:
 
 The Serverless Offline plugin saves you tons of dev time by emulating AWS Lambda and API Gateway on your local machine. It works by starting an HTTP server that handles the request's lifecycle (like APIG does) and invoking your handlers.
 
-Install with npm:
+Install:
 ```
-npm install --save-dev serverless-offline
-```
-
-And then add it to your serverless.yml:
-```
-plugins:
-  - serverless-offline
+serverless plugin install serverless-offline
 ```
 
 A cool walkthrough that uses it:
@@ -72,21 +55,17 @@ A cool walkthrough that uses it:
 
 **3. [Serverless Webpack](https://github.com/serverless-heaven/serverless-webpack)**, by [Serverless Heaven](https://github.com/serverless-heaven)
 
-If you want to use the latest Javascript version with Babel, this plugin is for you! Use custom resource loaders, optimize your packaged functions individually, and more.
+If you want to use the latest Javascript, TypeScript, Elm, CoffeeScript (and more!) with Babel, then Serverless Webpack is for you. The plugin offers enhanced dependency management, and packages only the external libraries that are really used by your code.
 
-Install with npm:
+Install:
 ```
-npm install --save-dev serverless-webpack
-```
-
-And then add it to your serverless.yml:
-```
-plugins:
-  - serverless-webpack
+serverless plugin install serverless-webpack
 ```
 
 A cool walkthrough that uses it:
 - [Creating a Serverless GraphQL gateway on top of a 3rd party REST API](https://serverless.com/blog/3rd-party-rest-api-to-graphql-serverless/)
+
+Plus: [click here for an Elm demo.](https://github.com/ktonon/elm-serverless-demo)
 
 ---
 
@@ -96,15 +75,9 @@ A cool walkthrough that uses it:
 
 If serverless functions are stateless, how do you manage state? AWS Step Functions! This plugin lets you use Step Functions with the Serverless Framework.
 
-Install with npm:
+Install:
 ```
-npm install --save-dev serverless-step-functions
-```
-
-And then add it to your serverless.yml:
-```
-plugins:
-  - serverless-step-functions
+serverless plugin install serverless-step-functions
 ```
 
 [Click here for a full walkthrough with sample app.](https://serverless.com/blog/how-to-manage-your-aws-step-functions-with-serverless/)
@@ -117,15 +90,9 @@ plugins:
 
 Pythonistas, this one's for you. This plugin automatically bundles dependencies from `requirements.txt` and makes them available in your PYTHONPATH.
 
-Install with npm:
+Install:
 ```
-npm install --save-dev serverless-python-requirements
-```
-
-And then add it to your serverless.yml:
-```
-plugins:
-  - serverless-python-requirements
+serverless plugin install serverless-python-requirements
 ```
 
 A cool walkthrough that uses it:
@@ -139,15 +106,9 @@ A cool walkthrough that uses it:
 
 Pretty much what it says on the tin—run DynamoDB locally. You can start DynamoDB Local with all the parameters supported (e.g port, inMemory, sharedDb), create tables and more.
 
-Install with npm:
+Install:
 ```
-npm install --save-dev serverless-dynamodb-local
-```
-
-And then add it to your serverless.yml:
-```
-plugins:
-  - serverless-dynamodb-local
+serverless plugin install serverless-dynamodb-local
 ```
 
 A cool walkthrough that uses it:
@@ -161,15 +122,9 @@ A cool walkthrough that uses it:
 
 Zero-config Typescript support—*yes* please. Don't need to install any other compiler or plugins; it just works right out of the box.
 
-Install with yarn:
+Install:
 ```
-npm install --save-dev serverless-plugin-typescript
-```
-
-And then add it to your serverless.yml:
-```
-plugins:
-  - serverless-plugin-typescript
+serverless plugin install serverless-plugin-typescript
 ```
 
 [Click here for an example.](https://github.com/graphcool/serverless-plugin-typescript/tree/master/example)
@@ -182,15 +137,9 @@ plugins:
 
 Are your Lambda starts feeling a little cold? Snuggle them in this WarmUP plugin and say goodbye to those cold starts. WarmUP invokes your Lambdas in a configured time interval, forcing your containers to stay alive.
 
-Install with npm:
+Install:
 ```
-npm install --save-dev serverless-plugin-warmup
-```
-
-And then add it to your serverless.yml:
-```
-plugins:
-  - serverless-plugin-warmup
+serverless plugin install serverless-plugin-warmup
 ```
 
 [Here's an example on how to use WarmUP.](https://serverless.com/blog/keep-your-lambdas-warm/)
@@ -243,9 +192,30 @@ This is a big one for security. Set your CloudFormation Parameters when deployin
 
 ---
 
-<img src="" align="left" height="100px">
+<img src="https://avatars3.githubusercontent.com/u/20273?s=400&v=4" align="left" height="100px">
 
-**4. []()**, by []()
+**4. [Serverless WSGI](https://github.com/logandk/serverless-wsgi)**, by [Logan Raarup](https://github.com/logandk)
+
+Build your deploy Python WSGI apps using Serverless—compatible with Flask, Django, Pyramid and more. Also has a `wsgi serve` command that serves your application locally during development.
+
+---
+
+<img src="https://avatars1.githubusercontent.com/u/12712530?s=200&v=4" align="left" height="100px">
+
+**5. [AWS Alerts](https://github.com/ACloudGuru/serverless-plugin-aws-alerts)**, by [A Cloud Guru](https://github.com/ACloudGuru)
+
+Use this plugin to add CloudWatch alarms to functions. Piece of cake. 🍰
+
+Cool walkthroughs that use it:
+- [Serverless Ops 101 - Using CloudWatch Metrics & Alarms with Serverless Functions](https://serverless.com/blog/serverless-ops-metrics/)
+
+---
+
+<img src="https://avatars0.githubusercontent.com/u/5524702?s=400&v=4" align="left" height="100px">
+
+**6. [AWS Alias](https://github.com/hyperbrain/serverless-aws-alias)**, by [Frank Schmid](https://github.com/HyperBrain)
+
+This plugin lets you use AWS aliases on Lambda functions. Each alias creates a CloudFormation stack that is dependent on the stage stack; this approach makes for easy removal of any alias deployment, and protects the aliased function versions.
 
 ---
 
@@ -262,21 +232,3 @@ Here are some resources to get you started:
 - [How To Write Your First Plugin For The Serverless Framework - Part 2](https://serverless.com/blog/writing-serverless-plugins-2/)
 - [Advanced Plugin Development - Extending The Serverless Core Lifecycle](https://serverless.com/blog/advanced-plugin-development-extending-the-core-lifecycle/)
 - [Advanced Plugin Development Part 2 - Command Alises & Delegates, Enhanced Logging](https://serverless.com/blog/plugin-system-extensions/)
-
-
-david 
-- https://github.com/sbstjn/serverless-stack-output
-- https://github.com/weixu365/serverless-scriptable-plugin
-
-
-[serverless-wsgi](https://github.com/logandk/serverless-wsgi), by [Logan Raarup](https://github.com/logandk)
-
-[serverless-aws-documentation](https://github.com/9cookies/serverless-aws-documentation), by [9cookies](https://github.com/9cookies)
-
-[serverless-kubeless](https://github.com/serverless/serverless-kubeless), by [Serverless](https://github.com/serverless)
-
-[serverless-dynamodb-autoscaling](https://github.com/sbstjn/serverless-dynamodb-autoscaling), by [Sebastian Müller](https://github.com/sbstjn)
-
-[serverless-mocha-plugin](https://github.com/nordcloud/serverless-mocha-plugin), by [Nordcloud](https://github.com/nordcloud)
-
-[serverless-plugin-aws-alerts](https://github.com/ACloudGuru/serverless-plugin-aws-alerts), by [A Cloud Guru](https://github.com/ACloudGuru)
