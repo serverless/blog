@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-**Last Updated:** 11/30/17 @ 11:18AM PST
+**Last Updated:** 01/17/18 @ 4:59PM PST
 
 It's that time of the year, the Christmas-comes-early for cloud developers. Are you ready for [AWS re:Invent](https://reinvent.awsevents.com/)?
 
@@ -76,7 +76,7 @@ If you're attending re:Invent, be sure to [check out the Serverless guide to re:
 
 **Why it matters:** Like concurrency but hate Node? A typed language without Java? Boom - Golang arrives on Lambda.
 
-__Note__: This is a pre-release and won't be available for a few weeks yet. Patience you must have, my young Padawan.
+**Use it now!**: Here's a template and walkthrough for [using Golang with Lambda via the Serverless Framework](https://serverless.com/blog/framework-example-golang-lambda-support/).
 
 # 3GB Memory
 
