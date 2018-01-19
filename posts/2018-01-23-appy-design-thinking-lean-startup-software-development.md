@@ -3,7 +3,7 @@ title: "How to apply design thinking to lean startup software development"
 description: ""
 date: 2018-01-23
 layout: Post
-thumbnail: ''
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/design-thinking/dt-circle.png'
 authors:
   - BrianNeisler
 ---
