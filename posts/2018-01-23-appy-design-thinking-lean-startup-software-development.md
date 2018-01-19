@@ -23,7 +23,7 @@ In a nutshell, Design Thinking is a process not for how you execute, but for how
 
 It focuses on a tight, user-driven feedback loop that, in theory, allows you to validate new feature ideas as quickly as possible before writing a single line of production code:
 
-<img src=”DESIGN THINKING CIRCLE”>
+<img src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/design-thinking/designthinking101.png”>
 
 For a tech company like us, it means this:
 1. **Empathize:** the product team takes in user feedback
@@ -86,7 +86,7 @@ But there are also some drawbacks we’ve found, at least for our team:
 2. It ends up taking us a while to wade through all of the submitted ideas. This means that instead of making people feel like they’re actively contributing, it can feel a bit like there’s just a lot of red tape. Plus, any good product team will end up rejecting 90% of all the ideas they receive, and it can be pretty hard for people to hear, 9/10 times, that their idea was rejected.
 3. Our team is heavily remote and spans 18 time zones. It’s tough to keep a tight, structured feedback loop when not everyone can be in the same meetings due to time zone coordination.
 
-Also, now and then you see an argument that [Design Thinking kills creativity](https://www.slideshare.net/designsojourn/design-thinking-is-killing-creativity) and you can’t help but doubt the whole endeavor. We’ll let you decide that one for yourself. ;)
+Also, now and then you see an argument that [Design Thinking kills creativity](https://www.slideshare.net/designsojourn/design-thinking-is-killing-creativity) and you can’t help but doubt the whole endeavor. We’ll let you decide that one for yourself. 😉
 
 ## Alternatives?
 
