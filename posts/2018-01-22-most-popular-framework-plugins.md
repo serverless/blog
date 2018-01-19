@@ -28,7 +28,7 @@ The Headless Chrome Plugin bundles the [serverless-chrome/lambda](https://github
 
 Install:
 ```
-serverless plugin install serverless-plugin-chrome
+serverless plugin install -n serverless-plugin-chrome
 ```
 
 [Click here for Serverless Chrome examples](https://github.com/adieuadieu/serverless-chrome/tree/master/examples/serverless-framework).
@@ -43,7 +43,7 @@ The Serverless Offline plugin saves you tons of dev time by emulating AWS Lambda
 
 Install:
 ```
-serverless plugin install serverless-offline
+serverless plugin install -n serverless-offline
 ```
 
 A cool walkthrough that uses it:
@@ -59,7 +59,7 @@ If you want to use the latest Javascript, TypeScript, Elm, CoffeeScript (and mor
 
 Install:
 ```
-serverless plugin install serverless-webpack
+serverless plugin install -n serverless-webpack
 ```
 
 A cool walkthrough that uses it:
@@ -77,7 +77,7 @@ If serverless functions are stateless, how do you manage state? AWS Step Functio
 
 Install:
 ```
-serverless plugin install serverless-step-functions
+serverless plugin install -n serverless-step-functions
 ```
 
 [Click here for a full walkthrough with sample app.](https://serverless.com/blog/how-to-manage-your-aws-step-functions-with-serverless/)
@@ -92,7 +92,7 @@ Pythonistas, this one's for you. This plugin automatically bundles dependencies 
 
 Install:
 ```
-serverless plugin install serverless-python-requirements
+serverless plugin install -n serverless-python-requirements
 ```
 
 A cool walkthrough that uses it:
@@ -108,7 +108,7 @@ Pretty much what it says on the tin—run DynamoDB locally. You can start Dynamo
 
 Install:
 ```
-serverless plugin install serverless-dynamodb-local
+serverless plugin install -n serverless-dynamodb-local
 ```
 
 A cool walkthrough that uses it:
@@ -124,7 +124,7 @@ Zero-config Typescript support—*yes* please. Don't need to install any other c
 
 Install:
 ```
-serverless plugin install serverless-plugin-typescript
+serverless plugin install -n serverless-plugin-typescript
 ```
 
 [Click here for an example.](https://github.com/graphcool/serverless-plugin-typescript/tree/master/example)
@@ -139,7 +139,7 @@ Are your Lambda starts feeling a little cold? Snuggle them in this WarmUP plugin
 
 Install:
 ```
-serverless plugin install serverless-plugin-warmup
+serverless plugin install -n serverless-plugin-warmup
 ```
 
 [Here's an example on how to use WarmUP.](https://serverless.com/blog/keep-your-lambdas-warm/)
