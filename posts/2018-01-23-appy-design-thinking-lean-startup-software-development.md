@@ -23,7 +23,7 @@ In a nutshell, Design Thinking is a process not for how you execute, but for how
 
 It focuses on a tight, user-driven feedback loop that, in theory, allows you to validate new feature ideas as quickly as possible before writing a single line of production code:
 
-<img src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/design-thinking/designthinking101.png”>
+![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/design-thinking/designthinking101-sm.png)
 
 For a tech company like us, it means this:
 1. **Empathize:** the product team takes in user feedback
