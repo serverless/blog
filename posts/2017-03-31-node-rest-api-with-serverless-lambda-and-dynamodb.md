@@ -116,7 +116,7 @@ Let's go over the YAML configuration:
 3. Next, we defined configuration of the cloud provider. As we are using AWS so we defined AWS corresponding configuration.
 4. Finally, we defined `candidateSubmission` function. In the configuration shown above, we declared that when the HTTP POST request is made to `/candidates` then `api/candidate.submit` handler should be invoked. We also specified memory we want to allocate to the function.
 
-Now, create a new directory `api` inside the `candidate-service` directory. Move the `handler.js` to the `api` directory. Rename `handler.js` to `candidate.js` and rename `handle` to `submit`.
+Now, create a new directory `api` inside the `candidate-service` directory. Move the `handler.js` to the `api` directory. Rename `handler.js` to `candidate.js` and rename `hello` to `submit`.
 
 ```javascript
 'use strict';
