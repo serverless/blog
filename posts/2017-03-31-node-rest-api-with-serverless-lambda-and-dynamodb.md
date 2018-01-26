@@ -70,7 +70,7 @@ This will create a directory `candidate-service` with the following structure.
 
 ```bash
 .
-├── .npmignore
+├── .gitignore
 ├── handler.js
 └── serverless.yml
 ```
