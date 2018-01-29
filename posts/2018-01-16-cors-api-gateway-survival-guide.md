@@ -23,6 +23,7 @@ In this post, we'll cover all you need to know about Serverless + CORS. If you d
 - [Preflight requests](#cors-preflight-requests)
 - [Response headers](#cors-response-headers)
 - [CORS with custom authorizers](#cors-with-custom-authorizers)
+- [CORS with cookie credentials](#cors-with-cookie-credentials)
 
 Let's get started!
 
@@ -339,6 +340,84 @@ resources:
 ```
 
 This will ensure that the proper response headers are returned from your custom authorizer rejecting an authorization request.
+
+# CORS with Cookie credentials
+
+_Note: This section was added on January 29, 2018 thanks to a request from [Alex Rudenko](https://twitter.com/orKoN). Hat tip to Martin Splitt for [a great article](http://50linesofco.de/post/2017-03-06-cors-a-guided-tour#credentials-and-cors) on this issue._
+
+In the examples above, we've given a wildcard "*" as the value for the `Access-Control-Allow-Origin` header. However, if you're making a [request using credentials](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Requests_with_credentials), the wildcard value is not allowed. For your browser to make use of the response, the `Access-Control-Allow-Origin` response headers _must_ include the specific origin that made the request.
+
+There are two ways you can handle this. First, if you only have one origin website that's making the request, you can just hardcode that into your Lambda function's response:
+
+```javascript
+// handler.js
+
+'use strict';
+
+module.exports.getProduct = (event, context, callback) => {
+
+  // Do work to retrieve Product
+  const product = retrieveProduct(event);
+
+  const response = {
+    statusCode: 200,
+    headers: {
+      'Access-Control-Allow-Origin': 'https://myorigin.com', // <-- Add your specific origin here
+      'Access-Control-Allow-Credentials': '*',
+    },
+    body: JSON.stringify({
+      product: product
+    }),
+  };
+
+  callback(null, response);
+};
+```
+
+If you have multiple origin websites that may be hitting your API, then you'll need to do a more dynamic approach. You can inspect the `origin` header to see if its in your list of approved origins. If it is, return the origin value in your `Access-Control-Allow-Origin` header:
+
+```javascript
+// handler.js
+
+'use strict';
+
+const ALLOWED_ORIGINS = [
+	'https://myfirstorigin.com',
+	'https://mysecondorigin.com'
+];
+
+module.exports.getProduct = (event, context, callback) => {
+
+  const origin = event.headers.origin;
+  let headers;
+  
+  if (ALLOWED_ORIGINS.includes(origin) {
+    headers: {
+      'Access-Control-Allow-Origin': origin,
+      'Access-Control-Allow-Credentials': '*',
+    },
+  } else {
+      headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+  }
+
+  // Do work to retrieve Product
+  const product = retrieveProduct(event);
+
+  const response = {
+    statusCode: 200,
+    headers
+    body: JSON.stringify({
+      product: product
+    }),
+  };
+
+  callback(null, response);
+};
+```
+
+In this example, we check if the `origin` header matches one of our allowed headers. If so, we include the specific origin in our `Access-Control-Allow-Origin` header, and we state that `Access-Control-Allow-Credentials` are allowed. If the `origin` is not one of our allowed origins, we include the standard headers which will be rejected if the origin attempts a credentialed request. 
 
 # Conclusion
 
