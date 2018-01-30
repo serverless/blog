@@ -194,7 +194,8 @@ functions:
           path: product/{id}
           method: get
           cors:
-            origin: '*' # <-- Specify allowed origin
+            origins:
+              - '*' # <-- Specify allowed origin
             headers: # <-- Specify allowed headers
               - Content-Type
               - X-Amz-Date
