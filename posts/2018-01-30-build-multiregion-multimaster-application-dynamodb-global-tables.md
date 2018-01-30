@@ -43,8 +43,7 @@ To handle the basic functionality with our application, we'll need three things:
 
 Edit your `serverless.yml` so that it looks as follows:
 
-```
-yml
+```yml
 # serverless.yml
 
 service: serverless-keyvalue
@@ -123,16 +122,14 @@ Finally, in the `functions` section, we have our two functions: `getKey` and `se
 Let's add our handlers. First, remove the templated `handler.py` and add a `handlers` directory:
 
 
-```
-bash
+```bash
 $ rm handler.py
 $ mkdir handlers
 ```
 
 Add the code for your `setKey` function in `handlers/set_key.py`:
 
-```
-python
+```python
 # handlers/set_key.py
 
 import json
@@ -188,8 +185,7 @@ We will parse the key name from the URL path parameter and the value from the JS
 
 Then, we'll add the code for our `getKey` function in `handlers/get_key.py`:
 
-```
-python
+```python
 # handlers/get_key.py
 
 import json
@@ -236,8 +232,7 @@ It takes the key from the path, retrieves it from DynamoDB, and returns it to th
 
 Great, let's deploy it. I'm going to use the `us-west-2` region:
 
-```
-bash
+```bash
 $ sls deploy --region us-west-2
 Serverless: Packaging service...
 ...<snip>...
@@ -304,16 +299,14 @@ While you're here, you should create one for your other region as well. I create
 
 Next, install the `serverless-domain-manager` plugin using `npm`:
 
-```
-bash
+```bash
 $ npm init -f
 $ npm install --save-dev serverless-domain-manager
 ```
 
 Configure your `serverless.yml` by adding the plugin to `plugins` and adding config in the `custom` block:
 
-```
-yml
+```yml
 # serverless.yml
 service: serverless-keyvalue
 
@@ -339,8 +332,7 @@ This will help us provision a custom domain in API Gateway. Note that we're prov
 
 Go on and create your domain:
 
-```
-bash
+```bash
 $ sls create_domain --region us-west-2
 Serverless: Skipping creation of Route53 record.
 Serverless: 'keyvalue.serverlessteam.com' was created/updated. New domains may take up to 40 minutes to be initialized.
@@ -348,8 +340,7 @@ Serverless: 'keyvalue.serverlessteam.com' was created/updated. New domains may t
 
 Because it can take up to 40 minutes to provision a domain, let's provision our other region while we're here:
 
-```
-bash
+```bash
 $ sls create_domain --region eu-central-1
 Serverless: Skipping creation of Route53 record.
 Serverless: 'keyvalue.serverlessteam.com' was created/updated. New domains may take up to 40 minutes to be initialized.
@@ -357,8 +348,7 @@ Serverless: 'keyvalue.serverlessteam.com' was created/updated. New domains may t
 
 And now, deploy our two services:
 
-```
-bash
+```bash
 $ sls deploy --region us-west-2
 ... Deploy output ....
 
@@ -372,8 +362,7 @@ Both our services are deployed. Let's set up the Route53 Latency records to our 
 
 We'll create two records for `keyvalue.<yourdomain>.com`—one in us-west-2 and one in eu-central-1. Use the script below, modifying the value of `DOMAIN` in the first line to match your domain:
 
-```
-bash
+```bash
 $ DOMAIN=serverlessteam.com
 SUBDOMAIN=keyvalue.${DOMAIN}
 STACKNAME=serverless-keyvalue-dev
@@ -443,8 +432,7 @@ $ curl -X GET ${USDOMAIN}/testing
 
 Let's try retrieving the key from our European region:
 
-```
-bash
+```bash
 $ curl -X GET ${EUROPEDOMAIN}/testing
 {"error": "Sorry, an error occurred while retrieving your key."}
 ```
@@ -465,8 +453,7 @@ To set up a Global Table, there are a few requirements. First, the tables must h
 
 If you have Items in your table, use the script below to clean them out. You'll need to run it for each region that has a table with Items in it:
 
-```
-bash
+```bash
 $ aws dynamodb scan --table-name keyvalues --region us-west-2 | \
  jq -c '.Items[] | { key } ' |
  tr '\n' '\0' | \
@@ -475,8 +462,7 @@ $ aws dynamodb scan --table-name keyvalues --region us-west-2 | \
 
 Once your tables are cleared out, then we can run the command to create a global table using the AWS CLI:
 
-```
-bash
+```bash
 $ aws dynamodb create-global-table \
     --global-table-name keyvalues \
     --replication-group RegionName=us-west-2 RegionName=eu-central-1 \
@@ -485,8 +471,7 @@ $ aws dynamodb create-global-table \
 
 You will get a response indicating that the table is being created:
 
-```
-bash
+```bash
 {
     "GlobalTableDescription": {
         "GlobalTableStatus": "CREATING",
@@ -509,16 +494,14 @@ Now our tables will be synced together, so writes from one region will be replic
 
 Let's test it out. Save a key in the US region:
 
-```
-bash
+```bash
 $ curl -X POST ${USDOMAIN}/testing -d '{"value": "It worked"}'
 {"key": "testing", "value": "It worked", "region": "us-west-2"}
 ```
 
 Then retrieve it in the EU region:
 
-```
-bash
+```bash
 $ curl -X GET ${EUROPEDOMAIN}/testing
 {
   "key": "testing",
@@ -532,8 +515,7 @@ Nice, it worked. We can read the key in a different region. Note that the respon
 
 We can also use our custom domain to retrieve the key from whichever region is closest:
 
-```
-bash
+```bash
 $ curl -X GET https://keyvalue.serverlessteam.com/testing
 {
   "key": "testing",
