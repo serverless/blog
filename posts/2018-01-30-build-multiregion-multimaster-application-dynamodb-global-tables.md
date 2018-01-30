@@ -548,3 +548,7 @@ To this point, we've been using `curl` and the terminal for calling our API. If 
 <img width="1287" alt="Multi-region frontend client" src="https://user-images.githubusercontent.com/6509926/35575278-9921affa-05a1-11e8-901d-b2d3fc788b7b.png">
 
 Check it out and run it yourself!
+
+# Miss the DynamoDB global tables webinar?
+
+Follow [@goserverless](twitter.com/goserverless) on twitter or sign up for our bi-monthly newsletter (via the lefthand menu) to stay on top of serverless industry news.
