@@ -14,6 +14,10 @@ We'll have compute located on two different continents writing to databases in t
 
 Prefer the video walkthrough? We recorded this webinar live and we'll be posting it soon. Stay tuned.
 
+In the meantime, feel free to [check out the slide deck](https://speakerdeck.com/alexcasalboni/how-to-build-a-regionally-distributed-serverless-architecture).
+
+On to the word-wise walkthrough.
+
 # Setting up your app
 
 Before we begin, you'll need the [Serverless Framework installed](https://serverless.com/framework/docs/providers/aws/guide/quick-start/) with an AWS account set up. Your version of Serverless must be 1.25 or higher to take advantage of regional endpoints.
