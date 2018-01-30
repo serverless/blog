@@ -44,10 +44,11 @@ custom:
     stages:
       - production
     topics:
-      alarm: ${self:service}-${opt:stage}-alerts-alarm
-      notifications:
-        - protocol: email
-          endpoint: name@domain.com # Change this to your email address
+      alarm: 
+        topic: ${self:service}-${opt:stage}-alerts-alarm
+        notifications:
+          - protocol: email
+            endpoint: name@domain.com # Change this to your email address
     alarms:
       - functionErrors
       - functionThrottles
@@ -119,10 +120,11 @@ custom:
     stages:
       - producton
     topics:
-      alarm: ${self:service}-${opt:stage}-alerts-alarm
-      notifications:
-        - protocol: email
-          endpoint: name@domain.com
+      alarm: 
+        topic: ${self:service}-${opt:stage}-alerts-alarm
+        notifications:
+          - protocol: email
+            endpoint: name@domain.com
     definitions:
       tooManyRecordsAlarm:
         description: 'Record overflow'
