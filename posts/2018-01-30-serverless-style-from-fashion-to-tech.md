@@ -76,9 +76,9 @@ I think a lot of modern tech companies struggle to bring true humanity into this
 
 And here’s the thing: I was drawn to Serverless not only because of the people, but because of what they are trying to do as a company. They are trying to democratize software development. They want to make it easier to do and accessible for anyone to learn.
 
-Maybe even me.
-
 <img height="400" align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-fashion/charmmie-hendon.jpg">
+
+Maybe even me.
 
 Unlike that Steve Jobs presentation in 1987, I’m excited now to see where my ideas will take me. I want to know how things work. I want to build them.
 
