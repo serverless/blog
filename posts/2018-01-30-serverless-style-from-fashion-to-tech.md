@@ -74,9 +74,9 @@ Tech doesn’t have to be stoic or unfeeling. It’s a lot like fashion, to be h
 
 I think a lot of modern tech companies struggle to bring true humanity into this industry. But they are starting to take in views from people outside of tech, like me, and they are becoming more diverse.
 
-And here’s the thing: I was drawn to Serverless not only because of the people, but because of what they are trying to do as a company. They are trying to democratize software development. They want to make it easier to do and accessible for anyone to learn.
-
 <img height="400" align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-fashion/charmmie-hendon.jpg">
+
+And here’s the thing: I was drawn to Serverless not only because of the people, but because of what they are trying to do as a company. They are trying to democratize software development. They want to make it easier to do and accessible for anyone to learn.
 
 Maybe even me.
 
