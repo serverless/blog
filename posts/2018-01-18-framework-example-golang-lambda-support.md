@@ -24,27 +24,22 @@ First things first, you'll be needing the [Serverless Framework](https://serverl
 
 The Framework will configure AWS for Go on your behalf.
 
-There are [a couple Go templates](https://github.com/serverless/serverless-golang) already included with the Framework. Let's start with the basic one. 
+There are a couple Go templates already included with the Framework -- `aws-go` for a basic service with two functions, and `aws-go-dep` for the basic service using the [`dep`](https://github.com/golang/dep) dependency management tool. Let's try the `aws-go-dep` template. **You will need [`dep`](https://github.com/golang/dep) installed.**
 
-To use the template, open up your terminal and type:
-```
-serverless create -t aws-go-dep
-```
-
-Let's use this to create a new service with Go. Make sure you're in your [`${GOPATH}/src`](https://github.com/golang/go/wiki/GOPATH) directory, then run:
+Make sure you're in your [`${GOPATH}/src`](https://github.com/golang/go/wiki/GOPATH) directory, then run:
 
 ```bash
-$ serverless create -u https://github.com/serverless/serverless-golang/ -p myservice
+$ serverless create -t aws-go-dep -p myservice
 ```
 
 Change into your new service directory and compile the function:
 
 ```bash
 $ cd myservice
-$ GOOS=linux go build -o bin/main
+$ make
 ```
 
-That's it! You can deploy now:
+The default command in the included Makefile will gather your dependencies and build the proper binaries for your functions.  You can deploy now:
 
 ```bash
 $ serverless deploy
@@ -56,11 +51,11 @@ Serverless: Checking Stack create progress...
 Serverless: Stack create finished...
 Serverless: Uploading CloudFormation file to S3...
 Serverless: Uploading artifacts...
-Serverless: Uploading service .zip file to S3 (2.84 MB)...
+Serverless: Uploading service .zip file to S3 (4.43 MB)...
 Serverless: Validating template...
 Serverless: Updating Stack...
 Serverless: Checking Stack update progress...
-...............
+........................
 Serverless: Stack update finished...
 Service Information
 service: myservice
@@ -73,6 +68,7 @@ endpoints:
   None
 functions:
   hello: myservice-dev-hello
+  world: myservice-dev-world
 ```
 
 Finally, invoke your function:
@@ -114,22 +110,22 @@ package:
    - ./bin/**
 
 functions:
-  echo:
+  hello:
     handler: bin/main
     events:
       - http:
-          path: echo
+          path: hello
           method: post
 ```
 
-We'll need to update our function in `main.go`.
+We'll need to update our function in `hello/main.go`.
 
 Remember, Golang is a compiled, statically-typed language, so we need to define the `event` object that's coming into our function. Fortunately, AWS has [provided a number of event types](https://github.com/aws/aws-lambda-go/tree/master/events) in a Github repo. 💥 We can just use those.
 
-Update your `main.go` to have the following code:
+Update your `hello/main.go` to have the following code:
 
 ```golang
-# main.go
+# hello/main.go
 
 package main
 
@@ -156,7 +152,10 @@ Our `Handler()` function now takes an `APIGatewayProxyRequest` object and return
 Recompile & deploy again:
 
 ```bash
-$ GOOS=linux go build -o bin/main
+$ make
+dep ensure
+env GOOS=linux go build -ldflags="-s -w" -o bin/hello hello/main.go
+env GOOS=linux go build -ldflags="-s -w" -o bin/world world/main.go
 $ sls deploy
 
 Serverless: Packaging service...
@@ -171,9 +170,10 @@ stack: myservice-dev
 api keys:
   None
 endpoints:
-  POST - https://8nq19esp39.execute-api.us-east-1.amazonaws.com/dev/echo
+  POST - https://24k8pql1le.execute-api.us-east-1.amazonaws.com/dev/hello
 functions:
-  echo: myservice-dev-echo
+  hello: myservice-dev-hello
+  world: myservice-dev-world
 ```
 
 Notice that you now have an `endpoint` listed in your Service Information output.
@@ -181,7 +181,7 @@ Notice that you now have an `endpoint` listed in your Service Information output
 Let's use `curl` to hit your endpoint and get a response:
 
 ```bash
-$ curl -X POST https://8nq19esp39.execute-api.us-east-1.amazonaws.com/dev/echo -d 'Hello, world!'
+$ curl -X POST https://24k8pql1le.execute-api.us-east-1.amazonaws.com/dev/hello -d 'Hello, world!'
 Hello, world!
 ```
 
