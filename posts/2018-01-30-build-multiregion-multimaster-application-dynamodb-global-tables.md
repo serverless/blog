@@ -12,11 +12,9 @@ AWS gives devs some *powerful* building blocks for making amazing applications. 
 
 We'll have compute located on two different continents writing to databases in their own region, and the written data will be replicated to the database in the other region. Users will be directed to the closest region according to their location.
 
-Prefer the video walkthrough? We recorded this webinar live and we'll be posting it soon. Stay tuned.
+Prefer the video walkthrough? The webinar was recorded live, and [is available on Cloud Academy](https://cloudacademy.com/webinars/how-build-regionally-distributed-serverless-architecture-61/); give it a watch!
 
-In the meantime, feel free to [check out the slide deck](https://speakerdeck.com/alexcasalboni/how-to-build-a-regionally-distributed-serverless-architecture).
-
-On to the word-wise walkthrough.
+Now, on to the word-wise walkthrough.
 
 # Setting up your app
 
