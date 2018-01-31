@@ -22,9 +22,16 @@ First things first, you'll be needing the [Serverless Framework](https://serverl
 
 # Use the Go template
 
-The Framework will configure AWS for Go on your behalf. Use this quick [serverless-golang template](https://github.com/serverless/serverless-golang) to deploy your first service.
+The Framework will configure AWS for Go on your behalf.
 
-Open up your terminal and let's create a new service with Go. Make sure you're in your [`${GOPATH}/src`](https://github.com/golang/go/wiki/GOPATH) directory, then run:
+There are [a couple Go templates](https://github.com/serverless/serverless-golang) already included with the Framework. Let's start with the basic one. 
+
+To use the template, open up your terminal and type:
+```
+serverless create -t aws-go-dep
+```
+
+Let's use this to create a new service with Go. Make sure you're in your [`${GOPATH}/src`](https://github.com/golang/go/wiki/GOPATH) directory, then run:
 
 ```bash
 $ serverless create -u https://github.com/serverless/serverless-golang/ -p myservice
