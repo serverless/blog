@@ -1,7 +1,7 @@
 ---
 title: Using the Serverless Dashboard plugin for Atom
 description: Making it easier to manage serverless applications from within the Atom editor
-date: 2018-01-XX
+date: 2018-02-05
 layout: Post
 thumbnail: 
 authors:
@@ -12,18 +12,20 @@ Many developers love and use the Serverless Framework for writing their serverle
 
 In this post, I will give you an overview of the Serverless Dashboard package.
 
-What we will learn:
+We'll cover:
 
-* Install the plugin in Atom
-* Visualize serverless.yml file
-* Using it to manage a serverless app
+* Installing the plugin in Atom
+* Visualizing the serverless.yml file
+* Using the Atom plugin to manage a serverless app
 
+# Installation
 
-## Installation
+Let's start by installing the Atom package or plugin. If you don't have [Atom](https://atom.io/), you'll need that first! If you don't have the [Serverless Framework](https://serverless.com/framework/) installed, you'll need that too.
 
-Let's start by installing the Atom package or plugin. If you don't have [Atom](https://atom.io/), you need that! If you don't have the [Serverless Framework](https://serverless.com/framework/) installed, you need that too. Installing the Serverless Framework is a breeze:
+Installing the Serverless Framework is a breeze:
 
-```bash
+```
+bash
 npm install -g serverless 
 ```
 
@@ -43,7 +45,7 @@ To install it, do the following:
 ![Install the package](https://user-images.githubusercontent.com/8188/35175208-934451dc-fd40-11e7-8111-f7af675d0d06.png)
 *Install the package*
 
-## Visualize serverless.yml file
+## Visualizing the serverless.yml file
 
 Let's create a simple app named `helloatom` using the boilerplate template provided by the Serverless Framework.
 
@@ -53,7 +55,7 @@ sls create -t hello-world -n helloatom -p helloatom
 
 Open the app files in atom. 
 
-To use the Serverless Dashboard plugin, locate the 'Serverless Dashboard' item on 'Packages' menu list as shown below:
+To use the Serverless Dashboard plugin, locate the 'Serverless Dashboard' item on the 'Packages' menu list as shown below:
 
 ![Post install](https://user-images.githubusercontent.com/8188/35174627-0685b0b2-fd3e-11e7-85f0-a4b83d6b7edb.png)
 *Post installation*
@@ -65,11 +67,11 @@ A new pane will open with the Serverless Dashboard showing a visual representati
 ![Serverless Dashboard](https://user-images.githubusercontent.com/8188/35176844-8e8f42a6-fd49-11e7-9bb1-866a9954c2ee.png)
 *Serverless Dashboard*
 
-## Managing a serverless app
+# Managing a serverless app
 
-The Serverless Dashboard plugin not only lets you visualize the `serverless.yml` file but it also helps manage a few things easily inside the Atom editor pane. 
+The Serverless Dashboard plugin not only lets you visualize the `serverless.yml` file, but also helps you easily manage a few things inside the Atom editor pane. 
 
-### Deploy a service
+## Deploy a service
 
 You can easily deploy the service by clicking on the 'Deploy Service' button. The service will be deployed to the stage and the region as specified. Note that you can change those settings directly from the pane.
 
@@ -81,13 +83,14 @@ Let's see what the deployment looks like:
 ![Deployment](https://user-images.githubusercontent.com/8188/35177180-8d13569a-fd4b-11e7-8460-04efaeffa9f1.png)
 *Deployment*
 
-Nothing new here if you are familiar with Serverless Framework. The output of the deployment is exactly what you would see in the terminal if you deployed using `sls deploy`.
+Nothing new here if you're already familiar with Serverless Framework. The output of the deployment is exactly what you would see in the terminal if you'd deployed using `sls deploy`.
 
-### Updating the serverless.yml file
+## Updating the serverless.yml file
 
-Let's add a new function `byeWorld` to the serverless.yml file, like so:
+Let's add a new function, `byeWorld`, to the serverless.yml file, like so:
 
-```yaml
+```
+yaml
   byeWorld:
     handler: handler.byeWorld
     # The `events` block defines how to trigger the handler.byeWorld code
@@ -104,11 +107,12 @@ Switch over to the Serverless Dashboard pane, and click on the 'Reload serverles
 
 Let's deploy the service by clicking on the 'Deploy Service' button.
 
-### Deploying a function
+## Deploying a function
 
 Let's update some code in our functions. We will just add a simple line to log the event object that we receive.
 
-```js
+```
+js
 console.log(`***** From helloWorld: *****\n Event: JSON.stringify(event) \n******\n`);
 ```
 
@@ -117,28 +121,28 @@ Since we just updated our function code, let's just deploy the `helloWorld` func
 ![Deploying a function](https://user-images.githubusercontent.com/8188/35177812-f83dd6ac-fd50-11e7-8ca6-e387246bf336.png)
 *Deploying a function*
 
-### Invoking a function
+## Invoking a function
 
-To invoke a function, click on the dropdown next to the function name and select 'Invoke', and then hit 'Apply' as shown below:
+To invoke a function, click on the dropdown next to the function name. Select 'Invoke', and then hit 'Apply':
 
 ![Invoking a function](https://user-images.githubusercontent.com/8188/35177846-4ac02740-fd51-11e7-8a53-fb3f8803a0e6.png)
 *Invoking a function*
 
-### Logs for a function
+## Logs for a function
 
 To view the logs for a function, click on the dropdown next to the function name and select 'Logs', and then hit 'Apply' as shown below:
 
 ![Logs for a function](https://user-images.githubusercontent.com/8188/35177865-86666390-fd51-11e7-9c67-0e851dbbf2dd.png)
 *Logs for a function*
 
-### Removing a service
+## Removing a service
 
-Last but not least, you can remove the service right from the pane. like so:
+Last but not least, you can remove the service right from the pane:
 
 ![Removing a service](https://user-images.githubusercontent.com/8188/35177901-e1ca1664-fd51-11e7-838b-ccf3432e901b.png)
 *Removing a service*
 
-## Summary
+# Summary
 
 The Serverless Dashboard is a convenient package that you can install in Atom to easily access various commands for the Serverless Framework within the Atom editor. It does not support all the commands that are available via the CLI, but it covers the most commonly used commands for managing a service.
 
