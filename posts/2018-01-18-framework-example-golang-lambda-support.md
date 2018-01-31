@@ -24,7 +24,7 @@ First things first, you'll be needing the [Serverless Framework](https://serverl
 
 The Framework will configure AWS for Go on your behalf.
 
-There are a couple Go templates already included with the Framework—`aws-go` for a basic service with two functions, and `aws-go-dep` for the basic service using the [`dep`](https://github.com/golang/dep) dependency management tool. Let's try the `aws-go-dep` template. **You will need [`dep`](https://github.com/golang/dep) installed.**
+There are a couple Go templates already included with the Framework as of v1.26—`aws-go` for a basic service with two functions, and `aws-go-dep` for the basic service using the [`dep`](https://github.com/golang/dep) dependency management tool. Let's try the `aws-go-dep` template. **You will need [`dep`](https://github.com/golang/dep) installed.**
 
 Make sure you're in your [`${GOPATH}/src`](https://github.com/golang/go/wiki/GOPATH) directory, then run:
 
