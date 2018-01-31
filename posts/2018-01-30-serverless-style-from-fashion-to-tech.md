@@ -78,7 +78,7 @@ And here’s the thing: I was drawn to Serverless not only because of the people
 
 Maybe even me.
 
-<img height="400" align="left" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-fashion/charmmie-hendon.jpg">
+<img height="400" align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-fashion/charmmie-hendon.jpg">
 
 Unlike that Steve Jobs presentation in 1987, I’m excited now to see where my ideas will take me. I want to know how things work. I want to build them.
 
