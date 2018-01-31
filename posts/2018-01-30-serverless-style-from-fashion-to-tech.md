@@ -34,9 +34,9 @@ That’s when I met Sam.
 
 # From non-profit art to fast-paced fashion
 
-I met Sam at a mutual friend’s party and we *couldn’t*. *Shut*. *Up*. About fashion. We became instant friends.
+I met Sam at a mutual friend’s party and we *couldn’t*. *Shut*. *Up*. About fashion. Two months later, we were signing business partnership papers in San Francisco.
 
-Two months later, we were signing business partnership papers in San Francisco. Our fashion sales agency, Varjak, was born.
+Our fashion sales agency, Varjak, was born.
 
 Sam and I spent several years together, attending fashion weeks in New York, London and Paris, representing up and coming designers in wholesale, meeting fashion VIPs including U.S. Vogue Editor in Chief, Queen Bee herself, Anna Wintour.
 
