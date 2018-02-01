@@ -1,9 +1,9 @@
 ---
-title: Using the Serverless Dashboard plugin for Atom
+title: Using the Serverless Dashboard plugin for Atom 
 description: Making it easier to manage serverless applications from within the Atom editor
 date: 2018-02-05
 layout: Post
-thumbnail: 
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/atom-editor-logo.jpeg 
 authors:
   - RupakGanguly
 ---
@@ -60,7 +60,7 @@ To use the Serverless Dashboard plugin, locate the 'Serverless Dashboard' item o
 ![Post install](https://user-images.githubusercontent.com/8188/35174627-0685b0b2-fd3e-11e7-85f0-a4b83d6b7edb.png)
 *Post installation*
 
-Click on the 'Open yoru serverless.yml' and choose the `serverless.yml` for the project.
+Click on the 'Open your serverless.yml' and choose the `serverless.yml` for the project.
 
 A new pane will open with the Serverless Dashboard showing a visual representation of the `serverless.yml` file.
 
