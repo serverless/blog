@@ -111,7 +111,7 @@ package:
 
 functions:
   hello:
-    handler: bin/main
+    handler: bin/hello
     events:
       - http:
           path: hello
