@@ -20,7 +20,7 @@ So how did I do it? Read on, my friends!
 
 Before we dive into the real-time updates, I’d like to explain how I've structured my application in general. This is a (very) rudimentary diagram I've created to show how the whole app fits together.
 
-![AWS Diagram](aws-diagram.png)
+![AWS Diagram](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/websockets-lambda-iot/aws-diagram.png)
 
 The frontend is hosted in an S3 bucket as a static site.
 
