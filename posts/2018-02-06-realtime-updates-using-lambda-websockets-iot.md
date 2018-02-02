@@ -1,6 +1,6 @@
 ---
-title: Using Websockets and Lambda for real-time updates, serverless-ly
-description: Need a serverless way to give you app updated data in real-time? Try this solution with Websockets.
+title: Implement real-time updates using Lambda and Websockets via IoT
+description: Need a serverless way to give your app updated data in real-time? Try this solution with Websockets and Lambda.
 date: 2018-02-06
 layout: Post
 thumbnail: ''
