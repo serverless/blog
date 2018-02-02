@@ -5,7 +5,7 @@ date: 2018-02-06
 layout: Post
 thumbnail: ''
 authors: 
-  - 
+  - TurnerHughton
 ---
 
 Would your frontend application benefit from having access to updated data in real-time, but you can't seem to find a 'serverless' way to do it? Well, that was me 3 months ago.
