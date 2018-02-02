@@ -114,6 +114,7 @@ But—I only give them permission to subscribe, receive, and connect. So no one 
 The CloudFormation to set that up is right here:
 
 ```
+```
 WebAppCognitoIdentityPool:
   Type: "AWS::Cognito::IdentityPool"
   Properties:
@@ -148,9 +149,16 @@ cognitoAuthRole:
           Statement:
             - Effect: Allow
               Action:
-              - 'iot:Connect'
-              - 'iot:Subscribe'
+              - 'iot:DescribeEndpoint'
               - 'iot:Receive'
+              - 'iot:Subscribe',
+              - 'iot:GetTopicRule'
+              - 'iot:Connect'
+              - 'mobileanalytics:PutEvents',
+              - 'iot:DescribeCertificate',
+              - 'iot:Publish,
+              - 'cognito-sync:*',
+              - 'iot:GetPolicyVersion'
               Resource:
               - "*"
 cognitoUnauthRole:
@@ -177,9 +185,16 @@ cognitoUnauthRole:
           Statement:
             - Effect: Allow
               Action:
-              - 'iot:Connect'
-              - 'iot:Subscribe'
+              - 'iot:DescribeEndpoint'
               - 'iot:Receive'
+              - 'iot:Subscribe',
+              - 'iot:GetTopicRule'
+              - 'iot:Connect'
+              - 'mobileanalytics:PutEvents',
+              - 'iot:DescribeCertificate',
+              - 'iot:Publish,
+              - 'cognito-sync:*',
+              - 'iot:GetPolicyVersion'
               Resource:
               - "*"
 myApiIdentityPoolRoleAttachment:
@@ -193,6 +208,7 @@ myApiIdentityPoolRoleAttachment:
         'Fn::GetAtt': [ cognitoUnauthRole, Arn ]
       authenticated:
         'Fn::GetAtt': [ cognitoAuthRole, Arn]
+
 ```
 
 We will also need to add a policy to IoT that allows all actions to be executed.
