@@ -24,8 +24,7 @@ Let's start by installing the Atom package or plugin. If you don't have [Atom](h
 
 Installing the Serverless Framework is a breeze:
 
-```
-bash
+```bash
 npm install -g serverless 
 ```
 
@@ -49,7 +48,7 @@ To install it, do the following:
 
 Let's create a simple app named `helloatom` using the boilerplate template provided by the Serverless Framework.
 
-```
+```bash
 sls create -t hello-world -n helloatom -p helloatom
 ```
 
@@ -89,8 +88,8 @@ Nothing new here if you're already familiar with Serverless Framework. The outpu
 
 Let's add a new function, `byeWorld`, to the serverless.yml file, like so:
 
-```
-yaml
+```yaml
+
   byeWorld:
     handler: handler.byeWorld
     # The `events` block defines how to trigger the handler.byeWorld code
@@ -111,8 +110,7 @@ Let's deploy the service by clicking on the 'Deploy Service' button.
 
 Let's update some code in our functions. We will just add a simple line to log the event object that we receive.
 
-```
-js
+```js
 console.log(`***** From helloWorld: *****\n Event: JSON.stringify(event) \n******\n`);
 ```
 
