@@ -3,7 +3,7 @@ title: Using the Serverless Dashboard plugin for Atom
 description: Making it easier to manage serverless applications from within the Atom editor
 date: 2018-02-05
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/atom-editor-logo.jpeg 
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/atom-editor-square.jpeg 
 authors:
   - RupakGanguly
 ---
