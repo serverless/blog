@@ -38,7 +38,7 @@ To set up Cognito User Pools with your API and frontend authentication, you’ll
 
 Here are the Cognito-related entries in the resources section of my `serverless.yml`:
 
-```
+```yml
 CognitoUserPoolMyUserPool:
   Type: "AWS::Cognito::UserPool"
   Properties:
@@ -90,7 +90,7 @@ One thing to note is: when you want to add a Cognito User Pool Authorizer to an 
 
 That means we have to define every endpoint-authorizer attachment manually in CloudFormation, like this:
 
-```
+```yml
  ApiGatewayMethodUserGet:
   Type: "AWS::ApiGateway::Method"
   Properties:
@@ -113,8 +113,8 @@ But—I only give them permission to subscribe, receive, and connect. So no one 
 
 The CloudFormation to set that up is right here:
 
-```
-```
+
+```yml
 WebAppCognitoIdentityPool:
   Type: "AWS::Cognito::IdentityPool"
   Properties:
@@ -217,7 +217,7 @@ To change your IoT policy, you must go to the IoT console and click 'Get started
 
 You will want to create a new policy that looks like the one below:
 
-```
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -244,7 +244,7 @@ That's where the AWS SDK comes in. My example uses the JavaScript SDK.
 
 You’ll need to get your IoT endpoint, which you can do by running `aws iot describe-endpoint` in your console if you have the AWS CLI. Or you can find it by going to the IoT console, clicking 'getting started' and then clicking on 'settings' in the bottom left corner.
 
-```
+```javascript
 const AWS = require('aws-sdk),
       IotData = new AWS.IotData({endpoint: 'YOUR_IOT_ENDPOINT HERE'})
       
@@ -274,7 +274,7 @@ Luckily, someone has already come up with a library that lets us listen to the I
 
 Here is an example of how to use it in a webpack build (taken from the library mentioned above):
 
-```
+```javascript
 import AWS from 'aws-sdk/global'
 import AWSMqtt from 'aws-mqtt'
 AWS.config.region = 'us-east-1' // your region
