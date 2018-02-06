@@ -156,7 +156,6 @@ cognitoAuthRole:
               - 'iot:Connect'
               - 'mobileanalytics:PutEvents',
               - 'iot:DescribeCertificate',
-              - 'iot:Publish,
               - 'cognito-sync:*',
               - 'iot:GetPolicyVersion'
               Resource:
