@@ -245,8 +245,8 @@ That's where the AWS SDK comes in. My example uses the JavaScript SDK.
 You’ll need to get your IoT endpoint, which you can do by running `aws iot describe-endpoint` in your console if you have the AWS CLI. Or you can find it by going to the IoT console, clicking 'getting started' and then clicking on 'settings' in the bottom left corner.
 
 ```javascript
-const AWS = require('aws-sdk),
-      IotData = new AWS.IotData({endpoint: 'YOUR_IOT_ENDPOINT HERE'})
+const AWS = require('aws-sdk);
+const iotData = new AWS.IotData({endpoint: 'YOUR_IOT_ENDPOINT HERE'});
       
 exports.handler = (event, context, callback) => {
   const iotParams = {
