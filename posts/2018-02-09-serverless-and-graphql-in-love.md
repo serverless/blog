@@ -17,11 +17,15 @@ authors:
 
 ## Serverless-Graphql Repository
 
+## Serverless Template and Plugins
+
 ## GraphQL Endpoints with AWS Lambda and API Gateway
 
-## BackEnd Integration with DynamoDB, REST API and RDS
+## Query GraphQL Schema (Graphcool or GraphiQL)
 
-## Client Integrations
+## BackEnd Integration (DynamoDB, REST API and RDS)
+
+## Client Integrations (Apollo ReactJS, Netlify and S3)
 
 ## Big Picture
 
