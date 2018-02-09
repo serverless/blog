@@ -33,13 +33,13 @@ We chose to answer this question in a decidedly physical way: we drew a line acr
 
 The line spanned our entire meeting room. One end represented people who prefer asynchronous, written communication; the other represented those who prefer in-person meetings. We then stood on the line, each team member placing themselves roughly where they felt they sit in terms of the their communication preferences.
 
-<img height="400" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/remote-communication/Team+communication+photo.jpeg">
+<img height="400" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/remote-communication/Team+communication+photo2.jpeg">
 
 We each had a chance to say a few words about why we had chosen that specific place on the spectrum. 
 
 The results were amazing and intensely personal and humanizing. Hearing everyone explain exactly why they like a certain communication style—or don’t—was eye opening. So, too, was the sheer number of communication tools that we as as team are using (close to 10 on an initial count). 
 
- <img height="300" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/remote-communication/Team+communication+styles.jpg">
+<img height="300" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/remote-communication/Team+communication+styles.jpg">
 
 This exercise brought to a light a few epiphanies for us a team. 
 
