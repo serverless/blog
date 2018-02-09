@@ -44,7 +44,7 @@ GraphQL provides a simple and elegant way of building mobile and web application
 2. Know exactly what your response will look like. Ensure you're never sending more or less than the client needs.
 3. Describe your API with types that map your schema to existing backend.
 
-Thousands of companies are now using GraphQL in production with the help of open source frameworks built by Facebook, Apollo, and Graphcool. In fact, Starbucks [announcement](https://twitter.com/davidbrunelle/status/960946257643454464) is going to make my morning coffee taste even better :D 
+Thousands of companies are now using GraphQL in production with the help of open source frameworks built by [Facebook](http://graphql.org/), [Apollo](https://github.com/apollographql), and [Graphcool](https://blog.graph.cool/introducing-prisma-1ff423fd629e). In fact, Starbucks [announcement](https://twitter.com/davidbrunelle/status/960946257643454464) last week is going to make my morning coffee taste even better :D 
 
 ![alt text](https://user-images.githubusercontent.com/1587005/36030260-52aa804e-0d5b-11e8-8bed-bd5ce9481075.png "Danielle's slide from Serverless and GraphQL meetup at Glassdoor, Jan 29 2018")
 
@@ -63,7 +63,7 @@ With Serverless comes the following:
 3. Authentication and Authorization at Scale
 4. Function as a unit of application logic
 
-**Note:** I’m going to focus on AWS Lambda below, but know that you can use any serverless provider (Microsoft Azure, Google Cloud Functions, etc) with GraphQL.
+> **Note:** I’m going to focus on AWS Lambda below, but know that you can use any serverless provider (Microsoft Azure, Google Cloud Functions, etc) with GraphQL.
 
 ## Why Serverless and GraphQL are such a great fit ?
 
@@ -74,13 +74,13 @@ When moving to GraphQL, you suddenly rely on one HTTP endpoint to connect your c
 3. fast
 4. has a small attack vector regarding security
 
-All these properties are full-filled by a single AWS Lambda function in combination with API Gateway. It’s just a great fit! 
+> All these properties are full-filled by a single AWS Lambda function in combination with API Gateway. It’s just a great fit! 
 
 In sum, powering your GraphQL endpoint with a serverless backend solves scaling and availability concerns outright, and it gives you a big leg up on security. It’s not even much code nor configuration. It takes only a few minutes to get to a production ready setup.
 
 ## Selling GraphQL in your Organization
 
-When using new tech, always a discussion of “do we want this, or not?” 
+> When using new tech, always a discussion of “do we want this, or not?” 
 
 Ready to switch everything over, but not sure about how to convince the backend team? Well, here’s how I’ve seen this play out several times, with success.
 
@@ -94,7 +94,7 @@ Now I’m not *saying* you should do that, but also, if you wanted to, there it 
 
 It’s pretty straightforward to get your HTTP endpoint up and running.
 
-I am happy to announce our Open Source Initiatives with @nikgraf in [Serverless and GraphQL Repository](https://github.com/serverless/serverless-graphql). There, I walk through all the steps in detail. Go check it out!
+I am happy to announce our Open Source Initiatives with [nikgraf](https://twitter.com/nikgraf) in [Serverless and GraphQL Repository](https://github.com/serverless/serverless-graphql). There, I walk through all the steps in detail. Go check it out!
 
 ![alt text](https://user-images.githubusercontent.com/1587005/36035218-1c06763c-0d6b-11e8-996b-996243b0975f.png)
 
