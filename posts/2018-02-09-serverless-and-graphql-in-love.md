@@ -78,18 +78,6 @@ When moving to GraphQL, you suddenly rely on one HTTP endpoint to connect your c
 
 In sum, powering your GraphQL endpoint with a serverless backend solves scaling and availability concerns outright, and it gives you a big leg up on security. It’s not even much code nor configuration. It takes only a few minutes to get to a production ready setup.
 
-## Selling GraphQL in your Organization
-
-> When using new tech, always a discussion of “do we want this, or not?” 
-
-Ready to switch everything over, but not sure about how to convince the backend team? Well, here’s how I’ve seen this play out several times, with success.
-
-First, the frontend team would wrap their existing REST APIs in a serverless GraphQL endpoint. It added some latency, but they were able to experiment with product changes way faster and could fetch only what was needed.
-
-Then, they would use this superior workflow to gain even more buy-in. They would back up this buy-in by showing the backend team that nothing had broken so far.
-
-Now I’m not *saying* you should do that, but also, if you wanted to, there it is for your consideration. My lips are sealed.
-
 ## Serverless-Graphql repository
 
 It’s pretty straightforward to get your HTTP endpoint up and running.
@@ -360,6 +348,18 @@ const client = new ApolloClient({
 ## Performance Analysis (X-Ray)
 
 ## Special Thanks!
+
+## Selling GraphQL in your Organization
+
+> When using new tech, always a discussion of “do we want this, or not?” 
+
+Ready to switch everything over, but not sure about how to convince the backend team? Well, here’s how I’ve seen this play out several times, with success.
+
+First, the frontend team would wrap their existing REST APIs in a serverless GraphQL endpoint. It added some latency, but they were able to experiment with product changes way faster and could fetch only what was needed.
+
+Then, they would use this superior workflow to gain even more buy-in. They would back up this buy-in by showing the backend team that nothing had broken so far.
+
+Now I’m not *saying* you should do that, but also, if you wanted to, there it is for your consideration. My lips are sealed.
 
 ## What next?
 
