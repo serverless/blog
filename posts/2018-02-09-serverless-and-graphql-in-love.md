@@ -12,29 +12,31 @@ authors:
 
 ## Introduction
 
-Over the last couple of years, I have been exploring and learning about the world of Big Data (please don't roll eyes, I am allowed to use some buzz words in my first blog :). 
-I have been mainly involved in building products with Serverless Architectures over the last couple of months, here at Glassdoor. Given below are some questions on everyone's mind - 
+Over the last four years, I have been exploring and learning about the world of Big Data to build real time and batch systems at scale (please don't roll eyes, I am allowed to use some buzz words in my first blog :). 
+I have been mainly involved in building products with serverless architectures for the last couple of months, here at Glassdoor. Here are few questions on everyone's mind - 
 
-1) How can we build low latency API's to server these complex, high dimensional and big datasets which can scale on demand?
+1) How can we build low latency APIs to server these complex, high dimensional and big datasets which can scale on demand?
 2) Is there a way for frontend and backend teams to collaborate more smoothly?
-3) Can we fire single query which can construct a nested response with multiple resources?
+3) Can we fire single query which can construct a nested response from multiple resources?
 4) Is there an easy way to secure the endpoint, paginate through the data, aggregate the results at scale and what not? 
-5) Can we pay per query execution?
+5) Can we pay per query execution rather than running fleet of servers?
 
-I’m going to start this off with a statement of truth, to all my fellow engineers: The way we currently do APIs, where all of them are split up and maintained separately, isn’t optimal.
+I’m going to start this off with a statement of truth, to all my fellow engineers: The way we currently build APIs, where all of them are split up and maintained separately, isn’t optimal.
 Luckily for us, the tech horizon is ever-expanding. We have options. And we should use them.
 
-“Engineers like to solve problems. If there are no problems handily available, they will create their own problems.” - Scott Adams
+> “Engineers like to solve problems. If there are no problems handily available, they will create their own problems.” - Scott Adams
 
 I am sure you have heard it before and in fact, might be unknowingly creating more problems than solutions.  
 
-This blog aims to explore this beautiful relationship between Serverless and GraphQL and why they fit together. I’ll go over the advantages and disadvantages of both, which one would work best for your application, and what you should consider before making the switch.
+This blog aims to explore a beautiful relationship between Serverless and GraphQL and why they fit together. I’ll go over the advantages and disadvantages of both, which one would work best for your application, and what you should consider before making the switch.
 Perhaps most importantly, I’ll also share some info about how you can get on board with your devious, streamlining plans.
 
 ## What is GraphQL ?
 
+[2017 was the year of GraphQL](https://dev-blog.apollodata.com/2017-the-year-in-graphql-124a050d04c6).
+
 The answer to having fewer API endpoints to manage is to (drumroll!) ...have fewer API endpoints. GraphQL lets you shrink your multitude of APIs down into a single HTTP endpoint.
-The concept isn’t new; GraphQL has been helping people do this for a while now. [Recommend reading](https://dev-blog.apollodata.com/graphql-vs-rest-5d425123e34b)
+The concept isn’t new; GraphQL has been helping people do this for a while now. If you want to explore differences between GraphQL and REST, I will recommend reading [Sashko's](https://twitter.com/stubailo) blogpost on [GraphQL vs REST](https://dev-blog.apollodata.com/graphql-vs-rest-5d425123e34b)
 
 GraphQL provides a simple and elegant way of building mobile and web applications by providing a clean layer of abstraction between servers and clients. 
 
@@ -42,9 +44,9 @@ GraphQL provides a simple and elegant way of building mobile and web application
 2. Know exactly what your response will look like. Ensure you're never sending more or less than the client needs.
 3. Describe your API with types that map your schema to existing backend.
 
-Thousands of companies are now using GraphQL in production with the help of open source frameworks built by Facebook, Apollo, and Graphcool. In fact, Starbucks [announcement](https://twitter.com/davidbrunelle/status/960946257643454464) is going to make my Coffee taste even better :D 
+Thousands of companies are now using GraphQL in production with the help of open source frameworks built by Facebook, Apollo, and Graphcool. In fact, Starbucks [announcement](https://twitter.com/davidbrunelle/status/960946257643454464) is going to make my morning coffee taste even better :D 
 
-![alt text](https://user-images.githubusercontent.com/1587005/36030260-52aa804e-0d5b-11e8-8bed-bd5ce9481075.png "Danielle slide from meetup- shoutout")
+![alt text](https://user-images.githubusercontent.com/1587005/36030260-52aa804e-0d5b-11e8-8bed-bd5ce9481075.png "Danielle's slide from Serverless and GraphQL meetup at Glassdoor, Jan 29 2018")
 
 Now, very reasonably, you are probably thinking, “Yeah, okay, Facebook is one thing; they have a giant engineering team. But for me, having only one API endpoint is too risky. What if it goes down? How do I handle that much load? What about security?”
 You are absolutely correct: with one HTTP endpoint, you need be entirely sure that endpoint never goes down and that it scales on demand.
