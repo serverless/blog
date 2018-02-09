@@ -42,7 +42,7 @@ GraphQL provides a simple and elegant way of building mobile and web application
 2. Know exactly what your response will look like. Ensure you're never sending more or less than the client needs.
 3. Describe your API with types that map your schema to existing backend.
 
-Thousands of companies are now using GraphQL in production with the help of open source frameworks built by Facebook, Apollo, and Graphcool.
+Thousands of companies are now using GraphQL in production with the help of open source frameworks built by Facebook, Apollo, and Graphcool. In fact, Starbucks [announcement](https://twitter.com/davidbrunelle/status/960946257643454464) is going to make my Coffee taste even better :D 
 
 ![alt text](https://user-images.githubusercontent.com/1587005/36030260-52aa804e-0d5b-11e8-8bed-bd5ce9481075.png "Danielle slide from meetup- shoutout")
 
@@ -78,6 +78,8 @@ In sum, powering your GraphQL endpoint with a serverless backend solves scaling 
 
 ## Selling GraphQL in your Organization
 
+When using new tech, always a discussion of “do we want this, or not?” 
+
 Ready to switch everything over, but not sure about how to convince the backend team? Well, here’s how I’ve seen this play out several times, with success.
 
 First, the frontend team would wrap their existing REST APIs in a serverless GraphQL endpoint. It added some latency, but they were able to experiment with product changes way faster and could fetch only what was needed.
@@ -91,6 +93,8 @@ Now I’m not *saying* you should do that, but also, if you wanted to, there it 
 It’s pretty straightforward to get your HTTP endpoint up and running.
 
 I am happy to announce our Open Source Initiatives with @nikgraf in [Serverless and GraphQL Repository](https://github.com/serverless/serverless-graphql). There, I walk through all the steps in detail. Go check it out!
+
+![alt text](https://user-images.githubusercontent.com/1587005/36035218-1c06763c-0d6b-11e8-996b-996243b0975f.png)
 
 Repository comes in two flavor —
 
@@ -230,15 +234,6 @@ The [example app](https://github.com/serverless/serverless-graphql) has the full
 ## Special Thanks!
 
 ## Coming Soon
-
-
-When using new tech, always a discussion of “do we want this, or not?”
-Frontend devs are excited about graphql, but backend teams aren’t. They don’t like thinking about new systems to maintain.
-
-What we’ve seen in the last two years is, that frontend teams build a graphql endpoint, demonstrate how this allows them to build product faster and more flexibly, and by using graphql and a lambda api gateway endpoint, you basically get this reliability and autoscaling out of the box without troubling your backend team.
-
-This works by wrapping the existing REST endpoint.
-
 
 Siddharth Gupta
 *Lead Data Engineer, Glassdoor*
