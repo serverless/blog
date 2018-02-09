@@ -1,6 +1,6 @@
 ---
 title:  Fantastic Serverless security risks, and where to find them
-description:  How to gain a new perspective on security and the best practices with using Serverless.
+description:  How to gain a new perspective on security best practices while using Serverless Architectures.
 date:  2018-02-10
 thumbnail: https://raw.githubusercontent.com/adnanrahic/cdn/master/covers/catridingunicorn2.jpg
 layout:  Post 
