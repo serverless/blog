@@ -7,6 +7,7 @@ thumbnail:
 authors:
   - FelixDesroches
 ---
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/remote-communication/Team+communication+photo+cropped.jpg">
 
 In case you didn't know, the Serverless team brings new meaning to the word "distributed". All in all, we span 18 time zones, and our overlapping waking hours are slight.
 
@@ -32,18 +33,13 @@ We chose to answer this question in a decidedly physical way: we drew a line acr
 
 The line spanned our entire meeting room. One end represented people who prefer asynchronous, written communication; the other represented those who prefer in-person meetings. We then stood on the line, each team member placing themselves roughly where they felt they sit in terms of the their communication preferences.
 
-<img height="" src="">
-
-[image of team spread out] Link: https://drive.google.com/open?id=1c-F1XGr_I8ZAKYwW8QGNnYZpTVSFhu0V  
-Cropped one: https://drive.google.com/open?id=1BMnV9cJ1XicZ4bf8J0sXxeokiXq4unLV
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/remote-communication/Team+communication+photo.jpeg">
 
 We each had a chance to say a few words about why we had chosen that specific place on the spectrum. 
 
 The results were amazing and intensely personal and humanizing. Hearing everyone explain exactly why they like a certain communication style—or don’t—was eye opening. So, too, was the sheer number of communication tools that we as as team are using (close to 10 on an initial count). 
 
-<img height="" src="">
-
-[image of spectrum] link: https://drive.google.com/file/d/16MDzhEhtqHlpSiXitMGuqCTiia_PuHx5/view?usp=sharing 
+ 
 
 This exercise brought to a light a few epiphanies for us a team. 
 
