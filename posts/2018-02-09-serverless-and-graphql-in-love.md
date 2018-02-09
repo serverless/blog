@@ -76,6 +76,16 @@ All these properties are full-filled by a single AWS Lambda function in combinat
 
 In sum, powering your GraphQL endpoint with a serverless backend solves scaling and availability concerns outright, and it gives you a big leg up on security. It’s not even much code nor configuration. It takes only a few minutes to get to a production ready setup.
 
+## Selling GraphQL in your Organization
+
+Ready to switch everything over, but not sure about how to convince the backend team? Well, here’s how I’ve seen this play out several times, with success.
+
+First, the frontend team would wrap their existing REST APIs in a serverless GraphQL endpoint. It added some latency, but they were able to experiment with product changes way faster and could fetch only what was needed.
+
+Then, they would use this superior workflow to gain even more buy-in. They would back up this buy-in by showing the backend team that nothing had broken so far.
+
+Now I’m not *saying* you should do that, but also, if you wanted to, there it is for your consideration. My lips are sealed.
+
 ## Serverless-Graphql repository
 
 It’s pretty straightforward to get your HTTP endpoint up and running.
@@ -90,7 +100,7 @@ Repository comes in two flavor —
 Overall, there isn’t much code nor configuration required. You can get this to a production-ready setup in a few minutes. In this blog, I am going to explore creating GraphQL endpoints using API Gateway and Lambda Backend.
 I am going to talk about Appysnc in my next blog.
 
-Step 1: Configure Serverless Template
+*Step 1: Configure Serverless Template*
 
 You’ll specify in your `serverless.yml` that you are setting up a GraphQL HTTP endpoint:
 
@@ -106,7 +116,22 @@ functions:
         cors: true
 ```
 
-Step 2: Configure Lambda Function (Apollo-Server-Lambda)
+```yml
+
+iamRoleStatements:
+- Effect: Allow
+  Action:
+    - dynamodb:Query
+    - dynamodb:Scan
+    - dynamodb:GetItem
+    - dynamodb:BatchGetItem
+    - dynamodb:PutItem
+    - dynamodb:UpdateItem
+    - dynamodb:DeleteItem
+  Resource: "arn:aws:dynamodb:<awsRegion>:*:table/<tableName>"
+```
+
+*Step 2: Configure Lambda Function (Apollo-Server-Lambda)*
 
 
 And then set up the callback to Lambda in your `handler.js` file:
@@ -134,29 +159,67 @@ exports.graphqlHandler = function graphqlHandler(event, context, callback) {
 };
 ```
 
+*Step 3: Create GraphQL Schema*
+
+Checkout out [sample schema](https://github.com/serverless/serverless-graphql/blob/master/app-backend/appsync/dynamo-elasticsearch/schema.graphql) to build a Mini Twitter App.
+
+*Step 4: Create GraphQL Resolvers*
+
+DynamoDB: 
+
+Add the following in your lambda function [example](https://github.com/serverless/examples/tree/master/aws-node-graphql-api-with-dynamodb)
+
+```yml
+import dynamodb from 'serverless-dynamodb-client';
+
+const docClient = dynamodb.doc; // return an instance of new AWS.DynamoDB.DocumentClient()
+
+// add to handler.js
+const promisify = foo =>
+  new Promise((resolve, reject) => {
+    foo((error, result) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(result);
+      }
+    });
+  });
+
+const twitterEndpoint = {
+  getRawTweets(args) {
+    return promisify(callback =>
+      docClient.query(
+        {
+          TableName: 'users',
+          KeyConditionExpression: 'screen_name = :v1',
+          ExpressionAttributeValues: {
+            ':v1': args.handle,
+          },
+        },
+        callback
+      )
+    )
+  },
+};
+
+export const resolvers = {
+  Query: {
+    getTwitterFeed: (root, args) => twitterEndpoint.getRawTweets(args),
+  },
+};
+```
+*REST*
+
+*RDS*
+
 End result? A GraphQL endpoint that reliably scales!
 
 The [example app](https://github.com/serverless/serverless-graphql) has the full walkthrough; give it a try and let me know what you think.
 
-**Note:** We also have a previous post on [making a serverless GraphQL API](https://serverless.com/blog/make-serverless-graphql-api-using-lambda-dynamodb/), which covers the process in more detail.
-
 ## Serverless Template and Plugins
 
-## GraphQL Endpoints with AWS Lambda and API Gateway
-
-## Selling GraphQL in your Organization
-
-Ready to switch everything over, but not sure about how to convince the backend team? Well, here’s how I’ve seen this play out several times, with success.
-
-First, the frontend team would wrap their existing REST APIs in a serverless GraphQL endpoint. It added some latency, but they were able to experiment with product changes way faster and had the ability to fetch only what was needed.
-
-Then, they would use this superior workflow to gain even more buy-in. They would back up this buy-in by showing the backend team that nothing had broken so far.
-
-Now I’m not *saying* you should do that, but also, if you wanted to, there it is for your consideration. My lips are sealed.
-
-## Query GraphQL Schema (Graphcool or GraphiQL)
-
-## BackEnd Integration (DynamoDB, REST API and RDS)
+## Sample GraphQL Queries (GraphQL Playground or GraphiQL)
 
 ## Client Integrations (Apollo ReactJS, Netlify and S3)
 
