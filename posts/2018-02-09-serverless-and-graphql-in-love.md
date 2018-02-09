@@ -26,7 +26,7 @@ Luckily for us, the tech horizon is ever-expanding. We have options. And we shou
 
 “Engineers like to solve problems. If there are no problems handily available, they will create their own problems.” - Scott Adams
 
-I am sure you have heard it before and in fact creating more problems than solutions.  
+I am sure you have heard it before and in fact, might be unknowingly creating more problems than solutions.  
 
 This blog aims to explore this beautiful relationship between Serverless and GraphQL and why they fit together. I’ll go over the advantages and disadvantages of both, which one would work best for your application, and what you should consider before making the switch.
 Perhaps most importantly, I’ll also share some info about how you can get on board with your devious, streamlining plans.
@@ -78,11 +78,19 @@ In sum, powering your GraphQL endpoint with a serverless backend solves scaling 
 
 ## Serverless-Graphql repository
 
-It’s actually pretty straightforward to get your HTTP endpoint up and running.
+It’s pretty straightforward to get your HTTP endpoint up and running.
 
-To illustrate how you would do this, I put a [GraphQL example app and starter kit](https://github.com/serverless/serverless-graphql) in the Serverless Framework example repo. There, I walk through all the steps in detail. Go check it out!
+I am happy to announce our Open Source Initiatives with @nikgraf in [Serverless and GraphQL Repository](https://github.com/serverless/serverless-graphql). There, I walk through all the steps in detail. Go check it out!
 
-Overall, there really isn’t much code nor configuration required. You can get this to a production-ready setup in a few minutes.
+Repository comes in two flavor —
+
+1. API Gateway and Lambda Backend where you manage GraphQL server in AWS Lambda using Apollo-Server-Lambda and connect with DynamoDB, wrapper around REST API  and RDS (MySQL, Aurora, and Postgres) and many more integrations coming.
+2. AppSync Backend where you don’t manage any GraphQL Server and use built-in integrations with DynamoDB, Elastic Search and a wrapper around REST API using AWS Lambda. 
+
+Overall, there isn’t much code nor configuration required. You can get this to a production-ready setup in a few minutes. In this blog, I am going to explore creating GraphQL endpoints using API Gateway and Lambda Backend.
+I am going to talk about Appysnc in my next blog.
+
+Step 1: Configure Serverless Template
 
 You’ll specify in your `serverless.yml` that you are setting up a GraphQL HTTP endpoint:
 
@@ -97,6 +105,9 @@ functions:
         method: post
         cors: true
 ```
+
+Step 2: Configure Lambda Function (Apollo-Server-Lambda)
+
 
 And then set up the callback to Lambda in your `handler.js` file:
 
