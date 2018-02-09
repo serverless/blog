@@ -13,7 +13,7 @@ authors:
 ## Introduction
 
 Over the last couple of years, I have been exploring and learning about the world of Big Data (please don't roll eyes, I am allowed to use some buzz words in my first blog :). 
-I have been particularly involved in building Serverless Architectures over the last couple of months, here at Glassdoor. Few questions on everyone's mind  - 
+I have been mainly involved in building products with Serverless Architectures over the last couple of months, here at Glassdoor. Given below are some questions on everyone's mind - 
 
 1) How can we build low latency API's to server these complex, high dimensional and big datasets which can scale on demand?
 2) Is there a way for frontend and backend teams to collaborate more smoothly?
@@ -40,14 +40,15 @@ GraphQL provides a simple and elegant way of building mobile and web application
 
 1. A single endpoint can be used to fetch data from multiple data sources resulting in reduced network costs and better query efficiency.
 2. Know exactly what your response will look like. Ensure you're never sending more or less than the client needs.
-3. Describe your api with types that map your schema to existing backend.
+3. Describe your API with types that map your schema to existing backend.
 
 Thousands of companies are now using GraphQL in production with the help of open source frameworks built by Facebook, Apollo, and Graphcool.
 
 ![alt text](https://user-images.githubusercontent.com/1587005/36030260-52aa804e-0d5b-11e8-8bed-bd5ce9481075.png "Danielle slide from meetup- shoutout")
 
 Now, very reasonably, you are probably thinking, “Yeah, okay, Facebook is one thing; they have a giant engineering team. But for me, having only one API endpoint is too risky. What if it goes down? How do I handle that much load? What about security?”
-You are absolutely correct: with one HTTP endpoint, you need be completely sure that endpoint never goes down. You need to be completely sure that it scales.
+You are absolutely correct: with one HTTP endpoint, you need be entirely sure that endpoint never goes down and that it scales on demand.
+
 That’s where serverless comes in.
 
 ## What is Serverless ?
@@ -64,14 +65,16 @@ With Serverless comes the following:
 
 ## Why Serverless and GraphQL are such a great fit ?
 
-With Lambda and API Gateway, you can set up a GraphQL HTTP endpoint that is:
+When moving to GraphQL, you suddenly rely on one HTTP endpoint to connect your clients to your backend services. Once you do decide to do that you want this one HTTP endpoint to be:
 
 1. auto-scaling
 2. reliable
 3. fast
-4. has a small attack vector in terms of security
+4. has a small attack vector regarding security
 
-In sum, powering your GraphQL endpoint with a serverless backend solves scaling and availability concerns outright, and it gives you a big leg up on security.
+All these properties are full-filled by a single AWS Lambda function in combination with API Gateway. It’s just a great fit! 
+
+In sum, powering your GraphQL endpoint with a serverless backend solves scaling and availability concerns outright, and it gives you a big leg up on security. It’s not even much code nor configuration. It takes only a few minutes to get to a production ready setup.
 
 ## Serverless-Graphql repository
 
