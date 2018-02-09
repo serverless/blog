@@ -165,7 +165,34 @@ exports.graphqlHandler = function graphqlHandler(event, context, callback) {
 
 *Step 3: Create GraphQL Schema*
 
-Checkout out [sample schema](https://github.com/serverless/serverless-graphql/blob/master/app-backend/appsync/dynamo-elasticsearch/schema.graphql) to build a Mini Twitter App.
+Checkout out detailed [sample schema](https://github.com/serverless/serverless-graphql/blob/master/app-backend/appsync/dynamo-elasticsearch/schema.graphql) to build a Mini Twitter App.
+
+```yml
+type Query {
+	getUserInfo(handle: String!): User!
+}
+
+type Tweet {
+	tweet_id: String!
+	tweet: String!
+}
+
+type TweetConnection {
+	items: [Tweet!]!
+	nextToken: String
+}
+
+type User {
+	name: String!
+	description: String!
+	followers_count: Int!
+	tweets(limit: Int!, nextToken: String): TweetConnection
+}
+
+schema {
+	query: Query
+}
+```
 
 *Step 4: Create GraphQL Resolvers*
 
@@ -196,7 +223,7 @@ const twitterEndpoint = {
       docClient.query(
         {
           TableName: 'users',
-          KeyConditionExpression: 'screen_name = :v1',
+          KeyConditionExpression: 'handle = :v1',
           ExpressionAttributeValues: {
             ':v1': args.handle,
           },
@@ -209,13 +236,101 @@ const twitterEndpoint = {
 
 export const resolvers = {
   Query: {
-    getTwitterFeed: (root, args) => twitterEndpoint.getRawTweets(args),
+    getUserInfo: (root, args) => twitterEndpoint.getRawTweets(args),
   },
 };
 ```
 *REST*
 
+```yml
+import fetch from 'node-fetch';
+import { OAuth2 } from 'oauth';
+
+const twitterEndpoint = {
+  async getRawTweets(args) {
+    const url = `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${
+      args.handle
+    }`;
+    const oauth2 = new OAuth2(
+      args.consumer_key,
+      args.consumer_secret,
+      'https://api.twitter.com/',
+      null,
+      'oauth2/token',
+      null
+    );
+
+    return new Promise(resolve => {
+      oauth2.getOAuthAccessToken(
+        '',
+        {
+          grant_type: 'client_credentials',
+        },
+        (error, accessToken) => {
+          // console.log(access_token);
+          resolve(accessToken);
+        }
+      );
+    })
+      .then(accessToken => {
+        const options = {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        };
+        return fetch(url, options)
+          .then(res => res.json())
+          .catch(error => error);
+      })
+      .catch(error => error);
+  },
+};
+
+export const resolvers = {
+  Query: {
+    getTwitterFeed: (root, args) => twitterEndpoint.getRawTweets(args),
+  },
+};
+```
+
 *RDS*
+
+```yml
+const connection = require('./knexfile');
+
+const knex = require('knex')(
+  process.env.NODE_ENV === 'production'
+    ? connection.production
+    : connection.development
+);
+
+// eslint-disable-next-line import/prefer-default-export
+export const resolvers = {
+  Query: {
+    getTwitterFeed: (root, args) =>
+      knex('users')
+        .where('screen_name', args.handle)
+        .then(users => {
+          const user = users[0];
+          if (!user) {
+            throw new Error('User not found');
+          }
+          return user;
+        })
+        .then(user =>
+          knex('posts')
+            .where('userId', user.id)
+            .then(posts => {
+              // eslint-disable-next-line no-param-reassign
+              user.posts = posts;
+              return user;
+            })
+        ),
+  },
+};
+```
+
 
 End result? A GraphQL endpoint that reliably scales!
 
@@ -223,17 +338,28 @@ The [example app](https://github.com/serverless/serverless-graphql) has the full
 
 ## Serverless Template and Plugins
 
+1. Serverless Webpack
+2. Serverless Offline
+3. Serverless DynamoDB local
+4. Serverless DynamoDB Client
+5. Serverless Finch
+
 ## Sample GraphQL Queries (GraphQL Playground or GraphiQL)
 
 ## Client Integrations (Apollo ReactJS, Netlify and S3)
 
-## Big Picture
+```yml
+const client = new ApolloClient({
+  link: new HttpLink({ uri: process.env.REACT_APP_GRAPHQL_ENDPOINT }),
+  cache: new InMemoryCache(),
+});
 
+```
 ## Performance Analysis (X-Ray)
 
 ## Special Thanks!
 
-## Coming Soon
+## What next?
 
 Siddharth Gupta
 *Lead Data Engineer, Glassdoor*
