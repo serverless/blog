@@ -47,7 +47,7 @@ This exercise brought to a light a few epiphanies for us a team.
 
 **Communicate about which tools you use (or don't).** Don't check the team channel on Slack ever? It's ok, but say it. This doesn’t mean you have to be draconian and land on 1 or 2 tools, just recognize that everyone communicates a little differently.
 
-**Assume positive intent (as our VP of Engineering Ganesh put it).** Email go unanswered? Assume your colleague didn’t see it because they prefer a different communication mode, and don’t take it personally. Assume they really do want to hear what you have to say.
+**Assume positive intent** (as our VP of Engineering Ganesh put it). Email go unanswered? Assume your colleague didn’t see it because they prefer a different communication mode, and don’t take it personally. Assume they really do want to hear what you have to say.
 
 **Communication tools = silos.** It’s easy to assume that with every newfangled communication tool we’re all getting closer to communication nirvana. Slack will save the world! Confluence will make us organize our work more efficiently! Asana is flexible enough for all of our needs!
 
