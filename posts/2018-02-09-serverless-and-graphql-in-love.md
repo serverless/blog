@@ -52,15 +52,24 @@ That’s where serverless comes in.
 
 ## What is Serverless ?
 
+Serverless has gained popularity over last few years by allowing developers the flexibility to quickly build highly available and scalable applications with reduced cost and latency.
+With Serverless comes the following:
+
+1. No server management — No need to manage any form of machines
+2. Pay per use — Pay per execution, never pay for idle.
+3. Authentication and Authorization at Scale
+4. Function as a unit of application logic
+
 **Note:** I’m going to focus on AWS Lambda below, but know that you can use any serverless provider (Microsoft Azure, Google Cloud Functions, etc) with GraphQL.
 
 ## Why Serverless and GraphQL are such a great fit ?
 
 With Lambda and API Gateway, you can set up a GraphQL HTTP endpoint that is:
-- auto-scaling
-- reliable
-- fast
-- has a small attack vector in terms of security
+
+1. auto-scaling
+2. reliable
+3. fast
+4. has a small attack vector in terms of security
 
 In sum, powering your GraphQL endpoint with a serverless backend solves scaling and availability concerns outright, and it gives you a big leg up on security.
 
