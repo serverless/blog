@@ -1,10 +1,10 @@
 ---
-title: Serverless and GraphQL in Love
-description: This blog explores beautiful relationship between Serverless and GraphQL.
-date: 2018-02-09
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/graphql.jpeg
-authors:
+title: Serverless and GraphQL in Love  
+description: This blog explores a beautiful relationship between Serverless and GraphQL.  
+date: 2018-02-09  
+layout: Post  
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/graphql.jpeg  
+authors:  
   - SiddharthGupta
 ---
 
@@ -12,12 +12,12 @@ authors:
 
 ## Introduction
 
-Over the last four years, I have been exploring and learning about the world of Big Data to build real time and batch systems at scale (please don't roll eyes, I am allowed to use some buzz words in my first blog :). 
+Over the last four years, I have been exploring and learning about the world of big data to build real-time and batch systems at scale (please don't roll eyes, I am allowed to use some buzz words in my first blog :). 
 I have been mainly involved in building products with serverless architectures for the last couple of months, here at Glassdoor. Here are few questions on everyone's mind - 
 
 1) How can we build low latency APIs to server these complex, high dimensional and big datasets which can scale on demand?
 2) Is there a way for frontend and backend teams to collaborate more smoothly?
-3) Can we fire single query which can construct a nested response from multiple resources?
+3) Can we fire single query which can construct a nested response from multiple data sources?
 4) Is there an easy way to secure the endpoint, paginate through the data, aggregate the results at scale and what not? 
 5) Can we pay per query execution rather than running fleet of servers?
 
@@ -31,12 +31,12 @@ I am sure you have heard it before and in fact, might be unknowingly creating mo
 This blog aims to explore a beautiful relationship between Serverless and GraphQL and why they fit together. I’ll go over the advantages and disadvantages of both, which one would work best for your application, and what you should consider before making the switch.
 Perhaps most importantly, I’ll also share some info about how you can get on board with your devious, streamlining plans.
 
-## What is GraphQL ?
+## What is GraphQL?
 
 [2017 was the year of GraphQL](https://dev-blog.apollodata.com/2017-the-year-in-graphql-124a050d04c6).
 
 The answer to having fewer API endpoints to manage is to (drumroll!) ...have fewer API endpoints. GraphQL lets you shrink your multitude of APIs down into a single HTTP endpoint.
-The concept isn’t new; GraphQL has been helping people do this for a while now. If you want to explore differences between GraphQL and REST, I will recommend reading [Sashko's](https://twitter.com/stubailo) blogpost on [GraphQL vs REST](https://dev-blog.apollodata.com/graphql-vs-rest-5d425123e34b)
+The concept isn’t new; GraphQL has been helping people do this for a while now. If you want to explore more differences between GraphQL and REST, you can read [Sashko's](https://twitter.com/stubailo) blog post on [GraphQL vs. REST](https://dev-blog.apollodata.com/graphql-vs-rest-5d425123e34b).
 
 GraphQL provides a simple and elegant way of building mobile and web applications by providing a clean layer of abstraction between servers and clients. 
 
@@ -46,14 +46,14 @@ GraphQL provides a simple and elegant way of building mobile and web application
 
 Thousands of companies are now using GraphQL in production with the help of open source frameworks built by [Facebook](http://graphql.org/), [Apollo](https://github.com/apollographql), and [Graphcool](https://blog.graph.cool/introducing-prisma-1ff423fd629e). In fact, Starbucks [announcement](https://twitter.com/davidbrunelle/status/960946257643454464) last week is going to make my morning coffee taste even better :D 
 
-![alt text](https://user-images.githubusercontent.com/1587005/36030260-52aa804e-0d5b-11e8-8bed-bd5ce9481075.png "Danielle's slide from Serverless and GraphQL meetup at Glassdoor, Jan 29 2018")
+![alt text](https://user-images.githubusercontent.com/1587005/36067514-503a05b4-0e73-11e8-9b40-946c5398f4b5.png "Danielle's slide from Serverless and GraphQL meetup at Glassdoor, Jan 29, 2018")
 
 Now, very reasonably, you are probably thinking, “Yeah, okay, Facebook is one thing; they have a giant engineering team. But for me, having only one API endpoint is too risky. What if it goes down? How do I handle that much load? What about security?”
 You are absolutely correct: with one HTTP endpoint, you need be entirely sure that endpoint never goes down and that it scales on demand.
 
 That’s where serverless comes in.
 
-## What is Serverless ?
+## What is Serverless?
 
 Serverless has gained popularity over last few years by allowing developers the flexibility to quickly build highly available and scalable applications with reduced cost and latency.
 With Serverless comes the following:
@@ -65,7 +65,7 @@ With Serverless comes the following:
 
 > **Note:** I’m going to focus on AWS Lambda below, but know that you can use any serverless provider (Microsoft Azure, Google Cloud Functions, etc) with GraphQL.
 
-## Why Serverless and GraphQL are such a great fit ?
+## Why Serverless and GraphQL are such a great fit?
 
 When moving to GraphQL, you suddenly rely on one HTTP endpoint to connect your clients to your backend services. Once you do decide to do that you want this one HTTP endpoint to be:
 
@@ -80,13 +80,13 @@ In sum, powering your GraphQL endpoint with a serverless backend solves scaling 
 
 I will recommend you to read [Jared's](https://twitter.com/ShortJared) [post](https://www.trek10.com/blog/a-look-at-serverless-graphql/) to get a better understanding of this relationship ;)
 
-## Serverless-Graphql repository
+## Serverless-GraphQL repository
 
 It’s pretty straightforward to get your HTTP endpoint up and running.
 
 I am happy to announce our Open Source Initiatives with [nikgraf](https://twitter.com/nikgraf) in [Serverless and GraphQL Repository](https://github.com/serverless/serverless-graphql). There, I walk through all the steps in detail. Go check it out!
 
-![alt text](https://user-images.githubusercontent.com/1587005/36035218-1c06763c-0d6b-11e8-996b-996243b0975f.png)
+![alt text](https://user-images.githubusercontent.com/1587005/36035218-1c06763c-0d6b-11e8-996b-996243b0975f.png "Serverless and GraphQL Architecture")
 
 Repository comes in two flavor —
 
@@ -96,24 +96,27 @@ Repository comes in two flavor —
  - You manage GraphQL server in AWS Lambda using [apollo-server-lambda](https://www.npmjs.com/package/apollo-server-lambda) 
  - Lambda function retrieves data from DynamoDB, [REST backend](https://developer.twitter.com/en/docs), or RDS and returns it to the client via API Gateway.
 
-**Note:** We are currently working on adding more backend integrations including GraphCool Prisma, Druid, MongoDB, AWS Nepture etc.
+**Note:** We are currently working on adding more backend integrations including GraphCool Prisma, Druid, MongoDB, AWS Neptune, etc.
 
 2. AppSync Backend 
 
  - AppSync GraphQL Proxy server handles HTTP requests and responses fully managed by AWS.
  - It uses [VTL](http://velocity.apache.org/engine/1.7/vtl-reference.html) under the hood to transform GraphQL request and response.
- - Built-in integrations with DynamoDB, Elastic Search and AWS Lambda. 
+ - Built-in integrations with DynamoDB, Elastic Search, and AWS Lambda. 
 
 > Overall, there isn’t much code nor configuration required. You can get this to a production-ready setup in a few minutes. 
 
-**Note:** In this blog, I am going to explore creating GraphQL endpoints using API Gateway and Lambda Backend. Next blog will be dedicated to creating the same endpoints using AWS Appsync.
+**Note:** In this blog, I am going to explore creating GraphQL endpoints using API Gateway and Lambda Backend. I will dedicate my next blog to build the same endpoints using AWS Appsync.
+
+## Let's create a Serverless GraphQL Endpoint
+
+The [example app](https://github.com/serverless/serverless-graphql) has the full walkthrough; give it a try and let me know what you think.
 
 *Step 1: Configure Serverless Template*
 
-At this point, I am going to introduce you to [Serverless Framework](https://serverless.com/) to make your life easy by providing configurations. You’ll specify in your `serverless.yml` that you are setting up a GraphQL HTTP endpoint:
+At this point, I am going to introduce you to [Serverless Framework](https://serverless.com/) to quickly build and deploy your API resources. You’ll specify in your `serverless.yml` that you are setting up a GraphQL HTTP endpoint ([sample](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml#L34)).
 
 ```yml
-
 functions:
   graphql:
     handler: handler.graphqlHandler
@@ -121,13 +124,12 @@ functions:
     - http:
         path: graphql
         method: post
-        cors: true
 ```
+Now any http post event on path `/graphql` will trigger `graphql` lambda function and will be handled by `graphqlHandler`.
 
 *Step 2: Configure Lambda Function (Apollo-Server-Lambda)*
 
-
-And then set up the callback to Lambda in your `handler.js` file:
+And then set up the callback to Lambda in your `handler.js` file ([sample](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/handler.js#L14))
 
 ```
 import { graphqlLambda, graphiqlLambda } from 'apollo-server-lambda';
@@ -152,11 +154,11 @@ exports.graphqlHandler = function graphqlHandler(event, context, callback) {
 };
 ```
 
-**Note:**: Please import GraphQL Schema and Resolvers after Step 3 and 4.
+Now, in your lambda function, GraphQL Schema and Resolvers will be imported ( as explained in next steps). Once API Gateway triggers an event, graphqlLambda function will then handled it, and response is sent back to the client.
 
 *Step 3: Create GraphQL Schema*
 
-Checkout out the complete [sample schema](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/schema.js) to build a Mini Twitter App. For this blog, I am going to focus on subset of the schema to keep things simple.
+Checkout out the complete [sample schema](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/schema.js) to build a Mini Twitter App. For this blog, I am going to focus on a subset of the schema to keep things simple.
 
 ```yml
 type Query {
@@ -189,14 +191,14 @@ schema {
 
 *Step 4: Create GraphQL Resolvers*
 
-Now lets dive deep into how lambda retrieves data from DynamoDB, RDS and Rest Backend. We will take an example of getUserInfo which takes user twitter handle as an input and returns user info and list of tweets.
+Now let's dive deep into how lambda retrieves data from DynamoDB, RDS and REST backend. We will take an example of `getUserInfo` field which takes twitter handle as an input and returns user's personal and tweet info.
 
 DynamoDB backend: 
 -----------------
 
 1. Data Modeling and Table Creation
 
-We will create two tables (Users and Tweets) to store user and tweet info respectively and GSI on Tweets table.
+We will create two tables (Users and Tweets) to store user and tweet info respectively and GSI on Tweets table to sort user tweets by timestamp. These resources will be created using `serverless.yml` [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml)
 
 **Table**: _User_  
 **HashKey**: _handle_  
@@ -207,29 +209,13 @@ We will create two tables (Users and Tweets) to store user and tweet info respec
 **Attributes**: _tweet_, _handle_, _created_at_  
 **Index**: _tweet-index_ _(hashKey: handle, sortKey: created_at)_
 
-Please find the complete schema [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml)
+2. Mock fake data using [Faker](https://www.npmjs.com/package/faker). You can find the scripts [here](https://github.com/serverless/serverless-graphql/tree/master/app-backend/dynamodb/seed-data)
 
-2. Mock Fake Data using [Faker](https://www.npmjs.com/package/faker). You can find the scripts [here](https://github.com/serverless/serverless-graphql/tree/master/app-backend/dynamodb/seed-data)
-
-3. Make sure your IAM Roles are set properly in `serverless.yml` for Lambda to access DynamoDB.
-
-```yml
-iamRoleStatements:
-- Effect: Allow
-  Action:
-    - dynamodb:Query
-    - dynamodb:Scan
-    - dynamodb:GetItem
-    - dynamodb:BatchGetItem
-    - dynamodb:PutItem
-    - dynamodb:UpdateItem
-    - dynamodb:DeleteItem
-  Resource: "arn:aws:dynamodb:<awsRegion>:*:table/<tableName>"
-```
+3. Make sure your [IAM Roles](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml#L130) are set properly in `serverless.yml` for Lambda to access DynamoDB.
 
 4. Create GraphQL Resolver for `getUserInfo` to retrieve data from DynamoDB. Let's break down the code you see [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/resolvers.js)
 
-First of all, I am going to tell my resolvers how to resolve `getUserInfo` and `tweets`
+First of all, I am going to define how `getUserInfo` and `tweets` fields will fetch the data.
 
 ```
 export const resolvers = {
@@ -241,6 +227,12 @@ export const resolvers = {
   },
 };
 ```
+
+Now, we will [query](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.html#Query.Pagination) DynamoDB table index `tweet-index`
+to retrieve paginated tweets for a given user handle. Passing nextToken param implies paginating through the resultset (passed as ExclusiveStartKey).
+If the result contains LastEvaluatedKey as shown [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/resolvers.js#L67) 
+then return it as nextToken.
+
 ```
   getPaginatedTweets(handle, args) {
     return promisify(callback => {
@@ -268,24 +260,9 @@ export const resolvers = {
     //then parse the result  
   },
 ```  
-  ```
-  getUserInfo(args) {
-    return promisify(callback =>
-      const params = {
-        TableName: 'Users',
-        KeyConditionExpression: 'handle = :v1',
-        ExpressionAttributeValues: {
-          ':v1': args.handle,
-        },
-      };
-          
-      docClient.query(params, callback);
-    })       
-    //then parse the result  
-  },
-```
+Similarily, for `getUserInfo` field you can retrieve the results as shown [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/resolvers.js#L78)
 
-5. What is the end result? GraphQL Endpoint. Let's test it out.
+5. End result? **GraphQL endpoint** that reliably scales! Let's test it out on local and then deploy it on production.
 
 *Clone Git Repo and Install Dependencies*
 
@@ -296,28 +273,9 @@ cd app-backend/dynamodb
 yarn install
 ```
 
-To test GraphQL locally on your system, you can use [Serverless Offline](https://github.com/dherault/serverless-offline), [Serverless Webpack](https://github.com/serverless-heaven/serverless-webpack) and [Serverless DynamoDB Local](https://github.com/99xt/serverless-dynamodb-local)
+To test GraphQL endpoint locally on your machine, you can use [Serverless Offline](https://github.com/dherault/serverless-offline), [Serverless Webpack](https://github.com/serverless-heaven/serverless-webpack) and [Serverless DynamoDB Local](https://github.com/99xt/serverless-dynamodb-local)
 
-Make sure your `serverless.yml` is configured to setup dynamodb on local
-```yml
-custom:
-  serverless-offline:
-    port: 4000
-  webpackIncludeModules: true
-  dynamodb:
-    start:
-      port: 8000
-      inMemory: true
-      migrate: true
-      seed: true
-    seed:
-      test:
-        sources:
-          - table: Users
-            sources: [seed-data/Users.json]
-          - table: Tweets
-            sources: [seed-data/Tweets.json]
-```
+Make sure your `serverless.yml` is configured to setup DynamoDB on local as shown [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml#L16)
 
 ```
 cd app-backend/dynamodb
@@ -328,12 +286,9 @@ DynamoDB is now available on local `http://localhost:8000/shell`
 
 ![!test](https://user-images.githubusercontent.com/1587005/36065162-b4ad3c14-0e4b-11e8-8776-e19596546ce1.gif)
 
-
 **Note:** We also have a previous post on [making a serverless GraphQL API](https://serverless.com/blog/make-serverless-graphql-api-using-lambda-dynamodb/), which covers the process in more detail.
 
-End result? A GraphQL endpoint that reliably scales!
 
-The [example app](https://github.com/serverless/serverless-graphql) has the full walkthrough; give it a try and let me know what you think.
 
 ## Client Integrations (Apollo ReactJS, Netlify and S3)
 
