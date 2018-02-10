@@ -78,6 +78,8 @@ When moving to GraphQL, you suddenly rely on one HTTP endpoint to connect your c
 
 In sum, powering your GraphQL endpoint with a serverless backend solves scaling and availability concerns outright, and it gives you a big leg up on security. It’s not even much code nor configuration. It takes only a few minutes to get to a production ready setup.
 
+I will recommend you to read [Jared's](https://twitter.com/ShortJared) [post](https://www.trek10.com/blog/a-look-at-serverless-graphql/) to get a better understanding of this relationship ;)
+
 ## Serverless-Graphql repository
 
 It’s pretty straightforward to get your HTTP endpoint up and running.
@@ -88,15 +90,27 @@ I am happy to announce our Open Source Initiatives with [nikgraf](https://twitte
 
 Repository comes in two flavor —
 
-1. API Gateway and Lambda Backend where you manage GraphQL server in AWS Lambda using Apollo-Server-Lambda and connect with DynamoDB, wrapper around REST API  and RDS (MySQL, Aurora, and Postgres) and many more integrations coming.
-2. AppSync Backend where you don’t manage any GraphQL Server and use built-in integrations with DynamoDB, Elastic Search and a wrapper around REST API using AWS Lambda. 
+1. API Gateway and Lambda Backend 
 
-Overall, there isn’t much code nor configuration required. You can get this to a production-ready setup in a few minutes. In this blog, I am going to explore creating GraphQL endpoints using API Gateway and Lambda Backend.
-I am going to talk about Appysnc in my next blog.
+ - API Gateway handles HTTP requests and responses and invokes the Lambda function in response to HTTP requests. 
+ - You manage GraphQL server in AWS Lambda using [apollo-server-lambda](https://www.npmjs.com/package/apollo-server-lambda) 
+ - Lambda function retrieves data from DynamoDB, [REST backend](https://developer.twitter.com/en/docs), or RDS and returns it to the client via API Gateway.
+
+**Note:** We are currently working on adding more backend integrations including GraphCool Prisma, Druid, MongoDB, AWS Nepture etc.
+
+2. AppSync Backend 
+
+ - AppSync GraphQL Proxy server handles HTTP requests and responses fully managed by AWS.
+ - It uses [VTL](http://velocity.apache.org/engine/1.7/vtl-reference.html) under the hood to transform GraphQL request and response.
+ - Built-in integrations with DynamoDB, Elastic Search and AWS Lambda. 
+
+> Overall, there isn’t much code nor configuration required. You can get this to a production-ready setup in a few minutes. 
+
+**Note:** In this blog, I am going to explore creating GraphQL endpoints using API Gateway and Lambda Backend. Next blog will be dedicated to creating the same endpoints using AWS Appsync.
 
 *Step 1: Configure Serverless Template*
 
-You’ll specify in your `serverless.yml` that you are setting up a GraphQL HTTP endpoint:
+At this point, I am going to introduce you to [Serverless Framework](https://serverless.com/) to make your life easy by providing configurations. You’ll specify in your `serverless.yml` that you are setting up a GraphQL HTTP endpoint:
 
 ```yml
 
@@ -108,21 +122,6 @@ functions:
         path: graphql
         method: post
         cors: true
-```
-
-```yml
-
-iamRoleStatements:
-- Effect: Allow
-  Action:
-    - dynamodb:Query
-    - dynamodb:Scan
-    - dynamodb:GetItem
-    - dynamodb:BatchGetItem
-    - dynamodb:PutItem
-    - dynamodb:UpdateItem
-    - dynamodb:DeleteItem
-  Resource: "arn:aws:dynamodb:<awsRegion>:*:table/<tableName>"
 ```
 
 *Step 2: Configure Lambda Function (Apollo-Server-Lambda)*
@@ -153,9 +152,11 @@ exports.graphqlHandler = function graphqlHandler(event, context, callback) {
 };
 ```
 
+**Note:**: Please import GraphQL Schema and Resolvers after Step 3 and 4.
+
 *Step 3: Create GraphQL Schema*
 
-Checkout out detailed [sample schema](https://github.com/serverless/serverless-graphql/blob/master/app-backend/appsync/dynamo-elasticsearch/schema.graphql) to build a Mini Twitter App.
+Checkout out the complete [sample schema](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/schema.js) to build a Mini Twitter App. For this blog, I am going to focus on subset of the schema to keep things simple.
 
 ```yml
 type Query {
@@ -165,6 +166,8 @@ type Query {
 type Tweet {
 	tweet_id: String!
 	tweet: String!
+	handle: String!
+	created_at: String!
 }
 
 type TweetConnection {
@@ -186,155 +189,151 @@ schema {
 
 *Step 4: Create GraphQL Resolvers*
 
-DynamoDB: 
+Now lets dive deep into how lambda retrieves data from DynamoDB, RDS and Rest Backend. We will take an example of getUserInfo which takes user twitter handle as an input and returns user info and list of tweets.
 
-Add the following in your lambda function [example](https://github.com/serverless/examples/tree/master/aws-node-graphql-api-with-dynamodb)
+DynamoDB backend: 
+-----------------
+
+1. Data Modeling and Table Creation
+
+We will create two tables (Users and Tweets) to store user and tweet info respectively and GSI on Tweets table.
+
+**Table**: _User_  
+**HashKey**: _handle_  
+**Attributes**: _name_, _description_, _followers_count_  
+
+**Table**: _Tweets_  
+**HashKey**: _tweet_id_  
+**Attributes**: _tweet_, _handle_, _created_at_  
+**Index**: _tweet-index_ _(hashKey: handle, sortKey: created_at)_
+
+Please find the complete schema [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml)
+
+2. Mock Fake Data using [Faker](https://www.npmjs.com/package/faker). You can find the scripts [here](https://github.com/serverless/serverless-graphql/tree/master/app-backend/dynamodb/seed-data)
+
+3. Make sure your IAM Roles are set properly in `serverless.yml` for Lambda to access DynamoDB.
 
 ```yml
-import dynamodb from 'serverless-dynamodb-client';
+iamRoleStatements:
+- Effect: Allow
+  Action:
+    - dynamodb:Query
+    - dynamodb:Scan
+    - dynamodb:GetItem
+    - dynamodb:BatchGetItem
+    - dynamodb:PutItem
+    - dynamodb:UpdateItem
+    - dynamodb:DeleteItem
+  Resource: "arn:aws:dynamodb:<awsRegion>:*:table/<tableName>"
+```
 
-const docClient = dynamodb.doc; // return an instance of new AWS.DynamoDB.DocumentClient()
+4. Create GraphQL Resolver for `getUserInfo` to retrieve data from DynamoDB. Let's break down the code you see [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/resolvers.js)
 
-// add to handler.js
-const promisify = foo =>
-  new Promise((resolve, reject) => {
-    foo((error, result) => {
-      if (error) {
-        reject(error);
-      } else {
-        resolve(result);
-      }
-    });
-  });
+First of all, I am going to tell my resolvers how to resolve `getUserInfo` and `tweets`
 
-const twitterEndpoint = {
-  getRawTweets(args) {
-    return promisify(callback =>
-      docClient.query(
-        {
-          TableName: 'users',
-          KeyConditionExpression: 'handle = :v1',
-          ExpressionAttributeValues: {
-            ':v1': args.handle,
-          },
-        },
-        callback
-      )
-    )
-  },
-};
-
+```
 export const resolvers = {
   Query: {
-    getUserInfo: (root, args) => twitterEndpoint.getRawTweets(args),
+    getUserInfo: (root, args) => getUserInfo(args),
+  },
+  User: {
+    tweets: (obj, args) => getPaginatedTweets(obj.handle, args),
   },
 };
 ```
-*REST*
-
-```yml
-import fetch from 'node-fetch';
-import { OAuth2 } from 'oauth';
-
-const twitterEndpoint = {
-  async getRawTweets(args) {
-    const url = `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${
-      args.handle
-    }`;
-    const oauth2 = new OAuth2(
-      args.consumer_key,
-      args.consumer_secret,
-      'https://api.twitter.com/',
-      null,
-      'oauth2/token',
-      null
-    );
-
-    return new Promise(resolve => {
-      oauth2.getOAuthAccessToken(
-        '',
-        {
-          grant_type: 'client_credentials',
+```
+  getPaginatedTweets(handle, args) {
+    return promisify(callback => {
+      const params = {
+        TableName: 'Tweets',
+        KeyConditionExpression: 'handle = :v1',
+        ExpressionAttributeValues: {
+          ':v1': handle,
         },
-        (error, accessToken) => {
-          // console.log(access_token);
-          resolve(accessToken);
-        }
-      );
-    })
-      .then(accessToken => {
-        const options = {
-          method: 'GET',
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
+        IndexName: 'tweet-index',
+        Limit: args.limit,
+        ScanIndexForward: false,
+      };
+
+      if (args.nextToken) {
+        params.ExclusiveStartKey = {
+          tweet_id: args.nextToken.tweet_id,
+          created_at: args.nextToken.created_at,
+          handle: handle,
         };
-        return fetch(url, options)
-          .then(res => res.json())
-          .catch(error => error);
-      })
-      .catch(error => error);
-  },
-};
+      }
 
-export const resolvers = {
-  Query: {
-    getTwitterFeed: (root, args) => twitterEndpoint.getRawTweets(args),
+      docClient.query(params, callback);
+    })       
+    //then parse the result  
   },
-};
+```  
+  ```
+  getUserInfo(args) {
+    return promisify(callback =>
+      const params = {
+        TableName: 'Users',
+        KeyConditionExpression: 'handle = :v1',
+        ExpressionAttributeValues: {
+          ':v1': args.handle,
+        },
+      };
+          
+      docClient.query(params, callback);
+    })       
+    //then parse the result  
+  },
 ```
 
-*RDS*
+5. What is the end result? GraphQL Endpoint. Let's test it out.
 
+*Clone Git Repo and Install Dependencies*
+
+```
+git clone https://github.com/serverless/serverless-graphql.git
+
+cd app-backend/dynamodb
+yarn install
+```
+
+To test GraphQL locally on your system, you can use [Serverless Offline](https://github.com/dherault/serverless-offline), [Serverless Webpack](https://github.com/serverless-heaven/serverless-webpack) and [Serverless DynamoDB Local](https://github.com/99xt/serverless-dynamodb-local)
+
+Make sure your `serverless.yml` is configured to setup dynamodb on local
 ```yml
-const connection = require('./knexfile');
-
-const knex = require('knex')(
-  process.env.NODE_ENV === 'production'
-    ? connection.production
-    : connection.development
-);
-
-// eslint-disable-next-line import/prefer-default-export
-export const resolvers = {
-  Query: {
-    getTwitterFeed: (root, args) =>
-      knex('users')
-        .where('screen_name', args.handle)
-        .then(users => {
-          const user = users[0];
-          if (!user) {
-            throw new Error('User not found');
-          }
-          return user;
-        })
-        .then(user =>
-          knex('posts')
-            .where('userId', user.id)
-            .then(posts => {
-              // eslint-disable-next-line no-param-reassign
-              user.posts = posts;
-              return user;
-            })
-        ),
-  },
-};
+custom:
+  serverless-offline:
+    port: 4000
+  webpackIncludeModules: true
+  dynamodb:
+    start:
+      port: 8000
+      inMemory: true
+      migrate: true
+      seed: true
+    seed:
+      test:
+        sources:
+          - table: Users
+            sources: [seed-data/Users.json]
+          - table: Tweets
+            sources: [seed-data/Tweets.json]
 ```
 
+```
+cd app-backend/dynamodb
+yarn start
+```
+
+DynamoDB is now available on local `http://localhost:8000/shell`
+
+![!test](https://user-images.githubusercontent.com/1587005/36065162-b4ad3c14-0e4b-11e8-8776-e19596546ce1.gif)
+
+
+**Note:** We also have a previous post on [making a serverless GraphQL API](https://serverless.com/blog/make-serverless-graphql-api-using-lambda-dynamodb/), which covers the process in more detail.
 
 End result? A GraphQL endpoint that reliably scales!
 
 The [example app](https://github.com/serverless/serverless-graphql) has the full walkthrough; give it a try and let me know what you think.
-
-## Serverless Template and Plugins
-
-1. Serverless Webpack
-2. Serverless Offline
-3. Serverless DynamoDB local
-4. Serverless DynamoDB Client
-5. Serverless Finch
-
-## Sample GraphQL Queries (GraphQL Playground or GraphiQL)
 
 ## Client Integrations (Apollo ReactJS, Netlify and S3)
 
