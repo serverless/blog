@@ -360,16 +360,22 @@ export const resolvers = {
 };
 ```
 
-You can also get the *top tweet*; you can use knex ORM `orderby` function: 
+For the `topTweet`; you can use knex ORM `orderBy` function: 
 
 ```yml
+  User: {
+    topTweet: obj =>
       knex('Tweets')
-        .where('handle', args.handle)
-        .orderby('tweet_id', 'desc')
+        .where('handle', obj.handle)
+        .orderBy('retweet_count', 'desc')
         .limit(1)
         .then(tweet => {
-          return user;
-        })
+          if (!tweet) {
+            throw new Error('User not found');
+          }
+          return tweet[0];
+        }),
+  },
 ```
 
 6. Run it locally on your machine (RDS instance not required)
@@ -441,7 +447,8 @@ async function getFollowing(handle, consumerKey, consumerSecret) {
       //then parse the result
 }
 ```
-Complete example is given [here](https://raw.githubusercontent.com/serverless/serverless-graphql/master/app-backend/rest-api/resolvers.js)
+
+> Complete example is given [here](https://raw.githubusercontent.com/serverless/serverless-graphql/master/app-backend/rest-api/resolvers.js). You can also look at Saeri's blog post on [Serverless GraphQL Gateway on top of a 3rd Party REST API](https://serverless.com/blog/3rd-party-rest-api-to-graphql-serverless/)
 
 6. Run it locally on your machine
 
@@ -460,13 +467,41 @@ yarn deploy-prod
  
 ## Client Integrations (Apollo ReactJS, Netlify, and S3)
 
-```yml
-const client = new ApolloClient({
-  link: new HttpLink({ uri: process.env.REACT_APP_GRAPHQL_ENDPOINT }),
-  cache: new InMemoryCache(),
-});
+This repository comes in two client implementations
+
+1. [Apollo Client 2.0](https://dev-blog.apollodata.com/apollo-client-2-0-beyond-graphql-apis-888807b53afe)
+2. [AppSync Client](https://dev-blog.apollodata.com/aws-appsync-powered-by-apollo-df61eb706183)
+
+If you are new to ReactJs + Apollo Integration, I would recommend going through [these tutorials](https://www.learnapollo.com/tutorial-react/react-01/)
+
+The code for apollo-client in [serverless-graphql](https://github.com/serverless/serverless-graphql) repo is [here](https://github.com/serverless/serverless-graphql/tree/master/app-client/apollo-client)
+
+To start the client on local, follow these steps:
+
+1. Kick start any backend service on local. For example:
 
 ```
+cd app-backend/rest-api
+yarn install
+yarn start
+```
+
+2. Now, make sure `http://localhost:4000/graphiql` is working
+
+3. Kickstart Apollo Client as shown below and you will have a react server running on your local machine. The setup is created using [create react app](https://github.com/facebook/create-react-app)
+
+```
+cd app-client/apollo-client
+yarn install
+yarn start
+```
+
+![!Live Example](https://user-images.githubusercontent.com/1587005/36068493-de82620e-0e8b-11e8-887b-e1593cd3c8cc.gif)
+
+In production, you can deploy the client on Netlify or AWS S3. Please follow the instructions [here](https://github.com/serverless/serverless-graphql#setup-for-production-deploy-resources-to-aws)
+
+**Note** I will go in more details about AppSync client in my next blog.
+
 ## Performance Analysis (X-Ray)
 
 ## Special Thanks!
