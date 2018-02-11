@@ -478,7 +478,7 @@ The code for apollo-client in [serverless-graphql](https://github.com/serverless
 
 To start the client on local, follow these steps:
 
-1. Kick start any backend service on local. For example:
+1. Start any backend service on local. For example:
 
 ```
 cd app-backend/rest-api
@@ -498,13 +498,19 @@ yarn start
 
 ![!Live Example](https://user-images.githubusercontent.com/1587005/36068493-de82620e-0e8b-11e8-887b-e1593cd3c8cc.gif)
 
-In production, you can deploy the client on Netlify or AWS S3. Please follow the instructions [here](https://github.com/serverless/serverless-graphql#setup-for-production-deploy-resources-to-aws)
+In production, you can also deploy the client on Netlify or AWS S3. Please follow the instructions [here](https://github.com/serverless/serverless-graphql#setup-for-production-deploy-resources-to-aws)
 
 **Note** I will go in more details about AppSync client in my next blog.
 
 ## Performance Analysis (X-Ray)
 
 ## Special Thanks!
+
+First of all, I would like to thank [Nik Graf](https://twitter.com/nikgraf), [Philipp Müns](https://twitter.com/pmmuens) and [Austen Collins](https://twitter.com/austencollins) for kickstarting open source initiatives to help people build GraphQL endpoints easily on Serverless palatforms. I have personally learned a lot during my work with you guys! 
+
+I would also like to give a shout to our open source committers - [Jon](https://twitter.com/superpatell), [Léo Pradel](@leopradel), [Tim](https://github.com/timsuchanek), [Justin](https://github.com/JstnEdr),  [Dan Kreiger](https://github.com/serpentblade) and [others](https://github.com/serverless/serverless-graphql/graphs/contributors) who I have not personally worked with.
+
+Last but not the least, I would like to thank [Steven](https://twitter.com/kruken), Director of Data Engineering at Glassdoor for introducing me to GraphQL.
 
 ## Selling GraphQL in your Organization
 
@@ -520,8 +526,8 @@ Now I’m not *saying* you should do that, but also, if you wanted to, there it 
 
 ## What next?
 
-> Part II: AppSync : AWS Managed GraphQL Service
-> Announcments on Serverless AppSync Plugin
+> Part II: AppSync: AWS Managed GraphQL Service
+> Announcements on Serverless AppSync Plugin
 
 Siddharth Gupta
 *Lead Data Engineer, Glassdoor*
