@@ -8,25 +8,33 @@ authors:
  - AdnanRahic
 ---
 
-<img src="https://raw.githubusercontent.com/adnanrahic/cdn/master/covers/catridingunicorn2.jpg" width="100%">
+<img src="https://raw.githubusercontent.com/adnanrahic/cdn/master/covers/catridingunicorn2.jpg" width="80%" align="center">
 
-With the rise of hype surrounding all things Serverless, I’ve regularly come across one simple question people tend to ask me. 
+With the rising hype around all things Serverless, I’ve been getting regularly asked one simple question: 
 
-> But, how can I guarantee my Serverless application is secure?
+> But, how can I guarantee my serverless application is secure?
 
-My response is always the same. How can you guarantee anything? I’m just as scared an EC2 instance will get breached as I worry about Lambdas. Many of the reasons servers are vulnerable are due to programmer error. That one line of code that does a tiny bit more than it should. That one app secret you misplaced or some files you forgot to encrypt. There are numerous things we, the developers, can do to write better software.
+My response is always the same. How can you guarantee anything? I’m just as scared about my EC2 instance getting breached as I am about my Lambdas.
 
-However, then again with all that said, Serverless Architectures introduce many new issues which need to be patched. Serverless is an easier target to breach because it has a much larger target area. The greatest asset is also its most dangerous foe. The distributed nature of Serverless Architectures gives a malicious attacker more room to maneuver. The attacker would have significantly more points of entry.
+Most server vulnerabilities are due to programmer error. That one line of code that does a tiny bit more than it should. That one app secret you misplaced. Those files you forgot to encrypt.
 
-This had me genuinely worried, so I started digging for answers. Coming across Puresec’s study named *[“The Top Ten Most Critical Security Risks in Serverless Architectures”](https://www.puresec.io/hubfs/SAS-Top10-2018/PureSec%20-%20SAS%20Top%2010%20-%202018.pdf?t=1517837443549)* and reading it without lifting my eyes from my screen for an instance, many answers dawned on me.
+There are numerous things we, the developers, can do to write better software.
 
-Sadly, there’s still a common bad practice among developers to focus on security once the software they’re building is already up and running. 
+That said, the distributed nature of Serverless Architectures gives a malicious attacker more room to maneuver. The greatest asset of serverless is also its most dangerous foe; it gives attackers significantly more points of entry.
 
-> “Deploy an app and hope you don’t get hacked…” — The average developer
+This had me genuinely worried, so I started digging for answers. That's when I came across Puresec's study, *[“The Top Ten Most Critical Security Risks in Serverless Architectures”](https://www.puresec.io/hubfs/SAS-Top10-2018/PureSec%20-%20SAS%20Top%2010%20-%202018.pdf?t=1517837443549)*.
 
-The *“getting around to security, eventually…”* mentality is what we as a community need to work on. I’m happy to say we’re seeing steady progress.
+I read it without lifting my eyes from my screen. So many things became crystal clear.
 
-From all the exploring I went through, here’s what I learned.
+## The path to better Serverless Security
+
+Sadly, there’s still a common bad practice among developers: we focus on security once the software we’re building is already up and running. 
+
+> “I'm just going to deploy this app and hope I don’t get hacked...” — The average developer
+
+In a nutshell, the *“getting around to security...eventually”* mentality is what kills us. We’ve been seeing steady progress on this, but there's a lot more room for improvement.
+
+Below, I've compiled some key takeaways for improving your serverless security. Read on.
 
 ___
 
@@ -45,7 +53,9 @@ ___
 ___
 
 # Getting risky with it
-Much of what I’ll be talking about today will be obvious to many of you. Several steps in improving security lie in the quality of our application structure as a whole. The way we architect the software as a whole and the amount of attention we put into detail will ultimately lead to a robust and secure software product. That’s enough of my yapping. Let’s get started with the risks!
+This is probably obvious to most of you—several steps in improving security lie in the quality of our application structure as a whole. The way we architect our software, and our level of attention to detail, will ultimately lead to a robust and secure software product.
+
+That’s enough of my yapping. Let’s get started with the risks!
 
 ## 1. Event injection
 Isn’t it common sense to always validate input? Yeah, it is. So why am I even talking about this? Because we often forget about the edge cases. Do you regularly make sure the input is of the data type you are expecting? Not always. At least, I tend to forget from time to time. 
