@@ -1,7 +1,7 @@
 ---
 title:  Fantastic Serverless security risks, and where to find them
-description:  How to gain a new perspective on security best practices while using Serverless Architectures.
-date:  2018-02-09
+description: A breakdown of the top serverless security risks, and steps you can take to secure your serverless applications.
+date:  2018-02-12
 thumbnail: https://raw.githubusercontent.com/adnanrahic/cdn/master/covers/catridingunicorn2.jpg
 layout:  Post 
 authors:
