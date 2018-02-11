@@ -12,14 +12,16 @@ authors:
 
 ## Introduction
 
-Over the last four years, I've been exploring the world of big data; I was tasked with building real-time and batch systems at scale. 
+Over the last four years, I've been exploring the world of big data, building real-time and batch systems at scale. For the last couple of months, I've been building products with serverless architectures here at Glassdoor.
 
-For the last couple of months, I've been building products with serverless architectures here at Glassdoor. Here are few questions on everyone's mind: 
+Given the intersection here of serverless and big data, here are few questions on everyone's mind: 
 
 1) How can we build low latency APIs to server these complex, high dimensional and big datasets which can scale on demand?
 3) Can we fire single query which can construct a nested response from multiple data sources?
 4) Is there an easy way to secure the endpoint, paginate through the data, aggregate the results at scale and what not? 
 5) Can we pay per query execution rather than running fleet of servers?
+
+The answer? GraphQL.
 
 > “Engineers like to solve problems. If there are no problems handily available, they will create their own problems.” - Scott Adams
 
@@ -104,7 +106,7 @@ Repository comes in two flavor —
  - It uses [VTL](http://velocity.apache.org/engine/1.7/vtl-reference.html) under the hood to transform GraphQL request and response.
  - Built-in integrations with DynamoDB, Elastic Search, and AWS Lambda. 
 
-> Overall, there isn’t much code nor configuration required. You can get this to a production-ready setup in a few minutes. 
+Overall, there isn’t much code nor configuration required. You can get this to a production-ready setup in a few minutes. 
 
 **Note:** In this blog, I am going to explore creating GraphQL endpoints using API Gateway and Lambda Backend. I will dedicate my next blog to build the same endpoints using AWS Appsync.
 
@@ -125,6 +127,7 @@ functions:
         path: graphql
         method: post
 ```
+
 Now any http post event on path `/graphql` will trigger `graphql` lambda function and will be handled by `graphqlHandler`.
 
 *Step 2: Configure Lambda Function (Apollo-Server-Lambda)*
