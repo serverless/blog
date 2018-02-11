@@ -502,7 +502,27 @@ In production, you can also deploy the client on Netlify or AWS S3. Please follo
 
 **Note** I will go in more details about AppSync client in my next blog.
 
-## Performance Analysis (X-Ray)
+## Performance Analysis 
+
+Let's crunch some numbers to measure the response times and latency of our GraphQL endpoints.
+
+Latency can be divided into four parts:
+
+- network latency
+- latency of API Gateway
+- lambda execution time (including Dynamodb/RDS or REST)
+
+For DynamoDB,
+ 
+I used this [managed service](https://www.redline13.com) for instantiating 2 EC2 nodes (us-east-1) in my AWS account which fired 300 API calls 
+
+Lambda Complete Snapshot (1GB Memory)        |  Lambda Complete Snapshot (2GB Memory)
+:-------------------------:|:-------------------------:
+![](https://user-images.githubusercontent.com/1587005/36077518-bb7886fe-0f20-11e8-9941-711bf14cd942.png)  |  ![](https://user-images.githubusercontent.com/1587005/36077530-d9e85510-0f20-11e8-9392-ae13d9650e7c.png)
+
+Lambda 0-200ms Snapshot (1GB Memory)        |  Lambda 0-200ms Snapshot (2GB Memory)
+:-------------------------:|:-------------------------:
+![](https://user-images.githubusercontent.com/1587005/36077522-be959e08-0f20-11e8-9889-94e3c1e9f001.png)  |  ![](https://user-images.githubusercontent.com/1587005/36077531-db9a408a-0f20-11e8-8eec-8b78565f5a15.png)
 
 ## Special Thanks!
 
@@ -524,12 +544,12 @@ Then, they would use this superior workflow to gain even more buy-in. They would
 
 Now I’m not *saying* you should do that, but also, if you wanted to, there it is for your consideration. My lips are sealed.
 
-## What next?
+## What next? 
 
-> Part II: AppSync: AWS Managed GraphQL Service
-> Announcements on Serverless AppSync Plugin
+> Part II: AppSync: AWS Managed GraphQL Service  
+> Announcements on Serverless AppSync Plugin  
 
 Siddharth Gupta
 *Lead Data Engineer, Glassdoor*
 
-[Github](https://github.com/sid88in) | [LinkedIn](https://www.linkedin.com/in/sid88in/) | [Twitter](https://twitter.com/sidg_sid))
+[Github](https://github.com/sid88in) | [LinkedIn](https://www.linkedin.com/in/sid88in/) | [Twitter](https://twitter.com/sidg_sid)
