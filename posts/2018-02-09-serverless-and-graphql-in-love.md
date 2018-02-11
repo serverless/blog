@@ -16,7 +16,6 @@ Over the last four years, I have been exploring and learning about the world of 
 I have been mainly involved in building products with serverless architectures for the last couple of months, here at Glassdoor. Here are few questions on everyone's mind - 
 
 1) How can we build low latency APIs to server these complex, high dimensional and big datasets which can scale on demand?
-2) Is there a way for frontend and backend teams to collaborate more smoothly?
 3) Can we fire single query which can construct a nested response from multiple data sources?
 4) Is there an easy way to secure the endpoint, paginate through the data, aggregate the results at scale and what not? 
 5) Can we pay per query execution rather than running fleet of servers?
@@ -28,8 +27,7 @@ Luckily for us, the tech horizon is ever-expanding. We have options. And we shou
 
 I am sure you have heard it before and in fact, might be unknowingly creating more problems than solutions.  
 
-This blog aims to explore a beautiful relationship between Serverless and GraphQL and why they fit together. I’ll go over the advantages and disadvantages of both, which one would work best for your application, and what you should consider before making the switch.
-Perhaps most importantly, I’ll also share some info about how you can get on board with your devious, streamlining plans.
+This blog aims to explore a beautiful relationship between Serverless and GraphQL and why they fit together. I’ll go over steps to create Serverless GraphQL endpoints using DynamoDB, RDS and wrap it around REST API.
 
 ## What is GraphQL?
 
@@ -110,7 +108,7 @@ Repository comes in two flavor —
 
 ## Let's create a Serverless GraphQL Endpoint
 
-The [example app](https://github.com/serverless/serverless-graphql) has the full walkthrough; give it a try and let me know what you think.
+The [serverless-graphql](https://github.com/serverless/serverless-graphql) repo has the full walkthrough; give it a try and let me know what you think.
 
 *Step 1: Configure Serverless Template*
 
@@ -154,7 +152,7 @@ exports.graphqlHandler = function graphqlHandler(event, context, callback) {
 };
 ```
 
-Now, in your lambda function, GraphQL Schema and Resolvers will be imported ( as explained in next steps). Once API Gateway triggers an event, graphqlLambda function will then handled it, and response is sent back to the client.
+Now, in your lambda function, GraphQL Schema and Resolvers will be imported ( as explained in next steps). Once API Gateway triggers an event, graphqlLambda function will then handled it, and the response is sent back to the client.
 
 *Step 3: Create GraphQL Schema*
 
@@ -162,30 +160,31 @@ Checkout out the complete [sample schema](https://github.com/serverless/serverle
 
 ```yml
 type Query {
-	getUserInfo(handle: String!): User!
+    getUserInfo(handle: String!): User!
 }
 
 type Tweet {
-	tweet_id: String!
-	tweet: String!
-	handle: String!
-	created_at: String!
+    tweet_id: String!
+    tweet: String!
+    handle: String!
+    created_at: String!
 }
 
 type TweetConnection {
-	items: [Tweet!]!
-	nextToken: String
+    items: [Tweet!]!
+    nextToken: String
 }
 
 type User {
-	name: String!
-	description: String!
-	followers_count: Int!
-	tweets(limit: Int!, nextToken: String): TweetConnection
+    name: String!
+    description: String!
+    followers_count: Int!
+    topTweet: Tweet
+    tweets(limit: Int!, nextToken: String): TweetConnection
 }
 
 schema {
-	query: Query
+    query: Query
 }
 ```
 
@@ -273,7 +272,8 @@ cd app-backend/dynamodb
 yarn install
 ```
 
-To test GraphQL endpoint locally on your machine, you can use [Serverless Offline](https://github.com/dherault/serverless-offline), [Serverless Webpack](https://github.com/serverless-heaven/serverless-webpack) and [Serverless DynamoDB Local](https://github.com/99xt/serverless-dynamodb-local)
+To test GraphQL endpoint locally on your machine, we use [Serverless Offline](https://github.com/dherault/serverless-offline), [Serverless Webpack](https://github.com/serverless-heaven/serverless-webpack) and [Serverless DynamoDB Local](https://github.com/99xt/serverless-dynamodb-local). The plugins make it
+super easy to run the entire solution E2E locally without any infrastructure. As a result, we save time and debug issues faster.
 
 Make sure your `serverless.yml` is configured to setup DynamoDB on local as shown [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml#L16)
 
@@ -282,15 +282,183 @@ cd app-backend/dynamodb
 yarn start
 ```
 
-DynamoDB is now available on local `http://localhost:8000/shell`
+DynamoDB is now available and running on your local machine at `http://localhost:8000/shell`
 
-![!test](https://user-images.githubusercontent.com/1587005/36065162-b4ad3c14-0e4b-11e8-8776-e19596546ce1.gif)
+![!Live Example](https://user-images.githubusercontent.com/1587005/36065162-b4ad3c14-0e4b-11e8-8776-e19596546ce1.gif)
 
 **Note:** We also have a previous post on [making a serverless GraphQL API](https://serverless.com/blog/make-serverless-graphql-api-using-lambda-dynamodb/), which covers the process in more detail.
 
+RDS backend: 
+------------
 
+DynamoDB is a great use case for fetching data by a set of keys, but relational database provides flexibility to model complex relationships and provides aggregation mechanisms at runtime. The [serverless-graphql](https://github.com/serverless/serverless-graphql) repo has full support of connecting to SQLite3, MySQL, Aurora or Postgres using
+[Knex](http://knexjs.org/), a powerful query builder for SQL DB's and Node.js
 
-## Client Integrations (Apollo ReactJS, Netlify and S3)
+Now, let's look at the process of connecting your lambda to RDS. We have explained requirements to set up RDS in production in [readme](https://github.com/serverless/serverless-graphql#setup-for-production-deploy-resources-to-aws), but you can test your GraphQL endpoint locally using SQLite3 (without any AWS infrastructure). Boom!
+
+1. Data Modeling and Table Creation
+
+We will create two tables (Users and Tweets) to store user and tweet info respectively as described [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/rds/migrations/20171204204927_setup.js)
+
+**Table**: _User_  
+**Primary Key**: _autoId_  
+**Attributes**: _name_, _description_, _followers_count_  
+
+**Table**: _Tweets_  
+**Primary Key**: _tweet_id_  
+**Attributes**: _tweet_, _handle_, _created_at_  
+
+2. Mock fake data using [Faker](https://www.npmjs.com/package/faker). You can find the scripts [here](https://github.com/serverless/serverless-graphql/tree/master/app-backend/rds/seed-data)
+
+3. Set your lambda in the same VPC as RDS for connectivity.
+
+4. Configure knexfile for database configuration.
+
+```yml
+const pg = require('pg');
+const mysql = require('mysql');
+
+module.exports = {
+  development: {
+    client: 'sqlite3',
+    connection: {
+      filename: './dev.db',
+    },
+  },
+  production: {
+    client: process.env.DATABASE_TYPE === 'pg' ? 'pg' : 'mysql',
+    connection: process.env.DATABASE_URL,
+  },
+};
+```
+
+5. Now, let's write our resolver functions. In this case, we can use knex ORM layer to query `User` table using SQL `where` clause and pass that `user` to fetch tweets from `Tweets` table. And it just works !!!
+
+```
+export const resolvers = {
+  Query: {
+    getUserInfo: (root, args) =>
+      knex('Users')
+        .where('handle', args.handle)
+        .then(users => {
+          const user = users[0];
+          if (!user) {
+            throw new Error('User not found');
+          }
+          return user;
+        })
+        .then(user =>
+          knex('Tweets')
+            .where('handle', user.handle)
+            .then(posts => {
+              // eslint-disable-next-line no-param-reassign
+              user.tweets = { items: posts };
+              return user;
+            })
+        ),
+  },
+};
+```
+
+You can also get the *top tweet*; you can use knex ORM `orderby` function: 
+
+```yml
+      knex('Tweets')
+        .where('handle', args.handle)
+        .orderby('tweet_id', 'desc')
+        .limit(1)
+        .then(tweet => {
+          return user;
+        })
+```
+
+6. Run it locally on your machine (RDS instance not required)
+
+*Kickstart on local using SQLite*
+
+```
+cd app-backend/rds
+yarn install
+yarn start
+```
+
+7. Deploy to production
+
+```
+cd app-backend/rds
+yarn deploy-prod
+```
+
+**Note**: Please make sure your database endpoint is configured correctly in `config/security.env.prod`
+
+REST Wrapper: 
+------------
+
+Last, but not the least - REST API backend. This use case is the most common, where you have pre-existing microservices, and you want to wrap them around GraphQL. It's easier than you think, let's look at it. For this tutorial, we will fetch data from Twitter's [REST API](https://developer.twitter.com/en/docs), but it can very well be your REST API. You will need to create OAuth tokens [here](https://apps.twitter.com/). We provide [test account tokens](https://github.com/serverless/serverless-graphql/blob/master/config/security.env.local) for you to get fast setup.
+
+In this case, we don't need to create tables or mock data because we will be querying real data. The consumerKey, consumerSecret and handle are passed as an input to the `friends/list` API.
+
+Let's look at how to get people a given user if following:
+
+```yml
+import { OAuth2 } from 'oauth';
+const Twitter = require('twitter');
+
+async function getFollowing(handle, consumerKey, consumerSecret) {
+  const url = 'friends/list';
+
+  const oauth2 = new OAuth2(
+    consumerKey,
+    consumerSecret,
+    'https://api.twitter.com/',
+    null,
+    'oauth2/token',
+    null
+  );
+
+  return new Promise(resolve => {
+    oauth2.getOAuthAccessToken(
+      '',
+      {
+        grant_type: 'client_credentials',
+      },
+      (error, accessToken) => {
+        resolve(accessToken);
+      }
+    );
+  })
+    .then(accessToken => {
+      const client = new Twitter({
+        consumer_key: consumerKey,
+        consumer_secret: consumerSecret,
+        bearer_token: accessToken,
+      });
+
+      const params = { screen_name: handle };
+
+      return client
+        .get(url, params)
+      //then parse the result
+}
+```
+Complete example is given [here](https://raw.githubusercontent.com/serverless/serverless-graphql/master/app-backend/rest-api/resolvers.js)
+
+6. Run it locally on your machine
+
+```
+cd app-backend/rest-api
+yarn install
+yarn start
+```
+
+7. Deploy to production
+
+```
+cd app-backend/rest-api
+yarn deploy-prod
+``` 
+ 
+## Client Integrations (Apollo ReactJS, Netlify, and S3)
 
 ```yml
 const client = new ApolloClient({
@@ -316,6 +484,9 @@ Then, they would use this superior workflow to gain even more buy-in. They would
 Now I’m not *saying* you should do that, but also, if you wanted to, there it is for your consideration. My lips are sealed.
 
 ## What next?
+
+> Part II: AppSync : AWS Managed GraphQL Service
+> Announcments on Serverless AppSync Plugin
 
 Siddharth Gupta
 *Lead Data Engineer, Glassdoor*
