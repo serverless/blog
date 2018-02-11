@@ -1,7 +1,7 @@
 ---
 title: Serverless and GraphQL in Love  
 description: This blog explores a beautiful relationship between Serverless and GraphQL.  
-date: 2018-02-09  
+date: 2018-02-13  
 layout: Post  
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/graphql.jpeg  
 authors:  
@@ -12,71 +12,73 @@ authors:
 
 ## Introduction
 
-Over the last four years, I have been exploring and learning about the world of big data to build real-time and batch systems at scale (please don't roll eyes, I am allowed to use some buzz words in my first blog :). 
-I have been mainly involved in building products with serverless architectures for the last couple of months, here at Glassdoor. Here are few questions on everyone's mind - 
+Over the last four years, I've been exploring the world of big data; I was tasked with building real-time and batch systems at scale. 
+
+For the last couple of months, I've been building products with serverless architectures here at Glassdoor. Here are few questions on everyone's mind: 
 
 1) How can we build low latency APIs to server these complex, high dimensional and big datasets which can scale on demand?
 3) Can we fire single query which can construct a nested response from multiple data sources?
 4) Is there an easy way to secure the endpoint, paginate through the data, aggregate the results at scale and what not? 
 5) Can we pay per query execution rather than running fleet of servers?
 
-I’m going to start this off with a statement of truth, to all my fellow engineers: The way we currently build APIs, where all of them are split up and maintained separately, isn’t optimal.
-Luckily for us, the tech horizon is ever-expanding. We have options. And we should use them.
-
 > “Engineers like to solve problems. If there are no problems handily available, they will create their own problems.” - Scott Adams
 
-I am sure you have heard it before and in fact, might be unknowingly creating more problems than solutions.  
+I am sure you have heard it before. You might even be, unknowingly, creating more problems than solutions in your application.
 
-This blog aims to explore a beautiful relationship between Serverless and GraphQL and why they fit together. I’ll go over steps to create Serverless GraphQL endpoints using DynamoDB, RDS and wrap it around REST API.
+This blog aims to show you one key way you can streamline lots of your work. Namely, the beautiful relationship between Serverless and GraphQL.
+
+In this post, I’ll cover how to create Serverless GraphQL endpoints using DynamoDB and RDS; we'll wrap it all around a REST API.
 
 ## What is GraphQL?
 
-[2017 was the year of GraphQL](https://dev-blog.apollodata.com/2017-the-year-in-graphql-124a050d04c6).
+I’m going to start this off with a statement of truth, to all my fellow engineers: The way we currently build APIs, where all of them are split up and maintained separately, isn’t optimal.
 
-The answer to having fewer API endpoints to manage is to (drumroll!) ...have fewer API endpoints. GraphQL lets you shrink your multitude of APIs down into a single HTTP endpoint.
-The concept isn’t new; GraphQL has been helping people do this for a while now. If you want to explore more differences between GraphQL and REST, you can read [Sashko's](https://twitter.com/stubailo) blog post on [GraphQL vs. REST](https://dev-blog.apollodata.com/graphql-vs-rest-5d425123e34b).
+Luckily for us, the tech horizon is ever-expanding. We have options. And we should use them.
 
-GraphQL provides a simple and elegant way of building mobile and web applications by providing a clean layer of abstraction between servers and clients. 
+[GraphQL](https://dev-blog.apollodata.com/2017-the-year-in-graphql-124a050d04c6) lets you shrink your multitude of APIs down into a single HTTP endpoint. In short, it provides a simple way of building mobile/web applications by providing a clean layer of abstraction between servers and clients.
 
-1. A single endpoint can be used to fetch data from multiple data sources resulting in reduced network costs and better query efficiency.
+It lets you:
+1. Use a single endpoint to fetch data from multiple data sources (meaning reduced network costs and better query efficiency).
 2. Know exactly what your response will look like. Ensure you're never sending more or less than the client needs.
 3. Describe your API with types that map your schema to existing backend.
 
-Thousands of companies are now using GraphQL in production with the help of open source frameworks built by [Facebook](http://graphql.org/), [Apollo](https://github.com/apollographql), and [Graphcool](https://blog.graph.cool/introducing-prisma-1ff423fd629e). In fact, Starbucks [announcement](https://twitter.com/davidbrunelle/status/960946257643454464) last week is going to make my morning coffee taste even better :D 
+Thousands of companies are now using GraphQL in production with the help of open source frameworks built by Facebook, Apollo, and Graphcool. In fact, that [Starbucks announcement](https://twitter.com/davidbrunelle/status/960946257643454464) last week is going to make my morning coffee taste even better. 😉
 
-![alt text](https://user-images.githubusercontent.com/1587005/36067514-503a05b4-0e73-11e8-9b40-946c5398f4b5.png "Danielle's slide from Serverless and GraphQL meetup at Glassdoor, Jan 29, 2018")
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Big milestone for the <a href="https://twitter.com/Starbucks?ref_src=twsrc%5Etfw">@Starbucks</a> engineering teams: As of today <a href="https://twitter.com/GraphQL?ref_src=twsrc%5Etfw">@GraphQL</a> is powering 100% of the new &quot;Store Locator&quot; experience in version 4.5 of our iOS and Android apps. This also comes with a design overhaul that we think you&#39;ll love! 🎉❤️☕️ <a href="https://t.co/AYhqCSyeOg">pic.twitter.com/AYhqCSyeOg</a></p>&mdash; David Brunelle (@davidbrunelle) <a href="https://twitter.com/davidbrunelle/status/960946257643454464?ref_src=twsrc%5Etfw">February 6, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Now, very reasonably, you are probably thinking, “Yeah, okay, Facebook is one thing; they have a giant engineering team. But for me, having only one API endpoint is too risky. What if it goes down? How do I handle that much load? What about security?”
+
 You are absolutely correct: with one HTTP endpoint, you need be entirely sure that endpoint never goes down and that it scales on demand.
 
 That’s where serverless comes in.
 
 ## What is Serverless?
 
-Serverless has gained popularity over last few years by allowing developers the flexibility to quickly build highly available and scalable applications with reduced cost and latency.
-With Serverless comes the following:
+Serverless has gained popularity over last few years, primarily because it gives developers flexibility.
 
-1. No server management — No need to manage any form of machines
-2. Pay per use — Pay per execution, never pay for idle.
-3. Authentication and Authorization at Scale
+With Serverless comes the following:
+1. No server management (no need to manage any form of machine)
+2. Pay-per-execution (never pay for idle)
+3. Authentication and authorization at scale
 4. Function as a unit of application logic
 
-> **Note:** I’m going to focus on AWS Lambda below, but know that you can use any serverless provider (Microsoft Azure, Google Cloud Functions, etc) with GraphQL.
+**Note:** I’m going to focus on AWS Lambda below, but know that you can use any serverless provider (Microsoft Azure, Google Cloud Functions, etc) with GraphQL.
 
-## Why Serverless and GraphQL are such a great fit?
+## What makes Serverless and GraphQL such a great fit?
 
-When moving to GraphQL, you suddenly rely on one HTTP endpoint to connect your clients to your backend services. Once you do decide to do that you want this one HTTP endpoint to be:
+When moving to GraphQL, you suddenly rely on one HTTP endpoint to connect your clients to your backend services. Once you do decide to do that, you want this one HTTP endpoint to:
 
-1. auto-scaling
-2. reliable
-3. fast
-4. has a small attack vector regarding security
+1. be auto-scaling
+2. be reliable
+3. be fast
+4. have a small attack vector regarding security
 
-> All these properties are full-filled by a single AWS Lambda function in combination with API Gateway. It’s just a great fit! 
+All these properties are fulfilled by a single AWS Lambda function in combination with API Gateway. It’s just a great fit! 
 
 In sum, powering your GraphQL endpoint with a serverless backend solves scaling and availability concerns outright, and it gives you a big leg up on security. It’s not even much code nor configuration. It takes only a few minutes to get to a production ready setup.
 
-I will recommend you to read [Jared's](https://twitter.com/ShortJared) [post](https://www.trek10.com/blog/a-look-at-serverless-graphql/) to get a better understanding of this relationship ;)
+I'd recommend you read [Jared's](https://twitter.com/ShortJared) [post](https://www.trek10.com/blog/a-look-at-serverless-graphql/) to get a better understanding of this relationship ;)
 
 ## Serverless-GraphQL repository
 
