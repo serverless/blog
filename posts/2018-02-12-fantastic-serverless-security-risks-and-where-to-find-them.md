@@ -2,7 +2,7 @@
 title:  Fantastic Serverless security risks, and where to find them
 description: A breakdown of the top serverless security risks, and steps you can take to secure your serverless applications.
 date:  2018-02-12
-thumbnail: https://raw.githubusercontent.com/adnanrahic/cdn/master/covers/catridingunicorn2.jpg
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/catridingunicorn2.jpg
 layout:  Post 
 authors:
  - AdnanRahic
@@ -22,7 +22,7 @@ There are numerous things we, the developers, can do to write better software.
 
 That said, the distributed nature of Serverless Architectures gives a malicious attacker more room to maneuver. The greatest asset of serverless is also its most dangerous foe; it gives attackers significantly more points of entry.
 
-This had me genuinely worried, so I started digging for answers. That's when I came across Puresec's study, *[“The Top Ten Most Critical Security Risks in Serverless Architectures”](https://www.puresec.io/hubfs/SAS-Top10-2018/PureSec%20-%20SAS%20Top%2010%20-%202018.pdf?t=1517837443549)*.
+This had me genuinely worried, so I started digging for answers. That's when I came across Puresec's study, *[The Top Ten Most Critical Security Risks in Serverless Architectures](https://www.puresec.io/hubfs/SAS-Top10-2018/PureSec%20-%20SAS%20Top%2010%20-%202018.pdf?t=1517837443549)*.
 
 I read it without lifting my eyes from my screen. So many things became crystal clear.
 
@@ -36,11 +36,10 @@ In a nutshell, the *“getting around to security...eventually”* mentality is 
 
 Read on for the takeaways from the Puresec security study, and for measures you can take right now to strengthen the security of your application.
 
-___
-
-*__Note__: I strongly suggest you [read the whole Puresec study](https://www.puresec.io/blog/serverless-top-10-released). It’s freaking awesome. If you want a quick recap of the risks take a look at the TL;DR. Or just jump to the section you are interested in.*
-
 ### TL;DR
+
+*__Note__: I strongly suggest you [read the whole Puresec study](https://www.puresec.io/blog/serverless-top-10-released). It’s freaking awesome. If you want a quick recap of the risks take a look at the TL;DR below. Or just jump to the section you are interested in.*
+
 - **Event injection** — Solved with input validation and predefined database layer logic, such as an ORM or stored procedures.
 - **Broken authentication** — Solved with built-in authentication/authorization solutions and avoiding dangerous deployment settings.
 - **Insecure deployment settings** — Solved with never using public read ACLs and keeping files encrypted.
@@ -49,8 +48,6 @@ ___
 - **Insecure storing of app secrets** — Solved by using AWS KMS to encrypt your application secrets.
 - **DoS attacks and financial exhaustion** — Solved with writing efficient code, using timeouts and throttling.
 - **Improper exception handling** — Solved by logging stack traces **only** to the console or dedicated log files. Never send stack traces back to the end user.
-
-___
 
 # Getting risky with it
 This is probably obvious to most of you—several steps in improving security lie in the quality of our application structure as a whole. The way we architect our software, and our level of attention to detail, will ultimately lead to a robust and secure software product.
