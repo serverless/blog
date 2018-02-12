@@ -1,6 +1,6 @@
 ---
 title: Serverless and GraphQL : The best of both worlds  
-description: Welcome to the first of a series of technical blog posts on how to create Serverless GraphQL endpoints. In this blog, we will go over creating these endpoints using using DynamoDB, RDS and a REST backend. 
+description: Welcome to the first of a series of technical blog posts on Serverless GraphQL. In this blog, we will go over creating Serverless GraphQ endpoints using DynamoDB, RDS and a REST backend.   
 date: 2018-02-13  
 layout: Post  
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/graphql.jpeg  
