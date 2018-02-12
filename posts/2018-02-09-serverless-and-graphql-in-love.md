@@ -14,22 +14,20 @@ authors:
 
 Over the last four years, I've been exploring the world of big data, building real-time and batch systems at scale. For the last couple of months, I've been building products with serverless architectures here at Glassdoor.
 
-Given the intersection here of serverless and big data, here are few questions on everyone's mind: 
+Given the intersection here of serverless and big data, there were few questions on everyone's mind: 
 
 1) How can we build low latency APIs to server these complex, high dimensional and big datasets which can scale on demand?
-3) Can we fire single query which can construct a nested response from multiple data sources?
-4) Is there an easy way to secure the endpoint, paginate through the data, aggregate the results at scale and what not? 
-5) Can we pay per query execution rather than running fleet of servers?
+2) Can we fire single query which can construct a nested response from multiple data sources?
+3) Is there an easy way to secure the endpoint, paginate through the data, aggregate the results at scale and what not? 
+4) Can we pay per query execution rather than running fleet of servers?
 
-The answer? GraphQL.
+The answer for us ended up largely being GraphQL.
 
-> “Engineers like to solve problems. If there are no problems handily available, they will create their own problems.” - Scott Adams
+This blog aims to show you how you, too, can streamline your existing workflow and handle complexity with ease. While I won't be digging deep into specific things Glassdoor was working on, I *will* be showing you a pretty related example that utilizes a mini Twitter clone I made.
 
-I am sure you have heard it before. You might even be, unknowingly, creating more problems than solutions in your application.
+In this post, I’ll cover how to create Serverless GraphQL endpoints using DynamoDB and RDS, which we'll wrap it all around a REST API.
 
-This blog aims to show you one key way you can streamline lots of your work. Namely, the beautiful relationship between Serverless and GraphQL.
-
-In this post, I’ll cover how to create Serverless GraphQL endpoints using DynamoDB and RDS; we'll wrap it all around a REST API.
+Ready? Awesome. Let's go.
 
 ## What is GraphQL?
 
