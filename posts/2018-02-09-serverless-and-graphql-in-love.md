@@ -158,6 +158,7 @@ type User {
     name: String!
     description: String!
     followers_count: Int!
+    following: [String!]!
     topTweet: Tweet
     tweets(limit: Int!, nextToken: String): TweetConnection
 }
@@ -406,9 +407,7 @@ This use case is the most common when you have pre-existing microservices, and y
 
 We'll fetch data from [Twitter's REST API](https://developer.twitter.com/en/docs), but it could very well be your own REST API. You'l need to create OAuth tokens [here](https://apps.twitter.com/), OR use these [test account tokens](https://github.com/serverless/serverless-graphql/blob/master/config/security.env.local) for faster setup.
 
-In this case, we don't need to create tables or mock data because we will be querying real data. The `consumerKey`, `consumerSecret` and handle are passed as an input to the `friends/list` API.
-
-Let's look at how to get people a given user if following:
+In this case, we don't need to create tables or mock data because we will be querying real data. Let's look at how to resolve `following` field to find list of `Users` being followed. The `consumerKey`, `consumerSecret` and handle are passed as an input to the `friends/list` API.
 
 ```yml
 import { OAuth2 } from 'oauth';
@@ -471,7 +470,7 @@ yarn deploy-prod
  
 ## Client Integrations (Apollo ReactJS, Netlify, and S3)
 
-This repository comes in two client implementations
+This repository comes with two client implementations
 
 1. [Apollo Client 2.0](https://dev-blog.apollodata.com/apollo-client-2-0-beyond-graphql-apis-888807b53afe)
 2. [AppSync Client](https://dev-blog.apollodata.com/aws-appsync-powered-by-apollo-df61eb706183)
@@ -490,7 +489,7 @@ yarn start
 
 Now, make sure `http://localhost:4000/graphiql` is working.
 
-With the Kickstart Apollo Client (as shown below), you will have a react server running on your local machine. The setup is created using [create react app](https://github.com/facebook/create-react-app):
+Now, kickstart Apollo Client (as shown below), you will have a react server running on your local machine. The setup is created using [create react app](https://github.com/facebook/create-react-app):
 
 ```
 cd app-client/apollo-client
