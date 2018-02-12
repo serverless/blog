@@ -8,6 +8,8 @@ authors:
   - JeremyCoffield
 ---
 
+*To see how DynamoDB compares to MongoDB, Cassandra, or BigTable, [see here](https://serverless.com/developers/guides/dynamodb/).*
+
 The `graphql` module makes it easy to rapidly create a GraphQL service that validates queries. We use GraphQL at [Serverless.com](http://www.serverless.com) to query our backend services, and we love how well it fits into the serverless paradigm.
 
 Interested in building your own GraphQL API? Awesome. Here we go.
