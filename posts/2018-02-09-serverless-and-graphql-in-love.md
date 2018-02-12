@@ -1,6 +1,6 @@
 ---
-title: Serverless and GraphQL in Love  
-description: How to create Serverless GraphQL endpoints using DynamoDB and RDS, which we'll wrap around a REST API.
+title: Serverless and GraphQL : The best of both worlds  
+description: Welcome to the first of a series of technical blog posts on how to create Serverless GraphQL endpoints. In this blog, we will go over creating these endpoints using using DynamoDB, RDS and a REST backend. 
 date: 2018-02-13  
 layout: Post  
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/graphql.jpeg  
@@ -44,8 +44,7 @@ It lets you:
 
 Thousands of companies are now using GraphQL in production with the help of open source frameworks built by Facebook, Apollo, and Graphcool. In fact, that [Starbucks announcement](https://twitter.com/davidbrunelle/status/960946257643454464) last week made my morning coffee taste even better. 😉
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Big milestone for the <a href="https://twitter.com/Starbucks?ref_src=twsrc%5Etfw">@Starbucks</a> engineering teams: As of today <a href="https://twitter.com/GraphQL?ref_src=twsrc%5Etfw">@GraphQL</a> is powering 100% of the new &quot;Store Locator&quot; experience in version 4.5 of our iOS and Android apps. This also comes with a design overhaul that we think you&#39;ll love! 🎉❤️☕️ <a href="https://t.co/AYhqCSyeOg">pic.twitter.com/AYhqCSyeOg</a></p>&mdash; David Brunelle (@davidbrunelle) <a href="https://twitter.com/davidbrunelle/status/960946257643454464?ref_src=twsrc%5Etfw">February 6, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+![](https://user-images.githubusercontent.com/1587005/36067514-503a05b4-0e73-11e8-9b40-946c5398f4b5.png "Danielle's slide from Serverless and GraphQL meetup at Glassdoor, Jan 29, 2018")
 
 Now, very reasonably, you are probably thinking, “Yeah, okay, Facebook is one thing; they have a giant engineering team. But for me, having only one API endpoint is too risky. What if it goes down? How do I handle that much load? What about security?”
 
@@ -82,6 +81,8 @@ With the shiny new [Serverless and GraphQL Repository](https://github.com/server
 ![alt text](https://user-images.githubusercontent.com/1587005/36035218-1c06763c-0d6b-11e8-996b-996243b0975f.png "Serverless and GraphQL Architecture")
 
 The repository comes in two flavors: API Gateway and Lambda backend, or AppSync backend. (And we're currently working on adding more backend integrations, including GraphCool Prisma, Druid, MongoDB, and AWS Neptune.)
+
+**Note:** I’m going to focus on AWS Lambda below, but know that you can use any serverless provider (Microsoft Azure, Google Cloud Functions, etc) with GraphQL.
 
 ## Let's create a Serverless GraphQL Endpoint
 
@@ -530,7 +531,7 @@ Last but not the least, I would like to thank [Steven](https://twitter.com/kruke
 
 ## What next? 
 
-- Part II: AppSync: AWS Managed GraphQL Service  
+- Part II: We will explore how to build Serverless GraphQL endpoints using [AWS AppSync](https://aws.amazon.com/appsync/)
 - Announcements on Serverless AppSync Plugin  
 
 Siddharth Gupta
