@@ -80,7 +80,7 @@ With the shiny new [Serverless and GraphQL Repository](https://github.com/server
 
 ![alt text](https://user-images.githubusercontent.com/1587005/36035218-1c06763c-0d6b-11e8-996b-996243b0975f.png "Serverless and GraphQL Architecture")
 
-The repository comes in two flavors: API Gateway and Lambda backend, or AppSync backend. (And we're currently working on adding more backend integrations, including GraphCool Prisma, Druid, MongoDB, and AWS Neptune.)
+The repository comes in two flavors: API Gateway and Lambda backend, or AppSync backend. (And we're currently working on adding more backend integrations, including [GraphCool Prisma](https://github.com/graphcool/prisma), Druid, MongoDB, and AWS Neptune.)
 
 **Note:** I’m going to focus on AWS Lambda below, but know that you can use any serverless provider (Microsoft Azure, Google Cloud Functions, etc) with GraphQL.
 
@@ -260,15 +260,16 @@ To test the GraphQL endpoint locally on your machine, I'm using the [Serverless 
 
 These plugins make it super easy to run the entire solution E2E locally without any infrastructure. It saves a lot of time and will help us debug issues faster.
 
-Make sure your `serverless.yml` is configured to set up DynamoDB on local as shown [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml#L16).
-
-```
-cd app-backend/dynamodb
-yarn start
-```
 DynamoDB is now available and running on your local machine at `http://localhost:8000/shell`:
 
 ![!Live Example](https://user-images.githubusercontent.com/1587005/36065162-b4ad3c14-0e4b-11e8-8776-e19596546ce1.gif)
+
+For deploying your endpoint in production, please run:
+
+```
+cd app-backend/dynamodb
+yarn deploy-prod
+```
 
 **Note:** We also have a previous post on [making a serverless GraphQL API](https://serverless.com/blog/make-serverless-graphql-api-using-lambda-dynamodb/), which covers the process in more detail.
 
@@ -287,16 +288,16 @@ We have explained the requirements to set up RDS in production in the [readme](h
 We will create two tables ('Users' and 'Tweets') to store user and tweet info respectively, as described [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/rds/migrations/20171204204927_setup.js).
 
 **Table**: _User_  
-**Primary Key**: _autoId_  
+**Primary Key**: _user_id_  
 **Attributes**: _name_, _description_, _followers_count_  
 
 **Table**: _Tweets_  
 **Primary Key**: _tweet_id_  
-**Attributes**: _tweet_, _handle_, _created_at_  
+**Attributes**: _tweet_, _handle_, _created_at_, _user_id_
 
 Then, you'll need to use Faker again to mock some fake data. (You can find the scripts [here](https://github.com/serverless/serverless-graphql/tree/master/app-backend/rds/seed-data).)
 
-Set your Lambda in the same VPC as RDS for connectivity, and configure knexfile for database configuration:
+Set your Lambda in the same VPC as RDS for connectivity, and configure knexfile for database configuration in development and production environment.
 
 ```yml
 const pg = require('pg');
@@ -316,10 +317,11 @@ module.exports = {
 };
 ```
 
-Let's go ahead and write our resolver functions. In this case, we can use a knex ORM layer to query the `User` table, using the SQL `where` clause. We can then pass that `user` to fetch tweets from the `Tweets` table.
+Let's go ahead and write our resolver functions. The knex ORM layer queries the `User` table to resolve `getUserInfo` and returns a list of user attributes. Then, we join both `Tweets` and `Users` tables on `user_id` to resolve `tweets`. In the end, `topTweet` is returned using `where`, `limit` and `orderBy` clauses.
 
 And it just works!
 
+Case 1: `getUserInfo` resolver
 ```
 export const resolvers = {
   Query: {
@@ -333,20 +335,33 @@ export const resolvers = {
           }
           return user;
         })
-        .then(user =>
-          knex('Tweets')
-            .where('handle', user.handle)
-            .then(posts => {
-              // eslint-disable-next-line no-param-reassign
-              user.tweets = { items: posts };
-              return user;
-            })
-        ),
-  },
+  }      
 };
 ```
 
-For the `topTweet`, you can use the knex ORM `orderBy` function: 
+Case 2: `tweets` resolver
+
+```yml
+  User: {
+    tweets: obj =>
+      knex
+        .select('*')
+        .from('Tweets')
+        .leftJoin('Users', 'Tweets.user_id', 'Users.user_id')
+        .where('handle', obj.handle)
+        .then(posts => {
+          if (!posts) {
+            throw new Error('User not found');
+          }
+
+          tweets = { items: posts };
+
+          return tweets;
+        }),
+  },
+```
+
+Case 3: `topTweet` resolver
 
 ```yml
   User: {
@@ -381,7 +396,7 @@ cd app-backend/rds
 yarn deploy-prod
 ```
 
-**Note**: Please make sure your database endpoint is configured correctly in `config/security.env.prod`.
+**Note**: When running in production, please make sure your database endpoint is configured correctly in `config/security.env.prod`.
 
 ### REST wrapper
 
