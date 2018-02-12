@@ -1,5 +1,5 @@
 ---
-title: Serverless and GraphQL : The best of both worlds  
+title: Running a scalable & reliable GraphQL endpoint with Serverless  
 description: Welcome to the first of a series of technical blog posts on Serverless and GraphQL. In this blog, we will learn how to create GraphQL endpoints using Serverless Framework, Lambda, DynamoDB, RDS and a REST backend.   
 date: 2018-02-13  
 layout: Post  
@@ -25,9 +25,9 @@ The answer for us ended up largely being GraphQL.
 
 This blog aims to show you how you, too, can streamline your existing workflow and handle complexity with ease. While I won't be digging deep into specific things Glassdoor was working on, I *will* be showing you a pretty related example that utilizes a mini Twitter clone I made.
 
-In this post, I’ll cover how to create Serverless GraphQL endpoints using DynamoDB and RDS, which we'll wrap around a REST API.
+In this post, I’ll cover how to create Serverless GraphQL endpoints using DynamoDB and RDS and Twitter REST API.
 
-Ready? Awesome. Let's go.
+Ready? Awesome. Let's go. 
 
 ## What is GraphQL?
 
