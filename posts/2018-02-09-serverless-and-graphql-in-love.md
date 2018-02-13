@@ -120,7 +120,7 @@ Now any http post event on path `/graphql` will trigger the `graphql` lambda fun
 
 Set up the callback to Lambda in your `handler.js` file.
 
-```
+```javascript
 import { graphqlLambda, graphiqlLambda } from 'apollo-server-lambda';
 import { makeExecutableSchema } from 'graphql-tools';
 import { schema } from './schema';
@@ -149,7 +149,7 @@ In your lambda function, GraphQL Schema and Resolvers will be imported (as I'll 
 
 For this post, I am going to focus on a subset of the schema to keep things simple (I'll handle mutations and subscriptions in my next blog - Coming Soon!)
 
-```yml
+```
 type Query {
     getUserInfo(handle: String!): User!
 }
