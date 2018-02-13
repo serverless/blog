@@ -503,25 +503,44 @@ In production, you can also deploy the client on Netlify or AWS S3. Please follo
 
 ## Performance Analysis 
 
-Let's crunch some numbers to measure the response times and latency of our GraphQL endpoints.
+Last but not the least, let's discuss the performance of your Serverless GraphQL API. In my understanding, E2E latency is a summation of the network delay, AWS API Gateway response time and AWS Lambda execution time which includes query execution time in the backend. In summary:
 
-Latency can be divided into four parts:
+Baseline Dataset: 500 Users,  5000 Tweets (10 per user) where each user record is less than 1 KB in size.
 
-- network latency
-- latency of API Gateway
-- lambda execution time (including Dynamodb/RDS or REST)
+Region: All the resources were created in aws us-east-1, and API calls were made from EC2 node in the same region.
 
-For DynamoDB,
+Lambda Memory size = 1024 MB
+
+1. Lambda execution time with DyanamoDB backend:
+
+With the above baseline dataset,  I simulated 500 Users making the API call with a ramp-up period of 30 secs for two separate GraphQL endpoints (one with DynamoDB and the other one with PostgreSQL).
+
+![](https://user-images.githubusercontent.com/1587005/36127110-97b9e0aa-1010-11e8-93c0-dc980899755c.png)
  
-I used this [managed service](https://www.redline13.com) for instantiating 2 EC2 nodes (us-east-1) in my AWS account, which fired 300 API calls: 
+2. Cold Starts:
 
-Lambda Complete Snapshot (1GB Memory)        |  Lambda Complete Snapshot (2GB Memory)
-:-------------------------:|:-------------------------:
-![](https://user-images.githubusercontent.com/1587005/36077518-bb7886fe-0f20-11e8-9941-711bf14cd942.png)  |  ![](https://user-images.githubusercontent.com/1587005/36077530-d9e85510-0f20-11e8-9392-ae13d9650e7c.png)
+I noticed an additional latency of 700ms - 800ms in lambda execution time for the first API call which came from initialization of the lambda container itself. This lag is known as [cold start](https://hackernoon.com/im-afraid-you-re-thinking-about-aws-lambda-cold-starts-all-wrong-7d907f278a4f) 
 
-Lambda 0-200ms Snapshot (1GB Memory)        |  Lambda 0-200ms Snapshot (2GB Memory)
+This additional latency was observed in both endpoints, i.e., with DynamoDB and PostgreSQL. There are ways to optimize this overhead by 1) keeping your lambda container warm with periodic pings or 2)  xxx
+ 
+3. Increase in Lambda memory size limit by 2x:
+
+Increase in lambda memory size by 2x significantly improved the latencies of API call 
+
+Lambda Service Latency (1GB Memory)        |  Lambda Service Latency (2GB Memory)
 :-------------------------:|:-------------------------:
-![](https://user-images.githubusercontent.com/1587005/36077522-be959e08-0f20-11e8-9889-94e3c1e9f001.png)  |  ![](https://user-images.githubusercontent.com/1587005/36077531-db9a408a-0f20-11e8-8eec-8b78565f5a15.png)
+![](https://user-images.githubusercontent.com/1587005/36127284-87ae8f16-1011-11e8-9f9a-d1435a066d06.png)  |  ![](https://user-images.githubusercontent.com/1587005/36127303-959b9db2-1011-11e8-9fd4-1d9556a6dc25.png)
+
+
+4. Lambda execution time with PostgreSQL backend:
+
+In case of RDS, lambda execution time increases with increase in the size of the data. For instance, when I repeated my analysis with an increase in Tweets dataset by a factor of 10 and even 100 respectively, I found the response time deteriorated significantly. This possibly is because we are doing a Tweets left join Users on user_id which increases the query execution time and hence, increase in overall API latency., 
+
+5. API Gateway and Network Latency:
+
+The E2E latency of the endpoint from the client ranges between 90ms - 150ms (including lambda execution time). Hence on avg API Gateway + Network latency is approx 50ms, which makes me think do we even need API Gateway or can we merely use lambda to get the response. I will delve more into this in my future blogs, but for now, you can read [this post](https://forum.serverless.com/t/convince-me-to-use-api-gateway-and-not-call-lambda-direct/3214) which evaluates the same. 
+
+**Note**:  This analysis merits a separate blog of its own where we can do an in-depth study of all the latencies and query optimizations. (Coming Soon!) 
 
 ## Selling GraphQL in your rganization
 
