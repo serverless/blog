@@ -16,16 +16,16 @@ Over the last four years, I've been exploring the world of big data, building re
 
 Given the intersection of serverless and big data, there have been a few questions on everyone's mind: 
 
-1) How can we build low latency APIs to server these complex, high dimensional and big datasets which can scale on demand?
+1) How can we build low latency APIs to serve these complex, high dimensional and big datasets which can scale on demand?
 2) Using a single query, can we construct a nested response from multiple data sources?
 3) Can we build an endpoint which can securely aggregate and paginate through data, easily and with high performance?
 4) And is there a way we can do all of that at scale, paying only for each query execution, and not for idle CPU time on a fleet of servers?
 
 The answer for us ended up largely being GraphQL.
 
-This blog aims to show you how you, too, can streamline your existing workflow and handle complexity with ease. While I won't be digging deep into specific things Glassdoor was working on, I *will* be showing you a pretty related example that utilizes a mini Twitter clone I made.
+This post aims to show you how you, too, can streamline your existing workflow and handle complexity with ease. While I won't be digging deep into specific things Glassdoor was working on, I *will* be showing you a pretty related example that utilizes a mini Twitter clone I made.
 
-In this post, I’ll cover how to create Serverless GraphQL endpoints using DynamoDB and RDS and Twitter REST API.
+In this post, I’ll cover how to create Serverless GraphQL endpoints using DynamoDB, RDS and Twitter REST API.
 
 Ready? Awesome. Let's go. 
 
@@ -48,7 +48,7 @@ Thousands of companies are now using GraphQL in production with the help of open
 
 Now, very reasonably, you are probably thinking, “Yeah, okay, Facebook is one thing; they have a giant engineering team. But for me, having only one API endpoint is too risky. What if it goes down? How do I handle that much load? What about security?”
 
-You are absolutely correct: with one HTTP endpoint, you need be entirely sure that endpoint never goes down and that it scales on demand.
+You are absolutely correct: with one HTTP endpoint, you need be be entirely sure that endpoint never goes down and that it scales on demand.
 
 That’s where serverless comes in.
 
@@ -89,7 +89,7 @@ The repository comes in two flavors: API Gateway and Lambda backend, or AppSync 
 In this example, we're using `Apollo-Server-Lambda`, designed to quickly get you up and running on AWS Lambda. Now you might be more familiar with server frameworks such as `Express`, `Koa`, or `Hapi`, and there are Apollo Server plugins for all of these frameworks. You can use any of these with Serverless as well, but they each require a little more configuration and adds complexity to the entire setup.
 Also, for monitoring your endpoint, you can integrate the lambda function with `Cloudwatch-metrics`, `AWS X-Ray` or [`Apollo Engine`](https://www.apollographql.com/engine/).
 
-Some of the main components of the building your endpoint are:
+Some of the main components of building your endpoint are:
 
 1. handler.js: lambda function handler to route HTTP requests and return the response.
 
@@ -101,7 +101,7 @@ Some of the main components of the building your endpoint are:
 
 ### Step 1: Configure Serverless template
 
-We'll be using the [Serverless Framework](https://serverless.com/) to quickly build and deploy your API resources. You’ll specify in your `serverless.yml` that you are setting up a GraphQL HTTP endpoint ([sample](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml#L34)).
+We'll be using the [Serverless Framework](https://serverless.com/framework/) to quickly build and deploy your API resources. You’ll specify in your `serverless.yml` that you are setting up a GraphQL HTTP endpoint ([sample](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml#L34)).
 
 ```yml
 functions:
@@ -572,7 +572,7 @@ Now I’m not *saying* you should do that, but also, if you wanted to, there it 
 
 First of all, I would like to thank [Nik Graf](https://twitter.com/nikgraf), [Philipp Müns](https://twitter.com/pmmuens) and [Austen Collins](https://twitter.com/austencollins) for kickstarting open source initiatives to help people build GraphQL endpoints easily on Serverless platforms. I have personally learned a lot during my work with you guys! 
 
-I would also like to give a shout to our open source committers - [Jon](https://twitter.com/superpatell), [Léo Pradel](@leopradel), [Tim](https://github.com/timsuchanek), [Justin](https://github.com/JstnEdr),  [Dan Kreiger](https://github.com/serpentblade) and [others](https://github.com/serverless/serverless-graphql/graphs/contributors) who I have not personally worked with.
+I would also like to give a shout to our open source committers - [Jon](https://twitter.com/superpatell), [Léo Pradel](@leopradel), [Tim](https://github.com/timsuchanek), [Justin](https://github.com/JstnEdr),  [Dan Kreiger](https://github.com/serpentblade) and [others](https://github.com/serverless/serverless-graphql/graphs/contributors).
 
 Thanks [Andrea](https://twitter.com/andreapasswater) and [Saeris](https://twitter.com/Saeris) for reviewing the final draft of this post. 
 
