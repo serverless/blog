@@ -586,6 +586,7 @@ I hope you guys liked my first blog post! Let me know you think ;) Feel free to 
 
 - Part II: We will explore how to build Serverless GraphQL endpoints using [AWS AppSync](https://aws.amazon.com/appsync/) with real-time subscriptions.
 - Part III: We will dive deep into the performance analysis and optimizations of Serverless GraphQL endpoints (including AppSync).
+- Part IV: General FAQ's and trade-offs between using Serverless vs more traditional server environments such as a Docker container.
 - Announcements on Serverless AppSync Plugin 
 
 Siddharth Gupta
