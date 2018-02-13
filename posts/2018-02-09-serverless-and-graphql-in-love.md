@@ -516,9 +516,9 @@ In production, you can also deploy the client on Netlify or AWS S3. Please follo
 
 ## Performance Analysis 
 
-Last but not the least, let's dive into the performance of our Serverless GraphQL endpoint. We can measure the E2E latency of the API call by adding the network delay, AWS API Gateway response time and AWS Lambda execution time which includes query execution time in the backend. For this analysis, my setup looks like this:
+Last but not the least, let's dive into the performance of our Serverless GraphQL endpoint. We can measure the E2E latency of the API call by adding the network delay, AWS API Gateway response time and AWS Lambda execution time which includes query execution time in the backend. For this analysis, my setup consists of:
 
-Baseline Dataset: 500 Users,  5000 Tweets (10 per user) where each user record is less than 1 KB in size.
+Baseline Dataset: 500 Users,  5000 Tweets (10 tweets per user) where each user record is less than 1 KB in size.
 
 Region: All the resources were created in aws us-east-1, and API calls were made from 2 EC2 nodes in the same region.
 
