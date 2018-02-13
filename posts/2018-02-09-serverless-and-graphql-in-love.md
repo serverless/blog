@@ -133,7 +133,7 @@ In your lambda function, GraphQL Schema and Resolvers will be imported (as I'll 
 
 ### Step 3: Create GraphQL schema
 
-Feel free to check out out the [complete sample schema](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/schema.js) we're using to build this mini Twitter app.
+Feel free to check out the [complete sample schema](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/schema.js) we're using to build this mini Twitter app.
 
 For this post, I am going to focus on a subset of the schema to keep things simple.
 
@@ -170,9 +170,9 @@ schema {
 
 ### Step 4: Create GraphQL resolvers
 
-Now, let's dive deep into how Lambda retrieves data from DynamoDB, RDS and the REST backend.
+Now, let's dive deep into how Lambda retrieves data from DynamoDB, RDS and, the REST backend.
 
-We'll use `getUserInfo` field as an example. This field takes a Twitter handle as input, and returns that user's personal and tweet info.
+We'll use `getUserInfo` field as an example. This field takes a Twitter handle as input and returns that user's personal and tweet info.
 
 #### Setting up the DynamoDB backend
 
@@ -242,7 +242,7 @@ If the result contains `LastEvaluatedKey` as shown [here](https://github.com/ser
   },
 ```  
 
-Similarily, for the `getUserInfo` field, you can retrieve the results as shown [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/resolvers.js#L78).
+Similarly, for the `getUserInfo` field, you can retrieve the results as shown [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/resolvers.js#L78).
 
 The end result? You've got a GraphQL endpoint that reliably scales!
 
@@ -276,7 +276,7 @@ yarn deploy-prod
 
 ### Setting up the RDS backend
 
-DynamoDB is a great for fetching data by a set of keys. But, using a relational database would provide the flexibility to model complex relationships and run aggregation mechanisms at runtime.
+DynamoDB is great for fetching data by a set of keys. But, using a relational database would provide the flexibility to model complex relationships and run aggregation mechanisms at runtime.
 
 The [serverless-graphql](https://github.com/serverless/serverless-graphql) repo supports connecting to SQLite3, MySQL, Aurora, or Postgres using [Knex](http://knexjs.org/)—a powerful query builder for SQL databases and Node.js
 
@@ -405,9 +405,9 @@ Last but not least—it's time for the REST API backend.
 
 This use case is the most common when you have pre-existing microservices, and you want to wrap them around GraphQL. Don't worry; it's easier than you think.
 
-We'll fetch data from [Twitter's REST API](https://developer.twitter.com/en/docs), but it could very well be your own REST API. You'l need to create OAuth tokens [here](https://apps.twitter.com/), OR use these [test account tokens](https://github.com/serverless/serverless-graphql/blob/master/config/security.env.local) for faster setup.
+We'll fetch data from [Twitter's REST API](https://developer.twitter.com/en/docs), but it could very well be your own REST API. You'll need to create OAuth tokens [here](https://apps.twitter.com/), OR use these [test account tokens](https://github.com/serverless/serverless-graphql/blob/master/config/security.env.local) for faster setup.
 
-In this case, we don't need to create tables or mock data because we will be querying real data. Let's look at how to resolve `following` field to find list of `Users` being followed. The `consumerKey`, `consumerSecret` and handle are passed as an input to the `friends/list` API.
+In this case, we don't need to create tables or mock data because we will be querying real data. Let's look at how to resolve `following` field to find a list of `Users` being followed. The `consumerKey`, `consumerSecret` and handle are passed as an input to the `friends/list` API.
 
 ```yml
 import { OAuth2 } from 'oauth';
@@ -479,7 +479,7 @@ If you are new to the ReactJs + Apollo Integration, I would recommend going thro
 
 The code for apollo-client in the serverless-graphql repo is [here](https://github.com/serverless/serverless-graphql/tree/master/app-client/apollo-client).
 
-To start the client on local, first start any backend service on local. For example:
+To start the client on local, first, start any backend service on local. For example:
 
 ```
 cd app-backend/rest-api
@@ -543,7 +543,7 @@ The E2E latency of the endpoint from the client ranges between 100ms - 200ms (in
 
 **Note**:  This analysis merits a separate blog of its own where we can do an in-depth study of all the latencies and query optimizations. (Coming Soon!) 
 
-## Selling GraphQL in your rganization
+## Selling GraphQL in your organization
 
 > When using new tech, always a discussion of “do we want this, or not?” 
 
@@ -557,7 +557,7 @@ Now I’m not *saying* you should do that, but also, if you wanted to, there it 
 
 ## Special thanks!
 
-First of all, I would like to thank [Nik Graf](https://twitter.com/nikgraf), [Philipp Müns](https://twitter.com/pmmuens) and [Austen Collins](https://twitter.com/austencollins) for kickstarting open source initiatives to help people build GraphQL endpoints easily on Serverless palatforms. I have personally learned a lot during my work with you guys! 
+First of all, I would like to thank [Nik Graf](https://twitter.com/nikgraf), [Philipp Müns](https://twitter.com/pmmuens) and [Austen Collins](https://twitter.com/austencollins) for kickstarting open source initiatives to help people build GraphQL endpoints easily on Serverless platforms. I have personally learned a lot during my work with you guys! 
 
 I would also like to give a shout to our open source committers - [Jon](https://twitter.com/superpatell), [Léo Pradel](@leopradel), [Tim](https://github.com/timsuchanek), [Justin](https://github.com/JstnEdr),  [Dan Kreiger](https://github.com/serpentblade) and [others](https://github.com/serverless/serverless-graphql/graphs/contributors) who I have not personally worked with.
 
