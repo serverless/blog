@@ -86,6 +86,9 @@ The repository comes in two flavors: API Gateway and Lambda backend, or AppSync 
 
 ## Let's create a Serverless GraphQL Endpoint
 
+I will show you how to build your endpoint using `Apollo-Server-Lambda,` but you can use `Apollo Server Hapi` or `Apollo Server Express` as well. An added advantage of using `Apollo-Server-Lambda` over Express or Hapi is that it provides an additional layer of abstraction and removes complexities to setup the server.
+Also, for monitoring your endpoint, you can integrate the lambda function with `Cloudwatch-metrics`, `AWS X-Ray` or `Apollo Tracing`.
+
 ### Step 1: Configure Serverless template
 
 We'll be using the [Serverless Framework](https://serverless.com/) to quickly build and deploy your API resources. You’ll specify in your `serverless.yml` that you are setting up a GraphQL HTTP endpoint ([sample](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml#L34)).
