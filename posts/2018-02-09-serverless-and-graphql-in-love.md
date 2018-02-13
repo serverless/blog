@@ -580,8 +580,13 @@ Last but not the least, I would like to thank [Steven](https://twitter.com/kruke
 
 ## What next? 
 
-- Part II: We will explore how to build Serverless GraphQL endpoints using [AWS AppSync](https://aws.amazon.com/appsync/)
-- Announcements on Serverless AppSync Plugin  
+I hope you guys liked my first blog post! Let me know you think ;) Feel free to reach out to me. Now, what next? 
+
+> One missing piece that you don’t get with AWS Lambda is real-time subscriptions. You can set up the AWS IoT service which comes with WebSockets, but it’s not straightforward.
+
+- Part II: We will explore how to build Serverless GraphQL endpoints using [AWS AppSync](https://aws.amazon.com/appsync/) with real-time subscriptions.
+- Part III: We will dive deep into the performance analysis and optimizations of Serverless GraphQL endpoints (including AppSync).
+- Announcements on Serverless AppSync Plugin 
 
 Siddharth Gupta
 *Lead Data Engineer, Glassdoor*
