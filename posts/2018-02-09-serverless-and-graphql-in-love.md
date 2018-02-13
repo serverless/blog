@@ -548,11 +548,10 @@ Lambda Service Latency (1GB Memory)        |  Lambda Service Latency (2GB Memory
 
 #### Lambda execution time with PostgreSQL backend:
 
-In case of RDS, lambda execution time increases with increase in the size of the data. For instance, when I repeated my analysis with an increase in Tweets dataset by a factor of 100 (i.e. 1000 tweets per user) and I found the response time increased by 2x. This possibly is because we are joining both Tweets and Users table on fly which increases the query execution time and hence, increase in overall API latency whereas DynamoDB latency remains constant with increase in dataset (which is expected by design)
-
+In case of RDS, lambda execution time increases with increase in the size of the data. For instance, when I repeated my analysis with an increase in Tweets dataset by a factor of 100 (i.e. 1000 tweets per user) and I found the response time increased by 2x. This possibly happens because we are joining Tweets and Users table on the fly which results in more query execution time. Query performance can be further improved by using indexing and other database optimizations (not in the scope of this blog). On the other hand, latency of DynamoDB remains constant with increase in dataset size (which is expected by design).
 #### API Gateway and Network Latency:
 
-The E2E latency of the endpoint from the client ranges between 100ms - 200ms (including lambda execution time). Hence on avg API Gateway + Network latency is approx 100 - 120 ms, which makes me think do we even need API Gateway or can we merely use lambda to get the response. I will delve more into this in my future blogs, but for now, you can read [this post](https://forum.serverless.com/t/convince-me-to-use-api-gateway-and-not-call-lambda-direct/3214) which evaluates the same. 
+On average, the E2E response time of the GraphQL endpoint ranges from 100ms - 200ms (including the lambda execution time). Hence on API Gateway and network latency is approximately between 40 - 100 ms, which makes me think do we even need API Gateway or can we merely use lambda to fetch the response. I will delve more into this in my future blogs, but for now, you can read [this post](https://forum.serverless.com/t/convince-me-to-use-api-gateway-and-not-call-lambda-direct/3214) which evaluates the same. 
 
 **Note**:  This analysis merits a separate blog of its own where we can do an in-depth study of all the latencies and query optimizations. (Coming Soon!) 
 
