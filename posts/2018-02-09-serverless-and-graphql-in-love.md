@@ -307,8 +307,6 @@ yarn deploy-prod
 
 DynamoDB is great for fetching data by a set of keys. But, using a relational database would provide the flexibility to model complex relationships and run aggregation mechanisms at runtime.
 
-The [serverless-graphql](https://github.com/serverless/serverless-graphql) repo supports connecting to SQLite3, MySQL, Aurora, or Postgres using [Knex](http://knexjs.org/)—a powerful query builder for SQL databases and Node.js
-
 Let's look at the process of connecting your Lambda to RDS.
 
 We have explained the requirements to set up RDS in production in the [readme](https://github.com/serverless/serverless-graphql#setup-for-production-deploy-resources-to-aws), but you can test your GraphQL endpoint locally using SQLite3 (without any AWS infrastructure). Boom!
@@ -325,9 +323,11 @@ We will create two tables ('Users' and 'Tweets') to store user and tweet info re
 **Primary Key**: _tweet_id_  
 **Attributes**: _tweet_, _handle_, _created_at_, _user_id_
 
-Then, you'll need to use Faker again to mock some fake data. (You can find the scripts [here](https://github.com/serverless/serverless-graphql/tree/master/app-backend/rds/seed-data).)
+Then, you'll need to use Faker again to mock some fake data.
 
 Set your Lambda in the same VPC as RDS for connectivity, and configure knexfile for database configuration in development and production environment.
+
+The [serverless-graphql](https://github.com/serverless/serverless-graphql) repo supports connecting to SQLite, MySQL, Aurora, or Postgres using [Knex configurations](http://knexjs.org/) — a powerful query builder for SQL databases and Node.js
 
 ```yml
 const pg = require('pg');
@@ -335,13 +335,13 @@ const mysql = require('mysql');
 
 module.exports = {
   development: {
-    client: 'sqlite3',
+    client: 'sqlite3',  -- in development mode you can use SQLite
     connection: {
       filename: './dev.db',
     },
   },
   production: {
-    client: process.env.DATABASE_TYPE === 'pg' ? 'pg' : 'mysql',
+    client: process.env.DATABASE_TYPE === 'pg' ? 'pg' : 'mysql', -- in production mode you can use PostgresQL, MySQL or Aurora
     connection: process.env.DATABASE_URL,
   },
 };
