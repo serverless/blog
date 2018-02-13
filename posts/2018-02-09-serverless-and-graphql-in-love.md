@@ -574,6 +574,8 @@ First of all, I would like to thank [Nik Graf](https://twitter.com/nikgraf), [Ph
 
 I would also like to give a shout to our open source committers - [Jon](https://twitter.com/superpatell), [Léo Pradel](@leopradel), [Tim](https://github.com/timsuchanek), [Justin](https://github.com/JstnEdr),  [Dan Kreiger](https://github.com/serpentblade) and [others](https://github.com/serverless/serverless-graphql/graphs/contributors) who I have not personally worked with.
 
+Thanks [Andrea](https://twitter.com/andreapasswater) and [Saeris](https://twitter.com/Saeris) for reviewing the final draft of this post. 
+
 Last but not the least, I would like to thank [Steven](https://twitter.com/kruken), Director of Data Engineering at Glassdoor, for introducing me to GraphQL.
 
 ## What next? 
