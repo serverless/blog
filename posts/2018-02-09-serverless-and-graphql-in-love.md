@@ -503,38 +503,39 @@ In production, you can also deploy the client on Netlify or AWS S3. Please follo
 
 ## Performance Analysis 
 
-Last but not the least, let's discuss the performance of your Serverless GraphQL API. In my understanding, E2E latency is a summation of the network delay, AWS API Gateway response time and AWS Lambda execution time which includes query execution time in the backend. In summary:
+Last but not the least, let's dive into the performance of our Serverless GraphQL endpoint. We can measure the E2E latency of the API call by adding the network delay, AWS API Gateway response time and AWS Lambda execution time which includes query execution time in the backend. For this analysis, my setup looks like this:
 
 Baseline Dataset: 500 Users,  5000 Tweets (10 per user) where each user record is less than 1 KB in size.
 
-Region: All the resources were created in aws us-east-1, and API calls were made from EC2 node in the same region.
+Region: All the resources were created in aws us-east-1, and API calls were made from 2 EC2 nodes in the same region.
 
 Lambda Memory size = 1024 MB
 
 1. Lambda execution time with DyanamoDB backend:
 
-With the above baseline dataset,  I simulated 500 Users making the API call with a ramp-up period of 30 secs for two separate GraphQL endpoints (one with DynamoDB and the other one with PostgreSQL).
+With the above baseline dataset,  I simulated 500 users making the API call with a ramp-up period of 30 secs hitting two separate GraphQL endpoints (one with DynamoDB and the other one with PostgreSQL). All the 500 users posted the same payload (there is no caching involved for this analysis)
+
+The service map below was created by AWS X-Ray, monitoring tool provided by AWS to measure the latency of your subsystems. I found in 99% of the calls DynamoDB took < 15ms, but 1% of the calls resulted in avg of 25ms. The lambda execution time was 60ms but the time spent on lambda service itself was 90ms on average (we can just optimize the lambda execution time but not service time itself) [more details](https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html)
 
 ![](https://user-images.githubusercontent.com/1587005/36127110-97b9e0aa-1010-11e8-93c0-dc980899755c.png)
  
 2. Cold Starts:
 
-I noticed an additional latency of 700ms - 800ms in lambda execution time for the first API call which came from initialization of the lambda container itself. This lag is known as [cold start](https://hackernoon.com/im-afraid-you-re-thinking-about-aws-lambda-cold-starts-all-wrong-7d907f278a4f) 
+Approximately, 2% of the total calls were [cold starts]((https://hackernoon.com/im-afraid-you-re-thinking-about-aws-lambda-cold-starts-all-wrong-7d907f278a4f) ), where I noticed an additional latency of 700ms - 800ms in lambda execution time for the first API call which came from initialization of the lambda container itself. 
 
-This additional latency was observed in both endpoints, i.e., with DynamoDB and PostgreSQL. There are ways to optimize this overhead by 1) keeping your lambda container warm with periodic pings or 2)  xxx
+This additional latency was observed in both endpoints, i.e., with DynamoDB and PostgreSQL. There are ways to optimize this overhead, and I would strongly recommend you to read [this post](https://serverless.com/blog/keep-your-lambdas-warm/) for the same
  
-3. Increase in Lambda memory size limit by 2x:
+3. Increase in Lambda memory size limit by 2x and 3x:
 
-Increase in lambda memory size by 2x significantly improved the latencies of API call 
+Increasing the lambda memory size by 2x (2048 MB) improved the overall latency of lambda service by 18% and 3x (3008 MB) improved the latency by 38%. The latency of DynamoDB backend remained constant and the lambda execution time itself improved within 20% range for 3x memory.  
 
 Lambda Service Latency (1GB Memory)        |  Lambda Service Latency (2GB Memory)
 :-------------------------:|:-------------------------:
 ![](https://user-images.githubusercontent.com/1587005/36127284-87ae8f16-1011-11e8-9f9a-d1435a066d06.png)  |  ![](https://user-images.githubusercontent.com/1587005/36127303-959b9db2-1011-11e8-9fd4-1d9556a6dc25.png)
 
-
 4. Lambda execution time with PostgreSQL backend:
 
-In case of RDS, lambda execution time increases with increase in the size of the data. For instance, when I repeated my analysis with an increase in Tweets dataset by a factor of 10 and even 100 respectively, I found the response time deteriorated significantly. This possibly is because we are doing a Tweets left join Users on user_id which increases the query execution time and hence, increase in overall API latency., 
+In case of RDS, lambda execution time increases with increase in the size of the data. For instance, when I repeated my analysis with an increase in Tweets dataset by a factor of 100 (i.e. 1000 tweets per user) and I found the response time increased by 2x. This possibly is because we are joining both Tweets and Users table on fly which increases the query execution time and hence, increase in overall API latency whereas DynamoDB latency remains constant with increase in dataset (which is expected by design)
 
 5. API Gateway and Network Latency:
 
