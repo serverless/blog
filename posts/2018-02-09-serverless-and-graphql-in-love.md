@@ -530,7 +530,7 @@ With the above baseline dataset, I simulated 500 users making the API call with 
 
 The service map below was created by AWS X-Ray, a monitoring tool provided by AWS to measure the latency of your subsystems. I found that for 99% of the simulated calls DynamoDB took less than 15ms, but 1% of the calls resulted in avg of 25ms response time. The lambda execution time was 60ms but the time spent on lambda service itself was 90ms on average (we can just optimize the lambda execution time but not service time itself) [more details](https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html)
 
-![](https://user-images.githubusercontent.com/1587005/36127110-97b9e0aa-1010-11e8-93c0-dc980899755c.png)
+![](https://user-images.githubusercontent.com/1587005/36131686-dac3658a-1027-11e8-9d5d-4a435f5ae43b.png)
  
 #### Cold Starts:
 
