@@ -91,17 +91,17 @@ Also, for monitoring your endpoint, you can integrate the lambda function with `
 
 Some of the main components of building your endpoint are:
 
-1. handler.js: lambda function handler to route HTTP requests and return the response.
+1. [handler.js](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/handler.js#L14): lambda function handler to route HTTP requests and return the response.
 
-2. serverless.yml: creates AWS resources and sets up the GraphQL endpoint.
+2. [serverless.yml](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml#L34): creates AWS resources and sets up the GraphQL endpoint.
 
-3. schema.js: defines our GraphQL schema.
+3. [schema.js](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/schema.js): defines our GraphQL schema we're using to build this mini Twitter app.
 
-4. resolver.js: this is where we'll write query handler functions to fetch data from our other services (RDS, REST, DynamoDB, etc.)
+4. [resolver.js](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/resolvers.js): this is where we'll write query handler functions to fetch data from our other services (RDS, REST, DynamoDB, etc.)
 
 ### Step 1: Configure Serverless template
 
-We'll be using the [Serverless Framework](https://serverless.com/framework/) to quickly build and deploy your API resources. You’ll specify in your `serverless.yml` that you are setting up a GraphQL HTTP endpoint ([sample](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml#L34)).
+We'll be using the [Serverless Framework](https://serverless.com/framework/) to quickly build and deploy your API resources. You’ll specify in your `serverless.yml` that you are setting up a GraphQL HTTP endpoint.
 
 ```yml
 functions:
@@ -117,7 +117,7 @@ Now any http post event on path `/graphql` will trigger the `graphql` lambda fun
 
 ### Step 2: Configure Lambda function (Apollo-Server-Lambda)
 
-Set up the callback to Lambda in your `handler.js` file ([sample](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/handler.js#L14)).
+Set up the callback to Lambda in your `handler.js` file.
 
 ```
 import { graphqlLambda, graphiqlLambda } from 'apollo-server-lambda';
@@ -145,8 +145,6 @@ exports.graphqlHandler = function graphqlHandler(event, context, callback) {
 In your lambda function, GraphQL Schema and Resolvers will be imported (as I'll explain further in a minute). Once API Gateway triggers an event, the  `graphqlLambda` function will handle it. The response is sent back to the client.
 
 ### Step 3: Create GraphQL schema
-
-Feel free to check out the [complete sample schema](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/schema.js) we're using to build this mini Twitter app.
 
 For this post, I am going to focus on a subset of the schema to keep things simple.
 
@@ -191,7 +189,7 @@ We'll use `getUserInfo` field as an example. This field takes a Twitter handle a
 
 First, we'll create two tables ('Users' and 'Tweets') to store info. We'll also be using GSI on Tweets table to sort user tweets by timestamp.
 
-These resources will be created using the `serverless.yml` [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml).
+These resources will be created using the `serverless.yml`.
 
 **Table**: _User_  
 **HashKey**: _handle_  
@@ -202,13 +200,13 @@ These resources will be created using the `serverless.yml` [here](https://github
 **Attributes**: _tweet_, _handle_, _created_at_  
 **Index**: _tweet-index_ _(hashKey: handle, sortKey: created_at)_
 
-At this point, you'll need to mock fake data using [Faker](https://www.npmjs.com/package/faker). You can find the scripts [here](https://github.com/serverless/serverless-graphql/tree/master/app-backend/dynamodb/seed-data).
+At this point, you'll need to mock fake data using [Faker](https://www.npmjs.com/package/faker).
 
-Before moving on, you'll also need to make sure your IAM Roles are set properly in the `serverless.yml`, so that Lambda can access DynamoDB. Full instructions on that [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml#L130).
+Before moving on, you'll also need to make sure your IAM Roles are set properly in the `serverless.yml`, so that Lambda can access DynamoDB.
 
 #### Creating the GraphQL resolver
 
-Let's  set it up for `getUserInfo` to retrieve data from DynamoDB. We're going to be breaking down the code you see [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/resolvers.js).
+Let's  set it up for `getUserInfo` to retrieve data from DynamoDB. We're going to be breaking down the code for you:
 
 First of all, we need to define how the `getUserInfo` and `tweets` fields will fetch the data:
 
@@ -255,7 +253,25 @@ If the result contains `LastEvaluatedKey` as shown [here](https://github.com/ser
   },
 ```  
 
-Similarly, for the `getUserInfo` field, you can retrieve the results as shown [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/resolvers.js#L78).
+Similarly, for the `getUserInfo` field, you can retrieve the results as shown below:
+
+```yml
+  getUserInfo(args) {
+    return promisify(callback =>
+      docClient.query(
+        {
+          TableName: 'Users',
+          KeyConditionExpression: 'handle = :v1',
+          ExpressionAttributeValues: {
+            ':v1': args.handle,
+          },
+        },
+        callback
+      )
+    )
+  //then parse the result 
+ }   
+```
 
 The end result? You've got a GraphQL endpoint that reliably scales!
 
