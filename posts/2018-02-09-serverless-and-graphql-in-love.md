@@ -40,7 +40,7 @@ Luckily for us, the tech horizon is ever-expanding. We have options. And we shou
 It lets you:
 1. Reduce network costs and get better query efficiency.
 2. Know exactly what your response will look like and ensure you're never sending more or less than the client needs.
-3. Describe your API with types that map your schema to existing backend.
+3. Describe your API with types that map your schema to existing backends.
 
 Thousands of companies are now using GraphQL in production with the help of open source frameworks built by Facebook, Apollo, and Graphcool. In fact, that [Starbucks announcement](https://twitter.com/davidbrunelle/status/960946257643454464) last week made my morning coffee taste even better. 😉
 
@@ -59,14 +59,15 @@ Serverless has gained popularity over last few years, primarily because it gives
 With Serverless comes the following:
 1. No server management (no need to manage any form of machine)
 2. Pay-per-execution (never pay for idle)
-3. Authentication and authorization at scale
-4. Function as a unit of application logic
+3. Auto-Scale (scale based on demand)
+4. Authentication and authorization at scale
+5. Function as a unit of application logic
 
 ## What makes Serverless and GraphQL such a great fit?
 
 When moving to GraphQL, you suddenly rely on one HTTP endpoint to connect your clients to your backend services. Once you do decide to do that, you want this one HTTP endpoint to be: reliable, fast, auto-scaling, and have a small attack vector regarding security.
 
-*All* these properties are fulfilled by a single AWS Lambda function in combination with API Gateway. It’s just a great fit! 
+*All* these properties are fulfilled by a single AWS Lambda function in combination with an API Gateway. It’s just a great fit! 
 
 **Note:** Check out [Jared Short's Serverless + GraphQL post](https://www.trek10.com/blog/a-look-at-serverless-graphql/) to get an even better understanding of this relationship 😎
 
@@ -80,13 +81,13 @@ With the shiny new [Serverless and GraphQL Repository](https://github.com/server
 
 ![alt text](https://user-images.githubusercontent.com/1587005/36035218-1c06763c-0d6b-11e8-996b-996243b0975f.png "Serverless and GraphQL Architecture")
 
-The repository comes in two flavors: API Gateway and Lambda backend, or AppSync backend. (And we're currently working on adding more backend integrations, including [GraphCool Prisma](https://github.com/graphcool/prisma), Druid, MongoDB, and AWS Neptune.)
+The repository comes in two flavors: API Gateway + Lambda backend, or AppSync backend. (And we're currently working on adding more backend integrations, including [GraphCool Prisma](https://github.com/graphcool/prisma), Druid, MongoDB, and AWS Neptune.)
 
 **Note:** I’m going to focus on AWS Lambda below, but know that you can use any serverless provider (Microsoft Azure, Google Cloud Functions, etc) with GraphQL.
 
 ## Let's create a Serverless GraphQL Endpoint
 
-In this example, we're using `Apollo-Server-Lambda`, designed to quickly get you up and running on AWS Lambda. Now you might be more familiar with server frameworks such as `Express`, `Koa`, or `Hapi`, and there are Apollo Server plugins for all of these frameworks. You can use any of these with Serverless as well, but they each require a little more configuration and adds complexity to the entire setup.
+In this example, we're using [`Apollo-Server-Lambda`](https://www.npmjs.com/package/apollo-server-lambda), designed to quickly get you up and running on AWS Lambda. Now you might be more familiar with server frameworks such as `Express`, `Koa`, or `Hapi`, and there are Apollo Server plugins for all of these frameworks. You can use any of these with Serverless as well, but they each require a little more configuration and adds complexity to the entire setup.
 Also, for monitoring your endpoint, you can integrate the lambda function with `Cloudwatch-metrics`, `AWS X-Ray` or [`Apollo Engine`](https://www.apollographql.com/engine/).
 
 Some of the main components of building your endpoint are:
@@ -189,7 +190,7 @@ We'll use `getUserInfo` field as an example. This field takes a Twitter handle a
 
 First, we'll create two tables ('Users' and 'Tweets') to store user and tweets info respectively. We'll also be using Global Secondary Index (`tweet-index`) on Tweets table to sort user tweets by timestamp.
 
-These resources will be created using the `serverless.yml`.
+These resources will be created using the [`serverless.yml`](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml#L60).
 
 **Table**: _User_  
 **HashKey**: _handle_  
@@ -202,7 +203,7 @@ These resources will be created using the `serverless.yml`.
 
 At this point, you'll need to mock fake data using [Faker](https://www.npmjs.com/package/faker).
 
-Before moving on, you'll also need to make sure your IAM Roles are set properly in the `serverless.yml`, so that Lambda can access DynamoDB.
+Before moving on, you'll also need to make sure your IAM Roles are set properly in the `serverless.yml`, so that Lambda can access DynamoDB (also defined in `serverless.yml`)
 
 #### Creating the GraphQL resolver
 
@@ -550,7 +551,7 @@ The service map below was created by AWS X-Ray, a monitoring tool provided by AW
  
 #### Cold Starts:
 
-Approximately, 2% of the total calls were [cold starts]((https://hackernoon.com/im-afraid-you-re-thinking-about-aws-lambda-cold-starts-all-wrong-7d907f278a4f) ), where I noticed an additional latency of 700ms - 800ms in lambda execution time for the first API call which came from initialization of the lambda container itself. 
+Approximately, 2% of the total calls were [cold starts](https://hackernoon.com/im-afraid-you-re-thinking-about-aws-lambda-cold-starts-all-wrong-7d907f278a4f), where I noticed an additional latency of 700ms - 800ms in lambda execution time for the first API call which came from initialization of the lambda container itself. 
 
 This additional latency was observed in both endpoints, i.e., with DynamoDB and PostgreSQL. There are ways to optimize this overhead, and I would strongly recommend you to read [this post](https://serverless.com/blog/keep-your-lambdas-warm/) for the same
  
