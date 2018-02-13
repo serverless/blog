@@ -551,7 +551,7 @@ Lambda Service Latency (1GB Memory)        |  Lambda Service Latency (2GB Memory
 In case of RDS, lambda execution time increases with increase in the size of the data. For instance, when I repeated my analysis with an increase in Tweets dataset by a factor of 100 (i.e. 1000 tweets per user) and I found the response time increased by 2x. This possibly happens because we are joining Tweets and Users table on the fly which results in more query execution time. Query performance can be further improved by using indexing and other database optimizations (not in the scope of this blog). On the other hand, latency of DynamoDB remains constant with increase in dataset size (which is expected by design).
 #### API Gateway and Network Latency:
 
-On average, the E2E response time of the GraphQL endpoint ranges from 100ms - 200ms (including the lambda execution time). Hence on API Gateway and network latency is approximately between 40 - 100 ms, which makes me think do we even need API Gateway or can we merely use lambda to fetch the response. I will delve more into this in my future blogs, but for now, you can read [this post](https://forum.serverless.com/t/convince-me-to-use-api-gateway-and-not-call-lambda-direct/3214) which evaluates the same. 
+On average, the E2E response time of the GraphQL endpoint ranges from 100ms - 200ms (including the lambda execution time). Hence on API Gateway and network latency is approximately between 40 - 100 ms, which can be further reduced by caching. You might ask - Why do we need API Gateway? Can we merely use lambda to fetch the GraphQL response? I will delve more into this in my future blogs, but for now, you can read [this post](https://forum.serverless.com/t/convince-me-to-use-api-gateway-and-not-call-lambda-direct/3214) which evaluates the same. 
 
 **Note**:  This analysis merits a separate blog of its own where we can do an in-depth study of all the latencies and query optimizations. (Coming Soon!) 
 
@@ -579,11 +579,11 @@ Last but not the least, I would like to thank [Steven](https://twitter.com/kruke
 
 ## What next? 
 
-I hope you guys liked my first blog post! Let me know you think ;) Feel free to reach out to me. Now, what next? 
+I hope you guys liked my first blog post! Feel free to reach out and let me know what you think ;) Now, what next? 
 
 > One missing piece that you don’t get with AWS Lambda is real-time subscriptions. You can set up the AWS IoT service which comes with WebSockets, but it’s not straightforward.
 
-- Part II: We will explore how to build Serverless GraphQL endpoints using [AWS AppSync](https://aws.amazon.com/appsync/) with real-time subscriptions.
+- Part II: We will explore how to build Serverless GraphQL endpoints with built in authentication and real-time subscriptions using [AWS AppSync](https://aws.amazon.com/appsync/).
 - Part III: We will dive deep into the performance analysis and optimizations of Serverless GraphQL endpoints (including AppSync).
 - Part IV: General FAQ's and trade-offs between using Serverless vs more traditional server environments such as a Docker container.
 - Announcements on Serverless AppSync Plugin 
