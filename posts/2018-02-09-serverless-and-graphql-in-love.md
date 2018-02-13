@@ -588,7 +588,7 @@ Now I’m not *saying* you should do that, but also, if you wanted to, there it 
 
 First of all, I would like to thank [Nik Graf](https://twitter.com/nikgraf), [Philipp Müns](https://twitter.com/pmmuens) and [Austen Collins](https://twitter.com/austencollins) for kickstarting open source initiatives to help people build GraphQL endpoints easily on Serverless platforms. I have personally learned a lot during my work with you guys! 
 
-I would also like to give a shout to our open source committers - [Jon](https://twitter.com/superpatell), [Léo Pradel](@leopradel), [Tim](https://github.com/timsuchanek), [Justin](https://github.com/JstnEdr),  [Dan Kreiger](https://github.com/serpentblade) and [others](https://github.com/serverless/serverless-graphql/graphs/contributors).
+I would also like to give a shout to our open source committers - [Jon](https://twitter.com/superpatell), [Léo Pradel](https://twitter.com/leopradel), [Tim](https://github.com/timsuchanek), [Justin](https://github.com/JstnEdr),  [Dan Kreiger](https://github.com/serpentblade) and [others](https://github.com/serverless/serverless-graphql/graphs/contributors).
 
 Thanks [Andrea](https://twitter.com/andreapasswater) and [Saeris](https://twitter.com/Saeris) for reviewing the final draft of this post. 
 
