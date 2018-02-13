@@ -60,8 +60,7 @@ With Serverless comes the following:
 1. No server management (no need to manage any form of machine)
 2. Pay-per-execution (never pay for idle)
 3. Auto-Scale (scale based on demand)
-4. Authentication and authorization at scale
-5. Function as a unit of application logic
+4. Function as a unit of application logic
 
 ## What makes Serverless and GraphQL such a great fit?
 
