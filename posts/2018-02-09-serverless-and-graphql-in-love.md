@@ -146,7 +146,7 @@ In your lambda function, GraphQL Schema and Resolvers will be imported (as I'll 
 
 ### Step 3: Create GraphQL schema
 
-For this post, I am going to focus on a subset of the schema to keep things simple.
+For this post, I am going to focus on a subset of the schema to keep things simple (I'll handle mutations and subscriptions in my next blog - Coming Soon!)
 
 ```yml
 type Query {
@@ -187,7 +187,7 @@ We'll use `getUserInfo` field as an example. This field takes a Twitter handle a
 
 #### Setting up the DynamoDB backend
 
-First, we'll create two tables ('Users' and 'Tweets') to store info. We'll also be using GSI on Tweets table to sort user tweets by timestamp.
+First, we'll create two tables ('Users' and 'Tweets') to store user and tweets info respectively. We'll also be using Global Secondary Index (`tweet-index`) on Tweets table to sort user tweets by timestamp.
 
 These resources will be created using the `serverless.yml`.
 
@@ -206,7 +206,7 @@ Before moving on, you'll also need to make sure your IAM Roles are set properly 
 
 #### Creating the GraphQL resolver
 
-Let's  set it up for `getUserInfo` to retrieve data from DynamoDB. We're going to be breaking down the code for you:
+Let's  set it up for `getUserInfo` to retrieve data from DynamoDB. I am going to be breaking down the code for you:
 
 First of all, we need to define how the `getUserInfo` and `tweets` fields will fetch the data:
 
