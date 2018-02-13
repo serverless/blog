@@ -8,7 +8,7 @@ authors:
   - SiddharthGupta
 ---
 
-![alt text](https://user-images.githubusercontent.com/1587005/36030132-d45feefe-0d5a-11e8-986c-92dad62f3408.png "Serverless and GraphQL family")
+![Serverless and GraphQL family](https://user-images.githubusercontent.com/1587005/36148731-e51249d0-1071-11e8-87ac-2ba8ad81364f.png "Serverless and GraphQL family")
 
 ## Introduction
 
