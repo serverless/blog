@@ -80,7 +80,7 @@ With the shiny new [Serverless and GraphQL Repository](https://github.com/server
 
 ![alt text](https://user-images.githubusercontent.com/1587005/36035218-1c06763c-0d6b-11e8-996b-996243b0975f.png "Serverless and GraphQL Architecture")
 
-The repository comes in two flavors: API Gateway + Lambda backend, or AppSync backend. (And we're currently working on adding more backend integrations, including [GraphCool Prisma](https://github.com/graphcool/prisma), Druid, MongoDB, and AWS Neptune.)
+The repository comes in two flavors: API Gateway + Lambda backend, or AppSync backend. (And we're currently working on adding more backend integrations, including [Graphcool Prisma](https://github.com/graphcool/prisma), Druid, MongoDB, and AWS Neptune.)
 
 **Note:** I’m going to focus on AWS Lambda below, but know that you can use any serverless provider (Microsoft Azure, Google Cloud Functions, etc) with GraphQL.
 
