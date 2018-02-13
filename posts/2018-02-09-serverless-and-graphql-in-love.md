@@ -17,9 +17,9 @@ Over the last four years, I've been exploring the world of big data, building re
 Given the intersection of serverless and big data, there have been a few questions on everyone's mind: 
 
 1) How can we build low latency APIs to server these complex, high dimensional and big datasets which can scale on demand?
-2) Can we fire single query which can construct a nested response from multiple data sources?
-3) Is there an easy way to secure the endpoint, paginate through the data, aggregate the results at scale and what not? 
-4) Can we pay per query execution rather than running fleet of servers?
+2) Using a single query, can we construct a nested response from multiple data sources?
+3) Can we build an endpoint which can securely aggregate and paginate through data, easily and with high performance?
+4) And is there a way we can do all of that at scale, paying only for each query execution, and not for idle CPU time on a fleet of servers?
 
 The answer for us ended up largely being GraphQL.
 
@@ -31,7 +31,7 @@ Ready? Awesome. Let's go.
 
 ## What is GraphQL?
 
-I’m going to start this off with a statement of truth, to all my fellow engineers: The way we currently build APIs, where all of them are split up and maintained separately, isn’t optimal.
+I’m going to start this off by stating a fact: The way we currently build APIs, as a collection of micro-services that are all split up and maintained separately, isn’t optimal. If you're a fellow back-end or front-end engineer, you're probably familiar with this struggle.
 
 Luckily for us, the tech horizon is ever-expanding. We have options. And we should use them.
 
@@ -539,7 +539,7 @@ In case of RDS, lambda execution time increases with increase in the size of the
 
 5. API Gateway and Network Latency:
 
-The E2E latency of the endpoint from the client ranges between 90ms - 150ms (including lambda execution time). Hence on avg API Gateway + Network latency is approx 50ms, which makes me think do we even need API Gateway or can we merely use lambda to get the response. I will delve more into this in my future blogs, but for now, you can read [this post](https://forum.serverless.com/t/convince-me-to-use-api-gateway-and-not-call-lambda-direct/3214) which evaluates the same. 
+The E2E latency of the endpoint from the client ranges between 100ms - 200ms (including lambda execution time). Hence on avg API Gateway + Network latency is approx 100 - 120 ms, which makes me think do we even need API Gateway or can we merely use lambda to get the response. I will delve more into this in my future blogs, but for now, you can read [this post](https://forum.serverless.com/t/convince-me-to-use-api-gateway-and-not-call-lambda-direct/3214) which evaluates the same. 
 
 **Note**:  This analysis merits a separate blog of its own where we can do an in-depth study of all the latencies and query optimizations. (Coming Soon!) 
 
