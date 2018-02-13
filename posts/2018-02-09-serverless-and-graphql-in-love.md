@@ -8,7 +8,7 @@ authors:
   - SiddharthGupta
 ---
 
-![Serverless and GraphQL family](https://user-images.githubusercontent.com/1587005/36148731-e51249d0-1071-11e8-87ac-2ba8ad81364f.png "Serverless and GraphQL family")
+![Serverless and GraphQL family](https://user-images.githubusercontent.com/1587005/36154091-2d1a9bc0-1085-11e8-8280-183f25ebc080.png "Serverless and GraphQL family")
 
 ## Introduction
 
@@ -104,7 +104,7 @@ Some of the main components of building your endpoint are:
 
 We'll be using the [Serverless Framework](https://serverless.com/framework/) to quickly build and deploy your API resources. You’ll specify in your `serverless.yml` that you are setting up a GraphQL HTTP endpoint.
 
-```yml
+```javascript
 functions:
   graphql:
     handler: handler.graphqlHandler
@@ -149,7 +149,7 @@ In your lambda function, GraphQL Schema and Resolvers will be imported (as I'll 
 
 For this post, I am going to focus on a subset of the schema to keep things simple (I'll handle mutations and subscriptions in my next blog - Coming Soon!)
 
-```
+```graphql
 type Query {
     getUserInfo(handle: String!): User!
 }
@@ -173,10 +173,6 @@ type User {
     following: [String!]!
     topTweet: Tweet
     tweets(limit: Int!, nextToken: String): TweetConnection
-}
-
-schema {
-    query: Query
 }
 ```
 
@@ -211,7 +207,7 @@ Let's  set it up for `getUserInfo` to retrieve data from DynamoDB. I am going to
 
 First of all, we need to define how the `getUserInfo` and `tweets` fields will fetch the data:
 
-```
+```javascript
 export const resolvers = {
   Query: {
     getUserInfo: (root, args) => getUserInfo(args),
@@ -226,7 +222,7 @@ Now, we'll query the DynamoDB table index, `tweet-index`, to retrieve paginated 
 
 If the result contains `LastEvaluatedKey` as shown [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/resolvers.js#L67), then return it as nextToken:
 
-```
+```javascript
   getPaginatedTweets(handle, args) {
     return promisify(callback => {
       const params = {
@@ -256,7 +252,7 @@ If the result contains `LastEvaluatedKey` as shown [here](https://github.com/ser
 
 Similarly, for the `getUserInfo` field, you can retrieve the results as shown below:
 
-```yml
+```javascript
   getUserInfo(args) {
     return promisify(callback =>
       docClient.query(
@@ -280,7 +276,7 @@ Let's test it out on local and then deploy it to production.
 
 ### Clone Git Repo and Install Dependencies
 
-```
+```commandline
 git clone https://github.com/serverless/serverless-graphql.git
 
 cd app-backend/dynamodb
@@ -297,7 +293,7 @@ DynamoDB is now available and running on your local machine at `http://localhost
 
 For deploying your endpoint in production, please run:
 
-```
+```commandline
 cd app-backend/dynamodb
 yarn deploy-prod
 ```
@@ -330,7 +326,7 @@ Set your Lambda in the same VPC as RDS for connectivity, and configure knexfile 
 
 The [serverless-graphql](https://github.com/serverless/serverless-graphql) repo supports connecting to SQLite, MySQL, Aurora, or Postgres using [Knex configurations](http://knexjs.org/) — a powerful query builder for SQL databases and Node.js
 
-```yml
+```javascript
 const pg = require('pg');
 const mysql = require('mysql');
 
@@ -353,7 +349,7 @@ Let's go ahead and write our resolver functions. The knex ORM layer queries the 
 And it just works!
 
 Case 1: `getUserInfo` resolver
-```
+```javascript
 export const resolvers = {
   Query: {
     getUserInfo: (root, args) =>
@@ -372,7 +368,7 @@ export const resolvers = {
 
 Case 2: `tweets` resolver
 
-```yml
+```javascript
   User: {
     tweets: obj =>
       knex
@@ -394,7 +390,7 @@ Case 2: `tweets` resolver
 
 Case 3: `topTweet` resolver
 
-```yml
+```javascript
   User: {
     topTweet: obj =>
       knex('Tweets')
@@ -414,7 +410,7 @@ Run it locally on your machine (RDS instance not required).
 
 ### Kickstart on local using SQLite
 
-```
+```commandline
 cd app-backend/rds
 yarn install
 yarn start
@@ -422,7 +418,7 @@ yarn start
 
 And deploy to production:
 
-```
+```commandline
 cd app-backend/rds
 yarn deploy-prod
 ```
@@ -439,7 +435,7 @@ We'll fetch data from [Twitter's REST API](https://developer.twitter.com/en/docs
 
 In this case, we don't need to create tables or mock data because we will be querying real data. Let's look at how to resolve `following` field to find a list of `Users` being followed. The `consumerKey`, `consumerSecret` and handle are passed as an input to the `friends/list` API.
 
-```yml
+```javascript
 import { OAuth2 } from 'oauth';
 const Twitter = require('twitter');
 
@@ -485,7 +481,7 @@ async function getFollowing(handle, consumerKey, consumerSecret) {
 
 Go ahead and run it locally on your machine:
 
-```
+```commandline
 cd app-backend/rest-api
 yarn install
 yarn start
@@ -493,7 +489,7 @@ yarn start
 
 And deploy to production:
 
-```
+```commandline
 cd app-backend/rest-api
 yarn deploy-prod
 ``` 
@@ -511,7 +507,7 @@ The code for apollo-client in the serverless-graphql repo is [here](https://gith
 
 To start the client on local, first, start any backend service on local. For example:
 
-```
+```commandline
 cd app-backend/rest-api
 yarn install
 yarn start
@@ -521,7 +517,7 @@ Now, make sure `http://localhost:4000/graphiql` is working.
 
 Now, kickstart Apollo Client (as shown below), you will have a react server running on your local machine. The setup is created using [create react app](https://github.com/facebook/create-react-app):
 
-```
+```commandline
 cd app-client/apollo-client
 yarn install
 yarn start
@@ -602,8 +598,9 @@ I hope you guys liked my first blog post! Feel free to reach out and let me know
 > One missing piece that you don’t get with AWS Lambda is real-time subscriptions. You can set up the AWS IoT service which comes with WebSockets, but it’s not straightforward.
 
 - Part II: We will explore how to build Serverless GraphQL endpoints with built in authentication and real-time subscriptions using [AWS AppSync](https://aws.amazon.com/appsync/).
-- Part III: We will dive deep into the performance analysis and optimizations of Serverless GraphQL endpoints (including AppSync).
-- Part IV: General FAQ's and trade-offs between using Serverless vs more traditional server environments such as a Docker container.
+- Part III: Prisma integration with AWS Lambda to replace Knex and evaluate `GraphQL Yoga Server` 
+- Part IV: We will dive deep into the performance analysis and optimizations of Serverless GraphQL endpoints (including AppSync).
+- Part V: General FAQ's and trade-offs between using Serverless vs more traditional server environments such as a Docker container.
 - Announcements on Serverless AppSync Plugin 
 
 Siddharth Gupta
