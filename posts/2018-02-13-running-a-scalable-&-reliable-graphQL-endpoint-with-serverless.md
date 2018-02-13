@@ -111,6 +111,7 @@ functions:
     - http:
         path: graphql
         method: post
+        cors: true
 ```
 
 Now any http post event on path `/graphql` will trigger the `graphql` lambda function. It will be handled by `graphqlHandler`.
