@@ -87,7 +87,7 @@ The repository comes in two flavors: API Gateway and Lambda backend, or AppSync 
 ## Let's create a Serverless GraphQL Endpoint
 
 In this example, we're using `Apollo-Server-Lambda`, designed to quickly get you up and running on AWS Lambda. Now you might be more familiar with server frameworks such as `Express`, `Koa`, or `Hapi`, and there are Apollo Server plugins for all of these frameworks. You can use any of these with Serverless as well, but they each require a little more configuration and adds complexity to the entire setup.
-Also, for monitoring your endpoint, you can integrate the lambda function with `Cloudwatch-metrics`, `AWS X-Ray` or [`Apollo Engine`](https://github.com/apollographql/apollo-tracing).
+Also, for monitoring your endpoint, you can integrate the lambda function with `Cloudwatch-metrics`, `AWS X-Ray` or [`Apollo Engine`](https://www.apollographql.com/engine/).
 
 Some of the main components of the building your endpoint are:
 
