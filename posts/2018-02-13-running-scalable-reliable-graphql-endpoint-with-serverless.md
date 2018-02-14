@@ -628,5 +628,6 @@ I plan to cover alternate solutions to real-time in more detail:
 - Talking about the [Serverless AppSync Plugin](https://github.com/sid88in/serverless-appsync-plugin)
 
 Siddharth Gupta
+*Lead Data Engineer, Glassdoor*
 
 [Github](https://github.com/sid88in) | [LinkedIn](https://www.linkedin.com/in/sid88in/) | [Twitter](https://twitter.com/sidg_sid)
