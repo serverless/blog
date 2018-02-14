@@ -16,10 +16,10 @@ Over the last four years, I've been exploring the world of big data, building re
 
 Given the intersection of serverless and big data, there have been a few questions on everyone's mind: 
 
-1) How can we build low latency APIs to serve these complex, high dimensional and big datasets which can scale on demand?
+1) How can we build low latency APIs to serve complex, high dimensional and big datasets?
 2) Using a single query, can we construct a nested response from multiple data sources?
 3) Can we build an endpoint which can securely aggregate and paginate through data, easily and with high performance?
-4) And is there a way we can do all of that at scale, paying only for each query execution, and not for idle CPU time on a fleet of servers?
+4) And is there a way we can do all of that at scale, paying only for each query execution, and not for idle CPU time?
 
 The answer for us ended up largely being GraphQL.
 
