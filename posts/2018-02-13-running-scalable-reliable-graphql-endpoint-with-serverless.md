@@ -94,7 +94,7 @@ Some of the main components of building your endpoint are (with links to [server
 
 3. [schema.js](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/schema.js): defines our GraphQL schema we're using to build this mini Twitter app.
 
-4. [resolver.js](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/resolvers.js): this is where we'll write query handler functions to fetch data from our other services (RDS, REST, DynamoDB, etc.).
+4. [resolver.js](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/resolvers.js): defines query handler functions to fetch data from our other services (RDS, REST, DynamoDB, etc.).
 
 ### Step 1: Configure the Serverless template
 
