@@ -12,7 +12,7 @@ authors:
 
 ## Introduction
 
-Over the last four years, I've been exploring the world of big data, building real-time and batch systems at scale. For the last couple of months, I've been building products with serverless architectures here at Glassdoor.
+Over the last four years, I've been exploring the world of big data, building real-time and batch systems at scale. For the last couple of months, I've been developing products with serverless architectures here at Glassdoor.
 
 Given the intersection of serverless and big data, there have been a few questions on everyone's mind: 
 
@@ -48,7 +48,7 @@ Thousands of companies are now using GraphQL in production with the help of open
 
 Very reasonably, you are probably thinking, “Yeah, okay, Facebook is one thing; they have a giant engineering team. But for me, having only one API endpoint is too risky. What if it goes down? How do I handle that much load? What about security?”
 
-You are absolutely correct: with one HTTP endpoint, you need be be entirely sure that endpoint never goes down and that it scales on demand.
+You are absolutely correct: with one HTTP endpoint, you need to be entirely sure that endpoint never goes down and that it scales on demand.
 
 That’s where serverless comes in.
 
@@ -64,7 +64,7 @@ With Serverless comes the following:
 
 ## What makes Serverless and GraphQL such a great fit?
 
-When moving to GraphQL, you suddenly rely on one HTTP endpoint to connect your clients to your backend services. Once you do decide to do that, you want this one HTTP endpoint to be: reliable, fast, auto-scaling, and have a small attack vector regarding security.
+When moving to GraphQL, you suddenly rely on one HTTP endpoint to connect your clients to your backend services. Once you do decide to do that, you want this one HTTP endpoint to be: reliable, fast, auto-scaling and have a small attack vector regarding security.
 
 > *All* these properties are fulfilled by a single AWS Lambda function in combination with an API Gateway. It’s just a great fit!
 
@@ -80,11 +80,11 @@ With the shiny new [Serverless and GraphQL Repository](https://github.com/server
 
 The repository comes in two flavors: API Gateway + Lambda backend, or AppSync backend. (More backend integrations, including [Graphcool Prisma](https://github.com/graphcool/prisma), Druid, MongoDB, and AWS Neptune, forthcoming.)
 
-**Note:** I’m going to focus on AWS Lambda below, but know that you can use any serverless provider (Microsoft Azure, Google Cloud Functions, etc) with GraphQL.
+**Note:** I’m going to focus on AWS Lambda below, but know that you can use any serverless provider (Microsoft Azure, Google Cloud Functions, etc.) with GraphQL.
 
 ## Let's create a Serverless GraphQL Endpoint
 
-To create this endpoint, I'm going to be using the [`Apollo-Server-Lambda`](https://www.npmjs.com/package/apollo-server-lambda) package from npm. (You can also use `Express`, `Koa`, or `Hapi` frameworks but I prefer less complexity and more simplicity). In addition, to make your endpoint production ready, you might want to integrate the lambda function with `Cloudwatch-metrics`, `AWS X-Ray` or [`Apollo Engine`](https://www.apollographql.com/engine/) for monitoring and debugging.
+To create this endpoint, I'm going to be using the [`Apollo-Server-Lambda`](https://www.npmjs.com/package/apollo-server-lambda) package from npm. (You can also use `Express`, `Koa`, or `Hapi` frameworks but I prefer less complexity and more simplicity). Also, to make your endpoint production ready, you might want to integrate the lambda function with `Cloudwatch-metrics`, `AWS X-Ray` or [`Apollo Engine`](https://www.apollographql.com/engine/) for monitoring and debugging.
 
 Some of the main components of building your endpoint are (with links to [serverless-graphql](https://github.com/serverless/serverless-graphql) repo):
 
@@ -98,7 +98,7 @@ Some of the main components of building your endpoint are (with links to [server
 
 ### Step 1: Configure the Serverless template
 
-We'll be using the [Serverless Framework](https://serverless.com/framework/) to quickly build and deploy your API resources. If you don't have the Framework installed, get it with `npm serverless -g`.
+We'll be using the [Serverless Framework](https://serverless.com/framework/) to build and deploy your API resources quickly. If you don't have the Framework installed, get it with `npm serverless -g`.
 
 To start, specify in your `serverless.yml` that you are setting up a GraphQL HTTP endpoint:
 
@@ -113,7 +113,7 @@ functions:
         cors: true
 ```
 
-Now, any http post event on path `/graphql` will trigger the `graphql` Lambda function, and will be handled by `graphqlHandler`.
+Now, any HTTP POST event on the path `/graphql` will trigger the `graphql` Lambda function, and will be handled by `graphqlHandler`.
 
 ### Step 2: Configure the Lambda function (Apollo-Server-Lambda)
 
@@ -202,7 +202,7 @@ At this point, you'll need to mock fake data using [Faker](https://www.npmjs.com
 
 You'll *also* need to make sure your IAM Roles are set properly in the `serverless.yml`, so that Lambda can access DynamoDB. These are defined in the `serverless.yml` file in the repository.
 
-If you're interested in knowing more about IAM permissions, [here's a great primer](https://serverless.com/blog/abcs-of-iam-permissions/).
+If you're interested in knowing more about IAM permissions, [here's an excellent primer](https://serverless.com/blog/abcs-of-iam-permissions/).
 
 #### Creating the GraphQL resolver
 
@@ -335,13 +335,13 @@ const mysql = require('mysql');
 
 module.exports = {
   development: {
-    client: 'sqlite3',  -- in development mode you can use SQLite
+    client: 'sqlite3',  // in development mode you can use SQLite
     connection: {
       filename: './dev.db',
     },
   },
   production: {
-    client: process.env.DATABASE_TYPE === 'pg' ? 'pg' : 'mysql', -- in production mode you can use PostgresQL, MySQL or Aurora
+    client: process.env.DATABASE_TYPE === 'pg' ? 'pg' : 'mysql', // in production mode you can use PostgresQL, MySQL or Aurora
     connection: process.env.DATABASE_URL,
   },
 };
@@ -579,7 +579,7 @@ With RDS, the Lambda execution time increased along with the size of the data.
 
 When I increased the Tweets dataset by a factor of 100 (to 1000 tweets per user), I found the response time increased by 5x-10x. This possibly happens because we are joining the `Tweets` and `Users` tables on the fly, which results in more query execution time.
 
-Query performance can be further improved by using indexing and other database optimizations. Conversely, DynamoDB latency remains constant with increased dataset size (which is expected by design).
+Query performance can be further improved by using indexing and other database optimizations. Conversely, DynamoDB latency remains constant with increasing dataset size (which is expected by design).
 
 #### API Gateway and Network Latency:
 
@@ -619,13 +619,13 @@ So, what next?
 
 One thing you don’t get with AWS Lambda is real-time subscriptions. You can [set up the AWS IoT service which comes with WebSockets](https://serverless.com/blog/realtime-updates-using-lambda-websockets-iot/), but it’s not straightforward.
 
-I plan to cover alternate solutions to real-time in more detail:
+I plan to cover alternate solutions for creating Serverless and GraphQL endpoints in my future blog posts:
 
-- Part II: We will explore how to build Serverless GraphQL endpoints with built in authentication and real-time subscriptions using [AWS AppSync](https://aws.amazon.com/appsync/).
+- Part II: We will explore how to build these endpoints with built-in authentication and real-time subscriptions using [AWS AppSync](https://aws.amazon.com/appsync/).
 - Part III: [Prisma](https://github.com/graphcool/prisma) integration with AWS Lambda to replace Knex and evaluate `GraphQL Yoga Server` 
-- Part IV: We will dive deep into the performance analysis and optimizations of Serverless GraphQL endpoints (including AppSync).
-- Part V: General FAQ's and trade-offs between using Serverless vs more traditional server environments such as a Docker container.
-- Talking about the [Serverless AppSync Plugin](https://github.com/sid88in/serverless-appsync-plugin)
+- Part IV: We will dive deep into the performance analysis and optimizations of these endpoints (including AppSync).
+- Part V: General FAQ and trade-offs between using Serverless vs more traditional server environments such as a Docker container.
+- Walk through brand new [Serverless AppSync Plugin](https://github.com/sid88in/serverless-appsync-plugin)
 
 Siddharth Gupta  
 *Lead Data Engineer, Glassdoor*
