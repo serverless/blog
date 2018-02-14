@@ -1,7 +1,7 @@
 ---
 title: Running a scalable & reliable GraphQL endpoint with Serverless  
 description: Learn how to create GraphQL endpoints using Serverless Framework, Lambda, DynamoDB, RDS and a REST backend.   
-date: 2018-02-13  
+date: 2018-02-14    
 layout: Post  
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/graphql.jpeg  
 authors:  
