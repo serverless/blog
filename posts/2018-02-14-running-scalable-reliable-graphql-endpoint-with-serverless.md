@@ -44,7 +44,7 @@ In short, it lets you:
 2. Know exactly what your response will look like and ensure you're never sending more or less than the client needs.
 3. Describe your API with types that map your schema to existing backends.
 
-Thousands of companies are now using GraphQL in production with the help of open source frameworks built by Facebook, Apollo, and Graphcool. In fact, that [Starbucks announcement](https://twitter.com/davidbrunelle/status/960946257643454464) last week made my morning coffee taste even better. 😉
+Thousands of companies are now using GraphQL in production with the help of open source frameworks built by Facebook, Apollo, and Graphcool. [Starbucks uses it to power their store locator](https://twitter.com/davidbrunelle/status/960946257643454464). When I read that, it made my morning coffee taste even better. 😉
 
 ![](https://user-images.githubusercontent.com/1587005/36067514-503a05b4-0e73-11e8-9b40-946c5398f4b5.png "Danielle's slide from Serverless and GraphQL meetup at Glassdoor, Jan 29, 2018")
 
@@ -630,6 +630,5 @@ I plan to cover alternate solutions for creating Serverless and GraphQL endpoint
 - Walk through brand new [Serverless AppSync Plugin](https://github.com/sid88in/serverless-appsync-plugin)
 
 Siddharth Gupta  
-*Lead Data Engineer, Glassdoor*
 
 [Github](https://github.com/sid88in) | [LinkedIn](https://www.linkedin.com/in/sid88in/) | [Twitter](https://twitter.com/sidg_sid)
