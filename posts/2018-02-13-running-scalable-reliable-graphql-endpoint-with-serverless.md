@@ -14,7 +14,12 @@ authors:
 
 Over the last four years, I've been exploring the world of big data, building real-time and batch systems at scale. For the last couple of months, I've been building products with serverless architectures here at Glassdoor.
 
-Given the intersection of serverless and big data, there have been a lot of questions on everyone's mind: how can we use a single query to construct a nested response from multiple data sources; how can we build a highly-performant endpoint that aggregates and paginates through data?
+Given the intersection of serverless and big data, there have been a few questions on everyone's mind: 
+
+1) How can we build low latency APIs to serve these complex, high dimensional and big datasets which can scale on demand?
+2) Using a single query, can we construct a nested response from multiple data sources?
+3) Can we build an endpoint which can securely aggregate and paginate through data, easily and with high performance?
+4) And is there a way we can do all of that at scale, paying only for each query execution, and not for idle CPU time on a fleet of servers?
 
 The answer for us ended up largely being GraphQL.
 
@@ -23,8 +28,6 @@ This post aims to show you how you too can streamline your existing workflow and
 Ready to talk about creating Serverless GraphQL endpoints using DynamoDB, RDS and the Twitter REST API? Ready to see a sweet performance comparison? Ready to hear some solid techniques on how you can convince the backend team that using GraphQL is a great idea?
 
 Awesome. Let's go.
-
-**Note:** I'm going to give a quick primer on both GraphQL and Serverless before I get to the walkthrough. If you already know a lot about these two technologies, then skip straight to the [getting started section](https://www.serverless.com/blog/running-scalable-reliable-graphQL-endpoint-with-serverless/#Serverless-GraphQL repository).
 
 ## What is GraphQL?
 
@@ -39,7 +42,7 @@ In short, it lets you:
 2. Know exactly what your response will look like and ensure you're never sending more or less than the client needs.
 3. Describe your API with types that map your schema to existing backends.
 
-Thousands of companies are now using GraphQL in production with the help of open source frameworks built by Facebook, Apollo, and Graphcool. [Starbucks uses it to power their store locator](https://twitter.com/davidbrunelle/status/960946257643454464). (When I read that, it made my morning coffee taste even better 😉)
+Thousands of companies are now using GraphQL in production with the help of open source frameworks built by Facebook, Apollo, and Graphcool. In fact, that [Starbucks announcement](https://twitter.com/davidbrunelle/status/960946257643454464) last week made my morning coffee taste even better. 😉
 
 ![](https://user-images.githubusercontent.com/1587005/36067514-503a05b4-0e73-11e8-9b40-946c5398f4b5.png "Danielle's slide from Serverless and GraphQL meetup at Glassdoor, Jan 29, 2018")
 
@@ -63,11 +66,11 @@ With Serverless comes the following:
 
 When moving to GraphQL, you suddenly rely on one HTTP endpoint to connect your clients to your backend services. Once you do decide to do that, you want this one HTTP endpoint to be: reliable, fast, auto-scaling, and have a small attack vector regarding security.
 
-*All* these properties are fulfilled by a single AWS Lambda function in combination with an API Gateway. It’s just a great fit!
+> *All* these properties are fulfilled by a single AWS Lambda function in combination with an API Gateway. It’s just a great fit!
 
-It’s not even that much code or configuration; you can get to a production-ready setup in a few minutes.
+In sum, powering your GraphQL endpoint with a serverless backend solves scaling and availability concerns outright, and it gives you a big leg up on security. It’s not even that much code or configuration.
 
-Here's how.
+It takes only a few minutes to get to a production-ready setup, which we're about to dive into, right now.
 
 ## Serverless-GraphQL repository
 
@@ -81,9 +84,9 @@ The repository comes in two flavors: API Gateway + Lambda backend, or AppSync ba
 
 ## Let's create a Serverless GraphQL Endpoint
 
-To create this endpoint, I'm going to be using the [`Apollo-Server-Lambda`](https://www.npmjs.com/package/apollo-server-lambda) package from npm. (I prefer its simplicity over Express, Koa, or Hapi.)
+To create this endpoint, I'm going to be using the [`Apollo-Server-Lambda`](https://www.npmjs.com/package/apollo-server-lambda) package from npm. (You can also use `Express`, `Koa`, or `Hapi` frameworks but I prefer less complexity and more simplicity). In addition, to make your endpoint production ready, you might want to integrate the lambda function with `Cloudwatch-metrics`, `AWS X-Ray` or [`Apollo Engine`](https://www.apollographql.com/engine/) for monitoring and debugging.
 
-Some of the main components of building your endpoint are (with links to Serverless-GraphQL repo):
+Some of the main components of building your endpoint are (with links to [serverless-graphql](https://github.com/serverless/serverless-graphql) repo):
 
 1. [handler.js](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/handler.js#L14): lambda function handler to route HTTP requests and return the response.
 
@@ -93,7 +96,7 @@ Some of the main components of building your endpoint are (with links to Serverl
 
 4. [resolver.js](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/resolvers.js): this is where we'll write query handler functions to fetch data from our other services (RDS, REST, DynamoDB, etc.).
 
-### Configure the Serverless template
+### Step 1: Configure the Serverless template
 
 We'll be using the [Serverless Framework](https://serverless.com/framework/) to quickly build and deploy your API resources. If you don't have the Framework installed, get it with `npm serverless -g`.
 
@@ -112,7 +115,7 @@ functions:
 
 Now, any http post event on path `/graphql` will trigger the `graphql` Lambda function, and will be handled by `graphqlHandler`.
 
-### Configure the Lambda function (Apollo-Server-Lambda)
+### Step 2: Configure the Lambda function (Apollo-Server-Lambda)
 
 Set up the callback to Lambda in your `handler.js` file:
 
@@ -143,7 +146,7 @@ In your Lambda function, GraphQL Schema and Resolvers will be imported (as I'll 
 
 Once API Gateway triggers an event, the  `graphqlLambda` function will handle it. The response is sent back to the client.
 
-### Create a GraphQL schema
+### Step 3: Create a GraphQL schema
 
 For this post, I am going to focus on a subset of the schema to keep things simple—I'll handle mutations and subscriptions in a future post:
 
@@ -174,7 +177,7 @@ type User {
 }
 ```
 
-### Create your GraphQL resolvers
+### Step 4: Create your GraphQL resolvers
 
 Still with me? Great. Let's dive deep into how Lambda retrieves data from DynamoDB, RDS and, the REST backend.
 
