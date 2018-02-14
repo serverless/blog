@@ -185,7 +185,7 @@ We'll use the `getUserInfo` field as an example. This field takes a Twitter hand
 
 #### Setting up the DynamoDB backend
 
-First, we'll create two tables ('Users' and 'Tweets') to store user and tweet info respectively. We'll also be using Global Secondary Index (`tweet-index`) on Tweets table to sort all user tweets by timestamp.
+First, we'll create two tables (`Users` and `Tweets`) to store user and tweet info respectively. We'll also be using Global Secondary Index (`tweet-index`) on Tweets table to sort all user tweets by timestamp.
 
 These resources will be created using the [`serverless.yml`](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml#L60):
 
@@ -288,7 +288,7 @@ yarn install
 
 To test the GraphQL endpoint locally on my machine, I'm using these three plugins for the Serverless Framework: [Serverless Offline](https://github.com/dherault/serverless-offline), [Serverless Webpack](https://github.com/serverless-heaven/serverless-webpack) and [Serverless DynamoDB Local](https://github.com/99xt/serverless-dynamodb-local).
 
-These plugins make it super easy to run the entire solution E2E locally without any infrastructure. It will also (!) help us debug issues faster.
+These plugins make it super easy to run the entire solution E2E locally without any infrastructure. It will also help us debug issues faster.
 
 If you've followed me this far, DynamoDB will now be available and running on your local machine at `http://localhost:8000/shell`:
 
@@ -313,7 +313,7 @@ We have explained the requirements to set up RDS in production in the [readme](h
 
 #### Data modeling and table creation
 
-We will create two tables ('Users' and 'Tweets') to store user and tweet info respectively, as described [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/rds/migrations/20171204204927_setup.js).
+We will create two tables (`Users` and `Tweets`) to store user and tweet info respectively, as described [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/rds/migrations/20171204204927_setup.js).
 
 **Table**: _User_  
 **Primary Key**: _user_id_  
