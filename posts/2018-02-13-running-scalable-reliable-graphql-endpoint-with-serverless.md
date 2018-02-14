@@ -555,7 +555,7 @@ The service map below was created by [AWS X-Ray](https://aws.amazon.com/xray/):
 
 ![](https://user-images.githubusercontent.com/1587005/36131686-dac3658a-1027-11e8-9d5d-4a435f5ae43b.png)
 
-For 99% of the simulated calls, DynamoDB took less than 15ms; but 1% of the calls resulted in avg of 25ms response time. The Lambda execution time was 60ms; the time spent on the Lambda service itself was 90ms on average (we can optimize the Lambda execution time, but not service time itself).
+For 99% of the simulated calls, DynamoDB took less than 15ms; but 1% of the calls had high response times which resulted in overall avg latency of 25ms. The Lambda execution time was 60ms; the time spent on the Lambda service itself was 90ms on average (we can optimize the Lambda execution time, but not service time itself).
  
 #### Cold Starts
 
@@ -577,7 +577,7 @@ Lambda Service Latency (1GB Memory)        |  Lambda Service Latency (2GB Memory
 
 With RDS, the Lambda execution time increased along with the size of the data.
 
-When I increased the Tweets dataset by a factor of 100 (to 1000 tweets per user), I found the response time increased by 5x-10x. This possibly happens because we are joining the 'Tweets' and 'Users' tables on the fly, which results in more query execution time.
+When I increased the Tweets dataset by a factor of 100 (to 1000 tweets per user), I found the response time increased by 5x-10x. This possibly happens because we are joining the `Tweets` and `Users` tables on the fly, which results in more query execution time.
 
 Query performance can be further improved by using indexing and other database optimizations. Conversely, DynamoDB latency remains constant with increased dataset size (which is expected by design).
 
@@ -587,7 +587,7 @@ On average, the E2E response time of the GraphQL endpoint ranges from 100ms-200m
 
 You might ask, "Why do we need API Gateway? Can't we just use Lambda to fetch the GraphQL response?"
 
-Well. This analysis truly merits a separate blog of its own, where we can do an in-depth study of all the latencies and query optimizations. Or you can also [read this forum discussion about it](https://forum.serverless.com/t/convince-me-to-use-api-gateway-and-not-call-lambda-direct/3214).
+> Well. This analysis truly merits a separate blog of its own, where we can do an in-depth study of all the latencies and query optimizations. Or you can also [read this forum discussion about it](https://forum.serverless.com/t/convince-me-to-use-api-gateway-and-not-call-lambda-direct/3214).
 
 ## Selling GraphQL in your organization
 
