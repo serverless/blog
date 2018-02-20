@@ -63,7 +63,7 @@ $ npm install --save-dev serverless-python-requirements
 
 **Note:** If you want a deeper dive on the `serverless-python-requirements` plugin, check out our previous post on [handling Python packaging with Serverless](https://serverless.com/blog/serverless-python-packaging/).
 
-With the deoendencies out of the way, let's get started. Replace the `serverless.yml` file contents with the following `yaml` code:
+With the dependencies out of the way, let's get started. Replace the `serverless.yml` file contents with the following `yaml` code:
 
 ```yml
 service: sample-etl
@@ -99,14 +99,13 @@ functions:
     handler: handler.main
     events:
       - schedule: rate(1 hour)
-
 ```
 
 Let's review the above `serverless.yml` configuration for our service.
 
 We need to specify the connection string to the Redshift postgres database. You'll notice I have used the AWS Parameter Store (SSM) to store the connection string for obvious security reasons:
 
-```
+```yml
 custom:
   ...
   dbConn: ${ssm:/ETL/RedshiftConn~true}
@@ -116,7 +115,7 @@ custom:
 
 Since Redshift is secured by running under a VPC, you'll need to supply the appropriate security groups, subnets, and IAM roles like so:
 
-```
+```yml
   ...
   vpc:
     securityGroupIds:
@@ -235,14 +234,13 @@ The `get_data()` method accesses the API to fetch the data for bitcoin. The `cle
 
 In the following code segment, we define the schema for the `sample_coinmarketcap`:
 
-```
+```python
 ...
 metadata = MetaData()
 
 sample_table = Table('sample_coinmarketcap', metadata,
     Column('name', String(100), nullable=True),
 ...
-
 ```
 
 In the `init_tables()` method, we first drop the table if it exists, and then create the table, if it does not exist. We are dropping the table each time because we want to store the latest set of data every time we process. If instead you want to append data to the table, do not drop the table.
@@ -351,7 +349,7 @@ Before we deploy, **remember to uncomment the database code that we commented ab
 
 Once that's done, deploy the ETL job service:
 
-```
+```bash
 $ sls deploy
 
 Serverless: WARNING: You provided a docker related option but dockerizePip is set to false.
