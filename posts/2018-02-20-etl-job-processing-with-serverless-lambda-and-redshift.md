@@ -1,6 +1,6 @@
 ---
-title: ETL Job Processing with Serverless, Lambda and AWS Redshift
-description: We'll show you how to build a ETL job service by fetching data from a public API endpoint and dumping it into an AWS Redshift database.
+title: ETL job processing with Serverless, Lambda, and AWS Redshift
+description: Build an ETL job service by fetching data from a public API endpoint and dumping it into an AWS Redshift database.
 date: 2018-02-20
 layout: Post
 thumbnail: 
@@ -8,33 +8,35 @@ authors:
   - RupakGanguly
 ---
 
-One of the big use cases of using serverless is ETL job processing, dumping data into a database and possibily visualizing the data. In this post, I will show you step-by-step how to build a serverless ETL job service that will fetch data from a public API endpoint and dump it into an AWS Redshift database. The serverless ETL job service will be scheduled to run every hour. We will then visualize that data using Chart.io.
+One of the big use cases of using serverless is ETL job processing: dumping data into a database, and possibily visualizing the data.
 
-We at Serverless Inc., use many of such ETL jobs for tracking metrics across an array of data points. The service that we will build here, is such an ETL job service, and you will be able to easily modify it to create your own.
+In this post, I'll go over the process step by step. We'll build a serverless ETL job service that will fetch data from a public API endpoint and dump it into an AWS Redshift database. The service will be scheduled to run every hour, and we'll visualize the data using Chart.io.
+
+At Serverless Inc., we use ETL jobs just like this for tracking metrics across an array of data points (though feel free to modify the one I'll show here to fit your own needs).
 
 Let's get to it.
 
 What we will cover:
 
-* Pre-requisites
-* Create the ETL job service
-* Deploy and schedule the job
-* Visualize the data
+* Prerequisites
+* Creating the ETL job service
+* Deploying and scheduling the job
+* Visualizing the data
 
 
-## Pre-requisites
+## Prerequisites
 
 Before we begin, you'll need the [Serverless Framework installed](https://serverless.com/framework/docs/providers/aws/guide/quick-start/) with an AWS account set up. Your version of Serverless must be 1.25 or higher to take advantage of all the latest updates.
 
 ### AWS Redshift
 
-Setting up AWS Redshift is out of scope of this post, but we need one set up to dump data into it from our ETL job. Once you have it set up and configured, keep the cluster endpoint in Redshift handy, as we will need it later to configure the database connection string.
+Setting up AWS Redshift is out of the scope of this post, but you'll need one set up to dump data into it from our ETL job. Once you have it set up and configured, keep the cluster endpoint in Redshift handy, as we will need it later to configure the database connection string.
 
-Redshift cluster endpoint
+Redshift cluster endpoint:
 
 `<cluster_name>.xxxxxxxxxxxx.<region>.redshift.amazonaws.com:<port>`
 
-DB Connection String
+DB connection string:
 
 `postgres://<username>:<password>@<hostname>:<port>/<db_name>`
 where `<hostname>:<port>` is the cluster endpoint.
@@ -42,9 +44,9 @@ where `<hostname>:<port>` is the cluster endpoint.
 
 ## Building the ETL job service
 
-My previous projects were in Node.js but I'm going to write this in Python because I have recently started to play with Python. And, I love it! But you can write it in any language you want.
+My previous projects were in Node.js, but I'm going to write this in Python because I have recently started to play with Python. And, (to the chagrin ofmy colleague [Alex DeBrie](https://twitter.com/alexbdebrie) I love it! But you can write this in any language you want.
 
-Let's create a new Serverless project from a template using the `sls create` command and change into that directory:
+Let's create a new Serverless project from a template. Use the `sls create` command and change into that directory:
 
 ```bash
 $ sls create -t aws-python3 -p serverless-etl
@@ -53,15 +55,15 @@ $ cd serverless-etl
 
 Next, let's install some required dependencies.
 
-We'll use the `serverless-python-requirements` plugin for handling our Python packages on deployment. 
+We'll use the `serverless-python-requirements` plugin for handling our Python packages on deployment:
 
 ```bash
 $ npm install --save-dev serverless-python-requirements
 ```
 
-> If you want a deeper dive on the `serverless-python-requirements` plugin, check out our previous post on [handling Python packaging with Serverless](https://serverless.com/blog/serverless-python-packaging/).
+**Note:** If you want a deeper dive on the `serverless-python-requirements` plugin, check out our previous post on [handling Python packaging with Serverless](https://serverless.com/blog/serverless-python-packaging/).
 
-With the deoendencies out of the way, let's get started, by replacing the `serverless.yml` file contents with the following `yaml` code:
+With the deoendencies out of the way, let's get started. Replace the `serverless.yml` file contents with the following `yaml` code:
 
 ```yml
 service: sample-etl
@@ -102,7 +104,7 @@ functions:
 
 Let's review the above `serverless.yml` configuration for our service.
 
-We need to specify the connection string to the Redshift postgres database. Note that I have used the AWS Parameter Store (SSM) to store the connection string for obvious security reasons.
+We need to specify the connection string to the Redshift postgres database. You'll notice I have used the AWS Parameter Store (SSM) to store the connection string for obvious security reasons:
 
 ```
 custom:
@@ -110,9 +112,9 @@ custom:
   dbConn: ${ssm:/ETL/RedshiftConn~true}
 ```
 
-> For a detailed explanation of secrets management strategies, check out our previous post on [managing secrets, API keys and more with Serverless](https://serverless.com/blog/serverless-secrets-api-keys/).
+**Note:** For a detailed explanation of secrets management strategies, check out our previous post on [managing secrets, API keys and more with Serverless](https://serverless.com/blog/serverless-secrets-api-keys/).
 
-Since, Redshift is secured by running under a VPC, you need to supply the appropriate security groups, subnets and IAM roles, as following:
+Since Redshift is secured by running under a VPC, you'll need to supply the appropriate security groups, subnets, and IAM roles like so:
 
 ```
   ...
@@ -132,8 +134,9 @@ Since, Redshift is secured by running under a VPC, you need to supply the approp
 
 ### Using a Public API
 
-To keep it simple, I wanted to use a free, public API without any authentication. We will be using the [CoinMarketCap API](https://coinmarketcap.com/api/). Bitcoins are a hype, and I thought it would be interesting to see the metrics over a period of time.
+To keep it simple, I wanted to use a free, public API without any authentication.
 
+We'll be using the [CoinMarketCap API](https://coinmarketcap.com/api/). Bitcoin is in peak hype, and I thought it would be interesting to see the metrics over time.
 
 ### Fetch data and stash into Redshift
 
@@ -228,9 +231,9 @@ Let's review the code.
 
 We start by importing the required libraries, and specifically we are using the [SqlAlchemy](https://www.sqlalchemy.org/) library to work with postgres.
 
-The `get_data()` method accesses the API to fetch the data for the bitcoins. The `cleanup()` method is a helper method to filter out only the fields from the API that we need.
+The `get_data()` method accesses the API to fetch the data for bitcoin. The `cleanup()` method is a helper method to filter out only the fields from the API that we need.
 
-In the following code segment, we define the schema for the `sample_coinmarketcap`.
+In the following code segment, we define the schema for the `sample_coinmarketcap`:
 
 ```
 ...
@@ -242,15 +245,15 @@ sample_table = Table('sample_coinmarketcap', metadata,
 
 ```
 
-In the `init_tables()` method, we first drop the table if it exists, and then create the table, if it does not exist. Note, that we are dropping the table each time, because we want to store the latest set of data every time we process. In the case that you want to append data to the table, please do not drop the table.
+In the `init_tables()` method, we first drop the table if it exists, and then create the table, if it does not exist. We are dropping the table each time because we want to store the latest set of data every time we process. If instead you want to append data to the table, do not drop the table.
 
-Last by not least, the `main()` method brings it all together by fetching data and inserting the data into the database.
+Finally, the `main()` method brings it all together by fetching data and inserting the data into the database.
 
-> You can review the full source code at the [serverless-etl](https://github.com/rupakg/serverless-etl) Github repo.
+You can review the full source code at the [serverless-etl](https://github.com/rupakg/serverless-etl) Github repo.
 
 ## Test the job service
 
-Before we deploy the service, let's test the service to see if our code is functioning properly. Since we are mainly concerned with testing of our API call can get us the required data correctly. we will comment out the database related code for now. 
+Before we deploy the service, let's test the service to see if our code is functioning properly. Since we're mainly concerned with testing whether or not our API call gets us the required data correctly, we'll comment out the database-related code for now. 
 
 Comment out the code in the `main()` method as shown below:
 
@@ -276,13 +279,13 @@ def main(event, context):
 ...
 ```
 
-Then to test locally, simple do:
+To test locally, simply do:
 
 ```bash
 $ sls invoke local -f etlSample
 ```
 
-The output is as shown below:
+The output is shown below:
 
 ```json
 
@@ -338,14 +341,15 @@ The output is as shown below:
   }
 ]
 ```
+
 Now that all the data we want looks good, we can deploy our service.
 
 
 ### Deploy and schedule the job
 
-Before we deploy our service, **remember to uncomment the database code that we commented above**.
+Before we deploy, **remember to uncomment the database code that we commented above**.
 
-To deploy the ETL job service, simply do:
+Once that's done, deploy the ETL job service:
 
 ```
 $ sls deploy
@@ -376,16 +380,19 @@ endpoints:
 functions:
   etlSample: sample-etl-prod-etlSample
 ```
+
 This will set up our ETL job service in AWS to run as per the specified schedule. In our case, the job will run every hour.
 
 ## Visualizing the data
 
-Finally, I thought it will be useful to show the fact that you can visualize that data easily via services like Chart.io or Metabase.io. Without going into too much detail about these services, you can see the visualization below:
+I thought it would be useful to show the fact that you can visualize that data easily via services like [Chart.io](https://chartio.com/) or Metabase.io. Without going into too much detail about these services, you can see the visualization below:
 
 ![Chart.io graph](https://user-images.githubusercontent.com/8188/36358496-7043c5f0-14dd-11e8-9236-69d9e9f13d33.png)
 
 ## Summary
 
-We saw how easy it is to create an ETL job service in Serverless, fetch data via an API and store them in a database like Redshift. The service can be deployed on AWS and executed based on a schedule. The cost savings of running such a service on serverless is huge. The cost of having a Redshift instance is considerable, but for your service you only pay when the job executes. No need for dedicated infrastructure for such use cases.
+We saw how easy it is to create an ETL job service in Serverless, fetch data via an API, and store it in a database like Redshift. The service can be deployed on AWS and executed based on a schedule.
 
-If you have other use cases that you have implemented or you have any questions, please leave a comment below. I would be happy to discuss it with you.
+The cost savings of running this kind of service with serverless is huge. Redshift instances are pretty expensive; with serverless you'll only pay when the job executes. No need for dedicated infrastructure.
+
+If you have other use cases you've implemented or have any questions, please leave a comment below. I'd be happy to discuss it with you.
