@@ -629,8 +629,8 @@ I plan to cover alternate solutions for creating Serverless and GraphQL endpoint
 - Part 3: AppSync Frontend: AWS Managed GraphQL Service (Coming Soon)
 - Part 4: [Prisma](https://github.com/graphcool/prisma) integration with AWS Lambda to replace Knex and evaluate `GraphQL Yoga Server` 
 - Part 5: We will dive deep into the performance analysis and optimizations of these endpoints (including AppSync).
-- Part 6: General FAQ and trade-offs between using Serverless vs more traditional server environments such as a Docker container.
-- Walk through brand new [Serverless AppSync Plugin](https://github.com/sid88in/serverless-appsync-plugin)
+- Part 6: General FAQ, plus trade-offs between using Serverless vs. more traditional server environments (such as a Docker containers).
+- Finally, I'll walk through the [Serverless AppSync Plugin](https://github.com/sid88in/serverless-appsync-plugin)
 
 Siddharth Gupta  
 
