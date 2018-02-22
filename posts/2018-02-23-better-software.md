@@ -32,11 +32,9 @@ CI/CD platforms help make testing and deploying software easier, especially amon
 
 **In general, most of the progress we’ve made as an industry has been incremental.** We’ve failed to make software significantly easier, cheaper, and faster to develop, which is the end state that we all want.
 
-
-
 ## The path to building better software
 
-The short answer: serverless. Or rather, continuing to invest in the robustness of serverless technology.
+My short answer: serverless. Or rather, continuing to invest in the robustness of serverless technology.
 
 Serverless, which is a movement to abstract infrastructure away from application development as much as possible, is currently manifested mostly in the form of function-as-a-service (FaaS) offerings, such as AWS Lambda.
 
