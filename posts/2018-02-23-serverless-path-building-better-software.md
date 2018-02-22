@@ -3,7 +3,7 @@ title: The serverless path to building better software
 description: TODO
 date: 2018-02-23
 layout: Post
-thumbnail: TODO
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/better+software/devs.jpeg
 authors:
   - NickGottlieb
 ---
@@ -14,6 +14,8 @@ Don’t get me wrong, the way we develop software has changed dramatically over 
 
 But what have these developments actually done for our productivity as software developers and creators? Have they made it easier to build software? Cheaper? Faster?
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/better+software/devs.jpeg">
+
 I’ve spent the last 6 years of my career building tools aimed at making developers more productive (first with my own startup, then CircleCI, and now Serverless), and in searching for the answers to these questions I’ve mostly found them to be *no*.
 
 While there have certainly been tools developed that have helped us to build much more powerful software, they have only incrementally contributed to our productivity. As an industry, we’re still faced with the same underlying problem: building software is extremely difficult and expensive.
@@ -22,7 +24,9 @@ While there have certainly been tools developed that have helped us to build muc
 
 Let’s take a look at ‘the cloud’ as a very macro example. The cloud lets somebody else manage our servers, letting us (the developers) spend more time focusing on code.
 
-This is an incredible value proposition. This is the value proposition that has resulted in an explosion of cloud services over the past 10 years as well the healthy $650 billion market capitalization that Amazon enjoys as I’m writing this. 
+This is an incredible value proposition. This is the value proposition that has resulted in an explosion of cloud services over the past 10 years as well the healthy $650 billion market capitalization that Amazon enjoys as I’m writing this.
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/better+software/amazon-market-cap2.png">
 
 But while the cloud has delivered on its promise of freeing software developers from having to deal with physical servers, it has failed to eliminate a lot of the complexity that made dealing with servers a pain in the first place: provisioning, scaling, maintaining, debugging, etc.
 
@@ -33,6 +37,8 @@ CI/CD platforms help make testing and deploying software easier, especially amon
 **In general, most of the progress we’ve made as an industry has been incremental.** We’ve failed to make software significantly easier, cheaper, and faster to develop, which is the end state that we all want.
 
 ## The path to building better software
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/better+software/path.jpeg">
 
 My short answer: serverless. Or rather, continuing to invest in the robustness of serverless technology.
 
