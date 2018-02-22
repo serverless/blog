@@ -79,9 +79,9 @@ This would dramatically reduce the amount of time we spend re-inventing the whee
 There are currently efforts along these lines underway, such as [Standard Lib]. It’ll be really exciting to see where these go in the future.  
 
 ### Making it easy to access data
-All digital businesses today generate and collect massive amounts of data. This data is a resource that could be extremely valuable.
+All digital businesses today generate and collect massive amounts of data. This data is a resource that could be extremely valuable. Notably, we could use it to build even more powerful features for our users.
 
-We could use it to build powerful even more powerful features for our users.
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/better+software/data.jpeg">
 
 The problem that comes along with this massive amount of data is that it tends to live in a lot of different places in a lot of different formats, making it difficult to utilize.
 
