@@ -1,6 +1,6 @@
 ---
 title: The serverless path to building better software
-description: TODO
+description: Nick Gottlieb shares his thoughts on serverless, the state of software, and industry-wide opportunities for accelerating productivity.
 date: 2018-02-23
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/better+software/devs.jpeg
@@ -94,4 +94,6 @@ While this general architectural pattern is still young, if we could reach a sta
 The result: far more productive development.
 
 ## In sum
-This is an exciting time to be a developer. We’re likely to see radical and unprecedented improvements in the tools we have available. It’s up to each of us to continue to demand and drive that change. 
+This is an exciting time to be a developer. We’re likely to see radical and unprecedented improvements in the tools we have available.
+
+It’s up to each of us to continue to demand and drive that change. 
