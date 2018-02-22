@@ -45,7 +45,7 @@ These offerings, and the wider serverless movement itself, are interesting becau
 Namely: democratizing the ability to create heavily customized tooling, eliminating work redundancy by letting us reuse code, and making it much easier for us to access data.
 
 ### Making it easy to customize tooling
-When it comes to software development tooling, we face the same issues any potential consumer of SasS faces. Build or buy?
+When it comes to software development tooling, we face the same issues any potential consumer of SaaS faces. Build or buy?
 
 Invest in building a tool to exactly meet our needs, and then get stuck maintaining it? Or adopt a third-party offering, which inevitably comes with some baked-in opinions and workflows that won’t work the way we need? Neither are ideal; both result in tool stacks that are often brittle, expensive, error-prone, and don’t help us efficiently produce high-quality software.
 
