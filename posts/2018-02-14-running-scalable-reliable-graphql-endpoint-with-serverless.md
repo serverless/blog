@@ -10,8 +10,8 @@ authors:
 
 ![Serverless and GraphQL family](https://user-images.githubusercontent.com/1587005/36209990-2245267a-1152-11e8-8fba-46610a0702d5.png "Serverless and GraphQL family")
 
-Part 1: This post! Create GraphQL endpoints using the Serverless Framework, Lambda, DynamoDB, RDS and a REST backend
-Part 2: [AppSync Backend: AWS Managed GraphQL Service](https://medium.com/@sid88in/running-a-scalable-reliable-graphql-endpoint-with-serverless-24c3bb5acb43)  
+- Part 1: This post! GraphQL endpoints with the Serverless Framework, Lambda, DynamoDB, RDS and a REST backend
+- Part 2: [AppSync Backend: AWS Managed GraphQL Service](https://medium.com/@sid88in/running-a-scalable-reliable-graphql-endpoint-with-serverless-24c3bb5acb43)  
 
 ## Introduction
 
