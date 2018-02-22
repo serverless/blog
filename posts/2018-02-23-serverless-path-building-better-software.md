@@ -76,7 +76,7 @@ This will eventually take us to a future in which micro-services can be easily s
 
 This would dramatically reduce the amount of time we spend re-inventing the wheel and allow us to focus more on unique functionality and business value. 
 
-There are currently efforts along these lines underway, such as [Standard Lib] and the [Serverless Application Repository]. It’ll be really exciting to see where these go in the future.  
+There are currently efforts along these lines underway, such as [Standard Lib]. It’ll be really exciting to see where these go in the future.  
 
 ### Making it easy to access data
 All digital businesses today generate and collect massive amounts of data. This data is a resource that could be extremely valuable.
