@@ -12,9 +12,9 @@ We, as the software tooling industry, are failing to empower developers to build
 
 Don’t get me wrong, the way we develop software has changed dramatically over the last 30 years. We’ve made tremendous progress in terms of the technologies and tools available to us.
 
-But what have these developments actually done for our productivity as software developers and creators? Have they made it easier to build software? Cheaper? Faster?
-
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/better+software/devs.jpeg">
+
+But what have these developments actually done for our productivity as software developers and creators? Have they made it easier to build software? Cheaper? Faster?
 
 I’ve spent the last 6 years of my career building tools aimed at making developers more productive (first with my own startup, then CircleCI, and now Serverless), and in searching for the answers to these questions I’ve mostly found them to be *no*.
 
@@ -66,6 +66,8 @@ We have a ways to go to achieve this, but projects like [Auth0’s Extend], [CNC
 ### Making it easy to reuse code
 As developers, there’s nothing more disheartening than writing code that we’ve written a hundred times.
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/better+software/reuse-code.jpeg">
+
 How amazing would it be if we could compose the bulk of our applications out of pieces of code we’ve already written, and then focus our coding time on the business logic that delivers unique value? 
 
 Serverless architectures today are essentially microservice architectures: groups of functions that have common functionality. They are deployed together, and share infrastructure resources such as an API gateway.
@@ -81,7 +83,7 @@ There are currently efforts along these lines underway, such as [Standard Lib]. 
 ### Making it easy to access data
 All digital businesses today generate and collect massive amounts of data. This data is a resource that could be extremely valuable. Notably, we could use it to build even more powerful features for our users.
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/better+software/data.jpeg">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/better+software/data2.jpeg">
 
 The problem that comes along with this massive amount of data is that it tends to live in a lot of different places in a lot of different formats, making it difficult to utilize.
 
