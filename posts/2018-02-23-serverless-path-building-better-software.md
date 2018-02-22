@@ -1,5 +1,5 @@
 ---
-title: Building better software
+title: The serverless path to building better software
 description: TODO
 date: 2018-02-23
 layout: Post
