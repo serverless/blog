@@ -61,7 +61,7 @@ Serverless, though, has the potential to make this ideal state a reality.
 
 If your source management, CI/CD, and project management system all exposed events in a uniform fashion, which you could easily react to with a serverless function deployed to any platform of your choice—well, I’d say that’s pretty ideal.
 
-We have a ways to go to achieve this, but projects like [Auth0’s Extend], [CNCF’s CloudEvents], and many more are making progress towards this goal.	
+We have a ways to go to achieve this, but projects like [Auth0’s Extend](https://auth0.com/extend/), [CNCF’s CloudEvents](https://openevents.io/), and many more are making progress towards this goal.	
 
 ### Making it easy to reuse code
 As developers, there’s nothing more disheartening than writing code that we’ve written a hundred times.
@@ -78,7 +78,7 @@ This will eventually take us to a future in which micro-services can be easily s
 
 This would dramatically reduce the amount of time we spend re-inventing the wheel and allow us to focus more on unique functionality and business value. 
 
-There are currently efforts along these lines underway, such as [Standard Lib]. It’ll be really exciting to see where these go in the future.  
+There are currently efforts along these lines underway, such as [Standard Lib](https://stdlib.com/). It’ll be really exciting to see where these go in the future.  
 
 ### Making it easy to access data
 All digital businesses today generate and collect massive amounts of data. This data is a resource that could be extremely valuable. Notably, we could use it to build even more powerful features for our users.
