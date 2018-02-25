@@ -43,6 +43,14 @@ Benefits:
 Drawbacks:
 - You have to use a wrapper for each function, which can result in performance delays (about 20ms)
 
+*Real-time metrics*: Monitor invocations, duration, memory usage, and errors quickly in one place.
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/observability-tools/iopipe-search.png">
+
+*Search functionality*: You can add multiple “rules” to find invocations that match. The example below looks for long-running invocations over 100ms, but you can search for errors, cold starts, or even custom metric values (e.g., “userId” = 1234).
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/observability-tools/iopipe-realtime-metrics.png">
+
 Further reading:
 - [X-ray and IOpipe: better together](https://read.iopipe.com/x-ray-and-iopipe-better-together-d638be86356f)
 - [IOpipe Serverless Plugin](https://github.com/iopipe/serverless-plugin-iopipe)
@@ -62,6 +70,14 @@ Drawbacks:
 - Metrics have a one minute delay (not real-time)
 - No customizable events
 - Will probably need to use a separate log aggregator for centralized logging
+
+*Metrics*: Cloudwatch comes with easy Lambda metrics; no setup.
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/observability-tools/cloudwatch-metrics.png">
+
+Logs: Logs from your Lambda function, plus general status logs, are sent directly to Cloudwatch Logs.
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/observability-tools/cloudwatch-logs.png">
 
 Further reading:
 - [Using CloudWatch metrics and alarms](https://serverless.com/blog/serverless-ops-metrics/)
