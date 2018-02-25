@@ -43,7 +43,7 @@ Benefits:
 Drawbacks:
 - You have to use a wrapper for each function, which can result in performance delays (about 20ms)
 
-*Real-time metrics*: Monitor invocations, duration, memory usage, and errors show up in one place.
+*Real-time metrics*: Monitor invocations, duration, memory usage, and errors in one place.
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/observability-tools/iopipe-search.png">
 
