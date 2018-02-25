@@ -43,7 +43,7 @@ Benefits:
 Drawbacks:
 - You have to use a wrapper for each function, which can result in performance delays (about 20ms)
 
-*Real-time metrics*: Monitor invocations, duration, memory usage, and errors quickly in one place.
+*Real-time metrics*: Monitor invocations, duration, memory usage, and errors show up in one place.
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/observability-tools/iopipe-search.png">
 
@@ -108,12 +108,22 @@ Benefits:
 Drawbacks:
 - Metrics have a one minute delay (not real-time)
 
+*Performance metrics*: includes extras like Lambda cost analysis.
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/observability-tools/dashbird-price.png">
+
+*Architecture metrics*: track account-level stats across your entire architecture (individual microservice views also available).
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/observability-tools/dashbird-dashboard.png">
+
 Further reading:
 - [Log-based monitoring for AWS Lambda with Dashbird](https://dashbird.io/blog/log-based-monitoring-for-aws-lambda/)
 
 ### AWS X-ray
 
 [X-ray](https://docs.aws.amazon.com/xray/latest/devguide/xray-services-lambda.html) is a distributed tracing system you can use for debugging across various AWS systems. It’s usage is not mutually exclusive with another tool, like IOpipe or CloudWatch, and most people use X-ray in conjunction with another monitoring tool.
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/observability-tools/x-ray-trace.jpg">
 
 Further reading:
 - [X-ray and Lambda: the good, the bad, the ugly](http://theburningmonk.com/2017/06/aws-x-ray-and-lambda-the-good-the-bad-and-the-ugly/)
