@@ -93,7 +93,7 @@ Further reading:
 
 ### IOpipe
 
-[IOpipe](https://www.iopipe.com/) works with AWS Lambda functions written in Node.js and Python. It provides tracing, profiling, monitoring, alerts, and real-time metrics.
+[IOpipe](https://www.iopipe.com/) works with AWS Lambda functions written in Node.js, Python, and Java. It provides tracing, profiling, monitoring, alerts, and real-time metrics.
 
 Benefits:
 - Tracing & profiling to investigate performance and cold starts
