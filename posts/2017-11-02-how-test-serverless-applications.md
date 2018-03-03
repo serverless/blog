@@ -117,8 +117,7 @@ One small trick I like to do to avoid this `internal server error`, and know exa
 
 Then, instead of throwing an error directly, you can pass it in the handler callback:
 
-```
-js
+```js
 module.exports.createThumbnail = (event, context, callback) => {
 
  try {
