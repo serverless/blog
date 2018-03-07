@@ -1,14 +1,16 @@
 ---
 title: "Serverless Workarounds for CloudFormation's 200 Resource Limit"
-description: ADD ME
-date: 2018-03-08
+description: How you can troubleshoot, and avoid hitting, CloudFormation's 200 resource limit
+date: 2018-03-07
 layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png'
 authors:
   - AlexDeBrie
 ---
 
-Developing with Serverless is microservice friendly, but sometimes you don't want microservices. Perhaps you like the comfort of keeping all your application logic in one place. That's great, until you hit the oh-so-common error:
+Developing with Serverless is microservice friendly, but sometimes you don't want microservices. Perhaps you like the comfort of keeping all your application logic in one place.
+
+That's great, until you hit the oh-so-common error:
 
 ```bash
 Error --------------------------------------------------
@@ -16,14 +18,14 @@ Error --------------------------------------------------
 The CloudFormation template is invalid: Template format error: Number of resources, 201, is greater than maximum allowed, 200
 ```
 
-That's right -- CloudFormation has a limit of 200 resources per stack.
+That's right—CloudFormation has a limit of 200 resources per stack.
 
 In this post, I'll give you some background on the CloudFormation limit and why it's so easy to hit. Then, I'll follow up with a few tips on how to avoid hitting the limit, including:
 
-- [Break your web API into microservices](#break-your-web-api-into-microservices);
-- [Handle routing in your application logic](#handle-routing-in-your-application-logic);
-- [Using plugins to split your service into multiple stacks or nested stacks](#split-your-stacks-with-plugins); and
-- [Pestering your AWS rep to get the CloudFormation limit increased](#bug-your-AWS-contacts).
+- [Break your web API into microservices](#break-your-web-api-into-microservices)
+- [Handle routing in your application logic](#handle-routing-in-your-application-logic)
+- [Using plugins to split your service into multiple stacks or nested stacks](#split-your-stacks-with-plugins)
+- [Pestering your AWS rep to get the CloudFormation limit increased](#bug-your-AWS-contacts)
 
 Let's begin!
 
@@ -33,19 +35,19 @@ Before we get too far, let's understand the background on this issue and why it'
 
 When you run `serverless deploy` on a Serverless service that's using AWS as a provider, a few things are happening under the hood:
 
-1. The Serverless Framework packages your functions into zip files in the format expected by Lambda;
-2. The zip files are uploaded to S3; and
-3. A CloudFormation stack is deployed that includes your Lambda function, [IAM permissions](https://serverless.com/blog/abcs-of-iam-permissions/), Cloudwatch log configuration, event source mappings, and a whole bunch of other undifferentiated heavy lifting that you shouldn't care about.
+1. The Serverless Framework packages your functions into zip files in the format expected by Lambda
+2. The zip files are uploaded to S3
+3. A CloudFormation stack is deployed that includes your Lambda function, [IAM permissions](https://serverless.com/blog/abcs-of-iam-permissions/), Cloudwatch log configuration, event source mappings, and a whole bunch of other undifferentiated heavy lifting that you shouldn't care about
 
 The problem arises when you hit the aforementioned limit of 200 resources in a single CloudFormation stack. Unlike other service limits, this is a hard limit that AWS will not raise in a support request.
 
-Now you may be saying "But I only have 35 functions in my service -- how does this equal 200 resources?"
+Now you may be saying "But I only have 35 functions in my service—how does this equal 200 resources?"
 
 A single function requires more than one CloudFormation resource. For every function you add, there are at least three resources:
 
-1. An [`AWS::Lambda::Function`](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html) resource, representing your actual function;
-2. An [`AWS::Lambda::Version`](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html) resource, representing a particular *version* of your function (this allows for fast & easy rollbacks);
-3. An [`AWS::Logs::LogGroup`](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html) resource, allowing your function to log to CloudWatch logs.
+1. An [`AWS::Lambda::Function`](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html) resource, representing your actual function
+2. An [`AWS::Lambda::Version`](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html) resource, representing a particular *version* of your function (this allows for fast & easy rollbacks)
+3. An [`AWS::Logs::LogGroup`](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html) resource, allowing your function to log to CloudWatch logs
 
 If you wire up an event source such as `http` for API Gateway, you'll be adding a few more resources:
 
@@ -67,7 +69,7 @@ The first way, and my preferred way, is to map your API Gateway domains to a cus
 
 Further, if you use a custom domain, you can also utilize *base path mappings* to segment your services and deploy multiple to the same domain. For example, if you have 30 routes, 15 of which are user-related and 15 of which are product-related, you can split them into two different services. The first, with all of your user-related routes, will have a base path mapping of "users", which will prefix all routes with `/users`. The second, with your product-related routes, will prefix your routes with `/products`.
 
-> Interested in using a custom domain with base path mapping? Check out our two posts on the subject: [How to set up a custom domain with Serverless](https://serverless.com/blog/serverless-api-gateway-domain/) and [How to deploy multiple micro-services under one domain](https://serverless.com/blog/api-gateway-multiple-services/).
+**Aside:** Interested in using a custom domain with base path mapping? Check out our two posts on the subject: [How to set up a custom domain with Serverless](https://serverless.com/blog/serverless-api-gateway-domain/) and [How to deploy multiple micro-services under one domain](https://serverless.com/blog/api-gateway-multiple-services/).
 
 A second approach is to use the `apiGateway` property object in your `serverless.yml`. This was added in the `v1.26` release of the Serverless Framework. It allows you to re-use an existing API Gateway REST API resource. You'll have the nonsense domain (`https://n0benf6jn4.execute-api.us-east-1.amazonaws.com`), but it won't require you to shell out the $12 for a custom domain of your own.
 
@@ -75,9 +77,9 @@ Check out the docs on the new `apiGateway` property [here](https://serverless.co
 
 ## Handle routing in your application logic
 
-> Warning: The following advice is considered heresy in certain serverless circles. Use at your own risk.
+Warning: The following advice is considered heresy in certain serverless circles. Use at your own risk.
 
-If you don't want to split up your logic into multiple services, you can try an alternative route -- stuffing all of your logic into a single function!
+If you don't want to split up your logic into multiple services, you can try an alternative route—stuffing all of your logic into a single function!
 
 Here's how it works. Rather than setting up specific HTTP endpoints that map to specific function handlers, you set up a single route that catches _all_ HTTP paths. In your `serverless.yml`, it will look like this:
 
