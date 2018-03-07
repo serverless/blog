@@ -162,6 +162,9 @@ custom:
 
 _Note: a previous version of this post set `dockerizePip: true` instead of `dockerizePip: non-linux`. You'll need `serverless-python-requirements` v3.0.5 or higher for this option._
 
+> You need to have Docker [installed](https://docs.docker.com/install/) to be able to set `dockerizePip: true` or `dockerizePip: non-linux`. Alternatively, you can set `dockerizePip: false`, and it will not use Docker packaging.
+But, Docker packaging is essential if you need to build native packages that are part of your dependencies like Psycopg2, NumPy, Pandas, etc.
+
 The `plugins` section registers the plugin with the Framework. In the `custom` section, we tell the plugin to use Docker when installing packages with pip. It will use a Docker container that's similar to the Lambda environment so the compiled extensions will be compatible. You will need Docker installed for this to work.
 
 The plugin works by hooking into the Framework on a deploy command. Before your package is zipped, it uses Docker to install the packages listed in your `requirements.txt` file and save them to a `.requirements/` directory. It then symlinks the contents of `.requirements/` into your top-level directory so that Python imports work as expected. After the deploy is finished, it cleans up the symlinks to keep your directory clean.
