@@ -30,13 +30,13 @@ So first, a bit of background. Services with only one event type make up 79% of 
 
 To make the data a bit easier to ingest, we’re going to break this out a few different ways. First, here’s a chart showing only the single event-source services (remember, this is 79% of the whole):
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/services-single-event-type.jpg">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/services-single-event-type1.jpg">
 
 *All services with a single event type, broken out by event type*
 
 The majority of services with *two* event types (16% of all services) have http as one of them—http + cron, http + sns, you get the idea. There’s a pretty big ‘other’ bucket, but that’s mostly because there were a lot of permutations to represent and we kept it to the most popular:
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/services-2-types.jpg">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/services-2-types1.jpg">
 
 *All services with exactly two event types, broken out by event type*
 
@@ -46,7 +46,7 @@ It gets a little ridiculous to break out all the permutations of services with 3
 
 Let’s take a look at how many functions developers are cramming into each function. Note that this chart only includes services that have seen development activity on 3 distinct days, as an attempt to exclude "Hello, World" apps.
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/functions-per-service.jpg">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/functions-per-service1.jpg">
 
 *Services, bucketed by number of functions*
 
@@ -58,7 +58,7 @@ Which runtimes are serverless developers gravitating to?
 
 Node.js is the clear front-runner, followed by Python.
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/services-deployed-pie.jpg">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/services-deployed-pie1.jpg">
 
 *Percentage of services deployed, by language.*
 
@@ -66,7 +66,7 @@ Node.js is the clear front-runner, followed by Python.
 
 Let’s look at all language prevalence over time (excluding Node 6.10, which otherwise completely dominates):
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/services-by-language-line.jpg">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/services-by-language-line1.jpg">
 
 *Languages used on AWS (minus Node 6.10), in percentage of services*
 
@@ -82,7 +82,7 @@ So, how quickly has Go picked up speed?
 
 Here’s a breakout of each language (versions combined), directly comparing August 2017 to February 2018:
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/services-by-language-full.jpg">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/services-by-language-full1.jpg">
 
 *Languages used on AWS, in percentage of services*
 
@@ -90,7 +90,7 @@ In a mere six weeks, Go is already at about half of Java usage. Also worth notin
 
 Just for fun, let’s see what the experimentation curve looks like. For that, we’re going to take a week over week look at the number of deployments for services written in Go since January 15th. (Note that this isn’t number of *services*, but number of deployments; in other words, how often are people playing around with Go.)
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/go-deployments.jpg">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/go-deployments1.jpg">
 
 *Golang usage on AWS, in percentage of all deployments*
 
@@ -104,7 +104,7 @@ At 7:00am! Ok not really.
 
 Peak service deployment hours, it turns out, are between lunch time and get-off-work time:
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/deploy-times.jpg">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/deploy-times1.jpg">
 
 ## Tl;dr
 
