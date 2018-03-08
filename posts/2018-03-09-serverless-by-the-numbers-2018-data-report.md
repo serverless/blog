@@ -44,7 +44,7 @@ It gets a little ridiculous to break out all the permutations of services with 3
 
 ### How many functions per service?
 
-Let’s take a look at how many functions developers are cramming into each function. Note that this chart only includes services that have seen development activity on 3 distinct days, as an attempt to exclude "Hello, World" apps.
+Let’s take a look at how many functions developers are cramming into each service. Note that this chart only includes services that have seen development activity on 3 distinct days, as an attempt to exclude "Hello, World" apps.
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-report-2018/functions-per-service1.jpg">
 
