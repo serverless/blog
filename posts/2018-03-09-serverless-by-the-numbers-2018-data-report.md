@@ -20,13 +20,13 @@ Eternal questions, my friend. Which this post will dare to answer. With *charts*
 
 ## Event sources
 
-So first of all, just what are developers putting inside all these services they’re deploying?
+To address the biggest question of the day: just what are developers putting inside all these services they’re deploying?
 
 ### APIs dominate
 
 The answer: http.
 
-So first, a bit of background. Services with only one event type make up 79% of all services. 16% of all services utilize exactly two event types, and 4% of all services contain three or more.
+So, a bit of useful background before we dig in. Services with only one event type make up 79% of all services. 16% of all services utilize exactly two event types, and 4% of all services contain three or more.
 
 To make the data a bit easier to ingest, we’re going to break this out a few different ways. First, here’s a chart showing only the single event-source services (remember, this is 79% of the whole):
 
