@@ -86,7 +86,7 @@ Here’s a breakout of each language (versions combined), directly comparing Aug
 
 *Languages used on AWS, in percentage of services*
 
-In a mere six weeks, Go is already at about half of Java usage. Also worth noting that Node.js prevalence fell three percentage points from August to February. (Which begs the question—was it because developers switched to Go? ;) jkjk, we love you Node devs)
+In a mere six weeks, Go is already at about half of Java usage. Also worth noting that Node.js prevalence fell three percentage points from August to February.
 
 Just for fun, let’s see what the experimentation curve looks like. For that, we’re going to take a week over week look at the number of deployments for services written in Go since January 15th. (Note that this isn’t number of *services*, but number of deployments; in other words, how often are people playing around with Go.)
 
