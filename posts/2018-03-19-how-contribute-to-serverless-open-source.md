@@ -18,9 +18,9 @@ While not specific to Serverless, if you’ve never contributed to open source b
 
 One of the most important takeaways from the guide is that you *don’t have to write code to contribute*:
 
-[IMAGE: contribute-opensource]
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-contribute/contribute-opensource.png">
 
-*(Quote from the GitHub Open Source Guide)*
+*(Quote taken from the GitHub Open Source Guide)*
 
 This is certainly true for Serverless as well, and we’ll be getting into all the ways you can help—with or without code.
 
@@ -38,7 +38,7 @@ In terms of non-code ways you can pitch in: Review someone else’s code. Add an
 
 Sometimes our docs have typos or need updates; if you see an opportunity for improvement, then click the edit button. We love that too. (Just as an FYI, you can even do that on our blog!)
 
-[IMAGE: edit-button]
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-contribute/edit-button.png">
 
 Perhaps most importantly, new people try serverless all the time, and they have questions as they figure things out. Visit [the forums](shttps://forum.serverless.com/) and answer a question today. You’ll be directly giving back to the community, and perhaps even learning some new things yourself in the process.
 
@@ -62,7 +62,7 @@ Want to know when the newest Framework is being released? It all depends on the 
 
 Here, for example, is our [1.27 milestone](https://github.com/serverless/serverless/milestone/42):
 
-[IMAGE: 127-milestone]
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-contribute/127-milestone.png">
 
 v1.27 gets released when all the issues are closed and pull requests are reviewed and merged.
 
