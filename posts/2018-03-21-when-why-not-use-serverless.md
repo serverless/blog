@@ -18,7 +18,8 @@ It’s probably the biggest critique of serverless right now: you just lose some
 
 Serverless encourages event-based architectures, which a lot of people aren’t familiar with. Add to that, that serverless is a new enough space that the available tooling is relatively immature. It can be hard to do things as simple as stack traces.
 
-https://twitter.com/matt_rhys_jones/status/971046522744983552
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">The observability talks have not just been practically useful, but also somewhat reassuring that there are still problems to solve with microservice/serverless architectures and it&#39;s not just me missing something obvious!</p>&mdash; Matthew Jones (@matt_rhys_jones) <a href="https://twitter.com/matt_rhys_jones/status/971046522744983552?ref_src=twsrc%5Etfw">March 6, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 In the past year, [logging and monitoring platforms such as Dashbird, IOpipe, and X-ray](https://serverless.com/blog/best-tools-serverless-observability/) have vastly improved their options. Within the next one or two years, serverless observability should be much closer to parity. But there may always be the caveat that, by their very design, serverless functions are stateless. It makes them hard to debug in production by using anything except logs.
 
@@ -33,9 +34,9 @@ Small caveat to say that there *is* a fairly simple workaround that many serverl
 But this is mostly effective for smaller functions. Things get [a lot more complicated](https://theburningmonk.com/2018/02/aws-lambda-monolithic-functions-wont-help-you-with-cold-starts/) when you have larger functions or relatively complicated workflows.
 
 To minimize cold start times, here are some things you should keep in mind:
-Application architecture: keep your serverless functions small and focused; cold start times increase linearly with memory and code size
-Choice of language: Python & Go can considerably lower cold start times, whereas C# & Java notoriously have the highest cold start times.
-VPCs:  Cold start times increase due to extra overhead of provisioning networking resources
+- Application architecture: keep your serverless functions small and focused; cold start times increase linearly with memory and code size
+- Choice of language: Python & Go can considerably lower cold start times, whereas C# & Java notoriously have the highest cold start times.
+- VPCs: cold start times increase due to extra overhead of provisioning networking resources
 
 ## Heavier reliance on vendor ecosystems
 
@@ -45,7 +46,6 @@ The specifics of your application architecture can suddenly become determined by
 
 We’re talking here about vendor lock-in. There are a lot of discussions out there about the long-term impacts of going all-in on a single provider, with a wide disparity in opinions:
 
-https://twitter.com/kelseyhightower/status/856606909608194049
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Instead of trying to avoid vendor lock-in, concentrate on switching cost. How easy is a solution to adopt now; and migrate away from later?</p>&mdash; Kelsey Hightower (@kelseyhightower) <a href="https://twitter.com/kelseyhightower/status/856606909608194049?ref_src=twsrc%5Etfw">April 24, 2017</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -71,13 +71,15 @@ These are the four main reasons companies switch to serverless:
 - it eliminates server maintenance
 - it frees up developer resources to take on projects that directly drive business value (versus spending that time on maintenance)
 
-https://twitter.com/PaulDJohnston/status/897050658876125184
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I have had *every* argument thrown at me. I then throw back: &quot;I hardly have to manage anything and it scales and costs a lot less&quot;. <a href="https://twitter.com/hashtag/win?src=hash&amp;ref_src=twsrc%5Etfw">#win</a></p>&mdash; 🦄 Paul Johnston 🦄 (@PaulDJohnston) <a href="https://twitter.com/PaulDJohnston/status/897050658876125184?ref_src=twsrc%5Etfw">August 14, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 There are some use cases for serverless which, despite any possible downsides, are especially hard to argue against. Serverless APIs are workhorses.
 
 Along those lines, the number of digital businesses not just utilizing, but going *fully serverless* is increasing:
 
-https://twitter.com/tyleralove/status/969446548034785280
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">As of today <a href="https://twitter.com/bustle?ref_src=twsrc%5Etfw">@bustle</a> has fully adopted serverless. We’re down to 15 ec2 instances mostly comprised of self-managed HA Redis. We serve upwards of a billion requests to 80 million people using SSR preact and react a month. We are a thriving example of modern JavaScript at scale.</p>&mdash; Tyler Love (@tyleralove) <a href="https://twitter.com/tyleralove/status/969446548034785280?ref_src=twsrc%5Etfw">March 2, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 [Our own website](https://github.com/serverless/site) is a static, serverless site built using Lambda, the Serverless Framework, and Netlify. It’s never gone down and we spend zero hours a week maintaining it.
 
@@ -88,4 +90,5 @@ As with all things in life, there are tradeoffs. Perhaps the benefits are worth 
 ### Further reading on serverless architectures
 
 - [Serverless architectures primer](https://serverless.com/learn/)
-- [Building your first serverless application](https://serverless.com/blog/anatomy-of-a-serverless-app/)
+- [How we migrated our startup to serverless](https://read.acloud.guru/our-serverless-journey-part-2-908d76d03716)
+- [Why we switched from Docker to Serverless](https://serverless.com/blog/why-we-switched-from-docker-to-serverless/)
