@@ -3,10 +3,12 @@ title: "When (and why) not to go serverless"
 description: "Sometimes serverless is a great idea. Sometimes it isn’t. When (and why) not to go serverless."
 date: 2018-03-21
 layout: Post
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Serverless_logo.png"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/why-not-thumb.png"
 authors:
   - AndreaPasswater
 ---
+
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/why-not-header.png">
 
 There are a lot of people out there championing the serverless movement. Serverless lowers administrative overhead. It takes server maintenance off developers’ plates forever and cuts server costs. The benefits are real.
 
