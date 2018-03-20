@@ -94,3 +94,4 @@ As with all things in life, there are tradeoffs. Perhaps the benefits are worth 
 - [Serverless architectures primer](https://serverless.com/learn/)
 - [How we migrated our startup to serverless](https://read.acloud.guru/our-serverless-journey-part-2-908d76d03716)
 - [Why we switched from Docker to Serverless](https://serverless.com/blog/why-we-switched-from-docker-to-serverless/)
+- [Serverless (FaaS) vs. Containers - when to pick which?](https://serverless.com/blog/serverless-faas-vs-containers/)
