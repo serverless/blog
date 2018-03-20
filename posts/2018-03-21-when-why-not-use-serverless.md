@@ -87,7 +87,7 @@ Along those lines, the number of digital businesses not just utilizing, but goin
 
 ## TL;DR
 
-As with all things in life, there are tradeoffs. Perhaps the benefits are worth the switch for you, too.
+As with all things in life, there are tradeoffs. Perhaps the benefits are worth the switch; that's ultimately up to you. 🤓
 
 ### Further reading on serverless architectures
 
