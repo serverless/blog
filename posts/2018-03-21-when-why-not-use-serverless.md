@@ -67,9 +67,9 @@ If there are drawbacks to serverless, then why are people using it?
 
 Well, overall it can add a lot of efficiency into application development and workflow.
 
-These are the four main reasons companies switch to serverless:
-- it lets them scale their applications with demand automatically
-- it significantly reduces server cost (70-90%), because they don’t pay for idle
+These are the four main reasons people switch to serverless:
+- it scales with demand automatically
+- it significantly reduces server cost (70-90%), because you don’t pay for idle
 - it eliminates server maintenance
 - it frees up developer resources to take on projects that directly drive business value (versus spending that time on maintenance)
 
