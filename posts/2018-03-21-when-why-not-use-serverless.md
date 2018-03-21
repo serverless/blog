@@ -87,7 +87,7 @@ Along those lines, the number of digital businesses not just utilizing, but goin
 
 ## TL;DR
 
-As with all things in life, there are tradeoffs. Perhaps the benefits are worth the switch; that's ultimately up to you. 🤓
+As with all things in life, there are tradeoffs. Serverless means you gain efficiency, and trade some control & visibility.
 
 ### Further reading on serverless architectures
 
