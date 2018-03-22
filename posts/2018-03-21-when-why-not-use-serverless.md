@@ -48,7 +48,7 @@ The specifics of your application architecture can suddenly become determined by
 
 We’re talking here about vendor lock-in. There are a lot of discussions out there about the long-term impacts of going all-in on a single provider, with a wide disparity in opinions:
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Instead of trying to avoid vendor lock-in, concentrate on switching cost. How easy is a solution to adopt now; and migrate away from later?</p>&mdash; Kelsey Hightower (@kelseyhightower) <a href="https://twitter.com/kelseyhightower/status/856606909608194049?ref_src=twsrc%5Etfw">April 24, 2017</a></blockquote>
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">Instead of trying to avoid vendor lock-in, concentrate on switching cost. How easy is a solution to adopt now; and migrate away from later?</p>&mdash; Kelsey Hightower (@kelseyhightower) <a href="https://twitter.com/kelseyhightower/status/856606909608194049?ref_src=twsrc%5Etfw">April 24, 2017</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 The CNCF is also [actively working to initiate standardization](https://openevents.io/) across platforms, in order to make it easier to migrate applications and mitigate vendor lock-in in general.
@@ -57,7 +57,7 @@ The CNCF is also [actively working to initiate standardization](https://openeven
 
 A lot of developers don’t know what severless is. And even if they do, it’s a hazy enough concept that applicants can have a hard time imagining what their job would entail.
 
-Having ‘serverless’ in a job title has a real chance of shrinking the size of your candidate pool, in a market where finding qualified people is already hard enough. Even if you’re willing to take developers without specific serverless experience, they may be too intimidated to apply anyway.
+Having ‘serverless’ in a job title has a real chance of shrinking the size of your candidate pool, in a market where finding qualified people is already hard enough. Even if you’re willing to take developers without specific serverless experience, they may be too intimidated to apply.
 
 On the flip side—to a smaller group of experimenters and fast-paced environment lovers, up-and-coming technology stacks are a huge selling point.
 
@@ -73,7 +73,7 @@ These are the four main reasons people switch to serverless:
 - it eliminates server maintenance
 - it frees up developer resources to take on projects that directly drive business value (versus spending that time on maintenance)
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I have had *every* argument thrown at me. I then throw back: &quot;I hardly have to manage anything and it scales and costs a lot less&quot;. <a href="https://twitter.com/hashtag/win?src=hash&amp;ref_src=twsrc%5Etfw">#win</a></p>&mdash; 🦄 Paul Johnston 🦄 (@PaulDJohnston) <a href="https://twitter.com/PaulDJohnston/status/897050658876125184?ref_src=twsrc%5Etfw">August 14, 2017</a></blockquote>
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">I have had *every* argument thrown at me. I then throw back: &quot;I hardly have to manage anything and it scales and costs a lot less&quot;. <a href="https://twitter.com/hashtag/win?src=hash&amp;ref_src=twsrc%5Etfw">#win</a></p>&mdash; 🦄 Paul Johnston 🦄 (@PaulDJohnston) <a href="https://twitter.com/PaulDJohnston/status/897050658876125184?ref_src=twsrc%5Etfw">August 14, 2017</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 There are some use cases for serverless which, despite any possible downsides, are especially hard to argue against. Serverless APIs are workhorses.
