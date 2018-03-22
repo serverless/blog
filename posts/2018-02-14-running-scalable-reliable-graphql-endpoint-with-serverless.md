@@ -10,8 +10,9 @@ authors:
 
 ![Serverless and GraphQL family](https://user-images.githubusercontent.com/1587005/36209990-2245267a-1152-11e8-8fba-46610a0702d5.png "Serverless and GraphQL family")
 
-- Part 1: This post! GraphQL endpoints with API Gateway + AWS Lambda
+- Part 1: GraphQL endpoints with API Gateway + AWS Lambda (this post)
 - Part 2: [AppSync Backend: AWS Managed GraphQL Service](https://medium.com/@sid88in/running-a-scalable-reliable-graphql-endpoint-with-serverless-24c3bb5acb43)  
+- Part 3: [AppSync Frontend: AWS Managed GraphQL Service](https://hackernoon.com/running-a-scalable-reliable-graphql-endpoint-with-serverless-db16e42dc266)  
 
 ## Introduction
 
@@ -614,24 +615,9 @@ I would also like to give a shout to our open source committers - [Jon](https://
 
 Thanks [Andrea](https://twitter.com/andreapasswater) and [Drake Costa](https://twitter.com/Saeris) for reviewing the final draft of this post and [Rich](https://twitter.com/richbuggy) for helping me out with questions.  
 
-Last but not the least, I would like to thank [Steven](https://twitter.com/kruken), Director of Data Engineering at Glassdoor, for introducing me to GraphQL.
+Last but not the least, I would like to thank [Steven](https://twitter.com/kruken) for introducing me to GraphQL.
 
-## What next? 
-
-I hope you guys liked my first blog post! Feel free to reach out and let me know what you think. 😉 
-
-So, what next? 
-
-One thing you don’t get with AWS Lambda is real-time subscriptions. You can [set up the AWS IoT service which comes with WebSockets](https://serverless.com/blog/realtime-updates-using-lambda-websockets-iot/), but it’s not straightforward.
-
-I plan to cover alternate solutions for creating Serverless and GraphQL endpoints in my future blog posts:
-
-- Part 2: [AppSync Backend: AWS Managed GraphQL Service](https://medium.com/@sid88in/running-a-scalable-reliable-graphql-endpoint-with-serverless-24c3bb5acb43)  
-- Part 3: AppSync Frontend: AWS Managed GraphQL Service (Coming Soon)
-- Part 4: [Prisma](https://github.com/graphcool/prisma) integration with AWS Lambda to replace Knex and evaluate `GraphQL Yoga Server` 
-- Part 5: We will dive deep into the performance analysis and optimizations of these endpoints (including AppSync).
-- Part 6: General FAQ, plus trade-offs between using Serverless vs. more traditional server environments (such as a Docker containers).
-- Finally, I'll walk through the [Serverless AppSync Plugin](https://github.com/sid88in/serverless-appsync-plugin)
+I hope you guys liked my first blog post! Feel free to reach out and let me know what you think. 
 
 Siddharth Gupta  
 
