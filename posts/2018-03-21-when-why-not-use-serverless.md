@@ -44,7 +44,7 @@ To minimize cold start times, here are some things you should keep in mind:
 
 With serverless, you don’t manage the server. That also means you lose control over server hardware, runtimes and runtime updates (at the time of writing, Node.js 8 is out but AWS is still on Node.js 6). The provider also imposes concurrency and resource limits.
 
-The specifics of your application architecture can suddenly become determined by the provider you’re using. If you go serverless with AWS Lambda, for example, the only databases you can use are DynamoDB or Serverless Aurora.
+The specifics of your application architecture can suddenly become determined by the provider you’re using. If you go serverless with AWS Lambda, for example, the only serverless-esque databases you can use are DynamoDB or Serverless Aurora. (Though you can also, say, attach a Lambda to a VPC and access other databases like RDS, ElastiCache, and ElasticSearch instances inside it.*)
 
 We’re talking here about vendor lock-in. There are a lot of discussions out there about the long-term impacts of going all-in on a single provider, with a wide disparity in opinions:
 
@@ -95,3 +95,5 @@ As with all things in life, there are tradeoffs. Serverless means you gain effic
 - [How we migrated our startup to serverless](https://read.acloud.guru/our-serverless-journey-part-2-908d76d03716)
 - [Why we switched from Docker to Serverless](https://serverless.com/blog/why-we-switched-from-docker-to-serverless/)
 - [Serverless (FaaS) vs. Containers - when to pick which?](https://serverless.com/blog/serverless-faas-vs-containers/)
+
+**Thanks to [@hotzgaspacho](https://twitter.com/hotgazpacho) for adding this to the post.*
