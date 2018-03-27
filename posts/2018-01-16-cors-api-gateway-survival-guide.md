@@ -75,7 +75,7 @@ If you want the quick and dirty way to solve CORS in your Serverless application
         statusCode: 200,
         headers: {
           'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Credentials': '*',
+          'Access-Control-Allow-Credentials': true,
         },
         body: JSON.stringify({
           product: product
@@ -94,7 +94,7 @@ If you want the quick and dirty way to solve CORS in your Serverless application
         statusCode: 200,
         headers: {
           'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Credentials': '*',
+          'Access-Control-Allow-Credentials': true,
         },
         body: JSON.stringify({
           product: product
@@ -227,7 +227,7 @@ module.exports.getProduct = (event, context, callback) => {
     statusCode: 200,
     headers: {
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': '*',
+      'Access-Control-Allow-Credentials': true,
     },
     body: JSON.stringify({
       product: product
@@ -246,7 +246,7 @@ module.exports.createProduct = (event, context, callback) => {
     statusCode: 200,
     headers: {
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': '*',
+      'Access-Control-Allow-Credentials': true,
     },
     body: JSON.stringify({
       product: product
@@ -363,7 +363,7 @@ module.exports.getProduct = (event, context, callback) => {
     statusCode: 200,
     headers: {
       'Access-Control-Allow-Origin': 'https://myorigin.com', // <-- Add your specific origin here
-      'Access-Control-Allow-Credentials': '*',
+      'Access-Control-Allow-Credentials': true,
     },
     body: JSON.stringify({
       product: product
@@ -394,7 +394,7 @@ module.exports.getProduct = (event, context, callback) => {
   if (ALLOWED_ORIGINS.includes(origin) {
     headers: {
       'Access-Control-Allow-Origin': origin,
-      'Access-Control-Allow-Credentials': '*',
+      'Access-Control-Allow-Credentials': true,
     },
   } else {
       headers: {
