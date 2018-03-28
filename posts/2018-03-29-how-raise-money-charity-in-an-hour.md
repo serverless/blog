@@ -40,7 +40,9 @@ One trip to the store later, and Felix and I had:
 
 In total, Serverless invested $43 on supplies. 
 
-The charity we settled on was GLIDE’s meal program. GLIDE serves 2,000 meals a day, and $5 sponsors an entire meal. Being someone that loves metrics, I thought having a metric ($5 sponsors an entire meal) would encourage people to give $5 instead of $1 or $2.
+The charity we settled on was [GLIDE’s meal program](https://www.glide.org/feedthehungry). GLIDE serves 2,000 meals a day, and $5 sponsors an entire meal. Being someone who loves metrics, I thought having a baseline number like $5 would encourage people to donate more than just $1 or $2.
+
+<image src="">https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/donation-cart/glide.png>
 
 ## Solidifying the details
 
