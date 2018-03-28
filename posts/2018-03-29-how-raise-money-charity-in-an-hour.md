@@ -86,6 +86,6 @@ I feel there are two types of people who work in co-working spaces: those who kn
 
 Going up to strangers and saying “Hi, I’m Molly” takes a lot of energy for me. But pushing around the donation cart with a coworker gave me an easy way to meet almost the entire office.
 
-Because of this realization, we’ve decided to incorporate the donation cart into Serverless’ new employee orientation. Each orientation group will pick a charity and drink to bring around the office so that they too can meet their officemates and start off their Serverless experience with a bang. 
+Because of this realization, we’ve decided to incorporate volunteering into Serverless’ new employee orientation. Each orientation group will pick a charity and event to give back to the community and start off their Serverless experience with a bang.
 
 All in all, this was a super easy way to give back, and I’d highly encourage anyone who’s looking for a simple afternoon community project with great purpose to consider it.
