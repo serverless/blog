@@ -1,6 +1,6 @@
 ---
 title: "How we raised over $400 for charity in an hour"
-description: "The Serverless team gets philanthropic--how your company can also raise over $400 for charity in an hour."
+description: "Want to do something to give back to your community? Here's how the Serverless team raised over $400 for charity in an hour."
 date: 2018-03-29
 layout: Post
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/donation-cart/molly-felix.png"
