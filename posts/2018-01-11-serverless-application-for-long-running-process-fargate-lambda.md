@@ -231,7 +231,7 @@ Let's review what we just configured. You can see all the settings in the screen
 
 Click the 'Create' button to create the container definition, task definition, service and the cluster.
 
-That should display a screen with all the items showing as 'complete'. You can trhen click on the 'View Service' button to view the service that was created:
+That should display a screen with all the items showing as 'complete'. You can then click on the 'View Service' button to view the service that was created:
 
 ![Setup Complete](https://user-images.githubusercontent.com/8188/34741644-4eec4900-f551-11e7-91e0-24173807dbc8.png)
 *Figure 12*: Setup Complete
