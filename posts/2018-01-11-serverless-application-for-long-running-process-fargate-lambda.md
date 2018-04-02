@@ -370,7 +370,7 @@ Let's click on the task under the column 'Task'. We can see the details of the t
 ![Running Task Details](https://user-images.githubusercontent.com/8188/34742073-f0140cae-f552-11e7-85bc-dc3ec34ed6c0.png)
 *Figure 22*: Running Task Details
 
-Once the 'Last status' field changes to 'STOPPED', you can swithc to the 'Logs' tab to see the logs of the execution output:
+Once the 'Last status' field changes to 'STOPPED', you can switch to the 'Logs' tab to see the logs of the execution output:
 
 ![Log Output](https://user-images.githubusercontent.com/8188/34742331-cade8c88-f553-11e7-9cec-82c980169c0d.png)
 *Figure 23*: Log output
