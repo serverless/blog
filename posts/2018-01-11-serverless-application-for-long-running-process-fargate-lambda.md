@@ -267,7 +267,7 @@ To be able to run our task and support the application, we need to create a coup
     }
     ``` 
 3. Under that bucket, we need a folder where the thumbnails extracted from the video file will be uploaded. We will need to manually create a folder with the name we have in the setting `"thumbnails_folder": "<your-thumbnail-folder-name>"`.
-4. Test the above changes by uploadinhg a file to this bucket and then accessing it by its public url from a browser. If you can view the file, you are all set.
+4. Test the above changes by uploading a file to this bucket and then accessing it by its public url from a browser. If you can view the file, you are all set.
 
 ## IAM Roles & Policies 
 
