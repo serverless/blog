@@ -1,6 +1,6 @@
 ---
-title: "AWS Lambda Node 8 support: what it changes for serverless developers"
-description: "AWS Lambda just moved to support Node 8. This is what serverless developers need to know."
+title: "AWS Lambda Node.js 8 support: what it changes for serverless developers"
+description: "AWS Lambda just moved to support Node.js 8. This is what serverless developers need to know."
 date: 2018-04-02
 layout: Post
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/node8/node8-thumb.png"
