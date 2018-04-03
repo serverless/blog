@@ -8,7 +8,7 @@ authors:
   - DavidWells
 ---
 
-<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/node8/nodejs8.jpg">
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/node8/nodejs8-full.jpg">
 
 Node 8 support for AWS Lambda is here!
 
