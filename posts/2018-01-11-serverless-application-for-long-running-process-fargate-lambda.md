@@ -231,7 +231,7 @@ Let's review what we just configured. You can see all the settings in the screen
 
 Click the 'Create' button to create the container definition, task definition, service and the cluster.
 
-That should display a screen with all the items showing as 'complete'. You can trhen click on the 'View Service' button to view the service that was created:
+That should display a screen with all the items showing as 'complete'. You can then click on the 'View Service' button to view the service that was created:
 
 ![Setup Complete](https://user-images.githubusercontent.com/8188/34741644-4eec4900-f551-11e7-91e0-24173807dbc8.png)
 *Figure 12*: Setup Complete
@@ -267,7 +267,7 @@ To be able to run our task and support the application, we need to create a coup
     }
     ``` 
 3. Under that bucket, we need a folder where the thumbnails extracted from the video file will be uploaded. We will need to manually create a folder with the name we have in the setting `"thumbnails_folder": "<your-thumbnail-folder-name>"`.
-4. Test the above changes by uploadinhg a file to this bucket and then accessing it by its public url from a browser. If you can view the file, you are all set.
+4. Test the above changes by uploading a file to this bucket and then accessing it by its public url from a browser. If you can view the file, you are all set.
 
 ## IAM Roles & Policies 
 
@@ -370,7 +370,7 @@ Let's click on the task under the column 'Task'. We can see the details of the t
 ![Running Task Details](https://user-images.githubusercontent.com/8188/34742073-f0140cae-f552-11e7-85bc-dc3ec34ed6c0.png)
 *Figure 22*: Running Task Details
 
-Once the 'Last status' field changes to 'STOPPED', you can swithc to the 'Logs' tab to see the logs of the execution output:
+Once the 'Last status' field changes to 'STOPPED', you can switch to the 'Logs' tab to see the logs of the execution output:
 
 ![Log Output](https://user-images.githubusercontent.com/8188/34742331-cade8c88-f553-11e7-9cec-82c980169c0d.png)
 *Figure 23*: Log output
