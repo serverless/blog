@@ -24,7 +24,7 @@ There's not a "best language for serverless" winner yet, and given the limitatio
 
 ## Getting started
 
-I started by working through [Maciej Winnicki's initial Golang example](https://serverless.com/blog/framework-example-golang-lambda-support/). After that, it seemed like a good next step was to build upon it, and produce a full CRUDL example that backed the functions with DynamoDB.
+I started by working through [Maciej Winnicki's initial Golang example](https://serverless.com/blog/framework-example-golang-lambda-support/). After that, it seemed like a good next step was to build upon it, and produce a full CRUDL example that backend the functions with DynamoDB.
 
 AWS had a nice [example of using Golang to interact with DynamoDB](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/go/example_code/dynamodb), so all I did was repurpose that code so that it was called from within Lambda functions.
 
