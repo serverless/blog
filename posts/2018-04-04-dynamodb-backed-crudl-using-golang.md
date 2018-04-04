@@ -22,7 +22,7 @@ So when [AWS announced Golang support for Lambda](https://aws.amazon.com/blogs/c
 
 After working through [Maciej Winnicki&#39;s initial Golang example](https://serverless.com/blog/framework-example-golang-lambda-support/), it seemed like a good next step was to build upon it to produce a full CRUDL example that backed the functions with DynamoDB.  To AWS&#39; credit, they have a nice [example of using Golang to interact with DynamoDB](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/go/example_code/dynamodb), so all I did was repurpose that code so that was called from within Lambda functions.
 
-You can try it out yourself, but the basic structure is that I put each function in its own .go file. Then I centralized all the DynamoDB code in its own file in an attempt to isolate it in case I later wanted to swap in a different data store.  That gave me a comfortable separation of powers where the function code dealt with the interaction with API Gateway objects while the DAO file handled data.
+[You can try it out yourself](https://github.com/nerdguru/go-sls-crud), but the basic structure is that I put each function in its own .go file. Then I centralized all the DynamoDB code in its own file in an attempt to isolate it in case I later wanted to swap in a different data store.  That gave me a comfortable separation of powers where the function code dealt with the interaction with API Gateway objects while the DAO file handled data.
 
 I&#39;m not entirely convinced that I got the file structure right, but it&#39;s functional and this more complete example gave me a decent view into the good and bad of Golang.
 
