@@ -8,40 +8,62 @@ authors:
   - PeteJohnson
 ---
 
-## DynamoDB-backed CRUDL in Golang
+This post is going to revolve around my adventure of building a working CRUDL serverless example in Golang. But first, some quick background about how and why I got here.
 
-For a software engineer, I&#39;m kinda old.  Not punchcard old, but audio-cassettes-as-storage old.  It&#39;s no surprise, then, that I&#39;ve used a lot of different languages.  BASIC, Pascal, COBOL, assembler, C, C++, LISP, Smalltalk, Java, Javascript/Node, a little bit of Python/PHP, and an alphabet soup of .NET variants, to be exact.
+## Why I decided to experiment with Golang
 
-[I did my first Lambda project in Java](https://fmlnerd.com/2016/08/16/30k-page-views-for-0-21-a-serverless-story/) because I didn&#39;t want to have to get proficient in a new language while I was also learning a new platform.  Cold start issues didn&#39;t plague me too much since all of my processing was back end batch data collection and massaging, but it was pretty clear what Java&#39;s limitations were for user-facing Lambda projects.
+Let's just say—for a software engineer, I'm kinda old. Not punchcard old, but audio-cassettes-as-storage old. It's no surprise, then, that I've used a lot of different languages: BASIC, Pascal, COBOL, assembler, C, C++, LISP, Smalltalk, Java, Javascript/Node, a little bit of Python/PHP, and an alphabet soup of .NET variants, to be exact.
 
-Like many others, I have a love/hate relationship with Node.js.   [My second Lambda project](http://functionrouter.com/) used it and while I love how easy it is to find and use new packages with _npm_, I just really can&#39;t get past all the hoops you have to jump through to deal with callback hell.  While it is great for other tasks, it just doesn&#39;t make sense to me to have to deal with concurrency in some form when building stateless functions that almost never need it.
+I did my [first Lambda project](https://fmlnerd.com/2016/08/16/30k-page-views-for-0-21-a-serverless-story/) in Java, because I didn't want to have to get proficient in a new language while I was also learning a new platform. Even though the cold start issues didn't plague me too much—all of my processing was backend batch data collection and massaging—it was pretty clear that Java had limitations for user-facing Lambda projects.
 
-So when [AWS announced Golang support for Lambda](https://aws.amazon.com/blogs/compute/announcing-go-support-for-aws-lambda/), my friends at the [Serverless Framework added support for it almost immediately](https://serverless.com/blog/framework-example-golang-lambda-support/), and some [really good performance numbers for Golang Lambda functions](https://hackernoon.com/aws-lambda-go-vs-node-js-performance-benchmark-1c8898341982) started to get published, I was intrigued.  There&#39;s not a &quot;best language for serverless&quot; winner yet and given limitations I ran into my first two legitimate tries, I thought it was worth some time to try out Golang.
+So for [my second Lambda project](http://functionrouter.com/), I used Node.js. Like many others, I had a love/hate relationship with Node. And while I loved how easy it was to find and use new packages with _npm_, I really couldn't get past all the hoops I had to jump through to deal with callback hell. While Node is great for other tasks, it just doesn't make sense to deal with concurrency in some form when building stateless functions that almost never need it.
 
-## What I Did
+So when (1) AWS announced Golang support for Lambda, (2) my friends at the [Serverless Framework added support for it almost immediately](https://serverless.com/blog/framework-example-golang-lambda-support/), and (3) some [really good performance numbers for Golang Lambda functions](https://hackernoon.com/aws-lambda-go-vs-node-js-performance-benchmark-1c8898341982) started to get published, I was intrigued.
 
-After working through [Maciej Winnicki&#39;s initial Golang example](https://serverless.com/blog/framework-example-golang-lambda-support/), it seemed like a good next step was to build upon it to produce a full CRUDL example that backed the functions with DynamoDB.  To AWS&#39; credit, they have a nice [example of using Golang to interact with DynamoDB](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/go/example_code/dynamodb), so all I did was repurpose that code so that was called from within Lambda functions.
+There's not a "best language for serverless" winner yet, and given the limitations I ran into my first two legitimate tries, I thought it was worth my while to give Golang a test run.
 
-[You can try it out yourself](https://github.com/nerdguru/go-sls-crud), but the basic structure is that I put each function in its own .go file. Then I centralized all the DynamoDB code in its own file in an attempt to isolate it in case I later wanted to swap in a different data store.  That gave me a comfortable separation of powers where the function code dealt with the interaction with API Gateway objects while the DAO file handled data.
+## Getting started
 
-I&#39;m not entirely convinced that I got the file structure right, but it&#39;s functional and this more complete example gave me a decent view into the good and bad of Golang.
+I started by working through [Maciej Winnicki's initial Golang example](https://serverless.com/blog/framework-example-golang-lambda-support/). After that, it seemed like a good next step was to build upon it, and produce a full CRUDL example that backed the functions with DynamoDB.
 
-## What I Liked/Disliked
+AWS had a nice [example of using Golang to interact with DynamoDB](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/go/example_code/dynamodb), so all I did was repurpose that code so that it was called from within Lambda functions.
 
-It was nice to have a compiler back after spending a few years with interpretive languages.  I knew I&#39;d make syntactical mistakes and there was something comforting about the precision a compiler message gives you without the overhead of spinning up your whole binary first.  In particular, I like how the Golang compiler considers an import you don&#39;t need to be an error, helping reduce the size of your eventual upload to Lambda.
+### The application structure
 
-In order for Golang to scale for me, though, I&#39;d have to be smarter about the structure of the _makefile_.  For noob level development like I was doing, having it compile every function every time was fine but back in my C++ days it was sure handy to have a _makefile_ that was smart enough to only recompile things that changed.
+The overview below will be general, but feel free to check out all the code on GitHub: [`go-sls-crud`](https://github.com/nerdguru/go-sls-crud).
 
-Productivity got a lot better when I switched from [IntelliJ&#39;s Golang plugin](https://plugins.jetbrains.com/plugin/5047-go-language-golang-org-support-plugin) to [Atom&#39;s](https://atom.io/packages/go-plus).  I found the linter to be a bit more powerful in Atom, although if I were to continue with Golang I&#39;d spend some time figuring out how to get it to compile upon change using my _makefile_ instead of its default install behavior.
+Here's the basic structure.
 
-The hardest part of this early Golang learning curve was figuring out how to segment code into different files and as I mentioned earlier, I&#39;m still not certain I&#39;m doing it right.  I wanted to put all the DAO-like code that interacted with DynamoDB into one place so that it would be easier to swap it out for a different data store in the future if I wanted.  The path structure was difficult to follow and I had trouble finding good examples but eventually got it functional.
+I put each function in its own `.go` file. Then, I centralized all the DynamoDB code in its own file, to isolate it in case I wanted to swap in a different data store later. That gave me a comfortable separation of powers: the function code dealt with the interaction with API Gateway objects, and the DAO file handled data.
 
-Overall, though, I really liked how Golang minimizes the amount of code you have to write.  Once I overcame the path structure issue and got used to the syntax, progress came quickly.
+I'm not entirely convinced that I got the file structure right, but it's functional, and this more complete example gave me a decent view into the good and bad of Golang.
 
-## Stuff I Still Need to Learn and What&#39;s Next?
+## Golang: the good and the bad
 
-I stopped short of working in unit or system tests for this little CRUDL example, but those are the obvious next steps in the march towards a full-blown CI/CD toolchain example.  As someone whose career started before test-driven development was a thing, I tend to favor system testing over unit testing because it tends to tell you more about the production readiness of your code given the full interaction you get from all your components, so if I were to continue I&#39;d build some sort of endpoint testing suite [like the one I started to build for Node over a year ago](https://serverless.com/blog/cicd-for-serverless-part-1/).
+It was nice to have a compiler back after spending a few years with interpretive languages.
 
-Alternatively, I was really impressed with [Siddharth Gupta&#39;s GraphQL example](https://serverless.com/blog/running-scalable-reliable-graphql-endpoint-with-serverless/) and think it would be fun to try to build a Golang, GraphQL, serverless CRUDL example (and win Buzzword Bingo in the process 8)).  That would provide a nice foundation for the larger killer app example I think the serverless community is missing to win over more converts.  Something like a serverless, GraphQL version of WordPress or Discourse would provide a bridge between an application a larger number of people understand and a new way of architecting it with serverless to lower costs and make easier to iterate over given the smaller pieces.
+I knew I'd make syntactical mistakes, and it was comforting to know that the compiler message gives you precision without the overhead of spinning up your whole binary first. I really like how the Golang compiler considers an import you don't need to be an error, helping reduce the size of your eventual upload to Lambda.
 
-I&#39;d love to hear some thoughts or suggestions on what might make sense, as the serverless revolution continues to gain ground.
+In order for Golang to scale for me, though, I'd have to be smarter about the structure of the `makefile`.  For noob level development like I was doing, having it compile every function every time was fine. But back in my C++ days, it was sure handy to have a `makefile` that was smart enough to only recompile things that changed.
+
+Productivity got a lot better when I switched from [IntelliJ's Golang plugin](https://plugins.jetbrains.com/plugin/5047-go-language-golang-org-support-plugin) to [Atom's](https://atom.io/packages/go-plus). I found the linter to be a bit more powerful in Atom. If I were to continue with Golang, though, I'd spend some time figuring out how to get it to compile upon change using my `makefile` instead of its default install behavior.
+
+The hardest part of this early Golang learning curve was figuring out how to segment code into different files. And frankly, I'm still not certain I'm doing it right.
+
+I wanted to put all the DAO-like code that interacted with DynamoDB into one place so that it would be easier to swap it out for a different data store in the future. The path structure was difficult to follow, and I had trouble finding good examples. But I did eventually get it functional.
+
+### In sum?
+
+Overall, I really liked how Golang minimized the amount of code I had to write. Once I overcame the path structure issue and got used to the syntax, progress came quickly.
+
+## Stuff I still need to learn, & what's next
+
+I stopped short of working in unit or system tests for this little CRUDL example, but those are the obvious next steps in the march towards a full-blown CI/CD toolchain example.
+
+As someone whose career started before test-driven development was a thing, I tend to favor system testing over unit testing; it tells you more about the production readiness of your code given the full interaction you get from all your components. If I were to continue with this project, I'd build some sort of endpoint testing suite ([like the one I started to build for Node over a year ago](https://serverless.com/blog/cicd-for-serverless-part-1/)).
+
+Alternatively, I was really impressed with [Siddharth Gupta's GraphQL example](https://serverless.com/blog/running-scalable-reliable-graphql-endpoint-with-serverless/), and think it would be fun to try to build a Golang, GraphQL, serverless CRUDL example (and win Buzzword Bingo in the process 🤓).
+
+That would provide a nice foundation for the larger killer app example I think the serverless community is missing. Something like a serverless, GraphQL version of WordPress or Discourse. This would provide a bridge between an application most people understand, and a new way of architecting it with serverless—to both lower costs and make easier to iterate over.
+
+I'd love to hear some thoughts or suggestions on what might make sense, as the serverless revolution continues to gain ground.
