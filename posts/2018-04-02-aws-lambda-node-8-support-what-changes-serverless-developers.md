@@ -125,3 +125,7 @@ If this is your `package.json`:
 You can simply run `npm run deploy` to deploy the function to Lambda; no need to have anything installed globally on your machine.
 
 [Check this video](https://www.youtube.com/watch?v=55WaAoZV_tQ) for a full rundown.
+
+### Further reading:
+
+- [Deploy a REST API using Serverless, Express, and Node.js](https://serverless.com/blog/serverless-express-rest-api/)
