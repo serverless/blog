@@ -10,7 +10,7 @@ authors:
 
 <image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Casey's+Blog+Posts/remote-worker-small.jpg">
 
-<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px;" href="https://unsplash.com/@anniespratt?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Annie Spratt"><span style="display:inline-block;padding:2px 3px;"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white;" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px;">Annie Spratt</span></a>
+Photo by [Annie Spratt](https://unsplash.com/photos/g9KFpAfQ5bc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)
 
 Recruiting in San Francisco is a full contact sport, and the data seems to suggest that finding great talent is only going to get more difficult. 
 
@@ -44,6 +44,10 @@ InvisionApp has been 100% distributed from day one and now has about 500 employe
 
 Elastic.co has over 800 employees distributed across two main hubs, one in Amsterdam, The Netherlands and the other in Mountain View, California, USA and throughout regional offices in London, Berlin, Phoenix, Hong Kong, and Sydney as well as team members who are 100% distributed and don't work out of any office regularly.
 
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Casey's+Blog+Posts/computer-with-code.jpg">
+  
+Photo by [Farzad Nazifi](https://unsplash.com/photos/p-xSl33Wxyc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)                                                                              
+
 ## Now: what are the takeaways from the panel?
 
 ### Time zone management
@@ -73,6 +77,10 @@ When asked about how distributed companies can compete with the perks more tradi
 It's this focus on paying employees well, and giving them the freedom to manage their time as they see fit, that has given these companies a definite recruiting advantage when looking for talent.
 
 The distributed team may also prove more inclusive for a variety of employees. "Distributed teams make it easier to pick up kids from school, or balance work life with the caretaking of a loved one," said Mullenweg.
+
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Casey's+Blog+Posts/team-working-at-table.jpg">
+ 
+ Photo by [Annie Spratt](https://unsplash.com/photos/hCb3lIB8L8E?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)
 
 ### Integrating cultural values globally
 
