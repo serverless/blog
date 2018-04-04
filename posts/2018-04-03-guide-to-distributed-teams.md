@@ -3,14 +3,12 @@ title: Strategies for working with remote and distributed teams
 description: 'Distributed teams allow you to hire the best people from over the world. Here are some lessons learned, and how-tos, for doing them right.'
 date: 2018-04-04
 layout: Post
-Thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Casey's+Blog+Posts/remote-worker-thumb.jpg"
+Thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/remote-worker-thumb.jpg"
 authors:
   - CaseyShultz
 ---
 
 <image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Casey's+Blog+Posts/remote-worker-small.jpg">
-
-Photo by [Annie Spratt](https://unsplash.com/photos/g9KFpAfQ5bc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)
 
 Recruiting in San Francisco is a full contact sport, and the data seems to suggest that finding great talent is only going to get more difficult. 
 
@@ -28,9 +26,14 @@ I attended, and learned a lot. If you're facing the same pain points as me and m
 
 ### The experts
 
-The panel was star-studded.
+The panel was star-studded:
 
-**Merrit Anderson**, VP, Employee Experience and Engagement at Github; **Shelby Wolpa**, VP of People Operations at InvisionAPP; **Leah Sutton**, VP Global HR at Elastic; and **Matt Mullenweg**, CEO at Automattic. They all sat down to discuss how their respective companies are approaching distributed workforces.
+- Merrit Anderson, VP, Employee Experience and Engagement at Github
+- Shelby Wolpa, VP of People Operations at InvisionAPP
+- Leah Sutton, VP Global HR at Elastic
+- Matt Mullenweg, CEO at Automattic
+
+They all sat down to discuss how their respective companies are approaching distributed workforces.
 
 ### The different approaches to distributed teams
 
@@ -44,10 +47,7 @@ InvisionApp has been 100% distributed from day one and now has about 500 employe
 
 Elastic.co has over 800 employees distributed across two main hubs, one in Amsterdam, The Netherlands and the other in Mountain View, California, USA and throughout regional offices in London, Berlin, Phoenix, Hong Kong, and Sydney as well as team members who are 100% distributed and don't work out of any office regularly.
 
-<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Casey's+Blog+Posts/computer-with-code.jpg">
-  
-Photo by [Farzad Nazifi](https://unsplash.com/photos/p-xSl33Wxyc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)                                                                              
-
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Casey's+Blog+Posts/computer-with-code.jpg">                                                                           
 ## Now: what are the takeaways from the panel?
 
 ### Time zone management
@@ -79,8 +79,6 @@ It's this focus on paying employees well, and giving them the freedom to manage 
 The distributed team may also prove more inclusive for a variety of employees. "Distributed teams make it easier to pick up kids from school, or balance work life with the caretaking of a loved one," said Mullenweg.
 
 <image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Casey's+Blog+Posts/team-working-at-table.jpg">
- 
- Photo by [Annie Spratt](https://unsplash.com/photos/hCb3lIB8L8E?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)
 
 ### Integrating cultural values globally
 
@@ -101,3 +99,5 @@ Choosing to go distributed definitely has its benefits, but it also has some sig
 The teams on the panel seemed to have created company policies that address a lot of this. InvisionApp does all meetings via Zoom, and Automattic is very clear that they are a Slack first company who eschews traditional email. "That's why it takes me a month to respond to emails," said Mullenweg. "They're all from people outside of the company."
 
 But if the alternative is competing for the ever dwindling pool of talent in San Francisco, and having to pay astronomical wages to combat the insane cost of living here, then choosing to go distributed may become less of a choice and more of a necessity.
+
+*Photo credits to: [Annie Spratt](https://unsplash.com/photos/g9KFpAfQ5bc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) and [Farzad Nazifi](https://unsplash.com/photos/p-xSl33Wxyc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)*
