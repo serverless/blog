@@ -8,29 +8,21 @@ authors:
   - GoncaloNeves
 ---
 
-# Introduction
+Cold starts in AWS Lambda got you down? You've come to the right place.
 
-*Cold start in computing = duration of time it takes to boot a system* 
+In this post, I'll briefly cover what cold starts are, and then show you some ways to reduce your cold start times. Read on!
 
-In this blog post we'll tackle this issue with AWS Lambda + Serverless.
+## First: what is a cold start? ❄️
 
-## Cold Start in Serverless ❄️ *- problem*
+When running a serverless function, it will stay active (a.k.a., hot) as long as you're running it. Your container stays alive, ready and waiting for execution.
 
-The *Function-as-a-Service (FaaS)* paradigm allows developers to do more than ever with less resources. Unfortunately, cold starts can be an issue.
+After a period of inactivity, your cloud provider will drop the container, and your function will become inactive, (a.k.a., cold).
 
-**What is a cold start in Serverless?**
+A cold start happens when you execute an inactive function. The delay comes from your cloud provider provisioning your selected runtime container and then running your function.
 
-A cold start happens when you execute an inactive *(cold)* function for the first time. It occurs while your cloud provider provisions your selected runtime container and then runs your function. This process, referred to as a *cold start*, will increase your execution time considerably.
+In a nutshell, this process will considerably increase your execution time.
 
-While you're actually running your function it will stay active *(hot)*, meaning your container stays alive - ready and waiting for execution. But eventually after a period of inactivity, your cloud provider will drop the container and your function will become *cold* again. 
-
-**Where are the bottlenecks and when?**
-
-Knowing your service performance bottleneck is essential. Which functions are slowing down and when? From small to big services, it's common to find one function that slows down your service logic because it doesn't run as often as needed to keep its container alive.
-
-One of our cold functions was the reset email service during off-peak hours. It took on average more than double the amount of time to get the reset password email from UTC+1 23:00 to UTC+1 06:00 (London).
-
-**Understanding AWS cold starts:**
+### Understanding AWS cold starts
 
 When using AWS Lambda, provisioning of your function's container can take >5 seconds. That makes it impossible to guarantee <1 second responses to events such as API Gateway, DynamoDB, CloudWatch, S3, etc.
 
@@ -39,27 +31,37 @@ When using AWS Lambda, provisioning of your function's container can take >5 sec
 - Lambda within a private VPC increases container initialization time
 - Containers are not reused after ~15 minutes of inactivity
 
-## Make them warm ♨ *- solution*
+## How to make them warm ♨
 
-To solve this problem in a couple of *cold* Lambdas [@Fidel](https://fidel.uk) I wrote a plugin called [serverless-plugin-warmup](https://github.com/FidelLimited/serverless-plugin-warmup) that allows you to keep all your Lambdas hot.
+Ready to combat those cold starts? Here's how you do it.
 
-WarmUP does this by creating one scheduled event Lambda that invokes all the Lambdas you select in a configured time interval (default: 5 minutes) or a specific time, forcing your containers to stay alive. 
+### Find out: where are the bottlenecks, and when?
 
-## WarmUP Plugin *- installation*
+To fix cold start problems, knowing your service performance bottleneck is essential. From small to big services, it's common to find one function that slows down your service logic because it doesn't run often enough to keep its container alive.
 
- Install via npm in the root of your Serverless service:
+For example, one of my own cold functions was a reset email service during off-peak hours. From UTC+1 23:00 to UTC+1 06:00 (London), it took more than *double* the amount of time to get a reset password email.
+
+### Then: use the cold starts plug-in for the Serverless Framework
+
+I got sick of cold starts on my Lambdas at [@Fidel](https://fidel.uk), so I wrote a plugin called [serverless-plugin-warmup](https://github.com/FidelLimited/serverless-plugin-warmup) that allows you to keep all your Lambdas hot. (YES.)
+
+WarmUP does this by creating a scheduled event Lambda that invokes all the Lambdas you select in a configured time interval (default: 5 minutes) or a specific time, forcing your containers to stay alive.
+
+### Installing the WarmUP plugin
+
+Install via npm in the root of your Serverless service:
 ```
 npm install serverless-plugin-warmup --save-dev
 ```
 
-* Add the plugin to the `plugins` array in your Serverless `serverless.yml`:
+Add the plugin to the `plugins` array in your Serverless `serverless.yml`:
 
 ```yml
 plugins:
   - serverless-plugin-warmup
 ```
 
-* Add `warmup: true` property to all functions you want to be warm:
+Add `warmup: true` property to all functions you want to be warm:
 
 ```yml
 functions:
@@ -67,7 +69,7 @@ functions:
     warmup: true
 ```
 
-* WarmUP to be able to `invoke` lambdas requires the following Policy Statement in `iamRoleStatements`:
+In order for WarmUP to be able to `invoke` lambdas, you'll also need to set the following Policy Statement in `iamRoleStatements`:
 
 ```yaml
 iamRoleStatements:
@@ -77,7 +79,7 @@ iamRoleStatements:
     Resource: "*"
 ```
 
-* Add an early callback call when the event source is `serverless-plugin-warmup`. You should do this early exit before running your code logic, it will save your execution duration and cost.
+Add an early callback call when the event source is `serverless-plugin-warmup`. You should do this early exit before running your code logic, it will save your execution duration and cost.
 
 ```javascript
 module.exports.lambdaToWarm = function(event, context, callback) {
@@ -95,6 +97,9 @@ Perfect! Now all of your Lambdas are hot, and you have less to worry about.
 
 You can find more info [here](https://github.com/FidelLimited/serverless-plugin-warmup#options) about options, event source and estimated cost. 
 
-## Provider support *- future*
+## Additional provider support?
 
-I only work with AWS, so adding support for other providers is a welcome contribution! 
+I only work with AWS, so adding support for other providers is a welcome contribution!
+
+For more on how to contribute to the Serverless Framework open source project, check this post:
+- [How to contribute to Serverless open source projects](https://serverless.com/blog/how-contribute-to-serverless-open-source/)
