@@ -3,7 +3,7 @@ title: "Serverless Champions: 2018 winners"
 description: Serverless Champions are leaders in the Serverless Community. Meet our 2018 community heroes.
 date: 2018-04-10
 layout: Post
-thumbnail: "TODO"
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/champions/champion_logo_square.png
 authors:
   - RupakGanguly
 ---
