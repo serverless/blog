@@ -18,13 +18,15 @@ I did my [first Lambda project](https://fmlnerd.com/2016/08/16/30k-page-views-fo
 
 So for [my second Lambda project](http://functionrouter.com/), I used Node.js. Like many others, I had a love/hate relationship with Node. And while I loved how easy it was to find and use new packages with _npm_, I really couldn't get past all the hoops I had to jump through to deal with callback hell. While Node is great for other tasks, it just doesn't make sense to deal with concurrency in some form when building stateless functions that almost never need it.
 
+### And then came Golang
+
 So when (1) AWS announced Golang support for Lambda, (2) my friends at the [Serverless Framework added support for it almost immediately](https://serverless.com/blog/framework-example-golang-lambda-support/), and (3) some [really good performance numbers for Golang Lambda functions](https://hackernoon.com/aws-lambda-go-vs-node-js-performance-benchmark-1c8898341982) started to get published, I was intrigued.
 
 There's not a "best language for serverless" winner yet, and given the limitations I ran into my first two legitimate tries, I thought it was worth my while to give Golang a test run.
 
 ## Getting started
 
-I started by working through [Maciej Winnicki's initial Golang example](https://serverless.com/blog/framework-example-golang-lambda-support/). After that, it seemed like a good next step was to build upon it, and produce a full CRUDL example that backend the functions with DynamoDB.
+I started by working through [Maciej Winnicki's initial Golang example](https://serverless.com/blog/framework-example-golang-lambda-support/). After that, it seemed like a good next step was to build upon it, and produce a full CRUDL example that backed the functions with DynamoDB.
 
 AWS had a nice [example of using Golang to interact with DynamoDB](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/go/example_code/dynamodb), so all I did was repurpose that code so that it was called from within Lambda functions.
 
