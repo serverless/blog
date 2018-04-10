@@ -8,7 +8,7 @@ authors:
   - RupakGanguly
 ---
 
-<image src="">
+![champions banner](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/images/champions/champions_banner.jpg)
 
 Perhaps you remember, late last year, when we [announced the beginnings of the Serverless Champions program](https://serverless.com/blog/announcing-first-cohort-serverless-champions-2017/).
 
@@ -20,7 +20,7 @@ A Serverless Champion is a hero in the serverless community. They contribute to 
 
 **Aside:** If you, too, want to contribute to open-source, [check out our handy guide](https://serverless.com/blog/how-contribute-to-serverless-open-source/).
 
-## Announcing: our first round of Serverless Champions for 2018
+## Announcing: Our first round of Serverless Champions for 2018
 
 We conducted interviews with all three winners, and we’re including some of our favorite excerpts here. To see the interviews in their entirety (which you should!), head on over to our [Champions page](https://serverless.com/community/champions/).
 
@@ -66,7 +66,7 @@ I'm sure that we'll continue to see a large shift towards serverless systems ove
 
 ### Rowan Udell
 
-<img align="left" src="https://s3.console.aws.amazon.com/s3/object/assets.site.serverless.com/images/champions/2018/rowan-udell.jpg?region=us-west-2&tab=overview" width="210px">
+<img align="left" src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/images/champions/2018/rowan-udell.jpg" width="210px">
 
 Rowan has been involved with the Serverless Framework since it was called [JAWS](https://vimeo.com/141138561). In addition to speaking on AWS and Serverless all across Sydney, he maintains a blog where he teaches others worldwide about serverless. He’s even created his own [serverless chatbot course](http://blog.rowanudell.com/the-serverless-framework-build-a-chatbot/).
 
