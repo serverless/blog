@@ -46,7 +46,7 @@ Then I met Austen Collins at the first ServerlessConf in New York a few days lat
 
 <img align="left" src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/images/champions/2018/frank-schmid.jpg" width="210px">
 
-Frank is a core maintainer of the Serverless Framework, and is incredibly proactive about stepping in on GitHub issues, and joining discussions on the forums and in Serverless Slack channels. He uses the Serverless Framework daily for his job at Stashimi. 
+Frank is a core maintainer of the Serverless Framework, is incredibly proactive about stepping in on GitHub issues, and joining discussions on the forums and in Serverless Slack channels. He uses the Serverless Framework daily for his job at Stashimi. He is also author/maintainer of [serverless-webpack](https://github.com/serverless-heaven/serverless-webpack).
 
 **Q: What are your thoughts on what is keeping serverless architectures to be adopted widely by organizations?**
 
