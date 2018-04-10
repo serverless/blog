@@ -66,14 +66,14 @@ provider:
   name: aws
   runtime: nodejs 6.10
 
-plugin:
-- serverless-alexa-skills
+plugins:
+  - serverless-alexa-skills
 
 custom:
   alexa:
-    VendorId: ${env:AMAZON_VENDOR_ID}
-    ClientId: ${env:AMAZON_CLIENT_ID}
-    ClientSecret: ${env:AMAZON_CLIENT_SECRET}
+    vendorId: ${env:AMAZON_VENDOR_ID}
+    clientId: ${env:AMAZON_CLIENT_ID}
+    clientSecret: ${env:AMAZON_CLIENT_SECRET}
 ```
 
 Then, execute the following command:
@@ -112,7 +112,7 @@ Serverless:
 [Skill ID] amzn1.ask.skill.xxxxxx-xxxxxx-xxxxx
 [Stage] development
 [Skill Manifest]
-skillManifest:
+manifest:
   publishingInformation:
     locales:
       ja-JP:
@@ -127,12 +127,12 @@ Copy `[Skill ID]` and `[Skill Manifest]` and paste it to `serverless.yml` as bel
 ```yaml
 custom:
   alexa:
-    vendorId: $ {env:AMAZON_VENDOR_ID}
-    clientId: $ {env:AMAZON_CLIENT_ID}
-    clientSecret: $ {env:AMAZON_CLIENT_SECRET}
+    vendorId: ${env:AMAZON_VENDOR_ID}
+    clientId: ${env:AMAZON_CLIENT_ID}
+    clientSecret: ${env:AMAZON_CLIENT_SECRET}
     skills:
-      - id: $ {env:ALEXA_SKILL_ID}
-        skillManifest:
+      - id: ${env:ALEXA_SKILL_ID}
+        manifest:
           publishingInformation:
             locales:
               en-US:
@@ -165,7 +165,7 @@ custom:
     clientSecret: ${env:AMAZON_CLIENT_SECRET}
     skills:
       - id: ${env:ALEXA_SKILL_ID}
-        skillManifest:
+        manifest:
           publishingInformation:
             locales:
               en-US:
@@ -209,11 +209,11 @@ Serverless:
 [Interaction Model]
 interactionModel:
   languageModel:
-    invocationName: PPAP
+    invocationName: ppap
     intents:
       - name: PineAppleIntent
         slots:
-        - name: Fisrt
+        - name: First
           type: AMAZON.Food
         - name: Second
           type: AMAZON.Food
