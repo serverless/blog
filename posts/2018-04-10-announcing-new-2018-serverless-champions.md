@@ -1,5 +1,5 @@
 ---
-title: "Serverless Champions: 2018 winners"
+title: "Introducing our first cohort of 2018 Serverless Champions"
 description: Serverless Champions are leaders in the Serverless Community. Meet our 2018 community heroes.
 date: 2018-04-10
 layout: Post
