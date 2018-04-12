@@ -773,6 +773,22 @@ REPORT RequestId: 34f45684-3dd0-11e8-bf8a-7f961671b2de	Duration: 5147.00 ms	Bill
 
 Notice the lines about the database connection being open/closed, the request data structure going to DynamoDB and then the response coming back, and finally the response data structure that is being returned by our API code.
 
+## Removing the service
+
+At any point in time, if you want to remove the service from the cloud you can do the following:
+
+```bash
+$ sls remove
+
+Serverless: Getting all objects in S3 bucket...
+Serverless: Removing objects in S3 bucket...
+Serverless: Removing Stack...
+Serverless: Checking Stack removal progress...
+..................................................
+Serverless: Stack removal finished...
+```
+It will cleanup all the resources including IAM roles, the deployment bucket, the Lambda functions and will also delete the DynamoDB table.
+
 ## Summary
 
 To recap, we used Java to create a serverless REST API service, built it and then deployed it to AWS. We took a deep dive into the DAL code that handles the backend data mapping and access to the DynamoDB table. We also looked at the mapping between events, the API endpoints and the lambda function handlers in the service, all described intuitively in the `serverless.yml` file. 
