@@ -145,11 +145,11 @@ You can deploy this as it is right now with
 ../../bin/components deploy
 ```
 
+If you go into netlify and click into the newly created site, you should see the live landing page URL.
+
 ![image](https://user-images.githubusercontent.com/532272/38904159-a8b88c6a-425d-11e8-8db5-12939d666c4d.png)
 
-
 ### 2. Adding the Lambda Function for Sign Up
-
 
 Now we need to add a lambda function to handle for form submissions.
 
