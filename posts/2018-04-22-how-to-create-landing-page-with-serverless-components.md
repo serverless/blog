@@ -8,7 +8,7 @@ authors:
   - DavidWells
 ---
 
-# Building a landing page with serverless components & netlify
+# Building a landing page with serverless components
 
 [Serverless components](https://github.com/serverless/components) are a new way of composing together smaller bits of functionality into larger applications.
 
