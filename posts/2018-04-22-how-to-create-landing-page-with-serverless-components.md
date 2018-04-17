@@ -294,7 +294,7 @@ So we need to use the `siteEnvVars` input for the `netlify-site` component and p
 
 We do so like this:
 
-```
+```yml
 type: landing-page
 
 components:
