@@ -8,17 +8,25 @@ authors:
   - DavidWells
 ---
 
-# Building a landing page with serverless components
-
 [Serverless components](https://github.com/serverless/components) are a new way of composing together smaller bits of functionality into larger applications.
 
-In this tutorial we are going to walk through building a landing page with the serverless netlify & lambda components.
+In this tutorial we are going to walk through building a landing page with the serverless netlify and lambda components.
 
-The components we are using are:
+The three components we are using are:
 
 1. The netlify site component
-2. The AWS lambda component
+2. The AWS lambda component talking to the mailchimp API
 3. The Rest API component, which uses API gateway under the hood
+
+<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+undefined [Composing Components](#composing-components)
+- [1. Adding Netlify Site](#1-adding-netlify-site)
+- [2. Adding the Lambda Function for Sign Up](#2-adding-the-lambda-function-for-sign-up)
+- [3. Adding the Rest API to expose Lambda function](#3-adding-the-rest-api-to-expose-lambda-function)
+- [4. Expose the API endpoint to the Netlify Site](#4-expose-the-api-endpoint-to-the-netlify-site)
+- [Deploy](#deploy)
+- [Summary](#summary)
+<!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Getting Started
 
@@ -69,7 +77,7 @@ Okay, lets get the component setup.
 
 In `serverless.yml` we need to define the components we are using under the `components` key.
 
-The inputs the `netlify-site` component need can be seen HERE INSERT LINK
+The inputs the `netlify-site` component need can be [seen here](https://github.com/serverless/components/blob/738ec5d912d50d73f62ab94d0eeb3b634e792223/registry/netlify-site/README.md#input-types)
 
 ```yml
 # serverless.yml
@@ -133,11 +141,12 @@ Our landing page code + repo can be seen [here](https://github.com/serverless/ne
 
 You can deploy this as it is right now with
 
-```
+```bash
 ../../bin/components deploy
 ```
 
-INSERT LANDING PAGE IMAGE
+![image](https://user-images.githubusercontent.com/532272/38904159-a8b88c6a-425d-11e8-8db5-12939d666c4d.png)
+
 
 ### 2. Adding the Lambda Function for Sign Up
 
@@ -163,23 +172,107 @@ mkdir code
 touch handler.js
 ```
 
-Inside `handler.js` add your lambda code
+Inside `handler.js` add your lambda code. `code/handler.landingPageFunction` references the `hander.js` file with the exported `landingPageFunction` function.
 
 ```js
+const request = require('request')
+
+const mailChimpAPI = process.env.MAILCHIMP_API_KEY
+const mailChimpListID = process.env.MAILCHIMP_LIST_ID
+const mcRegion = process.env.MAILCHIMP_REGION
+
 module.exports.landingPageFunction = (event, context, callback) => {
-  console.log('Function ran!') // eslint-disable-line
-  return callback(null, {
-    statusCode: 201,
+  console.log('Function ran!')
+  const formData = JSON.parse(event.body)
+  const email = formData.email
+
+  if (!formData) {
+    console.log('No form data supplied')
+    return callback('fail')
+  }
+
+  if (!email) {
+    console.log('No EMAIL supplied')
+    return callback('fail')
+  }
+
+  if (!mailChimpListID) {
+    console.log('No LIST_ID supplied')
+    return callback('fail')
+  }
+
+  const data = {
+    email_address: email,
+    status: 'subscribed',
+    merge_fields: {}
+  }
+
+  const subscriber = JSON.stringify(data)
+  console.log('start to mailchimp', subscriber)
+
+  request({
+    method: 'POST',
+    url: `https://${mcRegion}.api.mailchimp.com/3.0/lists/${mailChimpListID}/members`,
+    body: subscriber,
     headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': true
-    },
-    body: JSON.stringify({
-      status: '⊂◉‿◉つ'
-    })
+      Authorization: `apikey ${mailChimpAPI}`,
+      'Content-Type': 'application/json'
+    }
+  }, (error, response, body) => {
+    if (error) {
+      return callback(error, null)
+    }
+    const bodyObj = JSON.parse(body)
+
+    if (response.statusCode < 300 || (bodyObj.status === 400 && bodyObj.title === 'Member Exists')) {
+      console.log('success added to list in mailchimp')
+      return callback(null, {
+        statusCode: 201,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true
+        },
+        body: JSON.stringify({
+          status: 'saved email ⊂◉‿◉つ'
+        })
+      })
+    }
+
+    console.log('error from mailchimp', response.body.detail)
+    return callback('fail')
   })
 }
+```
+
+Then we need to expose the `env` variables for the function to consume.
+
+You can grab your mail chimp API keys under Account > Extras.
+
+![image](https://user-images.githubusercontent.com/532272/38901904-fa57ff0c-4252-11e8-90ff-373e8f78b35b.png)
+
+![image](https://user-images.githubusercontent.com/532272/38901981-4678acf6-4253-11e8-8819-eb312cf4aa0f.png)
+
+Your mailchimp list ID can be found under your list settings.
+
+![image](https://user-images.githubusercontent.com/532272/38902020-72c889a2-4253-11e8-9cf3-a4453e157638.png)
+
+The region is up in the URL of your browser. In our case it's `us11`
+
+Now let's add these to the function.
+
+```yml
+components:
+  landingPageFunction:
+    type: aws-lambda
+    inputs:
+      memory: 512
+      timeout: 10
+      handler: code/handler.landingPageFunction
+      env:
+        MAILCHIMP_API_KEY: xyzabc123456-us11
+        MAILCHIMP_LIST_ID: f95d7512fd
+        MAILCHIMP_REGION: us11
 ```
 
 Your full `serverless.yml` at this point should look like:
@@ -194,6 +287,10 @@ components:
       memory: 512
       timeout: 10
       handler: code/handler.landingPageFunction
+      env:
+        MAILCHIMP_API_KEY: xyzabc123456-us11
+        MAILCHIMP_LIST_ID: f95d7512fd
+        MAILCHIMP_REGION: us11
   myNetlifySite:
     type: netlify-site
     inputs:
@@ -201,7 +298,6 @@ components:
       githubApiToken: 123
       siteName: my-awesome-site-lol-lol.netlify.com
       siteDomain: testing-lol-lol-lol.com
-      siteForceSSL: true # not in use
       siteRepo: https://github.com/serverless/netlify-landing-page
       siteBuildCommand: npm run build
       siteBuildDirectory: build
@@ -255,6 +351,10 @@ components:
       memory: 512
       timeout: 10
       handler: code/handler.landingPageFunction
+      env:
+        MAILCHIMP_API_KEY: xyzabc123456-us11
+        MAILCHIMP_LIST_ID: f95d7512fd
+        MAILCHIMP_REGION: us11
   apiEndpoint:
     type: rest-api
     inputs:
@@ -310,7 +410,7 @@ components:
       netlifyApiToken: abc
       githubApiToken: 123
       siteName: my-awesome-site-lol-lol.netlify.com
-    ...
+      ...
       siteEnvVars:
         REACT_APP_SIGNUP_API: ${apiEndpoint.url}sign-up
 ```
@@ -338,5 +438,63 @@ function formHandler(email) {
 }
 ```
 
+You can see this in action in our [landing page repo](https://github.com/serverless/netlify-landing-page/blob/58eacc5a745d48c8894b4a4932c338617848032e/src/App.js#L6).
 
+Your full `serverless.yml` should look like:
 
+```yml
+type: landing-page
+
+components:
+  landingPageFunction:
+    type: aws-lambda
+    inputs:
+      memory: 512
+      timeout: 10
+      handler: code/handler.landingPageFunction
+      env:
+        MAILCHIMP_API_KEY: xyz-us11
+        MAILCHIMP_LIST_ID: lol-id-here
+        MAILCHIMP_REGION: us11
+  apiEndpoint:
+    type: rest-api
+    inputs:
+      gateway: aws-apigateway
+      routes:
+        /sign-up:
+          post:
+            function: ${landingPageFunction}
+            cors: true
+  myNetlifySite:
+    type: netlify-site
+    inputs:
+      netlifyApiToken: xxxx
+      githubApiToken: yyyy
+      siteName: serverless-components.netlify.com
+      siteDomain: components.serverless.com
+      siteForceSSL: true # not in use
+      siteRepo: https://github.com/serverless/netlify-landing-page
+      siteBuildCommand: npm run build
+      siteBuildDirectory: build
+      siteRepoBranch: master
+      siteRepoAllowedBranches:
+          - master
+      siteEnvVars:
+        REACT_APP_SIGNUP_API: ${apiEndpoint.url}sign-up
+```
+
+## Deploy
+
+Now we have created our landing page and it's time for the final deploy.
+
+In your terminal run
+
+```bash
+../../bin/components deploy
+```
+
+## Summary
+
+So as you can see with just a couple components you can have a landing page up and running in a jiffy.
+
+What will you build with components?
