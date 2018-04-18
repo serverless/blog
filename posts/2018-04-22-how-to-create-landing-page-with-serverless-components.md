@@ -18,49 +18,51 @@ The three components we are using are:
 2. The AWS lambda component talking to the mailchimp API
 3. The Rest API component, which uses API gateway under the hood
 
-<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
-undefined [Composing Components](#composing-components)
-- [1. Adding Netlify Site](#1-adding-netlify-site)
-- [2. Adding the Lambda Function for Sign Up](#2-adding-the-lambda-function-for-sign-up)
-- [3. Adding the Rest API to expose Lambda function](#3-adding-the-rest-api-to-expose-lambda-function)
-- [4. Expose the API endpoint to the Netlify Site](#4-expose-the-api-endpoint-to-the-netlify-site)
+Let's dive into it and cover:
+
+- [Composing Components](#composing-components)
+  - [1. Adding Netlify Site](#1-adding-netlify-site)
+  - [2. Adding the Lambda Function for Sign Up](#2-adding-the-lambda-function-for-sign-up)
+  - [3. Adding the Rest API to expose Lambda function](#3-adding-the-rest-api-to-expose-lambda-function)
+  - [4. Expose the API endpoint to the Netlify Site](#4-expose-the-api-endpoint-to-the-netlify-site)
 - [Deploy](#deploy)
 - [Summary](#summary)
-<!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Getting Started
 
 1. First you will need to install the serverless components repo
 
-```bash
-git clone https://github.com/serverless/components
-```
+    ```bash
+    git clone https://github.com/serverless/components
+    ```
 
 2. Then install the dependancies
 
-```bash
-cd components
-npm install
-```
+    ```bash
+    cd components
+    npm install
+    ```
 
 This will install all the dependancies and all the component dependancies.
 
 3. Set your AWS credentials in your ENV vars
 
-```bash
-export AWS_ACCESS_KEY_ID=my_access_key_id
-export AWS_SECRET_ACCESS_KEY=my_secret_access_key
-```
+    ```bash
+    export AWS_ACCESS_KEY_ID=my_access_key_id
+    export AWS_SECRET_ACCESS_KEY=my_secret_access_key
+    ```
 
 **Note:** Make sure you have Node.js 8+ and npm installed on your machine.
 
 ## Composing Components
+
 
 This app is comprised of 3 parts: `aws-lambda`, `rest-api`, `netlify-site`.
 
 Let's put them together.
 
 ### 1. Adding Netlify Site
+
 
 We are using netlify to publish our landing page built with `create-react-app`.
 
@@ -80,7 +82,6 @@ In `serverless.yml` we need to define the components we are using under the `com
 The inputs the `netlify-site` component need can be [seen here](https://github.com/serverless/components/blob/738ec5d912d50d73f62ab94d0eeb3b634e792223/registry/netlify-site/README.md#input-types)
 
 ```yml
-# serverless.yml
 type: landing-page
 
 components:
@@ -150,6 +151,7 @@ If you go into netlify and click into the newly created site, you should see the
 ![image](https://user-images.githubusercontent.com/532272/38904159-a8b88c6a-425d-11e8-8db5-12939d666c4d.png)
 
 ### 2. Adding the Lambda Function for Sign Up
+
 
 Now we need to add a lambda function to handle for form submissions.
 
@@ -308,6 +310,7 @@ components:
 
 ### 3. Adding the Rest API to expose Lambda function
 
+
 So far we have a landing page and a function. They aren't connected in any way.
 
 We need to expose a live endpoint for the landing page to ping on form submissions.
@@ -381,6 +384,7 @@ components:
 ```
 
 ### 4. Expose the API endpoint to the Netlify Site
+
 
 We have all the pieces we need for the functionality we are after. Great news.
 
@@ -484,6 +488,7 @@ components:
 ```
 
 ## Deploy
+
 
 Now we have created our landing page and it's time for the final deploy.
 
