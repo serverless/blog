@@ -572,7 +572,7 @@ var runThumbnailGenerateTask = (s3_video_url, thumbnail_file, frame_pos) => {
 }
 ```
 
-Most of the function code is creating the `params` json structure that is passed to the helper function `ecsApi.runECSTask` to execute teh ECS task using Fargate on AWS.
+Most of the function code is creating the `params` json structure that is passed to the helper function `ecsApi.runECSTask` to execute the ECS task using Fargate on AWS.
 
 You can customize any of these parameters via configuration. The `containerOverrides` array has custom values for the environment vars we setup for our container image.  
 
