@@ -8,8 +8,7 @@ authors:
   - BrianNeisler
 ---
 
-<image src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif
-”>
+<img src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif”>
 
 ## So, what’s the goal with Serverless Components?
 
@@ -49,11 +48,11 @@ For example, you want to write a serverless image processing API. To do so, you 
 
 Any cloud service can be a Serverless Component:
 
-<image src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/individual-components.png”>
+<img src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/individual-components.png”>
 
 Serverless Components will wrap around all three of the smaller parts you need to build your API (Lambda, API Gateway, and DynamoDB). It will then expose configurable inputs and turn them into building blocks which you can easily compose together.
 
-<image src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/lambda-endpoints.png”>
+<img src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/lambda-endpoints.png”>
 
 ### Combining smaller components into larger components
 
@@ -75,13 +74,13 @@ Let’s zoom out from our image processing API. When you think about building an
 
 With Serverless Components, you can package all of that up into an authentication API that plugs into a users API. You can tie all of these Components together to get a full user system. 
 
-<image src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/photo-app.png”>
+<img src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/photo-app.png”>
 
 If I’m building an image application, behind all that auth my application could be powered by a combination of image processing blocks (such as the image processing API we designed earlier).
 
 Like so, entire applications can be built by using various combinations of Serverless Components.
 
-<image src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/full-tower.png”>
+<img src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/full-tower.png”>
 
 ## Ready to try Serverless Components?
 
