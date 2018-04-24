@@ -150,7 +150,7 @@ Is this ok? (yes) yes
 To configure our `serverless.yml` file to use the plugin, we'll add the following lines in our `serverless.yml`:
 
 ```yml
-# sererless.yml
+# serverless.yml
 
 plugins:
   - serverless-python-requirements
