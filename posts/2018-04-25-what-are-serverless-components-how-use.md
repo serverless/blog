@@ -36,7 +36,7 @@ There should no longer be a barrier to reusable, recomposable cloud components.
 
 ## How Serverless Components works
 
-Composing a modern application means you’re plucking bits of SaaS and managed services from all over and stringing them together. You can create anything this way: a REST API, a static website, and SMS app, an IoT app.
+Composing a modern application means you’re plucking bits of SaaS and managed services from all over and stringing them together. You can create anything this way: a REST API, a static website, an SMS app, an IoT app.
 
 But there’s a lot of wiring you have to do to assemble these things together, and not a lot of tooling.
 
