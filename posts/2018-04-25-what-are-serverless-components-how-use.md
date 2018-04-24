@@ -44,7 +44,7 @@ But there’s a lot of wiring you have to do to assemble these things together, 
 
 Let’s take a look at how Components handles this.
 
-For example, you want to write a serverless image processing API. To do so, you might write a Lambda function, tie it into API Gateway, and back it by DynamoDB. 
+For example, say you want to write a serverless image processing API. To do so, you might write a Lambda function, tie it into API Gateway, and back it by DynamoDB. 
 
 Any cloud service can be a Serverless Component:
 
