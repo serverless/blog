@@ -14,7 +14,7 @@ authors:
 
 We want to make it easier for you, our developer community, to assemble cloud applications. Plain and simple.
 
-“The Cloud” is no longer about a single cloud—modern applications are built using services from all over the web, be it a SaaS platform like Twilio, Auth0 or Algolia, or a managed cloud service like the Google Vision API. The Cloud, by both inertia and necessity, is now the multi-cloud.
+“The Cloud” is no longer about a single cloud—modern applications are built using services from all over the web, be it a SaaS platform like Twilio, Auth0 or Algolia, or a managed cloud service like Google Vision API. The Cloud, by both inertia and necessity, is now the multi-cloud.
 
 But composing these types of applications is unnecessarily tedious. There’s no single development experience for them. You have to bounce among five different dashboards in order to set things up, and create all the wiring yourself. We do it too, and it’s a pain.
 
