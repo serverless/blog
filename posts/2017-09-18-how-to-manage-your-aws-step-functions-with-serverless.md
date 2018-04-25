@@ -8,6 +8,8 @@ authors:
   - TakahiroHorike
 ---
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/step-functions.jpg">
+
 When diving into the Function as a service (FAAS) world, a question that often pops up is:
 
 > If serverless functions are stateless, how do I manage state?
