@@ -14,45 +14,36 @@ authors:
 
 We want to make it easier for you, our developer community, to assemble cloud applications. Plain and simple.
 
-“The Cloud” is no longer about a single cloud—modern applications are built using services from all over the web, be it a SaaS platform like Twilio, Auth0 or Algolia, or a managed cloud service like Google Vision API. The Cloud, by both inertia and necessity, is now the multi-cloud.
+Composing a modern application means you’re plucking bits of SaaS and managed services from all over and stringing them together. You can create anything this way: a REST API, a static website, an SMS app, an IoT app.
 
-But composing these types of applications is unnecessarily tedious. There’s no single development experience for them. You have to bounce among five different dashboards in order to set things up, and create all the wiring yourself. We do it too, and it’s a pain.
+But with all this choice comes added complexity. There’s a lot of wiring you have to do to assemble these pieces together, and not a lot of tooling.
 
 ## Enter: Serverless Components
 
 Serverless Components aims to change all of that.
 
-Components presents a single experience where you can reason about your application, break it down into parts, and use those parts to compose new applications. You can build, use and reuse individual Components.
+Components presents a single experience where you can reason about your application, break it down into parts, and use those parts to compose new applications. Think of them like powerful building blocks.
+
+You can compose, configure, and share individual Components to create an entire serverless application in a much quicker way.
 
 Serverless Components will also form an ecosystem driven by community contributions, which you can browse through and utilize. The net result is that you save development time. Don’t build your own image processing API from scratch—use the existing component and tweak it.
 
-### The serverless movement enables a components mindset
-
-We aren’t the first people to think about componentization. But there have historically been a lot of challenges to pulling it off. Namely, things like: “Will this component cost me thousands of dollars, simply by turning it on?”; “Will this component scale?”; “Is this thing going to be a nightmare to maintain?”.
-
-Luckily, the broader serverless movement solves those challenges in and of itself. These blocks *will* scale, they *will* be zero administration, they *will* have a reasonable cost that is proportional only to their usage.
-
-There should no longer be a barrier to reusable, recomposable cloud components.
-
 ## How Serverless Components works
 
-Composing a modern application means you’re plucking bits of SaaS and managed services from all over and stringing them together. You can create anything this way: a REST API, a static website, an SMS app, an IoT app.
-
-But there’s a lot of wiring you have to do to assemble these things together, and not a lot of tooling.
+Let’s take a look at how you can compose multiple Components into an entire application.
 
 ### A standardized configuration
 
-Let’s take a look at how Components handles this.
-
-For example, say you want to write a serverless image processing API. To do so, you might write a Lambda function, tie it into API Gateway, and back it by DynamoDB. 
+Say you want to write a serverless image processing API. To do so, you might write a Lambda function, tie it into API Gateway, and back it by DynamoDB. 
 
 Any cloud service can be a Serverless Component:
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/individual-components.png">
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/individual-components.png">
 
 Serverless Components will wrap around all three of the smaller parts you need to build your API (Lambda, API Gateway, and DynamoDB). It will then expose configurable inputs and turn them into building blocks which you can easily compose together.
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/lambda-endpoints.png">
+<image src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/lambda-endpoints.png”>
+
 
 ### Combining smaller components into larger components
 
@@ -74,13 +65,13 @@ Let’s zoom out from our image processing API. When you think about building an
 
 With Serverless Components, you can package all of that up into an authentication API that plugs into a users API. You can tie all of these Components together to get a full user system. 
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/photo-app.png">
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/photo-app.png">
 
 If I’m building an image application, behind all that auth my application could be powered by a combination of image processing blocks (such as the image processing API we designed earlier).
 
 Like so, entire applications can be built by using various combinations of Serverless Components.
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/full-tower.png">
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/full-tower.png">
 
 ## Ready to try Serverless Components?
 
@@ -92,9 +83,11 @@ We’d love to hear any and all feedback from you, our developer community. So t
 
 ## Answering some general questions
 
-### Why aren’t Components a part of the core Serverless Framework?
+### What’s next for Serverless Components?
 
-There’s a lot of dependency on the framework itself to be very stable and dependable, and Components is not yet ready for production usage. As such, we didn’t want to immediately integrate it into the framework.
+We believe that Components represents the ideal developer experience for the future of serverless development.
+
+Eventually, once the design has matured, it may be integrated into the Serverless Framework. But there’s a lot of dependency on the Framework itself to be very stable and dependable, and Components is not yet ready for production usage. As such, we didn’t want to immediately integrate it into the Framework.
 
 Instead, we want to work hard to identify the right implementation patterns. By leaving this out of the core Framework for now, we have the freedom to do that work and get it just right before we integrate it in.
 
