@@ -14,9 +14,9 @@ authors:
 
 We want to make it easier for you, our developer community, to assemble cloud applications. Plain and simple.
 
-Composing a modern application means you’re plucking bits of SaaS and managed services from all over and stringing them together. You can create anything this way: a REST API, a static website, an SMS app, an IoT app.
+Composing a modern application means you’re plucking bits of SaaS and managed services from all over, and stringing them together. You can create anything this way: a REST API, a static website, an SMS app, an IoT app. But with all this choice comes added complexity.
 
-But with all this choice comes added complexity. There’s a lot of wiring you have to do to assemble these pieces together, and not a lot of tooling.
+There’s a lot of wiring you have to do to assemble these pieces together, and not a lot of tooling.
 
 ## Enter: Serverless Components
 
@@ -24,7 +24,7 @@ Serverless Components aims to change all of that.
 
 Components presents a single experience where you can reason about your application, break it down into parts, and use those parts to compose new applications. Think of them like powerful building blocks.
 
-You can compose, configure, and share individual Components to create an entire serverless application in a much quicker way.
+You can compose, configure, and share individual Components to create an entire serverless application much more quickly.
 
 Serverless Components will also form an ecosystem driven by community contributions, which you can browse through and utilize. The net result is that you save development time. Don’t build your own image processing API from scratch—use the existing component and tweak it.
 
@@ -43,7 +43,6 @@ Any cloud service can be a Serverless Component:
 Serverless Components will wrap around all three of the smaller parts you need to build your API (Lambda, API Gateway, and DynamoDB). It will then expose configurable inputs and turn them into building blocks which you can easily compose together.
 
 <image src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/lambda-endpoints.png”>
-
 
 ### Combining smaller components into larger components
 
@@ -95,4 +94,6 @@ Instead, we want to work hard to identify the right implementation patterns. By 
 
 CloudFormation is aimed specifically at infrastructure only for AWS, and the same is true for any other infrastructure as code tool built by a cloud provider. The reality is, we believe that the way applications are being built (and will continue to be built) is that they span multiple clouds and multiple services.
 
-The reason we’re not using Terraform goes back to the specifics around keeping focused on systems with serverless qualities. We risk opening up the door for things to be built that do not adhere to those serverless qualities—in which case we go back to the exact same problems we outlined earlier. To build a real community-driven ecosystem, you have to be able to rely on each part to be scalable, low and predictable in cost, and light on administrative overhead.
+The reason we’re not using Terraform goes back to the specifics around keeping focused on systems with serverless qualities. We risk opening up the door for things to be built that do not adhere to those serverless qualities—in which case we go back to the exact same problems we outlined earlier.
+
+To build a real community-driven ecosystem, you have to be able to rely on each part to be scalable, low and predictable in cost, and light on administrative overhead.
