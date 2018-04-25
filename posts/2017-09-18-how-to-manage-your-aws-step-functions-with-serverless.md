@@ -14,7 +14,7 @@ When diving into the Functions as a Service (FaaS) world, a question that often 
 
 > If serverless functions are stateless, how do I manage state?
 
-There are a number of ways to manage state with backend data stores, `tmp` directories & building this logic into your existing lambda functions but there is a simpler alternative provided by **AWS: Step functions**.
+There are a number of ways to manage state with backend data stores, `tmp` directories & building this logic into your existing lambda functions but there is a simpler alternative provided by AWS: **Step Functions**.
 
 [Step Functions](https://aws.amazon.com/step-functions/) allows you to control complex workflows using Lambda functions without the underlying application managing and orchestrating the state. In essence, it's a state machine to help with complex workflows and aims at keeping your lambda functions free of this additional logic.
 
