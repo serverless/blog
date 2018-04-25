@@ -1,6 +1,6 @@
 ---
-title: How To Manage Your AWS Step Functions With Serverless
-description: Managing complex workflows with Serverless and AWS Step Functions
+title: How to manage your AWS Step Functions with Serverless
+description: Managing complex workflows with Serverless and AWS Step Functions.
 date: 2017-09-18
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/step-functions.png
@@ -10,7 +10,7 @@ authors:
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/step-functions.jpg">
 
-When diving into the Function as a service (FAAS) world, a question that often pops up is:
+When diving into the Functions as a Service (FaaS) world, a question that often pops up is:
 
 > If serverless functions are stateless, how do I manage state?
 
