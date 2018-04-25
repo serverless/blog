@@ -8,6 +8,8 @@ authors:
   - MaciejWinnicki
 ---
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/golang-support.jpg">
+
 Everyone, the day has come.
 
 AWS Lambda is finally. Compatible. With Golang. 🖖
