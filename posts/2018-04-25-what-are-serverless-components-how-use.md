@@ -22,9 +22,7 @@ There’s a lot of wiring you have to do to assemble these pieces together, and 
 
 Serverless Components aims to change all of that.
 
-Components presents a single experience where you can reason about your application, break it down into parts, and use those parts to compose new applications. Think of them like powerful building blocks.
-
-You can compose, configure, and share individual Components to create an entire serverless application much more quickly.
+Components presents a single experience where you can provision infrastructure and code across all cloud and SaaS vendors. Think of them like composable, reusable building blocks, which you can use to build applications more easily.
 
 Serverless Components will also form an ecosystem driven by community contributions, which you can browse through and utilize. The net result is that you save development time. Don’t build your own image processing API from scratch—use the existing component and tweak it.
 
