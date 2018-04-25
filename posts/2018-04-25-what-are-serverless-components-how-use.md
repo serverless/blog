@@ -8,67 +8,81 @@ authors:
   - BrianNeisler
 ---
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif">
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif">
 
-## So, what’s the goal with Serverless Components?
+# So, what’s the goal with Serverless Components?
 
 We want to make it easier for you, our developer community, to assemble cloud applications. Plain and simple.
 
-Composing a modern application means you’re plucking bits of SaaS and managed services from all over, and stringing them together. You can create anything this way: a REST API, a static website, an SMS app, an IoT app. But with all this choice comes added complexity.
+Composing a modern application means you’re plucking SaaS and managed (i.e. serverless) services from all over and combining them to create solutions faster, with low overhead.
 
-There’s a lot of wiring you have to do to assemble these pieces together, and not a lot of tooling.
+But doing this is highly complex. There’s a lot of manual work you have to do to assemble these pieces into an outcome, and not a lot of tooling to help you build and manage that outcome.
 
 ## Enter: Serverless Components
 
 Serverless Components aims to change all of that.
 
-Components presents a single experience where you can provision infrastructure and code across all cloud and SaaS vendors. Think of them like composable, reusable building blocks, which you can use to build applications more easily.
+Components presents a single experience to provision infrastructure and code across all cloud and SaaS vendors. Think of them like building blocks which you can use to build applications more easily.
 
 Serverless Components will also form an ecosystem driven by community contributions, which you can browse through and utilize. The net result is that you save development time. Don’t build your own image processing API from scratch—use the existing component and tweak it.
 
-## How Serverless Components works
+## How Serverless Components work
 
-Let’s take a look at how you can compose multiple Components into an entire application.
+Let’s take a look at how you can use Serverless Components to create an entire serverless application.
 
-### A standardized configuration
+### A uniform experience
 
-Say you want to write a serverless image processing API. To do so, you might write a Lambda function, tie it into API Gateway, and back it by DynamoDB. 
+Any cloud service can be packaged as a Serverless Component.
 
-Any cloud service can be a Serverless Component:
+Within each Component is the provisioning, rollback and removal functionality for that service, which you can run via the Serverless Components CLI.
 
-<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/individual-components.png">
+Components expose minimal configuration with same defaults so that you can configure the resource it contains more easily.  To do this, add the Components you wish to provision in a “components” property within a serverless.yml file.
 
-Serverless Components will wrap around all three of the smaller parts you need to build your API (Lambda, API Gateway, and DynamoDB). It will then expose configurable inputs and turn them into building blocks which you can easily compose together.
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components-s3-config.png">
 
-<image src=”https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/lambda-endpoints.png”>
+Run “components deploy” to provision the resource.
 
-### Combining smaller components into larger components
+### Composing components into higher-order components
 
-These three small components have now been combined into a larger, reusable Image Processing API Component.
+Say you want to write a serverless image processing API that pulls images from S3 and modifies them.  To do so, you might create an AWS API Gateway endpoint to call an AWS Lambda function which pulls an image from the AWS S3 bucket and modifies it.
 
-<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/image-api.png">
+We currently offer Components for all of these services.  Each with simple configuration inputs so that you can configure their underlying resources easily and deploy them quickly.
 
-Here’s why this is important. When you compose this image processing API, you will do a lot of initial configuration. You’ll hook it up to DynamoDB, expose the endpoints, determine how to store the images, tell the API to resize everything to 400x600 px, etc.
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-component-s3.png">
 
-But once the component is made, you can reuse this exact component somewhere else. Or, another developer can use it in their own application, and tweak some aspects of the configuration—for instance, maybe they want their images to resize to 600x1200 px.
+All Serverless Components can be composed together and nested in a larger Component.  
 
-Components essentially become use cases, which can be instantly used and reused by anyone.
+We’ll combine these three infrastructure-level Components to create our serverless image processing API, which will become its own, higher-order Component.  Again, all of this is declared in your serverless.yml file.
 
-### Several components combine to form an application
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-component-image-processor.png">
 
-You can take these larger building blocks, and compose them together into *even larger* blocks. 
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components-nesting.png">
 
-Let’s zoom out from our image processing API. When you think about building an application, it has needs across the board. You need to save users and their credentials, you need to authenticate users via password, SMS, or Google Auth.
+Here’s why this is important.  When you create this image processing API, you will do a lot of initial work to configure everything. You’ll configure the Lambda function, the REST API endpoint, the S3 bucket, etc.
 
-With Serverless Components, you can package all of that up into an authentication API that plugs into a users API. You can tie all of these Components together to get a full user system. 
+But you can abstract a lot of that away by nesting those infrastructure-level Components in a higher-order Component.  That higher-order Component can use sane defaults and expose simpler configuration.
 
-<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/photo-app.png">
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components-combined.png">
 
-If I’m building an image application, behind all that auth my application could be powered by a combination of image processing blocks (such as the image processing API we designed earlier).
+Now, you can reuse this higher-order Serverless Component somewhere else. Or, another developer can use it in their own application by simply tweaking some aspects of the configuration—for instance, maybe they just want to specify their own S3 bucket which contains images.
 
-Like so, entire applications can be built by using various combinations of Serverless Components.
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components-processor-consumer.png">
 
-<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/full-tower.png">
+These higher-order Components essentially become use-cases, which can be easily used and reused by anyone.
+
+### Composing components to form an entire application
+
+Let’s zoom out from our image processing API. When you think about building an entire application, it has needs across the board. You need to have user management, plus lots of other data models and API endpoints to work with them.
+
+Fortunately, you can continue to nest Serverless Components.  Simply take the higher-order Component in the previous example and compose them together into *even higher* Components.
+
+Like so, entire applications can be built by continuing to nest Serverless Components.
+
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components-photo-app-nesting.png">
+
+Like all Components, people can easily reuse your application Component if it exposes simple configuration.
+
+Most importantly, Serverless is about outcomes, not infrastructure.  We believe we’ve made a solution that makes infrastructure more invisible, enhances developers’ ability to focus on outcomes, and fosters a community to share and reuse outcomes.
 
 ## Ready to try Serverless Components?
 
@@ -76,22 +90,20 @@ Great! We have a full working example ready to go.
 
 Head on over to the [Serverless Components repo](https://github.com/serverless/components) on GitHub and check out our [example retail app](https://github.com/serverless/components/tree/master/examples/retail-app).
 
+We’ve authored several infrastructure-level Components you can use to create higher-order outcomes [in our temporary registry](https://github.com/serverless/components/tree/master/registry).
+
 We’d love to hear any and all feedback from you, our developer community. So try it out and tell us what you think!
 
 ## Answering some general questions
 
 ### What’s next for Serverless Components?
 
-We believe that Components represents the ideal developer experience for the future of serverless development.
+We believe that Components represents the ideal developer experience for the future of serverless development and we plan to integrate it into the Serverless Framework.  However, the implementation is not yet mature so we have decided to incubate it as a standalone project for now.
 
-Eventually, once the design has matured, it may be integrated into the Serverless Framework. But there’s a lot of dependency on the Framework itself to be very stable and dependable, and Components is not yet ready for production usage. As such, we didn’t want to immediately integrate it into the Framework.
-
-Instead, we want to work hard to identify the right implementation patterns. By leaving this out of the core Framework for now, we have the freedom to do that work and get it just right before we integrate it in.
+We have plans for a public registry, but we’re keeping all of the Components [in the Github repo](https://github.com/serverless/components/tree/master/registry) for now.
 
 ### Why didn’t you build this on top of an existing infrastructure as code tool, like CloudFormation or Terraform?
 
-CloudFormation is aimed specifically at infrastructure only for AWS, and the same is true for any other infrastructure as code tool built by a cloud provider. The reality is, we believe that the way applications are being built (and will continue to be built) is that they span multiple clouds and multiple services.
+CloudFormation is aimed specifically at infrastructure only for AWS, and the same is true for any other infrastructure as code tool built by a cloud provider. The reality is, we believe that the way applications are being built (and will continue to be built) is that they span multiple clouds and multiple services.  That said, we do have an integration with AWS CloudFormation and AWS SAM planned for the future.
 
-The reason we’re not using Terraform goes back to the specifics around keeping focused on systems with serverless qualities. We risk opening up the door for things to be built that do not adhere to those serverless qualities—in which case we go back to the exact same problems we outlined earlier.
-
-To build a real community-driven ecosystem, you have to be able to rely on each part to be scalable, low and predictable in cost, and light on administrative overhead.
+We’re not using Terraform for two reasons.  First, we wanted to make something that caters specifically to serverless infrastructure and general SaaS services.  Second, we wanted to explore how far we can improve the ability to compose and abstract infrastructure into outcomes.
