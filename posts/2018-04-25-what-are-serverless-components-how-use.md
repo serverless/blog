@@ -94,16 +94,8 @@ We’ve authored several infrastructure-level Components you can use to create h
 
 We’d love to hear any and all feedback from you, our developer community. So try it out and tell us what you think!
 
-## Answering some general questions
-
 ### What’s next for Serverless Components?
 
 We believe that Components represents the ideal developer experience for the future of serverless development and we plan to integrate it into the Serverless Framework.  However, the implementation is not yet mature so we have decided to incubate it as a standalone project for now.
 
 We have plans for a public registry, but we’re keeping all of the Components [in the Github repo](https://github.com/serverless/components/tree/master/registry) for now.
-
-### Why didn’t you build this on top of an existing infrastructure as code tool, like CloudFormation or Terraform?
-
-CloudFormation is aimed specifically at infrastructure only for AWS, and the same is true for any other infrastructure as code tool built by a cloud provider. The reality is, we believe that the way applications are being built (and will continue to be built) is that they span multiple clouds and multiple services.  That said, we do have an integration with AWS CloudFormation and AWS SAM planned for the future.
-
-We’re not using Terraform for two reasons.  First, we wanted to make something that caters specifically to serverless infrastructure and general SaaS services.  Second, we wanted to explore how far we can improve the ability to compose and abstract infrastructure into outcomes.
