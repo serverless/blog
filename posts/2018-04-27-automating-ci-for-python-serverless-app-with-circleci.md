@@ -8,7 +8,7 @@ authors:
   - RupakGanguly
 ---
 
-I had previously written [a post that defined the CI/CD process](https://serverless.com/blog/ci-cd-workflow-serverless-apps-with-circleci/), discussed various deployment patterns, creatied a NodeJS app, and automated the end-to-end CI flow.
+I had previously written [a post that defined the CI/CD process](https://serverless.com/blog/ci-cd-workflow-serverless-apps-with-circleci/), discussed various deployment patterns, created a NodeJS app, and automated the end-to-end CI flow.
 
 In this post, I will be doing that same thing for Python. We'll build a Python app and go over the end-to-end process for automating the CI flow.
 
@@ -94,7 +94,7 @@ This makes testing the core logic of the app easy, and also decouples it from th
 
 ## Running Tests
 
-Now thatour tests are written up, let's run them locally before we include them as part of our CI/CD process.
+Now that our tests are written up, let's run them locally before we include them as part of our CI/CD process.
 
 For running tests we will use [nose](https://nose.readthedocs.io/en/latest/). We add the `--with-coverage` flag to run the test with code coverage. (Remember, you will need [coverage.js](https://coverage.readthedocs.io/en/coverage-4.5.1/) installed to use coverage.)
 
