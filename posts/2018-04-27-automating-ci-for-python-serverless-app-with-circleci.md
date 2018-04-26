@@ -43,7 +43,7 @@ Now that we've gone over some basics, let's get started!
 
 **Note:** We won't be covering the basics of creating a serverless Python app, but you can get an idea by reading [this post about ETL job processing](https://serverless.com/blog/etl-job-processing-with-serverless-lambda-and-redshift/).
 
-Let's cut to the chase and install the sample app from the [source repo]() using the Serverless Framework like so:
+Let's cut to the chase and install the sample app from the [source repo](https://github.com/rupakg/python-ci) using the Serverless Framework like so:
 
 ```bash
 $ sls install --url https://github.com/rupakg/python-ci
