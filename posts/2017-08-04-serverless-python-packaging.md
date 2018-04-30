@@ -8,6 +8,8 @@ authors:
   - AlexDeBrie
 ---
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-python-packaging.jpg">
+
 I use AWS Lambda for almost all of my projects these days-from Flask apps and Slack bots to cron jobs and monitoring tools. I love how cheap and easy it is to deploy something valuable.
 
 Python is my go-to language, but handling Python packages in Lambda can be tricky. Many important packages need to compile C extensions, like psycopg2 for Postgres access, or numpy, scipy, pandas, or sklearn for numerical analysis. If you compile these on a Mac or Windows system, you'll get an error when your Lambda tries to load them.
