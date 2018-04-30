@@ -70,7 +70,7 @@ I chose Netlify over S3 for static hosting because it:
 
 - Builds on github repo events (CI/CD flow)
 - Has automatic branch previews on PRs
-- Handles redirects out of box via via `_redirects` file 👌
+- Handles redirects out of box via `_redirects` file 👌
 - Handles proxied URLs - this gives us escape hatches for dynamic pages/content
 - Is insanely cheap
 - Has amazing support to boot
