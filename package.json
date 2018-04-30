@@ -4,6 +4,7 @@
   "description": "Serverless.com blog content",
   "scripts": {
     "docs": "md-magic --path 'README.md' --ignore 'node_modules'",
+    "md": "md-magic --path '**/*.md' --ignore 'node_modules'",
     "test": "node validate.js"
   },
   "repository": {
@@ -17,6 +18,6 @@
   "homepage": "https://serverless.com/blog",
   "devDependencies": {
     "gray-matter": "^2.1.0",
-    "markdown-magic": "^0.1.15"
+    "markdown-magic": "^0.1.21"
   }
 }
