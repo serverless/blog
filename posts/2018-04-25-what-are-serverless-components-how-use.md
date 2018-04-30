@@ -92,6 +92,8 @@ Head on over to the [Serverless Components repo](https://github.com/serverless/c
 
 We’ve authored several infrastructure-level Components you can use to create higher-order outcomes [in our temporary registry](https://github.com/serverless/components/tree/master/registry).
 
+If you'd like a really comprehensive walkthrough, here's how to [set up a landing page using the Serverless Netlify and Lambda Components](https://serverless.com/blog/how-to-create-landing-page-with-serverless-components/).
+
 We’d love to hear any and all feedback from you, our developer community. So try it out and tell us what you think!
 
 ### What’s next for Serverless Components?
