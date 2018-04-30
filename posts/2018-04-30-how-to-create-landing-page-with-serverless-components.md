@@ -10,6 +10,8 @@ authors:
 
 [Serverless Components](https://github.com/serverless/components) are a new way of composing together smaller bits of functionality into larger applications.
 
+**Note:** If you aren't familiar with Serverless Components yet, [here's a quick explainer](https://serverless.com/blog/what-are-serverless-components-how-use/).
+
 In this tutorial, we are going to walk through building a landing page with the serverless Netlify and Lambda components.
 
 The three components we are using are:
