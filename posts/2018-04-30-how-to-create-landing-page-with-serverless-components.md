@@ -8,35 +8,35 @@ authors:
   - DavidWells
 ---
 
-[Serverless components](https://github.com/serverless/components) are a new way of composing together smaller bits of functionality into larger applications.
+[Serverless Components](https://github.com/serverless/components) are a new way of composing together smaller bits of functionality into larger applications.
 
-In this tutorial, we are going to walk through building a landing page with the serverless netlify and lambda components.
+In this tutorial, we are going to walk through building a landing page with the serverless Netlify and Lambda components.
 
 The three components we are using are:
 
-1. The netlify site component
-2. The AWS lambda component talking to the mailchimp API
-3. The Rest API component, which uses API gateway under the hood
+1. The Netlify site component
+2. The AWS Lambda component talking to the Mailchimp API
+3. The Rest API component, which uses API Gateway under the hood
 
 Let's dive into it and cover:
 
 - [Composing Components](#composing-components)
-  - [1. Adding Netlify Site](#1-adding-netlify-site)
-  - [2. Adding the Lambda Function for Sign Up](#2-adding-the-lambda-function-for-sign-up)
-  - [3. Adding the Rest API to expose Lambda function](#3-adding-the-rest-api-to-expose-lambda-function)
-  - [4. Expose the API endpoint to the Netlify Site](#4-expose-the-api-endpoint-to-the-netlify-site)
+  - [Adding Netlify Site](#1-adding-netlify-site)
+  - [Adding the Lambda function for sign up](#2-adding-the-lambda-function-for-sign-up)
+  - [Adding the Rest API to expose Lambda function](#3-adding-the-rest-api-to-expose-lambda-function)
+  - [Expose the API endpoint to the Netlify site](#4-expose-the-api-endpoint-to-the-netlify-site)
 - [Deploy](#deploy)
 - [Summary](#summary)
 
 ## Getting started
 
-1. First you will need to install the serverless components repo
+1. First you will need to install the Serverless Components repo:
 
     ```bash
     git clone https://github.com/serverless/components
     ```
 
-2. Then install the dependancies
+2. Then install the dependancies:
 
     ```bash
     cd components
@@ -45,14 +45,14 @@ Let's dive into it and cover:
 
 This will install all the dependencies and all the component dependencies.
 
-3. Set your AWS credentials in your ENV vars
+3. Set your AWS credentials in your ENV vars:
 
     ```bash
     export AWS_ACCESS_KEY_ID=my_access_key_id
     export AWS_SECRET_ACCESS_KEY=my_secret_access_key
     ```
 
-**Note:** Make sure you have Node.js 8+ and npm installed on your machine.
+**Note:** Make sure you have Node.js 8+ and `npm` installed on your machine.
 
 ## Composing Components
 
@@ -62,9 +62,9 @@ Let's put them together.
 
 ### 1. Adding Netlify site
 
-We are using netlify to publish our landing page built with `create-react-app`.
+We are using Netlify to publish our landing page built with `create-react-app`.
 
-I chose netlify over s3 for static hosting because it:
+I chose Netlify over S3 for static hosting because it:
 
 - Builds on github repo events (CI/CD flow)
 - Has automatic branch previews on PRs
@@ -73,7 +73,7 @@ I chose netlify over s3 for static hosting because it:
 - Is insanely cheap
 - Has amazing support to boot
 
-Okay, lets get the component set up.
+Okay, let's get the component set up.
 
 In `serverless.yml` we need to define the components we are using under the `components` key.
 
@@ -98,9 +98,9 @@ components:
           - master
 ```
 
-Lets break that down.
+Let's break that down.
 
-`netlifyApiToken` is grabbed from your netlify account at https://app.netlify.com/account/applications, under "Personal Access tokens". Replace `abc` with your valid netlify token.
+`netlifyApiToken` is grabbed from your Netlify account at https://app.netlify.com/account/applications, under "Personal access tokens". Replace `abc` with your valid Netlify token.
 
 ![image](https://user-images.githubusercontent.com/35479789/38898738-b9bfef7a-424a-11e8-9c80-8fb147d36982.png)
 
@@ -112,7 +112,7 @@ Lets break that down.
 
 ---
 
-`siteName` is the netlify domain you will use for your site. Every site on Netlify lives on a unique netlify subdomain until you mask it with your custom domain name. Change `my-awesome-site-lol-lol.netlify.com` to a unique address for your project.
+`siteName` is the Netlify domain you will use for your site. Every site on Netlify lives on a unique Netlify subdomain until you mask it with your custom domain name. Change `my-awesome-site-lol-lol.netlify.com` to a unique address for your project.
 
 ---
 
@@ -122,7 +122,7 @@ Lets break that down.
 
 `siteRepo` is where your site code lives, and **this one is important**. You can use any type of site/app that you want in your repo, as long as you give Netlify the build command and where the built site is output. We are going to be using `create-react-app` to create a landing page.
 
-Our landing page code + repo can be seen [here](https://github.com/serverless/netlify-landing-page/)
+Our landing page code + repo can be seen [here](https://github.com/serverless/netlify-landing-page/).
 
 ---
 
@@ -134,7 +134,7 @@ Our landing page code + repo can be seen [here](https://github.com/serverless/ne
 
 ---
 
-`siteRepoBranch` will be the branch that triggers a rebuild of our site. Aka, when a change is merged into the `master` branch, our Netlify will automagically rebuild and update our live site.
+`siteRepoBranch` will be the branch that triggers a rebuild of our site. Aka, when a change is merged into the `master` branch, Netlify will automagically rebuild and update our live site.
 
 ---
 
@@ -148,11 +148,11 @@ If you go into Netlify and click into the newly-created site, you should see the
 
 ![image](https://user-images.githubusercontent.com/532272/38904159-a8b88c6a-425d-11e8-8db5-12939d666c4d.png)
 
-### 2. Adding the Lambda function for signup
+### 2. Adding the Lambda function for sign up
 
 Now, we need to add a Lambda function to handle our form submissions.
 
-In `serverless.yml` add the `aws-lambda` component to the `components` block:
+In `serverless.yml`, add the `aws-lambda` component to the `components` block:
 
 ```yml
 components:
@@ -164,14 +164,14 @@ components:
       handler: code/handler.landingPageFunction
 ```
 
-Then, create the code for the lambda function in a `code` directory:
+Then, create the code for the Lambda function in a `code` directory:
 
 ```bash
 mkdir code
 touch handler.js
 ```
 
-Inside `handler.js`, add your Lambda code. `code/handler.landingPageFunction` references the `hander.js` file with the exported `landingPageFunction` function:
+Inside `handler.js`, add your Lambda code. The `code/handler.landingPageFunction` references the `hander.js` file with the exported `landingPageFunction` function:
 
 ```js
 const request = require('request')
@@ -246,7 +246,7 @@ module.exports.landingPageFunction = (event, context, callback) => {
 
 Now, we need to expose the `env` variables for the function to consume.
 
-You can grab your Mailchimp API keys under Account > Extras:
+You can grab your Mailchimp API keys under "Account > Extras":
 
 ![image](https://user-images.githubusercontent.com/532272/38901904-fa57ff0c-4252-11e8-90ff-373e8f78b35b.png)
 
@@ -313,7 +313,7 @@ We need to expose a live endpoint for the landing page to ping on form submissio
 
 Let's do that with the `rest-api` component.
 
-Add the rest API component to the `components` block of `serverless.yml`:
+Add the REST API component to the `components` block of `serverless.yml`:
 
 ```yml
 components:
@@ -332,9 +332,9 @@ Let's break this down.
 
 The inputs for the `rest-api` component take a `gateway` and `routes`.
 
-`gateway` is the API gateway you want to use. In this case we are using `aws-apigateway`.
+`gateway` is the API gateway you want to use. In this case we are using the `aws-apigateway` component.
 
-`routes` are the URL paths and the functions that are triggered when they are hit. For a larger rest example, see the [`/examples/retail-app` here](https://github.com/serverless/components/tree/master/examples/retail-app).
+`routes` are the URL paths and the functions that are triggered when they are hit. For a larger REST API example, see the [`/examples/retail-app` here](https://github.com/serverless/components/tree/master/examples/retail-app).
 
 `${landingPageFunction}` being referenced in the `/sign-up` route refers to the function that we had previously defined. So we are passing a direct reference of the function into the rest-api component. Aka, *composiblity*.
 
@@ -494,6 +494,6 @@ In your terminal run:
 
 ## Summary
 
-As you can see, with just a couple components you can have a landing page up and running in no time.
+As you can see, with just a couple of components you can have a landing page up and running in no time.
 
 What will you build with components?
