@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-# How to add a custom domain to API Gateway with Serverless
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-api-gateway-domain.jpg">
 
 With Serverless, it's easier than ever to deploy production-ready API endpoints. However, using AWS API Gateway results in odd hostnames for your endpoints. Further, these hostnames will change if you remove and redeploy your service, which can cause problems for existing clients.
 
