@@ -3,7 +3,7 @@ title: How to create a landing page with serverless components
 description: Using serverless components to buy a static website landing page
 date: 2018-04-30
 layout: Post
-thumbnail: https://user-images.githubusercontent.com/8188/38645932-e1973882-3db3-11e8-8a12-9a68ac905a10.png
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Serverless_logo.png
 authors:
   - DavidWells
 ---
