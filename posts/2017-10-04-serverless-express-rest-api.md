@@ -8,6 +8,8 @@ authors:
   - AlexDeBrie
 ---
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-express-rest-api.jpg">
+
 We're seeing more and more people using Serverless to deploy web applications. The benefits are huge—lightning-fast deployments, automatic scaling, and pay-per-execution pricing.
 
 But moving to serverless has a learning curve as well. You need to learn the intricacies of the platform you're using, including low-level details like format of the request input and the required shape of the response output. This can get in the way and slow your development process.
