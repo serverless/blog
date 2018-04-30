@@ -1,7 +1,7 @@
 ---
 title: How to create a landing page with serverless components
 description: Using serverless components to buy a static website landing page
-date: 2018-04-22
+date: 2018-04-30
 layout: Post
 thumbnail: https://user-images.githubusercontent.com/8188/38645932-e1973882-3db3-11e8-8a12-9a68ac905a10.png
 authors:
@@ -10,7 +10,7 @@ authors:
 
 [Serverless components](https://github.com/serverless/components) are a new way of composing together smaller bits of functionality into larger applications.
 
-In this tutorial we are going to walk through building a landing page with the serverless netlify and lambda components.
+In this tutorial, we are going to walk through building a landing page with the serverless netlify and lambda components.
 
 The three components we are using are:
 
@@ -28,7 +28,7 @@ Let's dive into it and cover:
 - [Deploy](#deploy)
 - [Summary](#summary)
 
-## Getting Started
+## Getting started
 
 1. First you will need to install the serverless components repo
 
@@ -43,7 +43,7 @@ Let's dive into it and cover:
     npm install
     ```
 
-This will install all the dependancies and all the component dependancies.
+This will install all the dependencies and all the component dependencies.
 
 3. Set your AWS credentials in your ENV vars
 
@@ -56,30 +56,28 @@ This will install all the dependancies and all the component dependancies.
 
 ## Composing Components
 
-
 This app is comprised of 3 parts: `aws-lambda`, `rest-api`, `netlify-site`.
 
 Let's put them together.
 
-### 1. Adding Netlify Site
-
+### 1. Adding Netlify site
 
 We are using netlify to publish our landing page built with `create-react-app`.
 
-I chose netlify over s3 for static hosting because:
+I chose netlify over s3 for static hosting because it:
 
 - Builds on github repo events (CI/CD flow)
 - Has automatic branch previews on PRs
 - Handles redirects out of box via via `_redirects` file 👌
 - Handles proxied URLs - this gives us escape hatches for dynamic pages/content
-- It is insanely cheap
-- and amazing support to boot
+- Is insanely cheap
+- Has amazing support to boot
 
-Okay, lets get the component setup.
+Okay, lets get the component set up.
 
 In `serverless.yml` we need to define the components we are using under the `components` key.
 
-The inputs the `netlify-site` component need can be [seen here](https://github.com/serverless/components/blob/738ec5d912d50d73f62ab94d0eeb3b634e792223/registry/netlify-site/README.md#input-types)
+The inputs the `netlify-site` component need [can be seen here](https://github.com/serverless/components/blob/738ec5d912d50d73f62ab94d0eeb3b634e792223/registry/netlify-site/README.md#input-types).
 
 ```yml
 type: landing-page
@@ -102,60 +100,59 @@ components:
 
 Lets break that down.
 
-`netlifyApiToken` is grabbed from your netlify account at https://app.netlify.com/account/applications under "Personal Access tokens". Replace `abc` with your valid netlify token.
+`netlifyApiToken` is grabbed from your netlify account at https://app.netlify.com/account/applications, under "Personal Access tokens". Replace `abc` with your valid netlify token.
 
 ![image](https://user-images.githubusercontent.com/35479789/38898738-b9bfef7a-424a-11e8-9c80-8fb147d36982.png)
 
 ---
 
-`githubApiToken` is setup in github at https://github.com/settings/tokens under "Personal access tokens". The token must have `admin:repo_hook` and `repo` access. Replace `123` with your valid github token.
+`githubApiToken` is setup in github at https://github.com/settings/tokens, under "Personal access tokens". The token must have `admin:repo_hook` and `repo` access. Replace `123` with your valid github token.
 
 ![image](https://user-images.githubusercontent.com/35479789/38898777-db507bb4-424a-11e8-975b-fd1554352045.png)
 
 ---
 
-`siteName` is the netlify domain you will use for your site. Every site on netlify lives on a unique netlify subdomain until you mask it with your custom domain name. Change `my-awesome-site-lol-lol.netlify.com` to a unique address for your project.
+`siteName` is the netlify domain you will use for your site. Every site on Netlify lives on a unique netlify subdomain until you mask it with your custom domain name. Change `my-awesome-site-lol-lol.netlify.com` to a unique address for your project.
 
 ---
 
-`siteDomain` is the actual domain name of your site. You will need to configure a CNAME to point to netlify. If you want to attach your own domain to this example, follow the [custom domain instructions](https://www.netlify.com/docs/custom-domains/).
+`siteDomain` is the actual domain name of your site. You will need to configure a CNAME to point to Netlify. If you want to attach your own domain to this example, follow the [custom domain instructions](https://www.netlify.com/docs/custom-domains/).
 
 ---
 
-`siteRepo` is where your site code lives, **this one is important**. You can use any type of site/app that you want in your repo, as long as you give netlify the build command and where the built site is output. We are going to be using `create-react-app` to create a landing page.
+`siteRepo` is where your site code lives, and **this one is important**. You can use any type of site/app that you want in your repo, as long as you give Netlify the build command and where the built site is output. We are going to be using `create-react-app` to create a landing page.
 
 Our landing page code + repo can be seen [here](https://github.com/serverless/netlify-landing-page/)
 
 ---
 
-`siteBuildCommand` is the build command for `create-react-app`. It will compile our react app and output files into the `build` directory for us. This command will change based on your site/apps build process.
+`siteBuildCommand` is the build command for `create-react-app`. It will compile our React app and output files into the `build` directory for us. This command will change based on your site/apps build process.
 
 ---
 
-`siteBuildDirectory` for us is the `/build` directory. This is the default behavior of create-react-app
+`siteBuildDirectory` for us is the `/build` directory. This is the default behavior of `create-react-app`.
 
 ---
 
-`siteRepoBranch` will be the branch that triggers a re-build of our site. A.K.A when a change is merged into `master` branch, our netlify will automagically rebuild and update our live site.
+`siteRepoBranch` will be the branch that triggers a rebuild of our site. Aka, when a change is merged into the `master` branch, our Netlify will automagically rebuild and update our live site.
 
 ---
 
-You can deploy this as it is right now with
+You can deploy this as it is right now, with:
 
 ```bash
 ../../bin/components deploy
 ```
 
-If you go into netlify and click into the newly created site, you should see the live landing page URL.
+If you go into Netlify and click into the newly-created site, you should see the live landing page URL:
 
 ![image](https://user-images.githubusercontent.com/532272/38904159-a8b88c6a-425d-11e8-8db5-12939d666c4d.png)
 
-### 2. Adding the Lambda Function for Sign Up
+### 2. Adding the Lambda function for signup
 
+Now, we need to add a Lambda function to handle our form submissions.
 
-Now we need to add a lambda function to handle for form submissions.
-
-In `serverless.yml` add the `aws-lambda` component to the `components` block.
+In `serverless.yml` add the `aws-lambda` component to the `components` block:
 
 ```yml
 components:
@@ -167,14 +164,14 @@ components:
       handler: code/handler.landingPageFunction
 ```
 
-Then create the code for the lambda function in a `code` directory.
+Then, create the code for the lambda function in a `code` directory:
 
 ```bash
 mkdir code
 touch handler.js
 ```
 
-Inside `handler.js` add your lambda code. `code/handler.landingPageFunction` references the `hander.js` file with the exported `landingPageFunction` function.
+Inside `handler.js`, add your Lambda code. `code/handler.landingPageFunction` references the `hander.js` file with the exported `landingPageFunction` function:
 
 ```js
 const request = require('request')
@@ -247,21 +244,21 @@ module.exports.landingPageFunction = (event, context, callback) => {
 }
 ```
 
-Then we need to expose the `env` variables for the function to consume.
+Now, we need to expose the `env` variables for the function to consume.
 
-You can grab your mail chimp API keys under Account > Extras.
+You can grab your Mailchimp API keys under Account > Extras:
 
 ![image](https://user-images.githubusercontent.com/532272/38901904-fa57ff0c-4252-11e8-90ff-373e8f78b35b.png)
 
 ![image](https://user-images.githubusercontent.com/532272/38901981-4678acf6-4253-11e8-8819-eb312cf4aa0f.png)
 
-Your mailchimp list ID can be found under your list settings.
+Your Mailchimp list ID can be found under your list settings:
 
 ![image](https://user-images.githubusercontent.com/532272/38902020-72c889a2-4253-11e8-9cf3-a4453e157638.png)
 
-The region is up in the URL of your browser. In our case it's `us11`
+The region is up in the URL of your browser. In our case it's `us11`.
 
-Now let's add these to the function.
+Let's add these to the function:
 
 ```yml
 components:
@@ -310,14 +307,13 @@ components:
 
 ### 3. Adding the Rest API to expose Lambda function
 
-
-So far we have a landing page and a function. They aren't connected in any way.
+So far, we have a landing page and a function. They aren't connected in any way.
 
 We need to expose a live endpoint for the landing page to ping on form submissions.
 
-Lets do that with the `rest-api` component.
+Let's do that with the `rest-api` component.
 
-Add the rest API component to the `components` block of `serverless.yml`
+Add the rest API component to the `components` block of `serverless.yml`:
 
 ```yml
 components:
@@ -336,13 +332,13 @@ Let's break this down.
 
 The inputs for the `rest-api` component take a `gateway` and `routes`.
 
-`gateway` is the API gateway you want to use. In this case we are using `aws-apigateway`
+`gateway` is the API gateway you want to use. In this case we are using `aws-apigateway`.
 
-`routes` are the URL paths and the functions that are triggered when they are hit. For a larger rest example see the `/examples/retail-app`
+`routes` are the URL paths and the functions that are triggered when they are hit. For a larger rest example, see the [`/examples/retail-app` here](https://github.com/serverless/components/tree/master/examples/retail-app).
 
-`${landingPageFunction}` being referenced in the `/sign-up` route refers to the function that we had previously defined. So we are passing a direct reference of the function into the rest-api component. A.k.a composiblity.
+`${landingPageFunction}` being referenced in the `/sign-up` route refers to the function that we had previously defined. So we are passing a direct reference of the function into the rest-api component. Aka, *composiblity*.
 
-Your full `serverless.yml` should look like this at this point.
+At this point, your full `serverless.yml` should look like this:
 
 ```yml
 type: landing-page
@@ -383,10 +379,9 @@ components:
           - master
 ```
 
-### 4. Expose the API endpoint to the Netlify Site
+### 4. Expose the API endpoint to the Netlify site
 
-
-We have all the pieces we need for the functionality we are after. Great news.
+Great news! We have all the pieces we need for the functionality we are after.
 
 There is one last step we need to handle. We need to give the live URL to the frontend for it to know where to actually send the form data.
 
@@ -419,13 +414,13 @@ components:
         REACT_APP_SIGNUP_API: ${apiEndpoint.url}sign-up
 ```
 
-`${apiEndpoint.url}` refers to the `apiEndpoint` rest-api component and it's outputted value of `url`
+`${apiEndpoint.url}` refers to the `apiEndpoint` rest-api component and it's outputted value of `url`.
 
-So `${apiEndpoint.url}sign-up` will resolve to something like `https://3m0ylzhbxk.execute-api.us-east-1.amazonaws.com/dev/sign-up`
+So `${apiEndpoint.url}sign-up` will resolve to something like `https://3m0ylzhbxk.execute-api.us-east-1.amazonaws.com/dev/sign-up`.
 
-We are passing that value into the netlify site build environment variables with the `create-react-app` conventions `REACT_APP_${YOUR KEY}`
+We are passing that value into the Netlify site build environment variables with the `create-react-app` conventions `REACT_APP_${YOUR KEY}`.
 
-This way we can use `process.env.REACT_APP_SIGNUP_API` in our react apps code.
+This way, we can use `process.env.REACT_APP_SIGNUP_API` in our React app's code:
 
 ```js
 const formAPI = process.env.REACT_APP_SIGNUP_API
@@ -487,12 +482,11 @@ components:
         REACT_APP_SIGNUP_API: ${apiEndpoint.url}sign-up
 ```
 
-## Deploy
+## Deploy!
 
+We have created our landing page. It's time for the final deploy.
 
-Now we have created our landing page and it's time for the final deploy.
-
-In your terminal run
+In your terminal run:
 
 ```bash
 ../../bin/components deploy
@@ -500,6 +494,6 @@ In your terminal run
 
 ## Summary
 
-So as you can see with just a couple components you can have a landing page up and running in a jiffy.
+As you can see, with just a couple components you can have a landing page up and running in no time.
 
 What will you build with components?
