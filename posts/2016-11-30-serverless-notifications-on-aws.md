@@ -8,17 +8,27 @@ authors:
   - DiegoZanon
 ---
 
-# Serverless Notifications
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-notifications-on-aws.jpg">
 
 Real-time notifications are an important use case for modern apps. For example, you may need to notify your user that another post is available in their social feed or that someone else added a comment on one of their photos.
 
-Implementing notifications is an easy task when you use WebSockets and have a dedicated server. You can make a permanent link between the user and the server and use the publish-subscribe pattern to share messages. The browser will subscribe to automatically receive new messages without needing a polling mechanism to constantly check for updates.
+But how do you do this serverless-ly?
 
-But if you're going serverless, you don't have a dedicated server. Instead, you need a cloud service that will solve this problem for you providing scalability, high availability and charging per messages and not per hour.
+Typically, you would use WebSockets and have a dedicated server. You'd make a permanent link between the user and the server, and use the publish-subscribe pattern to share messages. The browser would subscribe to automatically receive new messages without needing a polling mechanism to constantly check for updates.
 
-In this post, I'm going to describe how I implemented a notification system for unauthenticated users with the Serverless Framework and AWS IoT for *browsers*. I know that "Internet of Things" sounds strange to be used in a website, but it supports WebSockets and is very easy to use. Besides, Amazon SNS (Simple Notification Service) has a better name, but doesn't support WebSockets.
+But if you're going serverless, you don't *have* a dedicated server.
 
-IoT is used due to its simple messaging system. You create a "topic" and make users to subscribe to it. A message sent to this topic will be automatically shared with all subscribed users. A common use case for this is a chat system.
+Instead, you'll need a cloud service that will solve this problem for you providing scalability, high availability, and charging per messages and not per hour.
+
+## The solution: AWS + the Serverless Framework
+
+In this post, I'm going to describe how I implemented a notification system for unauthenticated users with the Serverless Framework and AWS IoT for *browsers*.
+
+I know that "Internet of Things" sounds strange to be used in a website, but it supports WebSockets, is very easy to use, and unlike Amazon SNS (Simple Notification Service) it supports WebSockets. Win!
+
+### Why IoT?
+
+I used IoT due to its simple messaging system. You create a "topic" and make users to subscribe to it. A message sent to this topic will be automatically shared with all subscribed users. A common use case for this is a chat system.
 
 If you want private messages, you just need to create private topics and restrict the access. Only one user will be subscribed to this topic and you can make your system (Lambda functions) to send updates to this topic to notify this specific user.
 
