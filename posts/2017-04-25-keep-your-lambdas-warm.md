@@ -8,6 +8,8 @@ authors:
   - GoncaloNeves
 ---
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/keep-your-lambdas-warm.jpg">
+
 Cold starts in AWS Lambda got you down? You've come to the right place.
 
 In this post, I'll briefly cover what cold starts are, and then show you some ways to reduce your cold start times. Read on!
