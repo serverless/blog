@@ -36,13 +36,9 @@ The **Fn Load Balancer** (Fn LB) allows operators to deploy clusters of Fn serve
 
 ## Fn + Serverless Framework
 
-Starting today, you can now use fn and the serverless framework together.
+<img align="right" width="160" height="160" src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/fn-thumb.jpg">
 
-<a href="http://fnproject.io/" target="_blank">
-  <img width="360" src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/fn-thumb.jpg" />
-</a>
-
-[Checkout the Fn Docs](https://serverless.com/framework/docs/providers/fn/)
+Starting today, you can now use fn and the serverless framework together 🎉.
 
 ## Getting Started with Serverless & Fn
 
@@ -53,34 +49,67 @@ Make sure you have the serverless framework installed on your machine.
 npm i serverless -g
 ```
 
-Then create a new service with the `sls create` command.
+Then create a new service with the `sls create` command and supply the newly added `fn-nodejs` or `fn-go` templates.
 
 ```bash
 # Create a new Serverless Service/Project
 $ serverless create --template fn-nodejs --path new-fn-project
 # Change into the newly created directory
 $ cd new-fn-project
-# Install npm dependencies
+# Install fn provider dependency
 $ npm install
+# Install the function code dependencies
+$ cd hello && npm install
 ```
 
 Fn functions run in Docker containers, therefore you need a running fn service in order to run it.
 
-See the guide on [installing Fn](/framework/docs/providers/fn/guide/installation/) to finish setup.
+See the guide on [installing Fn](https://serverless.com/framework/docs/providers/fn/guide/installation/) to finish setup.
 
 ### Project Structure
 
-Project Structure here
+The Fn project structure is similar to all other serverless framework providers work with one difference. Instead of a `handler` property pointing to where the code lives, the function code location is driven by convention.
+
+![fn-sls-code-ref-structure](https://user-images.githubusercontent.com/532272/39499387-620821c6-4d62-11e8-9be3-e09a2e9a61e9.jpg)
 
 ### Deployment
 
-How to deploy here
+To deploy simply run the deploy command
+
+```bash
+serverless deploy
+```
+
+Use this method when you have updated your Function, Event or Resource configuration in `serverless.yml` and you want to deploy that change (or multiple changes at the same time) to your Fn cluster.
+
+### How It Works
+
+The Serverless Framework translates all syntax in `serverless.yml` to [Fn](https://github.com/fnproject/fn) calls to provision your Functions.
+
+For each function in your `serverless.yml` file, Fn will create an Fn Function.
+
+For example, let's take the following example `serverless.yml` file:
+
+```yaml
+
+service: hello-world
+
+functions: # Your "Functions"
+  hello:
+    name: hi
+    version: 0.0.1
+    runtime: go
+    events:
+        - http:
+            path: /hello
+
+```
+
+When deploying that file FN will provide you with one endpoint that you can hit at: `FN_API_URL/r/hello-world/hello`
 
 ## Links and Resources
 
-Here’s what you need to get started with the Fn plug-in now:
-
-[Start here](/framework/docs/providers/fn/guide/quick-start/) in our docs.
+Here’s what you need to get started with the fn plugin now:
 
 - [GitHub repo](https://github.com/fnproject/serverless-integration/)
 - [Fn Docs](https://serverless.com/framework/docs/providers/fn/)
