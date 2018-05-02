@@ -1,6 +1,6 @@
 ---
-title: "Fn project brings containerized, cloud-agnostic functions to a cloud near you"
-description: The Fn project is an open source, container-native serverless platform that you can run anywhere—on any cloud or on-premise.
+title: "Fn Project brings containerized, cloud-agnostic functions to a cloud near you"
+description: The Fn Project is an open source, container-native serverless platform that you can run anywhere—on any cloud or on-premise.
 date: 2018-05-02
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/fn-thumb.jpg
@@ -139,16 +139,16 @@ functions: # Your "Functions"
 
 ```
 
-When deploying that file FN will provide you with one endpoint that you can hit at: `FN_API_URL/r/hello-world/hello`
+When deploying that file, Fn will provide you with one endpoint that you can hit at: `FN_API_URL/r/hello-world/hello`
 
 ## Links and Resources
 
-Here’s what you need to get started with the fn plugin now:
+Here’s what you need to get started with the Fn plugin now:
 
 - [GitHub repo](https://github.com/fnproject/serverless-integration/)
-- [Serverless + Fn Docs](https://serverless.com/framework/docs/providers/fn/)
-- [Fn Homepage](http://fnproject.io/)
+- [Serverless + Fn docs](https://serverless.com/framework/docs/providers/fn/)
+- [Fn homepage](http://fnproject.io/)
 
 If you have questions or comments about the integration, we'd love to hear from you in the comments below or over on the [serverless forums](https://forum.serverless.com/).
 
-We can't wait to see what you build.
+Can't wait to see what you build!
