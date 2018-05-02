@@ -8,11 +8,11 @@ authors:
   - DavidWells
 ---
 
-On October 2nd 2017, Oracle first announced the open source [fn project](http://fnproject.io/) at the JavaOne conference. Since then the team here at Serverless has kept a keen eye on the project.
+Back in October, Oracle first announced the open source [fn project](http://fnproject.io/) at the JavaOne conference. Since then, the team here at Serverless has kept a keen eye on the project.
 
 More function providers means more freedom for FAAS users & less vendor lock in. This is one of our driving principles behind the [serverless framework](https://serverless.com/framework/docs/).
 
-So it was more than natural to bring the fn project into the growing list of [serverless function providers](https://serverless.com/framework/docs/providers/) 🎉.
+So it was only natural to bring the fn project into the growing list of [serverless function providers](https://serverless.com/framework/docs/providers/) 🎉.
 
 ## About Fn
 
