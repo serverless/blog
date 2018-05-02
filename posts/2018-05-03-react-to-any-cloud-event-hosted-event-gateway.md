@@ -8,7 +8,7 @@ authors:
   - AlexDeBrie
 ---
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-readme-header.png">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-readme-header1.png">
 
 Last year, we released the [Event Gateway](https://serverless.com/event-gateway/) project: an open source serverless communication fabric that allowed developers to react to any event, with *any* function, on any provider.
 
@@ -29,7 +29,7 @@ In its initial iteration at launch, Event Gateway was a piece of software that y
 
 **So today, we’re [releasing a public beta of Event Gateway as a hosted service](https://serverless.com/event-gateway/).**
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-integrations.png">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-integrations1.png">
 
 In other words, Event Gateway goes serverless! You can get up and running with it *right now*, no infrastructure required.
 
