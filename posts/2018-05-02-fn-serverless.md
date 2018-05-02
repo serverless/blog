@@ -1,5 +1,5 @@
 ---
-title: "Fn Project Brings Containerized Function to your cloud of choise & on-prem"
+title: "Fn Brings Containerized Cloud Agnostic Functions to a cloud near you"
 description: The Fn project is an open-source container-native serverless platform that you can run anywhere -- any cloud or on-premise
 date: 2018-05-02
 layout: Post
@@ -24,6 +24,7 @@ Watch this 10 minute video for a quick overview on the project and a sweet demo 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7bUnlTK_WTo?start=125" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+The platform is container-native, enabling users to write functions in any programming language with excellent support for local development and testing. Fn even allows devs to “bring their own Dockerfile” such that ANY containerized code can be used as a function.
 
 **The Fn Project consists of 4 major components:**
 
