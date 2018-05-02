@@ -24,6 +24,7 @@ Watch this 10 minute video for a quick overview on the project and a sweet demo 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7bUnlTK_WTo?start=125" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+
 **The Fn Project consists of 4 major components:**
 
 **Fn Server** is the Functions-as-a-Service system that allows developers to easily build, deploy, and scale their functions into a multi-cloud environment
@@ -34,11 +35,13 @@ The **Fn Load Balancer** (Fn LB) allows operators to deploy clusters of Fn serve
 
 **Fn Flow** allows developers to build and orchestrate higher level workflows of functions all inside their programming language of choice. It makes it easy to use parallelism, sequencing/chaining, error handling, fan in/out, etc., without learning complicated external models built with long JSON or YAML templates.
 
+For more information on the fn project and why they built it, I highly recommend checking out [this post](https://medium.com/fnproject/8-reasons-why-we-built-the-fn-project-bcfe45c5ae63).
+
 ## Fn + Serverless Framework
 
 <img align="right" width="160" height="160" src="https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/fn-thumb.jpg">
 
-Starting today, you can now use fn and the serverless framework together 🎉.
+Starting today, you can now deploy your fn functions using the serverless framework & the familiar `serverless.yml` config we have all grown to know and love 🎉.
 
 ## Getting Started with Serverless & Fn
 
@@ -68,9 +71,39 @@ See the guide on [installing Fn](https://serverless.com/framework/docs/providers
 
 ### Project Structure
 
-The Fn project structure is similar to all other serverless framework providers work with one difference. Instead of a `handler` property pointing to where the code lives, the function code location is driven by convention.
+The Fn project structure is similar to all other serverless framework providers work with one tiny difference.
+
+Instead of a `handler` property pointing to where the code lives, the function code location is driven by convention.
 
 ![fn-sls-code-ref-structure](https://user-images.githubusercontent.com/532272/39499387-620821c6-4d62-11e8-9be3-e09a2e9a61e9.jpg)
+
+The function key will reference the folder path and inside of that folder path it will look for a `func.[Your Runtime]` a.k.a `func.js` or `func.go`.
+
+So the below serverless.yml is looking for a `./hello/func.js` file when `sls deploy` is ran.
+
+```yml
+# The `service` block is the name of the service
+service:
+  name: hello-world
+
+# The `provider` block defines where your service will be deployed
+provider:
+  name: fn
+
+plugins:
+  - serverless-fn
+
+# The `functions` block defines what code to deploy
+functions:
+  hello: # <- hello references the ./hello folder and the func.js file inside
+    name: hello
+    version: 0.0.1
+    format: json
+    runtime: node
+    events:
+        - http:
+            path: /hello-there
+```
 
 ### Deployment
 
@@ -112,7 +145,9 @@ When deploying that file FN will provide you with one endpoint that you can hit 
 Here’s what you need to get started with the fn plugin now:
 
 - [GitHub repo](https://github.com/fnproject/serverless-integration/)
-- [Fn Docs](https://serverless.com/framework/docs/providers/fn/)
+- [Serverless + Fn Docs](https://serverless.com/framework/docs/providers/fn/)
 - [Fn Homepage](http://fnproject.io/)
 
 If you have questions or comments about the integration, we'd love to hear from you in the comments below or over on the [serverless forums](https://forum.serverless.com/).
+
+We can't wait to see what you build.
