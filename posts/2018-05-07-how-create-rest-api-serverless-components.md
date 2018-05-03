@@ -42,7 +42,13 @@ We could accomplish our task by manually creating an IAM role, configuring the (
 
 Enter: Serverless Components! The components concept provides an easy way to abstract away common functionality, making it easier to re-use that functionality in multiple places.
 
-In our case, we would componentize the AWS IAM role into one component, which takes a `name` and the `service` as inputs, creates an IAM Role, and returns the `arn` as an output. We could similarly componetize the AWS Lambda function into another component, which takes the `name`, `memorySize`, `timeout`, `code` and `iamRole` as inputs, creates the AWS Lambda function, and returns the `arn` as an output.
+In our case, we would componentize the AWS IAM role into one component, which takes a `name` and the `service` as inputs, creates an IAM Role, and returns the `arn` as an output:
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components-rest-api/iam-role-component.png">
+
+We could similarly componetize the AWS Lambda function into another component, which takes the `name`, `memorySize`, `timeout`, `code` and `iamRole` as inputs, creates the AWS Lambda function, and returns the `arn` as an output:
+
+<img src"https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components-rest-api/lambda-component.png">
 
 Then, we'd be able re-use our two components to create dozens of AWS Lambda functions and their corresponding roles, without the need to manually create Lambda functions or IAM roles *ever again*.
 
