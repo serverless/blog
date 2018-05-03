@@ -25,17 +25,17 @@ This post talks about some exciting updates for Event Gateway, and also where we
 
 ## Event Gateway as a hosted service
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-integrations1.png">
+
 In its initial iteration at launch, Event Gateway was a piece of software that you had to start up and run. You needed servers to interact with it. And while a lot of people loved Event Gateway and all the problems it solved, they (shocker!) didn’t love that it forced them to deal with infrastructure.
 
-**So today, we’re [releasing a public beta of Event Gateway as a hosted service](https://serverless.com/event-gateway/).**
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-integrations1.png">
+So today, we’re [releasing a public beta of Event Gateway as a hosted service](https://serverless.com/event-gateway/)!
 
 In other words, Event Gateway goes serverless! You can get up and running with it *right now*, no infrastructure required.
 
-[Sign up here](https://dashboard.serverless.com), and then check out our [getting started guide](https://github.com/serverless/event-gateway-getting-started) to hit the ground running. The getting started example takes only a few minutes.
-
 <a href="https://dashboard.serverless.com"><img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-dashboard.png"></a>
+
+[Sign up here](https://dashboard.serverless.com), and then check out our [getting started guide](https://github.com/serverless/event-gateway-getting-started) to hit the ground running. The getting started example takes only a few minutes.
 
 ## Configurable connectors
 
