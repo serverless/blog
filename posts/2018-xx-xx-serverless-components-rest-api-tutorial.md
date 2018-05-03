@@ -411,12 +411,12 @@ Once done you can remove the application via `components remove`.
 
 ## Conclusion
 
-That's it! We've just created our very first REST API which is capable to store and manage Products. In this process we've re-used three different components (`aws-lambda`, `aws-dynamodb` and `rest-api`).
+That's it! We've just created our very first REST API which is capable to store and manage Products. In this process we've re-used 3 different components from the [Serverless Components registry](https://github.com/serverless/components/tree/master/registry) (`aws-lambda`, `aws-dynamodb` and `rest-api`).
 
 Setting everything up was as easy as adding the function logic and the corresponding component configurations in our `serverless.yml` file.
 
-I hope that you've enjoyed this tutorial and got a feeling of the power Serverless Components enable.
+I hope that you've enjoyed this tutorial and got a feeling how powerful Serverless Components are.
 
-You could enhance this project futher by adding a static website interface with the help of the [`static-website` component](https://github.com/serverless/components/tree/master/registry/static-website).
+You could enhance this project further by adding a static website interface with the help of the [`static-website` component](https://github.com/serverless/components/tree/master/registry/static-website).
 
 The [`examples`](https://github.com/serverless/components/tree/master/examples) section in our Serverless Components repository is another great resource to get some inspiration what else you can build with the Serverless Components framework.
