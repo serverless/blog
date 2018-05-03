@@ -67,6 +67,12 @@ The plugin enables you to:
 
 We have a [getting started example](https://github.com/serverless/event-gateway-getting-started) for using the Event Gateway plugin with our hosted Event Gateway. Check back next week for an in-depth walkthrough tutorial on using the different features of Event Gateway with the plugin.
 
+## CloudEvents integration
+
+The Cloud Native Computing Foundation (CNCF) has been working on [CloudEvents](http://cloudevents.io/), a specification for describing event data in a common way across providers. We at Serverless have taken a leading role in this effort, as we believe strongly in the importance of standards and interoperability in this new event-driven world. That's why we have made the Event Gateway CloudEvents-compatible. All functions receive a CloudEvents payload describing the event received.
+
+The [CloudEvents spec](https://github.com/cloudevents/spec) recently hit an 0.1 release, and the CNCF Serverless Working Group is pushing hard toward the 1.0 milestone.
+
 ## The future of Event Gateway: where we’re going
 
 Our path here is threefold: we want to continue adding more functionality into the user experience, integrate a wider range of available function types, and make it even easier to pull in different events. 
