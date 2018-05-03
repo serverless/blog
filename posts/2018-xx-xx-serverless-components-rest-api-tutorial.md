@@ -10,13 +10,15 @@ authors:
 
 ## Introduction
 
-You might have already heard about our new ["Serverless Components"](https://github.com/serverless/components) concept which is our latest project to enable an easier way to encapsulate common functionality in so-called "components" which can then be easily re-used, extended and shared with others and in other applications.
+You might have already heard about our new ["Serverless Components"](https://github.com/serverless/components) concept which is our latest project to make it easier to encapsulate common functionality in so-called "components" which can then be easily re-used, extended and shared with other developers and other serverless applications.
 
-For a more general introduction to the "Serverless Components" project check out the [corresponding blog post]() by Brian Neisler.
+For a more general introduction to the "Serverless Components" project check out [this blog post](https://serverless.com/blog/what-are-serverless-components-how-use/) by Brian Neisler.
 
 In todays blog post we'll take a deeper dive into Serverless Components and re-use several components from the [component registry](https://github.com/serverless/components/tree/master/registry) to build a fully-fledged REST API powered application.
 
 At first we'll give a quick refresher on the components concept and the Serverless Components project. After that we'll take a closer look at all the different components and their functionalities we'll use today before we jump straight into the code to use those components to build our REST API powered example application.
+
+Excited? Let's go!
 
 ## Refresher: "What are components?"
 
@@ -26,13 +28,13 @@ Let's take a look at a simple example to get a better understanding what the com
 
 Let's imagine that we want to deploy multiple AWS Lambda functions to AWS. Taking a deeper look into AWS Lambdas internals we see that every Lambda function needs an IAM role. Furthermore we need to configure parameters such as "Memory size" or "Timeout". In addition to that we need to provide the zipped source code and ship it alongside our AWS Lambda function.
 
-We could accomplish the task of deploying multiple AWS Lambda functions to AWS by manually creating an IAM role, configuring the parameters such as "Memory size" and "Timeout" and zipping and uploading the code. However doing this the manual is cumbersome and error-prone. Furthermore there's no way to re-use a common logic to create other AWS Lambda functions in the future.
+We could accomplish the task of deploying multiple AWS Lambda functions to AWS by manually creating an IAM role, configuring the parameters such as "Memory size" and "Timeout" and zipping and uploading the code. However doing this manually is cumbersome and error-prone. Furthermore there's no way to re-use a common logic to create other AWS Lambda functions in the future.
 
 Enter components! The components concept provides an easy way to abstract common functionality away making it easier to re-use functionalities in multiple places.
 
 In our case we would componetize the AWS IAM role into a separate component, which takes a `name` and the `service` as inputs, creates an IAM Role and returns the `arn` as an output. Similarily we could componetize the AWS Lambda function into an own component, which takes the `name`, `memorySize`, `timeout`, `code` and `iamRole` as inputs, creates the AWS Lambda function and returns the `arn` as an output.
 
-Now we could simple re-use our two components to create dozens of AWS Lambda functions and their corresponding roles, without the need to manually create something like this ever again.
+Now we could simple re-use our two components to create dozens of AWS Lambda functions and their corresponding roles, without the need to manually create Lambda functions or IAM roles ever again.
 
 Write once, use everywhere.
 
@@ -44,9 +46,7 @@ In order to use components we need to have ["Serverless Components"](https://git
 
 Installing it is as easy as running `npm install --global serverless-components`.
 
-**Note:** Right now "Serverless Componets" needs Node.js 8 or greater. Compatibility with older Node.js versions is already on our radar.
-
-Great! Now we're good to go. Let's start with a quick look at the components we're about to use.
+**Note:** Right now "Serverless Componets" needs Node.js 8 or greater. Compatibility with older Node.js versions is [already in the making](https://github.com/serverless/components/pull/188).
 
 ## Components we'll use
 
@@ -54,7 +54,7 @@ Before we jump straight into code let's take a quick look at the different compo
 
 ### `aws-lambda`
 
-The [`aws-lambda`](https://github.com/serverless/components/tree/master/registry/aws-lambda) gives us a convenient way to deploy Lambda functions to AWS.
+The [`aws-lambda`](https://github.com/serverless/components/tree/master/registry/aws-lambda) component gives us a convenient way to deploy Lambda functions to AWS.
 
 When using we need to supply a `memory`, `timeout` and `handler` property. All other configurations (such as the functions `name`) are optional.
 
@@ -66,9 +66,9 @@ You can find the documentation and some examples in the components [registry ent
 
 The [`aws-dynamodb`](https://github.com/serverless/components/tree/master/registry/aws-dynamodb) component makes it possible to create and manage DynamoDB tables.
 
-The only configuration necessary for this component is the `region` in which the table should be created and an array `tables` which includes the different DynamoDB specific table definitions.
+The only configurations necessary for this component are the `region` in which the table should be created and an array called `tables` which includes the different DynamoDB specific table definitions.
 
-The documentation of the [components registry entry](https://github.com/serverless/components/tree/master/registry/aws-dynamodb) shows some example usages.
+The [components documentation](https://github.com/serverless/components/tree/master/registry/aws-dynamodb) shows some example usages.
 
 ### `rest-api`
 
@@ -76,9 +76,9 @@ The [`rest-api`](https://github.com/serverless/components/tree/master/registry/r
 
 #### `gateway` config
 
-The `gateway` config property determines where the REST API should be created. The component currently supports `apigateway` to setup a REST API on AWS using the API Gateway and `eventgateway` to setup a REST API using the hosted version of the Event Gateway.
+The `gateway` config property determines where the REST API should be created. The component currently supports `aws-apigateway` to setup a REST API on AWS using the API Gateway and `eventgateway` to setup a REST API using the hosted version of the [Event Gateway](https://serverless.com/event-gateway/).
 
-In this blog post we'll be using the `apigateway` configuration to tell the Framework that we want to setup our REST API on AWS using the API Gateway service.
+In this blog post we'll be using the `aws-apigateway` configuration to tell the Framework that we want to setup our REST API on AWS using the API Gateway service.
 
 #### `routes` config
 
@@ -93,7 +93,7 @@ If for example, you want to implement a "Products" API you'd create routes like 
 | `POST`   | `/products`      | Take product data and create a new product |
 | `DELETE` | `/products/{id}` | Delete the product with the id `{id}`      |
 
-That's it. When deploying the component to AWS the Framework will automatically create a REST API using the API Gateway service and returns the URLs we can use to do the above operations.
+That's it. When deploying the component to AWS the Framework will automatically create a REST API using the API Gateway service and returns the URLs we can use to perform the above operations.
 
 You can find the documentation and some examples in the components [registry entry](https://github.com/serverless/components/tree/master/registry/rest-api).
 
@@ -115,7 +115,7 @@ type: rest-api-app
 
 The `type` property tells the Framework that our application is called `rest-api-app`.
 
-If you compare this information with `serverless.yml` files from other components in the [`registry`](https://github.com/serverless/components/tree/master/registry) you might see that they too have a `type` property at the root level. The reason for that is that our `rest-api-app` application itself is a component which could be re-used by other components / projects. There's no distinction between an application or a component since both are components at the end of the day.
+If you compare this information with `serverless.yml` files from components in the [`registry`](https://github.com/serverless/components/tree/master/registry) you might see that they too have a `type` property at the root level. The reason for that is that our `rest-api-app` application itself is a component which could be re-used by other components / projects. There's no distinction between an application or a component. Both are components at the end of the day.
 
 ### Adding a `products` DB table
 
@@ -153,7 +153,7 @@ With this code snippet we're adding our fist component to our project.
 
 Components can be added and configured in the `components` section. In our example we've added a component we called `productsDb` with the `type` `aws-dynamodb`. We can configure components via `inputs`. In our case we're creating a new DynamoDB table called `products` in the `us-east-1` region.
 
-Our product schema is defined with the `schema` property and contains the products `id`, `name`, `description` and `price`.
+Our database schema is defined with the `schema` property and defines the products properties `id`, `name`, `description` and `price`.
 
 ### Adding our Lambda functions
 
@@ -316,13 +316,13 @@ components:
         productTableName: products
 ```
 
-Here we're creating two functions called `getProduct` and `listProducts` which are of type `aws-lambda`. Both functions are configured via `inputs` and refer to the same code location as our `createProcuct` function. We're also passing in the corresponding environment variables via `env` to ensure that our Lamdba functions have access to our DynamoDB table name.
+Here we're declaring two function components called `getProduct` and `listProducts` which are of `type` `aws-lambda`. Both functions are configured via `inputs` and refer to the same code location as our `createProcuct` function. We're also passing in the corresponding environment variables via `env` to ensure that our Lamdba functions have access to our DynamoDB table name.
 
 That's it from an AWS Lamdba functions perspective.
 
 ### Adding the `rest-api` components
 
-The last missing piece is the `rest-api` component which ties everything together and makes it possible to interact with our Products end-to-end.
+The last missing piece is the `rest-api` component which ties everything together and makes it possible to interact with our mini Products application end-to-end.
 
 Adding and configuring our REST API is as easy as adding the corresponding component configuration to our `serverless.yml` file.
 
@@ -332,24 +332,24 @@ Adding and configuring our REST API is as easy as adding the corresponding compo
 components:
   # ...snip
   productsApi:
-   type: rest-api
-   inputs:
-     gateway: aws-apigateway
-     routes:
-       /products:
-         post:
-           function: ${createProduct}
-           cors: true
-         get:
-           function: ${listProducts}
-           cors: true
-         /{id}:
-           get:
-             function: ${getProduct}
-             cors: true
+    type: rest-api
+    inputs:
+      gateway: aws-apigateway
+      routes:
+        /products:
+          post:
+            function: ${createProduct}
+            cors: true
+          get:
+            function: ${listProducts}
+            cors: true
+          /{id}:
+            get:
+              function: ${getProduct}
+              cors: true
 ```
 
-Here we're creating our `productsApi` using the component with the `type` `rest-api`. Via `inputs` we're configuring the component to use the `aws-apigateway` component under the hood as our `gateway` of choice.
+Here we're creating our `productsApi` REST API using the component with the `type` `rest-api`. Via `inputs` we're configuring the component to use the `aws-apigateway` component under the hood as our `gateway` of choice.
 
 Next up we define our `routes`. Generally speakig we're defining 3 routes. One route for each function. We make `/products` accessible via `GET` and `POST` (`get` / `post`). A specific product is accessible at `/products/{id}` via `GET` (`get`).
 
@@ -359,7 +359,9 @@ Enabling `cors` for our endpoints is as easy as adding the `cors: true` configur
 
 ### Deploy and testing
 
-That's it! We wrote all the necessary code to setup and configure our fully-fledged REST API. We now have a REST API which is accesible via different API endpoints. This REST API will trigger different AWS Lambda functions which in turn query DynamoDB to query our products.
+That's it! We wrote all the necessary code to setup and configure our fully-fledged REST API!
+
+We now have a REST API which is accesible via 3 different API endpoints. This REST API will trigger our AWS Lambda functions which in turn reach out to DynamoDB to query our products.
 
 Let's Deploy and test our application!
 
@@ -374,7 +376,9 @@ REST API resources:
   GET - https://3412ssa.execute-api.us-east-1.amazonaws.com/dev/products/{id}
 ```
 
-Let's insert a new product. We can `curl` our `/products` endpoint via `POST`:
+Let's insert a new product.
+
+We can `curl` our `/products` endpoint via `POST`:
 
 
 ```
