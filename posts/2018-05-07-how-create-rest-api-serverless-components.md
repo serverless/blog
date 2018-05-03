@@ -1,9 +1,9 @@
 ---
-title: "Serverless Components - REST API tutorial"
+title: "How to create a REST API with pre-written Serverless Components"
 description: "How to create a fully-fledged REST API application using the Serverless Components project and its pre-written components."
-date: 2017-xx-xx
+date: 2018-05-07
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/to-be-defined.jpg
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-components-thumb.png
 authors:
   - PhilippMuns
 ---
