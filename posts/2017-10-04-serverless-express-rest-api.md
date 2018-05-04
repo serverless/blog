@@ -462,7 +462,7 @@ Now, our DocumentClient constructor is configured to use DynamoDB local if we're
 Let's see it if works. Start up your offline server again:
 
 ```bash
-$ sls offline start
+$ sls offline start --migrate
 Dynamodb Local Started, Visit: http://localhost:8000/shell
 Serverless: DynamoDB - created table users-table-dev
 Serverless: Starting Offline: dev/us-east-1.
