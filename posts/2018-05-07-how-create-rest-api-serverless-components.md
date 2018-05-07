@@ -133,7 +133,7 @@ type: rest-api-app
 
 The `type` property tells the Framework that our application is called `rest-api-app`.
 
-If you compare this information with `serverless.yml` files from components [in the `registry`](https://github.com/serverless/components/tree/master/registry), you might see that they too have a `type` property at the root level. This is because our `rest-api-app` application is itself a component, which could be re-used by other components or projects.
+If you compare this information with `serverless.yml` files from components [in the registry](https://github.com/serverless/components/tree/master/registry), you might see that they too have a `type` property at the root level. This is because our `rest-api-app` application is itself a component, which could be re-used by other components or projects.
 
 **There is no distinction between an application or a component. Both are components at the end of the day.**
 
@@ -169,7 +169,7 @@ components:
             timestamps: true
 ```
 
-With this code snippet, we've officially added the fist component to our project!
+With this code snippet, we've officially added the first component to our project!
 
 Components can be added and configured in the `components` section, and configured via `inputs`. In our example, we've added a component we called `productsDb` with the `type` `aws-dynamodb`. We then created a new DynamoDB table called `products` in the `us-east-1` region.
 
@@ -221,7 +221,7 @@ module.exports = {
 
 Here, we imported the AWS SDK, which is required to make AWS SDK calls. Then, we created a new DynamoDB instance called `dynamo`.
 
-We fetched the `table` name from the functions environment variables and defined our `create` function, which includes the logic to insert a new product record into the database.
+We fetched the `table` name from the function's environment variables and defined our `create` function, which includes the logic to insert a new product record into the database.
 
 Note that we're already using an event shape which corresponds to the AWS API Gateway event definitions.
 
@@ -245,7 +245,7 @@ components:
 
 Here, we're adding our `createProcuct` component which is of `type` `aws-lambda`.
 
-We've defined the function's configuration with the help of the components `inputs`. Note that we're specifing the path to our function's code with the help of the `root` property and the environment variables via `env`.
+We've defined the function's configuration with the help of the component's `inputs` section. Note that we're specifing the path to our function's code with the help of the `root` property and the environment variables via `env`.
 
 #### `getProduct` and `listProducts`
 
@@ -375,7 +375,7 @@ Here, we created our `productsApi` REST API using the component with the `type` 
 
 Then, we defined our `routes`. Generally speaking, we defined 3 routes, one for each function. We made `/products` accessible via `GET` and `POST`, and specific products accessible at `/products/{id}` via `GET`.
 
-A speciality in this component definition is the use of Serverless Variables via `${}`. Serverless Variables makes it easy for us to reference different values from different sources: environment variables, component outputs, or the `serverless.yml` file itself.
+A speciality in this component definition is the use of Serverless Variables via `${}`. [Serverless Variables](https://serverless.com/framework/docs/providers/aws/guide/variables/) makes it easy for us to reference different values from different sources: environment variables, component outputs, or the `serverless.yml` file itself.
 
 In our case, we're referencing the AWS Lambda components by name and passing those functions into our `rest-api` component. This way, the component knows how to configure the REST API so that the corresponding function is called when a request is sent to the endpoint.
 
@@ -385,7 +385,7 @@ Enabling `cors` for our endpoints is as easy as adding the `cors: true` configur
 
 That's it! We wrote all the necessary code to set up and configure our fully-fledged REST API!
 
-We now have a REST API which is accesible via 3 different API endpoints. This REST API will trigger our AWS Lambda functions, which in turn reach out to DynamoDB to query our products.
+We now have a REST API which is accessible via 3 different API endpoints. This REST API will trigger our AWS Lambda functions, which in turn reach out to DynamoDB to query our products.
 
 Let's Deploy and test our application!
 
