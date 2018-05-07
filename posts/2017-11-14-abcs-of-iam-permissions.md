@@ -8,6 +8,8 @@ authors:
   - AlexDeBrie
 ---
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/abcs-of-iam-permissions.jpg">
+
 When getting started with Serverless, one of the hardest things to grok is IAM—[AWS Identity and Access Management](https://aws.amazon.com/iam/).
 
 IAM is how you manage access to resources in your AWS account. Who is allowed to create a Lambda function? To _delete_ a function?
