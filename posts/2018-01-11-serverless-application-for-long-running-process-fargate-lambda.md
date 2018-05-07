@@ -8,6 +8,8 @@ authors:
   - RupakGanguly
 ---
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/aws-fargate-long-running-process.jpg">
+
 AWS dropped so many serverless announcements at re:Invent, the community is still scrambling to make sense of them all. This post is all about AWS Fargate.
 
 In this article, I will show you how to create an end-to-end serverless application that extracts thumbnails from video files. But, oh no, processing video files is a long-running process! Whatever will we do?
