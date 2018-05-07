@@ -8,6 +8,8 @@ authors:
   - AlexDeBrie
 ---
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-python-flask-api.jpg">
+
 Your existing web framework tooling can work seamlessly with the [Serverless Framework](serverless.com/framework). Let’s go over how to use the Python web framework [Flask](http://flask.pocoo.org/) to deploy a Serverless REST API.
 
 In this walk-through, we will:
