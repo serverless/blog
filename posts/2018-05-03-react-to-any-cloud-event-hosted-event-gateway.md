@@ -21,7 +21,13 @@ We wanted to make it easier to build decoupled APIs backed by FaaS. We wanted to
 
 But that was only step 1.
 
-This post talks about some exciting updates for Event Gateway, and also where we’re going next. 
+This post talks about some exciting updates for Event Gateway, and also where we’re going next.
+
+**Note:** If you just want to get straight to seeing Event Gateway in action, you can watch Austen Collins demo it at CloudNativeCon below:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TZPPjAv12KU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+Now, on to the news!
 
 ## Event Gateway as a hosted service
 
@@ -107,5 +113,6 @@ You can also check out the [open source Event Gateway project](https://github.co
 
 ### More examples and resources
 
-- Kelsey Hightower used Event Gateway to power his demo at KubeCon. [See his Github repo here](https://github.com/kelseyhightower/event-gateway-on-kubernetes).
+- Kelsey Hightower used Event Gateway to power his demo at KubeCon. [See his Github repo here](https://github.com/kelseyhightower/event-gateway-on-kubernetes), or [watch the live demo](https://www.youtube.com/watch?time_continue=2&v=_1-5YFfJCqM).
+- Austen Collins [demos Event Gateway triggering 11 different cloud providers](https://www.youtube.com/watch?v=TZPPjAv12KU) in his CloudNativeCon talk.
 - You can find a couple more in-depth examples in the [Event Gateway examples repo](https://github.com/serverless/event-gateway/tree/master/examples).
