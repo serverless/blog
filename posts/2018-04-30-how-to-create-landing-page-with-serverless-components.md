@@ -96,6 +96,7 @@ components:
       siteBuildCommand: npm run build
       siteBuildDirectory: build
       siteRepoBranch: master
+      siteForceSSL: false
       siteRepoAllowedBranches:
           - master
 ```
@@ -303,6 +304,7 @@ components:
       siteBuildCommand: npm run build
       siteBuildDirectory: build
       siteRepoBranch: master
+      siteForceSSL: false
       siteRepoAllowedBranches:
           - master
 ```
@@ -377,6 +379,7 @@ components:
       siteBuildCommand: npm run build
       siteBuildDirectory: build
       siteRepoBranch: master
+      siteForceSSL: false
       siteRepoAllowedBranches:
           - master
 ```
@@ -412,7 +415,7 @@ components:
       githubApiToken: 123
       siteName: my-awesome-site-lol-lol.netlify.com
       ...
-      siteEnvVars:
+      siteEnvironmentVariables:
         REACT_APP_SIGNUP_API: ${apiEndpoint.url}sign-up
 ```
 
@@ -478,9 +481,10 @@ components:
       siteBuildCommand: npm run build
       siteBuildDirectory: build
       siteRepoBranch: master
+      siteForceSSL: false
       siteRepoAllowedBranches:
           - master
-      siteEnvVars:
+      siteEnvironmentVariables:
         REACT_APP_SIGNUP_API: ${apiEndpoint.url}sign-up
 ```
 
