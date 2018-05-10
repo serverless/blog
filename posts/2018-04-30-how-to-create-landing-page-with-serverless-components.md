@@ -32,26 +32,17 @@ Let's dive into it and cover:
 
 ## Getting started
 
-1. First you will need to install the Serverless Components repo:
+1. First you will need to install the Serverless Components via the `npm` [package](https://www.npmjs.com/package/serverless-components):
 
     ```bash
-    git clone https://github.com/serverless/components
+    $ npm i serverless-components
     ```
 
-2. Then install the dependancies:
+2. Set your AWS credentials in your ENV vars:
 
     ```bash
-    cd components
-    npm install
-    ```
-
-This will install all the dependencies and all the component dependencies.
-
-3. Set your AWS credentials in your ENV vars:
-
-    ```bash
-    export AWS_ACCESS_KEY_ID=my_access_key_id
-    export AWS_SECRET_ACCESS_KEY=my_secret_access_key
+    $ export AWS_ACCESS_KEY_ID=my_access_key_id
+    $ export AWS_SECRET_ACCESS_KEY=my_secret_access_key
     ```
 
 **Note:** Make sure you have Node.js 8+ and `npm` installed on your machine.
@@ -143,7 +134,7 @@ Our landing page code + repo can be seen [here](https://github.com/serverless/ne
 You can deploy this as it is right now, with:
 
 ```bash
-../../bin/components deploy
+$ components deploy
 ```
 
 If you go into Netlify and click into the newly-created site, you should see the live landing page URL:
