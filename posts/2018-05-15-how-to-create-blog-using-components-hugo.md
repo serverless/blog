@@ -14,9 +14,9 @@ Most of us blog, and a very common dilemma is deciding how to host the blog site
 
 [Static site generators](https://www.staticgen.com/) are a good option in this regard; they help keep the authoring part simple. They use Markdown as a document format, spruce up the look & feel with themes, and provide a simple workflow for a fully deployable HTML/CSS/JS-based blog site.
 
-The deployment part is, however, is up to you. In this post, we will create a serverless, static blog site. We'll generate it with Hugo, deploy it with pre-built [Serverless Components](https://serverless.com/blog/what-are-serverless-components-how-use/), and host it on AWS.
+The deployment part is, however, up to you. In this post, we will create a serverless, static blog site. We'll generate it with Hugo, deploy it with pre-built [Serverless Components](https://serverless.com/blog/what-are-serverless-components-how-use/), and host it on AWS.
 
-Why serverles? Hosting static websites with serverless is a key use case: not only easy to deploy, but also very cost-effective.
+Why serverless? Hosting static websites with serverless is a key use case: not only easy to deploy, but also very cost-effective.
 
 Here is what we will cover:
 
@@ -121,6 +121,7 @@ Route53 Record Set 'www.sls-blog-81jdzsed8u.example.com => d2vruw3j75x9bz.cloudf
 Static Website resources:
   http://sls-blog-81jdzsed8u.example.com.s3-website-us-east-1.amazonaws.com
 ```
+
 :boom: You have a blog site at: 
 
 ```bash
@@ -128,6 +129,8 @@ http://sls-blog-81jdzsed8u.example.com.s3-website-us-east-1.amazonaws.com
 ```
 
 ![image](https://user-images.githubusercontent.com/8188/38143986-f38eb3c8-3410-11e8-9fc6-72b8212614b9.png)
+
+Figure: _Blog site built with Hugo and deployed with Serverless Components_
 
 **Note**: If you put in a real domain name, you can access the site via the domain as well. Give CloudFront and Route53 about 15-20 mins to finish the configuration. 
 
@@ -209,7 +212,7 @@ inputTypes:
   templateValues:
     type: object
     default: {}
-    required: true  # problem with default value here SC-127
+    required: true
   contentIndex:
     type: string
     default: index.html
