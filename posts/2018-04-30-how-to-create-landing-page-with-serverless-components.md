@@ -490,3 +490,9 @@ In your terminal run:
 As you can see, with just a couple of components you can have a landing page up and running in no time.
 
 What will you build with components?
+
+### More on Components
+
+- [What are Serverless Components, and how do I use them?](https://serverless.com/blog/what-are-serverless-components-how-use/)
+- [Create a REST API with pre-written Serverless Components](https://serverless.com/blog/how-create-rest-api-serverless-components/)
+- [Create a blog site with pre-written Serverless Components and Hugo](https://serverless.com/blog/how-to-create-blog-using-components-hugo/)
