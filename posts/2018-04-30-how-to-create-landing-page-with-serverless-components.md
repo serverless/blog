@@ -3,10 +3,12 @@ title: How to create a landing page with serverless components
 description: Using serverless components to build a static website landing page.
 date: 2018-04-30
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-components-thumb.png
 authors:
   - DavidWells
 ---
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif">
 
 [Serverless Components](https://github.com/serverless/components) are a new way of composing together smaller bits of functionality into larger applications.
 
@@ -490,3 +492,9 @@ In your terminal run:
 As you can see, with just a couple of components you can have a landing page up and running in no time.
 
 What will you build with components?
+
+### More on Components
+
+- [What are Serverless Components, and how do I use them?](https://serverless.com/blog/what-are-serverless-components-how-use/)
+- [Create a REST API with pre-written Serverless Components](https://serverless.com/blog/how-create-rest-api-serverless-components/)
+- [Create a blog site with pre-written Serverless Components and Hugo](https://serverless.com/blog/how-to-create-blog-using-components-hugo/)
