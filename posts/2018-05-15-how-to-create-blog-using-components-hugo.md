@@ -452,3 +452,9 @@ The `info` method is used to print any resources that were deployed. In this cas
 We saw how easy and simple it is to use Serverless Components to build and deploy applications, such as the blog site we created. Components gives us the flexibility to compose higher-order applications by combining reusable pieces of code. 
 
 What will you build with components? Let us know in the comments below.
+
+### More on Components
+
+- [What are Serverless Components, and how do I use them?](https://serverless.com/blog/what-are-serverless-components-how-use/)
+- [Create a REST API with pre-written Serverless Components](https://serverless.com/blog/how-create-rest-api-serverless-components/)
+- [Create a landing page with pre-written Serverless Components](https://serverless.com/blog/how-to-create-landing-page-with-serverless-components/)
