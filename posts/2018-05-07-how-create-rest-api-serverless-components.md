@@ -449,3 +449,4 @@ The [`examples`](https://github.com/serverless/components/tree/master/examples) 
 
 - [What are Serverless Components, and how do I use them?](https://serverless.com/blog/what-are-serverless-components-how-use/)
 - [How to create a static landing page with Serverless Components](https://serverless.com/blog/how-to-create-landing-page-with-serverless-components/)
+- [How to create a blog using pre-built Serverless Components and Hugo](https://serverless.com/blog/how-to-create-blog-using-components-hugo/)
