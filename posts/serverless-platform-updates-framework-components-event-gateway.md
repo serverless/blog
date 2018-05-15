@@ -17,9 +17,9 @@ We are combining all of these into Serverless Platform updates.
 
 Jump straight into the section you want to read about:
 
-- [Framework v1.27](): [what's new]
-- [Components vX](): [what's new]
-- [Event Gateway vX](): [what's new]
+- [Framework v1.27](#changes-in-framework-v1.27): [what's new]
+- [Components v0.3](#changes-in-components-v0.3): Install components from url, core version locking, Node 10 support
+- [Event Gateway vX](#changes-in-event-gateway): [what's new]
 
 ## Changes in Framework v1.27
 
@@ -39,22 +39,24 @@ Huge round of applause to all of the contributors who submitted changes for this
 
 The new components release contains a bunch of goodies.
 
-
 ### Install components from URL
 
-In version 0.3 you can now reference a component type using a url as a source. This allows for reusable components by uploading them to a URL first giving teams a way to share components.
+In version 0.3, you can now reference a component type using a url as a source. This allows for reusable components by uploading them to a URL first, giving teams a way to share components.
+
 ![component type url](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/updates/feature-component-type-url.png)
 
 ### Package command
 
-Along side the ability to use components from a url, we have also added a package command. This command will pack up a component directory into a zip for reuse.
+Alongside the ability to use Components from a url, we have also added a package command. This command will pack up a component directory into a zip for reuse.
+
 ![component package command](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/updates/feature-components-package-command.png)
 
 ### Core version locking
 
-This feature gives developers a way of declaring which version of components core their component is compatible with. If a component is included that is incompatible with the current version of core, an error is thrown.
+This feature gives developers a way of declaring which version of Components core their component is compatible with. If a component is included that is incompatible with the current version of core, an error is thrown.
 
 ![core version locking](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/updates/feature-components-core-version-locking.png)
+
 ![core version locking error](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/updates/feature-components-core-version-locking-error.png)
 
 ### Programmatic Usage API
@@ -62,9 +64,9 @@ This feature gives developers a way of declaring which version of components cor
 We've added methods for using the components package programmatically. The documentation for these new methods can be found [here]()
 
 ### Support for Node 4 - 10
-We've moved to using babel compilation for components so the components package now supports version node 4 and greater.
+We've moved to using babel compilation for components, so the components package now supports version node 4 and greater.
 
-## Changes in Event Gateway vX
+## Changes in Event Gateway
 
 ### TODO
 
