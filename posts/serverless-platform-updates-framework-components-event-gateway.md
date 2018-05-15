@@ -3,12 +3,12 @@ title: "Serverless Platform updates - TODO"
 description: "TODO"
 date: 2017-05-17
 layout: Post
-thumbnail: TODO
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png
 authors:
   - PhilippMuns
 ---
 
-<img align="right" src="TODO" width="210px" >
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-platform-updates.jpg">
 
 Well everyone, we now have a few different product updates to give. We're welcoming Serverless Components and Event Gateway into the product updates family!
 
@@ -16,17 +16,9 @@ We are combining all of these into Serverless Platform updates.
 
 Jump straight into the section you want to read about:
 
-- [Event Gateway vX](): [what's new]
-- [Components vX](): [what's new]
 - [Framework v1.27](): [what's new]
-
-## Changes in Event Gateway vX
-
-### TODO
-
-## Changes in Components vX
-
-### TODO
+- [Components vX](): [what's new]
+- [Event Gateway vX](): [what's new]
 
 ## Changes in Framework v1.27
 
@@ -41,6 +33,14 @@ This release contains lots of hard work from our beloved community, and wouldn't
 Huge round of applause to all of the contributors who submitted changes for this release:
 
 [TODO]
+
+## Changes in Components vX
+
+### TODO
+
+## Changes in Event Gateway vX
+
+### TODO
 
 ## Upcoming releases & contributions
 
