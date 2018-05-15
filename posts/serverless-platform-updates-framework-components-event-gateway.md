@@ -6,6 +6,7 @@ layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png
 authors:
   - PhilippMuns
+  - BrianNeisler
 ---
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-platform-updates.jpg">
@@ -26,7 +27,7 @@ You can find a complete list of all the updates in the [CHANGELOG.md](https://gi
 
 ### TODO
 
-## Contributors 
+## Contributors
 
 This release contains lots of hard work from our beloved community, and wouldn't have been possible without passionate people who decided to spend their time contributing back to make the Serverless Framework better.
 
@@ -34,9 +35,34 @@ Huge round of applause to all of the contributors who submitted changes for this
 
 [TODO]
 
-## Changes in Components vX
+## Changes in Components v0.3
 
-### TODO
+The new components release contains a bunch of goodies.
+
+
+### Install components from URL
+
+In version 0.3 you can now reference a component type using a url as a source. This allows for reusable components by uploading them to a URL first giving teams a way to share components.
+![component type url](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/updates/feature-component-type-url.png)
+
+### Package command
+
+Along side the ability to use components from a url, we have also added a package command. This command will pack up a component directory into a zip for reuse.
+![component package command](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/updates/feature-components-package-command.png)
+
+### Core version locking
+
+This feature gives developers a way of declaring which version of components core their component is compatible with. If a component is included that is incompatible with the current version of core, an error is thrown.
+
+![core version locking](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/updates/feature-components-core-version-locking.png)
+![core version locking error](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/updates/feature-components-core-version-locking-error.png)
+
+### Programmatic Usage API
+
+We've added methods for using the components package programmatically. The documentation for these new methods can be found [here]()
+
+### Support for Node 4 - 10
+We've moved to using babel compilation for components so the components package now supports version node 4 and greater.
 
 ## Changes in Event Gateway vX
 
