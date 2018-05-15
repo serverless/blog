@@ -110,9 +110,9 @@ module.exports.start = (event, context, callback) => {
 };
 ```
 
-Then, you set up the Lambda will be triggered by events what you want. `startExecution` API requires a stetamachine ARN so you can pass that via environment variables system.
+Then, you set up the Lambda will be triggered by events what you want. `startExecution` API requires a statemachine ARN so you can pass that via environment variables system.
 
-Here’s serverless.yml sample which a triggered stetamachine by S3 event.
+Here’s serverless.yml sample which a triggered statemachine by S3 event.
 
 ```yaml
 service: example-stepf-nodejs
