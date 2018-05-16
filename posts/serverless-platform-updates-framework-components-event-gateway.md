@@ -1,11 +1,10 @@
 ---
-title: "Serverless Platform updates - TODO"
-description: "TODO"
+title: "Serverless Platform updates - Install Components from url, Fn Project support, CloudEvents"
+description: "See what's new in Serverless Components, Framework, and Event Gatway. Install Components from url, Fn Project support, and more."
 date: 2017-05-17
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png
 authors:
-  - PhilippMuns
   - BrianNeisler
 ---
 
@@ -17,23 +16,9 @@ We are combining all of these into Serverless Platform updates.
 
 Jump straight into the section you want to read about:
 
-- [Framework v1.27](#changes-in-framework-v1.27): [what's new]
 - [Components v0.3](#changes-in-components-v0.3): Install components from url, core version locking, Node 10 support
-- [Event Gateway vX](#changes-in-event-gateway): [what's new]
-
-## Changes in Framework v1.27
-
-You can find a complete list of all the updates in the [CHANGELOG.md](https://github.com/serverless/serverless/blob/master/CHANGELOG.md) file.
-
-### TODO
-
-## Contributors
-
-This release contains lots of hard work from our beloved community, and wouldn't have been possible without passionate people who decided to spend their time contributing back to make the Serverless Framework better.
-
-Huge round of applause to all of the contributors who submitted changes for this release:
-
-[TODO]
+- [Framework v1.27](#changes-in-framework-v1.27): Fn Project support, fixes for the variables system, support for AWS GovCloud and China regions
+- [Event Gateway vX](#changes-in-event-gateway): Hosted beta is ready to use, Serverless Framework plugin, CloudEvents support
 
 ## Changes in Components v0.3
 
@@ -66,9 +51,64 @@ We've added methods for using the components package programmatically. The docum
 ### Support for Node 4 - 10
 We've moved to using babel compilation for components, so the components package now supports version node 4 and greater.
 
+## Changes in Framework v1.27
+
+Framework v1.27 introduces Fn support, fixes for the variables system, and support for AWS GovCloud and China regions.
+
+You can find a complete list of all the updates in the [CHANGELOG.md](https://github.com/serverless/serverless/blob/master/CHANGELOG.md) file.
+
+### Fn support
+
+The Fn Project is an open-source, container-native serverless platform that runs on any cloud or on-prem. And now there is an integration with the Serverless Framework.
+
+[Read here](https://serverless.com/blog/fn-project-serverless/) for more details and some examples.
+
+### Fixes for the variables system
+
+We introduced several improvements and fixes, including pre-population of service and region values, a "PromiseTracker" class, and more.
+
+Read up on [the whole list of changes](https://github.com/serverless/serverless/pull/4713)!
+
+### Support for AWS GovCloud and China regions
+
+Just what it says on the tin. [Check it out here](https://github.com/serverless/serverless/pull/4665)!
+
+## Contributors
+
+This release contains lots of hard work from our beloved community, and wouldn't have been possible without passionate people who decided to spend their time contributing back to make the Serverless Framework better.
+
+Huge round of applause to all of the contributors who submitted changes for this release! 👏
+
 ## Changes in Event Gateway
 
-### TODO
+[As we recently announced](https://serverless.com/blog/react-to-any-cloud-event-hosted-event-gateway/), the open-source [Event Gateway](https://serverless.com/event-gateway/) project now also exists as a hosted (read: fully serverless) service.
+
+### Plugin for the Serverless Framework
+
+The Event Gateway plugin for the Serverless Framework makes it dead simple to deploy your Lambda functions with Event Gateway.
+
+The plugin enables you to:
+
+- register API endpoints
+- put endpoints from different services on the same domain very easily, even if those services are in different AWS accounts
+- hook up custom events, so that if one of your services emits an event, another function in a different service can subscribe to it
+- set up connectors in the Event Gateway to route events to external systems.
+
+[Check out the plugin here](https://github.com/serverless/serverless-event-gateway-plugin) or try the [get started example](https://github.com/serverless/event-gateway-getting-started).
+
+### CloudEvents support
+
+The Cloud Native Computing Foundation (CNCF) has been working on [CloudEvents](https://www.cncf.io/blog/2018/02/14/cncf-takes-first-step-towards-serverless-computing/), a specification for describing event data in a common way across providers. At Serverless, we've taken a leading role in this effort; we believe strongly in the importance of standards and interoperability in this new event-driven world.
+
+As such, Event Gateway CloudEvents-compatible. All functions receive a CloudEvents payload describing the event received.
+
+### Configurable connectors
+
+Connectors let you *Write Less Code* in the true serverless way. Configuration is better than code wherever possible.
+
+In that spirit, Connectors in Event Gateway are bits of logic which take your event and send it to another system—Firehose, Kinesis, or SQS for instance—without having to write the boilerplate integration code into a Lambda function.
+
+[Try an example here](https://github.com/serverless/event-gateway-getting-started).
 
 ## Upcoming releases & contributions
 
