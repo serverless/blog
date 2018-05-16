@@ -18,7 +18,7 @@ Jump straight into the section you want to read about:
 
 - [Components v0.3](#changes-in-components-v0.3): Install components from url, core version locking, Node 10 support
 - [Framework v1.27](#changes-in-framework-v1.27): Fn Project support, fixes for the variables system, support for AWS GovCloud and China regions
-- [Event Gateway vX](#changes-in-event-gateway): Hosted beta is ready to use, Serverless Framework plugin, CloudEvents support
+- [Event Gateway](#changes-in-event-gateway): Hosted beta is ready to use, Serverless Framework plugin, CloudEvents support
 
 ## Changes in Components v0.3
 
