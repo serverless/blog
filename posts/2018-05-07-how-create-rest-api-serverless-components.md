@@ -64,7 +64,7 @@ Serverless Components is a CLI tool written in JavaScript that helps in deployin
 
 To install, simply run: `npm install --global serverless-components`.
 
-**Note:** Right now Serverless Componets needs Node.js 8 or greater. Compatibility with older Node.js versions is [already in the making](https://github.com/serverless/components/pull/188).
+**Note:** Right now Serverless Components needs Node.js 8 or greater. Compatibility with older Node.js versions is [already in the making](https://github.com/serverless/components/pull/188).
 
 ## Components we're using to build this API
 
