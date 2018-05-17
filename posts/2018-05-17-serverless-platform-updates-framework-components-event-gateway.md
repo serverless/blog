@@ -110,7 +110,7 @@ In that spirit, Connectors in Event Gateway are bits of logic which take your ev
 
 ## Upcoming releases & contributions
 
-If there's something you want to change about the Serverless Framework, Event Gateway or Components, open an Issue! We even have a [quick & easy guide](https://serverless.com/blog/how-contribute-to-serverless-open-source/) on contributing to Severless open source projects.
+If there's something you want to change about the Serverless Framework, Event Gateway or Components, open an Issue! We even have a [quick & easy guide](https://serverless.com/blog/how-contribute-to-serverless-open-source/) on contributing to Serverless open source projects.
 
 [PR reviews](https://github.com/serverless/serverless/pulls) are also highly welcomed, as they greatly speed up the time-to-merge.
 
