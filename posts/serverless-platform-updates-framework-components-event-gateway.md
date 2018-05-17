@@ -40,8 +40,6 @@ Alongside the ability to use Components from a url, we have also added a package
 
 This feature gives developers a way of declaring which version of Components core their component is compatible with. If a component is included that is incompatible with the current version of core, an error is thrown.
 
-![core version locking](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/updates/feature-components-core-version-locking.png)
-
 ![core version locking error](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/updates/feature-components-core-version-locking-error.png)
 
 ### Programmatic Usage API
