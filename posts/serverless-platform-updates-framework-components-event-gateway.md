@@ -46,7 +46,7 @@ This feature gives developers a way of declaring which version of Components cor
 
 ### Programmatic Usage API
 
-We've added methods for using the components package programmatically. The documentation for these new methods can be found [here](https://github.com/serverless/components)
+We've added methods for using the components package programmatically. The documentation for these new methods can be found [here](https://github.com/serverless/components).
 
 ### Support for Node 4 - 10
 We've moved to using babel compilation for components, so the components package now supports version node 4 and greater.
