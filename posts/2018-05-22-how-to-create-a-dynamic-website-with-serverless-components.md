@@ -64,7 +64,7 @@ Couple of things to notice here, we're referencing to the `self` object, which i
 
 Using this `path` property, we're referencing to our frontend code on our file system, which lives in a `frontend` directory. There are a lot of files in there, so to keep this post clean, you can check this directory in [our examples directory](https://github.com/serverless/components/tree/master/examples/retail-app/frontend) and add it to your filesystem. It should be pretty straightforward.
 
-You'll also notice that we're referencing to a REST API component using the variable syntax `${productsApi.url}`. So we'll need to add that component. Let's do that!
+You'll also notice that we're referring to a REST API component using the variable syntax `${productsApi.url}`. So we'll need to add that component. Let's do that!
 
 ## Setting up the REST API
 You can add a REST API by adding the `rest-api` component. This component supports both AWS API Gateway and the [Serverless Event Gateway](https://http://serverless.com/event-gateway). In this example, we're going to use the API Gateway, so let's add this component to our `serverless.yml` file by adding this config:
@@ -246,7 +246,7 @@ We're going to use the `aws-dynamodb` component to provision this products datab
 
 Awesome! We just assembled the final piece of our new component. It's a lot like LEGO isn't it?
 
-If you deploy your component, your entire app should be deployed. However, for the sake of demonstration, let's add a final step to seed some product data in the database so that you can view them in the website.
+If you deploy your component, your entire app should be deployed. However, for the sake of demonstration, let's add a final step to seed some product data in the database so that you can view it in the website.
 
 ## BONUS: Seeding data
 Remember that at the end of the day, you're creating a brand new component using lower level components. So you can add logic specific to this new higher-order component just like you do with other component. In our use case, we need some logic to seed data into our database. We do that by adding an `index.js` file with the following logic:
@@ -362,7 +362,7 @@ Voila!! Your dynamic website is live! Notice all the frontcode we’ve added, al
 
 ## Summary
 
-In a nutshell, what we've done is the we just added the following components along with their required config & code:
+In a nutshell, what we've done is that we just added the following components along with their required config & code:
 
 
 - `static-website`: Hosted on AWS S3 to hold our frontend codebase.
