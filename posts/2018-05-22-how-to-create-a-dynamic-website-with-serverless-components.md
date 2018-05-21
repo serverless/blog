@@ -25,7 +25,7 @@ To assemble our dynamic site, we’re gonna use the following lower level compon
 
 You can find all those components in our [registry](https://github.com/serverless/components/tree/master/registry). Overall, our entire app architecture looks like this:
 
-<img>
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/retail-app-arch.png">
 
 ## Before you start
 If you haven’t already, install Serverless Components with the following command:
@@ -355,7 +355,7 @@ retail-app (master) ⚡️
 
 Now you can see your REST API endpoints, along with the root url of your newly created dynamic website. Just copy this website and open it in your browser.
 
-<img>
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/retail-app.png">
 
 
 Voila!! Your dynamic website is live! Notice all the frontcode we’ve added, along with the seeded products from the database getting queried by the Lambda functions via our REST API.
