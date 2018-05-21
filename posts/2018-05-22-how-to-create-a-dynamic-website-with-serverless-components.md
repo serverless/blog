@@ -62,6 +62,8 @@ components:
 
 Couple of things to notice here, we're referencing to the `self` object, which includes some useful information about your new component, like the `path`, and the `serviceId`. The `path` is the absolute path of your component, and `serviceId` is an auto generated id for your component/service that you can utilize to make sure your child components have unique ids that are associated with each other.
 
+Using this `path` property, we're referencing to our frontend code on our file system, which lives in a `frontend` directory. There are a lot of files in there, so to keep this post clean, you can check this directory in [our examples directory](https://github.com/serverless/components/tree/master/examples/retail-app/frontend) and add it to your filesystem. It should be pretty straightforward.
+
 You'll also notice that we're referencing to a REST API component using the variable syntax `${productsApi.url}`. So we'll need to add that component. Let's do that!
 
 ## Setting up the REST API
@@ -369,6 +371,10 @@ In a nutshell, what we've done is the we just added the following components alo
 - `aws-dynamodb`: Our products database, and seeded some fixture data into it.
 
 And this is how you can create a dynamic website with Serverless Components! That was easy wasn’t it? You can extend this app by adding even more frontend code and routes and do more queries to our backend. You can also add more backend logic and infrastructure, all with nothing but Serverless Components.
+
+Hope you found this walkthrough useful. You can check the [entire example app in our components directory](https://github.com/serverless/components/tree/master/examples/retail-app/).
+
+Happy hacking!
 
 
 
