@@ -94,7 +94,7 @@ The plugin enables you to:
 - hook up custom events, so that if one of your services emits an event, another function in a different service can subscribe to it
 - set up connectors in the Event Gateway to route events to external systems.
 
-[Check out the plugin here](https://github.com/serverless/serverless-event-gateway-plugin) or try the [get started example](https://github.com/serverless/event-gateway-getting-started).
+[Check out the pluginhere](https://github.com/serverless/serverless-event-gateway-plugin) or try the [get started example](https://github.com/serverless/event-gateway-getting-started).
 
 ### CloudEvents support
 
