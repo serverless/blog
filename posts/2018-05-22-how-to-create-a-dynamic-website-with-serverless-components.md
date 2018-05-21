@@ -8,7 +8,7 @@ authors:
   - EslamHefnawy
 ---
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif">
+<img>
 
 In previous posts, we’ve explored how to create a [static website](https://serverless.com/blog/how-to-create-landing-page-with-serverless-components/) and a [REST API](https://serverless.com/blog/how-create-rest-api-serverless-components/) with Serverless Components. This post is going to build on top of that knowledge to create a dynamic website powered by a database.
 
