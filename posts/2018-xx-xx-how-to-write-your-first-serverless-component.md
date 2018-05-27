@@ -1,7 +1,7 @@
 ---
 title: "How to write your first Serverless Component"
 description: "A step-by-step tutorial for writing your first Serverless Component, and then using it to build a serverless application."
-date: 2018-XX-XX
+date: 2018-xx-xx
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-components-thumb.png
 authors:
