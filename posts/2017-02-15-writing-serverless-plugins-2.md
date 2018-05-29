@@ -209,7 +209,7 @@ To see where the Serverless Framework helps us, we need to dig a bit deeper. Gen
 - default stage and custom variables
 - service resources
 
-If we look at the implementation of `getDyanmoDB`, some of its benefits become immediately obvious:
+If we look at the implementation of `getDynamoDB`, some of its benefits become immediately obvious:
 
 ```js
 const aws = require('aws-sdk');
