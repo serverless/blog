@@ -6,6 +6,7 @@ layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-thumb.png
 authors:
   - AlexDeBrie
+category: all
 ---
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-readme-header1.png">
