@@ -6,6 +6,8 @@ layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/express_js.png
 authors:
   - AlexDeBrie
+category: application-development
+featured: application-development 
 ---
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-express-rest-api.jpg">
