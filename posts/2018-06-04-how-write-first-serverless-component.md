@@ -12,9 +12,9 @@ authors:
 
 The open-source [Serverless Components project](https://github.com/serverless/components) makes it easy for anyone to author their own application components. We have [several previous posts](#more-serverless-components-tutorials).
 
-But what if you want to try building a brand new reusable component of your own? Then you've come to the right place.
+But what if you want to try building a brand new reusable component of your own?
 
-In this post, we will take a look at building an AWS CloudWatch Metric Alarm component from scratch.
+In this post, we will cover how to build your very first Serverless Component. Specifically, we'll be making an AWS CloudWatch Metric Alarm component from scratch.
 
 The component will provision and encapsulate functionality for managing a CloudWatch metric alarms. We'll then use this component in an application that tracks AWS billing and sets alarms for estimated charges.
 
@@ -39,7 +39,7 @@ A Serverless Component consists of two files: `serverless.yml` for configuration
 
 ### Configuration
 
-To start off, let's create a `serverless.yml` file.
+To start off, let's create a `serverless.yml` file:
 
 ```bash
 $ mkdir aws-cloudwatch-metric-alarm && cd aws-cloudwatch-metric-alarm
@@ -61,13 +61,18 @@ license: Apache-2.0
 author: "Serverless, Inc. <hello@serverless.com> (https://serverless.com)"
 repository: "github:serverless/components"
 ```
-Most important of note is the `type` attribute that identifies the component. It will be used later in our example app to reference this component. The `version` attribute is the current version of our component following semantic versioning. The `core` specifies the release version of Serverless Components we are using. It is helpful to fix a version against which our component has been built and tested.
 
-The next block is quite intuitive and describes some other metadata for the component. Since I will merge this component to the main Serverless Component [registry](https://github.com/serverless/components/tree/master/registry), I have the `author` and `repository` attributes set accordingly.
+Let's go over what all of this does. The `type` attribute identifies the component. This will be used later in our example app to reference the component.
+
+The `version` attribute is the current version of our component following semantic versioning. The `core` specifies the release version of Serverless Components we are using. It is helpful to fix a version against which our component has been built and tested.
+
+The next block is quite intuitive and describes some other metadata for the component. Since I will merge this component to the main [Serverless Component registry](https://github.com/serverless/components/tree/master/registry), I have the `author` and `repository` attributes set accordingly.
 
 #### Input Parameters
 
-To create a component that can provide functionality in a flexible manner, Serverless Components have a concept of declaring `inputTypes`. This defines the spec for the component's input parameters. When we write our example app that uses this component, the system will validate the user-supplied input parameters against this spec. We will see the validation at work later in the post.
+To create a component that can provide functionality in a flexible manner, Serverless Components has a concept of declaring `inputTypes`. This defines the spec for the component's input parameters. 
+
+When we write our example app that uses this component, the system will validate the user-supplied input parameters against this spec. We will see the validation at work later in the post.
 
 In our case, we will be using the [AWS CloudWatch API](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudWatch.html) to [create/update](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudWatch.html#putMetricAlarm-property) alarms, [list](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudWatch.html#describeAlarms-property) alarms and [delete](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudWatch.html#deleteAlarms-property) alarms.
 
@@ -147,13 +152,15 @@ inputTypes:
     description: "Used only for alarms based on percentiles. Valid values are: `evaluate` | `ignore`"
 
 ```
-Ya I know, it is quite verbose but that's how many parameters are in the API. 
+Ya I know, it is quite verbose, but that's how many parameters are in the API. 
 
 #### Output Parameters
 
-Just like `inputTypes`, Serverless Components also have a concept of declaring `outputTypes`. This is the spec for the component's outputs that it exposes..
+Just like `inputTypes`, Serverless Components also have a concept of declaring `outputTypes`. This is the spec for the component's outputs that it exposes.
 
-So let's start by defining our `outputTypes` that match some of the important and relevant outputs from the calls to the CloudWatch APIs. The outputs that you expose from your component is totally your choice. The point to keep in mind is that the component will be used later to build higher-order components and applications. So choose to expose outputs that will make sense later on. So for example, we expose the `alarmArn` output parameter, that can be passed into another component to do something with the alarm.
+Let's start by defining our `outputTypes` that match some of the important and relevant outputs from the calls to the CloudWatch APIs. 
+
+The outputs that you expose from your component is totally your choice. The point to keep in mind is that the component will be used later to build higher-order components and applications. So choose to expose outputs that will make sense later on. So for example, we expose the `alarmArn` output parameter, that can be passed into another component to do something with the alarm.
 
 Append the following block to the `serverless.yml` file:
 
@@ -181,6 +188,7 @@ outputTypes:
     type: string
     description: "The time stamp of the last update to the alarm state."
 ```
+
 Notice that we use names for the input and output parameters that match the AWS API. The only subtle difference is that the AWS API uses CamelUpperCase whereas Serverless Components use camelCase. However this small transformation can be easily automated in code.
 
 ### Documentation
@@ -218,11 +226,12 @@ The component encapsulates the functionality to manage provisioning of a CloudWa
 ```
 The auto-doc generation capability is invoked by running `npm run docs` from the root of the Serverless Components project folder.
 
-**Note**: Since our component is outside the Serverless Components project structure, you will have to temporarily copy your component under the `registry` folder of the Serverless Components project repo, and then run:
+**Note:** Since our component is outside the Serverless Components project structure, you will have to temporarily copy your component under the `registry` folder of the Serverless Components project repo, and then run:
 
 ```bash
 $ npm run docs
 ```
+
 This will generate the required documentation and place them between the markers we added in the README.ms file. Check out the [README.md](https://github.com/rupakg/rg-components/blob/master/rg-registry/aws-cloudwatch-metric-alarm/README.md) file for the final documentation.
 
 ### Implementation
@@ -231,11 +240,13 @@ Now that we have defined the input/output interface, let's look at the implement
 
 #### Commands
 
-The provisioning functionality is implemented via the `deploy` command while the cleanup functionality is implemented via the `remove` command. The `info` command is for listing out resources or output parameters after provisioning. The underlying system is set to call the `info` command automatically after the `deploy` command is executed. In case of higher-order components or applications that are composed of other components, the `deploy`, `info` and `remove` commands are called down the full dependency chain.
+The provisioning functionality is implemented via the `deploy` command while the cleanup functionality is implemented via the `remove` command. The `info` command is for listing out resources or output parameters after provisioning.
+
+The underlying system is set to call the `info` command automatically after the `deploy` command is executed. When there are higher-order components or applications that are composed of other components, the `deploy`, `info` and `remove` commands are called down the full dependency chain.
 
 Apart from these three commands, a component author can include other commands. These are JS methods that are exported and available to the user as commands from the CLI.
 
-The implementation code will live in the `index.js` file. Let's create the file in our project folder.
+The implementation code will live in the `index.js` file. Let's create the file in our project folder:
 
 ```bash
 $ touch index.js
@@ -246,7 +257,9 @@ Let's build these three commands for our component.
 
 #### Provision Alarm
 
-We will add the provisioning logic for the CloudWatch Metric Alarm in the `deploy` method. In the `index.js` file, let's create a method named `deploy`. Add the following code to the file:
+We will add the provisioning logic for the CloudWatch Metric Alarm in the `deploy` method. In the `index.js` file, let's create a method named `deploy`.
+
+Add the following code to the file:
 
 ```js
 # index.js
@@ -268,7 +281,9 @@ const deploy = async (inputs, context) => {
 
 Let's look at the signature of the `deploy` method. It takes two parameters, `inputs` and `context`. The system packs the input parameters from the `serverless.yml` and passes them via the `inputs` parameter. The system packs some other valuable information via the `context` parameter. We will go over `context` later in the post. 
 
-The above command calls two helper methods: `putMetricAlarm(inputs)` and `describeAlarmsForMetric(inputs)`. The `putMetricAlarm(inputs)` method calls the CloudWatch [putMetricAlarm](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudWatch.html#putMetricAlarm-property) API method. It creates or updates an existing metric alarm. This API call does not return any information about the alarm that is provisioned. So, next the `describeAlarmsForMetric(inputs)` method calls the CloudWatch [describeAlarms](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudWatch.html#describeAlarms-property) API method. This method returns information about the alarm provisioned by the earlier call. 
+The above command calls two helper methods: `putMetricAlarm(inputs)` and `describeAlarmsForMetric(inputs)`. The `putMetricAlarm(inputs)` method calls the CloudWatch [putMetricAlarm](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudWatch.html#putMetricAlarm-property) API method. It creates or updates an existing metric alarm. This API call does not return any information about the alarm that is provisioned.
+
+Next, the `describeAlarmsForMetric(inputs)` method calls the CloudWatch [describeAlarms](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudWatch.html#describeAlarms-property) API method. This method returns information about the alarm provisioned by the earlier call. 
 
 The call to `context.saveState({ ...inputs, ...outputs })` saves the output as state. We will look at state management in detail later in the post.
 
@@ -305,11 +320,15 @@ const info = async (inputs, context) => {
 }
 ...
 ```
-The above `info` command calls the `describeAlarmsForMetric(inputs)` which in turn calls the [describeAlarms](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudWatch.html#describeAlarms-property) API to get information about the alarm that was provisioned in the `deploy` command. The data is then written out to the log as output, and printed on the terminal. 
+The above `info` command calls the `describeAlarmsForMetric(inputs)` which in turn calls the [describeAlarms](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudWatch.html#describeAlarms-property) API to get information about the alarm that was provisioned in the `deploy` command.
+
+The data is then written out to the log as output, and printed on the terminal. 
 
 #### Remove Alarm
 
-We will add the code for deleting the alarm that we created, and cleanup any resources, in the `remove` method. In the `index.js` file, create a method named `remove`. Add the following code to the file:
+We will add the code for deleting the alarm that we created, and cleanup any resources, in the `remove` method. In the `index.js` file, create a method named `remove`. 
+
+Add the following code to the file:
 
 ```js
 # index.js
@@ -334,11 +353,13 @@ const remove = async (inputs, context) => {
 ``` 
 The `remove` command calls the `deleteAlarm(context.state.alarmName)` which in turn calls the CloudWatch [deleteAlarms](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CloudWatch.html#deleteAlarms-property) API method, to delete the alarm that was provisioned earlier.
 
-**Note**: You can view the full `index.js` file [here](https://github.com/rupakg/rg-components/blob/master/rg-registry/aws-cloudwatch-metric-alarm/index.js).
+**Note:** You can view the full `index.js` file [here](https://github.com/rupakg/rg-components/blob/master/rg-registry/aws-cloudwatch-metric-alarm/index.js).
 
 ### Context
 
-Any method that is exported as a command is sent a `context` parameter for the method implementing the command. The `deploy()`, `remove()` and `info()` methods are such examples. The system packs some valuable information via the `context` parameter. The most important ones being: 
+Any method that is exported as a command is sent a `context` parameter for the method implementing the command. The `deploy()`, `remove()` and `info()` methods are such examples. 
+
+The system packs some valuable information via the `context` parameter, the most important ones being: 
 
 * Data structures: `state`, `options`, `children` and `archive`
 * Functions: `load` and `saveState`
@@ -347,11 +368,15 @@ Let's look at each of these one at a time.
 
 #### State Management
 
-The system allows state management for components. The component author is in control of what gets saved as state. The command methods can access the data stored in state via the `state` data structure. The component can look at the state of data and decide to execute different paths in logic. For instance, the `deploy` method can decide if the component needs to call the 'create'  or the 'update' logic.
+The system allows state management for components. The component author is in control of what gets saved as state. 
+
+The command methods can access the data stored in state via the `state` data structure. The component can look at the state of data and decide to execute different paths in logic. For instance, the `deploy` method can decide if the component needs to call the 'create'  or the 'update' logic.
 
 #### The `saveState` method
 
-You will notice that each command calls `context.saveState()` and optionally passes in some data that gets saved as state for the component. The system saves state for a component in the `state.json` file. We will look at the `state.json` file for our application later in the post. In our component, the `deploy` command saves the relevant outputs to the state by calling the `context.saveState()` method.
+You will notice that each command calls `context.saveState()` and optionally passes in some data that gets saved as state for the component. The system saves state for a component in the `state.json` file. We will look at the `state.json` file for our application later in the post. 
+
+In our component, the `deploy` command saves the relevant outputs to the state by calling the `context.saveState()` method.
 
 #### Options
 
@@ -363,7 +388,9 @@ $ components insert --tablename BlogPost --itemdata '{ "some":"data" }'
 
 #### Children
 
-Higher-order components or applications can be composed of child components. The `context` gives access to the child components via the `children` object. The `children` object can be used to call commands exposed by the child components. For e.g. the [retail-app](https://github.com/serverless/components/tree/master/examples/retail-app)'s `deploy` command accesses the child component `aws-dynamodb`'s `insert` command to insert seed data.
+Higher-order components or applications can be composed of child components. The `context` gives access to the child components via the `children` object. The `children` object can be used to call commands exposed by the child components. 
+
+For example, the [retail-app](https://github.com/serverless/components/tree/master/examples/retail-app)'s `deploy` command accesses the child component `aws-dynamodb`'s `insert` command to insert seed data.
 
 ```js
 # index.js
@@ -390,7 +417,7 @@ You can see how powerful and flexible Serverless Components can be.
 
 #### The `load` method
 
-The `context` also exposes a `load` method, which allows you to load a component programatically inside another component or an application. For e.g. the `aws-lambda` component's `deploy` command, loads the child component `aws-iam-role` programmatically to provision an IAM role.
+The `context` also exposes a `load` method, which allows you to load a component programatically inside another component or an application. For instance, the `aws-lambda` component's `deploy` command, loads the child component `aws-iam-role` programmatically to provision an IAM role.
 
 ```js
 # index.js 
@@ -410,21 +437,23 @@ Although the component we created here was all declarative, but you can see how 
 
 Hope this leaves you with enough information to create your own components!
 
-Now that we have written our component, let's use this component to build an application.
+Now that we have written our component, let's use it to build an application.
 
-**Note**: You can find the full code for the `aws-cloudwatch-metric-alarm` component [here](https://github.com/rupakg/rg-components/blob/master/rg-registry/aws-cloudwatch-metric-alarm).
+**Note:** You can find the full code for the `aws-cloudwatch-metric-alarm` component [here](https://github.com/rupakg/rg-components/blob/master/rg-registry/aws-cloudwatch-metric-alarm).
 
 ## The Billing Alarm Application
 
-We will use the `aws-cloudwatch-metric-alarm` component we just built to create a serverless application `cw-billing-alarm-app` that will trigger an alarm for AWS Billing based on our configured settings. It will also send us an email when the alarm is triggered.
+We will use the `aws-cloudwatch-metric-alarm` component we just built to create a serverless application, `cw-billing-alarm-app`, that will trigger an alarm for AWS Billing based on our configured settings. It will also send us an email when the alarm is triggered.
 
-The application is declaratively composed using the `cw-billing-alarm-app` component, and has no implementation of its own. Hence, we only have a `serverless.yml` configuration file to specify the component and it's inputs.
+The application is declaratively composed using the `cw-billing-alarm-app` component, and has no implementation of its own. Hence, we only have a `serverless.yml` configuration file to specify the component and its inputs.
 
 ### File System Components
 
-Serverless Components that are sourced from the main [registry](https://github.com/serverless/components/tree/master/registry), can be referenced by their `type` name. By default, the component will be loaded from the registry. To make local development easy, Serverless Components have a feature of specifying a local folder as a value to the `type` attribute. In that case, the component will be [loaded from the file system](https://github.com/serverless/components/tree/master/examples/features/file-system-components).
+Serverless Components that are sourced from the [main registry](https://github.com/serverless/components/tree/master/registry), can be referenced by their `type` name. By default, the component will be loaded from the registry. 
 
-In our application's, `serverless.yml` file, we reference the `aws-cloudwatch-metric-alarm` component from the local folder like so:
+To make local development easy, Serverless Components have a feature of specifying a local folder as a value to the `type` attribute. In that case, the component will be [loaded from the file system](https://github.com/serverless/components/tree/master/examples/features/file-system-components).
+
+In our application's `serverless.yml` file, we reference the `aws-cloudwatch-metric-alarm` component from the local folder like so:
 
 ```yml
 # serverless.yml
@@ -455,7 +484,7 @@ components:
     inputs:
       alarmName: rg-billing-alarm-${self.serviceId}
 ``` 
-The `${self.serviceId}` is an unique identifier autogenerated by the system. You can always use your own value but with this identifier in place you can create as many apps by copying the configuration.
+The `${self.serviceId}` is an unique identifier autogenerated by the system. You can always use your own value, but with this identifier in place you can create as many apps as you want by copying the configuration.
 
 ### Input/Output Parameter Validation
 
@@ -545,7 +574,7 @@ Alarm State: OK
 ```
 You can see the `outputs` in action. The `output` parameters are used to print the information about the alarm.
 
-And, finally to cleanup and remove all resources provisioned by the `deploy` command, run the following in the terminal:
+And, finally to clean up and remove all resources provisioned by the `deploy` command, run the following in the terminal:
 
 ```bash
 $ components remove
@@ -557,7 +586,7 @@ In the deployed state of the application, whenever the AWS Billing estimated cha
 
 ### Application State
 
-We discussed that components manage their own state, and since our application is just a component in itself, it stores it's state in the `state.json` file, as shown below:
+We discussed that components manage their own state. Since our application is just a component in itself, it stores it's state in the `state.json` file, as shown below:
 
 ```json
 {
@@ -627,14 +656,10 @@ We discussed that components manage their own state, and since our application i
   }
 }
 ```
-You will notice that our application does not have any state of it's own, but includes the state of its child component `aws-cloudwatch-metric-alarm`. If it's relevant for an application to store it's own state, it can do so as well.
+You will notice that our application does not have any state of its own, but includes the state of its child component `aws-cloudwatch-metric-alarm`. If it's relevant for an application to store its own state, it can do so as well.
 
-**Note**: You can find the full source code for the `cw-billing-alarm-app` application [here](https://github.com/rupakg/rg-components/tree/master/rg-examples/cw-billing-alarm-app).
+**Note:** You can find the full source code for the `cw-billing-alarm-app` application [here](https://github.com/rupakg/rg-components/tree/master/rg-examples/cw-billing-alarm-app).
 
-## Roadmap
-
-We are continuously adding features to Serverless Components, so be on the lookup for future updates via our newsletter, articles on our log and watch the Github repo. Examples of [features](https://github.com/serverless/components/tree/master/examples/features) are being added on a regular basis.
- 
 ## Summary
 
 We created a Serverless component from scratch, defined the spec for it's input and output parameters, and implemented the functionality to create commands that provision, list and cleanup CloudWatch Metric Alarms. 
@@ -652,3 +677,7 @@ Hope you enjoyed creating your first Serverless Component and an exmaple applica
 - [Create a static landing page with pre-written Serverless Components](https://serverless.com/blog/how-to-create-landing-page-with-serverless-components/)
 - [Create a dynamic retail site with pre-written Serverless Components](https://serverless.com/blog/how-create-dynamic-website-with-serverless-components/)
 - [Create a blog site with pre-written Serverless Components and Hugo](https://serverless.com/blog/how-to-create-blog-using-components-hugo/)
+
+### Roadmap
+
+We are continuously adding features to Serverless Components, so be on the lookout for future updates via our newsletter, articles on our log and watch the Github repo. [Examples of features](https://github.com/serverless/components/tree/master/examples/features) are being added on a regular basis.
