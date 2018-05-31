@@ -8,7 +8,7 @@ authors:
   - RupakGanguly
 ---
 
-**[Insert hero image]**
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif">
 
 The open-source [Serverless Components project](https://github.com/serverless/components) makes it easy for anyone to author their own application components. We have [several previous posts](#more-serverless-components-tutorials).
 
