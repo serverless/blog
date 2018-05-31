@@ -10,7 +10,17 @@ authors:
 
 **[Insert hero image]**
 
-**[Intro text about components - Andrea]**
+The open-source [Serverless Components project](https://github.com/serverless/components) makes it easy for anyone to author their own application components. We have [several previous posts](#more-serverless-components-tutorials).
+
+But what if you want to try building a brand new reusable component of your own? Then you've come to the right place.
+
+In this post, we will take a look at building an AWS CloudWatch Metric Alarm component from scratch.
+
+The component will provision and encapsulate functionality for managing a CloudWatch metric alarms. We'll then use this component in an application that tracks AWS billing and sets alarms for estimated charges.
+
+The goal here is two-fold: streamline the complexity of provisioning metric alarms, and provide an intuitive interface via well-defined inputs and outputs that can be reused to build applications and higher-order components.
+
+Ready? Awesome.
 
 What we will cover:
 
@@ -20,16 +30,6 @@ What we will cover:
 * Implementing the component
 * Using the component in an example application
 * Running the application
-
-## What are we trying to solve?
-
-In this post, we will take a look at building a AWS CloudWatch Metric Alarm component from scratch. It will provision and encapsulate functionality for managing a CloudWatch metric alarms. 
-
-The driver behind writing the component was to encapsulate the complexity in provisioning metric alarms, and providing an intuitive interface via well-defined inputs and outputs, that can be reused to build applications and higher-order components.
-
-By simply defining the inputs and outputs in a declarative manner, and having it being well-documented makes it very easy to author, build and deploy.
-
-The goal after creating the component will be to use it in an application that tracks AWS billing and sets alarms for estimated charges.
 
 ## The CloudWatch Metric Alarm Component
 
@@ -644,3 +644,11 @@ We looked at some of the features that Serverless Components provide to make it 
 At the end, we built an application that will trigger an alarm for AWS Billing estimated charges based on our configured settings. It will also send us an email when the alarm is triggered.
 
 Hope you enjoyed creating your first Serverless Component and an exmaple application to go with it. If you have any follow-up questions, please hit me via the comments below. And, above all, I would like to hear what cool components and applications you built!
+
+## More Serverless Components tutorials
+
+- [What are Serverless Components, and how do I use them?](https://serverless.com/blog/what-are-serverless-components-how-use/)
+- [Create a REST API with pre-written Serverless Components](https://serverless.com/blog/how-create-rest-api-serverless-components/)
+- [Create a static landing page with pre-written Serverless Components](https://serverless.com/blog/how-to-create-landing-page-with-serverless-components/)
+- [Create a dynamic retail site with pre-written Serverless Components](https://serverless.com/blog/how-create-dynamic-website-with-serverless-components/)
+- [Create a blog site with pre-written Serverless Components and Hugo](https://serverless.com/blog/how-to-create-blog-using-components-hugo/)
