@@ -1,18 +1,22 @@
 ---
-title: "Build a GeoSearch GraphQL API using AWS Appsync & Elasticsearch"
+title: "Build a Serverless GeoSearch GraphQL API using AWS AppSync & Elasticsearch"
 description: "Learn how to build a GraphQL location search service similar to AirBnB's using a fully serverless stack on AWS.
 date: 2018-06-06
 layout: Post
-thumbnail: <UPDATE-ME>
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/elasticsearch/elastic.png
 authors:
   - AndrewGriffiths
 ---
 
-<img src="<UPDATE-ME">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-general-yellow.jpg">
 
-In this tutorial we're going to build a GraphQL API backed by elasticsearch on AWS's recently launched [Appsync](https://aws.amazon.com/appsync/) service using the serverless framework. Appsync offers the ability to create serverless GraphQL APIs with much less backend code than previously possible. We will take advantage of this to create a geo search service similar to that used by AirBnB which allows users to search for items within a 10km radius of a given location. Let's get started!
+In this tutorial, we're going to build an Elasticsearch-backed GraphQL API on AWS AppSync. All using the Serverless Framework.
 
-1. [Set Up](#setup)
+[AppSync](https://aws.amazon.com/appsync/) offers the ability to create serverless GraphQL APIs with much less backend code than previously possible. We will take advantage of this to create our own geo search service (similar to the one used by AirBnB), which will allow users to search for items within a 10km radius of a given location.
+
+Let's get started!
+
+1. [Setup](#setup)
 2. [Deploy Elasticsearch on AWS](#deploy-elasticsearch)
 3. [Elasticsearch Geo Mappings](#elasticsearch-geomappings)
 4. [Define GraphQL Schema for API](#graphql-schema)
@@ -22,7 +26,7 @@ In this tutorial we're going to build a GraphQL API backed by elasticsearch on A
 
 
 ## 1. <a name="setup"></a>Setup
-Go ahead and install the serverless framework cli and create a new directory for our project.
+Go ahead and install the [Serverless Framework](https://serverless.com/framework/) CLI and create a new directory for our project:
 
 ```Shell
 $ npm install -g serverless
@@ -31,7 +35,8 @@ $ cd geosearch
 ```
 
 ## 2. <a name="deploy-elasticsearch"></a>Deploy Elasticsearch on AWS
-First we need to provision our elasticsearch deployment on AWS. Create a `serverless.yml` file with the following contents.
+First we need to provision our elasticsearch deployment on AWS. Create a `serverless.yml` file with the following contents:
+
 ```yaml
 ---
 service: appsync-placesearch
@@ -99,32 +104,39 @@ resources:
                           - '/*'
 ```
 
-This creates our cluster with a single instance running elasticsearch version 6 and adds a role to access it which will be used by our Appsync service which we'll create later.
+This creates a cluster with a single instance running Elasticsearch version 6, and adds a role to access it. This will be used by the Appsync service we're creating later.
 
-Let's go ahead and deploy this.
+Let's go ahead and deploy this:
+
 ```Shell
 $ serverless deploy
 ```
 
 ## 3. <a name="elasticsearch-geomappings"></a>Elasticsearch Geo Mappings
-Elasticsearch supports two types of geo data: [`geo_point` fields](https://www.elastic.co/guide/en/elasticsearch/reference/current/geo-point.html) which support lat/lon pairs, and `geo_shape` fields which support points, lines, circles, polygons, multi-polygons etc. To keep things simple we're going to use `geo_point` fields to create a [geo distance query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-distance-query.html) which will enable us find places by distance from a central point.
 
-In order to be able to use `geo_point` fields we need to set up a mapping in elasticsearch. We're going to create a lambda function to do this.
+Elasticsearch supports two types of geo data: [`geo_point` fields](https://www.elastic.co/guide/en/elasticsearch/reference/current/geo-point.html) which support lat/lon pairs, and `geo_shape` fields which support points, lines, circles, polygons, multi-polygons etc.
 
-We'll use a library I wrote just for this purpose, [elasticsearchquery](https://github.com/techjacker/elasticsearchquery). It allows us to specify a JSON document containing our query to be invoked against an elasticsearch deployment. The library takes care of [signing the requests](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html) which is required in order to query AWS elasticsearch instances.
+To keep things simple, we're going to use `geo_point` fields to create a [geo distance query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-distance-query.html). This will enable us to find places by distance from a central point.
 
-In order to instruct `serverless` to install the library when it packages the lambda function we need to create a `requirements.txt` file listing our dependency.
+In order to be able to use `geo_point` fields, we need to set up a mapping in elasticsearch. We're going to create a Lambda function to do this.
+
+We'll use a library I wrote just for this purpose, [elasticsearchquery](https://github.com/techjacker/elasticsearchquery). It allows us to specify a JSON document containing our query to be invoked against an Elasticsearch deployment. The library takes care of [signing the requests](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html), which is required in order to query AWS Elasticsearch instances.
+
+In order to instruct `serverless` to install the library when it packages the Lambda function, we'll need to create a `requirements.txt` file listing our dependency:
+
 ```ini
 # requirements.txt
 elasticsearchquery
 ```
 
-We also need to install the `serverless-python-requirements` plugin:
+We'll also need to install the `serverless-python-requirements` plugin:
+
 ```Shell
 $ npm install --dev serverless-python-requirements
 ```
 
-Now we're ready to create our elasticsearch mapping. Create a JSON document named `location_geopoint_mapping.json` containing the query needed to create our geo mapping.
+Now we're ready to create our Elasticsearch mapping. Create a JSON document named `location_geopoint_mapping.json` containing the query needed to create our geo mapping:
+
 ```JSON
 {
   "mappings": {
@@ -139,7 +151,8 @@ Now we're ready to create our elasticsearch mapping. Create a JSON document name
 }
 ```
 
-Then create the lambda function to trigger this query. Create a file at `handlers/elasticsearch_geomapping.py` with the following contents:
+Then, create the Lambda function to trigger this query. Create a file at `handlers/elasticsearch_geomapping.py` with the following contents:
+
 ```Python
 import os
 from elasticsearchquery import ElasticSearchQuery
@@ -155,9 +168,10 @@ def handler(event, context):
     esQuery.run()
 ```
 
-As you can see we need to supply our lambda function some parameters so that it knows the location of the elaticsearch query JSON and the URL of the elasticsearch deployment. We'll need to update our serverless config file to supply these and also to create the required permissions for the lambda function to access the cluster.
+As you can see, we need to supply our Lambda function some parameters so that it knows the location of the Elaticsearch query JSON and the URL of the Elasticsearch deployment. We'll need to update our serverless config file to supply these, and also to create the required permissions for the Lambda function to access the cluster.
 
-Add the following to `serverless.yml`.
+Add the following to `serverless.yml`:
+
 ```Yaml{5-6,11,16-20,22-32,36-79}
 service: appsync-placesearch
 
@@ -240,15 +254,20 @@ resources:
                           - '/*'
 ```
 
-Ideally we would trigger this with our CI tool as part of our deployment process but in our case we will just invoke the lambda function manually.
+Ideally, we would trigger this with our CI tool as part of the deployment process, but in our case we will just invoke the Lambda function manually:
+
 ```Shell
 $ serverless invoke -f elasticsearchGeoMapping -l
 ```
 
-If your command did not emit any errors then your mappings should have been set up successfully and your Elasticsearch cluster is now ready to accept geo queries!
+If your command did not emit any errors, then your mappings should have been set up successfully and your Elasticsearch cluster is now ready to accept geo queries!
 
 ## 4. <a name="graphql-schema"></a>Define GraphQL Schema for API
-Now let's set up our API. First we'll define our GraphQL schema. Go ahead and create a file called `schema.graphql`.
+
+Let's set up our API.
+
+First, we'll define our GraphQL schema. Go ahead and create a file called `schema.graphql`:
+
 ```GraphQL
 type Mutation {
   createPlace(input: CreatePlaceInput!): Place
@@ -277,18 +296,22 @@ schema {
   mutation: Mutation
 }
 ```
-We're defining the bare minimum in order to enable us to create places via the `createPlace` mutation and then search for them by location using the `searchPlaceByLatLng` query method.
+We're defining the bare minimum in order to enable us to create places via the `createPlace` mutation, and then search for them by location using the `searchPlaceByLatLng` query method.
 
 
 ## 5. <a name="es-mapping-templates"></a>Appsync Mapping Template GraphQL Resolvers
-Now we have our schema defined we need to add resolvers for it. If you're expecting to need to write a lambda function to interact with elasticsearch in order to do this then you'd be wrong! Appsync introduces the concept of [mapping templates](https://docs.aws.amazon.com/appsync/latest/devguide/resolver-mapping-template-reference-overview.html) which removes this need. Instead the templates translate the request and response into JSON payloads that your backing database and client will accept. Currently only DynamoDB and Elasticsearch are natively supported but in the future I'm sure we'll see support for SQL databases too.
 
-Let's create a directory to house our mapping templates.
+We have our schema defined, and now we need to add resolvers for it. If you're expecting to need to write a Lambda function to interact with Elasticsearch in order to do this, then you'd be wrong!
+
+AppSync introduces the concept of [mapping templates](https://docs.aws.amazon.com/appsync/latest/devguide/resolver-mapping-template-reference-overview.html), which removes this need. Instead, the templates translate the request and response into JSON payloads that your backing database and client will accept. Currently, only DynamoDB and Elasticsearch are natively supported, but in the future I'm sure we'll see support for SQL databases too.
+
+Let's create a directory to house our mapping templates:
+
 ```Shell
 $ mkdir mapping-templates
 ```
 
-Then let's create the request template for our `createPlace` query in a file called `mapping-templates/createPlace-request-mapping-template.txt`. This is going to relay the query on to Elasticsearch for us in the format it expects. It's written in [Apache Velocity Template Language (VTL)](http://velocity.apache.org/engine/2.0/vtl-reference.html) which is what Appsync uses as it's templating language.
+Then, let's create the request template for our `createPlace` query in a file called `mapping-templates/createPlace-request-mapping-template.txt`. This is going to relay the query on to Elasticsearch for us in the format it expects. It's written in [Apache Velocity Template Language (VTL)](http://velocity.apache.org/engine/2.0/vtl-reference.html), which is what Appsync uses as it's templating language:
 
 ```VTL
 {
@@ -308,10 +331,13 @@ Then let's create the request template for our `createPlace` query in a file cal
 }
 ```
 
-As you can see, we access the arguments through the [$context variable](https://docs.aws.amazon.com/appsync/latest/devguide/resolver-context-reference.html) which Appsync supplies to our template. As we want to create the resource we use a `PUT` operation. We also specify that we want the document created in our `places` index via the `path` property. See the [elasticsearch mapping template reference](https://docs.aws.amazon.com/appsync/latest/devguide/resolver-mapping-template-reference-elasticsearch.html) for the full list of supported fields. Finally, we are using a convenience method that Appsync supplies via the [`$util` object](https://docs.aws.amazon.com/appsync/latest/devguide/resolver-context-reference.html#utility-helpers-in-util) to automatically assign a unique `id` to the document.
+As you can see, we access the arguments through the [$context variable](https://docs.aws.amazon.com/appsync/latest/devguide/resolver-context-reference.html), which Appsync supplies to our template. As we want to create the resource, we use a `PUT` operation.
+
+We also specify that we want the document created in our `places` index via the `path` property. See the [Elasticsearch mapping template reference](https://docs.aws.amazon.com/appsync/latest/devguide/resolver-mapping-template-reference-elasticsearch.html) for the full list of supported fields. Finally, we are using a convenience method that AppSync supplies via the [`$util` object](https://docs.aws.amazon.com/appsync/latest/devguide/resolver-context-reference.html#utility-helpers-in-util) to automatically assign a unique `id` to the document.
 
 
-Next we'll create the reponse template to translate Elasticsearch's response into the JSON response defined in our GraphQL schema. Create `mapping-templates/createPlace-request-mapping-template.txt` with the following contents.
+Let's go ahead and create the reponse template to translate Elasticsearch's response into the JSON response defined in our GraphQL schema. Create `mapping-templates/createPlace-request-mapping-template.txt` with the following contents:
+
 ```VTL
 $util.toJson({
   "name": "$context.result.get('_source')['name']",
@@ -321,9 +347,11 @@ $util.toJson({
 })
 ```
 
-We use the [$context variable](https://docs.aws.amazon.com/appsync/latest/devguide/resolver-context-reference.html) again but this time it has been decorated with the response from elasticsearch.
+We use the [$context variable](https://docs.aws.amazon.com/appsync/latest/devguide/resolver-context-reference.html) again, but this time it has been decorated with the response from Elasticsearch.
 
-That's all the code we need in order to create an item in our database but what about querying it? To be able to search for items by location we'll create another set of templates to resolve the `searchPlaceByLatLng` query. First let's create the request mapping template by creating a file at `mapping-templates/searchPlaceByLatLng-request-mapping-template.txt`.
+That's all the code we need in order to create an item in our database, but what about querying it? To be able to search for items by location, we'll create another set of templates to resolve the `searchPlaceByLatLng` query.
+
+Let's with the request mapping template by creating a file at `mapping-templates/searchPlaceByLatLng-request-mapping-template.txt`:
 
 ```VTL
 {
@@ -352,9 +380,11 @@ That's all the code we need in order to create an item in our database but what 
   }
 }
 ```
-Here we are specifying the index to search against via the `path` property. It is a `GET` operation as we just want to query existing items. Finally we run the search for places within 10km of our specified loccation using a [`geo_distance`](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-distance-query.html) elasticsearch query.
 
-Now let's create our response mapping tempalte at `mapping-templates/searchPlaceByLatLng-response-mapping-template.txt`.
+Here, we are specifying the index to search against via the `path` property. It is a `GET` operation as we just want to query existing items. We then run the search for places within 10km of our specified loccation using a [`geo_distance`](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-distance-query.html) Elasticsearch query.
+
+Now, let's create our response mapping template at `mapping-templates/searchPlaceByLatLng-response-mapping-template.txt`:
+
 ```VTL
 [
   #foreach($entry in $context.result.hits.hits)
@@ -370,19 +400,22 @@ Now let's create our response mapping tempalte at `mapping-templates/searchPlace
   #end
 ]
 ```
-We loop through the list of results using a VTL `foreach` statement and create a JSON object in the format specified in our GraphQL schema. We have a small bit of extra logic to ensure that we don't end the list with a trailing comma to ensure we return valid JSON in the response to the client.
+
+We loop through the list of results using a VTL `foreach` statement, and create a JSON object in the format specified in our GraphQL schema. We have a small bit of extra logic to ensure that we don't end the list with a trailing comma; this ensures we return valid JSON in the response to the client.
 
 That's the end of the backend code we need to write!
 
-## 6. <a name="deploy-api"></a>Deploy GraphQL Appsync API
-Now we need to update our serverless config to provision our GraphQL API. In order to do this we're going to use the [Serverless-AppSync-Plugin](https://github.com/sid88in/serverless-appsync-plugin).
+## 6. <a name="deploy-api"></a>Deploy the GraphQL AppSync API
 
-Install it with `npm`.
+We need to update our serverless config to provision our GraphQL API. In order to do this, we're going to use the [Serverless-AppSync-Plugin](https://github.com/sid88in/serverless-appsync-plugin).
+
+Install it with `npm`:
+
 ```Shell
 $ npm install --dev serverless-appsync-plugin
 ```
 
-Then update your serverless.yml to include the following lines.
+Then, update your serverless.yml to include the following lines:
 
 ```Yaml{7,16-17,25-50}
 ---
@@ -437,7 +470,11 @@ custom:
           serviceRoleArn: arn:aws:iam::${self:custom.awsAccountId}:role/ElasticSearch-${self:custom.esRoleName}
 ```
 
-We add the Serverless-AppSync-Plugin to the `custom` section and tell it where to find the schema file and mapping templates we created earlier. We also specify the datsource for the API, in our case elasticsearch, and the authentication type securing the API, in our case we are using an API key which AWS will generate for us. Finally we specify a couple of environment variables that the plugin requires, the ID of the account where we created the elasticsearch cluster earlier together with the endpoint URL. We will need to set the `AWS_ACCOUNT_ID` variable in our environment along with `ES_ENDPOINT` before running the command to deploy our GraphQL API. We can use the `aws-cli` tools to dynamically populate the latter. Create a file called `.env` with the following contents, updating the `AWS_ACCOUNT_ID` with the appropriate value.
+We add the Serverless-AppSync-Plugin to the `custom` section, and tell it where to find the schema file and mapping templates we created earlier. We also specify the data source for the API (in our case, Elasticsearch), and the authentication type securing the API (in our case, we are using an API key which AWS will generate for us).
+
+We then specify a couple of environment variables that the plugin requires, and the ID of the account where we created the Elasticsearch cluster earlier together with the endpoint URL. We will need to set the `AWS_ACCOUNT_ID` variable in our environment along with `ES_ENDPOINT` before running the command to deploy our GraphQL API. We can use the `aws-cli` tools to dynamically populate the latter.
+
+Create a file called `.env` with the following contents, updating the `AWS_ACCOUNT_ID` with the appropriate value:
 
 ```Shell
 # .env
@@ -451,7 +488,8 @@ ENDPOINT=$(aws es describe-elasticsearch-domain \
 export ES_ENDPOINT=https://$ENDPOINT
 ```
 
-Now let's surce our `.env` file so the variables are present in our shell and then deploy our Appsync API.
+Now, let's surce our `.env` file so the variables are present in our shell and then deploy our Appsync API:
+
 ```Shell
 $ source .env
 $ appsync deploy-appsync
@@ -459,8 +497,8 @@ $ appsync deploy-appsync
 
 Voila! We now have our GraphQL API fully deployed. Let's log in to the AWS console and run some queries against it.
 
+To start off, how about we create a place in Australia:
 
-First let's create a place in Australia.
 ```GraphQL
 mutation CreatePlace {
   createPlace(input: {
@@ -476,9 +514,11 @@ mutation CreatePlace {
   }
 }
 ```
-![Australia GraphQL Mutation](./graphql-mutation-createplace-australia.png "Australia GraphQL Mutation")
 
-And another in London.
+![Australia GraphQL Mutation](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/elasticsearch/graphql-mutation-createplace-australia.png "Australia GraphQL Mutation")
+
+And another in London:
+
 ```GraphQL
 mutation CreatePlace {
   createPlace(input: {
@@ -494,10 +534,11 @@ mutation CreatePlace {
   }
 }
 ```
-![London GraphQL Mutation](./graphql-mutation-createplace-london.png "London GraphQL Mutation")
+![London GraphQL Mutation](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/elasticsearch/graphql-mutation-createplace-london.png "London GraphQL Mutation")
 
 
-Now let's search for just places within 10km of London.
+And then let's search for places within 10km of London:
+
 ```GraphQL
 query {
   searchPlaceByLatLng(lat: 51.5, lng: 0.12) {
@@ -508,13 +549,15 @@ query {
   }
 }
 ```
-![London GraphQL LatLng Query](./graphql-query-search-latlng.png "London GraphQL LatLng Query")
+![London GraphQL LatLng Query](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/elasticsearch/graphql-query-search-latlng.png "London GraphQL LatLng Query")
 
-It only returns our London listing so we can see our query is working just as we hoped!
-
+It only returns our London listing, so we can see our query is working just as we hoped!
 
 ## 7. <a name="destroy"></a>Teardown
-We could easily add support for realtime updates to our API at this point but we've already done a lot of work today so let's destory our API and leave that for another tutorial. In order to update or delete our API we need to feed our serverless config its `apiId` and `apiKey`. Let's go ahead and add these to our `serverless.yml` instructing it to pick them up via environment variables.
+
+We could easily add support for realtime updates to our API at this point, but we've already done a lot of work today. So let's destory our API and leave that for another tutorial.
+
+In order to update or delete our API, we'll need to feed our serverless config its `apiId` and `apiKey`. Let's go ahead and add these to our `serverless.yml` instructing it to pick them up via environment variables:
 
 ```Yaml{26-27}
 service: appsync-placesearch
@@ -547,7 +590,7 @@ custom:
   # ...rest omitted for brevity
 ```
 
-Now let's add the following lines to our `.env` file to dynamically populate these.
+Now, let's add the following lines to our `.env` file to dynamically populate these:
 
 ```Shell
 # .env
@@ -569,15 +612,19 @@ export APPSYNC_API_KEY=$(aws appsync list-api-keys \
    --output text)
 ```
 
-Now we can destroy our API.
+And with that, we can destroy our API:
+
 ```Shell
 $ source .env
 $ serverless delete-appsync
 $ serverless remove
 ```
 
-[Full source code](https://github.com/techjacker/appsync-elasticsearch-geosearch) for this tutorial available on github.
+## Wrap-up
 
+We created a serverless GraphQL API. We got that API to handle an AirBnB-style geo search using Elasticsearch and AppSync. Not bad!
 
-About Andrew Griffiths
-[Andrew Griffiths](https://andrewgriffithsonline.com) is an independent consultant specialising in serverless technology.
+The 
+[full source code](https://github.com/techjacker/appsync-elasticsearch-geosearch) for this tutorial is available on github, so feel free to check it out!
+
+My name is Andrew Griffiths, and [here's where you can find me](https://andrewgriffithsonline.com) on the web.
