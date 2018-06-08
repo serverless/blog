@@ -104,7 +104,7 @@ Some of the main components of building your endpoint are (with links to [server
 
 ### Step 1: Configure the Serverless template
 
-We'll be using the [Serverless Framework](https://serverless.com/framework/) to build and deploy your API resources quickly. If you don't have the Framework installed, get it with `npm serverless -g`.
+We'll be using the [Serverless Framework](https://serverless.com/framework/) to build and deploy your API resources quickly. If you don't have the Framework installed, get it with `npm install serverless -g`.
 
 To start, specify in your `serverless.yml` that you are setting up a GraphQL HTTP endpoint:
 
