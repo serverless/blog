@@ -192,7 +192,7 @@ Then, here is another Lambda function which writes a log to S3 Bucket.
 'use strict';
 const AWS = require('aws-sdk');
 
-module.exports.wtiteS3 = (event, context, callback) => {
+module.exports.writeS3 = (event, context, callback) => {
   const s3 = new AWS.S3();
   const params = {
     Bucket: 'sls-logs-bukect',
@@ -227,7 +227,7 @@ functions:
   startEC2:
     handler: handler.startEC2
   writeS3:
-    handler: handler.wtiteS3
+    handler: handler.writeS3
 
 stepFunctions:
   stateMachines:
