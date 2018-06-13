@@ -56,9 +56,7 @@ Lexi Ross (software engineer at Aspen, and one of our teachers), remembers in pa
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-teentech/serverless-teentech-3.png">
 
-Nick:
-
-Brian:
+Nickk Gottlieb was also really impressed with how quickly the students learned. "The teens we worked with didn’t have a lot of experience with coding or software, but they were hungry to build, and once they realized how the code turned in to an actual web page, something tangible, they were off to the races."
 
 ## Lessons learned, and things we’d change
 
