@@ -14,11 +14,11 @@ If you’re a company looking for ways to give back to your local community, you
 
 You might remember our post about putting together a holiday bar cart that [raised over $400 for homeless services in the San Francisco Bay Area](https://serverless.com/blog/how-raise-money-charity-in-an-hour/); after that event I was immediately asked, “What are we doing next?”
 
-So we put it to a vote. I asked the team to send me ideas on how we could give back and at the next meeting we voted to choose the next event:
+So we put it to a vote. I asked the team to send me ideas on how we could give back, and then I threw them all into a Slack poll:
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-teentech/teentech-slack-poll.png">
 
-The winner? We decided to work with teens in the area who were interested in coding.
+We decided to work with teens in the area who were interested in coding.
 
 ## TeenTechSF
 
