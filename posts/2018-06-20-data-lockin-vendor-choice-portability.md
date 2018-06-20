@@ -74,7 +74,7 @@ If 3rd party providers all speak and understand the same event format, developer
 
 A second effort, led by our team here at Serverless Inc., is [Event Gateway](https://serverless.com/event-gateway/)—an open source event router. It sits above the various clouds and services in your architecture, and allows developers to route data in the form of events to *any* compute they want.
 
-[![event gateway](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-integrations1.png)](https://serverless.com/blog/react-to-any-cloud-event-hosted-event-gateway/)
+[![event gateway](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-integrations1.png)](https://serverless.com/event-gateway/)
 
 Using Event Gateway, developers can (for example) route events from an AWS S3 bucket to a TensorFlow service on Google Cloud Platform, and then store the results in a hosted big data platform. Or, they can react to events from a database on Azure with AWS Lambda.
 
