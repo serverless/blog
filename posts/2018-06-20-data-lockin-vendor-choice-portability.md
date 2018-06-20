@@ -4,8 +4,8 @@ description: "Vendor choice is the most important thing IT leaders could be thin
 date: 2018-06-20
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/vendor+choice/serverless-data-portability-thumb.png
-authors: NickGottlieb
-  - 
+authors:
+  - NickGottlieb
 ---
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/vendor+choice/serverless-data-portability.jpg">
@@ -68,13 +68,13 @@ There are many open source efforts underway that have the specific goal of grant
 
 One such effort is [CloudEvents](https://cloudevents.io/), which is currently incubated within the CNCF. The goal of CloudEvents is to create an open spec for describing event data. This effort will make data, in the form of events, much more portable between cloud providers.
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/vendor+choice/cloudevents.png">
+[![cloudevents](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/vendor+choice/cloudevents.png)](https://cloudevents.io/)
 
 If 3rd party providers all speak and understand the same event format, developers can easily move data between them. This goes a long way toward solving the current challenges that exist with data lock-in.
 
 A second effort, led by our team here at Serverless Inc., is [Event Gateway](https://serverless.com/event-gateway/)—an open source event router. It sits above the various clouds and services in your architecture, and allows developers to route data in the form of events to *any* compute they want.
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-integrations1.png">
+[![event gateway](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-integrations1.png)](https://serverless.com/blog/react-to-any-cloud-event-hosted-event-gateway/)
 
 Using Event Gateway, developers can (for example) route events from an AWS S3 bucket to a TensorFlow service on Google Cloud Platform, and then store the results in a hosted big data platform. Or, they can react to events from a database on Azure with AWS Lambda.
 
