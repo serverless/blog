@@ -7,7 +7,7 @@ Use this Serverless Writer’s Guide as a resource to help you get started contr
 - focus on serverless and event-driven themes (faster time to market, lowest total cost of ownership, microservice architectures, reactive/event-driven design patterns, data as events
 - focus on learnings (it’s still early days for serverless and people want learn from others, especially around operations, as much as possible)
 - provide code examples or tutorials when possible (our audience is technical and likes to get hands on)
-- no overt product pitches, these aren’t received well by our audience and will no be published on our blog
+- no overt product pitches, these aren’t received well by our audience and will not be published on our blog
 
 ## Suggested Topics
 
