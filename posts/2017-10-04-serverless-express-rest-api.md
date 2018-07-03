@@ -481,8 +481,11 @@ Serverless: POST /users
 
 Serverless: Offline listening on http://localhost:3000
 ```
-
-Let's run our `curl` command from earlier to hit our local endpoint and create a user:
+ Import our DynamoDB schema to the offline server
+```bash
+$ serverless dynamodb migrate
+```
+Then, Let's run our `curl` command from earlier to hit our local endpoint and create a user:
 
 ```bash
 $ curl -H "Content-Type: application/json" -X POST http://localhost:3000/users -d '{"userId": "alexdebrie1", "name": "Alex DeBrie"}'
