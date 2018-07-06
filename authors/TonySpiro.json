@@ -1,0 +1,11 @@
+{
+  "name": "Tony Spiro",
+  "github": "tonyspiro",
+  "twitter": "tonyspiro",
+  "avatar": "https://cosmicjs.imgix.net/1c3690c0-9dbc-11e7-b30d-b3b3f0076a4f-me.jpg?w=300",
+  "bio": {
+    "short": "Tony Spiro is the co-founder of Cosmic JS",
+    "long":
+      "Tony is the CEO and co-founder of Cosmic JS. He enjoys helping teams all over the world build modern apps faster, together."
+  }
+}
