@@ -10,7 +10,7 @@ authors:
 
 <img src="https://cosmic-s3.imgix.net/e07fd3b0-7eee-11e8-bc42-55745f37e956-cosmic-serverless-lambda.jpg?w=1000">
 
-Serverless application development is growing in popularity in no small part due to the appealing proposition to "build apps, not infrastructure". This way of building apps provides many benefits including not having to manage server infrastructure, not having to pay for idle server time, paying only when your service is in use.
+Serverless application development is growing in popularity in no small part due to the appealing proposition to "build apps, not infrastructure". This way of building apps provides many benefits including not having to manage server infrastructure, infinite scalability and not having to pay for idle server time, paying only when your service is in use.
 
 [The Serverless platform](https://serverless.com) further abstracts building serverless apps into a delightful developer experience that helps you get a cloud function-powered app up and running fast.
 
