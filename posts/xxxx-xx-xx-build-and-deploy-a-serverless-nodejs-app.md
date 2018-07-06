@@ -5,7 +5,7 @@ date: 2018-07-10
 layout: Post
 thumbnail: https://cosmic-s3.imgix.net/e07fd3b0-7eee-11e8-bc42-55745f37e956-cosmic-serverless-lambda.jpg?w=1000
 authors:
-  - tonyspiro
+  - TonySpiro
 ---
 
 <img src="https://cosmic-s3.imgix.net/e07fd3b0-7eee-11e8-bc42-55745f37e956-cosmic-serverless-lambda.jpg?w=1000">
