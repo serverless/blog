@@ -1,5 +1,5 @@
 ---
-title: "Build and Deploy a Cosmic JS-powered Serverless Node.js App"
+title: "Build and Deploy a Serverless Node.js App powered by Cosmic JS"
 description: "In this tutorial I'm going to show you how to get started with the Cosmic JS Serverless Starter app in a matter of minutes. And as a bonus I'll show you the steps to transform any Node.js app into an infinitely scalable Node.js Serverless App. Let's get started."
 date: 2018-07-10
 layout: Post
