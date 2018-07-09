@@ -549,7 +549,7 @@ When the function is triggered by an S3 event, metadata about the bucket and the
 
 **Note**: I do a small hack to name the video file so that the position for the frame we want to extract as a thumbnail is part of the filename. So a file named test_00-10.mp4 will assume the frame position to be 00:10.
 
-The code for the fucntion `runThumbnailGenerateTask` is below:
+The code for the function `runThumbnailGenerateTask` is below:
 
 ```
 var runThumbnailGenerateTask = (s3_video_url, thumbnail_file, frame_pos) => {
