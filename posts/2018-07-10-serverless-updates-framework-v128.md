@@ -14,8 +14,8 @@ The work on Serverless never stops. We just launched Serverless Framework v1.28 
 
 Jump straight into the section you want to read about:
 
-**[Framework v1.28](#serverless-framework-v1.28):** SQS events, API Gateway private endpoints, API Gateway resource policies
-**[Event Gateway](#event-gateway):** simpler subscriptions and authorization, CloudEvents support
+- **[Framework v1.28](#serverless-framework-v128):** SQS events, API Gateway private endpoints, API Gateway resource policies
+- **[Event Gateway](#event-gateway):** simpler subscriptions and authorization, CloudEvents support
 
 ## Serverless Framework v1.28
 
