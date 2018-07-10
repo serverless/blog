@@ -8,7 +8,7 @@ authors:
   - AndreaPasswater
 ---
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-updates/serverless-framework-v128-header.jpg">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-updates/serverless-framework-v128-header1.jpg">
 
 The work on Serverless never stops. We just launched Serverless Framework v1.28 (with SQS event support), and have some exciting updates to Event Gateway open source!
 
