@@ -275,7 +275,7 @@ custom:
     accessKey: <yourkey>
   eventTypes:
     user.create.request: # Event to register
-      authorizerId: authorize # Custom authorizer
+      authorizer: authorize # Custom authorizer
 
 functions:
   authorize: # Authorization function
