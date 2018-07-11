@@ -30,7 +30,7 @@ Let's dig in!
 
 ## Using SQS with the Serverless Framework
 
-As of the [TODO]() release of the Serverless Framework, SQS is a supported event source! Using the SQS integration is pretty straightforward. You'll register an event of type `sqs` and provide the ARN of your SQS queue:
+As of the [v1.28 release of the Serverless Framework](https://serverless.com/blog/serverless-updates-framework-v128/), SQS is a supported event source! Using the SQS integration is pretty straightforward. You'll register an event of type `sqs` and provide the ARN of your SQS queue:
 
 ```yml
 # serverless.yml
