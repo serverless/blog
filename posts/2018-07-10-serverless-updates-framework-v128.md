@@ -29,9 +29,9 @@ On the heels of Lambda sliding SQS events support in under the radar a couple we
 
 This feature has been on the community wish list for a long time. In addition to being a much-needed component of a serverless workflow, SQS event migration is an especially great onramp to serverless technologies. Already have EC2 worker instances processing SQS queues? Port it over to Lambda!
 
-Tomorrow, we'll have a walkthrough with SQS events on the Serverless Framework.
+Read our full post on the SQS integration, which covers using SQS with the Serverless Framework, batch size and error handling, and protecting your downstream services with concurrency control.
 
-Until then, [check out the PR](https://github.com/serverless/serverless/pull/5074).
+Also feel free to [check out the PR](https://github.com/serverless/serverless/pull/5074).
 
 ### Private API Gateway endpoints
 
@@ -49,7 +49,7 @@ API Gateway resource policies let you easily provision API controls. Users from 
 
 Now you can customize your CloudFormation stack name and AWS API Gateway API name.
 
-[More info in the PR](https://github.com/serverless/serverless/pull/4951)
+[More info in the PR](https://github.com/serverless/serverless/pull/4951).
 
 ### And that’s not all
 
