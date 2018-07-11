@@ -393,7 +393,7 @@ One environment is used for go-live, and the other is used for staging new chang
 Here are the details of the flow:
 
 1. **Live (blue)**: Initially, the current version of the software is deployed to the blue environment with the all user traffic being redirected to the blue environment.
-2. **Staging to Live (green)**: After a new version of the software is developed, it is deployed to the staging environment (green) for testing. After the testing of the new vesrion of the software is considered satisfactory, all traffic is redirected to the green environment and the green environment is considered as live.
+2. **Staging to Live (green)**: After a new version of the software is developed, it is deployed to the staging environment (green) for testing. After the testing of the new version of the software is considered satisfactory, all traffic is redirected to the green environment and the green environment is considered as live.
 3. **Live to Staging (blue)**: Since the green environment is now the live version, the blue environment is considered staging. The new version of the code is deployed to the blue environment for testing.
 4. **Rollback scenario**: Unfortunately, sometimes serious bugs are discovered in the new version (blue) and code have to be rolled back. In this case, all traffic is redirected back to the blue environment. The blue environment is back being the live version. The green environment becomes staging.
 
