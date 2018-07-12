@@ -1,9 +1,9 @@
 ---
-title: Easy unit testing for Node.js Serverless projects
-description: Get started with Simple Queue Service (SQS) and Serverless, and learn some of the important configuration options.
-date: 2018-07-11
+title: Easy unit testing for Node.js Serverless projects with Jest
+description: Create unit tests for Node.js using the Serverless Framework, run tests on CI, and check off our list of serverless testing best practices.
+date: 2018-07-17
 layout: Post
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-sqs-events-thumb.jpg'
+thumbnail: 'TODO'
 authors:
   - EslamHefnawy
 ---
