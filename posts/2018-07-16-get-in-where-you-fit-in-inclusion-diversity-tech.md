@@ -24,7 +24,7 @@ I involuntarily grew up speaking 3 languages because of the community I was arou
 
 Career-wise, I came from the fashion industry. For those who don’t know or can’t imagine, fashion had a drastically different demographic than the tech industry—lots of women and gay men who were incredibly driven, cultured, open minded and diverse in their own personalities.
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/inclusion/charmmie-fashion.jpg">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/inclusion/charmmie-fashion-square.jpg">
 
 All this to say, multiculturalism has been a big part of my life. So when I joined Serverless and started going to tech functions all over the Bay Area, the most shocking thing to me about the tech industry (even though I knew it already) was how similar everybody seemed.
 
