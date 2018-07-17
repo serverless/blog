@@ -89,6 +89,8 @@ We are working hard on these issues here at Serverless. We are scaling at a fast
 
 We are doing our best to ensure our group is well-rounded and that many types of people are present. We believe that our successes will be more impactful when we have a strong team that is empathetic, collaborative, and open to diverse ideas and opinions. We want to discuss uncomfortable issues and find solutions together. 
 
-Just as people code in various languages to achieve the best results, we need to be open to learning and engaging with the multiple types of people that are underrepresented; you may be overlooking a great potential “language” that could open up your path to success and beyond. 
+Just as people code in various languages to achieve the best results, we need to be open to learning and engaging with the multiple types of people that are underrepresented; you may be overlooking a great potential “language” that could open up your path to success and beyond.
+
+If diversity is something you're working on, [let's connect](https://www.linkedin.com/in/charmmie-hendon-5693b95/)!
 
 *All photos taken from the amazing [WOCintech](https://www.flickr.com/photos/wocintechchat/) project*
