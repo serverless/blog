@@ -3,16 +3,16 @@ title: Unit testing for Node.js Serverless projects with Jest
 description: Create unit tests for Node.js using the Serverless Framework, run tests on CI, and check off our list of serverless testing best practices.
 date: 2018-07-17
 layout: Post
-thumbnail: 'TODO'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/node-serverless-debugging-thumb.png'
 authors:
   - EslamHefnawy
 ---
 
 ![Unit testing Node.js Serverless projects with Jest](https://s3-eu-west-1.amazonaws.com/wizardondemand/serverless/serverless-1-with-technology-names.png)
 
-Have you recently found yourself wondering how to write unit tests for your Serverless project?
+Have you recently found yourself wondering how to write unit tests for your Serverless project? Well, good news. I'm here to talk about just that.
 
-Great. We are here to talk about just that. As the size and complexity of your Serverless project grows, automated testing becomes the key to creating clean abstractions, getting fast feedback, and maintaining the sanity of your team.
+As the size and complexity of your Serverless project grows, automated testing becomes the key to creating clean abstractions, getting fast feedback, and maintaining the sanity of your team.
 
 In this post, we will cover the basics of creating unit tests for Node.js projects using the [Serverless Framework](https://serverless.com/framework/). We will also show you how to run those tests on CI and provide some tips on writing good unit tests for your Serverless project.
 
