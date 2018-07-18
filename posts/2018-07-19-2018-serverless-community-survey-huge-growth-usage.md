@@ -95,14 +95,23 @@ Those instances of ‘company’ you see are people telling us they built their 
 Here is just a sample of some great answers we got here, covering everything from critical workflows to fun side projects:
 
 “A complete data pipeline from MongoDB to Redshift that also handles data transformations”
+
 “High-availability alerting platform”
+
 “ETL tool extracting and translating exif data from photos into a heat map”
+
 “Member management system using facial-recognition” (*and then similarly*) “A serverless front-door controller to allow access into a building from a Slack slash command”
+
 “Customer authentication and purchasing system, Dynamics CRM integration”
+
 “Fermentation temperature monitoring with a Raspberry Pi”
+
 “Content publishing pipeline. I'm also currently working on an IoT platform which automates car parks using machine learning.” (*we applaud your breadth!*)
+
 “A developer portal for third-party components for our ETL platform”
+
 “Media transcoding service integrated with automated transcription, translation, and captioning services”
+
 “A todo app that lets me procrastinate better” (*Thanks for speaking the truth for all of us, anonymous survey-taker.*)
 
 ## Key takeaways from the data
