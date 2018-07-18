@@ -109,5 +109,5 @@ Here is just a sample of some great answers we got here, covering everything fro
 
 - Serverless is growing, and fast. Several key adoption metrics are 2x what they were last year. And not just with smaller companies; the enterprise is adopting serverless technologies for critical workloads just as rapidly.
 - Operationalizing serverless is the biggest obstacle to wider serverless adoption right now.
-- Many more people are using multiple cloud providers than there were last year, which only increases the importance of projects such as [OpenEvents](https://cloudevents.io/) and other initiatives that enable vendor choice.
+- Many more people are using multiple cloud providers than there were last year, which only increases the importance of projects such as [CloudEvents](https://cloudevents.io/) and other initiatives that enable vendor choice.
 - For a lot of people, serverless is their first exposure to the public cloud. Meaning: serverless is already shifting the ways developers work and improving accessibility to the cloud.
