@@ -106,7 +106,7 @@ Here is just a sample of some great answers we got here, covering everything fro
 
 “Fermentation temperature monitoring with a Raspberry Pi”
 
-“Content publishing pipeline. I'm also currently working on an IoT platform which automates car parks using machine learning.” (*we applaud your breadth!*)
+“Content publishing pipeline. I'm also currently working on an IoT platform which automates car parks using machine learning.” (*Wow, we applaud your breadth!*)
 
 “A developer portal for third-party components for our ETL platform”
 
