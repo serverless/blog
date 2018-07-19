@@ -52,7 +52,7 @@ About 26% of survey-takers were using 2 or more cloud providers; nearly double t
 
 We asked people what the biggest roadblocks were for them when they considered using serverless architectures. Three of the top four answers had to do with operationalizing serverless—managing and enforcing best practices, lack of tooling, & lack of knowledge on their team:
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2018-community-survey/concerns-serverless2.jpg">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2018-community-survey/concerns-serverless3.jpg">
 
 When we asked people a subtly different question about the biggest challenges they faced with serverless, the answers followed right in step with adoption roadblocks.
 
