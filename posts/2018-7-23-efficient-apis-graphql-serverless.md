@@ -178,7 +178,7 @@ This query would return only the requested properties:
 
 There are even deeper advantages to having a serverless GraphQL endpoint, which you can [read more about here](https://serverless.com/blog/running-scalable-reliable-graphql-endpoint-with-serverless/).
 
-The tl;dr is, when you use GraphQL, you have are relying on only one http endpoint; and when you have one http endpoint to connect all your clients to all your backend services, you want that endpoint to be performant, reliable, and auto-scaling.
+The tl;dr is that when you use GraphQL, you are relying on only one HTTP endpoint; and when you have one HTTP endpoint to connect all your clients to your backend services, you want that endpoint to be performant, reliable, and auto-scaling.
 
 ### Building a GraphQL endpoint with the Serverless Framework
 
@@ -252,6 +252,7 @@ All that remains is to create a handler for Lambda. Using the newer asynchronous
 module.exports.query = async (event) => {
   const result = await graphql(schema, event.body, resolvers)
   return { statusCode: 200, body: JSON.stringify(result.data, null, 2) }
+}
 ```
 
 Since all of the set-up logic for the GraphQL schema is outside of the handler, this will only be executed when Lambda needs to spin up a new instance to serve requests. To enable us to query by POST request, we have to include the following in `serverless.yml`:
@@ -288,7 +289,7 @@ curl https://lsqgfkvs2i.execute-api.us-east-1.amazonaws.com/dev/ -d '{
 }
 '
 ```
-```
+```js
 {
   "order": {
     "customerName": "Stacey L. Civic",
