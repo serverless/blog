@@ -248,7 +248,7 @@ The resolver for order is more complex. It uses async/await syntax to fetch the 
 
 All that remains is to create a handler for Lambda. Using the newer asynchronous syntax introduced by Node 8 for Lambda, this is very simple.
 
-```
+```js
 module.exports.query = async (event) => {
   const result = await graphql(schema, event.body, resolvers)
   return { statusCode: 200, body: JSON.stringify(result.data, null, 2) }
