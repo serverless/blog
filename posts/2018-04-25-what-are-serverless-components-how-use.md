@@ -31,7 +31,7 @@ Serverless Components will also form an ecosystem driven by community contributi
 Let’s take a look at how you can use Serverless Components to create an entire serverless application.
 
 ### A uniform experience
-
+c
 Any cloud service can be packaged as a Serverless Component.
 
 Within each Component is the provisioning, rollback, and removal functionality for that service, which you can run via the [Serverless Components CLI](https://github.com/serverless/components).
