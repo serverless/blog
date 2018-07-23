@@ -7,7 +7,9 @@ authors:
   - FernandoMedinaCorey
 ---
 
-If you've already been using the Serverless Framework for your personal or professional development projects on AWS, you may have realized that deploying the frontend portion of your applications isn't built in. Fortunately for you, there's an easy solution - using Serverless Finch. In this post, I'll show you how you can use the Serverless Finch plugin to deploy your own static website assets in a way that is compatible with most modern frontend frameworks or less-complex static sites.
+If you've already been using the Serverless Framework for your personal or professional development projects on AWS, you may have realized that deploying the frontend portion of your applications isn't built in. 
+
+Fortunately for you, there's an easy solution - using Serverless Finch. In this post, I'll show you how you can use the Serverless Finch plugin to deploy your own static website assets in a way that is compatible with most modern frontend frameworks or less-complex static sites.
 
 ## Requirements
 
@@ -35,7 +37,15 @@ custom:
   client:
     bucketName: your-unique-s3-bucketname
 ```
-3. Run `serverless client deploy` and see the magic happen (remember that _by default_ the plugin looks for your already-built frontend code in `./client/dist`). Don't have an index.html or other website files yet? Here's a one line script you can run before `serverless client deploy` just to give yourself a barebones page and see how things work: `mkdir -p client/dist && touch client/dist/index.html && touch client/dist/error.html && echo "Go Serverless" >> client/dist/index.html && echo "error page" >> client/dist/error.html`
+3. **Warning step** - Make sure that before doing Step 4 that you configured an S3 bucket purely dedicated to storing the files for this frontend. The plugin **will delete and overwrite the current contents of the bucket**. 
+4. Run `serverless client deploy` and see the magic happen (remember that _by default_ the plugin looks for your already-built frontend code in `./client/dist`). Don't have an index.html or other website files yet? Here's a quick script you can run before `serverless client deploy` just to give yourself a barebones page and see how things work: 
+
+```bash
+mkdir -p client/dist
+touch client/dist/index.html client/dist/error.html
+echo "Go Serverless" >> client/dist/index.html
+echo "Sorry! This is an error page" >> client/dist/error.html
+```
 
 Because Serverless Finch can take potentially destructive actions (overwriting existing files, changing bucket policies, etc.) the plugin should now display a confirmation prompt prior to taking any action. After entering `Y` for yes you should then see something like this:
 
@@ -85,7 +95,9 @@ Keep in mind that you will need to put these inside whatever distribution folder
 
 **How does Serverless Finch integrate with custom domains?**
 
-Great question! We're currently considering additional functionality to help manage custom domains. Currently, you can register your own domain on Route 53 and then point that domain to the S3 bucket using an AWS A record alias (this requires the bucket to share the name with the custom domain). You can also create a CloudFront Distribution to cache the files in your S3 bucket and then point your custom domain to that CloudFront distribution with a Route 53 A record alias. The benefit of CloudFront is that you can also get a free HTTPS certificate and you can name your S3 bucket whatever you want.
+Great question! We're currently considering additional functionality to help manage custom domains. Currently, you can register your own domain on Route 53 and then point that domain to the S3 bucket using an AWS A record alias (this requires the bucket to share the name with the custom domain). 
+
+You can also create a CloudFront Distribution to cache the files in your S3 bucket and then point your custom domain to that CloudFront distribution with a Route 53 A record alias. The benefit of CloudFront is that you can also get a free HTTPS certificate and you can name your S3 bucket whatever you want.
 
 Either way, I'd recommend you determine how to setup your custom domain based on what's best for your needs and then use Serverless Finch to update and deploy the changes inside your S3 bucket (which should update your site regardless of the option you choose).
 
@@ -95,4 +107,4 @@ Lots! For a full list of features, you can view the project on GitHub [here](htt
 
 ## Final Thoughts
 
-About a year ago, I [adopted and republished](https://www.fernandomc.com/posts/publishing-serverless-finch/) a broken Serverless Framework plugin that turned into Serverless Finch. Over the last year, the community has added a bunch of new features with more on the way. If you're interested in becoming a contributor or maintainer please open a PR or [get in touch](https://www.fernandomc.com/contact/).
+About a year ago, I [adopted and republished](https://www.fernandomc.com/posts/publishing-serverless-finch/) a broken Serverless Framework plugin that turned into Serverless Finch. Over the last year, the community has added a bunch of new features with more on the way. If you're interested in becoming a contributor or maintainer please [open a PR](https://github.com/fernando-mc/serverless-finch) or [get in touch](https://www.fernandomc.com/contact/).
