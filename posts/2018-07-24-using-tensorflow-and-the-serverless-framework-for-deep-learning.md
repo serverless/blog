@@ -1,9 +1,9 @@
 ---
 title: "Using TensorFlow and the Serverless Framework for deep learning"
 description: "We’ll cover how to use TensorFlow, the Serverless Framework, AWS Lambda and API Gateway to deploy a simple deep learning model."
-date: 2018-07-12
+date: 2018-07-24
 layout: Post
-thumbnail: 
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/tensorflow/tensorflow-serverless-thumb.png
 authors:
   - ryfeus
 ---
@@ -19,10 +19,10 @@ I wholeheartedly recommend a serverless approach. Why? Because serverless provid
 In this post, we’ll cover how to build your first deep learning API using the [Serverless Framework](https://serverless.com/framework/), TensorFlow, AWS Lambda and API Gateway.
 
 We will cover the following:
-Using serverless for deep learning - standard ways of deploying deep learning applications, and how a serverless approach can be beneficial.
-“Hello world” code - a basic Lambda function with only 4 lines of code. There is no API here, we’ll start with the simplest possible example.
-Code decomposition - looking through the configuration file, and the python code for handling the model, to understand how the whole example works.
-API example - get a working API for image recognition on top of our example.
+- Using serverless for deep learning - standard ways of deploying deep learning applications, and how a serverless approach can be beneficial.
+- “Hello world” code - a basic Lambda function with only 4 lines of code. There is no API here, we’ll start with the simplest possible example.
+- Code decomposition - looking through the configuration file, and the python code for handling the model, to understand how the whole example works.
+- API example - get a working API for image recognition on top of our example.
 
 If you want to skip the background about what TensorFlow is and why you’d want to use serverless for machine learning, [the actual example starts here](#the-basic-4-line-example).
 
@@ -34,19 +34,19 @@ Currently, the way to deploy pre-trained TensorFlow model is to use a cluster of
 
 So to make deep learning API, we would need stack like this:
 
-[IMAGE]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/tensorflow/deep-learning-api-stack.gif">
 
 
-(*Image from [AWS](https://aws.amazon.com/blogs/machine-learning/deploy-deep-learning-models-on-amazon-ecs/)*)
+(*Image from [AWS](https://aws.amazon.com/blogs/machine-learning/deploy-deep-learning-models-on-amazon-ecs/).*)
 
 The main pain points in this infrastructure is that:
-you have to manage the cluster - its size, type and logic for scaling
-you have to pay for unused server power 
-you have to manage the container logic - logging, handling of multiple requests, etc
+- you have to manage the cluster - its size, type and logic for scaling
+- you have to pay for unused server power 
+- you have to manage the container logic - logging, handling of multiple requests, etc
 
 With AWS Lambda, we can make the stack significantly easier and use simpler architecture:
 
-[IMAGE]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/tensorflow/serverless-tensorflow-architecture.png">
 
 
 ### The difference in both approaches
@@ -57,14 +57,16 @@ Second, you don’t have to pay for unused server time. Serverless architectures
 
 And not only does it make pricing completely transparent, it’s just a lot cheaper. For the example TensorFlow model we’ll cover in this post, it costs 1$ for about 25k requests. A similar cluster would cost a *lot* more, and you’d only achieve pricing parity once you hit 1M requests.
 
-Third, infrastructure itself becomes a lot easier. You don’t have to handle docker containers, logic for multiple requests, or cluster orchestration. Bottom line: you don’t have to hire someone to do devops for this, as any backend developer can easily handle it.
+Third, infrastructure itself becomes a lot easier. You don’t have to handle Docker containers, logic for multiple requests, or cluster orchestration.
+
+Bottom line: you don’t have to hire someone to do devops for this, as any backend developer can easily handle it.
 
 As we’ll see in a minute, deploying a serverless deep/machine learning infrastructure can be done with as little as 4 lines of code.
 
 That said, when *wouldn’t* you go with a serverless approach? There are some limitations to be aware of:
-Lambda has [strict limits](https://docs.aws.amazon.com/lambda/latest/dg/limits.html) in terms of processing time and used memory, you’ll want to make sure you won’t be hitting those
-As mentioned above, clusters are more cost effective after a certain number of requests. In cases where you don’t have peak loads and the number of requests is really high (I mean 10M per month high), a cluster will actually save you money.
-Lambda has a small, but certain, startup time. TensorFlow also has to download the model from S3 to start up. For the example in this post, a cold execution will take 4.5 seconds and a warm execution will take 3 seconds. It may not be critical for some applications, but if you are focused on real-time execution then a cluster will be more responsive.
+- Lambda has [strict limits](https://docs.aws.amazon.com/lambda/latest/dg/limits.html) in terms of processing time and used memory, you’ll want to make sure you won’t be hitting those
+- As mentioned above, clusters are more cost effective after a certain number of requests. In cases where you don’t have peak loads and the number of requests is really high (I mean 10M per month high), a cluster will actually save you money.
+- Lambda has a small, but certain, startup time. TensorFlow also has to download the model from S3 to start up. For the example in this post, a cold execution will take 4.5 seconds and a warm execution will take 3 seconds. It may not be critical for some applications, but if you are focused on real-time execution then a cluster will be more responsive.
 
 ## The basic 4 line example
 
@@ -74,15 +76,14 @@ For this example, I’m using a pretty popular application of neural networks: i
 
 These kinds of applications are commonly used to filter visual content or classify stacks of images in certain groups. Our app will try to recognize this picture of a panda:
 
-[IMAGE: panda]
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/tensorflow/serverless-deep-learning-panda.png">
 
-
-**Note:** the model and example are also available [here](https://www.tensorflow.org/tutorials/images/image_recognition)
+**Note:** The model and example are also available [here](https://www.tensorflow.org/tutorials/images/image_recognition).
 
 We’ll use the following stack:
-API Gateway for managing requests
-AWS Lambda for processing
-Serverless framework for handling deployment and configuration
+- API Gateway for managing requests
+- AWS Lambda for processing
+- Serverless framework for handling deployment and configuration
 
 ### “Hello world” code
 
@@ -96,6 +97,7 @@ cd tensorflow
 serverless deploy
 serverless invoke --function main --log
 ```
+
 You’ll receive the following response:
 
 ```bash
@@ -109,7 +111,8 @@ lesser panda, red panda, panda, bear cat, cat bear, Ailurus fulgens (score = 0.0
 custard apple (score = 0.00147)
 earthstar (score = 0.00117)
 ```
-As you can see, our application successfully recognized this picture of panda (0.89 score).
+
+As you can see, our application successfully recognized this picture of a panda (0.89 score).
 
 That’s it. You’ve just successfully deployed to AWS Lambda with TensorFlow, using the Inception-v3 model for image recognition!
 
@@ -201,11 +204,13 @@ functions:
     events:
       - http: GET handler
 ```
+
 Then, we redeploy the stack:
 
 ```bash
 serverless deploy
 ```
+
 And receive the following response:
 
 ```bash
@@ -240,11 +245,11 @@ We will receive:
 
 ## Conclusion
 
-We’ve created a Tensorflow endpoint on AWS Lambda via the Serverless Framework. Setting everything up was extremely easy, and saved us a lot of time over the more traditional approach. 
+We’ve created a TensorFlow endpoint on AWS Lambda via the [Serverless Framework](https://serverless.com/framework/). Setting everything up was extremely easy, and saved us a lot of time over the more traditional approach. 
 
-By modifying the serverless YAML file, you can connect SQS and, say, create a deep learning pipeline, or even connect it to chatbot via AWS Lex.
+By modifying the serverless YAML file, you can connect SQS and, say, create a deep learning pipeline, or even connect it to a chatbot via AWS Lex.
 
-As my hobby, I port a lot of libraries to make the serverless friendly. [You can look at them here](https://github.com/ryfeus/lambda-packs). It has an MIT license, so feel free to modify and use them for your project.
+As a hobby, I port a lot of libraries to make the serverless friendly. [You can look at them here](https://github.com/ryfeus/lambda-packs). They all have an MIT license, so feel free to modify and use them for your project.
 
 The libraries include the following examples:
 - Machine learning libraries (Scikit, LightGBM)
@@ -255,5 +260,3 @@ The libraries include the following examples:
 - Load testing libraries (WRK, pyrestest)
 
 I’m excited to see how others are using serverless to empower their development. Feel free to drop me a line in the comments, and happy developing!
-
-
