@@ -5,7 +5,7 @@ date: 2018-07-24
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/tensorflow/tensorflow-serverless-thumb.png
 authors:
-  - ryfeus
+  - RustemFeyzkhanov
 ---
 
 Deep and machine learning is becoming essential for a lot of businesses, be it for internal projects or external ones.
