@@ -1,4 +1,14 @@
 
+---
+title: Django + Serverless framework a match made in heaven
+description: "Combining Django and the serverless framework should not be hard. A tutorial demonstrating Django, DRF, SQLite and the Serverless framework working together to create a nice configuration backend"
+date: 2018-07-25
+thumbnail: 'https://user-images.githubusercontent.com/822542/43192491-5924a89a-9006-11e8-9c51-683ea08bad3d.jpg'
+layout: Post
+authors:
+  - EfiMerdlerKravitz
+---
+
 # Django + Serverless framework a match made in heaven
 
 I started using Django seriously 2 years ago, an exceptional framework that in addition to its core strength has also a vast list of add-ons and supporting libraries, one of those gems is called Django Rest Framework or DRF for short, a library which gives an easy to use/out of the box REST functionality that plugs seamlessly with Django’s ORM functionality.
