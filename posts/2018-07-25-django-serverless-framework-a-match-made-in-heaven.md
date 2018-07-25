@@ -1,6 +1,6 @@
 ---
 title: "Django + Serverless framework a match made in heaven"
-description: "Combining Django and the serverless framework should not be hard. A tutorial demonstrating Django, DRF, SQLite and the Serverless framework working together to create a nice configuration backend"
+description: "Combining Django and the serverless framework should not be hard. A tutorial demonstrating Django, DRF, SQLite and the Serverless framework working together to create a REST backend."
 date: 2018-07-25
 layout: Post
 thumbnail: https://user-images.githubusercontent.com/822542/43192491-5924a89a-9006-11e8-9c51-683ea08bad3d.jpg
