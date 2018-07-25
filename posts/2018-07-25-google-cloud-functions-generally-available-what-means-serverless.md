@@ -3,7 +3,7 @@ title: "Google Cloud Functions goes GA: what it means for Serverless"
 description: "Google Cloud Functions hits general availability. A big step forward for FaaS, vendor choice, and the serverless community."
 date: 2018-07-25
 layout: Post
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/gcf/google-cloud-functions-serverless.png"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/google-cloud-functions.png"
 authors:
   - NickGottlieb
 ---
@@ -48,4 +48,7 @@ We’ve also [authored a Serverless Component](https://github.com/serverless/com
 
 If you’re a developer who likes Google’s innovative suite of managed services, you should be really happy about Google Cloud Functions. This will give you the power to utilize those services much more easily.
 
-If you’re enthused about the serverless movement and/or a user of the Serverless Framework, you should be excited to see that all four major cloud providers are embracing FaaS and pushing serverless compute forward. 
+If you’re enthused about the serverless movement and/or a user of the Serverless Framework, you should be excited to see that all four major cloud providers are embracing FaaS and pushing serverless compute forward.
+
+### Other posts about Google Cloud
+- [Building an image recognition endpoint with Serverless and Google Cloud Functions](https://serverless.com/blog/google-cloud-functions-application/)
