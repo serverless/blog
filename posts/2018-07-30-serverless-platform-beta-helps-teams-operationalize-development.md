@@ -14,7 +14,7 @@ Today, we’re excited to announce the [Serverless Platform Beta](https://dashbo
 
 Read on for a full feature breakdown, or watch the 2 minute video:
 
-<iframe src="https://player.vimeo.com/video/282028201" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+<iframe src="https://player.vimeo.com/video/282028201" width="640" height="360" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
 
 ## Serverless adoption is growing, and fast
 
