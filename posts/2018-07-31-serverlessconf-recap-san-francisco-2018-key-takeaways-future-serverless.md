@@ -8,7 +8,7 @@ authors:
   - AndreaPasswater
 ---
 
-*Last updated: Aug 1 @ 11:21am*
+*Last updated: Aug 1 @ 1:05pm PT*
 
 It's been amazing to see the lightning fast transformation happening in the serverless space. ServerlessConf 2016 was the conference of serverless projects. By the 2017 conference in NYC, the community had already been building a lot of projects. The new problem was tooling, and [tooling discussions dominated the stage last year](https://serverless.com/blog/serverless-conf-2017-nyc-recap/). 
 
@@ -70,7 +70,7 @@ Chris Munns built on what others had been saying to offer insight into securing 
 
 ### #DiffOps
 
-(Credit to Ben Kehoe for the 'DiffOps' term.)
+(Credit to [Ben Kehoe](https://twitter.com/ben11kehoe) for the 'DiffOps' term.)
 
 When the serveless movement was gaining momentum, there was a lot of buzz about how it would remove the need for DevOps. Not so, says everybody at ServerlessConf 2018. With all of these companies giving presentations about how they're running serveless at scale, a big undercurrent has been, "this is how we do our serverless operations."
 
