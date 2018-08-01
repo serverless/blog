@@ -128,7 +128,7 @@ You'll see a screen like the following:
 
 <img width="1388" alt="CloudWatch Raw Logs" src="https://user-images.githubusercontent.com/6509926/30168167-31033868-93ae-11e7-8f5c-65290304aeb3.png">
 
-This has all of your function's logs. In addition to your log statements, it contains Lambda output such as when a request, when a request ended, and a report of the resources used by that request invocation.
+This has all of your function's logs. In addition to your log statements, it contains Lambda output such as when a request has started, when a request has ended and a report of the resources used by that request invocation.
 
 The Lambda logs usually aren't useful for debugging, so I filter them out at the top with `-"RequestId: "`, which means "remove all logs that have the string "RequestId: " in them.
 
