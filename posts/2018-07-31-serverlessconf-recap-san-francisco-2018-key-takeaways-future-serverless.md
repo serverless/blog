@@ -8,7 +8,7 @@ authors:
   - AndreaPasswater
 ---
 
-*Last updated: Aug 1 @ 1:05pm PT*
+*Last updated: Aug 1 @ 2:13pm PT*
 
 It's been amazing to see the lightning fast transformation happening in the serverless space. ServerlessConf 2016 was the conference of serverless projects. By the 2017 conference in NYC, the community had already been building a lot of projects. The new problem was tooling, and [tooling discussions dominated the stage last year](https://serverless.com/blog/serverless-conf-2017-nyc-recap/). 
 
@@ -18,16 +18,7 @@ We'll be updating this live all day during day 2, so stay tuned!
 
 ## Serverless adoption and architecture in large-scale organizations
 
-Yochay Kiriaty (from Microsoft Azure) provided a great "don't do this" bucket list for anyone who's getting started with serverless:
-
-- Functions logic should be stateless
-- Functions should be idempotent
-- One task per function ("do one thing")
-- Functions should finish as quickly as possible
-- Avoid recursions
-- Concurrency limitations and rate limits
-
-Moving on to companies talking about their existing usage of serveless, the talks in this category had three main types: 
+The talks in this category had three main types: 
 
 ### 1. Serverless as the basis for rapid development
 
@@ -88,6 +79,22 @@ There are still ops. And we're all still defining and discovering what those ops
 Sam Kroonenberg was adamant that Serverless amplifies the need for good development practices. For example, you have to automate. And you need robust unit testing.
 
 Ben Kehoe from iRobot, for the record, had a fantastic in-depth talk on gaps in the serverless mesh, covering cross-service blue/green deployments. It's hard to distill in a single recap post, but everyone should watch the video when it goes live on [serverlessconf.io](https://sf.serverlessconf.io/home.html). We'll link to it here also.
+
+### Best practices all around
+
+Yochay Kiriaty of Microsoft Azure provided a great "don't do this" bucket list for anyone who's getting started with serverless:
+
+- Functions logic should be stateless
+- Functions should be idempotent
+- One task per function ("do one thing")
+- Functions should finish as quickly as possible
+- Avoid recursions
+- Concurrency limitations and rate limits
+
+Erica Windisch of IOpipes talked about serverless observability cornerstones. The serverless culture is about not building when you can buy, builiding as little as possible in general, and doing it with minimal complexity). Meaning: in a serverless world, business performance and metrics are more important than infrastructure metrics. Know your KPIs.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Infrastructure performance? BORING. Great talk on observability by <a href="https://twitter.com/ewindisch?ref_src=twsrc%5Etfw">@ewindisch</a>. <a href="https://twitter.com/hashtag/ServerlessConf?src=hash&amp;ref_src=twsrc%5Etfw">#ServerlessConf</a> <a href="https://t.co/7nyr49NoH7">pic.twitter.com/7nyr49NoH7</a></p>&mdash; Linda Nichols (@lynnaloo) <a href="https://twitter.com/lynnaloo/status/1024763983029358592?ref_src=twsrc%5Etfw">August 1, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## Bringing software development to the non-developer developers
 
