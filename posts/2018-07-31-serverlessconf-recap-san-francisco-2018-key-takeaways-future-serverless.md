@@ -8,17 +8,17 @@ authors:
   - AndreaPasswater
 ---
 
-It's been amazing to see the lightning fast transformation happening in the serverless space. ServerlessConf 2016 was the conference of serverless projects. By the 2017 conference in NYC, the community had already been building a lot of projects. The new problem was tooling, and [tooling discussions dominated the stage last year](https://serverless.com/blog/serverless-conf-2017-nyc-recap/).
+It's been amazing to see the lightning fast transformation happening in the serverless space. ServerlessConf 2016 was the conference of serverless projects. By the 2017 conference in NYC, the community had already been building a lot of projects. The new problem was tooling, and [tooling discussions dominated the stage last year](https://serverless.com/blog/serverless-conf-2017-nyc-recap/). 
 
 So what about ServerlessConf 2018 in SF? It's been the conference of two things: (1) big@$$ companies talking about their large-scale, production serverless architectures; and (2) (from a drastically different perspective) non-engineers talking about how serverless technologies empowered them to begin developing their own apps, without a coding background.
 
 ## Serverless adoption and architecture in large-scale organizations
 
-The talks in this category had three main types:
+The talks in this category had three main types: 
 
 ### 1. Serverless as the basis for rapid development
 
-Developers looking to minimize time to value will automatically gravitate toward serverless.
+Developers looking to minimize time to value will automatically gravitate toward serverless. 
 
 Leslie Pajuelo from Walmart just ran a POC in which she rebuilt their high performance orchestration layer. It's a use case we hear about all the time—a developer goes, "we want to try this serverless thing," and they build it out with a 1 or 2 person team. It does so well that the organization then moves to expand usage.
 
