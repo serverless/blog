@@ -18,7 +18,16 @@ We'll be updating this live all day during day 2, so stay tuned!
 
 ## Serverless adoption and architecture in large-scale organizations
 
-The talks in this category had three main types: 
+Yochay Kiriaty (from Microsoft Azure) provided a great "don't do this" bucket list for anyone who's getting started with serverless:
+
+- Functions logic should be stateless
+- Functions should be idempotent
+- One task per function ("do one thing")
+- Functions should finish as quickly as possible
+- Avoid recursions
+- Concurrency limitations and rate limits
+
+Moving on to companies talking about their existing usage of serveless, the talks in this category had three main types: 
 
 ### 1. Serverless as the basis for rapid development
 
@@ -77,6 +86,8 @@ When the serveless movement was gaining momentum, there was a lot of buzz about 
 There are still ops. And we're all still defining and discovering what those ops are.
 
 Sam Kroonenberg was adamant that Serverless amplifies the need for good development practices. For example, you have to automate. And you need robust unit testing.
+
+Ben Kehoe from iRobot, for the record, had a fantastic in-depth talk on gaps in the serverless mesh, covering cross-service blue/green deployments. It's hard to distill in a single recap post, but everyone should watch the video when it goes live on [serverlessconf.io](https://sf.serverlessconf.io/home.html). We'll link to it here also.
 
 ## Bringing software development to the non-developer developers
 
