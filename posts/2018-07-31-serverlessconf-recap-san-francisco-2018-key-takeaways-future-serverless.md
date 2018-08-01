@@ -8,9 +8,13 @@ authors:
   - AndreaPasswater
 ---
 
+*Last updated: Aug 1 @ 11:21am*
+
 It's been amazing to see the lightning fast transformation happening in the serverless space. ServerlessConf 2016 was the conference of serverless projects. By the 2017 conference in NYC, the community had already been building a lot of projects. The new problem was tooling, and [tooling discussions dominated the stage last year](https://serverless.com/blog/serverless-conf-2017-nyc-recap/). 
 
 So what about ServerlessConf 2018 in SF? It's been the conference of two things: (1) big@$$ companies talking about their large-scale, production serverless architectures; and (2) (from a drastically different perspective) non-engineers talking about how serverless technologies empowered them to begin developing their own apps, without a coding background.
+
+We'll be updating this live all day during day 2, so stay tuned!
 
 ## Serverless adoption and architecture in large-scale organizations
 
@@ -57,7 +61,12 @@ One thing we noticed in every "here's how we're using serverless" presentation t
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2018-serverlessconf-sf/fender-digital-serverless-security.jpg">
 
-Mark Nunnikhoven insisted—you're better off out of the gate with serverless security. And ultimately, security is about the _people_. It isn't about just securing the functions, you need to have a robust system that does what it's intended to do, and only what it's intended to do.
+Mark Nunnikhoven insisted—you're better off out of the gate with serverless security. You can't dig into a single function running on, say, Lambda, and poke into other parts of the system. And ultimately, security is about the _people_. It isn't about just securing the functions, you need to have a robust system that does what it's intended to do, and only what it's intended to do.
+
+Chris Munns built on what others had been saying to offer insight into securing Lambdas specifically. Do not use `*` in your IAM policies. Dependency management is key; keep track of package dependencies and apply securit updates. Don't use a VPC; putting your functions inside of a VPC provides little extra security benefit. Stop doing stupid stuff with secrets.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Really great pragmatic guidance and tips from <a href="https://twitter.com/chrismunns?ref_src=twsrc%5Etfw">@chrismunns</a> on writing secure <a href="https://twitter.com/hashtag/lambda?src=hash&amp;ref_src=twsrc%5Etfw">#lambda</a> functions for <a href="https://twitter.com/awscloud?ref_src=twsrc%5Etfw">@awscloud</a>. <a href="https://twitter.com/hashtag/serverless?src=hash&amp;ref_src=twsrc%5Etfw">#serverless</a> <a href="https://twitter.com/hashtag/serverlessconf?src=hash&amp;ref_src=twsrc%5Etfw">#serverlessconf</a> <a href="https://t.co/TXdooEvYig">pic.twitter.com/TXdooEvYig</a></p>&mdash; Tony Pujals (@tonypujals) <a href="https://twitter.com/tonypujals/status/1024710919371218945?ref_src=twsrc%5Etfw">August 1, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## Bringing software development to the non-developer developers
 
