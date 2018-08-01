@@ -14,7 +14,21 @@ So what about ServerlessConf 2018 in SF? It's been the conference of two things:
 
 ## Serverless adoption and architecture in large-scale organizations
 
+The talks in this category had three main types:
+
+### 1. Serverless as the basis for rapid development
+
+Developers looking to minimize time to value will automatically gravitate toward serverless.
+
 Leslie Pajuelo from Walmart just ran a POC in which she rebuilt their high performance orchestration layer. It's a use case we hear about all the time—a developer goes, "we want to try this serverless thing," and they build it out with a 1 or 2 person team. It does so well that the organization then moves to expand usage.
+
+### 2. Testing, debugging and monitoring of production serverless apps
+
+This has been an undercurrent of serverless adoption discussions for a long time, and it's been dominating the table discussions here. Every presentation starts to touch on the ways teams at Verizon, CapitalOne and Nordstrom are handling all of their operations with a smattering of tool sets.
+
+We'd be remiss if we didn't mention that this is something we've been passionate about here at Serverless, Inc, and as such we [just launched a new Serverless Platform Beta](https://serverless.com/blog/serverless-platform-beta-helps-teams-operationalize-development/) to help teams operationalize serverless across their entire organization.
+
+### 3. Structured models and practices to design and analyze Serverless architecture
 
 Rob Gruhl from Nordstrom talked about the best ways to scale serverless:
 
@@ -26,13 +40,11 @@ Rob Gruhl from Nordstrom talked about the best ways to scale serverless:
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2018-serverlessconf-sf/nordstrom-serverless-all-things.jpg">
 
-We'd be remiss if we didn't mention that both scaling serverless and enabling teams to easily adopt it is something we've been incredibly passionate about here at Serverless, Inc. We [just launched a new Serverless Platform Beta](https://serverless.com/blog/serverless-platform-beta-helps-teams-operationalize-development/) to help teams operationalize serverless across their entire organization.
-
-And it's easy to see why this matters. Verizon is here at ServerlessConf talking about serverless in the enterprise. There was a case study from Box. Capital One is presenting on their own architecture tomorrow. Fender Digital (yeah, the guitar company) is all-in on serverless right now. And? They're transitioning everyting to Go.
+And it's easy to see why this matters. Verizon is here at ServerlessConf talking about serverless in the enterprise. There was a case study from Box. Capital One is presenting on their own architecture tomorrow. Fender Digital (yeah, the guitar company) is all-in on serverless right now. And? They're transitioning everyting to Go. 
 
 And speaking of which—
 
-### Wow, Go was everywhere
+#### Wow, Go was everywhere
 
 Our [community survey](https://serverless.com/blog/2018-serverless-community-survey-huge-growth-usage/) showed that Go usage was increasing, and had already edged past Java. But even the ServerlessConf stage had several mentions of companies who were using Go, and cloud providers who were moving to adopt it.
 
@@ -41,7 +53,7 @@ Our [community survey](https://serverless.com/blog/2018-serverless-community-sur
 
 ### People are really thinking about security
 
-One thing we noticed in every "here's how we're using serverless" presentation this year, which was missing in previous years, was the security component. How are serverless organizations handling security, what are their best practices?
+One thing we noticed in every "here's how we're using serverless" presentation this year, which was largely missing in previous years, was the security component. How are serverless organizations handling security, what are their best practices?
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2018-serverlessconf-sf/fender-digital-serverless-security.jpg">
 
