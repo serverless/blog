@@ -8,7 +8,7 @@ authors:
   - AndreaPasswater
 ---
 
-*Last updated: Aug 1 @ 2:13pm PT*
+*Last updated: Aug 1 @ 3:20pm PT*
 
 It's been amazing to see the lightning fast transformation happening in the serverless space. ServerlessConf 2016 was the conference of serverless projects. By the 2017 conference in NYC, the community had already been building a lot of projects. The new problem was tooling, and [tooling discussions dominated the stage last year](https://serverless.com/blog/serverless-conf-2017-nyc-recap/). 
 
@@ -94,6 +94,16 @@ Yochay Kiriaty of Microsoft Azure provided a great "don't do this" bucket list f
 Erica Windisch of IOpipes talked about serverless observability cornerstones. The serverless culture is about not building when you can buy, builiding as little as possible in general, and doing it with minimal complexity). Meaning: in a serverless world, business performance and metrics are more important than infrastructure metrics. Know your KPIs.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Infrastructure performance? BORING. Great talk on observability by <a href="https://twitter.com/ewindisch?ref_src=twsrc%5Etfw">@ewindisch</a>. <a href="https://twitter.com/hashtag/ServerlessConf?src=hash&amp;ref_src=twsrc%5Etfw">#ServerlessConf</a> <a href="https://t.co/7nyr49NoH7">pic.twitter.com/7nyr49NoH7</a></p>&mdash; Linda Nichols (@lynnaloo) <a href="https://twitter.com/lynnaloo/status/1024763983029358592?ref_src=twsrc%5Etfw">August 1, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Jared Short and Forrest Brazeal had some advice of another type: how to successfully go home from ServerlessConf and successfully convince all your co-workers that it's a _great_ idea.
+
+- Leaders want to hear that it significantly reduces compute costs, they will be far from alone when it comes to adoption, and you can get started with few development resources
+- Architects want to hear that cloud lock-in is an acceptible risk (and a bit of a myth), they can trust but verify with load testing tools, serverless is "getting more and more boring" (read: safe) by the day
+- SysAdmin want to hear that they still have knobs to turn, they can partner with developers, and they can still monitor code if not infra. There are opportunities for them to start taking on more and more serverless DevOps.
+- Other developers want to hear that it's even faster to test in the cloud anyway, there are all kinds of cool new frameworks they can use, and they can start focusing more on writing code that matters
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Persona #4: the disrupted developer has a lot of questions &amp; might be intimidated <a href="https://t.co/4zGy3MZIin">pic.twitter.com/4zGy3MZIin</a></p>&mdash; Serverless (@goserverless) <a href="https://twitter.com/goserverless/status/1024776947874717696?ref_src=twsrc%5Etfw">August 1, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## Bringing software development to the non-developer developers
