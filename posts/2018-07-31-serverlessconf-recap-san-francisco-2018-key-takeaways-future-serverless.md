@@ -68,6 +68,16 @@ Chris Munns built on what others had been saying to offer insight into securing 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Really great pragmatic guidance and tips from <a href="https://twitter.com/chrismunns?ref_src=twsrc%5Etfw">@chrismunns</a> on writing secure <a href="https://twitter.com/hashtag/lambda?src=hash&amp;ref_src=twsrc%5Etfw">#lambda</a> functions for <a href="https://twitter.com/awscloud?ref_src=twsrc%5Etfw">@awscloud</a>. <a href="https://twitter.com/hashtag/serverless?src=hash&amp;ref_src=twsrc%5Etfw">#serverless</a> <a href="https://twitter.com/hashtag/serverlessconf?src=hash&amp;ref_src=twsrc%5Etfw">#serverlessconf</a> <a href="https://t.co/TXdooEvYig">pic.twitter.com/TXdooEvYig</a></p>&mdash; Tony Pujals (@tonypujals) <a href="https://twitter.com/tonypujals/status/1024710919371218945?ref_src=twsrc%5Etfw">August 1, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+### #DiffOps
+
+(Credit to Ben Kehoe for the 'DiffOps' term.)
+
+When the serveless movement was gaining momentum, there was a lot of buzz about how it would remove the need for DevOps. Not so, says everybody at ServerlessConf 2018. With all of these companies giving presentations about how they're running serveless at scale, a big undercurrent has been, "this is how we do our serverless operations."
+
+There are still ops. And we're all still defining and discovering what those ops are.
+
+Sam Kroonenberg was adamant that Serverless amplifies the need for good development practices. For example, you have to automate. And you need robust unit testing.
+
 ## Bringing software development to the non-developer developers
 
 What does that even mean? It appears there is a trend among people with non-engineering backgrounds using serverless. With a lot of the tricky administration cut out of the mix, a vast ecosystem of beginner-oriented tutorials, and pre-existing code repositories like NPM, it's never been easier for inexperienced newbies to get started with their own coding projects.
