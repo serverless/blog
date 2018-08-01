@@ -26,7 +26,9 @@ Rob Gruhl from Nordstrom talked about the best ways to scale serverless:
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2018-serverlessconf-sf/nordstrom-serverless-all-things.jpg">
 
-Verizon is here talking about serverless in the enterprise. There was a case study from Box. Fender Digital (yeah, the guitar company) is all-in on serverless right now. And? They're transitioning everyting to Go.
+We'd be remiss if we didn't mention that both scaling serverless and enabling teams to easily adopt it is something we've been incredibly passionate about here at Serverless, Inc. We [just launched a new Serverless Platform Beta](https://serverless.com/blog/serverless-platform-beta-helps-teams-operationalize-development/) to help teams operationalize serverless across their entire organization.
+
+And it's easy to see why this matters. Verizon is here at ServerlessConf talking about serverless in the enterprise. There was a case study from Box. Capital One is presenting on their own architecture tomorrow. Fender Digital (yeah, the guitar company) is all-in on serverless right now. And? They're transitioning everyting to Go.
 
 And speaking of which—
 
