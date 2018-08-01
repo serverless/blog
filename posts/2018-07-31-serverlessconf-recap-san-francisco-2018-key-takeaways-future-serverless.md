@@ -1,9 +1,9 @@
 ---
 title: "ServerlessConf 2018 San Francisco: key takeaways for the future of serverless"
-description: "Missed ServerlessConf in San Francisco this week? No worries, we got you. Here's are the key takeaways you'll want to know about."
+description: "Missed ServerlessConf in San Francisco this week? No worries, we got you. Here are the key takeaways you'll want to know about."
 date: 2018-07-31
 layout: Post
-thumbnail: "https://serverless.com/blog/serverless-conf-2017-nyc-recap/"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf_nyc.jpg"
 authors:
   - AndreaPasswater
 ---
