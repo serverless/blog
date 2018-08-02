@@ -91,7 +91,7 @@ Yochay Kiriaty of Microsoft Azure provided a great "don't do this" bucket list f
 - Avoid recursions
 - Concurrency limitations and rate limits
 
-Erica Windisch of IOpipes talked about serverless observability cornerstones. The serverless culture is about not building when you can buy, builiding as little as possible in general, and doing it with minimal complexity). Meaning: in a serverless world, business performance and metrics are more important than infrastructure metrics. Know your KPIs.
+Erica Windisch of IOpipes talked about serverless observability cornerstones. The serverless culture is about not building when you can buy, builiding as little as possible in general, and doing it with minimal complexity. Meaning: in a serverless world, business performance and metrics are more important than infrastructure metrics. Know your KPIs.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Infrastructure performance? BORING. Great talk on observability by <a href="https://twitter.com/ewindisch?ref_src=twsrc%5Etfw">@ewindisch</a>. <a href="https://twitter.com/hashtag/ServerlessConf?src=hash&amp;ref_src=twsrc%5Etfw">#ServerlessConf</a> <a href="https://t.co/7nyr49NoH7">pic.twitter.com/7nyr49NoH7</a></p>&mdash; Linda Nichols (@lynnaloo) <a href="https://twitter.com/lynnaloo/status/1024763983029358592?ref_src=twsrc%5Etfw">August 1, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -119,6 +119,6 @@ And she's not the only person preaching about the newfound accessbility of codin
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/goserverless?ref_src=twsrc%5Etfw">@goserverless</a> <a href="https://twitter.com/sogrady?ref_src=twsrc%5Etfw">@sogrady</a> <a href="https://twitter.com/monkchips?ref_src=twsrc%5Etfw">@monkchips</a> theme from <a href="https://twitter.com/Serverlessconf?ref_src=twsrc%5Etfw">@Serverlessconf</a> seems to be &quot;Knowledge workers and other non-developers are the newest Kingmakers&quot; 😉 <a href="https://twitter.com/hashtag/serverless?src=hash&amp;ref_src=twsrc%5Etfw">#serverless</a></p>&mdash; Val Bercovici 🇻 (@valb00) <a href="https://twitter.com/valb00/status/1024364019241472000?ref_src=twsrc%5Etfw">July 31, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-## Stay tuned
+## That's a wrap
 
-This is only day 1. More talks to be had tomorrow! Stay tuned for all the updates, straight from us.
+See you all at ServerlessConf 2019!
