@@ -3,9 +3,12 @@ title: Deploy a Serverless Frontend with the Serverless Finch Plugin
 description: 'Learn how to deploy a static website to AWS with the Serverless Finch Plugin.'
 date: 2018-08-06
 layout: Post
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-fich-plugin/serverless-finch-thumb.png"
 authors:
   - FernandoMedinaCorey
 ---
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-fich-plugin/serverless-finch-plugin.jpg">
 
 If you've already been using [the Serverless Framework](https://serverless.com/framework/) for your development projects on AWS, you may have realized that deploying the frontend portion of your applications isn't built in. 
 
