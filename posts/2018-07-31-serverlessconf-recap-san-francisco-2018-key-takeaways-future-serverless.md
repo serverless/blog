@@ -8,7 +8,7 @@ authors:
   - AndreaPasswater
 ---
 
-*Last updated: Aug 1 @ 3:20pm PT*
+*Last updated: Aug 1 @ 5:00pm PT*
 
 It's been amazing to see the lightning fast transformation happening in the serverless space. ServerlessConf 2016 was the conference of serverless projects. By the 2017 conference in NYC, the community had already been building a lot of projects. The new problem was tooling, and [tooling discussions dominated the stage last year](https://serverless.com/blog/serverless-conf-2017-nyc-recap/). 
 
