@@ -1,6 +1,6 @@
 ---
 title: Deploy a Serverless Frontend with the Serverless Finch Plugin
-description: 'In this post, you will learn how to deploy a static website to AWS with the Serverless Finch Plugin.'
+description: 'Learn how to deploy a static website to AWS with the Serverless Finch Plugin.'
 date: 2018-08-06
 layout: Post
 authors:
