@@ -117,19 +117,19 @@ You have a deploy script located under `scripts` folder.
 
 1. `npm install — save-dev serverless-wsgi serverless-python-requirements`
 
-1. Create a virtual env for your python project
+2. Create a virtual env for your python project
 
-1. `pip install -r requirements.txt`
+3. `pip install -r requirements.txt`
 
-1. Run DB migration: `./manage.py migrate`
+4. Run DB migration: `./manage.py migrate`
 
-1. Create a super user for the management console: `./manage.py createsuperuser`
+5. Create a super user for the management console: `./manage.py createsuperuser`
 
-1. Run the server locally: `./manage.py runserver`
+6. Run the server locally: `./manage.py runserver`
 
-1. Go to [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) and log in onto the management console; add a configuration
+7. Go to [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) and log in onto the management console; add a configuration
 
-1. Try `curl -H “Content-Type: application/json” -X GET [http://127.0.0.1:8000/configuration/](http://127.0.0.1:8000/configuration/)` and see if you get the configuration back
+8. Try `curl -H “Content-Type: application/json” -X GET [http://127.0.0.1:8000/configuration/](http://127.0.0.1:8000/configuration/)` and see if you get the configuration back
 
 ## Fin
 
