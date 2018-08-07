@@ -26,8 +26,6 @@ The solution I'm suggesting here is built from 2 components:
 
 But, all that is too complicated for my demo. I wanted something quick and dirty.
 
-![](https://user-images.githubusercontent.com/822542/43189371-1792774c-8fff-11e8-8b79-2cd9d16c4e53.png)
-
 ### Using SQLite
 
 SQLite here I come!
