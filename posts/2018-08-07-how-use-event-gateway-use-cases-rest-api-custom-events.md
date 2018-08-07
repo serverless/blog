@@ -3,12 +3,12 @@ title: 'How to use the Serverless Event Gateway: build a REST API and react to c
 description: 'How to use the Serverless Event Gateway (part of the Serverless Platform) to build REST APIs and react to custom events.'
 date: 2018-08-07
 layout: Post
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway/serverless-event-gateway-thumb.png'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway/event-gateway-thumb1.png'
 authors:
   - AlexDeBrie
 ---
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway/serverless-event-gateway-rest-api.png">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway/event-gateway-use-cases.png">
 
 Last week, we announced the [Serverless Platform Beta](https://serverless.com/blog/serverless-platform-beta-helps-teams-operationalize-development/), a single toolkit that provides everything teams need to operationalize serverless development. The Serverless Platform is made of three components—the Serverless Framework for deploying applications, the Serverless Dashboard for visualizing your application, and the Event Gateway for routing events to compute.
 
