@@ -38,6 +38,8 @@ const createUser = (event, context, callback) => {
 
 As you can see, the handler itself doesn't contain any core logic; it just uses modules that should be unit tested independently.
 
+Read here for our much more [in-depth guide to unit testing](https://serverless.com/blog/unit-testing-nodejs-serverless-jest/).
+
 # Integration testing
 
 Now that you’ve covered your codebase, it’s time to move on to your handlers with overall integration tests. Let's see how all of those units you’ve been testing individually work together.
