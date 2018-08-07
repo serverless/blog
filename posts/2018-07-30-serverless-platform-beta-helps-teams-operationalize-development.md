@@ -85,6 +85,9 @@ Austen Collins from Serverless, Inc., with the help of various Cloud Native Comp
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TZPPjAv12KU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+
+Use it to [build APIs](https://serverless.com/blog/how-use-event-gateway-use-cases-rest-api-custom-events/) or [react to custom events](https://serverless.com/blog/how-use-event-gateway-use-cases-rest-api-custom-events/).
+
 #### Monitor events and function invocations with real-time logs
 
 Once you publish events into the Event Gateway, you can see them in the Serverless Dashboard via real-time logs:
