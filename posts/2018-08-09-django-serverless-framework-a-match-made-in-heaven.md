@@ -3,7 +3,7 @@ title: "Deploy a REST API using Serverless, Django and Python"
 description: "Use the Serverless Framework, Django, SQLite and Python to quickly deploy a REST API."
 date: 2018-08-09
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-django/serverless-django-thumb.jpg
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/django/django-serverless-thumb.png
 authors:
   - EfiMerdlerKravitz
 ---
@@ -14,7 +14,7 @@ In addition to its core strength, Django has a vast list of add-ons and supporti
 
 But what if you want to do this serverless-ly? In this post, I'll talk about deploying serverless Django apps with the Serverless Framework!
 
-## Django: a SQL beast 
+## Django: the SQL beast 
 
 Django is powerful, but it’s also heavily dependent on a SQL database like MySql or Postgresql. No matter how hard I tried, I couldn’t find any Django DB engine that is able to work on top of AWS DynamoDB.
 
