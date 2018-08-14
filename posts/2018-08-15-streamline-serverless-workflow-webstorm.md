@@ -8,6 +8,8 @@ authors:
   - EslamHefnawy
 ---
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/webstorm-ide/streamline-webstorm-serverless2.jpg">
+
 If you build serverless applications, here’s a serverless-specific IDE setup that will help you streamline your workflow. 
 
 Over the past few years, I’ve been fortunate enough to work exclusively on serverless tooling.
