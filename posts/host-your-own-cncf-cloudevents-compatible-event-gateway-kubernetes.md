@@ -20,7 +20,7 @@ And today, doing that is about to get a lot easier. **You can now deploy your ow
 
 Even better: the Event Gateway uses the CNCF’s [CloudEvents](https://github.com/cloudevents/spec) format. Meaning, it’s cloud-agnostic down to its core. Use it with any FaaS provider you want.
 
-Read on to learn how to get set up with the Event Gateway on your own Kubernetes cluster, or [read the full release notes in GitHub](https://github.com/serverless/event-gateway/pull/498).
+Read on to learn how to get set up with the Event Gateway on your own Kubernetes cluster, or [read the full release notes in GitHub](NEED LINK).
 
 ## Self-hosting the Event Gateway
 
@@ -40,7 +40,7 @@ Here are all the steps you need to get set up with a multi-node cluster.
 
 ## Getting Started
 
-You'll need to have an existing Kubernetes cluster that supports Ingress for Deployments. The [instructions contained here](point_to_minikube) outline how to get that configured with minikube's native nginx ingress.
+You'll need to have an existing Kubernetes cluster that supports Ingress for Deployments. The [instructions contained here](https://github.com/serverless/event-gateway/tree/master/contrib/MINIKUBE.md) outline how to get that configured with minikube's native nginx ingress.
 
 ### Install Helm
 
@@ -50,7 +50,7 @@ Run `helm init` on your cluster to generate the `helm` and `tiller` files. This 
 
 ### Install the Helm Components
 
-You’ll need to grab the `etcd-operator` and `event-gateway` components from Helm.
+You’ll need to grab the `etcd-operator` from Helm, and use `event-gateway` components from the serverless/event-gateway github repo.
 
 The `etcd-operator` is a community-added component that starts, stops and manages the `etcd` cluster you’ll be using. In this case, we're going to run 3 distinct Event Gateway copies and they'll each hook into the central `etcd` cluster managed by the `etcd-operator`.
 
@@ -63,24 +63,24 @@ helm install stable/etcd-operator --name ego
 Then install the `event-gateway` component:
 
 ```
-helm install stable/event-gateway --name ego
+helm install event-gateway --name ego
 ```
 
 These commands will install the components into the `default` namespace in Kubernetes. If you’d like to install them in a specific namespace, then you will need to append a `--namespace <namespace>` on the end of your install command, like so:
 
 ```
 helm install stable/etcd-operator --name ego --namespace <namespace>
-helm install stable/event-gateway --name eg --namespace <namespace>
+helm install event-gateway --name eg --namespace <namespace>
 ```
 
 **Note:** the `namespace` here is separate from the concept of a `space` within the Event Gateway. You can read more about Event Gateway spaces [here](https://github.com/serverless/event-gateway/blob/master/README.md#spaces), but it’s not necessary for installation.
 
 ### Accessing the Event Gateway
 
-If you have successfully installed the helm charts as listed above, you should now be able to access the eventgateway at your minikube IP. The helm chart explictly assigns `eventgateway.minikube` to your Ingress ExternalIP. To enable your DNS resolution you can add this to your `/etc/hosts` file as follows:
+If you have successfully installed the helm charts as listed above, you should now be able to access the `event-gateway` at your minikube IP. The helm chart explicitly assigns `eventgateway.minikube` to your Ingress ExternalIP. To enable your DNS resolution you can add this to your `/etc/hosts` file as follows:
 
 ```
-echo “$(minikube ip) eventgateway.minikube” | sudo tee -a “/etc/hosts”
+echo "$(kubectl get ingress event-gateway-ingress -o jsonpath={.status.loadBalancer.ingress[0].ip}) eventgateway.minikube" | sudo tee -a "/etc/hosts"
 ```
 
 The Ingress explicitly routes path access to the Event Gateway on your behalf, sending all configuration API calls over to the `config` service and all events API calls over to the `events` service. To test this out, you can pull the Event Gateway Prometheus metrics as follows:
@@ -91,19 +91,7 @@ curl --request GET \
 --header ‘content-type: application/json’
 ```
 
-NOTE: if you did not add the hostname to your /etc/hosts file as above you can replace `eventgateway.minikube` with `$(minikube ip)` to do the same
-
-### Collect the Event Gateway IP ports
-
-We need this step to interface with the Event Gateway via CLI.
-
-Use the following commands to inspect the service:
-
-```
-export EVENT_GATEWAY_URL=$(kubectl get svc event-gateway -o jsonpath={.status.loadBalancer.ingress[0].ip})
-export EVENT_GATEWAY_CONFIG_API_PORT=4001
-export EVENT_GATEWAY_EVENTS_API_PORT=4000
-```
+**Note:** if you did not add the hostname to your `/etc/hosts` file as above, you can replace `eventgateway.minikube` with your Ingress IP to do the same.
 
 
 ## Congrats, you’re done!
@@ -132,14 +120,13 @@ Kelsey Hightower demoed a multi-cloud scenario earlier this year. He ran the Eve
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_1-5YFfJCqM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-
 Austen Collins from Serverless, Inc., used the Event Gateway to trigger 11 different cloud providers:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TZPPjAv12KU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Additional Resources
 
-- [See the full release notes](https://github.com/serverless/event-gateway/pull/498)
+- [See the full release notes](NEED LINK)
 - [Check out the Event Gateway open source project](https://github.com/serverless/event-gateway)
 - [Learn more about the CNCF’s CloudEvents specification](https://github.com/cloudevents/spec)
 - [Read up on popular Event Gateway use cases](https://serverless.com/blog/how-use-event-gateway-use-cases-rest-api-custom-events/#using-the-event-gateway-with-custom-events)
