@@ -5,7 +5,7 @@ date: 2018-08-16
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/eg-kubernetes/event-gateway-kubernetes-thumb.png
 authors:
-  - SebastianGorza
+  - SebastianBorza
 ---
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/eg-kubernetes/event-gateway-kubernetes-header.png">
