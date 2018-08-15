@@ -132,6 +132,7 @@ Kelsey Hightower demoed a multi-cloud scenario earlier this year. He ran the Eve
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_1-5YFfJCqM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+
 Austen Collins from Serverless, Inc., used the Event Gateway to trigger 11 different cloud providers:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TZPPjAv12KU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
