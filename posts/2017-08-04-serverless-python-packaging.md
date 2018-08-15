@@ -45,7 +45,7 @@ $ serverless create \
 
 This will create a Serverless Python 3 template project at the given path (`numpy-test/`) with a service name of `numpy-test`. You'll need to change into that directory and create a virtual environment for developing locally.
 
-(**Note:** further reading [here](http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/) about how and why to use virtual environments with Python.)
+(**Note:** further reading [here](https://python-guide-pt-br.readthedocs.io/pt_BR/latest/dev/virtualenvs.html) about how and why to use virtual environments with Python.)
 
 ```bash
 $ cd numpy-test
