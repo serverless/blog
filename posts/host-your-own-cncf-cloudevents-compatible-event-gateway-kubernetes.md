@@ -20,7 +20,7 @@ And today, doing that is about to get a lot easier. **You can now deploy your ow
 
 Even better: the Event Gateway uses the CNCF’s [CloudEvents](https://github.com/cloudevents/spec) format. Meaning, it’s cloud-agnostic down to its core. Use it with any FaaS provider you want.
 
-Read on to learn how to get set up with the Event Gateway on your own Kubernetes cluster, or [read the full release notes in GitHub](NEED LINK).
+Read on to learn how to get set up with the Event Gateway on your own Kubernetes cluster, or [read the full release notes in GitHub](https://github.com/serverless/event-gateway/blob/master/contrib/helm/README.md).
 
 ## Self-hosting the Event Gateway
 
@@ -126,7 +126,7 @@ Austen Collins from Serverless, Inc., used the Event Gateway to trigger 11 diffe
 
 ## Additional Resources
 
-- [See the full release notes](NEED LINK)
+- [See the full release notes](https://github.com/serverless/event-gateway/blob/master/contrib/helm/README.md)
 - [Check out the Event Gateway open source project](https://github.com/serverless/event-gateway)
 - [Learn more about the CNCF’s CloudEvents specification](https://github.com/cloudevents/spec)
 - [Read up on popular Event Gateway use cases](https://serverless.com/blog/how-use-event-gateway-use-cases-rest-api-custom-events/#using-the-event-gateway-with-custom-events)
