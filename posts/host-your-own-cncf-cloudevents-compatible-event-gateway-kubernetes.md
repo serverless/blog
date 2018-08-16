@@ -40,7 +40,7 @@ Here are all the steps you need to get set up with a multi-node cluster.
 
 ## Getting Started
 
-You'll need to have an existing Kubernetes cluster that supports Ingress for Deployments. The [instructions contained here](https://github.com/serverless/event-gateway/tree/master/contrib/MINIKUBE.md) outline how to get that configured with minikube's native nginx ingress.
+You'll need to have an existing Kubernetes cluster that supports Ingress for Deployments. The [instructions contained here](https://github.com/serverless/event-gateway/blob/master/contrib/helm/MINIKUBE.md) outline how to get that configured with minikube's native nginx ingress.
 
 ### Install Helm
 
@@ -129,5 +129,5 @@ Austen Collins from Serverless, Inc., used the Event Gateway to trigger 11 diffe
 - [See the full release notes](https://github.com/serverless/event-gateway/blob/master/contrib/helm/README.md)
 - [Check out the Event Gateway open source project](https://github.com/serverless/event-gateway)
 - [Learn more about the CNCF’s CloudEvents specification](https://github.com/cloudevents/spec)
-- [Read up on popular Event Gateway use cases](https://serverless.com/blog/how-use-event-gateway-use-cases-rest-api-custom-events/#using-the-event-gateway-with-custom-events)
+- [Read up on popular Event Gateway use cases](https://serverless.com/blog/how-use-event-gateway-use-cases-rest-api-custom-events/)
 - [Try the fully-hosted (serverless) version in the Serverless Platform](https://dashboard.serverless.com/)
