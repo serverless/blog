@@ -3,10 +3,12 @@ title: "Strategies for implementing user authentication in serverless applicatio
 description: "Implementing user authentication in serverless applications: storing user info with sessions & JWT, token validity with Lambda Custom Authorizers, user management & more."
 date: 2018-08-21
 layout: Post
-thumbnail: TODO
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/authentication/auth-serverless-thumb.png
 authors:
   - JeremyCoffield
 ---
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/authentication/auth-serverless-header.png">
 
 Searching for a way to do user authentication in your serverless project?
 
