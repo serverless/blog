@@ -191,7 +191,7 @@ cognitoUnauthRole:
               - 'iot:Connect'
               - 'mobileanalytics:PutEvents',
               - 'iot:DescribeCertificate',
-              - 'iot:Publish,
+              - 'iot:Publish',
               - 'cognito-sync:*',
               - 'iot:GetPolicyVersion'
               Resource:
