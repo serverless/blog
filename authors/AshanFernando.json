@@ -1,11 +1,11 @@
 {
   "name": "Ashan Fernando",
-  "github": "",
-  "twitter": "",
+  "github": "https://github.com/ashanfernando",
+  "twitter": "https://twitter.com/ashanfer",
   "avatar": "",
   "bio": {
-    "short": "",
+    "short": "Ashan Fernando is an AWS Certified Solutions Architect working at 99X Technology.",
     "long":
-      ""
+      "Ashan designs full stack software solutions involving frontend technologies, microservices, Serverless, and cloud at 99X Technology. He is also an active open source contributor who is the creator of Serverless Dynamodb Local plugin, and a blogger who shares his experiences with others. He loves playing badminton and spend the leisure time with his family."
   }
 }
