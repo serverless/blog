@@ -32,7 +32,11 @@ Although there are [various types of data warehouses](https://blog.panoply.io/i-
 
 ### 1. A centralized repository
 
-The central repository is where the data is analyzed. Think [Amazon Redshift](https://aws.amazon.com/redshift/), [Azure SQL Data Warehouse](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/sql-data-warehouse-overview-what-is), and [Google BigQuery](https://cloud.google.com/bigquery/). Each of these solutions will support two important things:
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-warehouse/serverless-data-warehouse2.png">
+
+The central repository is where the data is analyzed. Think [Amazon Redshift](https://aws.amazon.com/redshift/), [Azure SQL Data Warehouse](https://docs.microsoft.com/en-us/azure/sql-data-warehouse/sql-data-warehouse-overview-what-is), and [Google BigQuery](https://cloud.google.com/bigquery/).
+
+Each of these solutions will support two important things:
 
 1. storage
 2. online analytical processing, where large aggregated queries can be run on the data
@@ -48,6 +52,8 @@ Amazon QuickSight (a business intelligence tool) directly integrates with Redshi
 Even when some of the integrations are not cloud-native (e.g, Lambda loading data into Redshift), the vendor provides additional code and support to make things simple to integrate.
 
 ### 2. Data pipeline (Serverless ETL)
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-warehouse/serverless-data-warehouse3.png">
 
 Data will be coming from various sources, and you’ll have to preprocess it before moving the data to the central repository. This requires serverless tools for [ETL/ ELT](https://dzone.com/articles/etl-vs-elt-the-difference-is-in-the-how).
  
@@ -85,6 +91,8 @@ Here are the upsides to a serverless approach.
 
 #### Simplicity in management
 
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-warehouse/serverless-data-warehouse2.png">
+
 In a traditional data warehousing solution, architects have to have in-depth knowledge at both the hardware and software level in order to optimize reliability, performance and efficiency. They have to understand how to handle growing data volume, and how to design the solution to work efficiently based on the frequency of data loads, complexity of workloads, and supporting the query performance.
 
 This will require a data warehouse that can easily scale out data storage, network, and processing capacity _without having any single points of failure_. With a traditional approach, your architect would have to implement each building block themselves.
@@ -97,7 +105,7 @@ However, you'll still need expertise in a serverless solution to address how the
 
 The nature of serverless itself carries a cost advantage—it’s provisioned mostly in the cloud and scales on demand. You don’t have to provision a lot of resources up front, or pay for resources that go unused.
  
-In contrast, in a traditional data warehousing solution, the costs in setting up the environment will include implementing redundant servers for durability, availability, and fault-tolerance, having excess capacity for scalability needs, and software licensing. Even if you deploy in the cloud (in a non-serverless way), your overall cost will be higher as you implement your individual building blocks.
+In a traditional data warehousing solution, the costs of setting up the environment include things like: implementing redundant servers for durability, availability, and fault-tolerance, having excess capacity for scalability needs, and software licensing. Even if you deploy in the cloud (in a non-serverless way), your overall cost will be higher as you implement your individual building blocks.
 
 #### Reduced Operational Costs
 
