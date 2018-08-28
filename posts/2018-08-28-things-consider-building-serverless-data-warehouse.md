@@ -91,7 +91,7 @@ Here are the upsides to a serverless approach.
 
 #### Simplicity in management
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-warehouse/serverless-data-warehouse2.png">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-warehouse/serverless-data-warehouse1.png">
 
 In a traditional data warehousing solution, architects have to have in-depth knowledge at both the hardware and software level in order to optimize reliability, performance and efficiency. They have to understand how to handle growing data volume, and how to design the solution to work efficiently based on the frequency of data loads, complexity of workloads, and supporting the query performance.
 
