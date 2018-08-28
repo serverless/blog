@@ -8,9 +8,9 @@ authors:
   - AndreaPasswater
 ---
 
-I work at Serverless, Inc, where one of our main goals is to eliminate overhead so people have more time to do creative work. This has become part of our company ethos as well.
+I work at Serverless, Inc, where one of our main goals is to eliminate overhead so people have more time to do engaging and creative work. This has become part of our company ethos as well.
 
-So much of our culture centers around empowering employees to be creative in and out of work. We have a distributed-first model where people can work remote, or work from home multiple days per week. We have a culture of “freedom with accountability”, which means—get your work done and make your meetings, but otherwise you run your own schedule.
+So much of our culture centers around empowering employees to do interesting things in and out of work. We have a distributed-first model where people can work remote, or work from home multiple days per week. We have a culture of “freedom with accountability”, which means—get your work done and make your meetings, but otherwise you run your own schedule.
 
 And now, we get to add another thing to this ever-growing list of initiatives: the thought leaders program. (Please forgive my exorbitant buzzword usage.)
 
@@ -22,7 +22,7 @@ Ready to start? Awesome. Read on.
 
 ### What is the program?
 
-There are 10 weeks of assignments, all designed to be done in 5-10 minutes a day. Each assignment is a microstep towards building an audience and establishing yourself in whatever space you choose: growing your social media presence, hashing out speaking topics, compiling bios and abstracts, getting better at writing and speaking.
+There are 10 weeks of assignments, meant to be done in 5-10 minutes a day. Each assignment is a microstep towards building an audience and establishing yourself in whatever space you choose: growing your social media presence, hashing out speaking topics, compiling bios and abstracts, getting better at writing and speaking.
 
 Tl;dr: thought leader-dom.
 
@@ -54,7 +54,7 @@ Everybody, get ready to do some leading. Here are all the activity lists, straig
 
 **Week 1:**
 
-1. Choose 1 social media platform. This is where you will be focusing. (The series will assume you’re using Twitter; if you’re not, tweak things until they fit.)
+1. Choose 1 social media platform. This is where you will be focusing. (The series will assume you’re using Twitter; if you’re not, tweak things until they fit your platform of choice.)
 
 2. Think about the type of thought leader you want to be (aka your goal with all this), and send it to the group.
 - E.g., “I want to be an operations guru”; or “I want to be an all-around serverless thought leader”; or or “I want to be influential in the art world”
@@ -91,7 +91,7 @@ You should still have your 5-10m a day social media alarms set, and I bet you ca
 1. What is your pinned tweet? Make sure it’s still current.
 
 2. Write your 1 paragraph bio as though you’re giving a meetup talk and they asked for one.
-- Bio should be something like: [Name] has [5 years experience working for open source projects, both as an engineer and product leader]. They are currently [doing this cool professional thing]. In their free time, you can find them [doing this other cool fun thing]. ---> obviously your bio can be whatever you want & you don’t have to use this template.
+- Bio should be something like: `Name` has `5 years experience working for open source projects, both as an engineer and product leader`. They are currently `doing this cool professional thing`. In their free time, you can find them `doing this other cool fun thing`. ---> obviously your bio can be whatever you want & you don’t have to use this template.
 - Save it somewhere. Now you never have to write it again! Especially not when we use it later (mwahahah).
 
 3. What are some opinions you have in your thought leader space? Send a couple to the group.
@@ -113,7 +113,7 @@ You should still have your 5-10m a day social media alarms set, and I bet you ca
 
 1. Make an outline for that talk title you came up with last week. You don’t have to get it perfect, just make a bulleted list of some key points you’d like to cover and go from there.
 
-It helps to think about what the point of your talk is, and write that on the top of the page. E.g., “I want to convince people of X.” Then think about the things you could say that would [convince people of X]. Those are your key points.
+It helps to think about what the point of your talk is, and write that on the top of the page. E.g., “I want to convince people of X.” Then think about the things you could say that would `convince people of X`. Those are your key points.
 
 Once you have your key points, take a few bullets to make notes about what you’ll say on those points. That’s it! Outline = achieved.
 
@@ -165,11 +165,21 @@ Not everybody at the company chose to follow the program, which is cool. To each
 
 For instance, I would say that, for someone who's just getting started on social media for the first time, this is a great 2-month growth trajectory:
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/social-media-presence/serverless-social-media.png">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/social-media-presence/serverless-social-media-newbie.png">
+
+And some of our more established tweeters have grown their audience and engagement:
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/social-media-presence/serverless-social-media-established.png">
+
+Reviews of the program include quotes like:
+
+> I’ve made awesome progress! I never knew I could have so much engagement if I just posted genuine, useful content.
+
+I gotta say, as someone who created this program having no idea what the outcome would be, it seems like the results were great!
 
 ## General tips for building an online presence
 
-The number one thing I say to people is: have a personality. The internet abstracts away so much of who we are already. It’s easy to forget that there is a person behind the Twitter account. 
+The number one thing I say to people is: have a personality. The internet and text-based interactions abstract away so much of who we are already. It’s easy to forget that there is a person behind the Twitter account. 
 
 I bet if you think about your favorite social media presences, they will have one thing in common: they either have a lot of personality, or they have such great content that you don’t care. The second one is, frankly, harder to do. People are too finicky; the content they think they want changes. But they will always be drawn to a person who they can relate to.
 
