@@ -1,7 +1,7 @@
 ---
 title: "How to win followers & thought-leader people: building a social media presence"
 description: "Want to build a social media presence and become a (buzzword alert:) thought leader? Here’s how."
-date: 2018-08-29
+date: 2018-08-30
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/social-media-presence/serverless-thought-leader-thumb.png
 authors:
