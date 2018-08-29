@@ -198,3 +198,5 @@ So be bold. Just tweet it.
 We all really enjoyed this program, and hope you will too! See you on the social web. 
 
 If you want to follow any of us on Twitter to see what we’re up to, [here’s a handy list](https://twitter.com/alaskacasey/lists/serverless-inc/members)!
+
+And if you'd like to work with us, [we're hiring for lots of positions](https://jobs.lever.co/serverless) in growth, engineering and design, either remote or in San Francisco.
