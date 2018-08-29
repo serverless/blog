@@ -167,7 +167,7 @@ I plan to ping the channel regularly with speaking opportunities I find, and or 
 
 ## The results?
 
-Not everybody at the company chose to follow the program, which is cool. To each their own. Of the people who did, two have already booked speaking engagements at great conferences later this year, everyone has at least gotten halfway there to publishing their first blog post, and everyone has seen a huge bump in their twitter followers & metrics.
+Not everybody at the company chose to follow the program, which is cool. To each their own. Of the people who did, two have already booked speaking engagements at great conferences later this year, most are at least gotten halfway there to publishing their first blog post, and everyone has seen a huge bump in their twitter followers & metrics.
 
 For instance, I would say that, for someone who's just getting started on social media for the first time, this is a great 2-month growth trajectory:
 
