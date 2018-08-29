@@ -3,10 +3,12 @@ title: "How to win followers & thought-leader people: building a social media pr
 description: "Want to build a social media presence and become a (buzzword alert:) thought leader? Here’s how."
 date: 2018-08-29
 layout: Post
-thumbnail: TODO
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/social-media-presence/serverless-thought-leader-thumb.png
 authors:
   - AndreaPasswater
 ---
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/social-media-presence/serverless-thought-leader-header.png">
 
 I work at Serverless, Inc, where one of our main goals is to eliminate overhead so people have more time to do engaging and creative work. This has become part of our company ethos as well.
 
@@ -33,6 +35,8 @@ Because people at work wanted it. A lot of people were saying, “I wish I had a
 We decided to try this program as an experiment, and it really took off. It turns out, just having steps to follow eliminates the biggest barrier: people’s own uncertainty about what to do and when.
 
 ## The step by step: how to build a social media presence
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/social-media-presence/serverless-thought-leader1.png">
 
 Here are the key things you need to do in order to run this program.
 
@@ -154,6 +158,8 @@ Once you have your key points, take a few bullets to make notes about what you�
 4. Keep up with the likes/tweets/retweets/comments/#s/@s. Forever. You really do have to just do this forever. Sorry.
 
 ## Putting the program on maintenance mode
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/social-media-presence/serverless-thought-leader2.png">
 
 By the end of all the assignments, everybody has had 2.5 months to build their social media following. The reality is, keeping that up is an ongoing process.
 
