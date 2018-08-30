@@ -1,6 +1,6 @@
 ---
-title: "How to win followers & thought-leader people: building a social media presence"
-description: "Want to build a social media presence and become a (buzzword alert:) thought leader? Here’s how."
+title: "How to win followers & thought-leader people in 10 weeks "
+description: "The Serverless team wanted to get more active on social media, so we created a 10 week program. It was so successful, we decided to open source it!"
 date: 2018-08-30
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/social-media-presence/serverless-thought-leader-thumb.png
