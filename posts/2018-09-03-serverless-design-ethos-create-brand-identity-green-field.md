@@ -3,12 +3,12 @@ title: "The Serveless design ethos: creating brand identity from a green field"
 description: "I’m laying out my design process for those interested in creating a solid brand identity—whether its from a green field, or you’re working to evolve an existing one."
 date: 2018-09-03
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-design/Serverless-Andre-tumbnail.png
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-design/serverless-design-andre-thumb.jpg
 authors:
   - AndrePires
 ---
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-design/Serverless-Andre-Post0101.jpg">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-design/serverless-design-andre.jpg">
 
 I’ve always been the kind of person who was obsessed with design. I was born in Porto Alegre, a bustling city in the extreme south of Brazil. From a young age, I explored the constraints of the places around me, studied the buildings, wrapped my mind around the implicit visual communication in the design of every space.
 
