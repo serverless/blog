@@ -105,4 +105,4 @@ All these recommendations here are obviously based on my own experiences as a de
 
 At Serverless, we have a culture of recognition and evolution. We celebrate and improve what is working, and take the steps to change what is not. We value bravery in approach, which for me has been liberating and exciting.
 
-If you feel like you relate to the way we see design in Serverless, feel free to apply! We’re now hiring UI/UX designers in San Francisco and remotely.
+If you feel like you relate to the way we see design in Serverless, [feel free to apply](https://jobs.lever.co/serverless)! We’re now hiring UI/UX designers in San Francisco and remotely.
