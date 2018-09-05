@@ -80,7 +80,7 @@ Part of doing show-stopping work is taking risks and experimenting, but also ope
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-design/serverless_ilustrations1-8.png">
 
-One example: I designed a custom newsletter for our [Serverless Platform announcement](). I spent a _lot_ of time making custom illustrations to show its features, and I honestly really liked them. But some valid points got raised, too. The team thought we should use real product shots of the dashboard, to make it more tangible for people.
+One example: I designed a custom newsletter for our [Serverless Platform announcement](https://serverless.com/blog/serverless-platform-beta-helps-teams-operationalize-development/). I spent a _lot_ of time making custom illustrations to show its features, and I honestly really liked them. But some valid points got raised, too. The team thought we should use real product shots of the dashboard, to make it more tangible for people.
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-design/serverless_ilustrations2-8.png">
 
