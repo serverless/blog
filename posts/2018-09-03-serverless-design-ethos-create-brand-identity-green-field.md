@@ -12,7 +12,7 @@ authors:
 
 I’ve always been the kind of person who was obsessed with design. I was born in Porto Alegre, a bustling city in the extreme south of Brazil. From a young age, I explored the constraints of the places around me, studied the buildings, wrapped my mind around the implicit visual communication in the design of every space.
 
-I craved exploring new spaces. I traveled everywhere, and eventually moved to Buenos Aires. Professionally, [I became a designer](https://dribbble.com/carlosandrebp), a head of art and finally a design director. But yet again, I started to crave breaking out. I wanted to try something new.
+I craved exploring new spaces. I traveled everywhere, and eventually moved to Buenos Aires. Professionally, [I became a designer](https://dribbble.com/carlosandrebp), a head of art and finally a design director. But yet again, I started to crave breaking out. I wanted to try something new. 
 
 ## Design at Serverless
 
