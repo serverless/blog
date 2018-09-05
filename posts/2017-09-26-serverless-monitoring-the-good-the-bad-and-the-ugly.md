@@ -8,7 +8,7 @@ authors:
  - AdnanRahic
 ---
 
-<img align="right" src='https://media.giphy.com/media/VtR7L2GCNQB56/giphy.gif' width="20%">
+<img align="right" src='https://media.giphy.com/media/VtR7L2GCNQB56/giphy.gif' width="20%"> 
 
 Not so long ago, a job requirement pushed me into the world of FaaS, and I was thrilled. I had dreams of abstraction -- eliminating all that tedious work no developer likes doing. "We are not operations engineers!" I exclaimed proudly. "We should not need to dabble in the dark arts of the Linux Shell."
 
