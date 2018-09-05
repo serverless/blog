@@ -16,7 +16,7 @@ I craved exploring new spaces. I traveled everywhere, and eventually moved to Bu
 
 ## Design at Serverless
 
-So I ended up at this startup called Serverless, faced with a daunting task: create an entirely new brand identity for them, while paying homage to the identity that came before it. Their new identity had to be a perfect blend of the old and the new, and it had to factor in open source communities, technical docs, meetups presentations, video, intangible “vibe”, and so much more.
+So I ended up at this startup called Serverless, faced with a daunting task: create an entirely new brand identity for them, while paying homage to the identity that came before it. Their new identity had to be a perfect blend of the old and the new, and it had to factor in open source communities, technical docs, meetups presentations, video, intangible “vibe”, and so much more. 
 
 And now, here I am on the other side. In this post, I’m laying out my entire design process for anyone who’s interested in learning more about how to create a solid brand identity—whether its from a green field, or you’re working to evolve an existing identity.
 
