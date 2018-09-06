@@ -12,11 +12,11 @@ authors:
 
 I’ve always been the kind of person who was obsessed with design. I was born in Porto Alegre, a bustling city in the extreme south of Brazil. From a young age, I explored the constraints of the places around me, studied the buildings, wrapped my mind around the implicit visual communication in the design of every space.
 
-I craved exploring new spaces. I traveled everywhere, and eventually moved to Buenos Aires. Professionally, [I became a designer](https://dribbble.com/carlosandrebp), a head of art and finally a design director. But yet again, I started to crave breaking out. I wanted to try something new.
+I craved exploring new spaces. I traveled everywhere, and eventually moved to Buenos Aires. Professionally, [I became a designer](https://dribbble.com/carlosandrebp), a head of art and finally a design director. But yet again, I started to crave breaking out. I wanted to try something new. 
 
 ## Design at Serverless
 
-So I ended up at this startup called Serverless, faced with a daunting task: create an entirely new brand identity for them, while paying homage to the identity that came before it. Their new identity had to be a perfect blend of the old and the new, and it had to factor in open source communities, technical docs, meetups presentations, video, intangible “vibe”, and so much more.
+So I ended up at this startup called Serverless, faced with a daunting task: create an entirely new brand identity for them, while paying homage to the identity that came before it. Their new identity had to be a perfect blend of the old and the new, and it had to factor in open source communities, technical docs, meetups presentations, video, intangible “vibe”, and so much more. 
 
 And now, here I am on the other side. In this post, I’m laying out my entire design process for anyone who’s interested in learning more about how to create a solid brand identity—whether its from a green field, or you’re working to evolve an existing identity.
 
@@ -80,7 +80,7 @@ Part of doing show-stopping work is taking risks and experimenting, but also ope
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-design/serverless_ilustrations1-8.png">
 
-One example: I designed a custom newsletter for our [Serverless Platform announcement](). I spent a _lot_ of time making custom illustrations to show its features, and I honestly really liked them. But some valid points got raised, too. The team thought we should use real product shots of the dashboard, to make it more tangible for people.
+One example: I designed a custom newsletter for our [Serverless Platform announcement](https://serverless.com/blog/serverless-platform-beta-helps-teams-operationalize-development/). I spent a _lot_ of time making custom illustrations to show its features, and I honestly really liked them. But some valid points got raised, too. The team thought we should use real product shots of the dashboard, to make it more tangible for people.
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-design/serverless_ilustrations2-8.png">
 
