@@ -5,7 +5,7 @@ date: 2018-09-11
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudflare-workers/serverless-cloudflare-workers-thumb.png
 authors:
-  - RaeesIqbal
+  - RaeesBhatti
 ---
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudflare-workers/serverless-cloudflare-workers-header.png">
