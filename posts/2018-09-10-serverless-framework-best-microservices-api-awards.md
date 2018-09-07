@@ -24,8 +24,9 @@ The Serverless Framework was one chosen out of hundreds of nominations, based on
 3. leadership in its sector for innovation
 
 > Developers and engineers are becoming key influencers in their companies because the technologies they use continue to matter more to their business's operations. Serverless is a great example of a new era of technologies empowering developers to have a greater impact on products and IT. 
--- Geoff Domoracki, Founder of DevNetwork, producer of API World & the 2018 API Awards
+
+_-- Geoff Domoracki, Founder of DevNetwork, producer of API World & the 2018 API Awards_
 
 #### See you at API World!
 
-Serverless will be given an award at the [2018 API Awards](http://apiworld.co/) ceremony on Monday, September 10, 2018. If you have tickets to the conference, hope to see you there!
+Serverless will be given an award at the [2018 API Awards](http://apiworld.co/) ceremony on Monday, September 10, 2018. Hope to see you there!
