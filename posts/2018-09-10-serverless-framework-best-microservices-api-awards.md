@@ -3,7 +3,7 @@ title: "The Serverless Framework wins Best Microservices API at the API Awards!"
 description: "Cloudflare Workers integrates with the Serverless Framework. Use Cloudflare Workers to add reliability and uptime to your existing FaaS!"
 date: 2018-09-10
 layout: Post
-thumbnail: 
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/API-award/serverless-microservices-api-award-thumb.jpg
 authors:
   - AndreaPasswater
 ---
@@ -29,4 +29,4 @@ _-- Geoff Domoracki, Founder of DevNetwork, producer of API World & the 2018 API
 
 #### See you at API World!
 
-Serverless will be given an award at the [2018 API Awards](http://apiworld.co/) ceremony on Monday, September 10, 2018. Hope to see you there!
+Serverless will be given an award at the [2018 API Awards](http://apiworld.co/) ceremony on Monday, September 10, 2018. Come attend API World 2018 @ the San Jose Convention Center on Tuesday or Wednesday, Sep 11-12, with a free EXPO Pass on us! [Just follow the link.](https://www.eventbrite.com/e/api-world-2018-tickets-39700253527?discount=APIawards-expopass)
