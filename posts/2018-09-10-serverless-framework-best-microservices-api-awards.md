@@ -1,6 +1,6 @@
 ---
 title: "The Serverless Framework wins Best Microservices API at the API Awards!"
-description: "Cloudflare Workers integrates with the Serverless Framework. Use Cloudflare Workers to add reliability and uptime to your existing FaaS!"
+description: "API World, the largest API conference, awarded the Serverless Framework the top honor for Microservices API at this year's conference!"
 date: 2018-09-10
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/API-award/serverless-microservices-api-award-thumb.jpg
