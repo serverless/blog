@@ -54,7 +54,8 @@ First, let’s create a template for Cloudflare workers:
 
  `serverless template --create cloudflare-workers --path new-project`
 
-The `--path` should be set to whatever you would like to call your project. `cd` into your new project folder.
+The `--path` should be set to whatever you would like to call your project. `cd` into your new project folder and
+run `npm install`.
 
 
 Next, we can deploy a simple hello world:
