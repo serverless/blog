@@ -10,7 +10,7 @@ authors:
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudflare-workers/serverless-cloudflare-workers-header.png">
 
-If you haven’t heard of Cloudflare workers, [serverless developers are already using them](https://www.troyhunt.com/serverless-to-the-max-doing-big-things-for-small-dollars-with-cloudflare-workers-and-azure-functions/) to cut costs, and add uptime and reliability to their Functions-as-a-Service. And now, you can deploy Cloudflare Workers from the Serverless Framework CLI as easily as you deploy to Lambda, Azure, or Google Cloud Functions!
+If you haven’t heard of Cloudflare Workers, [serverless developers are already using them](https://www.troyhunt.com/serverless-to-the-max-doing-big-things-for-small-dollars-with-cloudflare-workers-and-azure-functions/) to cut costs, and add uptime and reliability to their Functions-as-a-Service. And now, you can deploy Cloudflare Workers from the Serverless Framework CLI as easily as you deploy to Lambda, Azure, or Google Cloud Functions!
 
 Read more on how Cloudflare Workers can add even more robustness to your existing FaaS applications, and how to integrate it with the Serverless Framework.
 
