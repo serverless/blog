@@ -2,27 +2,25 @@
 title: Why we switched from docker to serverless
 description: Why we decided to migrate our services running on docker containers to serverless stack using aws lambda functions and aws api gateway
 date: 2017-06-19
-thumbnail: https://cdn-images-1.medium.com/max/1600/1*nCdI-0OU8GI6KZ2BwTvfDQ.png
-layout: Post
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/docker-vs-serverless.jpg'
+category: guides-and-tutorials, user-stories
 authors:
   - AsankaNissanka
 ---
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/docker-vs-serverless.jpg">
-
 Here at [ShoutOUT](https://getshoutout.com), we've been happily operating on Amazon Web Services for years. But there is always room for improvement. Luckily, we have the kind of team that doesn’t hesitate to embrace new technologies that will improve the platform—and that’s the very reason why we decided to try serverless architecture.
 
-## Background
+#### Background
 
 Before I move into explaining our own serverless architecture, I'd like to share some info on the services and infrastructure we previously had, and why we decided to switch to serverless.
 
-### Originally using Docker + ECS
+##### Originally using Docker + ECS
 
 Previously, we ran a couple of services built with Node.js on top of the Express Framework. This served our ShoutOUT dashboard and integrations with several third party services. These services were deployed on Docker containers inside Amazon's Elastic Container Service (ECS).
 
 The reason for using Docker, was the level of support and overall convenience it provided for running microservices. We could self-contain the services and handle scaling individually. Additionally, Docker helped ensure that features and fixes would seamlessly ship between our development and production teams. In short, AWS + ECS = a solid platform from which to run and manage docker containers. Within these processes, services ran smoothly with high availability and resiliency.
 
-### But then the number of services increased
+##### But then the number of services increased
 
 However, when the number of services and complexity of each service increased, it became obvious that we needed a way to expand the computational capacity.
 
@@ -38,7 +36,7 @@ The following diagram shows an overview of our previous deployment setup.
   <img src="https://cdn-images-1.medium.com/max/1600/1*qpPXgoLcZCpVUNDUF-E_XA.png">
 </p>
 
-## Making the switch to a serverless architecture
+#### Making the switch to a serverless architecture
 
 Around this time, we started to hear more and more serverless success stories that illustrated exactly what we had been looking for as a SaaS solutions provider.
 
@@ -52,7 +50,7 @@ The Serverless Framework has a great mechanism to provision and update resources
 
 The added advantage is that we can deploy the same services to different regions or different AWS accounts via a single command in CLI. 
 
-## The Results 
+#### The Results 
 
 Around 80% of the backend services we had were successfully migrated to a serverless stack, and we were able to reduce a considerable amount of cost this way. The following diagram shows an overview our current setup after successful integration with the Serverless Framework:
 
@@ -69,7 +67,7 @@ Apart from cost reduction, we were also able to gain a lot of other advantages t
 
 Since integration, we've taken a serverless first approach; all new services are built in a serverless fashion unless there is an obvious reason not to go serverless. This has helped us dramatically shorten our release cycles, which, as a startup and a SaaS provider, has been hugely beneficial.
 
-### One last note
+##### One last note
 
 Finally, I would like to point out one other thing.
 
