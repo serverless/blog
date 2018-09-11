@@ -2,13 +2,12 @@
 title: Using SQS with AWS Lambda and Serverless
 description: Get started with Simple Queue Service (SQS) and Serverless, and learn some of the important configuration options.
 date: 2018-07-11
-layout: Post
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-sqs-events-thumb.jpg'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-sqs-events.jpg'
+category: guides-and-tutorials, operations-and-observability
+heroImage: ''
 authors:
   - AlexDeBrie
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-sqs-events.jpg">
 
 At long last, the wait is over. AWS recently announced that [Simple Queue Service (SQS) is available as a Lambda event source](https://aws.amazon.com/blogs/aws/aws-lambda-adds-amazon-simple-queue-service-to-supported-event-sources/). This has been a highly-requested feature for a while, and the AWS team took the time to make sure it was implemented correctly.
 
