@@ -3,7 +3,7 @@ title: CICD for Serverless Part 2 - AWS CodePipeline Integration
 description: Part 2 of 2 on how to implement a CICD workflow for a Serverless project
 date: 2017-02-22
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/23097096/d7ff7a34-f5f0-11e6-9416-6aefd5f3dbe0.png
-layout: Post
+category: operations-and-observability
 authors:
   - PeteJohnson
 ---
