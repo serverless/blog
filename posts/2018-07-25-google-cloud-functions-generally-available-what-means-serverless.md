@@ -2,13 +2,12 @@
 title: "Google Cloud Functions goes GA: what it means for Serverless"
 description: "Google Cloud Functions hits general availability. A big step forward for FaaS, vendor choice, and the serverless community."
 date: 2018-07-25
-layout: Post
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/google-cloud-functions.png"
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/gcf/serverless-google-cloud-functions-ga.jpg'
+category: news
+heroImage:
 authors:
   - NickGottlieb
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/gcf/serverless-google-cloud-functions-ga.jpg">
 
 Yesterday at Google Cloud Next, Google announced general availability for their serverless functions offering, Google Cloud Functions.
 
