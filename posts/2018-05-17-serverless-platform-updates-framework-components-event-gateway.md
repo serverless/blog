@@ -2,13 +2,12 @@
 title: "Serverless Platform updates - Install Components from url, Fn Project support, CloudEvents"
 description: "See what's new in Serverless Components, Framework, and Event Gatway. Install Components from url, Fn Project support, and more."
 date: 2018-05-17
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-platform-updates.jpg'
+category: news
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-platform-updates.jpg'
 authors:
   - BrianNeisler
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-platform-updates.jpg">
 
 Well everyone, we now have a few different product updates to give. We're welcoming Serverless Components and Event Gateway into the product updates family!
 
