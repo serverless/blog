@@ -2,13 +2,12 @@
 title: "Giving back to the community with a TeenTech coding workshop"
 description: "We're always trying to find ways we can give back to our local community. Our latest adventure: organizing a TeenTech coding workshop for high schoolers."
 date: 2018-06-12
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-teentech/serverless-teentech-thumb.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-teentech/serverless-teentech-header.png'
+category: engineering-culture
+heroImage: ''
 authors:
   - MollyMoore
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-teentech/serverless-teentech-header.png">
 
 If you’re a company looking for ways to give back to your local community, you’re not alone! It’s something we try to focus on at Serverless, too.
 
