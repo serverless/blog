@@ -2,13 +2,11 @@
 title: "How we raised over $400 for charity in an hour"
 description: "Want to do something to give back to your community? Here's how the Serverless team raised over $400 for charity in an hour."
 date: 2018-03-29
-layout: Post
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/donation-cart/molly-felix.png"
+category: engineering-culture
 authors:
   - MollyMoore
 ---
-
-<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/donation-cart/molly-felix.png">
 
 As part of my initiative to get to know my new coworkers when I started at Serverless last December, I set up 1:1 meetings with each person. One of those people was Felix, Product Designer and PM at Serverless. 
 
