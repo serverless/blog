@@ -2,19 +2,18 @@
 title: "AWS Lambda Node.js 8 support: what it changes for serverless developers"
 description: "AWS Lambda just moved to support Node.js 8.10. This is what serverless developers need to know."
 date: 2018-04-02
-layout: Post
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/node8/node8-thumb.png"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/node8/nodejs8-full.jpg"
+category: news, guides-and-tutorials
+heroImage: ''
 authors:
   - DavidWells
 ---
-
-<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/node8/nodejs8-full.jpg">
 
 Node 8 support for AWS Lambda is here!
 
 If you're a serverless developer on Lambda, read on for what you need to know about Node 8. Namely: speed, Async/Await, object rest and spread, and NPX.
 
-## Speed
+#### Speed
 
 Node 8 is faster. (YES.)
 
@@ -24,7 +23,7 @@ You can see the full performance benchmarks in [this great post by David Gilbert
 
 (Though we must say, if you want maximum speed, [Go is still faster](https://serverless.com/blog/framework-example-golang-lambda-support/).)
 
-## Async/Await
+#### Async/Await
 
 With Node 6, if you wanted to execute asynchronous code, you were probably using promises. Honestly, we kind of like promises; they're just straightforward and readable.
 
@@ -40,7 +39,7 @@ async function wow(x) {
 }
 ```
 
-### Simplify your build
+##### Simplify your build
 
 If you are using webpack to build your functions to polyfill async/await, you can simply use the native functionality now and simplify your build.
 
@@ -66,7 +65,7 @@ export const hello = async (event, context, callback) => {
 
 Big shoutout to the [serverless webpack plugin](https://github.com/serverless-heaven/serverless-webpack) for supporting this long before lambda runtime.
 
-## Object rest and spread
+#### Object rest and spread
 
 You can now spread in parameters into your function, and combine objects together more easily.
 
@@ -100,7 +99,7 @@ console.log(combinedOptionsObject); // => { foo: false, bar: 200, zaz: 'hi', yol
 
 For more on Object rest and spread, [checkout this post](https://dmitripavlutin.com/object-rest-spread-properties-javascript/)
 
-## NPX
+#### NPX
 
 If you're running node 8 locally, it comes shipped with NPM version 5.2, which includes NPX:
 
@@ -126,7 +125,7 @@ You can simply run `npm run deploy` to deploy the function to Lambda; no need to
 
 [Check this video](https://www.youtube.com/watch?v=55WaAoZV_tQ) for a full rundown.
 
-### Further reading:
+##### Further reading:
 
 - [AWS Node 8.10 migration guide](https://forum.serverless.com/t/aws-node-8-10-runtime-for-lambdas-migration-guide/4141)
 - [Deploy a REST API using Serverless, Express, and Node.js](https://serverless.com/blog/serverless-express-rest-api/)
