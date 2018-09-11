@@ -3,7 +3,7 @@ title: "Use Cloudflare Workers + Serverless Framework to add reliability and upt
 description: "Cloudflare Workers integrates with the Serverless Framework. Use Cloudflare Workers to add reliability and uptime to your existing FaaS!"
 date: 2018-09-11
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudflare-workers/serverless-cloudflare-workers-header.png'
-category: app-development
+category: news
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudflare-workers/serverless-cloudflare-workers-header.png'
 authors:
   - RaeesBhatti
