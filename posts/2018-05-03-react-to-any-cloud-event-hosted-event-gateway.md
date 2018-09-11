@@ -2,14 +2,13 @@
 title: "React to any cloud event with hosted Event Gateway"
 description: Event Gateway as a hosted service, configurable connectors, and a plugin for the Serverless Framework.
 date: 2018-05-03
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-thumb.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-readme-header1.png'
+category: news
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-readme-header1.png'
 authors:
   - AlexDeBrie
 featured: all
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-readme-header1.png">
 
 Last year, we released the [Event Gateway](https://serverless.com/event-gateway/) project: an open source serverless communication fabric that allowed developers to react to any event, with *any* function, on any provider.
 
