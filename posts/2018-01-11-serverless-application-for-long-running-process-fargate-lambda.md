@@ -2,13 +2,12 @@
 title: How to use AWS Fargate and Lambda for long-running processes in a Serverless app
 description: We'll show you how to process a video file that extracts a thumbnail in Amazon ECS using Fargate and Lambda
 date: 2018-01-11
-layout: Post
-thumbnail: https://user-images.githubusercontent.com/8188/34815640-0b7ece74-f680-11e7-9f69-ceaa93c044c7.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/aws-fargate-long-running-process.jpg'
+category: guides-and-tutorials, operations-and-observability
+heroImage: ''
 authors:
   - RupakGanguly
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/aws-fargate-long-running-process.jpg">
 
 AWS dropped so many serverless announcements at re:Invent, the community is still scrambling to make sense of them all. This post is all about AWS Fargate.
 
@@ -22,7 +21,7 @@ Excited? Me too! Read on. 💥
 
 ![Fargate + Lambda + Serverless Framework = Bliss](https://user-images.githubusercontent.com/8188/34815683-3c9ca24c-f680-11e7-9f23-d45bc78f3e37.png)
 
-# Some background & overview
+#### Some background & overview
 
 With the [execution time limits](https://docs.aws.amazon.com/lambda/latest/dg/limits.html) of the AWS Lambda platform, there are a lot of use cases involving long-running processes that are hard to implement.
 
@@ -54,7 +53,7 @@ Let's dig in!
     * Triggering a Lambda function to run the ECS Fargate Task
     * Triggering a Lambda function when thumbnail is generated
 
-## Workflow
+##### Workflow
 
 The diagram below and the steps that follow describe the overall workflow of the the application we're building.
 
@@ -71,7 +70,7 @@ The diagram below and the steps that follow describe the overall workflow of the
 
 **Note:** If you are not interested in learning how the container image was built or how to test extracting the thumbnail locally, please skip ahead to the [Setting up ECS (Fargate)](https://www.serverless.com/blog/serverless-application-for-long-running-process-fargate-lambda/#setting-up-ecs-using-fargate) section. I have the Docker container [rupakg/docker-ffmpeg-thumb](https://hub.docker.com/r/rupakg/docker-ffmpeg-thumb/) shared on Dockerhub for you to use. 
 
-# Building the Container Image
+#### Building the Container Image
 
 We're encapsulating the core functionality—extracting a thumbnail from a video file—in a container.
 
@@ -79,7 +78,7 @@ We'll be using `ffmpeg` to manipulate the video, and the [AWS CLI](https://aws.a
 
 Let's look at the Dockerfile and then see how we would execute it.
 
-## Dockerfile
+##### Dockerfile
 
 Here is the Dockerfile:
 
@@ -118,7 +117,7 @@ $ docker build -t docker-ffmpeg-thumb .
 
 For your convenience, I have the Docker container [rupakg/docker-ffmpeg-thumb](https://hub.docker.com/r/rupakg/docker-ffmpeg-thumb/) shared on Dockerhub for you to use. 
 
-## Running the Container Locally
+##### Running the Container Locally
 
 Let's run the container image we created by passing it the required parameters:
 
@@ -136,7 +135,7 @@ The parameters are pretty intuitive. Additionally, pass in the AWS credentials i
 
 With the functionality working using the container image, let's look at using it in a ECS (Fargate) task and build it into a serverless application.
 
-# Setting up ECS using Fargate
+#### Setting up ECS using Fargate
 
 If you have already worked with ECS, you might have some or all of these steps completed. But I'm going to walk you through the steps of setting up ECS with Fargate, assuming that you have not done it before.
 
@@ -145,7 +144,7 @@ AWS provides a [First Run Wizard](https://console.aws.amazon.com/ecs/home?region
 ![AWS ECS Fargate First Run Wizard](https://user-images.githubusercontent.com/8188/34711774-8b161270-f4ee-11e7-8ed7-969cd6152747.png)
 *Figure 1*: AWS ECS Fargate First Run Wizard
 
-## Container Definition
+##### Container Definition
 
 First, we will create the container definition.
 
@@ -191,7 +190,7 @@ Leave the 'RESOURCE LIMITS' and the 'DOCKER LABELS' sections empty.
 
 Click the 'Update' button.
 
-## Task Definition
+##### Task Definition
 
 Next, we will edit the 'Task Definition', by clicking on the 'Edit' button:
 
@@ -208,14 +207,14 @@ The updates we made above to the Container and Task definition sections are show
 ![Updated Container and Task Definition](https://user-images.githubusercontent.com/8188/34714881-cfcae7a6-f4f8-11e7-95ec-b71a3f2b4082.png)
 *Figure 8*: Updated Container and Task definition
 
-## Service Definition
+##### Service Definition
 
 For our application we really don't need a 'service', but during the service definition creation step, AWS automatically creates a 'security group'. This is useful. So accept all the default values and click the 'Next' button:
 
 ![Create Service](https://user-images.githubusercontent.com/8188/34715153-a2dfa8de-f4f9-11e7-8b4b-6ced3d849af2.png)
 *Figure 9*: Create Service
 
-## Configuring the Cluster
+##### Configuring the Cluster
 
 This brings us to the last step: 'Cluster Configuration'.
 
@@ -224,7 +223,7 @@ Accept the default values of 'Cluster name' as `default`, and note that AWS will
 ![Cluster Configuration](https://user-images.githubusercontent.com/8188/34715433-b0db0220-f4fa-11e7-9965-10f2e9c42f92.png)
 *Figure 10*: Cluster Configuration
 
-## Review
+##### Review
 
 Let's review what we just configured. You can see all the settings in the screenshot below:
 
@@ -248,7 +247,7 @@ You can take a look at the JSON version of the task definition as shown below:
 ![Task JSON](https://user-images.githubusercontent.com/8188/34733998-3eded3b6-f538-11e7-9424-c34c7633ab63.png)
 *Figure 14*: Task JSON
 
-## Pre-requisite Resources
+##### Pre-requisite Resources
 
 To be able to run our task and support the application, we need to create a couple of resources before-hand.
 
@@ -271,7 +270,7 @@ To be able to run our task and support the application, we need to create a coup
 3. Under that bucket, we need a folder where the thumbnails extracted from the video file will be uploaded. We will need to manually create a folder with the name we have in the setting `"thumbnails_folder": "<your-thumbnail-folder-name>"`.
 4. Test the above changes by uploading a file to this bucket and then accessing it by its public url from a browser. If you can view the file, you are all set.
 
-## IAM Roles & Policies 
+##### IAM Roles & Policies 
 
 For our task to access the S3 bucket/folder we specified from our account, we need to give it specific permissions. Since the container is executing inside the ECS context, we can add another role that will have the specific S3 access policies. 
 
@@ -323,7 +322,7 @@ You can see the resulting screen below:
 
 With all the pre-requisite setup completed, we can now initiate running the task we created! 
 
-## Initiating the Task Execution
+##### Initiating the Task Execution
 
 Now that we have a task set up, let's run it.
 
@@ -360,7 +359,7 @@ If you choose to change any of these settings, you can do so now in this section
 
 Once you are satisfied with your changes, click the 'Run Task' button.
 
-## Running the Task
+##### Running the Task
 
 After the task is run, you can see an instance of the task being created on the resulting page:
 
@@ -389,7 +388,7 @@ Now that we have executed the task from the AWS comsole, let's create a serverle
 
 *This* is where things get cool.
 
-# Creating the App
+#### Creating the App
 
 To recap, we are trying to extract a thumbnail from a video file based on a frame position that we specify.
 
@@ -409,11 +408,11 @@ Let's start by creating a new serverless app using the Serverless Framework's bo
 
 To follow along, please download or clone the code for the app [ffmpeg-video-thumb](https://github.com/rupakg/ffmpeg-video-thumb), and open it in an editor.
 
-## Configuration
+##### Configuration
 
 The source code for the application is pretty generic, but you will need to supply it configuration settings that apply to your needs. Some of these configuration items include custom settings, plugins, IAM roles, and event rules for functions.
 
-### Custom Settings
+##### Custom Settings
 
 We need the following settings that are defined in the `custom` section of the `serverless.yml` file. To make it easy, I have included a `config.dev.example.json` file with those entries. 
 
@@ -434,7 +433,7 @@ Copy the `config.dev.example.json` to `config.dev.json`, and then supply the val
 
 **Note**: The `config.dev.json` has been added to `.gitignore` file, so it will not be added to your git repo.
 
-### Plugins
+##### Plugins
 
 There are cases, like one below, where you need the [AWS CloudFormation Psuedo parameters](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html) in your configuration `serverless.yml` file. 
 
@@ -460,7 +459,7 @@ plugins:
   - serverless-pseudo-parameters
 ```
 
-### IAM Roles
+##### IAM Roles
 
 To allow the Lambda functions in our serverless app to do certain actions, we need to set permissions with AWS.
 
@@ -484,7 +483,7 @@ We need the following permissions:
 
 The above IAM Role settings in the `serverless.yml` file allows the Lambda functions to run ECS Tasks, assumes the role defined in the `execRoleArn` setting and allows getting S3 objects from the bucket we defined.
 
-### Event Rules for Functions
+##### Event Rules for Functions
 
 We have two Lambda functions. Each of them are configured with certain rules that trigger them.
 
@@ -516,13 +515,13 @@ The above configuration sets a rule for function `triggerOnUploadVideo` to be tr
 
 This configuration sets a rule for function `triggerOnThumbnailCreation ` to be triggered based on an event from S3 when a object with `suffix` '.png' is created in the `thumbnails_folder` we specified.
 
-## Application Code
+##### Application Code
 
 We looked at pre-requisites and then some configuration needed by our serverless application.
 
 Now let's look at the function code that implements the features we need.
 
-### Lambda Function to Process Video
+##### Lambda Function to Process Video
 
 The Lambda function `triggerOnUploadVideo` is responsible for processing the video. It runs an ECS Task using Fargate, passing along appropriate parameters.
 
@@ -578,11 +577,11 @@ Most of the function code is creating the `params` json structure that is passed
 
 You can customize any of these parameters via configuration. The `containerOverrides` array has custom values for the environment vars we setup for our container image.  
 
-### Lambda Function to Notify Thumbnail Creation
+##### Lambda Function to Notify Thumbnail Creation
 
 The Lambda function `triggerOnThumbnailCreation` is triggered when a '.png' file is uploaded to S3. It prints out the name of the thumbnail file into the logs. 
 
-# Deploying the App
+#### Deploying the App
 
 Now that we looked at the code, let's deploy and run the application!
 
@@ -606,7 +605,7 @@ The app is deployed. Let's use it.
 
 Upload an .mp4 video file in the AWS S3 bucket you configured. It has to be named something like `test_00-10.mp4`, where the `00-10` is the frame position of your thumbnail.
 
-## Running the App
+##### Running the App
 
 Open up two terminal windows and let's tail the logs of our two functions.
 
@@ -749,7 +748,7 @@ REPORT RequestId: da7f7017-xxxx
 
 At this point, you can point your browser at the url printed in your logs and view the thumbnail. 
 
-# Cost
+#### Cost
 
 I was curious what kind of cost I incurred while I was writing the article. I tested, created many tasks, and executed them many times over a reasonably long time scale.
 
@@ -759,13 +758,13 @@ Since it only charged me when the ECS tasks and Lambda functions were executed, 
 
 ![Cost Analysis](https://user-images.githubusercontent.com/8188/34743576-2c27102e-f558-11e7-82b3-e6da8ead705f.png)
 
-# Extending the App
+#### Extending the App
 
 We used a simple hack to pass the frame position for the input video file, but in real life we might need more detailed data for processing our file.
 
 In that case, a solution that uses AWS Kinesis to store metadata for the video, while S3 is used only for storage purposes, could be a viable option.
 
-# Summary 
+#### Summary 
 
 We looked at a possible solution to execute long-running processes in ECS using Fargate, but with tight integration with AWS Lambda. We built a Docker container to encapsulate the long-running process.
 
