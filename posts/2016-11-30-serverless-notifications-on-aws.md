@@ -1,14 +1,12 @@
 ---
-title: How To Build A Serverless Notification System on AWS
+title: How to build a serverless notification system on AWS
 description: Guest author Diego Zanon writes about building a serverless notification system for browsers using the Serverless Framework and AWS IoT.
 date: 2016-11-30
-thumbnail: https://zanon.io/images/posts/2016-11-05-architecture.png
-layout: Post
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-notifications-on-aws.jpg'
+category: guides-and-tutorials
 authors:
   - DiegoZanon
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-notifications-on-aws.jpg">
 
 Real-time notifications are an important use case for modern apps. For example, you may need to notify your user that another post is available in their social feed or that someone else added a comment on one of their photos.
 
