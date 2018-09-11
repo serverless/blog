@@ -3,7 +3,8 @@ title: How to Test Serverless Applications
 description: "Tips from the Serverless team - how we test serverless applications."
 date: 2017-11-02
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/testing-apps.jpg'
-layout: Post
+category: guides-and-tutorials, operations-and-observability
+heroImage: ''
 authors:
   - EslamHefnawy
 ---
@@ -14,7 +15,7 @@ I’ve been building the Serverless Framework for 2 years now, and during that t
 
 I'll focus on testing serverless functions, since this is where most of the development happens.
 
-# Unit testing
+#### Unit testing
 
 This one is a gimme. You should always start with unit tests, whether or not your codebase is serverless. Forget about Lambda, the handlers, the events—just organize your codebase in an easy-to-test structure that follows your language’s best practice.
 
@@ -40,7 +41,7 @@ As you can see, the handler itself doesn't contain any core logic; it just uses 
 
 Read here for our much more [in-depth guide to unit testing](https://serverless.com/blog/unit-testing-nodejs-serverless-jest/).
 
-# Integration testing
+#### Integration testing
 
 Now that you’ve covered your codebase, it’s time to move on to your handlers with overall integration tests. Let's see how all of those units you’ve been testing individually work together.
 
@@ -73,7 +74,7 @@ During development, you don't need to go back and forth to S3 for debugging anym
 
 > **Note:** It’s a known issue that each event source sends out a different event structure, and there’s no central place to see what events look like without trying them out yourself. We’re working behind the scenes on solving that problem. Stay tuned!
 
-## Local Lambda invocation
+##### Local Lambda invocation
 
 Let's test those thin handler layers and how they fit in within your codebase. You can do so by invoking your function locally, using the `serverless invoke local` command. 
 
@@ -85,7 +86,7 @@ For example, let's test a function called `createThumbnail` that is subscribing 
 
 While `invoke local` doesn’t emulate Lambda 100%, you’ll still be able to find issues in your codebase quickly without having to wait for a deployment.
 
-## Using the Event Gateway
+##### Using the Event Gateway
 
 We’ve recently announced a new project called the [Event Gateway](https://www.serverless.com/event-gateway) that helps manage all events happening in your serverless application. You can use the Event Gateway to locally and rapidly test your functions. 
 
@@ -93,7 +94,7 @@ We'll need two terminal sessions for this. First, spin up the Event Gateway in y
 
 > **Note:** this only works for functions that are subscribed to one or more events. For other functions, you'll need to invoke the function directly, as shown above in the Local Lambda invocation section.
 
-## Remote Lambda invocation
+##### Remote Lambda invocation
 
 After testing and debugging your serverless application locally, you probably feel confident enough to deploy your application—at least to the dev stage. 
 
@@ -105,7 +106,7 @@ Just like local testing, you can pass a mocked event to the `serverless invoke` 
 
 In our `createThumbnail` example above, you can actually upload a photo to the S3 bucket in the dev stage and see how the `createThumbnail` Lambda reacts to that event.
 
-## Investigating Internal Server Errors
+##### Investigating Internal Server Errors
 
 During deployment and development, you’ll almost always be hit by the unhelpful `internal server error` from Lambda.
 
@@ -132,7 +133,7 @@ module.exports.createThumbnail = (event, context, callback) => {
 
 > **Note:** this doesn’t *always* work. Sometimes, the `internal server error` is beyond an issue with the codebase. Checking the logs is always your last resort.
 
-# Recap
+#### Recap
 
 Test your application in the dev stage and make sure that everything is working as expected. Then, you should feel safe to deploy your application to QA or production. 
 
