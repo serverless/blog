@@ -2,13 +2,12 @@
 title: Create a blog using pre-built Serverless Components and Hugo
 description: Learn how to use pre-built Serverless Components and a static site generator like Hugo to create and deploy a blog site.
 date: 2018-05-14
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-components-thumb.png
+thumbnail: 'https://user-images.githubusercontent.com/8188/39884592-5aa800e8-5458-11e8-90df-3bd16d1ac463.png'
+category: guides-and-tutorials
+heroImage: 'https://user-images.githubusercontent.com/8188/39884592-5aa800e8-5458-11e8-90df-3bd16d1ac463.png'
 authors:
   - RupakGanguly
 ---
-
-![image](https://user-images.githubusercontent.com/8188/39884592-5aa800e8-5458-11e8-90df-3bd16d1ac463.png)
 
 Most of us blog, and a very common dilemma is deciding how to host the blog site. You want something easy to use, produce content with, and maintain. Bonus points if it's also easy to port elsewhere in case you ever want to move it.
 
