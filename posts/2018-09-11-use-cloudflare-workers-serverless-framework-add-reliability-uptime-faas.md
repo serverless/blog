@@ -60,7 +60,7 @@ run `npm install`.
 
 Next, we can deploy a simple hello world:
 
-`serverless deploy -f hello`
+`serverless deploy`
 
 And test it to make sure it worked:
 
