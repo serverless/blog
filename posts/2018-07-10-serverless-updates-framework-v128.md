@@ -2,13 +2,12 @@
 title: "Serverless updates - SQS events, private endpoints, Event Gateway open source"
 description: "Serverless Framework v1.28 adds SQS support & private endpoints for API Gateway, plus tons of updates to Event Gateway open source."
 date: 2018-07-10
-layout: Post
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-updates/serverless-framework-v128-thum.jpg"
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-updates/serverless-framework-v128-header1.jpg'
+category: news
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-updates/serverless-framework-v128-header1.jpg'
 authors:
   - AndreaPasswater
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-updates/serverless-framework-v128-header1.jpg">
 
 The work on Serverless never stops. We just launched Serverless Framework v1.28 (with SQS event support), and have some exciting updates to Event Gateway open source!
 
