@@ -2,8 +2,8 @@
 title: From chef to Serverless developer in 4 years
 description: I started out my career as a chef. Now I'm a serverless developer.
 date: 2018-01-09
-layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/clem-onojeghuo-175180.jpg
+category: user-stories, engineering-culture
 authors:
   - KieranMcCarthy
 ---
