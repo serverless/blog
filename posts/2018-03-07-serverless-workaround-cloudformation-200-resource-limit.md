@@ -2,8 +2,8 @@
 title: "Serverless Workarounds for CloudFormation's 200 Resource Limit"
 description: How you can troubleshoot, and avoid hitting, CloudFormation's 200 resource limit
 date: 2018-03-07
-layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png'
+category: guides-and-tutorials, operations-and-observability
 authors:
   - AlexDeBrie
 ---
