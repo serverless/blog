@@ -1,9 +1,9 @@
 ---
 title: 2016 AWS re:Invent Recap - Serverless Christmas came early
-description: A recap of serverless news from AWS re:Invent 2016 & why it matters.
+description: "A recap of serverless news from AWS re:Invent 2016 & why it matters."
 date: 2016-12-05
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/20940035/de826f34-bbb6-11e6-8f32-ac70c9ec3a66.png
-layout: Post
+category: news
 authors:
   - NickGottlieb
 ---
