@@ -2,13 +2,11 @@
 title:  Fantastic Serverless security risks, and where to find them
 description: A breakdown of the top serverless security risks, and steps you can take to secure your serverless applications.
 date:  2018-02-12
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/catridingunicorn2.jpg
-layout:  Post 
+thumbnail: 'https://raw.githubusercontent.com/adnanrahic/cdn/master/covers/catridingunicorn2.jpg'
+category: operations-and-observability, guides-and-tutorials
 authors:
  - AdnanRahic
 ---
-
-<img src="https://raw.githubusercontent.com/adnanrahic/cdn/master/covers/catridingunicorn2.jpg" width="80%" align="center">
 
 With the rising hype around all things Serverless, I’ve been getting regularly asked one simple question: 
 
