@@ -3,7 +3,7 @@ title: Using Serverless Technology to Bootstrap the Platform for a Billion Dolla
 description: How SC5 used Serverless to create the backend for a revolutionary transportation app.
 date: 2017-04-06
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/24770638/45a78f82-1ad0-11e7-97c5-7cfed24d1e9b.png
-layout: Post
+category: user-stories
 authors:
   - StefanieMonge
 ---
