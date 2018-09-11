@@ -2,13 +2,12 @@
 title: "The Serverless Framework wins Best Microservices API at the API Awards!"
 description: "API World, the largest API conference, awarded the Serverless Framework the top honor for Microservices API!"
 date: 2018-09-10
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/API-award/serverless-microservices-api-award-thumb.jpg
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/API-award/Serverless_Social_API-Awards-2018-min.gif'
+category: company
+heroImage: ''
 authors:
   - AndreaPasswater
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/API-award/Serverless_Social_API-Awards-2018-min.gif">
 
 We've been consistently honored and humbled by the incredible community support we receive for the Serverless Framework. In  such a short time, it has become a lively open source project with over 25,000 Github stars, and the number one way developers build and deploy applications to any FaaS provider.
 
