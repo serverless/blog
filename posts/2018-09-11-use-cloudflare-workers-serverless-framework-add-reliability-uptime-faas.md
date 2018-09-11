@@ -57,6 +57,7 @@ First, let’s create a template for Cloudflare workers:
 The `--path` should be set to whatever you would like to call your project. `cd` into your new project folder and
 run `npm install`.
 
+In order to be able to deploy any Cloudflare Workers, You will need to set your Global API key from Cloudflare as an environmental variable named `CLOUDFLARE_AUTH_KEY`, and your Cloudflare account email as an environmental variable named `CLOUDFLARE_AUTH_EMAIL`. You can get your Global API key from your [Cloudflare profile](https://dash.cloudflare.com/profile) page. You will also need to set `accountId` and `zoneId` in `serverless.yml` under `service.config`. The first part of the path when you open [Cloudflare dashboard](https://dash.cloudflare.com/) as a logged in user is your `accountId` (e.g. `dash.cloudflare.com/{accountId}`). And the `zoneId` can be found from the overview tab after selecting the desired zone from the [Cloudflare dashboard](https://dash.cloudflare.com/).
 
 Next, we can deploy a simple hello world:
 
