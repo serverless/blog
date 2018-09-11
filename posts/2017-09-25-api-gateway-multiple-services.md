@@ -2,8 +2,9 @@
 title: How to deploy multiple micro-services under one API domain with Serverless
 description: Learn how to use the same domain name for multiple Serverless services with API Gateway base path mappings.
 date: 2017-09-25
-layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/aws-api-gateway-icon.png
+category: guides-and-tutorials, operations-and-observability
+heroImage: ''
 authors:
   - AlexDeBrie
 ---
@@ -16,14 +17,13 @@ _Addendum: Many users asked about how to deploy to different domains based on th
 
 If you already have your own services set up and just want the simple instructions, skip to the [TL;DR section](#tldr) below.
 
-
-# Getting Started
+#### Getting Started
 
 To get started, you'll need the [Serverless Framework](https://serverless.com/framework/docs/providers/aws/guide/quick-start/) installed.
 
 You should also have your desired domain name registered through AWS. Read the documentation on that [here](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar.html). You should also register a certificate for that domain through the AWS Certificate Manager. If you need help with that, read the _Getting a certificate for your domain_ section of my previous post on [using API Gateway with Serverless](https://serverless.com/blog/serverless-api-gateway-domain/).
 
-# Deploying your two services
+#### Deploying your two services
 
 Before we dive it, let's discuss exactly what we're trying to build. Imagine you have an e-commerce store which is a single-page application that consumes a backend REST API. Your REST API is hosted at `api.mycompany.com`, and you have two services: `users` and `products`. 
 
@@ -142,7 +142,7 @@ Run `sls deploy` to deploy the products-service, and make sure it's working in y
 
 Again, it's an ugly URL, which we're going to change soon.
 
-# Adding your services to your custom domain
+#### Adding your services to your custom domain
 
 Now that we have our two services set up, let's add them to a custom domain. You should still be in your `products-service`. Let's install the [serverless-domain-manager](https://github.com/amplify-education/serverless-domain-manager) plugin:
 
@@ -257,7 +257,7 @@ Run `sls deploy` to deploy the users service, then check it in your browser:
 
 That's it! Now you easily separate your functions into services while still keeping them on the same domain. You're not limited to two services on this domain -- as you add additional services, just use a new `basePath` to add it to your domain.
 
-# Working with multiple stages
+#### Working with multiple stages
 
 > Addendum: A few people have asked about how to handle this with multiple stages (prod, staging, dev). I've added this section to show how to structure your project to handle this.
 
@@ -304,7 +304,7 @@ $ sls create_domain --stage dev
 
 Once your domains are set up, you can deploy to your proper stages! Use `sls deploy --stage prod` to deploy to `api.mycompany.com` and the other stages to deploy to their respective domains.
 
-# TL;DR
+#### TL;DR
 
 If you already have multiple services set up and are looking to add them to the same domain, follow these steps.
 
