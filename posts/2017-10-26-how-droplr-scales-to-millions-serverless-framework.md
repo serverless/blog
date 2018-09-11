@@ -3,7 +3,7 @@ title: How Droplr Scales to Millions With The Serverless Framework
 description: Droplr is used to share 1000s of screencasts and files every day. Here's how they empowered their growth with the Serverless Framework.
 date: 2017-10-26
 thumbnail: 'https://avatars2.githubusercontent.com/u/828077?s=400&v=4'
-layout: Post
+category: user-stories
 authors:
   - AntoniOrfin
 ---
