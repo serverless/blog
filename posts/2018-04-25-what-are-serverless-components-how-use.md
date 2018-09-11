@@ -9,7 +9,7 @@ authors:
   - BrianNeisler
 ---
 
-# So, what’s the goal with Serverless Components?
+#### So, what’s the goal with Serverless Components?
 
 We want to make it easier for you, our developer community, to assemble cloud applications. Plain and simple.
 
@@ -17,7 +17,7 @@ Composing a modern application means you’re plucking SaaS and managed (i.e. se
 
 But it's also highly complex. There’s a lot of manual work you have to do to assemble these pieces into an outcome, and not a lot of tooling to help you build and manage that outcome.
 
-## Enter: Serverless Components
+#### Enter: Serverless Components
 
 [Serverless Components](https://github.com/serverless/components) aims to change all of that.
 
@@ -25,11 +25,11 @@ Components presents a single experience for you to provision infrastructure and 
 
 Serverless Components will also form an ecosystem driven by community contributions, which you can browse through and utilize. The net result is that you save development time. Don’t build your own image processing API from scratch—use the existing component and tweak it.
 
-## How Serverless Components work
+#### How Serverless Components work
 
 Let’s take a look at how you can use Serverless Components to create an entire serverless application.
 
-### A uniform experience
+##### A uniform experience
 
 Any cloud service can be packaged as a Serverless Component.
 
@@ -41,7 +41,7 @@ Components expose minimal configuration with sane defaults so that you can confi
 
 Run `components deploy` to provision the resource.
 
-### Composing components into higher-order components
+##### Composing components into higher-order components
 
 Say you want to write a serverless image processing API that pulls images from S3 and modifies them. To do so, you might create an AWS API Gateway endpoint to call an AWS Lambda function, which then pulls an image from the AWS S3 bucket and modifies it.
 
@@ -69,7 +69,7 @@ Now, you can reuse this higher-order Serverless Component somewhere else. Or, an
 
 These higher-order Components essentially become use-cases, which can be easily used and reused by anyone.
 
-### Composing components to form an entire application
+##### Composing components to form an entire application
 
 Let’s zoom out from our image processing API. When you think about building an entire application, it has needs across the board. You need to have user management, plus lots of other data models and API endpoints to work with them.
 
@@ -83,7 +83,7 @@ Like all Components, people can easily reuse your application Component if it ex
 
 Most importantly: Serverless is about outcomes, not infrastructure. We believe we’ve made a solution that makes infrastructure more invisible, enhances developers’ ability to focus on outcomes, and fosters a community to share and reuse outcomes.
 
-## Ready to try Serverless Components?
+#### Ready to try Serverless Components?
 
 Great! We have a full working example ready to go.
 
@@ -95,7 +95,7 @@ If you'd like a really comprehensive walkthrough, here's how to [set up a landin
 
 We’d love to hear any and all feedback from you, our developer community. So try it out and tell us what you think!
 
-### What’s next for Serverless Components?
+##### What’s next for Serverless Components?
 
 We believe that Components represents the ideal developer experience for the future of serverless development, and we plan to integrate it into the [Serverless Framework](https://github.com/serverless/serverless). However, the implementation is not yet mature so we have decided to incubate it as a standalone project for now.
 
