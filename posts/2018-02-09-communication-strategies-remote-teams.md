@@ -2,12 +2,11 @@
 title: Communication strategies for remote teams
 description: The Serverless team is distributed all over the world. Here's how we manage communication strategies and work together (remotely).
 date: 2018-02-09
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/remote-communication/team-communication-thumb.jpeg
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/remote-communication/Team+communication+photo+cropped.jpg'
+category: engineering-culture
 authors:
   - FelixDesroches
 ---
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/remote-communication/Team+communication+photo+cropped.jpg">
 
 In case you didn't know, the Serverless team brings new meaning to the word "distributed". All in all, we span 18 time zones, and our overlapping waking hours are slight.
 
