@@ -2,13 +2,12 @@
 title: "Host your own CNCF CloudEvents compatible Event Gateway on Kubernetes, point to any FaaS"
 description: "The Serverless Event Gateway quickstart for Kubernetes. Host your own private Event Gateway, point to any FaaS provider with CloudEvents."
 date: 2018-08-16
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/eg-kubernetes/event-gateway-kubernetes-thumb.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/eg-kubernetes/event-gateway-kubernetes-header.png'
+category: news
+heroImage: ''
 authors:
   - SebastianBorza
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/eg-kubernetes/event-gateway-kubernetes-header.png">
 
 Last year, we launched the [Event Gateway open source project](https://github.com/serverless/event-gateway): the event router for the serverless world.
 
