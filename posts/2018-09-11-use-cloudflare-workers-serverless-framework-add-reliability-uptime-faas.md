@@ -52,7 +52,7 @@ You’ll also need to [create a Cloudflare account](https://dash.cloudflare.com/
 
 First, let’s create a template for Cloudflare workers:
 
- `serverless template --create cloudflare-workers --path new-project`
+ `serverless create --template cloudflare-workers --path new-project`
 
 The `--path` should be set to whatever you would like to call your project. `cd` into your new project folder and
 run `npm install`.
