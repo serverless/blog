@@ -2,13 +2,12 @@
 title: "Get in where you fit in: inclusion and diversity in tech"
 description: "I'm Charmmie Hendon, and I'm passionate about diversity and inclusion in tech. Here's a bit of my personal experience, and how you too can affect change."
 date: 2018-07-16
-layout: Post
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/inclusion/serverless-tech-inclusion-thumb.jpg"
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/inclusion/serverless-tech-inclusion1.jpg'
+category: engineering-culture
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/inclusion/serverless-tech-inclusion1.jpg'
 authors:
   - CharmmieHendon
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/inclusion/serverless-tech-inclusion1.jpg">
 
 Along with all the other companies in the Lightspeed portfolio, we at Serverless recently signed an agreement to focus on diversity and inclusion. But even before signing that agreement, diversity and inclusion has been incredibly important to me, and to the entire operations team here at Serverless.
 
