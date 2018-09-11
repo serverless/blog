@@ -2,8 +2,8 @@
 title: "How to apply design thinking to lean startup software development"
 description: "Our foray into mixing design thinking with agile development—what worked, and what didn't."
 date: 2018-01-24
-layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/design-thinking/dt-circle.png'
+category: engineering-culture
 authors:
   - BrianNeisler
 ---
