@@ -3,8 +3,8 @@ title: "The Serverless Framework wins Best Microservices API at the API Awards!"
 description: "API World, the largest API conference, awarded the Serverless Framework the top honor for Microservices API!"
 date: 2018-09-10
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/API-award/Serverless_Social_API-Awards-2018-min.gif'
-category: company
-heroImage: ''
+category: news
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/API-award/Serverless_Social_API-Awards-2018-min.gif'
 authors:
   - AndreaPasswater
 ---
