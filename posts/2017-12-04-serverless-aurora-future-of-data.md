@@ -2,8 +2,8 @@
 title: "Serverless Aurora: What it means and why it's the future of data"
 description: "Learn what Serverless Aurora is, what it means for serverless developers, and why we think it's the future of data. Solving the serverless data layer."
 date: 2017-12-04
-layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/awsreinvent.jpg'
+category: operations-and-observability, guides-and-tutorials, news
 authors:
   - AlexDeBrie
 ---
