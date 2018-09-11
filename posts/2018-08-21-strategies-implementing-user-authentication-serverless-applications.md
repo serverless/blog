@@ -3,7 +3,7 @@ title: "Strategies for implementing user authentication in serverless applicatio
 description: "Implementing user authentication in serverless applications: storing user info with sessions & JWT, token validity with Lambda Custom Authorizers, user management & more."
 date: 2018-08-21
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/authentication/auth-serverless-header.png'
-category: application-development
+category: guides-and-tutorials
 heroImage: ''
 authors:
   - JeremyCoffield
