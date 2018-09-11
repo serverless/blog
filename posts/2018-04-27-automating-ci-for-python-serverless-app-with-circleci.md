@@ -2,8 +2,9 @@
 title: Automating a CI workflow for a Python serverless app with CircleCI
 description: An end-to-end look at continuous integration with Python, Serverless and CircleCI.
 date: 2018-04-27
-layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/circleci-post.png
+category: operations-and-observability, guides-and-tutorials
+heroImage: ''
 authors:
   - RupakGanguly
 ---
