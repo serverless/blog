@@ -2,13 +2,12 @@
 title: "How to win followers & thought-leader people in 10 weeks "
 description: "The Serverless team wanted to get more active on social media, so we created a 10 week program. It was so successful, we decided to open source it!"
 date: 2018-08-30
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/social-media-presence/serverless-thought-leader-thumb.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/social-media-presence/serverless-thought-leader-header.png'
+category: engineering-culture
+heroImage: ''
 authors:
   - AndreaPasswater
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/social-media-presence/serverless-thought-leader-header.png">
 
 I work at Serverless, Inc, where one of our main goals is to eliminate overhead so people have more time to do engaging and creative work. This has become part of our company ethos as well.
 
