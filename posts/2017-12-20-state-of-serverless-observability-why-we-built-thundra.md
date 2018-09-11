@@ -2,8 +2,8 @@
 title: "The state of serverless observability—why we built Thundra"
 description: "Here's where serverless observability is today. Learn why we decided to build yet another AWS Lambda monitoring solution, Thundra."
 date: 2017-12-20
-layout: Post
 thumbnail: "https://s3-us-west-2.amazonaws.com/why-thundra-serverless-blog/logo.png"
+category: operations-and-observability
 authors:
   - SerkanOzal
 ---
