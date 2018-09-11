@@ -3,7 +3,7 @@ title: "How to streamline your serverless workflow with WebStorm"
 description: "In this post, I’d like to share with you my serverless-specific IDE setup with WebStorm, and how it can massively accelerate your serverless workflow."
 date: 2018-08-15
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/webstorm-ide/streamline-webstorm-serverless2.jpg'
-category: guides-and-tutorials
+category: guides-and-tutorials, engineering-culture
 heroImage: ''
 authors:
   - EslamHefnawy
