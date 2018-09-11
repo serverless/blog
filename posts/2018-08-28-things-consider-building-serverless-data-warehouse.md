@@ -3,7 +3,7 @@ title: "Things to consider before building a serverless data warehouse"
 description: "Is it time for the rise of the serverless data warehouse? Read this post to find out, and for some serverless data warehousing pro-tips and considerations."
 date: 2018-08-29
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/data-warehouse/serverless-data-warehouse-header.png'
-category: guides-and-tutorials
+category: guides-and-tutorials, operations-and-observability
 heroImage: ''
 authors:
   - AshanFernando
