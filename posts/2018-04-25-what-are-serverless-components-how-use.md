@@ -2,13 +2,12 @@
 title: "What are Serverless Components, and how do I use them?"
 description: "Serverless Components gives you a way to compose and share parts of a cloud application. Serverless development just got even easier."
 date: 2018-04-25
-layout: Post
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif'
+category: news, guides-and-tutorials
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif'
 authors:
   - BrianNeisler
 ---
-
-<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif">
 
 # So, what’s the goal with Serverless Components?
 
