@@ -2,8 +2,8 @@
 title: How to create a REST API in Java using DynamoDB and Serverless
 description: Build a serverless REST API service in Java, store the data in a DynamoDB table, and deploy it to AWS. All using the Serverless Framework.
 date: 2018-04-16
-layout: Post
 thumbnail: https://user-images.githubusercontent.com/8188/38645932-e1973882-3db3-11e8-8a12-9a68ac905a10.png
+category: guides-and-tutorials
 authors:
   - RupakGanguly
 ---
