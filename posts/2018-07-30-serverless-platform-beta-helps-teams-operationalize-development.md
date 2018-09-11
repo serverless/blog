@@ -3,7 +3,7 @@ title: "The new Serverless Platform Beta: everything teams need to operationaliz
 description: "The Serverless Platform Beta is everything teams need to operationalize serverless development. Build, operate, and integrate serverless applications in a single toolkit."
 date: 2018-07-30
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-platform-release/1-Serverless_header-Platform+Beta.jpg'
-category: news
+category: news, operations-and-observability
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-platform-release/1-Serverless_header-Platform+Beta.jpg'
 authors:
   - AustenCollins
