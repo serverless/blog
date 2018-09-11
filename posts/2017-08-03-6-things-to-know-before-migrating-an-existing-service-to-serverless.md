@@ -2,8 +2,8 @@
 title: 6 Things to Know Before Migrating An Existing Service to Serverless
 description: Your cheatsheet to a seamless migration.
 date: 2017-08-07
-layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/step.jpg
+category: user-stories, guides-and-tutorials
 authors:
   - MarciaVillalba
 ---
