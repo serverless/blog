@@ -1,4 +1,12 @@
-
+---
+title: "Keeping the Culture in Remote Culture"
+description: "When your team team is distibuted, building and maintaining a company culture is difficult, but not impossible."
+date: 2018-09-13
+layout: Post
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Thom's+Posts/remotework.jpg
+authors:
+  - ThomCrowe
+---
 # Keeping the Culture in Remote Culture
 
 Maintaining a company culture is hard; doing it remotely is hard, but not impossible. To develop and maintain a company culture, leadership has to be intentional and communicate vision with the team.
