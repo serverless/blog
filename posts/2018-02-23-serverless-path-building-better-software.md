@@ -2,8 +2,8 @@
 title: The serverless path to building better software
 description: Nick Gottlieb shares his ServerlessConf Tokyo talk on serverless, the state of software, and ways to accelerate productivity.
 date: 2018-02-23
-layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/better+software/devs-thumb.jpeg
+category: engineering-culture
 authors:
   - NickGottlieb
 ---
@@ -11,8 +11,6 @@ authors:
 We, as the software tooling industry, are failing to empower developers to build better software. 
 
 Don’t get me wrong, the way we develop software has changed dramatically over the last 30 years. We’ve made tremendous progress in terms of the technologies and tools available to us.
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/better+software/devs.jpeg">
 
 But what have these developments actually done for our productivity as software developers and creators? Have they made it easier to build software? Cheaper? Faster?
 
