@@ -2,13 +2,12 @@
 title: "Use Cloudflare Workers + Serverless Framework to add reliability and uptime to your FaaS"
 description: "Cloudflare Workers integrates with the Serverless Framework. Use Cloudflare Workers to add reliability and uptime to your existing FaaS!"
 date: 2018-09-11
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudflare-workers/serverless-cloudflare-workers-thumb.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudflare-workers/serverless-cloudflare-workers-header.png'
+category: app-development
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudflare-workers/serverless-cloudflare-workers-header.png'
 authors:
   - RaeesBhatti
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudflare-workers/serverless-cloudflare-workers-header.png">
 
 If you haven’t heard of Cloudflare Workers, [serverless developers are already using them](https://www.troyhunt.com/serverless-to-the-max-doing-big-things-for-small-dollars-with-cloudflare-workers-and-azure-functions/) to cut costs, and add uptime and reliability to their Functions-as-a-Service. And now, you can deploy Cloudflare Workers from the Serverless Framework CLI as easily as you deploy to Lambda, Azure, or Google Cloud Functions!
 
