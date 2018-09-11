@@ -3,12 +3,12 @@ title: How to set up a custom domain name for Lambda & API Gateway with Serverle
 description: Learn how to set up a custom domain name for AWS Lambda & API Gateway using the Serverless Framework to configure a clean domain name for your services.
 date: 2017-09-11
 layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/aws-api-gateway-icon.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-api-gateway-domain.jpg'
+category: guides-and-tutorials
+heroImage: ''
 authors:
   - AlexDeBrie
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-api-gateway-domain.jpg">
 
 With Serverless, it's easier than ever to deploy production-ready API endpoints. However, using AWS API Gateway results in odd hostnames for your endpoints. Further, these hostnames will change if you remove and redeploy your service, which can cause problems for existing clients.
 
@@ -16,13 +16,13 @@ In this guide, I'll show you how to map a custom domain name to your endpoints.
 
 This post is the first in a two-part series. Check out the next post to configure [multiple Serverless services on the same domain name](https://serverless.com/blog/api-gateway-multiple-services/) for maximum microservice awesomeness.
 
-# Before you start
+#### Before you start
 
 To get started, you'll need the [Serverless Framework](https://serverless.com/framework/docs/providers/aws/guide/quick-start/) installed.
 
 You should also have your desired domain name registered through AWS. Read the documentation on that [here](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar.html).
 
-# Getting a certificate for your domain
+#### Getting a certificate for your domain
 
 The steps below walk through setting up a certificate for your domain. If you already have a certificate issued, skip to the next section.
 
@@ -50,7 +50,7 @@ The registered owner of your domain will get a confirmation email from AWS. Clic
 
 Your certificate is ready to go! Move on to the next step to create a custom domain in API Gateway.
 
-# Create your Serverless Backend
+#### Create your serverless backend
 
 Before you go any further, you should have a Serverless service with at least one function that has an HTTP event trigger. If you don't have that, you can use the code below. This example is in Python, but any runtime will work.
 
@@ -135,7 +135,7 @@ It's nice how easy this is to get a production API endpoint, but this still isn'
 
 Finally, the path is odd as well -- `/dev/hello` includes my stage as well as my actual page. I'd rather have a cleaner path. This shows the need for using a custom domain.
 
-# Create a custom domain in API Gateway
+#### Create a custom domain in API Gateway
 
 By this point, you should have an issued certificate and a Serverless service with an HTTP event configured. Now you need to create a custom domain in API Gateway that you can use with your deployed gateways.
 
