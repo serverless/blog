@@ -1,0 +1,11 @@
+{
+  "name": "Raees Bhatti",
+  "github": "github.com/raeesbhatti",
+  "twitter": "twitter.com/raeesbhatti",
+  "avatar": "https://pbs.twimg.com/profile_images/1030842847384223744/kDd7g0V8_400x400.jpg",
+  "bio": {
+    "short": "Raees is a software engineer at Serverless.",
+    "long":
+      "Raees is a self-taught software engineer and open-source enthusiast. He works at Serverless, building the future of event-driven serverless applications."
+  }
+}
