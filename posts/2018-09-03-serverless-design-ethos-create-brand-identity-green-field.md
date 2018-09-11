@@ -2,8 +2,9 @@
 title: "The Serveless design ethos: creating brand identity from a green field"
 description: "I’m laying out my design process for those interested in creating a solid brand identity—whether its from a green field, or you’re working to evolve an existing one."
 date: 2018-09-03
-layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-design/serverless-design-andre-thumb.jpg
+category: eng-culture
+heroImage:
 authors:
   - AndrePires
 ---
