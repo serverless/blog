@@ -44,7 +44,7 @@ That’s the beauty of using the Serverless Framework for your public cloud deve
 
 If you don’t already have Serverless installed, you’ll need to do that:
 
-`npm install serverless -g`
+`npm install serverless@latest -g`
 
 You’ll also need to [create a Cloudflare account](https://dash.cloudflare.com/sign-up), and then [grab your Cloudflare account and zone](https://developers.cloudflare.com/workers/api/). 
 
