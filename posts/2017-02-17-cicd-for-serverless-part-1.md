@@ -3,7 +3,7 @@ title: CICD for Serverless Part 1 - Mocha Endpoint Testing
 description: Part 1 of 2 on how to implement a CICD workflow for a Serverless project
 date: 2017-02-17
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/23073708/05595248-f4fc-11e6-9a30-8e7ddaa16b56.png
-layout: Post
+category: operations-and-observability
 authors:
   - PeteJohnson
 ---
