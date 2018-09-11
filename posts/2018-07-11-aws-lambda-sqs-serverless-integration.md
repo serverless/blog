@@ -11,13 +11,13 @@ authors:
 
 At long last, the wait is over. AWS recently announced that [Simple Queue Service (SQS) is available as a Lambda event source](https://aws.amazon.com/blogs/aws/aws-lambda-adds-amazon-simple-queue-service-to-supported-event-sources/). This has been a highly-requested feature for a while, and the AWS team took the time to make sure it was implemented correctly.
 
-### Why the fuss about SQS?
+#### Why the fuss about SQS?
 
 In my opinion, SQS is the third leg in a trifecta of core integrations for Lambda. The first leg was [API Gateway](https://serverless.com/framework/docs/providers/aws/events/apigateway/), which allowed developers to quickly deploy REST APIs and other HTTP-accessible business logic. The second leg was [S3 triggers](https://serverless.com/framework/docs/providers/aws/events/s3/), which let you asynchronously process data blobs, whether it be log file processing or the canonical example of creating image thumbnails. The third and final leg is message processing via SQS, allowing you to offload tasks that are time- or resource-intensive into a background process for a faster, more resilient system.
 
 The SQS integration is also a great on-ramp for users looking to test the waters with Lambda and Serverless. If you manage a fleet of EC2 worker instances that are processing from SQS queues, porting that logic to Lambda should be pretty straight-forward. Quit thinking about auto-scaling, resource utilization, and reserved instances and get back to focusing on your business logic.
 
-### What we'll cover in this post
+##### What we'll cover in this post
 
 In this post, I'll cover a few practical notes about working with SQS and Lambda. In particular, this post discusses:
 
@@ -27,7 +27,7 @@ In this post, I'll cover a few practical notes about working with SQS and Lambda
 
 Let's dig in!
 
-## Using SQS with the Serverless Framework
+#### Using SQS with the Serverless Framework
 
 As of the [v1.28 release of the Serverless Framework](https://serverless.com/blog/serverless-updates-framework-v128/), SQS is a supported event source! Using the SQS integration is pretty straightforward. You'll register an event of type `sqs` and provide the ARN of your SQS queue:
 
@@ -79,7 +79,7 @@ resources:
 
 Here, we've created an SQS queue called "MyQueue", and we've referenced it in our `sqs` event for the `hello` function.
 
-## Batch Size and Error Handling with the SQS integration
+#### Batch Size and Error Handling with the SQS integration
 
 When setting up the SQS event integration, you may configure a `batchSize` property. This specifies the _maximum_ number of SQS messages that AWS will send to your Lambda function on a single trigger. This is an interesting and powerful property, but you need to be careful to make sure it's properly tuned to fit your needs.
 
@@ -98,7 +98,7 @@ If it's possible that one of your messages could fail with others succeed, you n
 
 The approach you choose depends on the needs of your architecture.
 
-## Protecting your downstream services with concurrency control
+#### Protecting your downstream services with concurrency control
 
 One of the common architectural reasons for using a queue is to limit the pressure on a different part of your architecture. This could mean preventing overloading a database or avoiding rate-limits on a third-party API when processing a large batch of messages.
 
@@ -122,6 +122,6 @@ functions:
 
 My guess is that concurrency controls were implemented in part to allow for the SQS integration. Without the controls, it's too easy to overwhelm your system when 1000 messages drop at one time.
 
-## Conclusion
+#### Conclusion
 
 SQS integration adds a huge missing piece to the Serverless story, and we're excited to see how you use it in your architecture. We expect this to be one of the more popular integrations in the Serverless ecosystem! 
