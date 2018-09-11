@@ -2,13 +2,12 @@
 title: How to Handle your Python packaging in Lambda with Serverless plugins
 description: Handling Python dependencies in your Lambda functions can be a pain. Here's how I handle Python packaging with Serverless for dev/prod parity.
 date: 2017-08-04
-layout: Post
-thumbnail: https://user-images.githubusercontent.com/6509926/28880672-63c395f4-776b-11e7-8bc9-a9c8dff12c12.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-python-packaging.jpg'
+category: guides-and-tutorials
+heroImage: ''
 authors:
   - AlexDeBrie
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-python-packaging.jpg">
 
 I use AWS Lambda for almost all of my projects these days-from Flask apps and Slack bots to cron jobs and monitoring tools. I love how cheap and easy it is to deploy something valuable.
 
@@ -18,7 +17,7 @@ The import path also requires finesse. You can install your dependencies directl
 
 But there is a much better way. In this post, I'll show you a how, by using the [`serverless-python-requirements`](https://github.com/UnitedIncome/serverless-python-requirements) plugin for the Serverless Framework.
 
-# Initial Setup
+#### Initial Setup
 
 Let's get our environment ready. If you have Node and NPM installed, install the Serverless Framework globally with:
 
@@ -116,7 +115,7 @@ Your numpy array:
 
 Perfect.
 
-# Deploying your service
+#### Deploying your service
 
 Our function is working locally, and it's ready for us to deploy to Lambda. Edit the `serverless.yml` file to look like the following:
 
