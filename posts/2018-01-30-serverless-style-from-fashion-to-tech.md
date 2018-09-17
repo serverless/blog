@@ -3,7 +3,8 @@ title: Serverless style - my journey from fashion to tech
 description: Our newest team member, Charmmie, entered the tech industry from a career in high fashion. Here's her story.
 date: 2018-02-01
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-fashion/charmmie-square.jpg'
-category: engineering-culture
+category:
+  - engineering-culture
 authors:
   - CharmmieHendon
 ---
@@ -22,7 +23,7 @@ I grew up one mile from Apple headquarters in Cupertino, California. Emerging te
 
 In 1987, Steve Jobs came to my school preaching the gospel about the new Macintosh SE and Macintosh II personal computers. He was wearing Tevas with socks and I remember thinking, “Ew.”
 
-I daydreamed through his entire spiel. I didn’t think, “I want to know how that works!” or “I could build this.” But I do know my 3rd and 4th grade years were filled with hours of Oregon Trail on that machine. 
+I daydreamed through his entire spiel. I didn’t think, “I want to know how that works!” or “I could build this.” But I do know my 3rd and 4th grade years were filled with hours of Oregon Trail on that machine.
 
 In high school, I dove straight into all kinds of artistic pursuits. I was super involved in the mid-90s Bay Area music scene, was a radio DJ at KSCU 103.3 FM and went to school at UC Irvine for Studio Art and German. I moved to Cologne, Germany, where I worked as an English teacher and Gallery Assistant.
 
@@ -54,13 +55,13 @@ I randomly met a tech recruiter at a happy hour in SF and we started talking abo
 
 Almost as quickly as I’d met the recruiter, she called me with a position. “I have something that could be the right culture fit for you,” she told me. “The company is pretty techy in terms of what they are doing, but the people seem great; I think someone like you could be a good addition to their team. Maybe shake them up a little with your flare and sass (or rather SaaS)?”
 
-I was reluctant, but also intrigued. Ultimately, I thought: hey, why not? I was down to try anything once. I said yes, and started my contract position as an Executive Assistant at Serverless that same week. 
+I was reluctant, but also intrigued. Ultimately, I thought: hey, why not? I was down to try anything once. I said yes, and started my contract position as an Executive Assistant at Serverless that same week.
 
 I was nervous. But also, I LOVE the unknown and have never been one to shy away from challenges. They make sure I learn rapidly and continue growing.
 
 ## That first week
 
-The first thing I noticed when I started at Serverless was how genuine and nice everyone was. 
+The first thing I noticed when I started at Serverless was how genuine and nice everyone was.
 
 Austen Collins, our CEO and founder, started his career in Hollywood and ended up creating this Framework that thousands of developers use every day. He came from a creative industry and found a solution for a technical problem.
 

@@ -3,7 +3,8 @@ title: Serverless Ops 102 - CloudWatch Logs and Centralized Logging with AWS Lam
 description: Monitor and Debug your Serverless Lambda functions with CloudWatch and centralized logging.
 date: 2017-09-08
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/centralized-logging-aws-lambda.jpg
-category: operations-and-observability
+category:
+  - operations-and-observability
 authors:
   - AlexDeBrie
 ---
@@ -12,7 +13,7 @@ In our [last ops post](https://serverless.com/blog/serverless-ops-metrics/), we 
 
 But metrics can only take you so far. When errors are firing and alarms are triggering, you need visibility into how and why your functions are failing.
 
-Enter an old friend of every developer: the log. Logging lets you drop status updates from your code and provide additional detail around errors. 
+Enter an old friend of every developer: the log. Logging lets you drop status updates from your code and provide additional detail around errors.
 
 Inspecting logs in a serverless world uses some different patterns -- no SSH-ing onto a production box and grep-ing through text files for you. In this post, we'll talk about the basic logging mechanisms with AWS Lambda and dive into some advanced practices for understanding your functions.
 
@@ -138,7 +139,7 @@ Once you've done that, it's easier to browse your logs for the information you w
 
 ## Advanced Usage: Centralized Logging
 
-The terminal and CloudWatch console are fine for small-scale debugging purposes, but they quickly break down. If you're looking through high volumes of log messages or correlating errors across multiple Lambda functions, you'll be pulling your hair out with the CloudWatch console. 
+The terminal and CloudWatch console are fine for small-scale debugging purposes, but they quickly break down. If you're looking through high volumes of log messages or correlating errors across multiple Lambda functions, you'll be pulling your hair out with the CloudWatch console.
 
 At this point, you should move to a log aggregator. There are a number of options out there -- Splunk, SumoLogic, Loggly, LogDNA, etc. The particular choice doesn't matter, as long as it has a way to ship logs in via HTTP.
 
@@ -204,7 +205,7 @@ ServerlessDeploymentBucketName: log-forwarder-prod-serverlessdeploymentbuck-9asd
 
 In the `StackOutput` section, there's a `ForwarderLambdaFunctionQualifiedArn`. Copy this, and remove the `:<number>` at the very end. The number is the version, which you shouldn't worry about.
 
-Now that you have a log forwarding function, you can subscribe that function to the CloudWatch Log Groups of your other services. The easiest way to do so is with the [serverless-log-forwarding plugin](https://github.com/amplify-education/serverless-log-forwarding) from Amplify Education. 
+Now that you have a log forwarding function, you can subscribe that function to the CloudWatch Log Groups of your other services. The easiest way to do so is with the [serverless-log-forwarding plugin](https://github.com/amplify-education/serverless-log-forwarding) from Amplify Education.
 
 To use it, go to your Serverless service whose logs you would like to forward. Then, install the `serverless-log-forwarding` plugin:
 

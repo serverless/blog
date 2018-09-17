@@ -3,12 +3,13 @@ title: Best tools for serverless observability
 description: "The current best tools for serverless observability: benefits, drawbacks, and which are right for you."
 date: 2018-02-26
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/observability-tools/graph-thumb.png"
-category: operations-and-observability
+category:
+  - operations-and-observability
 authors:
   - AndreaPasswater
 ---
 
-We admit it. In the serverless realm, getting the observability you need can be really frustrating. 
+We admit it. In the serverless realm, getting the observability you need can be really frustrating.
 
 In [his series on serverless observability](https://hackernoon.com/serverless-observability-part-1-new-challenges-to-old-practices-95de1b94d379), Yan Cui has stated the challenges, and the reasons behind them, incredibly well.
 
@@ -121,7 +122,7 @@ Further reading:
 
 Thundra has not yet hit general availability, but you can sign up for beta access [here](https://www.thundra.io/).
 
-Much like IOpipe, it promises to provide tracing, profiling, monitoring, alerts, and metrics. 
+Much like IOpipe, it promises to provide tracing, profiling, monitoring, alerts, and metrics.
 
 Thunda will differ from IOpipe in a couple ways. They plan to focus on Java rather than Node.js or Python. They are also attempting to avoid latency by keeping data-sending separate from the Lambda function itself. Instead, they’ll first write their metrics to logs, and an out-of-band log processor will send those metrics to the Thundra backend.
 

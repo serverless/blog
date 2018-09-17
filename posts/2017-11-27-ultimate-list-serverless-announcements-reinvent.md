@@ -3,7 +3,8 @@ title: "The Ultimate Guide to Serverless Announcements @ AWS re:Invent 2017"
 description: "Your go-to resource for all Serverless announcements at AWS re:Invent."
 date: 2017-11-27
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/awsreinvent.jpg'
-category: news
+category:
+  - news
 authors:
   - AlexDeBrie
 ---
@@ -217,13 +218,13 @@ Serverless Aurora could change all of that—a relational database that's access
 
 **What:** Managed Kubernetes on AWS.
 
-**Why this matters:** AWS will run your Kubernetes for you. It's not a serverless solution by any means, but many companies are interested in containers over straight serverless. For running functions-as-a-service on Kubernetes, check out the [Kubeless integration with the Serverless Framework](https://serverless.com/blog/serverless-and-kubernetes-via-kubeless/). 
+**Why this matters:** AWS will run your Kubernetes for you. It's not a serverless solution by any means, but many companies are interested in containers over straight serverless. For running functions-as-a-service on Kubernetes, check out the [Kubeless integration with the Serverless Framework](https://serverless.com/blog/serverless-and-kubernetes-via-kubeless/).
 
 # [AWS AppSync](https://aws.amazon.com/blogs/aws/introducing-amazon-appsync/)
 
 **What:** A platform for building data-rich apps with offline functionality.
 
-**Why this matters:** This is an interesting, ambitious offering from AWS. Basically, it lets you set up a managed GraphQL endpoint over a variety of data sources. This endpoint can proxy to DynamoDB, ElasticSearch, or your custom Lambda functions. Further, it provides some nice functionality to keep your device synced when moving between online and offline modes. 
+**Why this matters:** This is an interesting, ambitious offering from AWS. Basically, it lets you set up a managed GraphQL endpoint over a variety of data sources. This endpoint can proxy to DynamoDB, ElasticSearch, or your custom Lambda functions. Further, it provides some nice functionality to keep your device synced when moving between online and offline modes.
 
 I'd compare this to an AWS version of Firebase or Realm with the ability to have multiple different backing data sources. That's pretty powerful. One of the drawbacks to Firebase stems from the limitations of its data model. This offering sidesteps those issues.
 
@@ -238,7 +239,7 @@ The product page is live at [https://aws.amazon.com/appsync/](https://aws.amazon
 
 **What:** This will let you send some percentage of traffic to one version of a Lambda, the rest to another version. This is GA today, try it out!
 
-**Why this matters:** This will make it easier to confidently push new changes to production.  When you push new versions, you can shift a small percentage of users to the new version and monitor for errors, performance metrics, etc. If you're happy with the results, you can gradually ramp up traffic so that all users see the new version. 
+**Why this matters:** This will make it easier to confidently push new changes to production.  When you push new versions, you can shift a small percentage of users to the new version and monitor for errors, performance metrics, etc. If you're happy with the results, you can gradually ramp up traffic so that all users see the new version.
 
 # [AWS CodeDeploy incremental deployment](https://aws.amazon.com/about-aws/whats-new/2017/11/aws-lambda-supports-traffic-shifting-and-phased-deployments-with-aws-codedeploy/)
 

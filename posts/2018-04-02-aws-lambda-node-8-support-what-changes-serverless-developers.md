@@ -3,7 +3,9 @@ title: "AWS Lambda Node.js 8 support: what it changes for serverless developers"
 description: "AWS Lambda just moved to support Node.js 8.10. This is what serverless developers need to know."
 date: 2018-04-02
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/node8/nodejs8-full.jpg"
-category: news, guides-and-tutorials
+category:
+  - news
+  - guides-and-tutorials
 heroImage: ''
 authors:
   - DavidWells
@@ -43,7 +45,7 @@ async function wow(x) {
 
 If you are using webpack to build your functions to polyfill async/await, you can simply use the native functionality now and simplify your build.
 
-Simplicity for the win! 
+Simplicity for the win!
 
 It's native in Node 8:
 
@@ -74,25 +76,25 @@ Spread can be used instead of `Object.assign` and/or lodash assign/extend. Both 
 **Object spread example:**
 
 ```js
-const defaultOptions = {  
+const defaultOptions = {
   foo: true,
   bar: 10,
-  zaz: 'hi'  
+  zaz: 'hi'
 };
 
-const userLandOptions = {  
+const userLandOptions = {
   foo: false,
   bar: 200
 };
 
 
-const combinedOptionsObject = {  
+const combinedOptionsObject = {
   ...defaultOptions,
   ...userLandOptions,
-  yolo: true 
+  yolo: true
 };
 
-console.log(combinedOptionsObject); // => { foo: false, bar: 200, zaz: 'hi', yolo: true } 
+console.log(combinedOptionsObject); // => { foo: false, bar: 200, zaz: 'hi', yolo: true }
 ```
 
 👆 Remember yolo === `true`. Live it up!

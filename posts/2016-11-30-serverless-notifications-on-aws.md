@@ -3,7 +3,8 @@ title: How to build a serverless notification system on AWS
 description: Guest author Diego Zanon writes about building a serverless notification system for browsers using the Serverless Framework and AWS IoT.
 date: 2016-11-30
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-notifications-on-aws.jpg'
-category: guides-and-tutorials
+category:
+  - guides-and-tutorials
 authors:
   - DiegoZanon
 ---
@@ -60,7 +61,7 @@ I've used the following architecture in this demo.
 
 5. The Lambda function connects to IAM to assume a role and create temporary AWS keys.
 
-6. Frontend code subscribe to IoT events using the temporary keys. 
+6. Frontend code subscribe to IoT events using the temporary keys.
 
 ## Frontend
 
@@ -68,11 +69,11 @@ This demo runs in a static site hosted on Amazon S3. As I've used a Node.js modu
 
 ### AWS IoT
 
-In this project I used the Node module [AWS IoT SDK](https://github.com/aws/aws-iot-device-sdk-js) to connect to the IoT service. 
+In this project I used the Node module [AWS IoT SDK](https://github.com/aws/aws-iot-device-sdk-js) to connect to the IoT service.
 
 First, you need to create a "device" (client browser) by providing access keys and setting the IoT endpoint that is specific to your AWS account. I'll show later how you find those data. After providing those values, it will try to connect.
 
-The next step is to set callback functions to handle incoming events. You need to hook at least with **message** (receive messages) and **connect** (subscribe to a topic after successfully connected to IoT), but you can also handle the following events: **reconnect**, **error**, **offline** and **close**.  
+The next step is to set callback functions to handle incoming events. You need to hook at least with **message** (receive messages) and **connect** (subscribe to a topic after successfully connected to IoT), but you can also handle the following events: **reconnect**, **error**, **offline** and **close**.
 
 To send messages, you use: `client.publish(iotTopic, message)`
 
@@ -98,13 +99,13 @@ const IoT = {
         });
 
         client.on('connect', onConnect);
-        client.on('message', onMessage);            
-        client.on('close', onClose);     
+        client.on('message', onMessage);
+        client.on('close', onClose);
     },
 
     send: (message) => {
         client.publish(iotTopic, message); // send messages
-    }  
+    }
 };
 
 const onConnect = () => {
@@ -136,31 +137,31 @@ $('#btn-keys').on('click', () => {
     $.ajax({
         url: apiGatewayEndpoint,
         success: (res) => {
-            addLog(`Endpoint: ${res.iotEndpoint}, 
-                    Region: ${res.region}, 
-                    AccessKey: ${res.accessKey}, 
-                    SecretKey: ${res.secretKey}, 
+            addLog(`Endpoint: ${res.iotEndpoint},
+                    Region: ${res.region},
+                    AccessKey: ${res.accessKey},
+                    SecretKey: ${res.secretKey},
                     SessionToken: ${res.sessionToken}`);
 
             iotKeys = res; // save the keys
         }
     });
-}); 
+});
 ```
 
 2) Connect with IoT and subscribe for future messages
 
 ```javascript
 $('#btn-connect').on('click', () => {
-    const iotTopic = '/serverless/pubsub';        
+    const iotTopic = '/serverless/pubsub';
 
     IoT.connect(iotTopic,
-                iotKeys.iotEndpoint, 
-                iotKeys.region, 
-                iotKeys.accessKey, 
-                iotKeys.secretKey, 
+                iotKeys.iotEndpoint,
+                iotKeys.region,
+                iotKeys.accessKey,
+                iotKeys.secretKey,
                 iotKeys.sessionToken);
-});    
+});
 ```
 
 3) Send messages
@@ -168,9 +169,9 @@ $('#btn-connect').on('click', () => {
 ```javascript
 $('#btn-send').on('click', () => {
     const msg = $('#message').val();
-    IoT.send(msg);    
+    IoT.send(msg);
     $('#message').val('');
-});   
+});
 ```
 
 ## Backend
@@ -295,7 +296,7 @@ module.exports.auth = (event, context, callback) => {
                     statusCode: 200,
                     headers: {
                         'Access-Control-Allow-Origin': '*'
-                    },  
+                    },
                     body: JSON.stringify({
                         iotEndpoint: iotEndpoint,
                         region: region,

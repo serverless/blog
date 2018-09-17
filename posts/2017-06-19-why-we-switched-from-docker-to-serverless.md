@@ -3,7 +3,9 @@ title: Why we switched from docker to serverless
 description: Why we decided to migrate our services running on docker containers to serverless stack using aws lambda functions and aws api gateway
 date: 2017-06-19
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/docker-vs-serverless.jpg'
-category: guides-and-tutorials, user-stories
+category:
+  - guides-and-tutorials
+  - user-stories
 authors:
   - AsankaNissanka
 ---
@@ -48,9 +50,9 @@ Prior to integration with the Serverless Framework, we had to do a lot of manual
 
 The Serverless Framework has a great mechanism to provision and update resources required to run serverless apps. It's command line interface makes it super easy to deploy new versions to production, with the option to easily roll back if anything goes wrong. This eliminated all the manual configurations we had to do within our AWS account.
 
-The added advantage is that we can deploy the same services to different regions or different AWS accounts via a single command in CLI. 
+The added advantage is that we can deploy the same services to different regions or different AWS accounts via a single command in CLI.
 
-#### The Results 
+#### The Results
 
 Around 80% of the backend services we had were successfully migrated to a serverless stack, and we were able to reduce a considerable amount of cost this way. The following diagram shows an overview our current setup after successful integration with the Serverless Framework:
 
@@ -58,12 +60,12 @@ Around 80% of the backend services we had were successfully migrated to a server
   <img align="center" src="https://cdn-images-1.medium.com/max/1600/1*rp4PZBrhEX5_dCjIkmrEww.png">
 </p>
 
-Apart from cost reduction, we were also able to gain a lot of other advantages through this migration. 
+Apart from cost reduction, we were also able to gain a lot of other advantages through this migration.
 
 * No need to worry about scaling since Amazon takes care of it nicely
 * High availability of our backend services
 * Resiliency since each execution is contained and isolated, and thus has no impact on other executions
-* Easily accessible logs from cloud watch ensures traceability 
+* Easily accessible logs from cloud watch ensures traceability
 
 Since integration, we've taken a serverless first approach; all new services are built in a serverless fashion unless there is an obvious reason not to go serverless. This has helped us dramatically shorten our release cycles, which, as a startup and a SaaS provider, has been hugely beneficial.
 
@@ -73,5 +75,5 @@ Finally, I would like to point out one other thing.
 
 Cloud technologies and platforms, especially serverless architectures, evolve and improve at a very fast pace. As solutions providers, we need to have our systems prepared to embrace and cope with these new technologies. We should always adapt our systems to them, or we will end up with legacy systems that don’t reap the benefits discussed above.
 
-I suggest you go back and look at how far you are lagging behind new technologies to see whether you can improve what you are doing to ensure you can keep up in an ever-changing industry.  
+I suggest you go back and look at how far you are lagging behind new technologies to see whether you can improve what you are doing to ensure you can keep up in an ever-changing industry.
 

@@ -1,9 +1,12 @@
 ---
 title: Serverless (FaaS) vs. Containers - when to pick which?
-description: Docker, Kubernetes, Serverless? Let's discuss the respective ups and downs of containers and serverless. 
+description: Docker, Kubernetes, Serverless? Let's discuss the respective ups and downs of containers and serverless.
 date: 2017-10-06
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-vs-containers.jpg
-category: guides-and-tutorials, operations-and-observability, engineering-culture
+category:
+  - guides-and-tutorials
+  - operations-and-observability
+  - engineering-culture
 heroImage: ''
 authors:
   - PhilippMuns
@@ -148,7 +151,7 @@ In that vein, serverless is great if you need traffic pattern changes to be auto
 
 The serverless developer doesn't have to care about administrating underlying infrastructure; they just need to care about the code and the business value to end users. Iteration can be more rapid, as code can be shipped faster, without set-up or provisioning. In fact, because the underlying infrastructure is abstracted, the developer may not even know what it looks like. They won't really need to.
 
-But currently, there are some limitations with vendor support and ecosystem lock-in. Programming languages and runtimes are limited to whichever the provider supports (though there are  some workarounds (or "shims") available to overcome those restrictions). Event sources (which trigger all your functions) are usually services that the specific cloud provider offers. 
+But currently, there are some limitations with vendor support and ecosystem lock-in. Programming languages and runtimes are limited to whichever the provider supports (though there are  some workarounds (or "shims") available to overcome those restrictions). Event sources (which trigger all your functions) are usually services that the specific cloud provider offers.
 
 Reasoning about all the individual pieces of the application stack becomes harder when the infrastructure and the code are so separate. Serverless is a bit more new, and its tools still have room to evolve. That's what we're actively working on here at [Serverless.com](https://serverless.com/), anyway. 😉
 

@@ -3,7 +3,9 @@ title: Using SQS with AWS Lambda and Serverless
 description: Get started with Simple Queue Service (SQS) and Serverless, and learn some of the important configuration options.
 date: 2018-07-11
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-sqs-events.jpg'
-category: guides-and-tutorials, operations-and-observability
+category:
+  - guides-and-tutorials
+  - operations-and-observability
 heroImage: ''
 authors:
   - AlexDeBrie
@@ -124,4 +126,4 @@ My guess is that concurrency controls were implemented in part to allow for the 
 
 #### Conclusion
 
-SQS integration adds a huge missing piece to the Serverless story, and we're excited to see how you use it in your architecture. We expect this to be one of the more popular integrations in the Serverless ecosystem! 
+SQS integration adds a huge missing piece to the Serverless story, and we're excited to see how you use it in your architecture. We expect this to be one of the more popular integrations in the Serverless ecosystem!

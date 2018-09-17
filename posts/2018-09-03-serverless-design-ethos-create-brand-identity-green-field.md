@@ -3,7 +3,8 @@ title: "The Serveless design ethos: creating brand identity from a green field"
 description: "I’m laying out my design process for those interested in creating a solid brand identity—whether its from a green field, or you’re working to evolve an existing one."
 date: 2018-09-03
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-design/serverless-design-andre-thumb.jpg
-category: engineering-culture
+category:
+  - engineering-culture
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-design/serverless-design-andre-thumb.jpg'
 authors:
   - AndrePires
@@ -13,11 +14,11 @@ authors:
 
 I’ve always been the kind of person who was obsessed with design. I was born in Porto Alegre, a bustling city in the extreme south of Brazil. From a young age, I explored the constraints of the places around me, studied the buildings, wrapped my mind around the implicit visual communication in the design of every space.
 
-I craved exploring new spaces. I traveled everywhere, and eventually moved to Buenos Aires. Professionally, [I became a designer](https://dribbble.com/carlosandrebp), a head of art and finally a design director. But yet again, I started to crave breaking out. I wanted to try something new. 
+I craved exploring new spaces. I traveled everywhere, and eventually moved to Buenos Aires. Professionally, [I became a designer](https://dribbble.com/carlosandrebp), a head of art and finally a design director. But yet again, I started to crave breaking out. I wanted to try something new.
 
 ## Design at Serverless
 
-So I ended up at this startup called Serverless, faced with a daunting task: create an entirely new brand identity for them, while paying homage to the identity that came before it. Their new identity had to be a perfect blend of the old and the new, and it had to factor in open source communities, technical docs, meetups presentations, video, intangible “vibe”, and so much more. 
+So I ended up at this startup called Serverless, faced with a daunting task: create an entirely new brand identity for them, while paying homage to the identity that came before it. Their new identity had to be a perfect blend of the old and the new, and it had to factor in open source communities, technical docs, meetups presentations, video, intangible “vibe”, and so much more.
 
 And now, here I am on the other side. In this post, I’m laying out my entire design process for anyone who’s interested in learning more about how to create a solid brand identity—whether its from a green field, or you’re working to evolve an existing identity.
 
@@ -25,7 +26,7 @@ And now, here I am on the other side. In this post, I’m laying out my entire d
 
 The number one thing to remember with design, is that your design serves a purpose. It works to build a community, tell a story, grow product recognition and usage. And as such, it’s always in flux. Designers have to be good at instantly adapting to both the world outside the company, and the needs within it.
 
-Taking inspiration from Ryan Gum’s growth process, my design process respects some very familiar principles: 
+Taking inspiration from Ryan Gum’s growth process, my design process respects some very familiar principles:
 - Ideate
 - Prioritize
 - Test
@@ -57,9 +58,9 @@ That is what great design does: it builds the visual voice that leads the compan
 
 With that in mind, let’s talk about the practicalities of implementing brand design across an entire organization, and what to watch for along the way.
 
-### Check and recheck your presentation 
+### Check and recheck your presentation
 
-Technology changes. New platforms get developed, which make way for new types of behaviors and interactions. We find ourselves in a situation where evolution isn’t a question of choice, but rather one of survival. 
+Technology changes. New platforms get developed, which make way for new types of behaviors and interactions. We find ourselves in a situation where evolution isn’t a question of choice, but rather one of survival.
 
 This forces us to create new communication rules that follow the contextual logic of every platform. Don’t blame the message; if something is failing, it’s the way we presented it that isn’t working.
 

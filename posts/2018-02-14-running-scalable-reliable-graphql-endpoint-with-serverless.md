@@ -1,23 +1,24 @@
 ---
-title: Running a scalable & reliable GraphQL endpoint with Serverless  
-description: Learn how to create GraphQL endpoints using the Serverless Framework, Lambda, DynamoDB, RDS and a REST backend.   
-date: 2018-02-14    
+title: Running a scalable & reliable GraphQL endpoint with Serverless
+description: Learn how to create GraphQL endpoints using the Serverless Framework, Lambda, DynamoDB, RDS and a REST backend.
+date: 2018-02-14
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/graphql-serverless-part1.jpg'
-category: guides-and-tutorials
+category:
+  - guides-and-tutorials
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/graphql-serverless-part1.jpg'
-authors:  
+authors:
   - SiddharthGupta
 ---
 
 - Part 1: GraphQL endpoints with API Gateway + AWS Lambda (this post)
-- Part 2: [AppSync Backend: AWS Managed GraphQL Service](https://medium.com/@sid88in/running-a-scalable-reliable-graphql-endpoint-with-serverless-24c3bb5acb43)  
-- Part 3: [AppSync Frontend: AWS Managed GraphQL Service](https://hackernoon.com/running-a-scalable-reliable-graphql-endpoint-with-serverless-db16e42dc266)  
+- Part 2: [AppSync Backend: AWS Managed GraphQL Service](https://medium.com/@sid88in/running-a-scalable-reliable-graphql-endpoint-with-serverless-24c3bb5acb43)
+- Part 3: [AppSync Frontend: AWS Managed GraphQL Service](https://hackernoon.com/running-a-scalable-reliable-graphql-endpoint-with-serverless-db16e42dc266)
 
 #### Introduction
 
 Over the last four years, I've been exploring the world of big data, building real-time and batch systems at scale. For the last couple of months, I've been developing products with serverless architectures here at Glassdoor.
 
-Given the intersection of serverless and big data, there have been a few questions on everyone's mind: 
+Given the intersection of serverless and big data, there have been a few questions on everyone's mind:
 
 1) How can we build low latency APIs to serve complex, high dimensional and big datasets?
 2) Using a single query, can we construct a nested response from multiple data sources?
@@ -194,13 +195,13 @@ First, we'll create two tables (`Users` and `Tweets`) to store user and tweet in
 
 These resources will be created using the [`serverless.yml`](https://github.com/serverless/serverless-graphql/blob/master/app-backend/dynamodb/serverless.yml#L60):
 
-**Table**: _User_  
-**HashKey**: _handle_  
-**Attributes**: _name_, _description_, _followers_count_  
+**Table**: _User_
+**HashKey**: _handle_
+**Attributes**: _name_, _description_, _followers_count_
 
-**Table**: _Tweets_  
-**HashKey**: _tweet_id_  
-**Attributes**: _tweet_, _handle_, _created_at_  
+**Table**: _Tweets_
+**HashKey**: _tweet_id_
+**Attributes**: _tweet_, _handle_, _created_at_
 **Index**: _tweet-index_ _(hashKey: handle, sortKey: created_at)_
 
 At this point, you'll need to mock fake data using [Faker](https://www.npmjs.com/package/faker).
@@ -253,10 +254,10 @@ If the result contains `LastEvaluatedKey` (as shown [here](https://github.com/se
       }
 
       docClient.query(params, callback);
-    })       
-    //then parse the result  
+    })
+    //then parse the result
   },
-```  
+```
 
 For the `getUserInfo` field, you can similarly retrieve the results as shown below:
 
@@ -274,13 +275,13 @@ For the `getUserInfo` field, you can similarly retrieve the results as shown bel
         callback
       )
     )
-  //then parse the result 
- }   
+  //then parse the result
+ }
 ```
 
 The end result? You've got a GraphQL endpoint that reliably scales! 💥
 
-Let's test it out locally and then deploy it to production. 
+Let's test it out locally and then deploy it to production.
 
 ##### Clone the Git repo and install dependencies
 
@@ -320,12 +321,12 @@ We have explained the requirements to set up RDS in production in the [readme](h
 
 We will create two tables (`Users` and `Tweets`) to store user and tweet info respectively, as described [here](https://github.com/serverless/serverless-graphql/blob/master/app-backend/rds/migrations/20171204204927_setup.js).
 
-**Table**: _User_  
-**Primary Key**: _user_id_  
-**Attributes**: _name_, _description_, _followers_count_  
+**Table**: _User_
+**Primary Key**: _user_id_
+**Attributes**: _name_, _description_, _followers_count_
 
-**Table**: _Tweets_  
-**Primary Key**: _tweet_id_  
+**Table**: _Tweets_
+**Primary Key**: _tweet_id_
 **Attributes**: _tweet_, _handle_, _created_at_, _user_id_
 
 Then, you'll need to use Faker again to mock some fake data.
@@ -373,7 +374,7 @@ export const resolvers = {
           }
           return user;
         })
-  }      
+  }
 };
 ```
 
@@ -505,8 +506,8 @@ And deploy to production:
 ```commandline
 cd app-backend/rest-api
 yarn deploy-prod
-``` 
- 
+```
+
 #### Client Integrations (Apollo ReactJS, Netlify, and S3)
 
 The serverless-graphql repository comes with two client implementations
@@ -540,7 +541,7 @@ yarn start
 
 In production, you can also deploy the client on Netlify or AWS S3. Please follow the instructions [here](https://github.com/serverless/serverless-graphql#setup-for-production-deploy-resources-to-aws).
 
-#### Performance Analysis 
+#### Performance Analysis
 
 Which brings us to the best part. Let's dive into the performance of our Serverless GraphQL endpoint.
 
@@ -561,18 +562,18 @@ The service map below was created by [AWS X-Ray](https://aws.amazon.com/xray/):
 ![](https://user-images.githubusercontent.com/1587005/36131686-dac3658a-1027-11e8-9d5d-4a435f5ae43b.png)
 
 For 99% of the simulated calls, DynamoDB took less than 15ms; but 1% of the calls had high response times which resulted in overall avg latency of 25ms. The Lambda execution time was 60ms; the time spent on the Lambda service itself was 90ms on average (we can optimize the Lambda execution time, but not service time itself).
- 
+
 ##### Cold Starts
 
-Approximately 2% of the total calls were [cold starts](https://hackernoon.com/im-afraid-you-re-thinking-about-aws-lambda-cold-starts-all-wrong-7d907f278a4f). I noticed an additional latency of 700ms-800ms in Lambda execution time for the first API call, which came from initialization of the Lambda container itself. 
+Approximately 2% of the total calls were [cold starts](https://hackernoon.com/im-afraid-you-re-thinking-about-aws-lambda-cold-starts-all-wrong-7d907f278a4f). I noticed an additional latency of 700ms-800ms in Lambda execution time for the first API call, which came from initialization of the Lambda container itself.
 
 This additional latency was observed in both endpoints (DynamoDB and PostgreSQL). There are ways to optimize this overhead, and I would strongly recommend you to [read up on them here](https://serverless.com/blog/keep-your-lambdas-warm/).
- 
+
 ##### Increase in Lambda memory size limit by 2x and 3x
 
 Increasing the lambda memory size by 2x (2048 MB) improved the overall latency of the Lambda service by 18%; increasing by 3x (3008 MB) improved the latency by 38%.
 
-The latency of DynamoDB backend remained constant, and the Lambda execution time itself improved within 20% range for 3x memory:  
+The latency of DynamoDB backend remained constant, and the Lambda execution time itself improved within 20% range for 3x memory:
 
 Lambda Service Latency (1GB Memory)        |  Lambda Service Latency (2GB Memory)
 :-------------------------:|:-------------------------:
@@ -596,7 +597,7 @@ You might ask, "Why do we need API Gateway? Can't we just use Lambda to fetch th
 
 #### Selling GraphQL in your organization
 
-> When using new tech, always a discussion of “do we want this, or not?” 
+> When using new tech, always a discussion of “do we want this, or not?”
 
 Ready to switch everything over, but not sure about how to convince the backend team? Well, here’s how I’ve seen this play out several times, with success.
 
@@ -608,16 +609,16 @@ Now I’m not *saying* you should do that, but also, if you wanted to, there it 
 
 #### Special thanks!
 
-First of all, I would like to thank [Nik Graf](https://twitter.com/nikgraf), [Philipp Müns](https://twitter.com/pmmuens) and [Austen Collins](https://twitter.com/austencollins) for kickstarting open source initiatives to help people build GraphQL endpoints easily on Serverless platforms. I have personally learned a lot during my work with you guys! 
+First of all, I would like to thank [Nik Graf](https://twitter.com/nikgraf), [Philipp Müns](https://twitter.com/pmmuens) and [Austen Collins](https://twitter.com/austencollins) for kickstarting open source initiatives to help people build GraphQL endpoints easily on Serverless platforms. I have personally learned a lot during my work with you guys!
 
 I would also like to give a shout to our open source committers - [Jon](https://twitter.com/superpatell), [Léo Pradel](https://twitter.com/leopradel), [Tim](https://github.com/timsuchanek), [Justin](https://github.com/JstnEdr),  [Dan Kreiger](https://github.com/serpentblade) and [others](https://github.com/serverless/serverless-graphql/graphs/contributors).
 
-Thanks [Andrea](https://twitter.com/andreapasswater) and [Drake Costa](https://twitter.com/Saeris) for reviewing the final draft of this post and [Rich](https://twitter.com/richbuggy) for helping me out with questions.  
+Thanks [Andrea](https://twitter.com/andreapasswater) and [Drake Costa](https://twitter.com/Saeris) for reviewing the final draft of this post and [Rich](https://twitter.com/richbuggy) for helping me out with questions.
 
 Last but not the least, I would like to thank [Steven](https://twitter.com/kruken) for introducing me to GraphQL.
 
-I hope you guys liked my first blog post! Feel free to reach out and let me know what you think. 
+I hope you guys liked my first blog post! Feel free to reach out and let me know what you think.
 
-Siddharth Gupta  
+Siddharth Gupta
 
 [Github](https://github.com/sid88in) | [LinkedIn](https://www.linkedin.com/in/sid88in/) | [Twitter](https://twitter.com/sidg_sid)

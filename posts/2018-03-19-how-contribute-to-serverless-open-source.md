@@ -3,7 +3,9 @@ title: "How to contribute to Serverless open source projects"
 description: "Interested in contributing to Serverless open source projects? Here's how you can."
 date: 2018-03-19
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Serverless_logo.png"
-category: guides-and-tutorials, engineering-culture
+category:
+  - guides-and-tutorials
+  - engineering-culture
 authors:
   - AndreaPasswater
 ---

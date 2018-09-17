@@ -4,7 +4,10 @@ description: "The benefits, and the drawbacks, to serverless are real. When (and
 date: 2018-03-21
 layout: Post
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/why-not/why-not-header.png"
-category: guides-and-tutorials, operations-and-observability, engineering-culture
+category:
+  - guides-and-tutorials
+  - operations-and-observability
+  - engineering-culture
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/why-not/why-not-header.png'
 authors:
   - AndreaPasswater

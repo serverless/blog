@@ -6,7 +6,8 @@ layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-express-rest-api.jpg'
 authors:
   - AlexDeBrie
-category: guides-and-tutorials
+category:
+  - guides-and-tutorials
 featured: guides-and-tutorials
 ---
 
@@ -23,7 +24,7 @@ Below is a step-by-step walkthrough of creating a new Serverless service using E
 - Set up path-specific routing for more granular metrics and monitoring
 - Configure your environment for local development for a faster development experience.
 
-If you already have an Express application that you want to convert to Serverless, skip to the [Converting an existing Express application](#converting-an-existing-express-application) section below. 
+If you already have an Express application that you want to convert to Serverless, skip to the [Converting an existing Express application](#converting-an-existing-express-application) section below.
 
 #### Getting Started
 
@@ -504,29 +505,29 @@ If you already have an existing Express application, it's very easy to convert t
 
 1. Install the `serverless-http` package -- `npm install --save serverless-http`
 
-2. Add the `serverless-http` configuration to your Express application. 
+2. Add the `serverless-http` configuration to your Express application.
 
 	You’ll need to import the serverless-http library at the top of your file:
-	
+
 	`const serverless = require('serverless-http');`
-	
+
 	then export your wrapped application:
-	
+
 	`module.exports.handler = serverless(app);.`
-	
+
 	For reference, an example application might look like this:
-	
+
 	```
 	# app.js
-	
+
 	const serverless = require('serverless-http'); <-- Add this.
 	const express = require('express')
 	const app = express()
-	
-	
+
+
 	... All your Express code ...
-	
-	
+
+
 	module.exports.handler = serverless(app); <-- Add this.
 	```
 
@@ -534,15 +535,15 @@ If you already have an existing Express application, it's very easy to convert t
 
 	```yml
 	# serverless.yml
-	
+
 	service: express-app
-	
+
 	provider:
 	  name: aws
 	  runtime: nodejs6.10
 	  stage: dev
 	  region: us-east-1
-	
+
 	functions:
 	  app:
 	    handler: app.handler

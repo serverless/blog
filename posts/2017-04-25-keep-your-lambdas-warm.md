@@ -3,7 +3,9 @@ title: Keeping Functions Warm - How To Fix AWS Lambda Cold Start Issues
 description: Learn how to prevent cold start in your Lambda functions with the Serverless WarmUp plugin.
 date: 2017-04-25
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/keep-your-lambdas-warm.jpg'
-category: guides-and-tutorials, operations-and-observability
+category:
+  - guides-and-tutorials
+  - operations-and-observability
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/keep-your-lambdas-warm.jpg'
 authors:
   - GoncaloNeves
@@ -89,14 +91,14 @@ module.exports.lambdaToWarm = function(event, context, callback) {
     console.log('WarmUP - Lambda is warm!')
     return callback(null, 'Lambda is warm!')
   }
-  
+
   ... add lambda logic after
 }
 ```
 
 Perfect! Now all of your Lambdas are hot, and you have less to worry about.
 
-You can find more info [here](https://github.com/FidelLimited/serverless-plugin-warmup#options) about options, event source and estimated cost. 
+You can find more info [here](https://github.com/FidelLimited/serverless-plugin-warmup#options) about options, event source and estimated cost.
 
 #### Additional provider support?
 

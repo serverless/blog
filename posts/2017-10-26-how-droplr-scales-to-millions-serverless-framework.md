@@ -3,14 +3,15 @@ title: How Droplr Scales to Millions With The Serverless Framework
 description: Droplr is used to share 1000s of screencasts and files every day. Here's how they empowered their growth with the Serverless Framework.
 date: 2017-10-26
 thumbnail: 'https://avatars2.githubusercontent.com/u/828077?s=400&v=4'
-category: user-stories
+category:
+  - user-stories
 authors:
   - AntoniOrfin
 ---
 
 I'm Antoni Orfin, a Solution Architect at [Droplr](https://droplr.com/?utm_source=serverlesscom&utm_medium=referral&utm_campaign=blogpost20171020). We're used by more than 500,000 users, who share thousands of screenshots, screencasts and files every day—so we're constantly looking for technologies that empower growth.
 
-When we first heard about AWS Lambda, we were using a Docker-based microservices architecture. It carried some problems: rapid deployments, complexity of Docker-based microservices architecture and underutilized EC2. Lambda could help us eliminate some of that unneeded complexity.  
+When we first heard about AWS Lambda, we were using a Docker-based microservices architecture. It carried some problems: rapid deployments, complexity of Docker-based microservices architecture and underutilized EC2. Lambda could help us eliminate some of that unneeded complexity.
 
 We immediately knew we wanted to give Lambda a try. Our main goal was to make our development process even as streamlined as possible. Our main goals were to boost productivity and inspire innovation—make it super easy and fun for developers to deploy their own production-grade microservices.
 
@@ -20,7 +21,7 @@ It's been quite a journey, but well worth setting off on! Read on for a deeper d
 
 # Our Serverless architecture
 
-From the very beginning, we knew we wanted to make a large portion of our infrastructure Serverless. For that reason we approached the process strategically.   
+From the very beginning, we knew we wanted to make a large portion of our infrastructure Serverless. For that reason we approached the process strategically.
 
 First of all, we decided to migrate all of our workers that are processing background jobs:
 
@@ -29,9 +30,9 @@ First of all, we decided to migrate all of our workers that are processing backg
 
 Once we had this done, the fun part started. We needed to take care of all the public-facing microservices… :
 
-- **REST APIs** - Node.js Express based APIs 
+- **REST APIs** - Node.js Express based APIs
 - **Integrations’ microservices** - Droplr is richly integrated with other platforms like [Jira](https://droplr.com/blog/jira-droplr?utm_source=serverlesscom&utm_medium=referral&utm_campaign=blogpost20171020), Confluence and Trello. All of these integrations are running serverless.
-- **Server Side Rendered web applications** - yep, we **do** SSR on Lambda :-) 
+- **Server Side Rendered web applications** - yep, we **do** SSR on Lambda :-)
 
 [![Droplr's Serverless Architecture](https://d.pr/33vsN0.png)](https://d.pr/33vsN0?utm_source=serverlesscom&utm_medium=referral&utm_campaign=blogpost20171020)
 
@@ -41,7 +42,7 @@ As we still use MongoDB and Redis, Lambda functions that need access to the data
 
 ## The background jobs
 
-The first part of our Serverless Proof of Concept was to migrate all of our background workers. 
+The first part of our Serverless Proof of Concept was to migrate all of our background workers.
 
 Prior to going serverless, we had Scala daemons that were constantly running in our ECS cluster and consumed Redis lists of events. We also had a couple of Ruby functions invoked by CRON. We found out that these were ideal components to rewrite with our serverless approach.
 
@@ -53,7 +54,7 @@ Lambda’s native ability to schedule function invocations is a great drop-in re
 
 ```yml
 # serverless.yml - Sample function that deletes expired drops
-functions:  
+functions:
   deleteExpiredDrops:
     handler: DeleteExpiredDropsHandler.handle
     events:
@@ -85,7 +86,7 @@ We’ve superpowered our HTTP microservices, by setting **our own CloudFront dis
 We accomplished all this by simply creating a Serverless plugin, which we've released as an open-source project: [serverless-api-cloudfront](https://github.com/Droplr/serverless-api-cloudfront). The good news is that our performance tests didn't show any significant latency added by this solution.
 
 # Securing all that Serverless
-Serverless is quite a new technology, not (yet) widely adopted. and lacking in documented security best practices. 
+Serverless is quite a new technology, not (yet) widely adopted. and lacking in documented security best practices.
 
 Security was one of our biggest concerns, and we spent hours figuring out how  to make everything work safely on all the layers of the stack.
 
@@ -137,7 +138,7 @@ After every build, failed or successful, we instantly receive a notification on 
 
 # Monitoring and Alerting
 
-Monitoring and alerting is crucial for all production-grade services. It’s especially required when you work with a microservices architecture because it’s impossible to spot anomalies manually. 
+Monitoring and alerting is crucial for all production-grade services. It’s especially required when you work with a microservices architecture because it’s impossible to spot anomalies manually.
 
 We use three SaaS tools for monitoring and alerting. At the moment, we don’t have any self-hosted monitoring software as we believe that, for the time being, it’s cheaper and more reliable for us to outsource it.
 
@@ -149,13 +150,13 @@ If a response returns a non 2XX status code, we're automatically alerted on our 
 
 To see how our “infrastructure” behaves in the long run and in correlation with every independently running service, we use [DataDog](https://www.datadoghq.com/).
 
-DataDog is richly integrated with AWS so it allows us to gather various metrics from “serverless” AWS services like Lambda, S3, CloudFront. The thing we liked the most is DataDog’s graphing feature. We can combine multiple metrics on a single graph and add mathematic functions to it. 
+DataDog is richly integrated with AWS so it allows us to gather various metrics from “serverless” AWS services like Lambda, S3, CloudFront. The thing we liked the most is DataDog’s graphing feature. We can combine multiple metrics on a single graph and add mathematic functions to it.
 
 For example, you can create a graph that represents the number of AWS Lambda errors divided by invocations to get the ratio of failed requests. Next, just set-up alerting with a condition of “ratio>50%” and you’re ready to go. DataDog will automatically send you an alert when the ratio of any specific function reaches 50% so you don’t have to create separate alerts for each function.
 
 ## Log Analysis
 
-The last part of our monitoring stack is log analysis. That was the trickiest thing to chose but we ended up with [Logz.io](https://logz.io/). 
+The last part of our monitoring stack is log analysis. That was the trickiest thing to chose but we ended up with [Logz.io](https://logz.io/).
 
 It’s ELK-based and can automatically gather logs from S3 buckets (like ELB or CloudFront logs)—basically all we need. We can even set up alerting based on the logs condition. We mostly use it to analyze the CloudFront logs related to our file downloads to spot any anomalies or abusive users.
 

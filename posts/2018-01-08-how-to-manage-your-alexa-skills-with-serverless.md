@@ -3,7 +3,8 @@ title: How To Manage Your Alexa Skills With Serverless
 description: How to manage Alexa Skills and Lambda functions with Serverless Framework + Alexa Skills Plugin
 date: 2018-01-08
 thumbnail: https://raw.githubusercontent.com/marcy-terui/serverless-alexa-skills/master/images/serverless-alexa-skills.png
-category: guides-and-tutorials
+category:
+  - guides-and-tutorials
 authors:
   - MasashiTerui
 ---

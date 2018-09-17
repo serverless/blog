@@ -1,9 +1,11 @@
 ---
-title: Using the Serverless Dashboard plugin for Atom 
+title: Using the Serverless Dashboard plugin for Atom
 description: Making it easier to manage serverless applications from within the Atom editor
 date: 2018-02-05
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/atom-editor-square.jpeg 
-category: engineering-culture, guides-and-tutorials
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/atom-editor-square.jpeg
+category:
+  - engineering-culture
+  - guides-and-tutorials
 authors:
   - RupakGanguly
 ---
@@ -25,7 +27,7 @@ Let's start by installing the Atom package or plugin. If you don't have [Atom](h
 Installing the Serverless Framework is a breeze:
 
 ```bash
-npm install -g serverless 
+npm install -g serverless
 ```
 
 You can search for the [Serverless Dashboard](https://atom.io/packages/serverless-dashboard) package on the Atom site:
@@ -52,7 +54,7 @@ Let's create a simple app named `helloatom` using the boilerplate template provi
 sls create -t hello-world -n helloatom -p helloatom
 ```
 
-Open the app files in atom. 
+Open the app files in atom.
 
 To use the Serverless Dashboard plugin, locate the 'Serverless Dashboard' item on the 'Packages' menu list as shown below:
 
@@ -68,7 +70,7 @@ A new pane will open with the Serverless Dashboard showing a visual representati
 
 # Managing a serverless app
 
-The Serverless Dashboard plugin not only lets you visualize the `serverless.yml` file, but also helps you easily manage a few things inside the Atom editor pane. 
+The Serverless Dashboard plugin not only lets you visualize the `serverless.yml` file, but also helps you easily manage a few things inside the Atom editor pane.
 
 ## Deploy a service
 
@@ -99,7 +101,7 @@ Let's add a new function, `byeWorld`, to the serverless.yml file, like so:
           method: get
           cors: true
 ```
-Switch over to the Serverless Dashboard pane, and click on the 'Reload serverless.yml' button. 
+Switch over to the Serverless Dashboard pane, and click on the 'Reload serverless.yml' button.
 
 ![Reload serverless.yml](https://user-images.githubusercontent.com/8188/35177381-df382e18-fd4c-11e7-85fe-091dc6af5131.png)
 *Reload serverless.yml*

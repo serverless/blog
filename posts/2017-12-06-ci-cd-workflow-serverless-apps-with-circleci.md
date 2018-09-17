@@ -3,12 +3,14 @@ title: "Automating CI/CD workflow for serverless apps with CircleCI"
 description: "There are big benefits to using serverless architectures in continuous integration & deployment (CI/CD) processes. We'll show you why, and how to do it."
 date: 2017-12-07
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/circleci-post.png'
-category: operations-and-observability, guides-and-tutorials
+category:
+  - operations-and-observability
+  - guides-and-tutorials
 authors:
   - RupakGanguly
 ---
 
-It's pretty easy to set up a [simple Serverless app](https://serverless.com/blog/anatomy-of-a-serverless-app/) with the [Serverless Framework](https://serverless.com/framework/). _But_—in real life, the process of continuous integration and deployment (CI/CD) of that application can be much more involved. 
+It's pretty easy to set up a [simple Serverless app](https://serverless.com/blog/anatomy-of-a-serverless-app/) with the [Serverless Framework](https://serverless.com/framework/). _But_—in real life, the process of continuous integration and deployment (CI/CD) of that application can be much more involved.
 
 Never fear! In this post, we're going to take a deep look at the end-to-end workflow of automating a CI/CD process for a serverless application via CircleCI.
 
@@ -39,14 +41,14 @@ The CI process starts with the developer checking code into a code repository. T
 Once the code is tested in the context of the local branch, the developer needs to merge the master branch into their local branch, and then run the tests/code coverage again. The above process happens repeatedly for every code commit and thereby continuously integrates the new code changes into the existing software.
 
 ##### Continuous Delivery
-Although the continuous integration process ensures that the code in the master branch is always pristine and well-tested, it cannot help catch usability issues. A QA team and other stakeholders are usually responsible for usability and acceptance testing. 
+Although the continuous integration process ensures that the code in the master branch is always pristine and well-tested, it cannot help catch usability issues. A QA team and other stakeholders are usually responsible for usability and acceptance testing.
 
-A successful exit from the CI process triggers the continuous delivery process and delivers the software system to a QA staging area. The QA environment usually closely resembles the production environment but with less redundancy. The continuous delivery process can have a mixed bag of automated and manual usability/acceptance testing phases. 
+A successful exit from the CI process triggers the continuous delivery process and delivers the software system to a QA staging area. The QA environment usually closely resembles the production environment but with less redundancy. The continuous delivery process can have a mixed bag of automated and manual usability/acceptance testing phases.
 
 While continuous delivery provides a process to create frequent releases, the releases may not be deployed at all times.
 
 ##### Continuous Deployment
-In case of continuous deployment, every change that is made to the code gets deployed to production, unless tests fail the process. This process is highly automated with new code built, tested, versioned, tagged and deployed to the production environment. 
+In case of continuous deployment, every change that is made to the code gets deployed to production, unless tests fail the process. This process is highly automated with new code built, tested, versioned, tagged and deployed to the production environment.
 
 In a special scenario, where major bugs and issues are found in a recently deployed version of the software, a "rollback" can be initiated. A rollback process takes a previous release version and delivers it to the production environment. This process can be automated but is usually manually triggered.
 
@@ -54,20 +56,20 @@ In a special scenario, where major bugs and issues are found in a recently deplo
 
 Now that we've gone over some basics, let's get started!
 
-For this project, we'll use a serverless app, `hello-world-ci`, which I created using the `hello-world` template from the Serverless Framework. We'll keep the app very simple so that we can focus on the CI process. 
+For this project, we'll use a serverless app, `hello-world-ci`, which I created using the `hello-world` template from the Serverless Framework. We'll keep the app very simple so that we can focus on the CI process.
 
 You can install the sample app from the [source repo](https://github.com/rupakg/hello-world-ci) using the Serverless Framework, like so:
 
 ```
 sls install --url https://github.com/rupakg/hello-world-ci
 ```
- 
+
 Having proper tests in place safeguards against subsequent code updates. We'd like to run tests and code coverage against our code. If the tests pass, we'll deploy our app.
 
 It's this—running tests against our code whenever new code is committed—that allows for continuous integration.
 
 ##### Testable Code
-We have some [tests](https://github.com/rupakg/hello-world-ci/blob/master/tests/hello-world.spec.js) that we'll run as part of the testing phase. Notice that we have a spec that tests if our function is being called. 
+We have some [tests](https://github.com/rupakg/hello-world-ci/blob/master/tests/hello-world.spec.js) that we'll run as part of the testing phase. Notice that we have a spec that tests if our function is being called.
 
 We are also separating out the actual testable logic of our function into a class:
 
@@ -82,7 +84,7 @@ class HelloWorld {
         };
     }
 }
-    
+
 module.exports = HelloWorld;
 ```
 
@@ -156,7 +158,7 @@ We also get an HTML page with the code coverage results depicted visually, like 
 *Figure 2: Visual code coverage results*
 
 ##### Excluding Testing Artifacts
-After running the tests, you should see that a `coverage` folder has been created. This holds the files that are generated by Jest. You'll also have a `.circleci` folder—that one is required to enable build automation with CircleCI. 
+After running the tests, you should see that a `coverage` folder has been created. This holds the files that are generated by Jest. You'll also have a `.circleci` folder—that one is required to enable build automation with CircleCI.
 
 When we deploy our serverless app via the Serverless Framework, all the files in your current folder will be zipped up and part of the deployment to AWS.
 
@@ -203,8 +205,8 @@ Now that we've completed our CircleCI setup, let's work on implementing the CI/C
 ##### Configuration
 We'll configure CircleCI via a config file named `config.yml` and keep it in the `.circleci` directory. Explanation of how CircleCI works is out of scope for this article, but we'll look at the steps needed to automate our deployments.
 
-> If you want some further reading, CircleCI introduces concepts of [Jobs](https://circleci.com/docs/2.0/sample-config/#jobs-overview), [Steps](https://circleci.com/docs/2.0/sample-config/#steps-overview) and [Workflows](https://circleci.com/docs/2.0/workflows/). 
- 
+> If you want some further reading, CircleCI introduces concepts of [Jobs](https://circleci.com/docs/2.0/sample-config/#jobs-overview), [Steps](https://circleci.com/docs/2.0/sample-config/#steps-overview) and [Workflows](https://circleci.com/docs/2.0/workflows/).
+
 To keep things simple and get started, we'll use a simple configuration wherein everything we do will be in one job and under one step. CircleCI allows for multiple jobs with multiple steps all orchestrated via a workflow.
 
 Here is a snippet of the config file that we'll use:
@@ -213,31 +215,31 @@ Here is a snippet of the config file that we'll use:
 jobs:
   build:
     ...
-    
+
     steps:
       - checkout
-      
+
       # Download and cache dependencies
       - restore_cache:
           keys:
             - dependencies-cache-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
             - dependencies-cache
-      
+
       - run:
           name: Install Serverless CLI and dependencies
           command: |
             sudo npm i -g serverless
             npm install
 
-      - run: 
+      - run:
           name: Run tests with code coverage
           command: npm test --coverage
-       
+
       - run:
-          name: Deploy application 
-          command: sls deploy 
-      
+          name: Deploy application
+          command: sls deploy
+
       - save_cache:
           paths:
             - node_modules
@@ -281,7 +283,7 @@ You can see the tests running as part of the 'Run tests with code coverage' step
 
 *Figure 6: Running tests for the project*
 
-And finally, you see that our app has been deployed under the 'Deploy application' step. 
+And finally, you see that our app has been deployed under the 'Deploy application' step.
 
 ![Deploying the project](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/circleci-success-1.png)
 ![Deploying the project](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/circleci-success-2.png)
@@ -294,7 +296,7 @@ Last but not least, we can copy the endpoint shown in the output onto a browser 
 
 *Figure 8: Running the app*
 
-Hopefully, the full rundown of the process and its implementation on a CI/CD platform such as CircleCI gives you a better understanding of automating your own applications. 
+Hopefully, the full rundown of the process and its implementation on a CI/CD platform such as CircleCI gives you a better understanding of automating your own applications.
 
 #### Advanced Deployment Patterns
 
@@ -400,10 +402,10 @@ Here are the details of the flow:
 #### Routing Mechanics
 The traffic routing is done by setting up a DNS service (AWS Route 53) in front of the API Gateway.
 
-In the case of canary deployments, AWS Route 53 is switched from 'simple routing' to 'weighted routing' to achieve a percentage mix of user traffic between environments. In case of blue/green deployments, the 'weighted routing' is toggled between 0% and 100% across the blue/green environments. 
+In the case of canary deployments, AWS Route 53 is switched from 'simple routing' to 'weighted routing' to achieve a percentage mix of user traffic between environments. In case of blue/green deployments, the 'weighted routing' is toggled between 0% and 100% across the blue/green environments.
 
 #### Benefits of Serverless
-In traditional architectures, the canary and blue/green deployments are used after a lot of consideration and planning. The reason being, there's a high cost to provisioning hardware and maintaining multiple environments required in order to realize the potential of such deployment patterns. 
+In traditional architectures, the canary and blue/green deployments are used after a lot of consideration and planning. The reason being, there's a high cost to provisioning hardware and maintaining multiple environments required in order to realize the potential of such deployment patterns.
 
 The benefits of embracing serverless architectures are immediately evident here—it means no provisioning or maintenance costs for multiple environments. On top of that, the fact that serverless is pay-per-execution reduces execution costs significantly; you never pay for any idle infrastructure, in any environment.
 

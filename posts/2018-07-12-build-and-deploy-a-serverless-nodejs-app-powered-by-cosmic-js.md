@@ -3,7 +3,8 @@ title: "Build and deploy a Serverless Node.js app powered by Cosmic JS"
 description: "Get started with the Cosmic JS Serverless Starter app. Transform any Node.js app into an infinitely scalable Node.js Serverless app."
 date: 2018-07-12
 thumbnail: 'https://cosmic-s3.imgix.net/e07fd3b0-7eee-11e8-bc42-55745f37e956-cosmic-serverless-lambda.jpg?w=1000'
-category: guides-and-tutorials
+category:
+  - guides-and-tutorials
 heroImage: ''
 authors:
   - TonySpiro
@@ -112,7 +113,7 @@ plugins:
 
 #### Edit `app.js`
 
-Next, we needed to edit the entry point for the app, the `app.js` file, to export the main handler function. We also included the [serverless-http node module](https://www.npmjs.com/package/serverless-http) to wrap our Express app for Serverless use.  
+Next, we needed to edit the entry point for the app, the `app.js` file, to export the main handler function. We also included the [serverless-http node module](https://www.npmjs.com/package/serverless-http) to wrap our Express app for Serverless use.
 
 Here's the `app.js` file converted to serverless:
 
@@ -152,7 +153,7 @@ module.exports.handler = serverless(app);
 ```
 
 ## In Conclusion
-With a few edits, you can quickly transform almost any Node.js app into a serverless app. The [Serverless Framework](https://serverless.com/framework) abstracts the complexity of AWS account configuration, and gives you a delightful development experience. 
+With a few edits, you can quickly transform almost any Node.js app into a serverless app. The [Serverless Framework](https://serverless.com/framework) abstracts the complexity of AWS account configuration, and gives you a delightful development experience.
 
 Add Cosmic JS-powered content, and you have an infinitely scalable serverless app with content managed via the Cosmic JS API.  No servers to manage, no CMS to maintain. Building apps, not infrastructure, is the future!
 

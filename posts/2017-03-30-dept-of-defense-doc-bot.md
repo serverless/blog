@@ -3,7 +3,8 @@ title: How the US Department of Defense is Streamlining Open Source Contribution
 description: Learn how the Defense Digital Service at the Pentagon used Serverless to automate the Developer Certificate of Origin process for contributors.
 date: 2017-03-30
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/24520509/5c4edd80-154e-11e7-825c-600ad2e5e247.png
-category: user-stories
+category:
+  - user-stories
 authors:
   - TomBereknyei
 ---
@@ -30,7 +31,7 @@ The first phase of Code.mil was to work with the developer community in crafting
 
 I was interested in using Lambda - an Amazon Web Services (AWS) feature that runs on demand computing rather than running it on a server. However, I felt like I was reinventing the wheel by implementing this with terraform and deploying the Lambda.
 
-> This is when I came across Serverless, which was the perfect solution to leverage an AWS function minus all the boring work. 
+> This is when I came across Serverless, which was the perfect solution to leverage an AWS function minus all the boring work.
 
 Serverless’s website led me to their [Examples repository](https://github.com/serverless/examples) in GitHub, where I did a quick forking of their [error code/error handling code](https://github.com/serverless/examples/tree/master/aws-node-github-webhook-listener) and used it as the basis of our automated DCO bot.
 

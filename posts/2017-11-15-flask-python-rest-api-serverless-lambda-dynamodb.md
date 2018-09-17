@@ -3,7 +3,8 @@ title: "Build a Python REST API with Serverless, Lambda, and DynamoDB"
 description: "Deploy a Serverless REST API in minutes using the popular Flask web framework"
 date: 2017-11-16
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-python-flask-api.jpg'
-category: guides-and-tutorials
+category:
+  - guides-and-tutorials
 heroImage: ''
 authors:
   - AlexDeBrie

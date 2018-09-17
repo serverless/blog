@@ -3,7 +3,8 @@ title: "How to Create a Dynamic Site with Pre-built Serverless Components"
 description: "A step-by-step tutorial that guides you through creating a dynamic website with pre-built Serverless Components."
 date: 2018-05-31
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif'
-category: guides-and-tutorials
+category:
+  - guides-and-tutorials
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif'
 authors:
   - EslamHefnawy
@@ -46,7 +47,7 @@ Alright! Now that we have everything set up, lets starting building our retail a
 
 #### Setting up the frontend
 
-We’ll start out by setting up the frontend via S3. All you have to do is create a `serverless.yml` file, use the `static-website` component, and pass in the required config. 
+We’ll start out by setting up the frontend via S3. All you have to do is create a `serverless.yml` file, use the `static-website` component, and pass in the required config.
 
 Add the following config to a `serverless.yml` file:
 
@@ -356,7 +357,7 @@ Alright! Now we're ready to deploy! Just run the following command:
 components deploy
 ```
 
-At this point, all your components are being provisioned, and your seed data will be inserted into the newly created database. 
+At this point, all your components are being provisioned, and your seed data will be inserted into the newly created database.
 
 After deployment is complete, you should see the following output:
 

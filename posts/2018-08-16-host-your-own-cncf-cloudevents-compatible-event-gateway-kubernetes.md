@@ -3,7 +3,9 @@ title: "Host your own CNCF CloudEvents compatible Event Gateway on Kubernetes, p
 description: "The Serverless Event Gateway quickstart for Kubernetes. Host your own private Event Gateway, point to any FaaS provider with CloudEvents."
 date: 2018-08-16
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/eg-kubernetes/event-gateway-kubernetes-header.png'
-category: news, guides-and-tutorials
+category:
+  - news
+  - guides-and-tutorials
 heroImage: ''
 authors:
   - SebastianBorza
@@ -109,7 +111,7 @@ One of the most popular use cases is building REST APIs, which we [have a walkth
 
 You can also use the Event Gateway to react to a single business event in multiple ways.
 
-Let’s say a new user gets created. This event would route to the Event Gateway, from where three different things can occur asynchronously: (1) a new user gets created in your user table; (2) the user gets a welcome message; (3) the sales team gets notified that a new user just signed up. 
+Let’s say a new user gets created. This event would route to the Event Gateway, from where three different things can occur asynchronously: (1) a new user gets created in your user table; (2) the user gets a welcome message; (3) the sales team gets notified that a new user just signed up.
 
 All this can happen without updating any code on the original business event itself. ([Read more on this here](https://serverless.com/blog/how-use-event-gateway-use-cases-rest-api-custom-events/#using-the-event-gateway-with-custom-events).)
 

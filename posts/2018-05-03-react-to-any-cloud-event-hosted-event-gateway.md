@@ -3,7 +3,8 @@ title: "React to any cloud event with hosted Event Gateway"
 description: Event Gateway as a hosted service, configurable connectors, and a plugin for the Serverless Framework.
 date: 2018-05-03
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-readme-header1.png'
-category: news
+category:
+  - news
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/event-gateway-announcement/event-gateway-readme-header1.png'
 authors:
   - AlexDeBrie
@@ -81,7 +82,7 @@ The [CloudEvents spec](https://github.com/cloudevents/spec) recently hit an 0.1 
 
 ## The future of Event Gateway: where we’re going
 
-Our path here is threefold: we want to continue adding more functionality into the user experience, integrate a wider range of available function types, and make it even easier to pull in different events. 
+Our path here is threefold: we want to continue adding more functionality into the user experience, integrate a wider range of available function types, and make it even easier to pull in different events.
 
 ### User experience and diagnostics
 
@@ -95,7 +96,7 @@ We’re working to add better diagnosability so that you know that your system i
 
 We want to increase the range of function types you can use to include additional FaaS providers, such as Azure Functions, Kubeless, OpenFaaS, and others.
 
-We also want to include more built-in, configurable functions to handle boilerplate logic: authorization, validation, transformation, enrichment, and connecting other systems. 
+We also want to include more built-in, configurable functions to handle boilerplate logic: authorization, validation, transformation, enrichment, and connecting other systems.
 
 ### Feeding events into the Event Gateway
 

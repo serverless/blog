@@ -3,7 +3,8 @@ title: Communication strategies for remote teams
 description: The Serverless team is distributed all over the world. Here's how we manage communication strategies and work together (remotely).
 date: 2018-02-09
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/remote-communication/Team+communication+photo+cropped.jpg'
-category: engineering-culture
+category:
+  - engineering-culture
 authors:
   - FelixDesroches
 ---
@@ -12,7 +13,7 @@ In case you didn't know, the Serverless team brings new meaning to the word "dis
 
 Getting communication right is hard for teams who are all co-located, and at least 10x more difficult for remote teams like us. It's easy to feel disconnected when you can't interact in person—from not only your co-workers, but from the company vision, too.
 
-One way we tackle this problem is by having bi-annual team retreats. Our most recent retreat was only a couple weeks ago, and communication was our key topic of discussion. How could we make it better? 
+One way we tackle this problem is by having bi-annual team retreats. Our most recent retreat was only a couple weeks ago, and communication was our key topic of discussion. How could we make it better?
 
 So we got everyone in a room, and dug in. It made for some tough conversations, but gave us a huge amount of clarity and a stronger foundation for moving forward.
 
@@ -34,15 +35,15 @@ The line spanned our entire meeting room. One end represented people who prefer 
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/remote-communication/team+communication+photo3.png">
 
-We each had a chance to say a few words about why we had chosen that specific place on the spectrum. 
+We each had a chance to say a few words about why we had chosen that specific place on the spectrum.
 
-The results were amazing and intensely personal and humanizing. Hearing everyone explain exactly why they like a certain communication style—or don’t—was eye opening. So, too, was the sheer number of communication tools that we as as team are using (close to 10 on an initial count). 
+The results were amazing and intensely personal and humanizing. Hearing everyone explain exactly why they like a certain communication style—or don’t—was eye opening. So, too, was the sheer number of communication tools that we as as team are using (close to 10 on an initial count).
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/remote-communication/Team+communication+styles.jpg">
 
-This exercise brought to a light a few epiphanies for us a team. 
+This exercise brought to a light a few epiphanies for us a team.
 
-## 4 methods for better communication 
+## 4 methods for better communication
 
 **Communicate about which tools you use (or don't).** Don't check the team channel on Slack ever? It's ok, but say it. This doesn’t mean you have to be draconian and land on 1 or 2 tools, just recognize that everyone communicates a little differently.
 
@@ -50,8 +51,8 @@ This exercise brought to a light a few epiphanies for us a team.
 
 **Communication tools = silos.** It’s easy to assume that with every newfangled communication tool we’re all getting closer to communication nirvana. Slack will save the world! Confluence will make us organize our work more efficiently! Asana is flexible enough for all of our needs!
 
-What came out for us was the exact opposite: each communication tool is an opportunity, sure—but an opportunity to create yet another silo that will add more friction. Your colleague who never replies to your emails? They’re a Slack fiend. Feel like you’re in an echo chamber on Github, with your PRs going unnoticed? It’s because your teammate turned off notifications going to their email. 
+What came out for us was the exact opposite: each communication tool is an opportunity, sure—but an opportunity to create yet another silo that will add more friction. Your colleague who never replies to your emails? They’re a Slack fiend. Feel like you’re in an echo chamber on Github, with your PRs going unnoticed? It’s because your teammate turned off notifications going to their email.
 
-**Enact a two-way SLA.** Along with positive intent, it can be useful to assume an unofficial two-way SLA policy. This means that if you ask a question, or post a comment and it goes unanswered, follow up in at least one different channel. 
+**Enact a two-way SLA.** Along with positive intent, it can be useful to assume an unofficial two-way SLA policy. This means that if you ask a question, or post a comment and it goes unanswered, follow up in at least one different channel.
 
 We too often use our communication tools to push out content, and we need to remember that they can be really efficient pull tools as well. “Hey, would you mind answering this question I asked?” can go a long way toward healthier communication and happier people all around.

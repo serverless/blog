@@ -3,7 +3,8 @@ title: "The Serverless Framework wins Best Microservices API at the API Awards!"
 description: "API World, the largest API conference, awarded the Serverless Framework the top honor for Microservices API!"
 date: 2018-09-10
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/API-award/Serverless_Social_API-Awards-2018-min.gif'
-category: news
+category:
+  - news
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/API-award/Serverless_Social_API-Awards-2018-min.gif'
 authors:
   - AndreaPasswater
@@ -22,7 +23,7 @@ The Serverless Framework was one chosen out of hundreds of nominations, based on
 2. well-regardedness by the developer & engineering community
 3. leadership in its sector for innovation
 
-> Developers and engineers are becoming key influencers in their companies because the technologies they use continue to matter more to their business's operations. Serverless is a great example of a new era of technologies empowering developers to have a greater impact on products and IT. 
+> Developers and engineers are becoming key influencers in their companies because the technologies they use continue to matter more to their business's operations. Serverless is a great example of a new era of technologies empowering developers to have a greater impact on products and IT.
 
 _-- Geoff Domoracki, Founder of DevNetwork, producer of API World & the 2018 API Awards_
 

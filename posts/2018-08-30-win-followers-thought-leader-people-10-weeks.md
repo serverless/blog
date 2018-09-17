@@ -3,7 +3,8 @@ title: "How to win followers & thought-leader people in 10 weeks "
 description: "The Serverless team wanted to get more active on social media, so we created a 10 week program. It was so successful, we decided to open source it!"
 date: 2018-08-30
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/social-media-presence/serverless-thought-leader-header.png'
-category: engineering-culture
+category:
+  - engineering-culture
 heroImage: ''
 authors:
   - AndreaPasswater
@@ -184,7 +185,7 @@ I gotta say, as someone who created this program having no idea what the outcome
 
 ## General tips for building an online presence
 
-The number one thing I say to people is: have a personality. The internet and text-based interactions abstract away so much of who we are already. It’s easy to forget that there is a person behind the Twitter account. 
+The number one thing I say to people is: have a personality. The internet and text-based interactions abstract away so much of who we are already. It’s easy to forget that there is a person behind the Twitter account.
 
 I bet if you think about your favorite social media presences, they will have one thing in common: they either have a lot of personality, or they have such great content that you don’t care. The second one is, frankly, harder to do. People are too finicky; the content they think they want changes. But they will always be drawn to a person who they can relate to.
 
@@ -194,7 +195,7 @@ So be bold. Just tweet it.
 
 ## In sum
 
-We all really enjoyed this program, and hope you will too! See you on the social web. 
+We all really enjoyed this program, and hope you will too! See you on the social web.
 
 If you want to follow any of us on Twitter to see what we’re up to, [here’s a handy list](https://twitter.com/alaskacasey/lists/serverless-inc/members)!
 

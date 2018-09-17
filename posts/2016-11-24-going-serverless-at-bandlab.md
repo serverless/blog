@@ -3,8 +3,9 @@ title: Better DevOps with AWS Lambda + API Gateway and the Serverless Framework
 description: Guest author Nick den Engelsman writes about streamlining DevOps and why he and his team at BandLab decided on AWS Lambda + API Gateway and the Serverless Framework.
 date: 2016-11-24
 thumbnail: https://cloud.githubusercontent.com/assets/195404/19552825/d3b728ee-96b1-11e6-85e2-5fd4b8714514.png
-category: user-stories
-authors:  
+category:
+  - user-stories
+authors:
   - NickDenEngelsman
 ---
 
@@ -12,7 +13,7 @@ Hi, I'm [Nick den Engelsman](https://twitter.com/nickengelsman). I’m a Full St
 
 In this post I'll share some lessons learned from optimizing DevOps and how that led my team and I to the Serverless Framework.
 
-At the start of 2016, and for the previous five years, I worked as a Cloud Systems Engineer at a certified AWS Managed Service Program Partner in The Netherlands. Most of my tasks were to educate clients and migrate them to the AWS cloud. Their environments and applications needed to be highly available, scalable and fault tolerant. 
+At the start of 2016, and for the previous five years, I worked as a Cloud Systems Engineer at a certified AWS Managed Service Program Partner in The Netherlands. Most of my tasks were to educate clients and migrate them to the AWS cloud. Their environments and applications needed to be highly available, scalable and fault tolerant.
 
 In that role automation was key. Clients only needed to worry about pushing code and in return we would worry about keeping their infrastructure up-to-date, secure, patched, autoscaled, and in general meeting SLA’s. If you think about it, **that’s a lot of work!**
 
@@ -29,7 +30,7 @@ In order to stay [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) we
 **Phase 2:**
 --------
 
-Since myself and a few others within the company had solid Ruby knowledge, we came up with the idea to create Ruby modules that would compile to CloudFormation JSON resources (similar to Python’s [Troposphere](https://github.com/cloudtools/troposphere)). Again this worked for a while but also ended up not being as DRY as we would’ve liked! 
+Since myself and a few others within the company had solid Ruby knowledge, we came up with the idea to create Ruby modules that would compile to CloudFormation JSON resources (similar to Python’s [Troposphere](https://github.com/cloudtools/troposphere)). Again this worked for a while but also ended up not being as DRY as we would’ve liked!
 
 **Phase 3:**
 --------
@@ -38,7 +39,7 @@ As time progressed, the company built-out the group of Ruby experts and we start
 
 #### Soooo, where does serverless come into play?
 
-While still at the Dutch company we managed to set up a solid framework to automatically deploy/update/patch highly available infrastructures, which left us with only one thing we couldn’t change: Client applications! 
+While still at the Dutch company we managed to set up a solid framework to automatically deploy/update/patch highly available infrastructures, which left us with only one thing we couldn’t change: Client applications!
 
 There was only one thing we couldn’t change: **Client applications!**
 
@@ -46,7 +47,7 @@ Every new client needed to be educated. And migrating them to AWS in general was
 
 [AWS Lambda](https://aws.amazon.com/lambda/details/) lets you run code without provisioning or managing servers. You pay only for the compute time you consume — there is no charge when your code is not running.
 
-When AWS first [introduced](https://www.youtube.com/watch?v=9eHoyUVo-yg) Lambda at re:Invent in 2014, I was a bit skeptical. Their example used S3 events. The triggering of image resizing with Lambda was awesome, but I didn’t see our clients adopting this anytime soon. 
+When AWS first [introduced](https://www.youtube.com/watch?v=9eHoyUVo-yg) Lambda at re:Invent in 2014, I was a bit skeptical. Their example used S3 events. The triggering of image resizing with Lambda was awesome, but I didn’t see our clients adopting this anytime soon.
 
 Internally we started sprinkling in custom [Lambda-Backed Custom Resources](https://aws.amazon.com/blogs/aws/aws-cloudformation-update-lambda-backed-custom-resources-more/) within CloudFormation stacks to fill-up missing gaps. This was when I started to realize how powerful Lambda actually is. We were able to automate a lot of use-cases and 3rd party applications/providers with the use of AWS Lambda.
 

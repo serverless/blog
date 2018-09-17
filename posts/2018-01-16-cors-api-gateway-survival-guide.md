@@ -3,7 +3,9 @@ title: "Your CORS and API Gateway survival guide"
 description: "Get the basics on Cross-Origin Resource Sharing (CORS) and how to avoid problems with your Serverless web APIs on Lambda."
 date: 2018-01-16
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png'
-category: guides-and-tutorials, operations-and-observability
+category:
+  - guides-and-tutorials
+  - operations-and-observability
 heroImage: ''
 authors:
   - AlexDeBrie
@@ -36,13 +38,13 @@ If you want the quick and dirty way to solve CORS in your Serverless application
 
    ```yml
    # serverless.yml
-   
+
    service: products-service
-   
+
    provider:
      name: aws
      runtime: nodejs6.10
-   
+
    functions:
      getProduct:
        handler: handler.getProduct
@@ -59,7 +61,7 @@ If you want the quick and dirty way to solve CORS in your Serverless application
              method: post
              cors: true # <-- CORS!
    ```
-   
+
 2. To handle the [CORS headers](#cors-response-headers), return the CORS headers in your response. The main headers are `Access-Control-Allow-Origin` and `Access-Control-Allow-Credentials`.
 
    You can use the example below, or check out the middleware libraries discussed below to help with this:
@@ -110,9 +112,9 @@ If you want the quick and dirty way to solve CORS in your Serverless application
 
    ```yml
    # serverless.yml
-   
+
    ...
-   
+
 	resources:
 	  Resources:
 	    GatewayResponseDefault4XX:
@@ -152,13 +154,13 @@ Simply add `cors: true` to _each endpoint_ in your `serverless.yml`:
 
 ```yml
 # serverless.yml
-   
+
 service: products-service
-   
+
 provider:
   name: aws
   runtime: nodejs6.10
-   
+
 functions:
   getProduct:
     handler: handler.getProduct
@@ -175,18 +177,18 @@ functions:
           method: post
           cors: true # <-- CORS!
 ```
-   
+
 This configures API Gateway to allow any domain to access, and it includes a basic set of allowed headers. If you want additional customization (advanced usage only), it will look like this:
 
 ```yml
 # serverless.yml
-   
+
 service: products-service
 
 provider:
   name: aws
   runtime: nodejs6.10
-   
+
 functions:
   getProduct:
     handler: handler.getProduct
@@ -293,7 +295,7 @@ module.exports = { handler }
 
 Perfect—automatic CORS headers! Check out the whole Middy library for lots of other nice utilities.
 
-If you're a Pythonista, [Daniel Schep](https://twitter.com/schep_) has made a nice [`lambda-decorators`](https://github.com/dschep/lambda-decorators) library with the same goals as Middy—replacing Lambda boilerplate. 
+If you're a Pythonista, [Daniel Schep](https://twitter.com/schep_) has made a nice [`lambda-decorators`](https://github.com/dschep/lambda-decorators) library with the same goals as Middy—replacing Lambda boilerplate.
 
 Here's an example of using it in your Python functions:
 
@@ -326,7 +328,7 @@ To handle this, you'll need to add a custom GatewayResponse to your API Gateway.
 
 functions:
    ...
-   
+
 resources:
   Resources:
     GatewayResponseDefault4XX:
@@ -391,7 +393,7 @@ module.exports.getProduct = (event, context, callback) => {
 
   const origin = event.headers.origin;
   let headers;
-  
+
   if (ALLOWED_ORIGINS.includes(origin) {
     headers: {
       'Access-Control-Allow-Origin': origin,
@@ -418,7 +420,7 @@ module.exports.getProduct = (event, context, callback) => {
 };
 ```
 
-In this example, we check if the `origin` header matches one of our allowed headers. If so, we include the specific origin in our `Access-Control-Allow-Origin` header, and we state that `Access-Control-Allow-Credentials` are allowed. If the `origin` is not one of our allowed origins, we include the standard headers which will be rejected if the origin attempts a credentialed request. 
+In this example, we check if the `origin` header matches one of our allowed headers. If so, we include the specific origin in our `Access-Control-Allow-Origin` header, and we state that `Access-Control-Allow-Credentials` are allowed. If the `origin` is not one of our allowed origins, we include the standard headers which will be rejected if the origin attempts a credentialed request.
 
 #### Conclusion
 

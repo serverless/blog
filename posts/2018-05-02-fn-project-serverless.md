@@ -3,7 +3,10 @@ title: "Fn Project brings containerized, cloud-agnostic functions to a cloud nea
 description: The Fn Project is an open source, container-native serverless platform that you can run anywhere—on any cloud or on-premise.
 date: 2018-05-02
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/fn-thumb.jpg
-category: news, guides-and-tutorials, operations-and-observability
+category:
+  - news
+  - guides-and-tutorials
+  - operations-and-observability
 heroImage: ''
 authors:
   - DavidWells

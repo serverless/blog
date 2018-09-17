@@ -3,7 +3,8 @@ title: Create a blog using pre-built Serverless Components and Hugo
 description: Learn how to use pre-built Serverless Components and a static site generator like Hugo to create and deploy a blog site.
 date: 2018-05-14
 thumbnail: 'https://user-images.githubusercontent.com/8188/39884592-5aa800e8-5458-11e8-90df-3bd16d1ac463.png'
-category: guides-and-tutorials
+category:
+  - guides-and-tutorials
 heroImage: 'https://user-images.githubusercontent.com/8188/39884592-5aa800e8-5458-11e8-90df-3bd16d1ac463.png'
 authors:
   - RupakGanguly
@@ -21,13 +22,13 @@ Here is what we will cover:
 
 * Generate a static blog site
 * Deploy the site using Serverless Components
-* Deep dive into configuration and implementation 
+* Deep dive into configuration and implementation
 
 ## Generating a static blog site
 
 Although we will be using Hugo to generate our blog site, you can use your favorite static generator. As long as you can build the final site into a local folder, you are good to go. We'll see how that can be done with Hugo.
 
-**Note:** Since working with Hugo is well documented on their site, I'll leave the exercise of creating the site to you. However, to get you started, I've created a sample blog site and shared it below. You can use that with the solution I present here. 
+**Note:** Since working with Hugo is well documented on their site, I'll leave the exercise of creating the site to you. However, to get you started, I've created a sample blog site and shared it below. You can use that with the solution I present here.
 
 First, make sure to get [Hugo installed and working](https://gohugo.io/getting-started/quick-start/).
 
@@ -52,7 +53,7 @@ If you are following along, you should have a working blog site that you previwe
 
 You might have already heard about our latest project, [Serverless Components](https://github.com/serverless/components), and [how you can use them](https://serverless.com/blog/what-are-serverless-components-how-use/). Our goal was to encapsulate common functionality into so-called "components", which could then be easily re-used, extended and shared with other developers and other serverless applications.
 
-We built all the functionality needed to take a set of static files, host it on S3 with appropriate permissions & configuration, set it up on a CDN, map a domain name, and finally deploy it to AWS.  
+We built all the functionality needed to take a set of static files, host it on S3 with appropriate permissions & configuration, set it up on a CDN, map a domain name, and finally deploy it to AWS.
 
 ## The blog application
 
@@ -79,7 +80,7 @@ components:
 ```
 The `type` identifies the application. The `components` block is the gut of the application. It simply references the `static-website` component using the `type` attribute. It used the `inputs` block to supply the input parameters required by the `static-website` component to customize it behavior.
 
-The `contentPath` specifies the path where the content of the site belongs. In the above section, we generated the static files for our blog site using Hugo. This location is what we specify here. 
+The `contentPath` specifies the path where the content of the site belongs. In the above section, we generated the static files for our blog site using Hugo. This location is what we specify here.
 
 Although the `static-website` component can make use of `templateValues` using Mustache templates, our blog site does not use it.
 
@@ -121,7 +122,7 @@ Static Website resources:
   http://sls-blog-81jdzsed8u.example.com.s3-website-us-east-1.amazonaws.com
 ```
 
-:boom: You have a blog site at: 
+:boom: You have a blog site at:
 
 ```bash
 http://sls-blog-81jdzsed8u.example.com.s3-website-us-east-1.amazonaws.com
@@ -131,7 +132,7 @@ http://sls-blog-81jdzsed8u.example.com.s3-website-us-east-1.amazonaws.com
 
 Figure: _Blog site built with Hugo and deployed with Serverless Components_
 
-**Note**: If you put in a real domain name, you can access the site via the domain as well. Give CloudFront and Route53 about 15-20 mins to finish the configuration. 
+**Note**: If you put in a real domain name, you can access the site via the domain as well. Give CloudFront and Route53 about 15-20 mins to finish the configuration.
 
 You can also get the information about the resources that were deployed by running:
 
@@ -154,7 +155,7 @@ No excuses—get on with those articles you have been meaning to write!
 Now that I have piqued your interest in Serverless Components, I wanted to also express that you don't have to be highly technical to use it. The Serverless Components abstracts away a lot of inner workings, and exposes a simplistic view of the behavior you seek. You, as a front-end developer or a full-stack engineer, can benefit from using the serverless technologies without getting into the nuts and bolts of things.
 
 For the curious, let's get into the details and take a peek behind the curtain of how these components work.
- 
+
 ## The Static Website Component
 
 The blog site we created uses the `static-website` component.
@@ -339,7 +340,7 @@ components:
 
 #### Output Variables
 
-Components can take input parameters to customize their behavior, but components can also expose output variables. The output variables expose output values that are generated inside the component as part of their implementation. 
+Components can take input parameters to customize their behavior, but components can also expose output variables. The output variables expose output values that are generated inside the component as part of their implementation.
 
 Here is an example:
 
@@ -350,11 +351,11 @@ Here is an example:
       ...
       dnsName: ${siteCloudFrontConfig.distribution.domainName}
 ```
-The `dnsName` input parameter for the `aws-route53` component is provided the output from the `aws-cloudfront` component. You will notice that the component's instance name, `siteCloudFrontConfig`, is used to reference the output variable. 
+The `dnsName` input parameter for the `aws-route53` component is provided the output from the `aws-cloudfront` component. You will notice that the component's instance name, `siteCloudFrontConfig`, is used to reference the output variable.
 
 #### Dependency
 
-Components can have dependencies amongst each other; it can be fairly cumbersome for a component or application author to keep track of. To aid with that, the system keeps track of the dependency tree for you, based on the use of input variables and output variables. 
+Components can have dependencies amongst each other; it can be fairly cumbersome for a component or application author to keep track of. To aid with that, the system keeps track of the dependency tree for you, based on the use of input variables and output variables.
 
 For example, since the `siteRoute53Config` component uses the output variable from the `siteCloudFrontConfig` component, the `siteRoute53Config` component waits for the `siteCloudFrontConfig` component to finish, and then uses its output.
 
@@ -421,7 +422,7 @@ module.exports = {
   info
 }
 ```
-Let's walk through the code. 
+Let's walk through the code.
 
 First, note the three methods that provide all the functionality: `deploy`, `remove`, and `info`. At the end of the code block, you will notice that these methods are exported so that they are publicly accessible from outside.
 
@@ -431,13 +432,13 @@ However, it is not necessary to provide an implementation via the `index.js` fil
 
 ### The `deploy` method
 
-The `deploy` method is used to encapsulate the deployment behavior of the component. It inspects & validates input parameters, calls appropriate code to deploy the necessary resources, and saves state in the `state.json` on disk. 
+The `deploy` method is used to encapsulate the deployment behavior of the component. It inspects & validates input parameters, calls appropriate code to deploy the necessary resources, and saves state in the `state.json` on disk.
 
 The `static-website` component completely relies on its child component implementations, and so the `deploy` method only prints out a message that includes the site url. The system calls the `deploy` method of the child components down the dependency chain.
 
 ### The `remove` method
 
-The `remove` method is used to encapsulate the cleanup behavior of the component. It reverses the effect and cleans up resources created via the `deploy` method. 
+The `remove` method is used to encapsulate the cleanup behavior of the component. It reverses the effect and cleans up resources created via the `deploy` method.
 
 In this case, a message is printed stating that the site has been removed. The component's state in the `state.json` file is also cleared. The system calls the `remove` method of the child components down the dependency chain.
 
@@ -448,7 +449,7 @@ The `info` method is used to print any resources that were deployed. In this cas
 
 ## Summary
 
-We saw how easy and simple it is to use Serverless Components to build and deploy applications, such as the blog site we created. Components gives us the flexibility to compose higher-order applications by combining reusable pieces of code. 
+We saw how easy and simple it is to use Serverless Components to build and deploy applications, such as the blog site we created. Components gives us the flexibility to compose higher-order applications by combining reusable pieces of code.
 
 What will you build with components? Let us know in the comments below.
 

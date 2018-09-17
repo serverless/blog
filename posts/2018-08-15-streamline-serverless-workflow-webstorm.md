@@ -3,13 +3,15 @@ title: "How to streamline your serverless workflow with WebStorm"
 description: "In this post, I’d like to share with you my serverless-specific IDE setup with WebStorm, and how it can massively accelerate your serverless workflow."
 date: 2018-08-15
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/webstorm-ide/streamline-webstorm-serverless2.jpg'
-category: guides-and-tutorials, engineering-culture
+category:
+  - guides-and-tutorials
+  - engineering-culture
 heroImage: ''
 authors:
   - EslamHefnawy
 ---
 
-If you build serverless applications, here’s a serverless-specific IDE setup that will help you streamline your workflow. 
+If you build serverless applications, here’s a serverless-specific IDE setup that will help you streamline your workflow.
 
 Over the past few years, I’ve been fortunate enough to work exclusively on serverless tooling.
 
@@ -113,7 +115,7 @@ WebStorm will then show you tons of crucial information and data about your code
 
 ##### Testing serverless REST APIs
 
-REST APIs are one of the most common use cases for serverless applications. Luckily for us, WebStorm comes in with a built-in REST client that you can use to test your deployed serverless endpoints. 
+REST APIs are one of the most common use cases for serverless applications. Luckily for us, WebStorm comes in with a built-in REST client that you can use to test your deployed serverless endpoints.
 
 The WebStorm REST client is a lot easier to use than curl. It includes most of what you need right inside your editor, so that you don’t need to use another REST client such as Insomnia or POSTMAN.
 

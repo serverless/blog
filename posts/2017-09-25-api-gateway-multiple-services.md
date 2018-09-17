@@ -3,7 +3,9 @@ title: How to deploy multiple micro-services under one API domain with Serverles
 description: Learn how to use the same domain name for multiple Serverless services with API Gateway base path mappings.
 date: 2017-09-25
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/aws-api-gateway-icon.png
-category: guides-and-tutorials, operations-and-observability
+category:
+  - guides-and-tutorials
+  - operations-and-observability
 heroImage: ''
 authors:
   - AlexDeBrie
@@ -25,7 +27,7 @@ You should also have your desired domain name registered through AWS. Read the d
 
 #### Deploying your two services
 
-Before we dive it, let's discuss exactly what we're trying to build. Imagine you have an e-commerce store which is a single-page application that consumes a backend REST API. Your REST API is hosted at `api.mycompany.com`, and you have two services: `users` and `products`. 
+Before we dive it, let's discuss exactly what we're trying to build. Imagine you have an e-commerce store which is a single-page application that consumes a backend REST API. Your REST API is hosted at `api.mycompany.com`, and you have two services: `users` and `products`.
 
 You would like all `users` requests to be accessed at `api.mycompany.com/users` while all `products` requests would be accessed at `api.mycompany.com/products`. Further, you would like to separate these two services so they could be deployed independently -- changes to a products endpoint wouldn't require a redeploy of all users functions as well.
 
@@ -288,7 +290,7 @@ custom:
     createRoute53Record: true
 ```
 
-Pay particular attention to this line: 
+Pay particular attention to this line:
 
 `domainName: ${self:custom.domains.${self:custom.stage}}"`
 

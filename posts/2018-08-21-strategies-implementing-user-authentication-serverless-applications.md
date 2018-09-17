@@ -3,7 +3,8 @@ title: "Strategies for implementing user authentication in serverless applicatio
 description: "Implementing user authentication in serverless applications: storing user info with sessions & JWT, token validity with Lambda Custom Authorizers, user management & more."
 date: 2018-08-21
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/authentication/auth-serverless-header.png'
-category: guides-and-tutorials
+category:
+  - guides-and-tutorials
 heroImage: ''
 authors:
   - JeremyCoffield
@@ -55,7 +56,7 @@ This has a number of benefits for serverless projects compared to sessions:
 
 ##### The bad
 
-Unfortunately, JWT isn’t a holy grail: 
+Unfortunately, JWT isn’t a holy grail:
 - JWT tokens are larger than average session keys, so your clients may be sending more data to your endpoints overall
 - All issued tokens are encrypted with a single keypair. If a leak occurs, the keypair-affected applications would need to invalidate all existing JWT tokens. Clients are allowed to choose the encryption method used on the JWT token issued to them, which could potentially expose additional attack vectors. (This [whitepaper](https://www.nds.rub.de/media/ei/veroeffentlichungen/2017/10/17/main.pdf) on the topic is quite thought-provoking.)
 - Implementing authentication via JWT in a production app certainly requires spending extra time on ensuring that the tokens are used correctly, that you only store the most necessary information in the tokens, and that you are keeping your encryption keys safe.

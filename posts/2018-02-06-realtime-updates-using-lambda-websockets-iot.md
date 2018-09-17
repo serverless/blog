@@ -3,9 +3,10 @@ title: Implement real-time updates using Lambda and Websockets via IoT
 description: Need a serverless way to give your app updated data in real-time? Try this solution with Websockets and Lambda.
 date: 2018-02-06
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/websockets-lambda-iot/ws-logo.png'
-category: guides-and-tutorials
+category:
+  - guides-and-tutorials
 heroImage: ''
-authors: 
+authors:
   - TurnerHoughton
 ---
 
@@ -83,7 +84,7 @@ ApiGatewayAuthorizer:
     RestApiId:
       Ref: ApiGatewayRestApi
     IdentitySource: "method.request.header.Authorization"
-    Type: COGNITO_USER_POOLS   
+    Type: COGNITO_USER_POOLS
 
 ```
 
@@ -247,13 +248,13 @@ You’ll need to get your IoT endpoint, which you can do by running `aws iot des
 ```javascript
 const AWS = require('aws-sdk');
 const iotData = new AWS.IotData({endpoint: 'YOUR_IOT_ENDPOINT HERE'});
-      
+
 exports.handler = (event, context, callback) => {
   const iotParams = {
     payload: JSON.stringify({ message: 'Hello!'})
     topic: `/my-app/${event.receiverId}`
   }
-  
+
   iotData.publish(iotParams, (err, data) => {
     if (err) {
       // handle error here
@@ -283,7 +284,7 @@ AWS.config.credentials = new AWS.CognitoIdentityCredentials({
 })
 
 const client = AWSMqtt.connect({
-  WebSocket: window.WebSocket, 
+  WebSocket: window.WebSocket,
   region: AWS.config.region,
   credentials: AWS.config.credentials,
   endpoint: '...iot.us-east-1.amazonaws.com', // NOTE: get this value with `aws iot describe-endpoint`

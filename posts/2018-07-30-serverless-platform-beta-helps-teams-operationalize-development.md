@@ -3,7 +3,9 @@ title: "The new Serverless Platform Beta: everything teams need to operationaliz
 description: "The Serverless Platform Beta is everything teams need to operationalize serverless development. Build, operate, and integrate serverless applications in a single toolkit."
 date: 2018-07-30
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-platform-release/1-Serverless_header-Platform+Beta.jpg'
-category: news, operations-and-observability
+category:
+  - news
+  - operations-and-observability
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-platform-release/1-Serverless_header-Platform+Beta.jpg'
 authors:
   - AustenCollins
@@ -17,7 +19,7 @@ Read on for a full feature breakdown, or watch the 2 minute video:
 
 #### Serverless adoption is growing, and fast
 
-In 2015, we created a project called the [Serverless Framework](https://serverless.com/framework/). Our mission was to make serveless development easy. By leveraging new cloud infrastructure that auto-scales and charges only when it’s used, we believed developers could build software with remarkably low overhead. 
+In 2015, we created a project called the [Serverless Framework](https://serverless.com/framework/). Our mission was to make serveless development easy. By leveraging new cloud infrastructure that auto-scales and charges only when it’s used, we believed developers could build software with remarkably low overhead.
 
 At that time, we had no idea what the Framework would become. A community rallied behind it and the broader serverless movement, contributing to the open source core, offering their opinions and insights, and sharing their passion.
 
@@ -25,7 +27,7 @@ By 2017, companies like Coca-Cola were uttering two simple words: "Serverless fi
 
 As the adoption of serverless has grown, so too have the needs of today’s serverless teams. In addition to tooling that simplifies the development of serverless applications, these teams need tools to simplify operations across their teams and entire organization.
 
-They need logs, they need team collaboration, they need ways to integrate with legacy systems, and so much more. 
+They need logs, they need team collaboration, they need ways to integrate with legacy systems, and so much more.
 
 This is exactly what we built the Serverless Platform we’re announcing today to do.
 

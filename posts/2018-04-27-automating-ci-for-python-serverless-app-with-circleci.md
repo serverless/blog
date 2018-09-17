@@ -3,7 +3,9 @@ title: Automating a CI workflow for a Python serverless app with CircleCI
 description: An end-to-end look at continuous integration with Python, Serverless and CircleCI.
 date: 2018-04-27
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd/circleci-post.png
-category: operations-and-observability, guides-and-tutorials
+category:
+  - operations-and-observability
+  - guides-and-tutorials
 heroImage: ''
 authors:
   - RupakGanguly
@@ -180,8 +182,8 @@ Now that we've completed our CircleCI setup, let's work on implementing the CI/C
 ## Configuration
 We'll configure CircleCI via a config file named `config.yml` and keep it in the `.circleci` directory. Explanation of how CircleCI works is out of scope for this article, but we'll look at the steps needed to automate our deployments.
 
-**Note:** If you want some further reading, CircleCI introduces concepts of [Jobs](https://circleci.com/docs/2.0/sample-config/#jobs-overview), [Steps](https://circleci.com/docs/2.0/sample-config/#steps-overview) and [Workflows](https://circleci.com/docs/2.0/workflows/). 
- 
+**Note:** If you want some further reading, CircleCI introduces concepts of [Jobs](https://circleci.com/docs/2.0/sample-config/#jobs-overview), [Steps](https://circleci.com/docs/2.0/sample-config/#steps-overview) and [Workflows](https://circleci.com/docs/2.0/workflows/).
+
 CircleCI allows for multiple jobs with multiple steps, all orchestrated via a workflow. But to keep things simple, we're going to keep everything within one job and one step.
 
 Here is a snippet of the config file that we'll use:
@@ -286,7 +288,7 @@ Last but not least, we can copy the endpoint shown in the output onto a browser 
 
 ![Running the app](https://user-images.githubusercontent.com/8188/39229232-dc4b6502-482f-11e8-88f4-085ce5bfd832.png)
 
-Hopefully, the full rundown of the process and its implementation on a CI/CD platform such as CircleCI gives you a better understanding of automating your own applications. 
+Hopefully, the full rundown of the process and its implementation on a CI/CD platform such as CircleCI gives you a better understanding of automating your own applications.
 
 # Summary
 

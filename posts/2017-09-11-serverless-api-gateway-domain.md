@@ -4,7 +4,8 @@ description: Learn how to set up a custom domain name for AWS Lambda & API Gatew
 date: 2017-09-11
 layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-api-gateway-domain.jpg'
-category: guides-and-tutorials
+category:
+  - guides-and-tutorials
 heroImage: ''
 authors:
   - AlexDeBrie
@@ -30,13 +31,13 @@ API Gateway requests must be served over HTTPS, so you need to get an SSL/TLS ce
 
 To set up the certificate:
 
-First, make sure you have the domain name in your [Registered Domains](https://console.aws.amazon.com/route53/home?#DomainListing:) in Route 53. 
+First, make sure you have the domain name in your [Registered Domains](https://console.aws.amazon.com/route53/home?#DomainListing:) in Route 53.
 
 <img width="1324" alt="Route 53 Registered Domains" src="https://user-images.githubusercontent.com/6509926/30004079-329556f2-908e-11e7-94a8-f1ed63367a5a.png">
 
 If you have a domain that's registered with a different registrar, you can [transfer registration to Route 53](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html). If you don't have a domain yet, you can purchase one through Route 53.
 
-Once you have your domain, [request a new certificate](https://console.aws.amazon.com/acm/home?region=us-east-1#/wizard/) with the AWS Certificate Manager. **Note that you'll need to be in region us-east-1**. This is the only region that works with API Gateway. 
+Once you have your domain, [request a new certificate](https://console.aws.amazon.com/acm/home?region=us-east-1#/wizard/) with the AWS Certificate Manager. **Note that you'll need to be in region us-east-1**. This is the only region that works with API Gateway.
 
 <img width="1322" alt="Request a Certificate" src="https://user-images.githubusercontent.com/6509926/30004102-a01f7586-908e-11e7-882f-3c72e928f65a.png">
 
@@ -131,7 +132,7 @@ Once the deploy is finished, you will see the Service Information output. This i
 
 and I get my `Hello, world!` response. If I change to the `/goodbye` endpoint, I'll get the `Goodbye, world!` response.
 
-It's nice how easy this is to get a production API endpoint, but this still isn't ideal. My domain is impossible to remember (`4aan6avk54.execute-api.us-east-1.amazonaws.com`). Plus, if I ever remove my service and then redeploy, I'll get a new random domain. 
+It's nice how easy this is to get a production API endpoint, but this still isn't ideal. My domain is impossible to remember (`4aan6avk54.execute-api.us-east-1.amazonaws.com`). Plus, if I ever remove my service and then redeploy, I'll get a new random domain.
 
 Finally, the path is odd as well -- `/dev/hello` includes my stage as well as my actual page. I'd rather have a cleaner path. This shows the need for using a custom domain.
 
@@ -141,7 +142,7 @@ By this point, you should have an issued certificate and a Serverless service wi
 
 The easiest way to do this with Serverless is with the [serverless-domain-manager](https://github.com/amplify-education/serverless-domain-manager) plugin. Big thanks to the people at Amplify Education for developing this plugin.
 
-To use the plugin, first make sure you have a `package.json` file in your service. Run `npm init -y` to generate one. 
+To use the plugin, first make sure you have a `package.json` file in your service. Run `npm init -y` to generate one.
 
 Then, you'll need to install the plugin in your service:
 

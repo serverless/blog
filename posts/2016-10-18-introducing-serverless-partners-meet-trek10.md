@@ -3,7 +3,8 @@ title: "Introducing Serverless Partners: Meet Trek10"
 description: "Indiana based consultancy that specializes in using the latest services around container-based & event-driven architectures"
 date: 2016-10-18
 thumbnail: 'https://www.trek10.com/assets/logo.svg'
-category: user-stories
+category:
+  - user-stories
 authors:
   - NickGottlieb
 ---

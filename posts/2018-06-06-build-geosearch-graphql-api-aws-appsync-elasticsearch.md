@@ -3,7 +3,8 @@ title: "Build a Serverless GeoSearch GraphQL API using AWS AppSync & Elasticsear
 description: "Learn how to build a GraphQL location search service similar to AirBnB's using a fully serverless stack on AWS."
 date: 2018-06-06
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-general-yellow.jpg'
-category: guides-and-tutorials
+category:
+  - guides-and-tutorials
 heroImage: ''
 authors:
   - AndrewGriffiths
@@ -623,7 +624,7 @@ $ serverless remove
 
 We created a serverless GraphQL API. We got that API to handle an AirBnB-style geo search using Elasticsearch and AppSync. Not bad!
 
-The 
+The
 [full source code](https://github.com/techjacker/appsync-elasticsearch-geosearch) for this tutorial is available on github, so feel free to check it out!
 
 My name is Andrew Griffiths, and [here's where you can find me](https://andrewgriffithsonline.com) on the web.

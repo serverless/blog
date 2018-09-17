@@ -3,7 +3,9 @@ title: How to Test Serverless Applications
 description: "Tips from the Serverless team - how we test serverless applications."
 date: 2017-11-02
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/testing-apps.jpg'
-category: guides-and-tutorials, operations-and-observability
+category:
+  - guides-and-tutorials
+  - operations-and-observability
 heroImage: ''
 authors:
   - EslamHefnawy
@@ -11,7 +13,7 @@ authors:
 
 Serverless applications are quickly gaining in complexity—testing is key.
 
-I’ve been building the Serverless Framework for 2 years now, and during that time it's been my focus to create as smooth a testing and debugging experience as possible. In this article, I’ll share some techniques that you can use with the [Serverless Framework](https://www.serverless.com/framework) to test and debug your serverless application during development. 
+I’ve been building the Serverless Framework for 2 years now, and during that time it's been my focus to create as smooth a testing and debugging experience as possible. In this article, I’ll share some techniques that you can use with the [Serverless Framework](https://www.serverless.com/framework) to test and debug your serverless application during development.
 
 I'll focus on testing serverless functions, since this is where most of the development happens.
 
@@ -76,7 +78,7 @@ During development, you don't need to go back and forth to S3 for debugging anym
 
 ##### Local Lambda invocation
 
-Let's test those thin handler layers and how they fit in within your codebase. You can do so by invoking your function locally, using the `serverless invoke local` command. 
+Let's test those thin handler layers and how they fit in within your codebase. You can do so by invoking your function locally, using the `serverless invoke local` command.
 
 Provide it with the function you’d like to invoke, and an accurate event mock. (...Which you’ve totally set up already, right?!)
 
@@ -88,7 +90,7 @@ While `invoke local` doesn’t emulate Lambda 100%, you’ll still be able to fi
 
 ##### Using the Event Gateway
 
-We’ve recently announced a new project called the [Event Gateway](https://www.serverless.com/event-gateway) that helps manage all events happening in your serverless application. You can use the Event Gateway to locally and rapidly test your functions. 
+We’ve recently announced a new project called the [Event Gateway](https://www.serverless.com/event-gateway) that helps manage all events happening in your serverless application. You can use the Event Gateway to locally and rapidly test your functions.
 
 We'll need two terminal sessions for this. First, spin up the Event Gateway in your current terminal session with `serverless run`. Then, open another session and emit events with the `serverless emit` command. This will invoke any function that is subscribing to that event, and you’ll be able to see the result of all function invocations in the `serverless run` session.
 
@@ -96,7 +98,7 @@ We'll need two terminal sessions for this. First, spin up the Event Gateway in y
 
 ##### Remote Lambda invocation
 
-After testing and debugging your serverless application locally, you probably feel confident enough to deploy your application—at least to the dev stage. 
+After testing and debugging your serverless application locally, you probably feel confident enough to deploy your application—at least to the dev stage.
 
 Keep in mind that the local environment is a bit different than the actual deployment environment: e.g., AWS Lambda limits don’t apply locally, so you'll need to be careful to make sure you won't hitting any of those limits on deployment.
 
@@ -135,7 +137,7 @@ module.exports.createThumbnail = (event, context, callback) => {
 
 #### Recap
 
-Test your application in the dev stage and make sure that everything is working as expected. Then, you should feel safe to deploy your application to QA or production. 
+Test your application in the dev stage and make sure that everything is working as expected. Then, you should feel safe to deploy your application to QA or production.
 
 If you’ve resolved all the code-specific errors you find in the dev stage, it's unlikely they'll crop up again later. But you might still face some rare infrastructure errors (e.g., 'maximum stack count exceeded'). Those are AWS-specific errors that sometimes you can’t avoid, and unfortunately they’re outside the Serverless Framework scope.
 

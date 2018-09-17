@@ -3,7 +3,8 @@ title: "How to build a static Serverless site with Netlify"
 description: "How Serverless.com manages their static, serverless website with Netlify and the Serverless Framework."
 date: 2017-12-18
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/netlify/netlify-squarelogo.png'
-category: guides-and-tutorials
+category:
+  - guides-and-tutorials
 authors:
   - DavidWells
 ---

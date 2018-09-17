@@ -3,7 +3,8 @@ title: How Reuters Replaced WebSockets with Amazon Cognito and SQS
 description: How to implement long-polling via Amazon Cognito and SQS
 date:  2017-06-14
 thumbnail: https://user-images.githubusercontent.com/832852/26854484-5457a7e4-4ae4-11e7-8f71-fc51bc710a6b.jpg
-category: user-stories
+category:
+  - user-stories
 authors:
  - KenEllis
 ---
@@ -21,7 +22,7 @@ To push an event stream to a web browser, we need to tie each session to an SQS 
 The first step is creation of a session.  In our case, this includes an Account ID identifying a collection of Users; a User ID identifying a particular person; and a Session ID identifying a particular application connection or browser session.  The client calls an application endpoint with their identity and session information; then, the application validates their credentials against the claimed identity.  In our case, authentication is handled by a separate single signon process, and we use an unauthenticated Cognito pool.  This could also be managed by [Cognito federated identities](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html) without needing an intermediate system; but, in our case the session creation endpoint requires IAM credentials only available to our application backend.  Using federated identities would allow authentication with Facebook, Google, or through a [custom developer-authenticated mechanism](http://docs.aws.amazon.com/cognito/latest/developerguide/developer-authenticated-identities.html).
 
 
-Once the session is created, the browser client has: a set of Cognito AWS credentials that are good for around one hour; an SQS Queue URL uniquely associated with their session; and an AES private key.  The client then starts making requests to the SQS Queue using [long-polling](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html).   
+Once the session is created, the browser client has: a set of Cognito AWS credentials that are good for around one hour; an SQS Queue URL uniquely associated with their session; and an AES private key.  The client then starts making requests to the SQS Queue using [long-polling](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html).
 
 The messaging stack can receive events from Kinesis or from an API Gateway method.  The events can be directed at a specific session ID, at all sessions for a User, at all Users in an Account, or can be broadcast to all users.  A Lambda function handles insertion of the messages into all of the appropriate SQS Queues.  In our case, several systems can create events while access to the message dispatching endpoints is managed by IAM.  End-to-end message delivery time, from Kinesis to the Browser, is around 2 seconds, and with long-polling makes reasonably economical use of AWS resources.
 
@@ -50,19 +51,19 @@ The response should be something similar to this:
 ```
 {
     "session": {
-        "sqsUrl": "https://us-east-2.queue.amazonaws.com/552185127352/cognito-sqs-demo-NSHo28H2GgEMsfOl_VMTiJNOzP8-149634", 
-        "sqsQueueName": "cognito-sqs-demo-NSHo28H2GgEMsfOl_VMTiJNOzP8-149634", 
-        "aesKey": "IpR6RqjQ8PgEGHdDdZC+zQ7Il/4n7QN9uWbwuMLlJ8U=", 
-        "accessKey": "ASIAJQGX3FT5YQDIQB2A", 
-        "expires": 1496348084, 
-        "userId": 200, 
-        "identityId": "us-east-2:8b24ff4e-61e4-4444-8d40-21e260a88902", 
-        "secretKey": "Jig2itF4/vNsQ1m1gO0NzIg4BfHTCw9beFOiqne2", 
-        "sessionId": "cbbd5ab3-46e9-11e7-8d5e-f45c89b63a13", 
-        "ttl": 1496351684, 
-        "sessionToken": "AgoGb3JpZ2luEFMaCXVzLWVhc3QtMiK...", 
+        "sqsUrl": "https://us-east-2.queue.amazonaws.com/552185127352/cognito-sqs-demo-NSHo28H2GgEMsfOl_VMTiJNOzP8-149634",
+        "sqsQueueName": "cognito-sqs-demo-NSHo28H2GgEMsfOl_VMTiJNOzP8-149634",
+        "aesKey": "IpR6RqjQ8PgEGHdDdZC+zQ7Il/4n7QN9uWbwuMLlJ8U=",
+        "accessKey": "ASIAJQGX3FT5YQDIQB2A",
+        "expires": 1496348084,
+        "userId": 200,
+        "identityId": "us-east-2:8b24ff4e-61e4-4444-8d40-21e260a88902",
+        "secretKey": "Jig2itF4/vNsQ1m1gO0NzIg4BfHTCw9beFOiqne2",
+        "sessionId": "cbbd5ab3-46e9-11e7-8d5e-f45c89b63a13",
+        "ttl": 1496351684,
+        "sessionToken": "AgoGb3JpZ2luEFMaCXVzLWVhc3QtMiK...",
         "accountId": 100
-    }, 
+    },
     "success": true
 }
 ```
@@ -113,7 +114,7 @@ The Cognito ID created for a user session only has access to SQS Queues.  Genera
 }
 ```
 
-These are known as [policy condition keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html).  When you create an SQS queue, you can attach a [custom policy](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html) to the queue using the *Policy* queue attribute.  Theoretically one could create an SQS Queue and only grant access to a specific Cognito identity.  However, SQS currently supports a [very small set](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-permissions-reference.html) of condition keys.  Unfortunately, the Cognito keys are not among them.  We've pointed out this deficiency to AWS, and explained its usefulness in helping craft serverless event-driven applications.  Since a little piece of me dies every time I have to manage another server, we decided to work around it.  
+These are known as [policy condition keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html).  When you create an SQS queue, you can attach a [custom policy](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html) to the queue using the *Policy* queue attribute.  Theoretically one could create an SQS Queue and only grant access to a specific Cognito identity.  However, SQS currently supports a [very small set](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-permissions-reference.html) of condition keys.  Unfortunately, the Cognito keys are not among them.  We've pointed out this deficiency to AWS, and explained its usefulness in helping craft serverless event-driven applications.  Since a little piece of me dies every time I have to manage another server, we decided to work around it.
 
 The only solution that works at an arbitrarily high scale is to grant message read and delete access to all queues based on the name prefix of the queue.  The queue names are generated using a random 256 bit value generated by the Linux kernel using environmental entropy [/dev/urandom](https://linux.die.net/man/4/urandom), which is suitable for generating unguessable and secure Queue URLs.  Another 256 random bits are generated for an AES key that is used to encrypt and decrypt all messages.  This key is returned to the caller when creating a session and stored in the DynamoDB session table.  A random counter initialization value is used for the AES stream cipher and returned along with the encrypted message.  The *decrypt-message* script in the project provides an example Python implementation of decryption and a Javascript version is provided in the project's [documentation](https://github.com/ReutersMedia/sqs-browser-events).
 

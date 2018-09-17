@@ -3,7 +3,9 @@ title: Managing secrets, API keys and more with Serverless
 description: Use Lambda environment variables and AWS Parameter Store to handle configuration in your Serverless projects
 date: 2017-10-18
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/lock2.jpg
-category: guides-and-tutorials, operations-and-observability
+category:
+  - guides-and-tutorials
+  - operations-and-observability
 heroImage: ''
 authors:
   - AlexDeBrie
@@ -11,7 +13,7 @@ authors:
 
 Serverless applications are often _service-full_ applications. This means you use hosted services to augment your applications—think DynamoDB for data storage or Mailchimp for sending emails.
 
-When using other services in your Serverless applications, you often need configuration data to make your application work correctly. This includes things like API keys, resource identifiers, or other items. 
+When using other services in your Serverless applications, you often need configuration data to make your application work correctly. This includes things like API keys, resource identifiers, or other items.
 
 In this post, we'll talk about a few different ways to handle these configuration items. This post covers:
 
@@ -185,7 +187,7 @@ def get_secret(key):
 		WithDecryption=True
 	)
 	return resp['Parameter']['Value']
-	
+
 access_token = get_secret('supermanToken')
 database_connection = get_secret('databaseConn')
 ```

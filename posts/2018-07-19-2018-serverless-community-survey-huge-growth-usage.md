@@ -3,7 +3,9 @@ title: "2018 Serverless Community Survey: huge growth in serverless usage"
 description: "We asked you, our dev community, how you’re using serverless. And even we were surprised by how much things have grown. Ready for the data?"
 date: 2018-07-19
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2018-community-survey/serverless-survey-header.jpg'
-category: news, engineering-culture
+category:
+  - news
+  - engineering-culture
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2018-community-survey/serverless-survey-header.jpg'
 authors:
   - AndreaPasswater

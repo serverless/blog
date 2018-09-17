@@ -3,7 +3,10 @@ title: "Serverless Aurora: What it means and why it's the future of data"
 description: "Learn what Serverless Aurora is, what it means for serverless developers, and why we think it's the future of data. Solving the serverless data layer."
 date: 2017-12-04
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/awsreinvent.jpg'
-category: operations-and-observability, guides-and-tutorials, news
+category:
+  - operations-and-observability
+  - guides-and-tutorials
+  - news
 authors:
   - AlexDeBrie
 ---
@@ -12,13 +15,13 @@ AWS had their annual re:Invent conference last week (missed it? [Check out our f
 
 AWS Lambda started the Serverless movement by releasing Lambda at re:Invent 2014. But the Lambda releases this year were run-of-the-mill incremental improvements—[higher memory limits](https://serverless.com/blog/ultimate-list-serverless-announcements-reinvent/#3gb-memory), [concurrency controls](https://serverless.com/blog/ultimate-list-serverless-announcements-reinvent/#concurrency-controls), and of course, [Golang support (coming soon!)](https://serverless.com/blog/ultimate-list-serverless-announcements-reinvent/#golang-support).
 
-All this to say, there was nothing game-changing in the functions-as-a-service (FaaS) world itself. 
+All this to say, there was nothing game-changing in the functions-as-a-service (FaaS) world itself.
 
 Well then. Does this mean that AWS is slowing down on serverless?
 
 Hardly.
 
-We saw AWS asserting that serverless is more than just functions: 
+We saw AWS asserting that serverless is more than just functions:
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">serverless != functions, FaaS == functions, serverless == on-demand scaling and pricing characteristics (not limited to functions)</p>&mdash; TJ Holowaychuk 🐥 (@tjholowaychuk) <a href="https://twitter.com/tjholowaychuk/status/902999008674594816?ref_src=twsrc%5Etfw">August 30, 2017</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -64,11 +67,11 @@ _Connection Limits_
 
 Postgres and MySQL have limits of the number of active connections (e.g. 100) you can have at any one time. This can cause problems if you get a spike in traffic which causes a large number of Lambda to fire.
 
-_Networking issues_ 
+_Networking issues_
 
 Your database instances will often have strict firewall rules about which IP addresses can access them. This can be problematic with ephemeral compute -- adding custom network interfaces will add latency to your compute's initialization.
 
-_Provisioning issues_ 
+_Provisioning issues_
 
 Serverless architectures fit well with defining Infrastructure as Code. This is harder with something like Postgres roles (users). These aren't easily scriptable in your CloudFormation or Terraform, which spreads your configuration out across multiple tools.
 
@@ -86,7 +89,7 @@ DynamoDB addresses most of the problems listed above with server-full databases.
 
 However, DynamoDB isn't perfect as a database. You should really read Forrest Brazeal's excellent piece on [Why Amazon DynamoDB isn't for everyone](https://read.acloud.guru/why-amazon-dynamodb-isnt-for-everyone-and-how-to-decide-when-it-s-for-you-aefc52ea9476). In particular, the query patterns can be very difficult to get correct. DynamoDB is essentially a key-value store, when means you need to configure your data design very closely to your expected query patterns.
 
-To me, the biggest problem is the loss of flexibility in moving from a relational database to DynamoDB. With a relational model, it's usually easy to query the data in a new way for a new use case. There isn't that same flexibility for DynamoDB. 
+To me, the biggest problem is the loss of flexibility in moving from a relational database to DynamoDB. With a relational model, it's usually easy to query the data in a new way for a new use case. There isn't that same flexibility for DynamoDB.
 
 Developer agility is one of the key benefits of serverless architectures. Having to migrate and rewrite data is a major blocker to this agility.
 
@@ -97,7 +100,7 @@ Developer agility is one of the key benefits of serverless architectures. Having
 
 Ben Kehoe loves to hammer the point that to be truly serverless, your compute should not exist when it's not handling data. This hyper-ephemeral compute requires a new type of database. Highly-scalable, automation-friendly, global, with a flexible data model to boot.
 
-Distributed databases are hard. The NoSQL movement, including the [Dynamo paper](http://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf) that describes the principles of DynamoDB and influenced its cousins (Apache Cassandra, Riak, etc.), was a first step in the database revolution. 
+Distributed databases are hard. The NoSQL movement, including the [Dynamo paper](http://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf) that describes the principles of DynamoDB and influenced its cousins (Apache Cassandra, Riak, etc.), was a first step in the database revolution.
 
 The second step is in motion now.  AWS announced [multi-master Aurora](https://aws.amazon.com/about-aws/whats-new/2017/11/sign-up-for-the-preview-of-amazon-aurora-multi-master/), allowing for your Aurora instances to have masters that accept writes in different Availability Zones. Similarly, they announced [DynamoDB Global Tables](https://aws.amazon.com/dynamodb/global-tables/) which syncs data from DynamoDB tables _across different regions_ (!). Writes in São Paulo  will be replicated to your copies in Ohio, Dublin, and Tokyo, seamlessly. These manage the difficulty of multi-master global databases.
 
@@ -105,13 +108,13 @@ The next step is Serverless Aurora, due sometime in 2018. It checks all the boxe
 
 ✔︎ Easy scaling.
 
-✔︎ Pay-per-use. 
+✔︎ Pay-per-use.
 
-✔︎ Accessible over HTTP. 
+✔︎ Accessible over HTTP.
 
-✔︎ Authentication & authorization over tightly-scoped IAM roles rather than database roles. 
+✔︎ Authentication & authorization over tightly-scoped IAM roles rather than database roles.
 
-✔︎ A flexible relational data model that most developers know. 
+✔︎ A flexible relational data model that most developers know.
 
 This is a big deal.
 

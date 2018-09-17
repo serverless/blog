@@ -3,7 +3,9 @@ title: "The ABCs of IAM: Managing permissions with Serverless"
 description: Learn the basics of IAM permissions with your Serverless projects.
 date: 2017-11-14
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/abcs-of-iam-permissions.jpg
-category: guides-and-tutorials, operations-and-observability
+category:
+  - guides-and-tutorials
+  - operations-and-observability
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/abcs-of-iam-permissions.jpg'
 authors:
   - AlexDeBrie
@@ -40,7 +42,7 @@ An IAM user could assume an IAM role for a time, in order to access certain reso
 
 Your Lambda function assuming an IAM role will be important later when we discuss [managing permissions with your Lambda functions](#managing-permissions-for-your-lambda-functions).
 
-Finally, an **IAM permission** is a statement that grants/blocks an action(s) on a resource or set of resources. An IAM permission contains three elements: _Effect_, _Action_, and _Resource_. (It may optionally include a _Condition_ element, but that's outside the scope of this article.) 
+Finally, an **IAM permission** is a statement that grants/blocks an action(s) on a resource or set of resources. An IAM permission contains three elements: _Effect_, _Action_, and _Resource_. (It may optionally include a _Condition_ element, but that's outside the scope of this article.)
 
 * **Effect** tells what effect the IAM permission statement has—whether to Allow or Deny access. Generally, an IAM user does not have access to AWS resources. Most IAM permissions have an Effect of "Allow" to grant access to a particular resource. Occasionally, you might have an Effect of "Deny" to override any other "Allow" permissions.
 
@@ -116,18 +118,18 @@ If you haven't set up permissions before, you'll need to create an IAM user with
 
 > Check out a video to create a user with Administrator Access [here](https://www.youtube.com/watch?v=KngM5bfpttA).
 
-- **Slow but safe:** If you're using Serverless in production, you'll want more tightly-scoped permissions. With security, you generally want to follow the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege). For AWS, this means your Serverless IAM user shouldn't have the ability to alter the Lambda functions and resources of other services in your AWS account. This can be quite difficult but is worth the added security, particularly in a production account. 
+- **Slow but safe:** If you're using Serverless in production, you'll want more tightly-scoped permissions. With security, you generally want to follow the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege). For AWS, this means your Serverless IAM user shouldn't have the ability to alter the Lambda functions and resources of other services in your AWS account. This can be quite difficult but is worth the added security, particularly in a production account.
 
 One of our community members has contributed a [Yeoman generator template](https://github.com/dancrumb/generator-serverless-policy). This generator makes it much easier to create a narrow IAM policy template that will cover many Serverless use cases.
-  
+
 To use it, first install Yeoman and the `serverless-policy` generator:
-  
+
 ```bash
 $ npm install -g yo generator-serverless-policy
 ```
-  
+
 Then run the generator and answer the prompts:
-  
+
 ```bash
 $ yo serverless-policy
 ? Your Serverless service name test-service
@@ -140,7 +142,7 @@ app stage dev
 app region us-west-1
 Writing to test-service-dev-us-west-1-policy.json
 ```
-  
+
 This will create a JSON file in your working directory with permissions scoped to your service. It's not perfect, but it will get you closer.
 
 Create an IAM user with that policy file—or ship it to the person in charge of IAM security at your company—and you should be on your way.
@@ -159,7 +161,7 @@ provider:
   runtime: nodejs6.10
   iamRoleStatements:
     - Effect: "Allow"
-      Action: 
+      Action:
        - dynamodb:Query
        - dynamodb:Scan
        - dynamodb:GetItem
@@ -186,7 +188,7 @@ provider:
   runtime: nodejs6.10
   iamRoleStatements:
     - Effect: "Allow"
-      Action: 
+      Action:
        - dynamodb:Query
        - dynamodb:Scan
       Resource:

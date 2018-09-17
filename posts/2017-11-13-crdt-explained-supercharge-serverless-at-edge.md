@@ -3,7 +3,9 @@ title: "CRDTs explained - supercharge your serverless with CRDTs at the Edge"
 description: "How to supercharge your serverless with CRDTs at the edge. Your comprehensive CRDT explainer."
 date: 2017-11-13
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/kuihro-logo.png'
-category: guides-and-tutorials, operations-and-observability
+category:
+  - guides-and-tutorials
+  - operations-and-observability
 authors:
   - RussellSullivan
 ---
@@ -108,7 +110,7 @@ It does a good job of showing how CRDTs replicate the commutative *addition* ope
   <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/crdt/video-1.png">
 </a>
 
-Now that we have shown how commutative replication works for incrementing counters, we will make a bold assertion: Commutative Replication works for all of JSON (nested JSON included). 
+Now that we have shown how commutative replication works for incrementing counters, we will make a bold assertion: Commutative Replication works for all of JSON (nested JSON included).
 
 JSON consists of 4 data types: `[string, number, object, array]`, for example:
 
@@ -162,7 +164,7 @@ This shows a simple mechanism CRDTs use for increment/decrement counters. We use
 
 Next, let’s see an example of setting values.
 
-In this case, we’ll do 3 concurrent numerical `SET`s. This example shows how the `SET` operation converges to the value +9 via LWW. 
+In this case, we’ll do 3 concurrent numerical `SET`s. This example shows how the `SET` operation converges to the value +9 via LWW.
 
 **Video 4: SET example:**
 
@@ -205,7 +207,7 @@ In the next example we `DELETE` a field and then we (RE)`SET` the field. Then, s
 
 Time to move up to modifying nested JSON.
 
-We start with JSON Objects, often referred to as dictionaries. CRDTs create UUIDs for each nested field. They reference those nested fields by specifying all field-UUIDs in the nested field’s path. 
+We start with JSON Objects, often referred to as dictionaries. CRDTs create UUIDs for each nested field. They reference those nested fields by specifying all field-UUIDs in the nested field’s path.
 
 In order to be applied, operations for a nested field must match all UUIDs in the field’s path. Otherwise, they are ignored.
 
@@ -255,7 +257,7 @@ This next video shows an example of how concurrent inserts work in practice.
 
 ### CRDT consistency models
 
-Finally, let’s take a look at causal+ consistency, the academic term for CRDTs’ consistency model. 
+Finally, let’s take a look at causal+ consistency, the academic term for CRDTs’ consistency model.
 
 CRDTs accomplish causality via vector clocks, which are created on each modification and sent with each delta. The vector clocks represent a delta’s distributed dependencies. Upon replication, a delta will only be applied once all of its dependencies have been satisfied.
 

@@ -3,7 +3,9 @@ title: "Where to start: the most popular Framework plugins"
 description: "Take your Serverless development to the next level. Check out our most popular community plugins."
 date: 2018-01-22
 thumbnail: 'https://cloud.githubusercontent.com/assets/20538501/21665215/e3c9aae6-d2b0-11e6-9865-498d91318e7a.png'
-category: guides-and-tutorials, engineering-culture
+category:
+  - guides-and-tutorials
+  - engineering-culture
 authors:
   - AndreaPasswater
 ---

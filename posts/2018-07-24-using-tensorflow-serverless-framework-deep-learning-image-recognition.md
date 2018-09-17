@@ -3,7 +3,8 @@ title: "Using TensorFlow and the Serverless Framework for deep learning and imag
 description: "We’ll cover how to use TensorFlow, the Serverless Framework, AWS Lambda and API Gateway to deploy a simple deep learning model."
 date: 2018-07-24
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/tensorflow/tensorflow-serverless-thumb.png
-category: guides-and-tutorials
+category:
+  - guides-and-tutorials
 heroImage: ''
 authors:
   - RustemFeyzkhanov
@@ -42,7 +43,7 @@ So to make deep learning API, we would need stack like this:
 
 The main pain points in this infrastructure is that:
 - you have to manage the cluster - its size, type and logic for scaling
-- you have to pay for unused server power 
+- you have to pay for unused server power
 - you have to manage the container logic - logging, handling of multiple requests, etc
 
 With AWS Lambda, we can make the stack significantly easier and use simpler architecture:
@@ -88,7 +89,7 @@ We’ll use the following stack:
 
 ### “Hello world” code
 
-To get started, you’ll need to [have the Serverless Framework installed](https://serverless.com/framework/docs/providers/aws/guide/installation/). 
+To get started, you’ll need to [have the Serverless Framework installed](https://serverless.com/framework/docs/providers/aws/guide/installation/).
 
 Create an empty folder and run following commands in the CLI:
 
@@ -246,7 +247,7 @@ We will receive:
 
 ## Conclusion
 
-We’ve created a TensorFlow endpoint on AWS Lambda via the [Serverless Framework](https://serverless.com/framework/). Setting everything up was extremely easy, and saved us a lot of time over the more traditional approach. 
+We’ve created a TensorFlow endpoint on AWS Lambda via the [Serverless Framework](https://serverless.com/framework/). Setting everything up was extremely easy, and saved us a lot of time over the more traditional approach.
 
 By modifying the serverless YAML file, you can connect SQS and, say, create a deep learning pipeline, or even connect it to a chatbot via AWS Lex.
 

@@ -3,7 +3,8 @@ title: "Serverless Framework example for Golang and Lambda"
 description: "AWS Lambda Golang support is one of the most exciting announcements of 2018. Here's a quick template for using Go with the Serverless Framework!"
 date: 2018-01-18
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/golang-support.jpg'
-category: guides-and-tutorials
+category:
+  - guides-and-tutorials
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/golang-support.jpg'
 authors:
   - MaciejWinnicki
@@ -132,7 +133,7 @@ package main
 
 import (
     "fmt"
-    
+
     "github.com/aws/aws-lambda-go/events"
     "github.com/aws/aws-lambda-go/lambda"
 )

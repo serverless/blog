@@ -3,7 +3,9 @@ title: 6 Things to Know Before Migrating An Existing Service to Serverless
 description: Your cheatsheet to a seamless migration.
 date: 2017-08-07
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/step.jpg
-category: user-stories, guides-and-tutorials
+category:
+  - user-stories
+  - guides-and-tutorials
 authors:
   - MarciaVillalba
 ---
@@ -44,11 +46,11 @@ In our project, we developed five Proofs of Concept. Recall that our problems we
 **To replace legacy systems:**
 - AWS Cognito will replace the existing authentication system
 - DynamoDB will replace the existing Riak database as our NoSQL database
-- AWS Lambda + S3 + Elastic Transcoding will replace our existing transcoding process 
+- AWS Lambda + S3 + Elastic Transcoding will replace our existing transcoding process
 - AWS Lambda + API Gateway + S3 will replace our existing image resizing and provide better caching mechanisms
 
 **To reduce high operational costs:**
-- A workflow using Step functions + S3 + AWS Lambdas will replace our existing EC2 instances 
+- A workflow using Step functions + S3 + AWS Lambdas will replace our existing EC2 instances
 
 By implementing these Proofs of Concept, my team ended up validating all of our hypotheses.
 
