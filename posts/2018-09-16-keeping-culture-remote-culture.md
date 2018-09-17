@@ -1,6 +1,6 @@
 ---
 title: "Keeping the Culture in Remote Culture"
-description: "When your team team is distibuted, building and maintaining a company culture is difficult, but not impossible."
+description: "When your team team is distibuted or remote, building a company culture takes a different kind of effort. Here's how we keep culture strong at Serverless."
 date: 2018-09-17
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Thom's+Posts/remotework_thumb.jpg
