@@ -145,9 +145,9 @@ Ping us with any questions on [Twitter](http://twitter.com/goserverless) or [pos
 
 ## Updating featured posts
 
-The file `highlighted-blogs.json` contains a list of file names(excluding date and extension) of the blog posts to be featured on the website.
+The file [featured-blogs.json](./featured-blogs.json) contains a list of file names(excluding date and extension) of the blog posts to be featured on the website.
 
-If the blog file name is `2016-06-28-serverless-v1-0-alpha-release-1.md`, then the file name to be added in the `highlighted-blogs.json` file is: `serverless-v1-0-alpha-release-1`.
+If the blog file name is `2016-06-28-serverless-v1-0-alpha-release-1.md`, then the file name to be added in the `featured-blogs.json` file is: `serverless-v1-0-alpha-release-1`.
 
 The order of the file names in this file defines the order of featured posts on the website.
 
