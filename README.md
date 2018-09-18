@@ -100,7 +100,7 @@ layout: Post
 title: David's Amazing Post
 categories:
   - guides-and-tutorials
-  - user-stories # references data in authors/DavidWells.json file
+  - user-stories
 ---
 ```
 
