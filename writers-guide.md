@@ -38,6 +38,19 @@ Plus, we've included outlines, example posts, helpful links & more! If you have 
 * AWS + Lambda tutorials also do well!
 * General developer tips & tricks
 
+## Example posts
+
+Check out the following examples for writing inspiration:
+
+* [Learnings and guides](https://serverless.com/blog/strategies-implementing-user-authentication-serverless-applications/)
+* [Using Serverless with other popular frameworks](https://serverless.com/blog/serverless-express-rest-api/)
+* [General tutorials](https://serverless.com/blog/unit-testing-nodejs-serverless-jest/)
+* [Look what I built with Serverless!](https://serverless.com/blog/how-droplr-scales-to-millions-serverless-framework/)
+* [Using Serverless Components](https://serverless.com/blog/how-create-rest-api-serverless-components/)
+* [How to use new features](https://serverless.com/blog/aws-lambda-node-8-support-what-changes-serverless-developers/)
+* [Answering forum questions](https://serverless.com/blog/serverless-workaround-cloudformation-200-resource-limit/)
+* [General developer tips](https://serverless.com/blog/streamline-serverless-workflow-webstorm/)
+
 ## Choosing a topic
 
 The Serverless team can find a list of ideas along with a schedule in the <span class="c5 c10">[Content Calendar in Asana](https://www.google.com/url?q=https://app.asana.com/0/173140658754685/206747580911378&sa=D&ust=1481063994397000&usg=AFQjCNHuy4Sb66K5avepG3zVg8TXqSfqrQ). The Serverless team gets first dibs on selecting topics, then we turn to guest authors. Posts are scheduled 1-6 weeks in advance.
@@ -71,19 +84,6 @@ It’s helpful to organize your ideas in an outline before you start writing. Yo
 
 * Break your process down into individual steps that are clearly labeled. Each step should be one complete thought or action. Include relevant screenshots or code snippets as needed.
 * Recap your process and include any relevant next steps or additional resources.
-
-## Example posts
-
-Check out the following examples for writing inspiration:
-
-* [Learnings and guides](https://serverless.com/blog/strategies-implementing-user-authentication-serverless-applications/)
-* [Using Serverless with other popular frameworks](https://serverless.com/blog/serverless-express-rest-api/)
-* [General tutorials](https://serverless.com/blog/unit-testing-nodejs-serverless-jest/)
-* [Look what I built with Serverless!](https://serverless.com/blog/how-droplr-scales-to-millions-serverless-framework/)
-* [Using Serverless Components](https://serverless.com/blog/how-create-rest-api-serverless-components/)
-* [How to use new features](https://serverless.com/blog/aws-lambda-node-8-support-what-changes-serverless-developers/)
-* [Answering forum questions](https://serverless.com/blog/serverless-workaround-cloudformation-200-resource-limit/)
-* [General developer tips](https://serverless.com/blog/streamline-serverless-workflow-webstorm/)
 
 # Posting on GitHub
 
