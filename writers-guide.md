@@ -80,6 +80,7 @@ Check out the following examples for writing inspiration:
 * [Using Serverless with other popular frameworks](https://serverless.com/blog/serverless-express-rest-api/)
 * [General tutorials](https://serverless.com/blog/unit-testing-nodejs-serverless-jest/)
 * [Look what I built with Serverless!](https://serverless.com/blog/how-droplr-scales-to-millions-serverless-framework/)
+* [Using Serverless Components](https://serverless.com/blog/how-create-rest-api-serverless-components/)
 * [How to use new features](https://serverless.com/blog/aws-lambda-node-8-support-what-changes-serverless-developers/)
 * [Answering forum questions](https://serverless.com/blog/serverless-workaround-cloudformation-200-resource-limit/)
 * [General developer tips](https://serverless.com/blog/streamline-serverless-workflow-webstorm/)
