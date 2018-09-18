@@ -16,7 +16,7 @@ Plus, we've included outlines, example posts, helpful links & more! If you have 
 - Use h4 for section headers, and h5 for subsection headers. Aka, h2 = h4, h3 = h5. We do not have an h4 equivalent, and you should never use h1.
 - Include a header image that is 1200 x 600 px.
 - Never put anything in a quote to emphasize it, or to note an edge case, etc. Instead, write **Note:** and put your note there.
-- Use clear, concise language and short sentences. When in doubt, use shorter paragraphs and shorter sentences. If you have a sentence that runs three lines long, then try to break it up into two sentences. This makes blog posts much easier to read on mobile.
+- Use clear, concise language and short sentences. When in doubt, use shorter paragraphs and shorter sentences. If you have a sentence that runs three lines long, then try to break it up. This makes blog posts much easier to read on mobile.
 - Use a conversational tone that’s familiar, but not informal. [Here’s a great example](https://serverless.com/blog/2018-serverless-community-survey-huge-growth-usage/).
 - Use contractions (i.e., 'we’re' vs. 'we are').
 - Only 1 space after a period or colon.
