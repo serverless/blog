@@ -85,6 +85,25 @@ console.log('JS code')
 
 ---
 
+
+### 4. Add categories
+
+Choose appropriate categories for the blog post from the list of categories available [here](./categories.json). Multiple categories can be assigned to a blog post.
+
+The values that are supplied for categories for the blog post must match any of the keys in the (categories.json)[./categories.json]
+
+If you want to add a new category, you can add another entry at `categories.json` and use it in the blog post.
+
+```yml
+---
+layout: Post
+title: David's Amazing Post
+categories:
+  - guides-and-tutorials
+  - user-stories # references data in authors/DavidWells.json file
+---
+```
+
 ### 4. Add your author bio
 
 If you haven't created an author bio in the `/authors` folder. Go ahead and do that now.
@@ -124,6 +143,13 @@ Ping us with any questions on [Twitter](http://twitter.com/goserverless) or [pos
 
 ---
 
+## Updating featured posts
+
+The file `highlighted-blogs.json` contains a list of file names(excluding date and extension) of the blog posts to be featured on the website.
+
+If the blog file name is `2016-06-28-serverless-v1-0-alpha-release-1.md`, then the file name to be added in the `highlighted-blogs.json` file is: `serverless-v1-0-alpha-release-1`.
+
+The order of the file names in this file defines the order of featured posts on the website.
 
 ## Including Custom Scripts
 
