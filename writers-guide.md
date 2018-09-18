@@ -13,7 +13,7 @@ Plus, we've included outlines, example posts, helpful links & more! If you have 
 
 ## Style guide
 - Do not use title case in your title. Capitalize the first word and proper nouns only. This goes for section headers, too.
-- Use h4 for section headers, and h5 for subsection headers. Aka, h2 = h4, h3 = h5. We do not have an h4 equivalent.
+- Use h4 for section headers, and h5 for subsection headers. Aka, h2 = h4, h3 = h5. We do not have an h4 equivalent, and you should never use h1.
 - Include a header image that is 1200 x 600 px.
 - Never put anything in a quote to emphasize it, or to note an edge case, etc. Instead, write **Note:** and put your note there.
 - Use clear, concise language and short sentences. When in doubt, use shorter paragraphs and shorter sentences. If you have a sentence that runs three lines long, then try to break it up into two sentences. This makes blog posts much easier to read on mobile.
