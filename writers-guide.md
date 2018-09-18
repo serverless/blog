@@ -1,6 +1,6 @@
 # Serverless writer’s guide
 
-We are an open source company to our core, and we love community contributions to [the Serverless Blog](https://serverless.com/blog/), the most popular serverless-focused publication on the web. Do you have something neat to say about serverless technologies? Awesome. We want to enable you.
+We are an open source company to our core, and we love community contributions to [the Serverless Blog](https://serverless.com/blog/), the most popular serverless-focused publication on the web. Do you have something neat to say about serverless technologies? Awesome. We want to help you spread the word.
 
 But we've also got some guidelines to follow. Read this Serverless Writer’s Guide to learn about our publication requirements. The suggested topics and our style guide are mandatory reading before submitting to our blog. 
 
