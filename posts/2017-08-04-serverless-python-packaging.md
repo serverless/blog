@@ -2,13 +2,13 @@
 title: How to Handle your Python packaging in Lambda with Serverless plugins
 description: Handling Python dependencies in your Lambda functions can be a pain. Here's how I handle Python packaging with Serverless for dev/prod parity.
 date: 2017-08-04
-layout: Post
-thumbnail: https://user-images.githubusercontent.com/6509926/28880672-63c395f4-776b-11e7-8bc9-a9c8dff12c12.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-python-packaging.jpg'
+category:
+  - guides-and-tutorials
+heroImage: ''
 authors:
   - AlexDeBrie
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-python-packaging.jpg">
 
 I use AWS Lambda for almost all of my projects these days-from Flask apps and Slack bots to cron jobs and monitoring tools. I love how cheap and easy it is to deploy something valuable.
 
@@ -18,7 +18,7 @@ The import path also requires finesse. You can install your dependencies directl
 
 But there is a much better way. In this post, I'll show you a how, by using the [`serverless-python-requirements`](https://github.com/UnitedIncome/serverless-python-requirements) plugin for the Serverless Framework.
 
-# Initial Setup
+#### Initial Setup
 
 Let's get our environment ready. If you have Node and NPM installed, install the Serverless Framework globally with:
 
@@ -69,7 +69,7 @@ import numpy as np
 
 def main(event, context):
     a = np.arange(15).reshape(3, 5)
-    
+
     print("Your numpy array:")
     print(a)
 
@@ -116,7 +116,7 @@ Your numpy array:
 
 Perfect.
 
-# Deploying your service
+#### Deploying your service
 
 Our function is working locally, and it's ready for us to deploy to Lambda. Edit the `serverless.yml` file to look like the following:
 
@@ -209,6 +209,6 @@ REPORT RequestId: b32af7a8-52fb-4145-9e85-5985a0f64fe4	Duration: 0.52 ms	Billed 
 
 And there it is. You've got NumPy in your Lambda!
 
-Be sure to check out the repo for additional functionality, including automatic compression of libraries before deploying, which can be a huge help with the larger numerical libraries in Python. 
+Be sure to check out the repo for additional functionality, including automatic compression of libraries before deploying, which can be a huge help with the larger numerical libraries in Python.
 
 *Many thanks to the [United Income](https://unitedincome.com/) team and [Daniel Schep](https://twitter.com/schep_) in particular for creating the `serverless-python-requirements` package. If you want to work on serverless full-time, check out United Income. They use a 100% serverless architecture for everything from serving up their web application to running millions of financial simulations, and they are always looking for talented engineers to join their growing team in Washington, DC.*

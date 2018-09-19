@@ -2,17 +2,16 @@
 title: The serverless path to building better software
 description: Nick Gottlieb shares his ServerlessConf Tokyo talk on serverless, the state of software, and ways to accelerate productivity.
 date: 2018-02-23
-layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/better+software/devs-thumb.jpeg
+category:
+  - engineering-culture
 authors:
   - NickGottlieb
 ---
 
-We, as the software tooling industry, are failing to empower developers to build better software. 
+We, as the software tooling industry, are failing to empower developers to build better software.
 
 Don’t get me wrong, the way we develop software has changed dramatically over the last 30 years. We’ve made tremendous progress in terms of the technologies and tools available to us.
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/better+software/devs.jpeg">
 
 But what have these developments actually done for our productivity as software developers and creators? Have they made it easier to build software? Cheaper? Faster?
 
@@ -32,7 +31,7 @@ But while the cloud has delivered on its promise of freeing software developers 
 
 This same paradox holds true for a lot of the technologies that we as an industry (myself included) have helped create.
 
-CI/CD platforms help make testing and deploying software easier, especially among teams, but they still require writing tests, configuring the environment, and dealing with faulty build containers. GitHub provides us with a much better user experience for collaborating on software, but it hasn’t fundamentally eliminated the problems teams face when they  collaborate on a complex code base. 
+CI/CD platforms help make testing and deploying software easier, especially among teams, but they still require writing tests, configuring the environment, and dealing with faulty build containers. GitHub provides us with a much better user experience for collaborating on software, but it hasn’t fundamentally eliminated the problems teams face when they  collaborate on a complex code base.
 
 **In general, most of the progress we’ve made as an industry has been incremental.** We’ve failed to make software significantly easier, cheaper, and faster to develop, which is the end state that we all want.
 
@@ -61,14 +60,14 @@ Serverless, though, has the potential to make this ideal state a reality.
 
 If your source management, CI/CD, and project management system all exposed events in a uniform fashion, which you could easily react to with a serverless function deployed to any platform of your choice—well, I’d say that’s pretty ideal.
 
-We have a ways to go to achieve this, but projects like [Auth0’s Extend](https://auth0.com/extend/), [CNCF’s CloudEvents](https://openevents.io/), and many more are making progress towards this goal.	
+We have a ways to go to achieve this, but projects like [Auth0’s Extend](https://auth0.com/extend/), [CNCF’s CloudEvents](https://openevents.io/), and many more are making progress towards this goal.
 
 ### Making it easy to reuse code
 As developers, there’s nothing more disheartening than writing code that we’ve written a hundred times.
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/better+software/reuse-code.jpeg">
 
-How amazing would it be if we could compose the bulk of our applications out of pieces of code we’ve already written, and then focus our coding time on the business logic that delivers unique value? 
+How amazing would it be if we could compose the bulk of our applications out of pieces of code we’ve already written, and then focus our coding time on the business logic that delivers unique value?
 
 Serverless architectures today are essentially microservice architectures: groups of functions that have common functionality. They are deployed together, and share infrastructure resources such as an API gateway.
 
@@ -96,4 +95,4 @@ The result: far more productive development.
 ## In sum
 This is an exciting time to be a developer. We’re likely to see radical and unprecedented improvements in the tools we have available.
 
-It’s up to each of us to continue to demand and drive that change. 
+It’s up to each of us to continue to demand and drive that change.

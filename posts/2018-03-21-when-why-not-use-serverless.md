@@ -3,18 +3,21 @@ title: "When (and why) not to go serverless"
 description: "The benefits, and the drawbacks, to serverless are real. When (and why) not to go serverless."
 date: 2018-03-21
 layout: Post
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/why-not/why-not-thumb.png"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/why-not/why-not-header.png"
+category:
+  - guides-and-tutorials
+  - operations-and-observability
+  - engineering-culture
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/why-not/why-not-header.png'
 authors:
   - AndreaPasswater
 ---
-
-<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/why-not/why-not-header.png">
 
 There are a lot of people out there championing the serverless movement. Serverless lowers administrative overhead. It takes server maintenance off developers’ plates forever and cuts server costs. The benefits are real.
 
 But so are the drawbacks. If you’re considering serverless, read on.
 
-## Observability is more difficult
+#### Observability is more difficult
 
 It’s probably the biggest critique of serverless right now: you just lose some amount of critical insight into your functions.
 
@@ -40,7 +43,7 @@ To minimize cold start times, here are some things you should keep in mind:
 - Choice of language: Python & Go can considerably lower cold start times, whereas C# & Java notoriously have the highest cold start times.
 - VPCs: cold start times increase due to extra overhead of provisioning networking resources
 
-## Heavier reliance on vendor ecosystems
+#### Heavier reliance on vendor ecosystems
 
 With serverless, you don’t manage the server. That also means you lose control over server hardware, runtimes and runtime updates (at the time of writing, Node.js 8 is out but AWS is still on Node.js 6). The provider also imposes concurrency and resource limits.
 
@@ -53,7 +56,7 @@ We’re talking here about vendor lock-in. There are a lot of discussions out th
 
 The CNCF is also [actively working to initiate standardization](https://openevents.io/) across platforms, in order to make it easier to migrate applications and mitigate vendor lock-in in general.
 
-## It’s harder to hire
+#### It’s harder to hire
 
 A lot of developers don’t know what severless is. And even if they do, it’s a hazy enough concept that applicants can have a hard time imagining what their job would entail.
 
@@ -61,7 +64,7 @@ Having ‘serverless’ in a job title has a real chance of shrinking the size o
 
 On the flip side—to a smaller group of experimenters and fast-paced environment lovers, up-and-coming technology stacks are a huge selling point.
 
-## All that said—why use serverless?
+#### All that said—why use serverless?
 
 If there are drawbacks to serverless, then why are people using it?
 
@@ -85,11 +88,11 @@ Along those lines, the number of digital businesses not just utilizing, but goin
 
 [Our own website](https://github.com/serverless/site) is a static, serverless site built using Lambda, the Serverless Framework, and Netlify. It’s never gone down and we spend zero hours a week maintaining it.
 
-## TL;DR
+#### TL;DR
 
 As with all things in life, there are tradeoffs. Serverless means you gain efficiency, and trade some control & visibility.
 
-### Further reading on serverless architectures
+##### Further reading on serverless architectures
 
 - [Serverless architectures primer](https://serverless.com/learn/)
 - [How we migrated our startup to serverless](https://read.acloud.guru/our-serverless-journey-part-2-908d76d03716)

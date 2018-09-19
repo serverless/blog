@@ -2,15 +2,14 @@
 title: Strategies for working with remote and distributed teams
 description: 'Distributed teams allow you to hire the best people from over the world. Here are some lessons learned, and how-tos, for doing them right.'
 date: 2018-04-04
-layout: Post
-Thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/remote-worker-thumb.jpg"
+Thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Casey's+Blog+Posts/remote-worker-small.jpg"
+category:
+  - engineering-culture
 authors:
   - CaseyShultz
 ---
 
-<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Casey's+Blog+Posts/remote-worker-small.jpg">
-
-Recruiting in San Francisco is a full contact sport, and the data seems to suggest that finding great talent is only going to get more difficult. 
+Recruiting in San Francisco is a full contact sport, and the data seems to suggest that finding great talent is only going to get more difficult.
 
 The demand for software developers is slated to [increase 23%](https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm) over the next four years, and there's a [mass exodus of San Francisco Bay Area residents](http://sanfrancisco.cbslocal.com/2018/02/08/san-francisco-bay-area-mass-exodus-residents/) (due mostly to the high cost of housing). In 2012, Venture Beat identified Seattle, Portland, and San Francisco as the cities with the most demand for agile developers, but the markets that *have* the most agile developers are San Jose, Chicago, New York, Houston, Atlanta, Austin, and Dallas. Mismatch much?
 
@@ -41,13 +40,13 @@ Each of the companies on the panel had been approaching distributed teams in a d
 
 Automattic started off with an office in San Francisco—but upon realizing that the most people weren't even coming into their "very expensive" office, founder and CEO Matt Mullenweg decided to move to a 100% distributed model. This would allow employees to live and work wherever they wanted.
 
-Github sees itself as "distributed first", but also has a beautiful flagship office in San Francisco and branch offices around the world where employees can work. A talented facilities design team makes sure that all Github offices embody the Github culture, and that those working from home offices also receive design elements that match the company offices. 
+Github sees itself as "distributed first", but also has a beautiful flagship office in San Francisco and branch offices around the world where employees can work. A talented facilities design team makes sure that all Github offices embody the Github culture, and that those working from home offices also receive design elements that match the company offices.
 
 InvisionApp has been 100% distributed from day one and now has about 500 employees in 25 countries around the world.
 
 Elastic.co has over 800 employees distributed across two main hubs, one in Amsterdam, The Netherlands and the other in Mountain View, California, USA and throughout regional offices in London, Berlin, Phoenix, Hong Kong, and Sydney as well as team members who are 100% distributed and don't work out of any office regularly.
 
-<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Casey's+Blog+Posts/computer-with-code.jpg">                                                                           
+<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Casey's+Blog+Posts/computer-with-code.jpg">
 ## Now: what are the takeaways from the panel?
 
 ### Time zone management
@@ -58,21 +57,21 @@ One of our project teams has an engineer in San Francisco, Germany, and Thailand
 
 Knowing this, I wondered how other, even more distributed teams made things work.
 
-It turns out that having such a large time shift is an absolute deal-breaker for Leah Sutton from Elastic. She is hyper-aware of the experience that team members will have when she makes hiring decisions. When one engineering team (that had all of its team members located in a spread between the United States and Europe) wanted to hire a talented engineer in Australia, Leah said no. "Adding one person who is significantly outside of the spread of the rest of the team will lead to that person feeling very lonely, and will create a negative work experience for everybody," she said. 
+It turns out that having such a large time shift is an absolute deal-breaker for Leah Sutton from Elastic. She is hyper-aware of the experience that team members will have when she makes hiring decisions. When one engineering team (that had all of its team members located in a spread between the United States and Europe) wanted to hire a talented engineer in Australia, Leah said no. "Adding one person who is significantly outside of the spread of the rest of the team will lead to that person feeling very lonely, and will create a negative work experience for everybody," she said.
 
-Matt Mullenweg of Automattic pointed out that while a large spread like this could work for some teams—like those that function on asyncronous communication, or need continuous coverage in different regions (like support)—when building and creating something new, teams need to able to work together and communicate in real time. Automattic even created an app called "The Lonliest Team Member" to keep tabs on team member locations and easily group them together on projects. 
+Matt Mullenweg of Automattic pointed out that while a large spread like this could work for some teams—like those that function on asyncronous communication, or need continuous coverage in different regions (like support)—when building and creating something new, teams need to able to work together and communicate in real time. Automattic even created an app called "The Lonliest Team Member" to keep tabs on team member locations and easily group them together on projects.
 
 InvisionApp has created a universal work time for the entire company by stating work hours are from 10 AM to 6 PM Eastern Time. It's unclear if this affects the regions in which they are willing to hire talent.
 
 ### Attracting the best talent
 
-By opening up their recruitment pipeline to locations all over the world, the companies on the panel have been able to find high quality employees for all aspects of their businesses. 
+By opening up their recruitment pipeline to locations all over the world, the companies on the panel have been able to find high quality employees for all aspects of their businesses.
 
-All panel members agreed that being very intentional when writing job descriptions that highlight the company's distributed culture helps attract the types of employees who work well in that environment. 
+All panel members agreed that being very intentional when writing job descriptions that highlight the company's distributed culture helps attract the types of employees who work well in that environment.
 
 Merritt Anderson also requires that Github recruiters "meet [potential candidates] where they're at" by attending regional meetups and conferences.
 
-When asked about how distributed companies can compete with the perks more tradional employers (like Google or Facebook) may provide, Matt Mullenweg said, "[At Automattic] we hire adults… We're not going to give you a hair cut, but we'll pay you a great salary and you can get your hair cut wherever you want." 
+When asked about how distributed companies can compete with the perks more tradional employers (like Google or Facebook) may provide, Matt Mullenweg said, "[At Automattic] we hire adults… We're not going to give you a hair cut, but we'll pay you a great salary and you can get your hair cut wherever you want."
 
 It's this focus on paying employees well, and giving them the freedom to manage their time as they see fit, that has given these companies a definite recruiting advantage when looking for talent.
 
@@ -82,7 +81,7 @@ The distributed team may also prove more inclusive for a variety of employees. "
 
 ### Integrating cultural values globally
 
-So when the world is your hiring pipeline, how is a company supposed to attract talent that fits your cultural values, and ensure that every new hire is integrated into those values? 
+So when the world is your hiring pipeline, how is a company supposed to attract talent that fits your cultural values, and ensure that every new hire is integrated into those values?
 
 Small startups with limited budgets could follow the InvisionApp onboarding process—a week of onboarding that is completed entirely on the video conferencing app, [Zoom](https://zoom.us/). "Our team members almost have a more intimate understanding of each other's lives. Everything is done over video chat, so we see the band poster hanging in the background, or the tail of the cat weaving in and out of the [video] frame," said Wolpa.
 
@@ -90,7 +89,7 @@ Because all of the team meetings are done over video chat, InvisionApp is able t
 
 Some of the companies take an in-person approach to onboarding. Every two months, Elastic brings in a cohort of their most recent recruits for a week of onboarding. The new employees complete a day of service, and several days of culture and training. "People feel really connected to their fellow cohort members even after they all return to their respective teams in different locations," Sutton said.
 
-Github does three days of in-person onboarding in their San Francisco office, with coordinating game nights and industry meetups, to get new team members plugged in. Every employee deploys to the Github repo on their first day. 
+Github does three days of in-person onboarding in their San Francisco office, with coordinating game nights and industry meetups, to get new team members plugged in. Every employee deploys to the Github repo on their first day.
 
 ## Deciding whether to go distributed or not
 

@@ -2,15 +2,16 @@
 title: "How to streamline your serverless workflow with WebStorm"
 description: "In this post, I’d like to share with you my serverless-specific IDE setup with WebStorm, and how it can massively accelerate your serverless workflow."
 date: 2018-08-15
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/webstorm-ide/webstorm-serverless.JPEG
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/webstorm-ide/streamline-webstorm-serverless2.jpg'
+category:
+  - guides-and-tutorials
+  - engineering-culture
+heroImage: ''
 authors:
   - EslamHefnawy
 ---
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/webstorm-ide/streamline-webstorm-serverless2.jpg">
-
-If you build serverless applications, here’s a serverless-specific IDE setup that will help you streamline your workflow. 
+If you build serverless applications, here’s a serverless-specific IDE setup that will help you streamline your workflow.
 
 Over the past few years, I’ve been fortunate enough to work exclusively on serverless tooling.
 
@@ -24,7 +25,7 @@ We will cover:
 - Live Templates (to integrate keyboard shortcuts for the Serverless Framework)
 - ways to streamline testing and debugging
 
-## Getting started
+#### Getting started
 
 If you haven’t already, install the [Serverless Framework](https://serverless.com/framework/): `npm install serverless -g`, and type `serverless login` to create your Platform account.
 
@@ -32,11 +33,11 @@ Then, create a new project using the `aws-nodejs` template: `serverless create -
 
 You’ll also need to [download and install WebStorm](https://www.jetbrains.com/webstorm/).
 
-## Streamline your serverless workflow
+#### Streamline your serverless workflow
 
 Now that the basics are out of the way, we’re going to talk about the four key WebStorm features I use to help me code (and debug) even faster.
 
-### Step 1: set up a linter
+##### Step 1: set up a linter
 
 A linter is a must-have during any coding session, especially when it’s integrated to your IDE. It provides instant feedback on any typos that you might have missed, saving you tons of time correcting basic errors.
 
@@ -60,7 +61,7 @@ That’s it, you’re done.
 
 Let’s move on to one of my favorites: Live Templates.
 
-### Step 2: Start using serverless Live Templates
+##### Step 2: Start using serverless Live Templates
 
 Live Templates is probably one of WebStorm’s best features. It allows for custom-made auto code completion when you type a trigger keyword.
 
@@ -72,7 +73,7 @@ Amazing. I love this feature.
 
 To set up your own live template, go to **WebStorm Preferences** > **Editor** > **Live Templates** > **JavaScript**. From there, you can view the built-in templates, see how they work, and create your own.
 
-#### Integrating with the Serverless Framework
+##### Integrating with the Serverless Framework
 
 Wouldn’t it be so awesome if you could hit `COMMAND + SHIFT + D` to instantly deploy your service? That’s what I thought too.
 
@@ -90,7 +91,7 @@ To add the Serverless Framework as an external tool, go to **WebStorm Preference
 
 You can follow the same steps if you’d like to add other tasks as well, such as `sls invoke`.
 
-### Step 3: streamline your testing & debugging
+##### Step 3: streamline your testing & debugging
 
 WebStorm comes with first class support for many testing frameworks, including Jest (my personal favorite). This makes it very easy to quickly run individual test cases/suites with a point-and-click interface.
 
@@ -100,7 +101,7 @@ All you have to do is install your favorite testing framework, and WebStorm will
 
 When it comes to testing my serverless applications, I personally try to aim for around 80% code coverage via unit tests, plus a one or two handler integration tests. Running those tests is a breeze with WebStorm, and they become extra useful when you use them with WebStorm’s built-in debugger.
 
-#### Using the WebStorm debugger
+##### Using the WebStorm debugger
 
 WebStorm’s debugger is powerful. You set it up once, define your break points, then run it.
 
@@ -112,9 +113,9 @@ WebStorm will then show you tons of crucial information and data about your code
 
 **Note:** I won’t be going deep into how to set up the WebStorm debugger in this post, but you can check out [this other walkthrough](https://blog.jetbrains.com/webstorm/2018/01/how-to-debug-with-webstorm/) if you’d like.
 
-#### Testing serverless REST APIs
+##### Testing serverless REST APIs
 
-REST APIs are one of the most common use cases for serverless applications. Luckily for us, WebStorm comes in with a built-in REST client that you can use to test your deployed serverless endpoints. 
+REST APIs are one of the most common use cases for serverless applications. Luckily for us, WebStorm comes in with a built-in REST client that you can use to test your deployed serverless endpoints.
 
 The WebStorm REST client is a lot easier to use than curl. It includes most of what you need right inside your editor, so that you don’t need to use another REST client such as Insomnia or POSTMAN.
 
@@ -122,7 +123,7 @@ Open it by Clicking on **Tools** > **Test RESTful Web Service**:
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/webstorm-ide/serverless-webstorm-restapi11.png">
 
-## Final Thoughts
+#### Final Thoughts
 
 This covers the most essential serverless-specific setup for WebStorm. I hope it’s helpful for your workflow!
 

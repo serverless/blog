@@ -2,8 +2,10 @@
 title: From chef to Serverless developer in 4 years
 description: I started out my career as a chef. Now I'm a serverless developer.
 date: 2018-01-09
-layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/clem-onojeghuo-175180.jpg
+category:
+  - user-stories
+  - engineering-culture
 authors:
   - KieranMcCarthy
 ---
@@ -35,7 +37,7 @@ After finishing my Java course and constantly working on Android, I built my fir
 
 I felt there was so much more out there to learn and didn’t want to stop at just mobile. Questions went through my head of “How do I connect to other devices?”, “What are servers and what do they do?”, “What is the cloud….and why is it called ‘the cloud’?”
 
-All these questions were a Google away. So I tasked myself to learn about servers and how to code for them. I started building silly backend apps in PHP that took data from mobile test apps, web forms and curl commands. 
+All these questions were a Google away. So I tasked myself to learn about servers and how to code for them. I started building silly backend apps in PHP that took data from mobile test apps, web forms and curl commands.
 
 This was when I started to feel like I was in the wrong profession. The more I learned and built things, the less excited I felt about cooking.
 
@@ -45,7 +47,7 @@ I invested some money in taking the Java certification, in hopes of getting my C
 
 ## Thus began the job hunt
 
-I put it into my CV and sent it everywhere I could find that was hiring developers. But nothing… “We are looking for someone with a degree”, “someone with experience”, “someone with a masters.” I started to think it was more “just someone else.” While feeling a bit down, thinking I would never get a job because I don’t have a degree or the money to start one, I decided to take more courses on Udemy. 
+I put it into my CV and sent it everywhere I could find that was hiring developers. But nothing… “We are looking for someone with a degree”, “someone with experience”, “someone with a masters.” I started to think it was more “just someone else.” While feeling a bit down, thinking I would never get a job because I don’t have a degree or the money to start one, I decided to take more courses on Udemy.
 
 I added everything I got from Udemy to my CV. I was proud of the work I did, so why not have it there? It must have paid off because I got an interview for an IT Consultancy here in Ireland. Dream come true!
 

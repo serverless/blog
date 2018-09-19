@@ -2,8 +2,10 @@
 title: ETL job processing with Serverless, Lambda, and AWS Redshift
 description: Build an ETL job service by fetching data from a public API endpoint and dumping it into an AWS Redshift database.
 date: 2018-02-20
-layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/redshift.png
+category:
+  - operations-and-observability
+  - guides-and-tutorials
 authors:
   - RupakGanguly
 ---
@@ -251,7 +253,7 @@ You can review the full source code at the [serverless-etl](https://github.com/r
 
 ## Test the job service
 
-Before we deploy the service, let's test the service to see if our code is functioning properly. Since we're mainly concerned with testing whether or not our API call gets us the required data correctly, we'll comment out the database-related code for now. 
+Before we deploy the service, let's test the service to see if our code is functioning properly. Since we're mainly concerned with testing whether or not our API call gets us the required data correctly, we'll comment out the database-related code for now.
 
 Comment out the code in the `main()` method as shown below:
 
@@ -270,7 +272,7 @@ def main(event, context):
     # engine = create_engine(DB_CONN)
     # init_tables(engine)
     # conn = engine.connect()
-    # 
+    #
     # conn.execute(sample_table.insert().values(sample_data))
 
     pprint.pprint(sample_data)

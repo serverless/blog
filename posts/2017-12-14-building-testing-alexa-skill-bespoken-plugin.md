@@ -2,13 +2,14 @@
 title: "Building & testing an Alexa skill with the Serverless Bespoken plugin"
 description: "Building an Alexa skill is easier than you think! And it's even easier with the Serverless Framework and Bespoken plugin."
 date: 2017-12-14
-layout: Post
 thumbnail: 'https://bespoken.io/wp-content/uploads/2017/07/Bespoken-Alpaca-RGB-social.png'
+category:
+  - guides-and-tutorials
 authors:
   - JohnKelvie
 ---
 
-# Overview
+#### Overview
 Building an Alexa skill really isn’t so hard! And it’s even easier if you use the Serverless Framework along with the Bespoken Plugin.
 
 To show you how, we’re going to take you through the steps of building your very own Alexa skill, by making a simple guessing game. The game will pull some images from Giphy, then ask users to guess which search term generated those images.
@@ -20,18 +21,18 @@ In this walkthrough, we will:
 - Deploy the skill to AWS Lambda using Serverless
 - Talk about advanced steps and further exploration
 
-# Setting up the environment
-For starters, you’ll need a few things:  
-- An Amazon developer account ([sign up here](https://developer.amazon.com))  
-- An AWS account with access to Lambda and DynamoDB ([learn how to create your AWS account with IAM roles here](https://www.youtube.com/watch?v=yaLMc7WMmHQ&index=1&list=PLIIjEI2fYC-A5wxo521u6OqAwbsFFQFbW))  
-- The Serverless Framework (`npm install serverless -g`)  
+#### Setting up the environment
+For starters, you’ll need a few things:
+- An Amazon developer account ([sign up here](https://developer.amazon.com))
+- An AWS account with access to Lambda and DynamoDB ([learn how to create your AWS account with IAM roles here](https://www.youtube.com/watch?v=yaLMc7WMmHQ&index=1&list=PLIIjEI2fYC-A5wxo521u6OqAwbsFFQFbW))
+- The Serverless Framework (`npm install serverless -g`)
 
 Go ahead and get set up with those items if you have not already.
 
-Now, to follow along at home, start by cloning this repo with Alexa sample code:  
+Now, to follow along at home, start by cloning this repo with Alexa sample code:
 `git clone https://github.com/bespoken/giftionary`
 
-This repository contains the example we are going to walk through, already configured with the correct packages and libraries. This includes the [Alexa Node.js SDK from Amazon](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) that we’ll leverage for building a skill. 
+This repository contains the example we are going to walk through, already configured with the correct packages and libraries. This includes the [Alexa Node.js SDK from Amazon](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) that we’ll leverage for building a skill.
 
 Once you’ve cloned the repository, go to the directory you cloned it into and run `npm install` to setup the project.
 
@@ -43,7 +44,7 @@ You should see output like this if everything is working correctly:
 
 We’re now ready to start development!
 
-# Important concepts
+#### Important concepts
 Before we jump in though, there are three very important concepts we want to review. We will cover each in detail as we go along:
 - Session - a conversation with a skill
 - Intents and the Interaction Model - the user interface for the skill
@@ -51,7 +52,7 @@ Before we jump in though, there are three very important concepts we want to rev
 
 If you feel like you understand sessions and interaction models pretty well, feel free to jump straight down to [State Machine](#the-state-machine), which is where we begin creating our first skill response.
 
-## The session
+##### The session
 A session is a conversation between a user and our skill. It starts when the user invokes the skill by saying something like “Alexa, open giftionary”.
 
 The session remains active as long as the user continues interacting with the skill. This interaction can end for three reasons:
@@ -61,12 +62,12 @@ The session remains active as long as the user continues interacting with the sk
 
 As long as our skill is in session, it has the chance to share information with the user via voice and visual elements, and/or ask the user questions. In thinking about voice design, it’s important to keep in mind how to keep the user engaged and keep the session alive so that the skill can do its job.
 
-## Intents and the interaction model
+##### Intents and the interaction model
 Another very important aspect to understand with Alexa skills are intents and the interaction model.
 
-Think of the interaction model as the UI for the skill—only in this case, it’s not a visual interface, but a vocal one. Our interaction model describes:  
-What the user can say (utterances)  
-What intentions these utterances map to (intents)  
+Think of the interaction model as the UI for the skill—only in this case, it’s not a visual interface, but a vocal one. Our interaction model describes:
+What the user can say (utterances)
+What intentions these utterances map to (intents)
 
 **Intents** are essential to the interaction model and Alexa, and to voice- and AI-based programming in general.
 
@@ -91,7 +92,7 @@ Easy, right?
 
 Below is another intent, this time containing a **slot**.
 
-Slots are like variables. An intent with a slot—rather than just matching what the user says to one of the sample utterances—will treat the slot as a wildcard. It will pass the value for that wildcard to our code:  
+Slots are like variables. An intent with a slot—rather than just matching what the user says to one of the sample utterances—will treat the slot as a wildcard. It will pass the value for that wildcard to our code:
 From [`IntentSchema.json`](https://github.com/bespoken/giftionary/blob/master/speechAssets/IntentSchema.json#L54):
 ```
 {
@@ -113,13 +114,13 @@ Besides being enumerable, slots can also have types, which serve to narrow the v
 
 **Note:** You can [read more about types here](https://developer.amazon.com/docs/custom-skills/slot-type-reference.html).
 
-## The State Machine
+##### The State Machine
 The Alexa Node.js SDK encourages the use of a state machine for building skills.
 
 State machines are a natural fit for skills (and other voice-based apps). The basic idea is that your app has states and transitions. Any action a user takes is handled based on the state they are currently in, and part of that handling may include transitioning to another state.
 
 This pattern pushes us to think about the discreet states the user will go through in interacting with our app, and how, for each of these scenarios, we will handle what a user might say. This mindset gets us thinking about providing appropriate, contextualized responses to the user, an important part of voice/conversational interfaces.
- 
+
 To see this in action in our skill, let’s take a look at our state-handlers:
 
 ```
@@ -176,7 +177,7 @@ We leverage the built-in support for DynamoDB that is part of the Node.js SDK fo
 
 For new users, we change their state to HELP mode. This explains to them how the game works and asks them if they would like to start playing. For existing users, we skip straight to the PLAY mode.
 
-## Responding via voice
+##### Responding via voice
 Now that we’ve worked through the basics of our state machine, how do we actually reply to the user when the game starts?
 
 Easy! Here is our code that does that:
@@ -199,12 +200,12 @@ As for the `cardRenderer` call—cards are images and text that can accompany th
 
 <img width="450" ailgn="middle" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/bespoken/alexa-app.png">
 
-# Testing Locally
+#### Testing Locally
 Now that we have a basic working skill, let’s test it out locally! To do this, we’re going to run our proxy via the [Bespoken Serverless plugin](https://github.com/bespoken/serverless-plugin-bespoken).
 
 This plugin allows us to interact with a skill on our laptop without deploying it to Lambda. It saves a lot of development time; even though Serverless makes deployments a lot easier, it still takes time to upload our Lambda file with all its dependencies to AWS.
 
-## Setting up a new skill in the developer console
+##### Setting up a new skill in the developer console
 Before we go further, we need to set up our Alexa skill in the developer console.
 
 In the Developer console home, click on “Alexa”:
@@ -263,7 +264,7 @@ Then click “Next”:
 
 Now we can test!
 
-## Running our first test
+##### Running our first test
 
 We’re going to start with a test that uses the Service Simulator. Type “play” in the “Enter Utterance” field and then click “Ask Giftionary”:
 
@@ -277,9 +278,9 @@ The same request and response from the “Service Simulator” is now in our ter
 
 And we are not limited to testing via the Service Simulator. At this point, any Echo device can be used for testing. Tools like [Echosim.io](https://echosim.io/welcome) and the [Reverb app](https://itunes.apple.com/us/app/reverb-for-amazon-alexa/id1144695621?mt=8) will also work.
 
-Now that we’re completely set up, let’s do a real deployment! 
+Now that we’re completely set up, let’s do a real deployment!
 
-## Deployment With Serverless
+##### Deployment with Serverless
 This step is easy; just open up your terminal and type `sls deploy`.
 
 Once that completes, we’ll need to update our skill configuration. Remember, it’s still pointing at our testing URL. We want to point it to our new Lambda instead.
@@ -294,7 +295,7 @@ Copy the ARN and enter it on the configuration screen, then click “Save”, li
 
 Now our skill is all set to be used by others!
 
-# Recap
+#### Recap
 - We’ve accomplished a lot here, so let’s do a quick review:
 - We discussed the basic concepts behind how skills (and the Node.js SDK) work
 - We set up our own first skill
@@ -302,7 +303,7 @@ Now our skill is all set to be used by others!
 - We configured it in the skill development console
 - We deployed the AWS Lambda using Serverless
 
-## Further reading
+##### Further reading
 From here, there are lots of areas to explore further:
 - [Set up “Skill Beta Testing”](https://developer.amazon.com/docs/custom-skills/skills-beta-testing-for-alexa-skills.html)
 - [Publish the Skill so the world can use it](https://developer.amazon.com/docs/custom-skills/submit-an-alexa-skill-for-certification.html)

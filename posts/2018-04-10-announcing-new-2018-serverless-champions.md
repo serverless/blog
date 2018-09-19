@@ -2,13 +2,13 @@
 title: "Introducing our first cohort of 2018 Serverless Champions"
 description: Serverless Champions are leaders in the Serverless Community. Meet our 2018 community heroes.
 date: 2018-04-10
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/champions/champion_logo_square.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/images/champions/champions_banner.jpg'
+category:
+  - news
+  - engineering-culture
 authors:
   - RupakGanguly
 ---
-
-![champions banner](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/images/champions/champions_banner.jpg)
 
 Perhaps you remember, late last year, when we [announced the beginnings of the Serverless Champions program](https://serverless.com/blog/announcing-first-cohort-serverless-champions-2017/).
 

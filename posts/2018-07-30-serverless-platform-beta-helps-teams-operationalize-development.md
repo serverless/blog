@@ -2,13 +2,14 @@
 title: "The new Serverless Platform Beta: everything teams need to operationalize serverless development"
 description: "The Serverless Platform Beta is everything teams need to operationalize serverless development. Build, operate, and integrate serverless applications in a single toolkit."
 date: 2018-07-30
-layout: Post
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-platform-release/0-Serverless_thumbnail-Platform+Beta.jpg"
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-platform-release/1-Serverless_header-Platform+Beta.jpg'
+category:
+  - news
+  - operations-and-observability
+heroImage: https://lh3.googleusercontent.com/YdsJQDeaNEOTQSrmjmm0JQSIKVOaZuvION1Ac16Sr_t7duSNKVhmamjWFcg03kbdC0P4r072DflLOFSRNaIR4dfJeIhVH4lha6Xt6RTPs4KjYxWnLU_J7TQSfNK6u2yKzbs7wEROVeifiLA4nX6TcmQ3XWJnfiYWX-EFSkE2jOgDb5lwNgO1SEHXbdhQ7_gf5Ul-jWQRhkN4Ov6Xu17hDJjYhir4UhzZ_VC1V04iH_D_WWxvaEhzu0981EULRoZy64J_3AJorABCLwPdvvUDrrbnZ7_s77R6CRTpwgHMjpq26c7TcNVrY59s2oNZtiLYRT9PmFod47ukRmf9-UZ67mEm3ng2A_UkjMw2gSb6924b7ptHYhGy_J8Cf78MlupyLeW9cr08xWKsBKpgM9fjQRwJP2C5vAC0w6EszxP-wLUW_lPxTHHrbpFPGBZG_Rs2jxCsTDBEWpHNkSYReeiDFu-_51zwLjAzV8Df1gnlM0ZIyy60km6taJwRdT3Qnp154PYxQil1O62AUgCxYqW8JFpY4y-nPTrgMqz0NwAophG9I3deCiEgCJWVSia_nEeI0joFxJ6ubs7H78N23M-yGAH5VFZ4dRl1=w1436-h1224
 authors:
   - AustenCollins
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-platform-release/1-Serverless_header-Platform+Beta.jpg">
 
 Today, we’re excited to announce the [Serverless Platform Beta](https://dashboard.serverless.com/)—a single toolkit that provides everything teams need to operationalize serverless development. We plan to expand active development on the Serverless Platform with the $10M Series A funding we raised from Lightspeed Venture Partners and Trinity Ventures, which we are also announcing today.
 
@@ -16,9 +17,9 @@ Read on for a full feature breakdown, or watch the 2 minute video:
 
 <iframe src="https://player.vimeo.com/video/282028201" width="640" height="360" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
 
-## Serverless adoption is growing, and fast
+#### Serverless adoption is growing, and fast
 
-In 2015, we created a project called the [Serverless Framework](https://serverless.com/framework/). Our mission was to make serveless development easy. By leveraging new cloud infrastructure that auto-scales and charges only when it’s used, we believed developers could build software with remarkably low overhead. 
+In 2015, we created a project called the [Serverless Framework](https://serverless.com/framework/). Our mission was to make serveless development easy. By leveraging new cloud infrastructure that auto-scales and charges only when it’s used, we believed developers could build software with remarkably low overhead.
 
 At that time, we had no idea what the Framework would become. A community rallied behind it and the broader serverless movement, contributing to the open source core, offering their opinions and insights, and sharing their passion.
 
@@ -26,11 +27,11 @@ By 2017, companies like Coca-Cola were uttering two simple words: "Serverless fi
 
 As the adoption of serverless has grown, so too have the needs of today’s serverless teams. In addition to tooling that simplifies the development of serverless applications, these teams need tools to simplify operations across their teams and entire organization.
 
-They need logs, they need team collaboration, they need ways to integrate with legacy systems, and so much more. 
+They need logs, they need team collaboration, they need ways to integrate with legacy systems, and so much more.
 
 This is exactly what we built the Serverless Platform we’re announcing today to do.
 
-## The Serverless Platform lets you build, operate & integrate
+#### The Serverless Platform lets you build, operate & integrate
 
 The Serverless Framework solves several problems in the build phase, and has soared in robustness thanks to a passionate open-source community.
 
@@ -38,7 +39,7 @@ Now, the [Serverless Platform](https://dashboard.serverless.com/) extends its fo
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-platform-release/3-Serverless-Platform-unified-graphic.png">
 
-### Operating with the Serverless Dashboard
+##### Operating with the Serverless Dashboard
 
 When you ask a serverless developer what their top three pain points are, they will tell you unequivocally: debugging, monitoring and testing. There are ways to build serverless applications, but no good way to operate them.
 
@@ -46,7 +47,7 @@ This is exactly what the Dashboard does. It gives you architectural views of you
 
 The Dashboard, just like our Framework, is vendor-agnostic. Use any provider you want, and use multiple providers at once. We’ll expose everything in a single place.
 
-#### Consolidated view & oversight for your serverless applications
+##### Consolidated view & oversight for your serverless applications
 
 Instead of trying to hold all the pieces of your serverless application in your head, you can see them visually in the Dashboard. Teammates and executives can have oversight over all of your serverless applications.
 
@@ -54,7 +55,7 @@ View all of the functions, event subscriptions and resources your serverless app
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-platform-release/4-Serverless+Consolidated-view-and-oversight_animation.gif">
 
-#### Check deployment history and collaborate on services with teammates
+##### Check deployment history and collaborate on services with teammates
 
 To date, working on a serverless service has put developers in a silo. There was no easy way to work on a service with others, check who deployed last and when, or to see exactly what changed.
 
@@ -66,11 +67,11 @@ And you get easy access to the deployment history to see the deployment dates an
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-platform-release/6-Serverless_last+deploy.png">
 
-### Integrating with the Event Gateway
+##### Integrating with the Event Gateway
 
 Also included in the Platform is a hosted version of the [Event Gateway](https://serverless.com/event-gateway/), a powerful event router, capable of routing event data to serverless functions and other services across clouds. It’s the answer to how organizations can integrate serverless into their existing services.
 
-#### What is the Event Gateway?
+##### What is the Event Gateway?
 
 The Event Gateway lets you react to _any_ event, from anywhere—any cloud provider or SaaS, containers and legacy infrastructure. With the Event Gateway, you can do things like: easily build FaaS-backed APIs, use configurable connectors to react to events from data stores like Kafka or Kinesis, and utilize multiple cloud providers in a single serverless application.
 
@@ -88,7 +89,7 @@ Austen Collins from Serverless, Inc., with the help of various Cloud Native Comp
 
 Use it to [build APIs](https://serverless.com/blog/how-use-event-gateway-use-cases-rest-api-custom-events/) or [react to custom events](https://serverless.com/blog/how-use-event-gateway-use-cases-rest-api-custom-events/).
 
-#### Monitor events and function invocations with real-time logs
+##### Monitor events and function invocations with real-time logs
 
 Once you publish events into the Event Gateway, you can see them in the Serverless Dashboard via real-time logs:
 
@@ -98,7 +99,7 @@ You can self-host the Event Gateway in your own AWS account, or use our hosted (
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-platform-release/8-Serverless_Event+Gateway+logs.png">
 
-## Try the Serverless Platform Beta
+#### Try the Serverless Platform Beta
 
 If your goals are to deliver fast, increase innovation and reduce overhead, then there is no better option today than a serverless architecture.
 

@@ -2,15 +2,17 @@
 title: "ServerlessConf 2018 San Francisco: key takeaways for the future of serverless"
 description: "Missed ServerlessConf in San Francisco this week? No worries, we got you. Here are the key takeaways you'll want to know about."
 date: 2018-07-31
-layout: Post
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/slsconf_nyc.jpg"
+category:
+  - news
+heroImage: ''
 authors:
   - AndreaPasswater
 ---
 
 *Last updated: Aug 1 @ 5:00pm PT*
 
-It's been amazing to see the lightning fast transformation happening in the serverless space. ServerlessConf 2016 was the conference of serverless projects. By the 2017 conference in NYC, the community had already been building a lot of projects. The new problem was tooling, and [tooling discussions dominated the stage last year](https://serverless.com/blog/serverless-conf-2017-nyc-recap/). 
+It's been amazing to see the lightning fast transformation happening in the serverless space. ServerlessConf 2016 was the conference of serverless projects. By the 2017 conference in NYC, the community had already been building a lot of projects. The new problem was tooling, and [tooling discussions dominated the stage last year](https://serverless.com/blog/serverless-conf-2017-nyc-recap/).
 
 So what about ServerlessConf 2018 in SF? It's been the conference of two things: (1) big@$$ companies talking about their large-scale, production serverless architectures; and (2) (from a drastically different perspective) non-engineers talking about how serverless technologies empowered them to begin developing their own apps, without a coding background.
 
@@ -18,11 +20,11 @@ We'll be updating this live all day during day 2, so stay tuned!
 
 ## Serverless adoption and architecture in large-scale organizations
 
-The talks in this category had three main types: 
+The talks in this category had three main types:
 
 ### 1. Serverless as the basis for rapid development
 
-Developers looking to minimize time to value will automatically gravitate toward serverless. 
+Developers looking to minimize time to value will automatically gravitate toward serverless.
 
 Leslie Pajuelo from Walmart just ran a POC in which she rebuilt their high performance orchestration layer. It's a use case we hear about all the time—a developer goes, "we want to try this serverless thing," and they build it out with a 1 or 2 person team. It does so well that the organization then moves to expand usage.
 
@@ -44,7 +46,7 @@ Rob Gruhl from Nordstrom talked about the best ways to scale serverless:
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2018-serverlessconf-sf/nordstrom-serverless-all-things.jpg">
 
-And it's easy to see why this matters. Verizon is here at ServerlessConf talking about serverless in the enterprise. There was a case study from Box. Capital One and Netflix presented on their own serverless architecture. Fender Digital (yeah, the guitar company) is all-in on serverless right now. And? They're transitioning everyting to Go. 
+And it's easy to see why this matters. Verizon is here at ServerlessConf talking about serverless in the enterprise. There was a case study from Box. Capital One and Netflix presented on their own serverless architecture. Fender Digital (yeah, the guitar company) is all-in on serverless right now. And? They're transitioning everyting to Go.
 
 And speaking of which—
 
@@ -112,7 +114,7 @@ What does that even mean? It appears there is a trend among people with non-engi
 
 Our own Andrea Passwater does Growth at Serverless, Inc, and has started to deploy her own marketing-based automation tooling. In her own words: "Serverless significantly lowers the barrier to entry for anyone who wants to automate parts of their workflow. And if I could automate away the boring things in my life, then why wouldn’t I?!"
 
-Her first serverless app was [Serverless Ipsum](https://medium.freecodecamp.org/i-just-deployed-a-serverless-app-and-i-cant-code-here-s-how-i-did-it-94983d7b43bd), but she has since moved on to other things, like a Slack bot that pings her coworkers about their blog post deadlines. 
+Her first serverless app was [Serverless Ipsum](https://medium.freecodecamp.org/i-just-deployed-a-serverless-app-and-i-cant-code-here-s-how-i-did-it-94983d7b43bd), but she has since moved on to other things, like a Slack bot that pings her coworkers about their blog post deadlines.
 
 And she's not the only person preaching about the newfound accessbility of coding. Keith Horwood is speaking on Stdlib, an API platform that could make developing APIs more like using Zapier. There are more engineers having open discussions about how to make coding more accessible to everyone, and more people at ServerlessConf from non-engineering backgrounds who are here to learn.
 

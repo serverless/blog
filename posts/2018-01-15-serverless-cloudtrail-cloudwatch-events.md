@@ -2,8 +2,9 @@
 title: How to monitor AWS account activity with Cloudtrail, Cloudwatch Events and Serverless
 description: Level up your AWS automation by reacting to events from AWS services.
 date: 2018-01-15
-layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png'
+category:
+  - operations-and-observability
 authors:
   - AlexDeBrie
 ---

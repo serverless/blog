@@ -2,13 +2,13 @@
 title: How to create a landing page with serverless components
 description: Using serverless components to build a static website landing page.
 date: 2018-04-30
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-components-thumb.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif'
+category:
+  - guides-and-tutorials
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif'
 authors:
   - DavidWells
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif">
 
 [Serverless Components](https://github.com/serverless/components) are a new way of composing together smaller bits of functionality into larger applications.
 
@@ -32,7 +32,7 @@ Let's dive into it and cover:
 - [Deploy](#deploy)
 - [Summary](#summary)
 
-## Getting started
+#### Getting started
 
 1. First you will need to install the Serverless Components via the `npm` [package](https://www.npmjs.com/package/serverless-components):
 
@@ -49,13 +49,13 @@ Let's dive into it and cover:
 
 **Note:** Make sure you have Node.js 8+ and `npm` installed on your machine.
 
-## Composing Components
+#### Composing Components
 
 This app is comprised of 3 parts: `aws-lambda`, `rest-api`, `netlify-site`.
 
 Let's put them together.
 
-### 1. Adding Netlify site
+##### 1. Adding Netlify site
 
 We are using Netlify to publish our landing page built with `create-react-app`.
 
@@ -143,7 +143,7 @@ If you go into Netlify and click into the newly-created site, you should see the
 
 ![image](https://user-images.githubusercontent.com/532272/38904159-a8b88c6a-425d-11e8-8db5-12939d666c4d.png)
 
-### 2. Adding the Lambda function for sign up
+##### 2. Adding the Lambda function for sign up
 
 Now, we need to add a Lambda function to handle our form submissions.
 
@@ -300,7 +300,7 @@ components:
           - master
 ```
 
-### 3. Adding the Rest API to expose Lambda function
+##### 3. Adding the Rest API to expose Lambda function
 
 So far, we have a landing page and a function. They aren't connected in any way.
 
@@ -374,7 +374,7 @@ components:
           - master
 ```
 
-### 4. Expose the API endpoint to the Netlify site
+##### 4. Expose the API endpoint to the Netlify site
 
 Great news! We have all the pieces we need for the functionality we are after.
 
@@ -477,7 +477,7 @@ components:
         REACT_APP_SIGNUP_API: ${apiEndpoint.url}sign-up
 ```
 
-## Deploy!
+#### Deploy!
 
 We have created our landing page. It's time for the final deploy.
 
@@ -487,13 +487,13 @@ In your terminal run:
 ../../bin/components deploy
 ```
 
-## Summary
+#### Summary
 
 As you can see, with just a couple of components you can have a landing page up and running in no time.
 
 What will you build with components?
 
-### More on Components
+##### More on Components
 
 - [What are Serverless Components, and how do I use them?](https://serverless.com/blog/what-are-serverless-components-how-use/)
 - [Create a REST API with pre-written Serverless Components](https://serverless.com/blog/how-create-rest-api-serverless-components/)

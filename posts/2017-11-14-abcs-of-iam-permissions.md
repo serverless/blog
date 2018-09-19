@@ -2,13 +2,14 @@
 title: "The ABCs of IAM: Managing permissions with Serverless"
 description: Learn the basics of IAM permissions with your Serverless projects.
 date: 2017-11-14
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/iam-logo.png
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/abcs-of-iam-permissions.jpg
+category:
+  - guides-and-tutorials
+  - operations-and-observability
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/abcs-of-iam-permissions.jpg'
 authors:
   - AlexDeBrie
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/abcs-of-iam-permissions.jpg">
 
 When getting started with Serverless, one of the hardest things to grok is IAM—[AWS Identity and Access Management](https://aws.amazon.com/iam/).
 
@@ -25,7 +26,7 @@ In this guide, we'll go over:
 
 Let's get started!
 
-# Basic IAM concepts
+#### Basic IAM concepts
 
 There are three basic concepts you should understand in the world of IAM: users, roles, and permissions.
 
@@ -41,7 +42,7 @@ An IAM user could assume an IAM role for a time, in order to access certain reso
 
 Your Lambda function assuming an IAM role will be important later when we discuss [managing permissions with your Lambda functions](#managing-permissions-for-your-lambda-functions).
 
-Finally, an **IAM permission** is a statement that grants/blocks an action(s) on a resource or set of resources. An IAM permission contains three elements: _Effect_, _Action_, and _Resource_. (It may optionally include a _Condition_ element, but that's outside the scope of this article.) 
+Finally, an **IAM permission** is a statement that grants/blocks an action(s) on a resource or set of resources. An IAM permission contains three elements: _Effect_, _Action_, and _Resource_. (It may optionally include a _Condition_ element, but that's outside the scope of this article.)
 
 * **Effect** tells what effect the IAM permission statement has—whether to Allow or Deny access. Generally, an IAM user does not have access to AWS resources. Most IAM permissions have an Effect of "Allow" to grant access to a particular resource. Occasionally, you might have an Effect of "Deny" to override any other "Allow" permissions.
 
@@ -81,7 +82,7 @@ Finally, the Resource block has our table's ARN. This limits the scope of the pe
 
 **IAM permissions** can be attached to **users** or **roles** (or other things that we won't cover here). This means you can create an AWS user and give it the permission to create DynamoDB tables, view CloudWatch logs, or any of the many other things you can do with AWS.
 
-# The Two Types of IAM entities with the Serverless Framework
+#### The Two Types of IAM entities with the Serverless Framework
 
 When talking about IAM permissions with the Serverless Framework, there are two different entities (users or roles) that you need to worry about:
 
@@ -105,7 +106,7 @@ Once your service is deployed, you have a different set of IAM issues to worry a
 
 With this understanding in mind, let's walk through how we configure and manage the **Framework user** and how we manage the IAM permissions for our **function roles**.
 
-# Managing permissions for the Serverless Framework user
+#### Managing permissions for the Serverless Framework user
 
 Let's talk about IAM permissions for the Serverless Framework user. This is any permissions that are required when you run a command with the Serverless Framework, such as `sls deploy` or `sls logs`.
 
@@ -117,18 +118,18 @@ If you haven't set up permissions before, you'll need to create an IAM user with
 
 > Check out a video to create a user with Administrator Access [here](https://www.youtube.com/watch?v=KngM5bfpttA).
 
-- **Slow but safe:** If you're using Serverless in production, you'll want more tightly-scoped permissions. With security, you generally want to follow the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege). For AWS, this means your Serverless IAM user shouldn't have the ability to alter the Lambda functions and resources of other services in your AWS account. This can be quite difficult but is worth the added security, particularly in a production account. 
+- **Slow but safe:** If you're using Serverless in production, you'll want more tightly-scoped permissions. With security, you generally want to follow the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege). For AWS, this means your Serverless IAM user shouldn't have the ability to alter the Lambda functions and resources of other services in your AWS account. This can be quite difficult but is worth the added security, particularly in a production account.
 
 One of our community members has contributed a [Yeoman generator template](https://github.com/dancrumb/generator-serverless-policy). This generator makes it much easier to create a narrow IAM policy template that will cover many Serverless use cases.
-  
+
 To use it, first install Yeoman and the `serverless-policy` generator:
-  
+
 ```bash
 $ npm install -g yo generator-serverless-policy
 ```
-  
+
 Then run the generator and answer the prompts:
-  
+
 ```bash
 $ yo serverless-policy
 ? Your Serverless service name test-service
@@ -141,12 +142,12 @@ app stage dev
 app region us-west-1
 Writing to test-service-dev-us-west-1-policy.json
 ```
-  
+
 This will create a JSON file in your working directory with permissions scoped to your service. It's not perfect, but it will get you closer.
 
 Create an IAM user with that policy file—or ship it to the person in charge of IAM security at your company—and you should be on your way.
 
-# Managing permissions for your Lambda Functions
+#### Managing permissions for your Lambda Functions
 
 The second aspect of IAM with Serverless is the permissions for your Lambda functions themselves. If your functions read from a DynamoDB table, write to an SQS queue, or use a KMS key to decrypt a string, they'll need to be given specific permission to do that.
 
@@ -160,7 +161,7 @@ provider:
   runtime: nodejs6.10
   iamRoleStatements:
     - Effect: "Allow"
-      Action: 
+      Action:
        - dynamodb:Query
        - dynamodb:Scan
        - dynamodb:GetItem
@@ -187,7 +188,7 @@ provider:
   runtime: nodejs6.10
   iamRoleStatements:
     - Effect: "Allow"
-      Action: 
+      Action:
        - dynamodb:Query
        - dynamodb:Scan
       Resource:
@@ -204,7 +205,7 @@ You can also craft [custom IAM roles](https://serverless.com/framework/docs/prov
 
 There's a [`serverless-puresec-cli`](https://github.com/puresec/serverless-puresec-cli) plugin that assists in this process. Puresec scans your functions to see which AWS resources they're accessing and how to automatically create least-privilege roles. It doesn't cover all resources yet, but it is a good start if you're interested.
 
-# Conclusion
+#### Conclusion
 
 IAM permissions are complex, and there's a lot more to learn than what is covered in this article. But this should be a great starting point.
 

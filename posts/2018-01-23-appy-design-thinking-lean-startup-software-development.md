@@ -2,8 +2,9 @@
 title: "How to apply design thinking to lean startup software development"
 description: "Our foray into mixing design thinking with agile development—what worked, and what didn't."
 date: 2018-01-24
-layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/design-thinking/dt-circle.png'
+category:
+  - engineering-culture
 authors:
   - BrianNeisler
 ---
@@ -19,7 +20,7 @@ If you’re thinking of adopting Design Thinking, or just thinking about your pr
 
 # What does Design Thinking look like in a tech company?
 
-In a nutshell, Design Thinking is a process not for how you execute, but for how you determine what you should be building in the first place. 
+In a nutshell, Design Thinking is a process not for how you execute, but for how you determine what you should be building in the first place.
 
 It focuses on a tight, user-driven feedback loop that, in theory, allows you to validate new feature ideas as quickly as possible before writing a single line of production code:
 
@@ -39,7 +40,7 @@ And the other key point here is this—everyone in the company is communicating.
 
 Everyone talks to the user and works together to come up with a product strategy.
 
-# Our process: how we rocked Design Thinking with agile engineering 
+# Our process: how we rocked Design Thinking with agile engineering
 
 The benefit of being agile is that it lets you break things up into smaller pieces so you can prioritize better. Design Thinking can be used to feed that agile implementation machine at both a micro and a macro level.
 
@@ -56,7 +57,7 @@ So here we go—the six Design Thinking steps, and how we’re carrying those ou
 **Empathize**
 We have a Triage product board on Confluence (Atlassian) where anyone at the company can submit a user problem. These problems can come from direct user interviews, articles, forum topics, bug reports, personal experience…really anywhere you might discover true user problems.
 
-**Ideate** 
+**Ideate**
 Anyone can also submit ideas for ways to solve established user problems. Our submission guidelines clearly state that all solutions should be told as a story from the perspective of the user. How will this help, what is the action performed, and what outcome is desired?
 
 **Define**
@@ -102,4 +103,4 @@ It’s a classic problem—no system is without its flaws. But at least we have 
 
 We like Design Thinking and will probably keep using it, with some additional experiments and tweaks.
 
-What about all of you? Have you found any edits to Design Thinking that make it work a little better for startups? We’d love to see how others are using it! 
+What about all of you? Have you found any edits to Design Thinking that make it work a little better for startups? We’d love to see how others are using it!

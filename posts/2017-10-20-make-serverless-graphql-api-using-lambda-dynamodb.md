@@ -2,13 +2,13 @@
 title: How to Make a Serverless GraphQL API using Lambda and DynamoDB
 description: GraphQL and Serverless play so well together. Learn how to make your own GraphQL API using Lambda an DynamoDB.
 date: 2017-10-20
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/graphql.jpeg
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/graphql-api-lambda-dynamodb.jpg'
+category:
+  - guides-and-tutorials
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/graphql-api-lambda-dynamodb.jpg'
 authors:
   - JeremyCoffield
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/graphql-api-lambda-dynamodb.jpg">
 
 *To see how DynamoDB compares to MongoDB, Cassandra, or BigTable, [see here](https://serverless.com/developers/guides/dynamodb/).*
 
@@ -16,7 +16,7 @@ The `graphql` module makes it easy to rapidly create a GraphQL service that vali
 
 Interested in building your own GraphQL API? Awesome. Here we go.
 
-# Building the API
+#### Building the API
 
 In this example, I'll be targeting AWS. Let's build a simplistic version of an API that might be used by the front-end to retrieve a dynamic message to display in the UI; in this case, greeting the user by name.
 
@@ -114,7 +114,7 @@ $ curl -G 'https://9qdmq5nvql.execute-api.us-east-1.amazonaws.com/dev/query' --d
 # {"data":{"greeting":"Hello, Jeremy."}}
 ```
 
-# Creating the database
+#### Creating the database
 
 In the real world, virtually any service that does something valuable has a data store behind it. Suppose users have nicknames that should appear in the greeting message; we need a database to store those nicknames, and we can expand our GraphQL API to update them.
 
@@ -257,7 +257,7 @@ The API will now call anyone named "Jeremy" by the nickname "Jer".
 
 Separation of concerns like this let you build front-ends and services that offload logic into backends. Those backends can then encapsulate data access and processing behind a strongly-typed, validating, uniform contract that comes with rich versioning and deprecation strategies.
 
-# Deploy your own!
+#### Deploy your own!
 
 To deploy this service yourself, download the [source code](https://github.com/serverless/examples/tree/master/aws-node-graphql-api-with-dynamodb) and deploy it with the [Serverless Framework](https://serverless.com/framework/). Or, take a look at [a larger example project](https://github.com/boazdejong/serverless-graphql-api) for ideas on project structure and factoring.
 

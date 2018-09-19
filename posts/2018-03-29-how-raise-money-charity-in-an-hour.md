@@ -2,15 +2,14 @@
 title: "How we raised over $400 for charity in an hour"
 description: "Want to do something to give back to your community? Here's how the Serverless team raised over $400 for charity in an hour."
 date: 2018-03-29
-layout: Post
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/donation-cart/molly-felix.png"
+category:
+  - engineering-culture
 authors:
   - MollyMoore
 ---
 
-<image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/donation-cart/molly-felix.png">
-
-As part of my initiative to get to know my new coworkers when I started at Serverless last December, I set up 1:1 meetings with each person. One of those people was Felix, Product Designer and PM at Serverless. 
+As part of my initiative to get to know my new coworkers when I started at Serverless last December, I set up 1:1 meetings with each person. One of those people was Felix, Product Designer and PM at Serverless.
 
 It was around the holidays, and Felix mentioned he’d like to find a way for Serverless to give back. I was really excited to do something community-oriented myself, and the two of us got to brainstorming.
 
@@ -36,9 +35,9 @@ That ended up inspiring our choice of beverage: hot chocolate with candy canes a
 
 One trip to the store later, and Felix and I had:
 - enough hot chocolate, candy canes, whipped cream, and Bailey’s for 40 cups. (I opted for a slightly higher-priced hot chocolate mix, since good cocoa can make or break a cup.)
-- two Santa hats  
+- two Santa hats
 
-In total, Serverless invested $43 on supplies. 
+In total, Serverless invested $43 on supplies.
 
 The charity we settled on was [GLIDE’s meal program](https://www.glide.org/feedthehungry). GLIDE serves 2,000 meals a day, and $5 sponsors an entire meal. Being someone who loves metrics, I thought having a baseline number like $5 would encourage people to donate more than just $1 or $2.
 
@@ -62,17 +61,17 @@ At 4:00pm, we put on our santa hats and made our way around the 3rd floor.
 
 The music and hats were a great way to catch everyone’s attention! We would introduce ourselves to each person and exchange names, occasionally asking about each other’s company or roles. People would ask how much to donate, we would say, “As much as you’d like, but $5 sponsors an entire meal.”
 
-Most of the time, people gave $10-20 and thanked us for being so thoughtful. By the time we wrapped up with one team, another was glancing over to see if we’d come their way. 
+Most of the time, people gave $10-20 and thanked us for being so thoughtful. By the time we wrapped up with one team, another was glancing over to see if we’d come their way.
 
 Previously, I thought $100 would be a stretch but when we left the 3rd floor we were already starting to blow past it!
 
 <image src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/donation-cart/bar-cart.png">
 
-The second floor was the same. People were eager to donate and excited about our drink options. 
+The second floor was the same. People were eager to donate and excited about our drink options.
 
-I was caught off guard by how into it people were. Not only were people really generous, but people who missed the cart due to meetings found us later to donate—some even sent money via Venmo later that evening just to chip in. 
+I was caught off guard by how into it people were. Not only were people really generous, but people who missed the cart due to meetings found us later to donate—some even sent money via Venmo later that evening just to chip in.
 
-Although we had a tip jar for cash, it was really helpful to have a Venmo account ready to go. We used my personal account and I donated the sum online the next day. 
+Although we had a tip jar for cash, it was really helpful to have a Venmo account ready to go. We used my personal account and I donated the sum online the next day.
 
 ## End result
 

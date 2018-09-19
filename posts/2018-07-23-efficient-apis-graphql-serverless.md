@@ -2,8 +2,10 @@
 title: Efficient APIs with GraphQL and Serverless
 description: 'When to use GraphQL, why it simplifies APIs, and how to do it Serverless-ly.'
 date: 2018-07-23
-layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/graphql.jpeg
+category:
+  - guides-and-tutorials
+heroImage: ''
 authors:
   - JeremyCoffield
 ---

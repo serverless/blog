@@ -3,12 +3,11 @@ title: "Introducing Serverless Partners: Meet Trek10"
 description: "Indiana based consultancy that specializes in using the latest services around container-based & event-driven architectures"
 date: 2016-10-18
 thumbnail: 'https://www.trek10.com/assets/logo.svg'
-layout: Post
+category:
+  - user-stories
 authors:
   - NickGottlieb
 ---
-
-<img width="700px" class="center" src="https://www.trek10.com/assets/logo.svg">
 
 Serverless architecture has opened a whole new world of possibilities for developers. We’re seeing so many cool projects being built with the Serverless Framework. The open-source Framework allows you to easily build web, mobile and IoT applications with serverless architectures using AWS Lambda, Azure Functions, Google Cloud Functions and more. Startups to Fortune 100 companies are using the Framework to build sophisticated event-driven systems.
 

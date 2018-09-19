@@ -2,23 +2,23 @@
 title: "How to Create a Dynamic Site with Pre-built Serverless Components"
 description: "A step-by-step tutorial that guides you through creating a dynamic website with pre-built Serverless Components."
 date: 2018-05-31
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-components-thumb.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif'
+category:
+  - guides-and-tutorials
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif'
 authors:
   - EslamHefnawy
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components/serverless-components.gif">
 
 In previous posts, we’ve explored how to [create a static website](https://serverless.com/blog/how-to-create-landing-page-with-serverless-components/) and a [REST API](https://serverless.com/blog/how-create-rest-api-serverless-components/) with Serverless Components. This post is going to build on top of that knowledge to create a dynamic website powered by a database.
 
 The example dynamic website we’re going to put together is a retail app. Just a simple eCommerce website that lists the products in your database via a REST API.
 
-## Getting started
+#### Getting started
 
 First, a quick overview of the Components we are using, and how you'll need to set up your environment.
 
-### Components we’re going to use
+##### Components we’re going to use
 
 To assemble our dynamic site, we’re gonna use the following lower-level components:
 
@@ -33,7 +33,7 @@ You can find all those components [in our registry](https://github.com/serverles
 
 Ready to start? Let's go.
 
-### Install Serverless Components
+##### Install Serverless Components
 
 If you haven’t already, install Serverless Components with the following command:
 
@@ -45,9 +45,9 @@ You’ll also need to have an AWS account to host pretty much everything.
 
 Alright! Now that we have everything set up, lets starting building our retail app!
 
-## Setting up the frontend
+#### Setting up the frontend
 
-We’ll start out by setting up the frontend via S3. All you have to do is create a `serverless.yml` file, use the `static-website` component, and pass in the required config. 
+We’ll start out by setting up the frontend via S3. All you have to do is create a `serverless.yml` file, use the `static-website` component, and pass in the required config.
 
 Add the following config to a `serverless.yml` file:
 
@@ -76,7 +76,7 @@ Using this `path` property, we're referencing our frontend code on our file syst
 
 You'll also notice that we're referring to a REST API component using the variable syntax `${productsApi.url}`. So we'll need to add that component. Let's do that!
 
-## Setting up the REST API
+#### Setting up the REST API
 You can add a REST API by adding the `rest-api` component. This component supports both AWS API Gateway and [Serverless Event Gateway](https://http://serverless.com/event-gateway).
 
 In this example, we're going to use the API Gateway. Let's add this component to our `serverless.yml` file by adding this config:
@@ -104,7 +104,7 @@ In this example, we're going to use the API Gateway. Let's add this component to
 
 Sweet! Now we have a REST API set in place. As you can see, this REST API needs 3 function backends to process your API requests. So we'll need to add 3 Lambda function components. We're going to do that next.
 
-## Setting up the backend code
+#### Setting up the backend code
 Just add 3 `aws-lambda` components to your config along with the actual logic.
 
 To do that, you can add the following config:
@@ -232,7 +232,7 @@ We won't get into the details of the code above, but it should be pretty self ex
 
 Wait a minute, our Lambda codebase is referring to a DynamoDB database table to query. So we'll need to add this final piece of the puzzle. Let's do it!
 
-## Setting up the database
+#### Setting up the database
 
 We're going to use the `aws-dynamodb` component to provision this products database. To do that, just add the following config to your `serverless.yml`:
 
@@ -262,7 +262,7 @@ Awesome! We just assembled the final piece of our new component. It's a lot like
 
 If you deploy your component, your entire app should be deployed. However, for the sake of demonstration, let's add a final step to seed some product data in the database so that you can view it on the website.
 
-## BONUS: Seeding data
+#### BONUS: Seeding data
 
 Remember that, at the end of the day, you're creating a brand new component using lower-level components. You can add logic specific to this new higher-order component just like you do with other components.
 
@@ -357,7 +357,7 @@ Alright! Now we're ready to deploy! Just run the following command:
 components deploy
 ```
 
-At this point, all your components are being provisioned, and your seed data will be inserted into the newly created database. 
+At this point, all your components are being provisioned, and your seed data will be inserted into the newly created database.
 
 After deployment is complete, you should see the following output:
 
@@ -381,7 +381,7 @@ Voila! Your dynamic website is live!
 
 Notice all the frontcode we’ve added, along with the seeded products from the database getting queried by the Lambda functions via our REST API.
 
-## Summary
+#### Summary
 
 In a nutshell, what we've done is added the following components, along with their required config & code:
 

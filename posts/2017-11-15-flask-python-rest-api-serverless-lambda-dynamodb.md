@@ -2,13 +2,13 @@
 title: "Build a Python REST API with Serverless, Lambda, and DynamoDB"
 description: "Deploy a Serverless REST API in minutes using the popular Flask web framework"
 date: 2017-11-16
-layout: Post
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/flask-600px.png'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-python-flask-api.jpg'
+category:
+  - guides-and-tutorials
+heroImage: ''
 authors:
   - AlexDeBrie
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-python-flask-api.jpg">
 
 Your existing web framework tooling can work seamlessly with the [Serverless Framework](serverless.com/framework). Let’s go over how to use the Python web framework [Flask](http://flask.pocoo.org/) to deploy a Serverless REST API.
 
@@ -23,11 +23,11 @@ If you already have a Flask application that you want to convert to Serverless, 
 
 If you want to skip the walkthrough and just get started with a fully-configured template, check out the [Using the Quick Start Template](#using-the-quick-start-template) section below.
 
-# Getting Started
+#### Getting Started
 
 To get started, you'll need the [Serverless Framework](https://serverless.com/framework/docs/providers/aws/guide/quick-start/) installed. You'll also need your environment configured with [AWS credentials](https://serverless.com/framework/docs/providers/aws/guide/credentials/).
 
-# Creating and deploying a single endpoint
+#### Creating and deploying a single endpoint
 
 Let's start by deploying a single endpoint.
 
@@ -142,7 +142,7 @@ After a minute, the console will show your `endpoints` in the `Service Informati
 
 You did it—a real, live application on the Internet!
 
-# Adding a DynamoDB table with REST-like endpoints
+#### Adding a DynamoDB table with REST-like endpoints
 
 Doing a "Hello World!" is fun, but your application will need to persist some sort of state to be useful. Let's add a [DynamoDB table](https://aws.amazon.com/dynamodb/) as our backing store.
 
@@ -328,7 +328,7 @@ $ curl -H "Content-Type: application/json" -X GET ${BASE_DOMAIN}/users/alexdebri
 
 This isn't a full-fledged REST API, and you'll want to add things like error handling, authentication, and additional business logic. This does give a framework in which you can work to set up those things.
 
-# Path-specific routing
+#### Path-specific routing
 
 Let's take another look at our function configuration in `serverless.yml`:
 
@@ -378,7 +378,7 @@ Now, all requests to `GET /users/:userId` will be handled by the `getUser` insta
 
 Again, none of this is required, and it's a bit of an overweight solution; each specific endpoint will include the full application code for your other endpoints. However, it's a good balance between speed of development by using the tools you're used to, along with the per-endpoint granularity that serverless application patterns provide.
 
-# Local development configuration with Serverless offline plugin
+#### Local development configuration with Serverless offline plugin
 
 When developing an application, it's nice to rapidly iterate by developing and testing locally rather than doing a full deploy between changes. In this section, we’ll cover how to configure your environment for local development.
 
@@ -513,7 +513,7 @@ Yep, it works just like it did on Lambda.
 
 This local setup can really speed up your workflow while still allowing you to emulate a close approximation of the Lambda environment.
 
-# Converting an existing Flask application
+#### Converting an existing Flask application
 
 If you already have an existing Flask application, it's very easy to convert to a Serverless-friendly application. Do the following steps:
 
@@ -559,7 +559,7 @@ Make sure that the value for `app` under the `custom.wsgi` block is configured f
 
 **Note:** if you use other resources (databases, credentials, etc.), you'll need to make sure those make it into your application. Check out our other material on [managing secrets & API keys with Serverless](https://serverless.com/blog/serverless-secrets-api-keys/).
 
-# Using the Quick Start Template
+#### Using the Quick Start Template
 
 If you don't have an existing Flask application to convert, but you want a well-structured starting point for an application, you can check out our [serverless-flask](https://github.com/alexdebrie/serverless-flask) application template.
 

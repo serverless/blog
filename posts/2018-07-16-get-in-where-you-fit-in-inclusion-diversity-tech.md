@@ -2,17 +2,17 @@
 title: "Get in where you fit in: inclusion and diversity in tech"
 description: "I'm Charmmie Hendon, and I'm passionate about diversity and inclusion in tech. Here's a bit of my personal experience, and how you too can affect change."
 date: 2018-07-16
-layout: Post
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/inclusion/serverless-tech-inclusion-thumb.jpg"
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/inclusion/serverless-tech-inclusion1.jpg'
+category:
+  - engineering-culture
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/inclusion/serverless-tech-inclusion1.jpg'
 authors:
   - CharmmieHendon
 ---
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/inclusion/serverless-tech-inclusion1.jpg">
-
 Along with all the other companies in the Lightspeed portfolio, we at Serverless recently signed an agreement to focus on diversity and inclusion. But even before signing that agreement, diversity and inclusion has been incredibly important to me, and to the entire operations team here at Serverless.
 
-If you’re thinking about ways to improve your own company diversity, here’s my own experience entering the tech industry as both a woman and person of color, and what I, and we, at Serverless are trying to do to make things better. I think this is an incredibly important time for organizations to be educating themselves about why diversity matters. 
+If you’re thinking about ways to improve your own company diversity, here’s my own experience entering the tech industry as both a woman and person of color, and what I, and we, at Serverless are trying to do to make things better. I think this is an incredibly important time for organizations to be educating themselves about why diversity matters.
 
 Consider this your starter kit, straight from me.
 
@@ -32,11 +32,11 @@ As a woman and person of color, I felt isolated.
 
 ## Adjusting to this new paradigm
 
-I saw from my time in the fashion industry how the incredible diversity of opinion there actually fostered *more* creativity and innovation. And while I was in fashion, I always felt like my ideas and feedback were taken as seriously as anyone else’s. 
+I saw from my time in the fashion industry how the incredible diversity of opinion there actually fostered *more* creativity and innovation. And while I was in fashion, I always felt like my ideas and feedback were taken as seriously as anyone else’s.
 
 In tech, however, I felt like I had to prove myself to be taken seriously. For example, I come from fashion and I like to look on point. I dress *up* when I come to work; I don’t wear t-shirts or casual clothing like most colleagues in this field do. I’ve found that, because of the way I dress, it’s easy for some people think I’m “too much” or just seem out of place. They take me less seriously, and I’ve had to work double hard to fit in. But nothing stops me from understanding how things function.
 
-Another example of stereotyping: a fellow attendee at a tech event started speaking Chinese to me and I told him I was Korean. He still went on speaking Chinese, and thought I would be impressed. The entire situation was uncomfortable. I told him I spoke German, Korean and Spanish but no Chinese. When he wouldn’t listen, I asked point blank in German, “Kannst du mich verstehen?” (Can you understand me?) Things got quiet. 
+Another example of stereotyping: a fellow attendee at a tech event started speaking Chinese to me and I told him I was Korean. He still went on speaking Chinese, and thought I would be impressed. The entire situation was uncomfortable. I told him I spoke German, Korean and Spanish but no Chinese. When he wouldn’t listen, I asked point blank in German, “Kannst du mich verstehen?” (Can you understand me?) Things got quiet.
 
 ### Recognize your own bias
 
@@ -50,7 +50,7 @@ Also, ask questions. Don’t EVER feel like any question is stupid. I’ve recen
 
 ## The data behind implicit bias
 
-What you’ve seen up until now is one personal story from one person. But if you want to see how small acts of implicit bias add up to create large-scale bias, Facebook actually has a fantastic training on it, in which they cite an array of studies that show how even a 1% bias in a certain direction can have a huge impact on the entire organization in only a handful of years. 
+What you’ve seen up until now is one personal story from one person. But if you want to see how small acts of implicit bias add up to create large-scale bias, Facebook actually has a fantastic training on it, in which they cite an array of studies that show how even a 1% bias in a certain direction can have a huge impact on the entire organization in only a handful of years.
 
 Furthermore, people who self-reported that they were aware of their own bias did *worse* in bias testing. Yeah, [Dunning-Kruger](https://www.forbes.com/sites/markmurphy/2017/01/24/the-dunning-kruger-effect-shows-why-some-people-think-theyre-great-even-when-their-work-is-terrible/) will get you every time.
 
@@ -87,7 +87,7 @@ You’d be surprised at the reception you’d receive when asking for help in un
 
 We are working hard on these issues here at Serverless. We are scaling at a fast pace and excited to see what kind of great work comes out of our team.
 
-We are doing our best to ensure our group is well-rounded and that many types of people are present. We believe that our successes will be more impactful when we have a strong team that is empathetic, collaborative, and open to diverse ideas and opinions. We want to discuss uncomfortable issues and find solutions together. 
+We are doing our best to ensure our group is well-rounded and that many types of people are present. We believe that our successes will be more impactful when we have a strong team that is empathetic, collaborative, and open to diverse ideas and opinions. We want to discuss uncomfortable issues and find solutions together.
 
 Just as people code in various languages to achieve the best results, we need to be open to learning and engaging with the multiple types of people that are underrepresented; you may be overlooking a great potential “language” that could open up your path to success and beyond.
 

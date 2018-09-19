@@ -2,8 +2,10 @@
 title: Build a multi-region, multi-master application with Serverless and DynamoDB Global Tables
 description: We're going to create a multi-region, multi-master, geo-routed application—all in about 30 minutes.
 date: 2018-01-30
-layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/dynamodb.png'
+category:
+  - guides-and-tutorials
+  - operations-and-observability
 authors:
   - AlexDeBrie
 ---
@@ -288,7 +290,7 @@ My base domain is `serverlessteam.com`. I want my app to generally be accessible
 
 First, let's create an SSL certificate for our domain using Amazon Certificate Manager (ACM). Navigate to Amazon Certificate Manager _in the region you want to deploy your endpoint_. Click "Request a certificate" and enter your domain.
 
-I'll create a certificate at `keyvalue.serverlessteam.com`. 
+I'll create a certificate at `keyvalue.serverlessteam.com`.
 
 <img width="1241" alt="Request an ACM certificate" src="https://user-images.githubusercontent.com/6509926/34584358-1cb4b132-f161-11e7-8ab6-b1f619db3200.png">
 
@@ -326,7 +328,7 @@ provider:
 ....
 ```
 
-This will help us provision a custom domain in API Gateway. Note that we're provisioning a `regional` endpointType, and the domain name will use the region. We won't have it create our Route53 record as we'll create that separately. 
+This will help us provision a custom domain in API Gateway. Note that we're provisioning a `regional` endpointType, and the domain name will use the region. We won't have it create our Route53 record as we'll create that separately.
 
 
 Go on and create your domain:

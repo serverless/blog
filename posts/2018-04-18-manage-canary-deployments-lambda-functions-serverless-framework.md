@@ -2,8 +2,10 @@
 title: "How to manage canary deployments on Lambda via the Serverless Framework"
 description: "Never again fear breaking your Serverless application due to integration issues."
 date: 2018-04-18
-layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/canary-deployments.jpg'
+category:
+  - guides-and-tutorials
+  - operations-and-observability
 authors:
   - DavidGarcia
 ---

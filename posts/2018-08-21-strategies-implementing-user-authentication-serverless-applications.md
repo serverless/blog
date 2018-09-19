@@ -2,13 +2,13 @@
 title: "Strategies for implementing user authentication in serverless applications"
 description: "Implementing user authentication in serverless applications: storing user info with sessions & JWT, token validity with Lambda Custom Authorizers, user management & more."
 date: 2018-08-21
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/authentication/auth-serverless-thumb.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/authentication/auth-serverless-header.png'
+category:
+  - guides-and-tutorials
+heroImage: https://lh3.googleusercontent.com/faQ5pKLioklXq8haIYIxyLDOadptMB1E5bU6oMGPn7pyQ8k9W4x36lfqsmEerROYhf_BjbD1h-hDjJkBMAoCxFQDiHSMi9jCkC6YRDjq78Boscof_KgNdWw-95ND4rrkfeXEIPsJwIPO7AMVp8ivDitD650rDUKaFWh-PXvYMD4DN45Jw_jkp1NgheMe2pJcDimidVZxib9_rShJ_Cj9Zg_VIf3RhjCLvJaXgfxBxIIlBptLMLzpbfeBE17Wku9QEvbKncfsyDLhyJnTeNBCL0od7GFa0THMbVtyn4CZUSWkx1hSHI5GOkP8FUG0U7LO3ZI3_GFdKXbou8R7nhcqJlmeZs0CBX9oidMeJcUXvGgxSd4pQBFpjU0TahA_yguxZf-vEfRb1tm0N1qfm0bK7mSnhmbmQ47lVRdijbzaJ9V0KKgql1l8ENuOJoHa4mNHmNO280xrMIdtb9Cs7tkuvFaY_LCWyUD7cD6OQlsBrYeuHLEDgDblRYGWF3F0moqkiR-kwqI2aJtDTwlt2YUaWPC90ozOJoS5fhRAyTC2EhQyatVQ3VxBrGIPiUmdheDDMQL6EWzQe69_rK8DRcdz5eDc0ZL3rUgG=w2560-h1224
 authors:
   - JeremyCoffield
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/authentication/auth-serverless-header.png">
 
 Searching for a way to do user authentication in your serverless project?
 
@@ -23,13 +23,13 @@ I’ll be mentioning the following examples in this post; feel free to check the
 * [API Gateway + Custom Authorizer + Auth0](https://github.com/serverless/examples/tree/master/aws-node-auth0-custom-authorizers-api)
 * [Serverless Authentication + Authorization](https://github.com/adnanrahic/a-crash-course-on-serverless-auth)
 
-## Where to store user information
+#### Where to store user information
 
 When implementing authentication in your Serverless project, there are two steps: (1) give your users the ability to identify themselves, (2) retrieve their identity in your Serverless functions.
 
 The most common ways to accomplish this are storing user sessions, and writing user information inside JSON Web Tokens.
 
-### Sessions - standard approach
+##### Sessions - standard approach
 
 Sessions are a standard for storing authentication-related information.
 
@@ -39,7 +39,7 @@ Typically, you would store session data in either Redis or Memcached. But for Se
 
 The down side is, hitting DynamoDB or another datastore to retrieve session information can be a challenge. With a high enough load on your application, retrieving sessions might add a significant amount to the datastore costs and increase page load times for users. Not so optimal.
 
-### JWT - convenient for serverless
+##### JWT - convenient for serverless
 
 Enter JSON Web Tokens (JWT), a growing favorite for serverless projects.
 
@@ -47,21 +47,21 @@ The authentication mechanism here is similar to sessions, in that the user gets 
 
 On every request, the user will send the whole token to the endpoint. If you store their username or access scopes in the JWT token, it will be very easy to access that information in every HTTP request you receive.
 
-#### The good
+##### The good
 
 This has a number of benefits for serverless projects compared to sessions:
 - you don’t have to access the datastore for getting user information, which can decrease operational costs significantly
 - changing the shape of the data stored in JWT tokens during development is faster, and that enables easier experiments
 - implementing JWT can be just plain easier than reading and writing sessions
 
-#### The bad
+##### The bad
 
-Unfortunately, JWT isn’t a holy grail: 
+Unfortunately, JWT isn’t a holy grail:
 - JWT tokens are larger than average session keys, so your clients may be sending more data to your endpoints overall
 - All issued tokens are encrypted with a single keypair. If a leak occurs, the keypair-affected applications would need to invalidate all existing JWT tokens. Clients are allowed to choose the encryption method used on the JWT token issued to them, which could potentially expose additional attack vectors. (This [whitepaper](https://www.nds.rub.de/media/ei/veroeffentlichungen/2017/10/17/main.pdf) on the topic is quite thought-provoking.)
 - Implementing authentication via JWT in a production app certainly requires spending extra time on ensuring that the tokens are used correctly, that you only store the most necessary information in the tokens, and that you are keeping your encryption keys safe.
 
-## Where to check session or token validity?
+#### Where to check session or token validity?
 
 So when and where should you check the user’s credentials inside your app?
 
@@ -69,7 +69,7 @@ One solution would be to check the JWT or session content on every call to any o
 
 Another solution that improves on some of these issues is using Custom Authorizers supported by API Gateway.
 
-### Lambda Custom Authorizers
+##### Lambda Custom Authorizers
 
 AWS Lambda offers a convenient way to perform authentication outside of your core functions. With API Gateway’s Custom Authorizers, you can specify a separate Lambda function that is _only_ going to take care of authenticating your users.
 
@@ -99,11 +99,11 @@ The best part: API Gateway will cache the resulting policy that gets returned by
 
 Check out our documentation on [using the Custom Authorizers with the Serverless Framework](https://serverless.com/framework/docs/providers/aws/events/apigateway/#http-endpoints-with-custom-authorizers).
 
-## User management from scratch vs hosted services
+#### User management from scratch vs hosted services
 
 To manage users, you’ll need to create and delete them, as well as log them in and out. So the the big question is: should you manage users entirely yourself, or use a hosted service?
 
-### Implementing it yourself
+##### Implementing it yourself
 
 This basically requires a CRUD interface for your Users database, plus a `login` method to generate a new JWT token or to create a session. Those can be implemented as separate functions.
 
@@ -169,7 +169,7 @@ And specified in the `serverless.yml`:
 
 You can find the full example in [this GitHub repo](https://github.com/adnanrahic/a-crash-course-on-serverless-auth).
 
-### Using hosted services
+##### Using hosted services
 
 Services like Auth0 and Amazon Cognito handle creating users, logging them in, and storing sessions. If your goal is to allow users to log in with their social accounts or their corporate SAML identities, this is especially useful.
 
@@ -206,7 +206,7 @@ And then your Authorizer function will check the user's token using the Auth0 pu
 
 All without a need for you to maintain the Users database. Pretty slick.
 
-## Conclusion
+#### Conclusion
 
 We’re unfortunately still in the early stages of authentication for serverless.
 

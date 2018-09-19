@@ -1,9 +1,13 @@
 ---
 title: Serverless (FaaS) vs. Containers - when to pick which?
-description: Docker, Kubernetes, Serverless? Let's discuss the respective ups and downs of containers and serverless. 
+description: Docker, Kubernetes, Serverless? Let's discuss the respective ups and downs of containers and serverless.
 date: 2017-10-06
-layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-vs-containers.jpg
+category:
+  - guides-and-tutorials
+  - operations-and-observability
+  - engineering-culture
+heroImage: ''
 authors:
   - PhilippMuns
 ---
@@ -18,27 +22,27 @@ What are the commonalities and distinctions? What are the advantages and disadva
 
 It's serverless computing vs containerization, right now. Read on.
 
-# How did we get here?
+#### How did we get here?
 
 Before we jump right into the details, let’s cover some very important history.
 
-## 1. Physical servers
+##### 1. Physical servers
 
 We used to build our own infrastructure in the form of physical servers. We set up those machines, deployed our code on them, scaled them and maintained them. The whole thing was a manual process, and pretty slow to boot.
 
-## 2. Server clusters and VMs
+##### 2. Server clusters and VMs
 
 Using a single physical server for one application was a waste of resources. So, we evolved our infrastructure thinking and combined multiple physical servers into a cluster.
 
 We used those so-called 'virtual machines' to run multiple applications in isolation on top of this infrastructure. Deployment and management got way faster and easier. However, server administration was still necessary and largely very manual.
 
-## 3. Entering the cloud (IaaS)
+##### 3. Entering the cloud (IaaS)
 
 Setting up and operating your own datacenter came with new operational challenges; cloud computing began to tackle those issues.
 
 Why not rent your servers and operational services individually, for a monthly fee? This approach made it way easier to scale up or down, and let teams move faster.
 
-## 4. PaaS
+##### 4. PaaS
 
 While cloud environments made it convenient to build large-scale applications, they still came saddled with the downsides of manual administration:
 
@@ -52,7 +56,7 @@ Wouldn’t it be great if all those administrative hassles were taken off of our
 
 Yep! That's what some other folks started thinking, too.
 
-# In corner 1: Containers
+#### In corner 1: Containers
 
 Wouldn’t it be nice if one could pack the application, with alllllll its dependencies, into a dedicated box and run it anywhere? No matter what software dependencies the host system has installed, or where and what the host system actually is?
 
@@ -66,14 +70,14 @@ Dotcloud then pivoted to become Docker, and Google worked on an OpenSource imple
 
 More and more enterprises adopted containers, and standards around this new technology got defined. Nowadays, nearly every cloud provider offers a way to host containerized applications on their infrastructure.
 
-## Advantages of containers
+##### Advantages of containers
 
 - Control and Flexibility
 - Vendor-agnostic
 - Easier migration path
 - Portability
 
-## Disadvantages of containers
+##### Disadvantages of containers
 
 - Administrative work (e.g. apply security fixes for containers)
 - Scaling is slower
@@ -81,7 +85,7 @@ More and more enterprises adopted containers, and standards around this new tech
 - Hard to get started
 - More manual intervention
 
-# In corner 2: Serverless compute (FaaS)
+#### In corner 2: Serverless compute (FaaS)
 
 About a year later, AWS introduced the first serverless compute service ever: AWS Lambda.
 
@@ -103,7 +107,7 @@ But what is a serverless application, exactly? In sum, an architecture is server
 - Auto-scaling
 - Short-lived, stateless functions
 
-## Advantages of serverless
+##### Advantages of serverless
 
 - Zero administration
 - Pay-per-execution
@@ -113,7 +117,7 @@ But what is a serverless application, exactly? In sum, an architecture is server
 - Microservice nature —> Clear codebase separation
 - Significantly reduced administration and maintenance burden
 
-## Disadvantages of serverless
+##### Disadvantages of serverless
 
 - No standardization (though the CNCF is working on this)
 - "Black box" environment
@@ -121,7 +125,7 @@ But what is a serverless application, exactly? In sum, an architecture is server
 - Cold starts
 - Complex apps can be hard to build
 
-# When to choose what?
+#### When to choose what?
 
 Now it's time for the big question:
 
@@ -129,7 +133,7 @@ Now it's time for the big question:
 
 Truthfully, it depends.
 
-## When to choose containerization
+##### When to choose containerization
 
 Containers are great if you need the flexibility to install and use software with specific version requirements. With containers, you can choose the underlying operating system and have full control of the installed programming language and runtime version.
 
@@ -141,21 +145,21 @@ For maximum benefit, you'll need to split up your monolithic application into se
 
 While you *can* configure the container orchestration platform to automatically handle traffic fluctuations for you (a.k.a, self-healing and auto-scaling), the process of detecting those traffic pattern changes and spinning the containers up or down won't be instantaneous. A complete shutdown where no container-related infrastructure is running at all (e.g. when there's no traffic) will also not be possible. There will always be runtime costs.
 
-## When to choose serverless
+##### When to choose serverless
 
 In that vein, serverless is great if you need traffic pattern changes to be automatically detected and handled instantly. The application is even completely shut down if there's no traffic at all. With serverless applications, you pay only for the resources you use; no usage, no costs.
 
 The serverless developer doesn't have to care about administrating underlying infrastructure; they just need to care about the code and the business value to end users. Iteration can be more rapid, as code can be shipped faster, without set-up or provisioning. In fact, because the underlying infrastructure is abstracted, the developer may not even know what it looks like. They won't really need to.
 
-But currently, there are some limitations with vendor support and ecosystem lock-in. Programming languages and runtimes are limited to whichever the provider supports (though there are  some workarounds (or "shims") available to overcome those restrictions). Event sources (which trigger all your functions) are usually services that the specific cloud provider offers. 
+But currently, there are some limitations with vendor support and ecosystem lock-in. Programming languages and runtimes are limited to whichever the provider supports (though there are  some workarounds (or "shims") available to overcome those restrictions). Event sources (which trigger all your functions) are usually services that the specific cloud provider offers.
 
 Reasoning about all the individual pieces of the application stack becomes harder when the infrastructure and the code are so separate. Serverless is a bit more new, and its tools still have room to evolve. That's what we're actively working on here at [Serverless.com](https://serverless.com/), anyway. 😉
 
-# Final verdict?
+#### Final verdict?
 
 Of course, this will be an oversimplification. The real world is always more complex. But your rule of thumb?
 
 Choose containers and container orchestrators when you need flexibility, or when you need to migrate legacy services. Choose serverless when you need speed of development, automatic scaling and significantly lowered runtime costs.
 
-## Related articles:
+##### Related articles:
 - [Why we switched from Docker to Serverless](https://serverless.com/blog/why-we-switched-from-docker-to-serverless/)

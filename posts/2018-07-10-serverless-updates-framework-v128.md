@@ -2,13 +2,13 @@
 title: "Serverless updates - SQS events, private endpoints, Event Gateway open source"
 description: "Serverless Framework v1.28 adds SQS support & private endpoints for API Gateway, plus tons of updates to Event Gateway open source."
 date: 2018-07-10
-layout: Post
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-updates/serverless-framework-v128-thum.jpg"
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-updates/serverless-framework-v128-header1.jpg'
+category:
+  - news
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-updates/serverless-framework-v128-header1.jpg'
 authors:
   - AndreaPasswater
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-updates/serverless-framework-v128-header1.jpg">
 
 The work on Serverless never stops. We just launched Serverless Framework v1.28 (with SQS event support), and have some exciting updates to Event Gateway open source!
 
@@ -57,13 +57,13 @@ Even more cool changes are listed in the [CHANGELOG.md](https://github.com/serve
 
 ## Event Gateway
 
-The [Event Gateway](https://github.com/serverless/event-gateway) is an open-source event router which enables you to connect your existing data and workloads to serverless compute via an event-driven pattern.  
+The [Event Gateway](https://github.com/serverless/event-gateway) is an open-source event router which enables you to connect your existing data and workloads to serverless compute via an event-driven pattern.
 
 You can use all of the new features below via our [hosted Event Gateway](https://dashboard.serverless.com/).  Follow [these docs](https://github.com/serverless/platform/tree/master/docs/event-gateway) to get started.
 
 ### Subscription simplicity & power
 
-We’ve overhauled how Subscriptions work in the Event Gateway to make them easier and more powerful.  
+We’ve overhauled how Subscriptions work in the Event Gateway to make them easier and more powerful.
 
 A Subscription binds a single Event to a single serverless Function (1-to-1).  Like this:
 
@@ -256,7 +256,7 @@ All of this is available now in the [hosted Event Gateway](https://dashboard.ser
 
 In this release, we also dramatically simplified how the Event Gateway does Authorization.
 
-You can now set custom authorization at the Event level.  
+You can now set custom authorization at the Event level.
 
 This means you can block Events from entering the Event Gateway (on any path and method) if the Event does not first pass authorization.  Here’s how it works:
 

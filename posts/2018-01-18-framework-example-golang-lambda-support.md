@@ -2,13 +2,13 @@
 title: "Serverless Framework example for Golang and Lambda"
 description: "AWS Lambda Golang support is one of the most exciting announcements of 2018. Here's a quick template for using Go with the Serverless Framework!"
 date: 2018-01-18
-layout: Post
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Golang/golang-logo.png'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/golang-support.jpg'
+category:
+  - guides-and-tutorials
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/golang-support.jpg'
 authors:
   - MaciejWinnicki
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/golang-support.jpg">
 
 Everyone, the day has come.
 
@@ -16,7 +16,7 @@ AWS Lambda is finally. Compatible. With Golang. 🖖
 
 Here's how you can start using Go with the Serverless Framework RIGHT NOW and deploy Lambdas to your heart's content.
 
-# Get Started
+#### Get Started
 
 First things first, you'll be needing the [Serverless Framework](https://serverless.com/framework/docs/providers/aws/guide/quick-start/) installed, and an [AWS account](http://docs.aws.amazon.com/lambda/latest/dg/setting-up.html#setting-up-signup).
 
@@ -84,7 +84,7 @@ $ serverless invoke -f hello
 
 Nice!
 
-# Building a Web API with Go + Lambda
+#### Building a Web API with Go + Lambda
 
 The basic example is nice, but let's try something a little more useful.
 
@@ -133,7 +133,7 @@ package main
 
 import (
     "fmt"
-    
+
     "github.com/aws/aws-lambda-go/events"
     "github.com/aws/aws-lambda-go/lambda"
 )
@@ -190,7 +190,7 @@ Hello, world!
 
 Great! This should get you started on a web API. Feel free to check out the [other Lambda events in Golang](https://github.com/aws/aws-lambda-go/tree/master/events).
 
-# Why use Go for your Lambdas?
+#### Why use Go for your Lambdas?
 
 Golang support for Lambda has been one of the most anticipated releases. The crowd at re:Invent was ecstatic when Werner announced Golang support was coming soon.
 
@@ -204,7 +204,7 @@ Java and C# both have notoriously slow cold-start time, in terms of multiple sec
 
 Speed _and_ safety. A pretty nice combo.
 
-# A Gateway to all the runtimes
+#### A Gateway to all the runtimes
 
 There's one final note about the Golang implementation on Lambda that's really interesting.
 

@@ -2,13 +2,14 @@
 title: How to create a REST API in Java using DynamoDB and Serverless
 description: Build a serverless REST API service in Java, store the data in a DynamoDB table, and deploy it to AWS. All using the Serverless Framework.
 date: 2018-04-16
-layout: Post
 thumbnail: https://user-images.githubusercontent.com/8188/38645932-e1973882-3db3-11e8-8a12-9a68ac905a10.png
+category:
+  - guides-and-tutorials
 authors:
   - RupakGanguly
 ---
 
-In this walkthough, we will build a `products-api` serverless service that will implement a REST API for products. We will be using Java as our language of choice. The data will be stored in a DynamoDB table, and the service will be deployed to AWS. 
+In this walkthough, we will build a `products-api` serverless service that will implement a REST API for products. We will be using Java as our language of choice. The data will be stored in a DynamoDB table, and the service will be deployed to AWS.
 
 ![image](https://user-images.githubusercontent.com/8188/38645675-ec708d0e-3db2-11e8-8f8b-a4a37ed612b9.png)
 
@@ -26,7 +27,7 @@ What we will cover:
 Before we begin, you'll need the following:
 
 * Install `node` and `npm`
-* Install the [Serverless Framework installed](https://serverless.com/framework/docs/providers/aws/guide/quick-start/) with an AWS account set up. 
+* Install the [Serverless Framework installed](https://serverless.com/framework/docs/providers/aws/guide/quick-start/) with an AWS account set up.
 * Install [Oracle JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and NOT Java JRE. Set the following:
 `export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home`
 * Install [Apache Maven](https://maven.apache.org/). After [downloading](https://maven.apache.org/download.html) and [installing](https://maven.apache.org/install.html) Apache Maven, add the `apache-maven-x.x.x` folder to the `PATH` environment variable.
@@ -92,7 +93,7 @@ Let's update the project `hello` to `products-api` in the POM i.e. `pom.xml`:
 
 ### The `serverless.yml`
 
-Let's add the relevant Lambda handlers under `functions` and update the deployment artifact under `package`, as per our project requirements. 
+Let's add the relevant Lambda handlers under `functions` and update the deployment artifact under `package`, as per our project requirements.
 
 Update the following sections:
 
@@ -248,7 +249,7 @@ Next, let's look at the methods that the Product POJO utilizes for data manageme
 The public constructor does a couple of things:
 
 * Overrides the `PLACEHOLDER_PRODUCTS_TABLE_NAME` table name annotation value with the actual value from the environment variable
-* Gets an instance of DynamoDBAdapter 
+* Gets an instance of DynamoDBAdapter
 * Gets an instance of AmazonDynamoDB client
 * Gets an instance of DynamoDBMapper
 
@@ -394,7 +395,7 @@ functions:
           path: /products/{id}
           method: delete
 ```
-The `listProducts` Lambda function maps to the `ListProductsHandler` handler and maps to the `http` event accessible at path `/products`. We define the other mappings in a similar fashion. 
+The `listProducts` Lambda function maps to the `ListProductsHandler` handler and maps to the `http` event accessible at path `/products`. We define the other mappings in a similar fashion.
 
 ## Writing the Handlers
 
@@ -738,7 +739,7 @@ curl -X DELETE https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/produc
 
 ### View the CloudWatch Logs
 
-We have used the `log4j.Logger` in our Java code to log relevant info and errors to the logs. In case of AWS, the logs can be retrieved from CloudWatch. 
+We have used the `log4j.Logger` in our Java code to log relevant info and errors to the logs. In case of AWS, the logs can be retrieved from CloudWatch.
 
 Let's do a GET call and then take a look at the logs from our terminal:
 
@@ -791,7 +792,7 @@ It will cleanup all the resources including IAM roles, the deployment bucket, th
 
 ## Summary
 
-To recap, we used Java to create a serverless REST API service, built it and then deployed it to AWS. We took a deep dive into the DAL code that handles the backend data mapping and access to the DynamoDB table. We also looked at the mapping between events, the API endpoints and the lambda function handlers in the service, all described intuitively in the `serverless.yml` file. 
+To recap, we used Java to create a serverless REST API service, built it and then deployed it to AWS. We took a deep dive into the DAL code that handles the backend data mapping and access to the DynamoDB table. We also looked at the mapping between events, the API endpoints and the lambda function handlers in the service, all described intuitively in the `serverless.yml` file.
 
 By now, you should have an end-to-end implementation of a serverless REST API service written in Java and deployed to AWS.
 

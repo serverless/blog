@@ -2,13 +2,14 @@
 title: Introducing OpenEvents
 description: Announcing a specification for describing event data in a common way
 date: 2017-12-06
-layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/openevents-logo-square.png
+category:
+  - news
 authors:
   - AustenCollins
 ---
 
-In the opening keynote of CloudNativeCon 2017, Dan Kohn, the executive director of the CNCF, announced a small but significant new effort titled [OpenEvents](https://openevents.io). 
+In the opening keynote of CloudNativeCon 2017, Dan Kohn, the executive director of the CNCF, announced a small but significant new effort titled [OpenEvents](https://openevents.io).
 
 Our company (Serverless Inc.) has been leading the charge on this effort with others within the context of the CNCF.  It's early in its development, but its impact is potentially profound.
 
@@ -34,7 +35,7 @@ These attributes include information to help title and categorize events, versio
 
 A variety of traditional use-cases can be improved by this, like service communication, SaaS integrations, webhooks, cloud bursting, functions-as-a-service, and improvements to the overall developer experience.  We're also excited to see what new [use-cases emerge](https://www.serverless.com/event-gateway) as a result of this.
 
-OpenEvents is a new effort and it's still under active development.  However, its working group has received a surprising amount of industry interest ranging from major cloud providers to popular SaaS companies. 
+OpenEvents is a new effort and it's still under active development.  However, its working group has received a surprising amount of industry interest ranging from major cloud providers to popular SaaS companies.
 
 We're excited to keep fostering this effort and what it means to the serverless community.  To get involved, go to [openevents.io](https://openevents.io).
 

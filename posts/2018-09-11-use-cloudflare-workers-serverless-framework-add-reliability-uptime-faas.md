@@ -2,13 +2,14 @@
 title: "Use Cloudflare Workers + Serverless Framework to add reliability and uptime to your FaaS"
 description: "Cloudflare Workers integrates with the Serverless Framework. Use Cloudflare Workers to add reliability and uptime to your existing FaaS!"
 date: 2018-09-11
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudflare-workers/serverless-cloudflare-workers-thumb.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudflare-workers/serverless-cloudflare-workers-header.png'
+category:
+  - news
+  - guides-and-tutorials
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudflare-workers/serverless-cloudflare-workers-header.png'
 authors:
   - RaeesBhatti
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudflare-workers/serverless-cloudflare-workers-header.png">
 
 If you haven’t heard of Cloudflare Workers, [serverless developers are already using them](https://www.troyhunt.com/serverless-to-the-max-doing-big-things-for-small-dollars-with-cloudflare-workers-and-azure-functions/) to cut costs, and add uptime and reliability to their Functions-as-a-Service. And now, you can deploy Cloudflare Workers from the Serverless Framework CLI as easily as you deploy to Lambda, Azure, or Google Cloud Functions!
 
@@ -16,11 +17,11 @@ Read more on how Cloudflare Workers can add even more robustness to your existin
 
 #### What are Cloudflare Workers?
 
-Cloudflare offers a suite of products which add performance, security, and reliability for your website. 
+Cloudflare offers a suite of products which add performance, security, and reliability for your website.
 
 They accelerate applications through their CDN, scan for malicious traffic patterns to proactively block DDoS attacks, provide DNS and free SSL, and load balance against origin servers to ensure application availability.
 
-But most importantly for the serverless world, the Cloudflare team recently announced Cloudflare Workers—edge programmable bits of logic based on W3C Service Workers spec. 
+But most importantly for the serverless world, the Cloudflare team recently announced Cloudflare Workers—edge programmable bits of logic based on W3C Service Workers spec.
 
 Cloudflare Workers ultimately function similarly to a FaaS provider (like Lambda or Azure Functions).
 
@@ -38,7 +39,7 @@ Using Cloudflare Workers can significantly enhance your existing FaaS implementa
 
 Say you misconfigure your AWS API Gateway, and all the requests going to your domain are failing. If you have a worker in Cloudflare, it can check whether the endpoint is working correctly. If it isn’t, Cloudflare can redirect them to a custom page, or send your users to a different region and issue an operational alert to notify the developer.
 
-That’s the beauty of using the Serverless Framework for your public cloud development—developers can deploy to multiple cloud providers from the same toolkit, easily taking advantage of the best features from each. 
+That’s the beauty of using the Serverless Framework for your public cloud development—developers can deploy to multiple cloud providers from the same toolkit, easily taking advantage of the best features from each.
 
 #### Get started with Cloudflare using the Serverless Framework
 
@@ -46,7 +47,7 @@ If you don’t already have Serverless installed, you’ll need to do that:
 
 `npm install serverless@latest -g`
 
-You’ll also need to [create a Cloudflare account](https://dash.cloudflare.com/sign-up), and then [grab your Cloudflare account and zone](https://developers.cloudflare.com/workers/api/). 
+You’ll also need to [create a Cloudflare account](https://dash.cloudflare.com/sign-up), and then [grab your Cloudflare account and zone](https://developers.cloudflare.com/workers/api/).
 
 ##### Deploying your first Cloudflare Worker on the Serverless Framework
 
