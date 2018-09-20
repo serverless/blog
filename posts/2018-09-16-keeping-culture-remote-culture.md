@@ -2,13 +2,12 @@
 title: "Keeping the culture in remote culture"
 description: "When your team team is distibuted or remote, building a company culture takes a different kind of effort. Here's how we keep culture strong at Serverless."
 date: 2018-09-17
-layout: Post
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Thom's+Posts/remotework_thumb.jpg
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Thom's+Posts/remotework.jpg
+category:
+  - engineering-culture
 authors:
   - ThomCrowe
 ---
-
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Thom's+Posts/remotework.jpg">
 
 Maintaining a company culture when everyone is co-located is hard. Doing it remotely is even harder. But it's far from impossible.
 
