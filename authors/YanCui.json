@@ -1,0 +1,12 @@
+{
+  "name": "Yan Cui",
+  "github": "theburningmonk",
+  "twitter": "theburningmonk",
+  "site": "https://theburningmonk.com/",
+  "avatar": "https://s.gravatar.com/avatar/0bbaed5a18c131ba152cf566e1becaf8",
+  "bio": {
+    "short": "Yan Cui is a Principal Engineer at DAZN, and an AWS Serverless Hero.",
+    "long":
+      "Yan Cui is a Principal Engineer at DAZN, and an AWS Serverless Hero. He's also an international speaker, blogger, consultant and author of [Production-Ready Serverless](https://productionreadyserverless.com/)."
+    }
+}
