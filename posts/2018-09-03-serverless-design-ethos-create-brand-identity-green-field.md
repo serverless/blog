@@ -5,7 +5,7 @@ date: 2018-09-03
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-design/serverless-design-andre-thumb.jpg
 category:
   - engineering-culture
-heroImage: https://lh3.googleusercontent.com/Ey4bTBYuMaAU4XgsOpZlBqJDHmS0xiUgaH2-9zq77TSdfM2vRCaa0waDt9uzyQxhYfPY1HotWt46RMuBZZQy7Eqq0cAI0meO7zB1eJn-VDBN8kzDmWA6n3ocecR9m21nv3Ec3fdsiG-MsKeW1aN5P7MBxz4QxwJdcsExBqVkmMwFuyqbQ20Ia4HLBVu_mkuDQAFBlH-ww-CH0b0Cg46PK1scpsga_cWqdZnWyFzcPmug_6LKx-6V-Aog6htWbGlD-f5UhZ-JAZPSgfmKS1xMBPtkTT3tOlM71k7g-gsQqt4BzaM4k4aSytDHwHRtknvDVT-6yTkq5kS-KcgNe4_MOPa9_qXzOUpPunbbAsnlDXTPVinIv-mQNGCpwk2T2p0MsM5UudS287qsGNS8w4elSOJzucAA5oMOhBve5NhgWvmpTe3M_k7NfIyblhOXjFDnMiN4Ho0URrCaouJ3vQdtbP7oWXdW7-692CJsUjtBRVfuyyAvp6c4AWnF33kbqBGExVQC3q2SMBQ87CMa7Tib_tRrr60T9lyvpU2AMuP3tRU7H7Pl-B0-_yUja4b4ZkY7m-j5-C3VKlU8GJgni3ah4NfT9AYAEMkY=w1436-h1224
+heroImage: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/featured-posts/01_How-Droplr-Scales.jpg
 authors:
   - AndrePires
 ---

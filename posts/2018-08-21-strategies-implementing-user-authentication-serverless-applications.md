@@ -5,7 +5,7 @@ date: 2018-08-21
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/authentication/auth-serverless-header.png'
 category:
   - guides-and-tutorials
-heroImage: https://lh3.googleusercontent.com/faQ5pKLioklXq8haIYIxyLDOadptMB1E5bU6oMGPn7pyQ8k9W4x36lfqsmEerROYhf_BjbD1h-hDjJkBMAoCxFQDiHSMi9jCkC6YRDjq78Boscof_KgNdWw-95ND4rrkfeXEIPsJwIPO7AMVp8ivDitD650rDUKaFWh-PXvYMD4DN45Jw_jkp1NgheMe2pJcDimidVZxib9_rShJ_Cj9Zg_VIf3RhjCLvJaXgfxBxIIlBptLMLzpbfeBE17Wku9QEvbKncfsyDLhyJnTeNBCL0od7GFa0THMbVtyn4CZUSWkx1hSHI5GOkP8FUG0U7LO3ZI3_GFdKXbou8R7nhcqJlmeZs0CBX9oidMeJcUXvGgxSd4pQBFpjU0TahA_yguxZf-vEfRb1tm0N1qfm0bK7mSnhmbmQ47lVRdijbzaJ9V0KKgql1l8ENuOJoHa4mNHmNO280xrMIdtb9Cs7tkuvFaY_LCWyUD7cD6OQlsBrYeuHLEDgDblRYGWF3F0moqkiR-kwqI2aJtDTwlt2YUaWPC90ozOJoS5fhRAyTC2EhQyatVQ3VxBrGIPiUmdheDDMQL6EWzQe69_rK8DRcdz5eDc0ZL3rUgG=w2560-h1224
+heroImage: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/featured-posts/04_user-authentication-.png
 authors:
   - JeremyCoffield
 ---

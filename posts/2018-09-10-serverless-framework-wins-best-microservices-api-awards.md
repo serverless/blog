@@ -5,7 +5,7 @@ date: 2018-09-10
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/API-award/Serverless_Social_API-Awards-2018-min.gif'
 category:
   - news
-heroImage: https://lh3.googleusercontent.com/QpzQusMN_9gme5OdlyN6RvfJFWsJ0LSykbrXhXOT7sLOKCx-8ClVMcmFnhMkcgu0UbhECLoXKlziwOQknW6ECyaJ73AAoHQqSZXynf-RH5fqgPbqCZXrwA1SPJQ513x3KHLqsRYjBzEBq2q63acSzNZogP0IsrTHEExwTtZSvUE9rHMmHYfAaLg4b5vGqvawwh_X4fv8EYKv1e7BGX9gBImj6YnGqtnQV3IKV4-BYsCUiKkGjWSlw26lRdT6WhkdAJiwMDlX_7c_VWT0PGLeghSGoX3MvkZVTu-sf3VK0HjrH7BSEiDqrezXx2fkORW734lexH19if0yIEuHwqwDGKX6hR2lbGN-mHIIxlOcUTlF2wE8pxpc-5GpzuHz6SNsmikg7_hvQ2-tDR8-Rn191DeuRFYBco3ogQ_2yZLgJwVYQNdyAKY3xPL9srTosH9up7PTageT-I5xMYlTcKT6_YOgyuPmAslA7b79WacX0W1iOJpGMfiKSNxAI8ChEUwZUrMmJhKcenUwVEEJUOHzYALbd094oMYKZC5hMZ4CFs11xcQKwV2uOj3JfP6uGmhkDYSsRYn5XUfetkCtyFRhY8w9-cvuQawd=w1436-h1224
+heroImage: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/featured-posts/02_Best-Microservices-API-.png
 authors:
   - AndreaPasswater
 ---
