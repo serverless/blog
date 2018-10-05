@@ -158,4 +158,4 @@ async function invokeLambda(functionName) {
 
 No more callback functions, yay!
 
-That's it, 5 common mistakes to avoid when working with Node.js 8.10 in Lambda. For more tips on building production-ready serverless applications and operational best practices, check out my [video course](https://productionreadyserverless.com/) ;-)
+That's it, 5 common mistakes to avoid when working with Node.js 8.10 in Lambda. For more tips on building production-ready serverless applications and operational best practices, check out my [video course](https://bit.ly/production-ready-serverless) ;-)
