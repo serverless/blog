@@ -2,7 +2,7 @@
 title: "Common Node8 mistakes in Lambda"
 description: "Here are some common mistakes people make when authoring Lambda functions with Node.js 8.10."
 date: 2018-10-04
-thumbnail: https://theburningmonk.com/wp-content/uploads/2018/10/common-node8-mistakes-in-lambda.jpg
+thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/node8-lambda/node8-lambda-serverless.jpg
 category:
   - guides-and-tutorials
 authors:
