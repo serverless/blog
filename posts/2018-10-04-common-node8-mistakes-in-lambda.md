@@ -2,20 +2,20 @@
 title: "Common Node8 mistakes in Lambda"
 description: "Here are some common mistakes people make when authoring Lambda functions with Node.js 8.10."
 date: 2018-10-04
-thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/node8-lambda/node8-lambda-serverless.jpg
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/node8-lambda/node8-lambda-serverless.jpg"
 category:
   - guides-and-tutorials
 authors:
   - YanCui
 ---
 
-It’s been 6 months since [AWS Lambda added support Node.js 8.10](https://aws.amazon.com/blogs/compute/node-js-8-10-runtime-now-available-in-aws-lambda/).  I’m super happy that I can finally use `async/await` to [simplify my Lambda functions](https://serverless.com/blog/aws-lambda-node-8-support-what-changes-serverless-developers/). 
+It’s been 6 months since AWS Lambda added support Node.js 8.10. I’m super happy that I can finally use `async/await` to [simplify my Lambda functions](https://serverless.com/blog/aws-lambda-node-8-support-what-changes-serverless-developers/). 
 
 In the meantime, I have helped a few clients with their Node8 serverless projects. In doing so I have seen some recurring mistakes around `async/await`.
 
 #### Still using callbacks
 
-Many people are still using the callbacks in their `async` handler functions.
+Many people are still using the callbacks in their `async` handler functions:
 
 ```javascript
 module.exports.handler = async (event, context, cb) => {
@@ -114,13 +114,15 @@ async function getTeams(teamIds) {
 }
 ```
 
-In this version we map `teamIds` to an array of `Promise`. We can then use [`Promise.all`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) to turn this array into a single `Promise` that returns an array of teams. In this case, `teamModel.fetch` is called concurrently and can significantly improve execution time.
+In this version we map `teamIds` to an array of `Promise`. We can then use [`Promise.all`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) to turn this array into a single `Promise` that returns an array of teams. 
+
+In this case, `teamModel.fetch` is called concurrently and can significantly improve execution time.
 
 #### async/await inside forEach()
 
-This is a tricky one and can sometimes catch out even experienced Node.js developers.
+This is a tricky one, and can sometimes catch out even experienced Node.js developers.
 
-The problem is that, code like this doesn't behave the way you'd expect them to.
+The problem is that code like this doesn't behave the way you'd expect it to:
 
 ```javascript
 [ 1, 2, 3 ].forEach(async (x) => {
@@ -131,7 +133,7 @@ The problem is that, code like this doesn't behave the way you'd expect them to.
 console.log('all done.')
 ```
 
-When you run this you'll get the following output.
+When you run this you'll get the following output:
 
 ```
 all done.
@@ -158,4 +160,10 @@ async function invokeLambda(functionName) {
 
 No more callback functions, yay!
 
-That's it, 5 common mistakes to avoid when working with Node.js 8.10 in Lambda. For more tips on building production-ready serverless applications and operational best practices, check out my [video course](https://bit.ly/production-ready-serverless) ;-)
+#### Wrap-up
+
+That's it, 5 common mistakes to avoid when working with Node.js 8.10 in Lambda. For more tips on building production-ready serverless applications and operational best practices, check out my [video course](https://bit.ly/production-ready-serverless). ;-)
+
+##### Further reading:
+
+* [AWS Lambda Node8 support: what it changes for serverless developers](https://serverless.com/blog/aws-lambda-node-8-support-what-changes-serverless-developers/)
