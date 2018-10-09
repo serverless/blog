@@ -5,6 +5,7 @@ date: 2018-10-04
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/node8-lambda/node8-lambda-serverless.jpg"
 category:
   - guides-and-tutorials
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/node8-lambda/node8-lambda-serverless.jpg"
 authors:
   - YanCui
 ---
