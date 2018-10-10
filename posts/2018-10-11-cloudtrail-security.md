@@ -30,10 +30,9 @@ In order to maintain an ongoing record of events in an AWS account, users must f
 
 A trail enables CloudTrail to deliver log files to an Amazon S3 bucket. Once logs are stored in S3, they can be queried using SQL queries on the trails through [AWS Athena](https://docs.aws.amazon.com/athena/latest/ug/cloudtrail-logs.html). This is by far more efficient than “grepping” through JSON log dumps.
 
-![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudtrail-security-post/cloudtrail-create.png "Enabling CloudTrail on AWS Lambda")
+![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudtrail-security/cloudtrail-create.png "Enabling CloudTrail on AWS Lambda")
 
-![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudtrail-security-post/cloudtrail-athena.png "Querying CloudTrail Logs With AWS Athena")
-
+![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudtrail-security/cloudtrail-athena.png "Querying CloudTrail Logs With AWS Athena")
 
 By default, when you create a trail in the AWS management console, the trail applies to all AWS regions. It logs events from all regions in AWS and delivers the log files to the Amazon S3 bucket that you specify.
 
@@ -192,3 +191,8 @@ When your infrastructure is decentralized in a cloud-native environment, this be
 By enabling CloudTrail for AWS Lambda, you can gain audit trail logging easily, including both application functionality logs as well as application environment configuration logs.
 
 If you’ve got any questions about serverless security, hit me up in the comments!
+
+##### Further reading
+
+- [Fantastic Serverless security risks, and where to find them](https://serverless.com/blog/fantastic-serverless-security-risks-and-where-to-find-them)
+- [How to monitor AWS account activity with CloudTrail, CloudWatch events and Serverless](https://serverless.com/blog/serverless-cloudtrail-cloudwatch-events)
