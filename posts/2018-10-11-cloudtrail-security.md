@@ -2,10 +2,10 @@
 title: "Using AWS CloudTrail to Enhance Your Serverless Application Security"
 description: "Learn how to harness AWS CloudTrail for enhancing your serverless application security posture"
 date: 2018-10-11
-thumbnail: '??'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudtrail-security/cloudtrail-security-serverless.jpg'
 category:
-  - serverless-security
-  - guides-and-tutorials
+  - operations-and-observability
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudtrail-security/cloudtrail-security-serverless.jpg'
 authors:
   - OrySegal
 ---
