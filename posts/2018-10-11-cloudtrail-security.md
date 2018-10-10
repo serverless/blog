@@ -30,11 +30,10 @@ In order to maintain an ongoing record of events in an AWS account, users must f
 
 A trail enables CloudTrail to deliver log files to an Amazon S3 bucket. Once logs are stored in S3, they can be queried using SQL queries on the trails through [AWS Athena](https://docs.aws.amazon.com/athena/latest/ug/cloudtrail-logs.html). This is by far more efficient than “grepping” through JSON log dumps.
 
-[IMAGE 1]
-Enabling CloudTrail on AWS Lambda
+![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudtrail-security-post/cloudtrail-create.png "Enabling CloudTrail on AWS Lambda")
 
-[IMAGE 2]
-Querying CloudTrail Logs With AWS Athena
+![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudtrail-security-post/cloudtrail-athena.png "Querying CloudTrail Logs With AWS Athena")
+
 
 By default, when you create a trail in the AWS management console, the trail applies to all AWS regions. It logs events from all regions in AWS and delivers the log files to the Amazon S3 bucket that you specify.
 
@@ -93,8 +92,6 @@ recipientaccountid|617****84847
 serviceeventdetails|
 sharedeventid|b4bf3003-bb3d-4b88-8511-2ba2e5265904
 vpcendpointid|
-
-[TABLE]
 
 #### Verifying request formats? Not without some help.
 
