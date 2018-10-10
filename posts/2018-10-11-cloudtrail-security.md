@@ -68,29 +68,31 @@ One thing I wish it had is the ability to store actual event (payload) data, or 
 
 Here’s an example of an AWS Lambda function invocation, triggered by an S3 `PUT` event. As you can see, this gives us easy access to the identity of the invoker, the source of the invocation, the AWS Lambda function ARN, the ARN of the invoking S3 bucket, etc:
 
-|eventversion|1.06|
-|useridentity|{type=AWSService, principalid=null, arn=null, accountid=null, invokedby=s3.amazonaws.com, accesskeyid=null, username=null, sessioncontext=null}|
-|eventtime|2018-09-25T07:08:06Z|
-|eventsource|lambda.amazonaws.com|
-|eventname|Invoke|
-|awsregion|us-east-1|
-|sourceipaddress|s3.amazonaws.com|
-|useragent|s3.amazonaws.com|
-|errorcode||
-|errormessage||
-|requestparameters|{"sourceAccount":"617****84847","invocationType":"Event","functionName":"arn:aws:lambda:us-east-1:617****84847:function:test-s3-change-dev-hello","sourceArn":"arn:aws:s3:::www.sls-hacker.xyz","contentType":""}|
-|responseelements|null|
-|additionaleventdata|{"functionVersion":"arn:aws:lambda:us-east-1:617****84847:function:test-s3-change-dev-hello:$LATEST"}|
-|requestid|c0223c9a-c091-11e8-ac5e-a14b38a845af|
-|eventid|b7ed9fda-09af-49d7-9bcc-6d27669e36ae|
-|resources|[{arn=arn:aws:lambda:us-east-1:617033284847:function:test-s3-change-dev-hello, accountid=617033284847, type=AWS::Lambda::Function}]|
-|eventtype|AwsApiCall|
-|apiversion||
-|readonly|FALSE|
-|recipientaccountid|617****84847|
-|serviceeventdetails||
-|sharedeventid|b4bf3003-bb3d-4b88-8511-2ba2e5265904|
-|vpcendpointid||
+key|value
+---|-----
+eventversion|1.06
+useridentity|{type=AWSService, principalid=null, arn=null, accountid=null, invokedby=s3.amazonaws.com, accesskeyid=null, username=null, sessioncontext=null}
+eventtime|2018-09-25T07:08:06Z
+eventsource|lambda.amazonaws.com
+eventname|Invoke
+awsregion|us-east-1
+sourceipaddress|s3.amazonaws.com
+useragent|s3.amazonaws.com
+errorcode|
+errormessage|
+requestparameters|{"sourceAccount":"617****84847","invocationType":"Event","functionName":"arn:aws:lambda:us-east-1:617****84847:function:test-s3-change-dev-hello","sourceArn":"arn:aws:s3:::www.sls-hacker.xyz","contentType":""}
+responseelements|null
+additionaleventdata|{"functionVersion":"arn:aws:lambda:us-east-1:617****84847:function:test-s3-change-dev-hello:$LATEST"}
+requestid|c0223c9a-c091-11e8-ac5e-a14b38a845af
+eventid|b7ed9fda-09af-49d7-9bcc-6d27669e36ae
+resources|[{arn=arn:aws:lambda:us-east-1:617033284847:function:test-s3-change-dev-hello, accountid=617033284847, type=AWS::Lambda::Function}]
+eventtype|AwsApiCall
+apiversion|
+readonly|FALSE
+recipientaccountid|617****84847
+serviceeventdetails|
+sharedeventid|b4bf3003-bb3d-4b88-8511-2ba2e5265904
+vpcendpointid|
 
 [TABLE]
 
