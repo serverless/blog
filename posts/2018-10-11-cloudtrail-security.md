@@ -1,6 +1,6 @@
 ---
-title: "Using AWS CloudTrail to Enhance Your Serverless Application Security"
-description: "Learn how to harness AWS CloudTrail for enhancing your serverless application security posture"
+title: "Using AWS CloudTrail to enhance your serverless application security"
+description: "Learn how to harness AWS CloudTrail to enhance your serverless application security posture."
 date: 2018-10-11
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudtrail-security/cloudtrail-security-serverless.jpg'
 category:
@@ -42,21 +42,21 @@ You can also configure other AWS services to further analyze and act upon the ev
 
 Note that not all AWS Lambda actions and data are available. At the time of writing, the following AWS Lambda actions are logged in CloudTrail:
 
-- AddPermission
-- CreateEventSourceMapping
-- CreateFunction
-- DeleteEventSourceMapping
-- DeleteFunction
-- GetEventSourceMapping
-- GetFunction
-- GetFunctionConfiguration
-- GetPolicy
-- ListEventSourceMappings
-- ListFunctions
-- RemovePermission
-- UpdateEventSourceMapping
-- UpdateFunctionCode
-- UpdateFunctionConfiguration
+* AddPermission
+* reateEventSourceMapping
+* CreateFunction
+* DeleteEventSourceMapping
+* DeleteFunction
+* GetEventSourceMapping
+* GetFunction
+* GetFunctionConfiguration
+* GetPolicy
+* ListEventSourceMappings
+* ListFunctions
+* RemovePermission
+* UpdateEventSourceMapping
+* UpdateFunctionCode
+* UpdateFunctionConfiguration
  
 ##### Data event logging
 
