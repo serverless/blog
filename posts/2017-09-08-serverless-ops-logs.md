@@ -35,7 +35,7 @@ Serverless: Generating boilerplate in "/Users/alexdebrie/scratch/logging"
 |____   |_____|__|  \___/|_____|__| |__|_____|_____|_____|
 |   |   |             The Serverless Application Framework
 |       |                           serverless.com, v1.19.0
- -------'
+ -------
 
 Serverless: Successfully generated boilerplate for template: "aws-python3"
 $ cd logging
