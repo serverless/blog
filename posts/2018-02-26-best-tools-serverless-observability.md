@@ -147,6 +147,28 @@ Further Reading:
 - [Towards Turnkey Distributed Tracing](https://medium.com/opentracing/towards-turnkey-distributed-tracing-5f4297d1736)
 - [OpenTracing: An Open Standard for Distributed Tracing](https://thenewstack.io/opentracing-open-standard-distributed-tracing/)
 
+### Epsagon
+
+[Epsagon](https://epsagon.com) is a serverless monitoring and observability tool that automatically detects full transactions throughout a company’s system, calculates costs and provides aggregated numbers around cost and performance across the most critical business functions. Using distributed tracing and AI technologies, Epsagon helps companies significantly reduce downtime and cost by providing end-to-end observability and application performance monitoring at the application level.
+
+*Troubleshooting using distributed tracing:* automatic instrumentation provides full traces.
+<img src="https://s3.us-east-2.amazonaws.com/epsagon-public-screenshots/epsagon-trace.png">
+
+*Application performance and cost monitoring*: complete dashboard for the health of the serverless application.
+<img src="https://s3.us-east-2.amazonaws.com/epsagon-public-screenshots/epsagon-dashboard.png">
+
+Benefits:
+- Automatic tracing and monitoring of the entire application, including distributed tracing.
+- AI-based prediction and alerting of issues before they happen.
+
+Drawbacks:
+- Automatic instrumentation adds a few milliseconds to the running time of the code.
+
+Further Reading:
+- [Epsagon emerges from stealth](https://techcrunch.com/2018/10/17/epsagon-emerges-from-stealth-with-serverless-monitoring-tool)
+- [Epsagon Launch - Why We Started Epsagon](https://blog.epsagon.com/epsagon-is-launching)
+- [5 Ways to Gain Serverless Observability](https://blog.epsagon.com/five-ways-to-gain-serverless-observability)
+
 ## Did we miss anything?
 
 Feel free to leave comments, and/or submit a PR against this post to leave us suggestions.
