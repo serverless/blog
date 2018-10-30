@@ -29,6 +29,7 @@ Read on for the best tools and best practices.
 - [IOpipe](https://serverless.com/blog/best-tools-serverless-observability/#iopipe)
 - [Thundra](https://serverless.com/blog/best-tools-serverless-observability/#thundra)
 - [OpenTracing](https://serverless.com/blog/best-tools-serverless-observability/#opentracing)
+- [Epsagon](https://serverless.com/blog/best-tools-serverless-observability/#epsagon)
 
 ### AWS CloudWatch
 
