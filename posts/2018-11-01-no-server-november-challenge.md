@@ -11,8 +11,6 @@ authors:
   - AndreaPasswater
 ---
 
-No Server November: Join the #noServerNovember challenge!
-
 Ah, November. The month of re:Invent, pumpkin spice, and now: the #noServerNovember challenge.
 
 Every week this month, we're releasing some Serverless Challenges that are designed to help experienced users level up, and brand new users get started. Do one, or three, for fun in your spare time!
