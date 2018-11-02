@@ -1,5 +1,5 @@
 ---
-title: "No Server November: Join the #NoServerNovember challenge!"
+title: "No Server November: Join the #noServerNovember challenge!"
 description: "All November, we're posting a series of serverless challenges. Do the challenge, tweet it out, and you might get swag!"
 date: 2018-11-01
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/no-server-november-thumb.png"
@@ -23,7 +23,7 @@ Be sure to [check the rules](#rules) before submitting!
 
 ##### Nov 5: Serverless Ipsum, DadBot, GitHub Check
 
-We've got three challenges this week to suit all levels! Do one, or two, or all of them. The Serverless Ipsum challenge can be done even if you've never set up an AWS account before, and have never coded anything in your life.
+We've got three challenges this week to suit all levels! The Serverless Ipsum challenge can be done even if you've never set up an AWS account before, and have never coded anything in your life.
 
 Every challenge you complete gets you one entry into the drawing.
 
@@ -43,7 +43,7 @@ Plus, some inspiration for all of you not-a-developer-yet-but-learning types:
 
 How to submit to the Serverless Ipsum challenge:
 1. Tweet the link to your GitHub repo and your Ipsum webpage.
-2. Include the hashtag #NoServerNovember.
+2. Include the hashtag #noServerNovember.
 
 *Intermediate/Advanced track (fun version)*
 
@@ -58,7 +58,7 @@ Here are some helpful links to get you started:
 
 How to submit to the DadBot Twitter challenge:
 1. Tweet the link to your GitHub repo and your DadBot account.
-2. Include the hashtag #NoServerNovember.
+2. Include the hashtag #noServerNovember.
 
 *Intermediate/Advanced track (actually useful (!!!) version)*
 
@@ -78,7 +78,7 @@ Here are some resources to get you started:
 
 How to submit to the GitHub Check challenge:
 1. Tweet the link to your GitHub repo with a screenshot of the Check in action.
-2. Include the hashtag #NoServerNovember.
+2. Include the hashtag #noServerNovember.
 
 **Nov 12:** *???*
 
@@ -88,7 +88,7 @@ How to submit to the GitHub Check challenge:
 
 #### How it works
 
-The first three Mondays in November, we'll release a new Serverless Challenge or two. We’ll also include some resources to get you started. The final week of November, we'll have a special edition re:Invent hackathon instead.
+The first three Mondays in November, we'll release a new set of Serverless Challenges. We’ll also include some resources to get you started. The final week of November, we'll have a special edition re:Invent hackathon instead.
 
 Find a challenge you like! Or better yet, find multiple challenges you like! You can enter separately for every challenge you complete, and you can complete any challenge at any time.
 
