@@ -72,6 +72,7 @@ Or, do something else fun. We’ll leave this open-ended.
 
 Here are some resources to get you started:
 * [GitHub Checks documentation](https://developer.github.com/v3/checks/)
+* [Using git on AWS Lambda](https://blog.enki.com/using-git-on-aws-lambda-f365a2db706b?gi=c17971d97e6a)
 * [Set up a serverless GitHub webhook](https://serverless.com/blog/serverless-github-webhook-slack/)
 * [See the GitHub webhook example in our Examples Explorer](https://serverless.com/examples/aws-node-github-webhook-listener)
 * [How to build a GitHub bot](https://medium.freecodecamp.org/how-to-build-a-github-bot-with-phantomjs-react-and-serverless-framework-7b66bb575616)
