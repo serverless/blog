@@ -41,7 +41,7 @@ Are you with us? We want [you to be part](https://github.com/serverless/guide/bl
 
 ### Credits
 
-To recognize your contributions to the guide, we add your name to the Credits section on the individual pages. We will add you to the 'Guide Authors' team on our Github org. You also get our serverless badge [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com) for your Github profile.
+To recognize your contributions to the guide, we add your name to the Credits section on the individual pages. We will add you to the 'Guide Authors' team on our Github org. You also get our serverless badge [![serverless](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/v3-badge.svg)](http://www.serverless.com) for your Github profile.
 
 ### License
 

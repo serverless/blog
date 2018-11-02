@@ -131,7 +131,7 @@ function sendNotification(ID) {
 
 If you instrument this Lambda Function with AWS X-Ray, you will see how long each API call is taking. Here is a screenshot of a real X-Ray Trace:
 
-<img src="http://aws-lambda-xray.s3-website-eu-west-1.amazonaws.com/x-ray-screenshot.png">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/x-ray-screenshot.png">
 
 
 With a RAM configuration of **1024MB**, the Function spent around **80ms** updating the DynamoDB record and **70ms** sending the SNS message.
