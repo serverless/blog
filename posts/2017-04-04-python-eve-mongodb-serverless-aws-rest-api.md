@@ -7,7 +7,7 @@ layout: Post
 authors:
  - NareshSurisetty
 ---
-<img align="right" src="http://python-eve.org/_static/eve-sidebar.png">
+<img align="right" src="https://docs.python-eve.org/en/latest/_static/eve-sidebar.png">
 
 Hi, I'm Naresh Surisetty, an enthusiastic Python developer based in India. I'm especially interested in developing scalable apps in the cloud - a main reason I'm drawn to experimenting with serverless architecture. In this post I'll share a Serverless project using [Python EVE](http://python-eve.org/) and [MongoDB](https://docs.mongodb.com/). 
 
