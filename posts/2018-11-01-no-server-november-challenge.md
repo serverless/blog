@@ -21,7 +21,7 @@ Be sure to [check the rules](#rules) before submitting!
 
 #### The challenges
 
-##### Nov 5: Serverless Ipsum, DadBot, GitHub Check
+##### Nov 5: Serverless Ipsum, DadJokeBot, GitHub Check
 
 We've got three challenges this week to suit all levels! The Serverless Ipsum challenge can be done even if you've never set up an AWS account before, and have never coded anything in your life.
 
