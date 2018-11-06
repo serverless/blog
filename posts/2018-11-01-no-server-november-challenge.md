@@ -19,6 +19,8 @@ If you do any of the challenges and tweet a link to your GitHub repo with the ha
 
 Be sure to [check the rules](#rules) before submitting!
 
+As a side note, we also have a [Serverless Examples Explorer](https://serverless.com/examples/) on our website. So if you complete the challenge and feel good about it, submit it to our [Examples Repo](https://github.com/serverless/examples)! It might get featured on [serverless.com](https://serverless.com/).
+
 #### The challenges
 
 ##### Nov 5: Serverless Ipsum, DadJokeBot, GitHub Check
