@@ -2,10 +2,10 @@
 title: "Jared Short: Why I joined Serverless"
 description: "Jared Short has joined the Serverless, Inc. team as Head of Developer Relations and Experience. Here's why."
 date: 2018-11-08
-thumbnail: ""
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/general-header.jpg"
 category:
   - news
-heroImage: ""
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/general-header.jpg"
 authors:
   - JaredShort
 ---
