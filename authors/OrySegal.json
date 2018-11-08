@@ -1,0 +1,12 @@
+{
+  "name": "Ory Segal",
+  "github": "oorryy",
+  "twitter": "orysegal",
+  "site": "https://www.puresec.io/",
+  "avatar": "https://secure.gravatar.com/avatar/5123b4bf3d926eb181c2b66c2f4e0a1e",
+  "bio": {
+    "short": "Ory is the CTO and co-founder of PureSec, Serverless Security.",
+    "long":
+      "A world-renowned expert and veteran in application security with 20 years of experience. Prior to founding PureSec, Ory was Senior Director of Threat Research at Akamai. Together with his team he has dealt with security big-data covering more than 30% of all internet traffic, and gained expertise in big data analytics, machine learning, behavioral analysis and device fingerprinting. Ory's work enabled Akamai to position itself as a leader in the industry, and drove Akamai's security business from an emerging product to a business with an annualized revenue run rate of nearly $0.5 Billion. Prior to Akamai, Ory worked at IBM as the Security Products Architect for the market leading application security solution IBM AppScan. Ory holds numerous patents in the field of application security. He serves as an officer of the Web Application Security Consortium (WASC), and is a former OWASP (IL) board member. He participated in many projects and working groups including SANS Top 25, MITRE CWE and W3C WebAppSec Working Group. Ory has written dozens of articles and his work has been featured in the Wall Street Journal and Wired Magazine among others. Ory is a guest speaker at many industry events including Cybertech, RSA Conference, OWASP AppSec, Gartner Security Summit, Code-Blue (Japan), BlackHat Briefings, and more."
+  }
+}

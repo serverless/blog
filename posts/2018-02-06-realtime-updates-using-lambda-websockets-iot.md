@@ -2,9 +2,11 @@
 title: Implement real-time updates using Lambda and Websockets via IoT
 description: Need a serverless way to give your app updated data in real-time? Try this solution with Websockets and Lambda.
 date: 2018-02-06
-layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/websockets-lambda-iot/ws-logo.png'
-authors: 
+category:
+  - guides-and-tutorials
+heroImage: ''
+authors:
   - TurnerHoughton
 ---
 
@@ -16,7 +18,7 @@ So how did I do it? Read on, my friends!
 
 (Or, just [check out the repository](https://github.com/OmniPotent42/chat-app-serverless) to see what I've done.)
 
-## Some background
+#### Some background
 
 Before we dive into the real-time updates, I’d like to explain how I've structured my application in general. This is a (very) rudimentary diagram I've created to show how the whole app fits together.
 
@@ -32,7 +34,7 @@ API Gateway routes incoming requests to specific Lambdas, which then access Dyna
 
 **Note:** If you want to check out the finished version of my application before reading on, head over to https://awschat.net
 
-## Setting up Cognito
+#### Setting up Cognito
 
 To set up Cognito User Pools with your API and frontend authentication, you’ll need a bit of CloudFormation.
 
@@ -82,7 +84,7 @@ ApiGatewayAuthorizer:
     RestApiId:
       Ref: ApiGatewayRestApi
     IdentitySource: "method.request.header.Authorization"
-    Type: COGNITO_USER_POOLS   
+    Type: COGNITO_USER_POOLS
 
 ```
 
@@ -101,9 +103,9 @@ That means we have to define every endpoint-authorizer attachment manually in Cl
 
 We also have to use the normalized name of our API Gateway method. ([Check here](https://serverless.com/framework/docs/providers/aws/guide/resources/) for normalized names of serverless-created resources.)
 
-## Setting up the IoT message broker configuration
+#### Setting up the IoT message broker configuration
 
-### Step 1: AWS
+##### Step 1: AWS
 
 This part is a little bit more complex. In order to allow a front end user to use our message broker, we first have to set up an Identity Pool that our users can authenticate with.
 
@@ -191,7 +193,7 @@ cognitoUnauthRole:
               - 'iot:Connect'
               - 'mobileanalytics:PutEvents',
               - 'iot:DescribeCertificate',
-              - 'iot:Publish,
+              - 'iot:Publish',
               - 'cognito-sync:*',
               - 'iot:GetPolicyVersion'
               Resource:
@@ -235,7 +237,7 @@ You will want to create a new policy that looks like the one below:
 
 **Note:** Again, this is probably too broad of a policy for a production application. You can narrow it down once you've established your application's IoT access patterns.
 
-### Step 2: Accessing IoT from Lambda
+##### Step 2: Accessing IoT from Lambda
 
 Say a user sends an API request to add a message to a chat. We update our database, and then return the message to the user who sent it, but how do we notify the other user that a message has been added?
 
@@ -246,13 +248,13 @@ You’ll need to get your IoT endpoint, which you can do by running `aws iot des
 ```javascript
 const AWS = require('aws-sdk');
 const iotData = new AWS.IotData({endpoint: 'YOUR_IOT_ENDPOINT HERE'});
-      
+
 exports.handler = (event, context, callback) => {
   const iotParams = {
     payload: JSON.stringify({ message: 'Hello!'})
     topic: `/my-app/${event.receiverId}`
   }
-  
+
   iotData.publish(iotParams, (err, data) => {
     if (err) {
       // handle error here
@@ -267,7 +269,7 @@ The example Lambda above takes in a user id (`event.receiverId`) and broadcasts 
 
 The last thing we need to do is set up our frontend application to use the IoT message broker so that we can actually receive the publish event.
 
-### Step 3: Connecting in your front end
+##### Step 3: Connecting in your front end
 
 Luckily, someone has already come up with a library that lets us listen to the IoT mqtt broker over Websockets! [You can find it here](https://github.com/kmamykin/aws-mqtt).
 
@@ -282,7 +284,7 @@ AWS.config.credentials = new AWS.CognitoIdentityCredentials({
 })
 
 const client = AWSMqtt.connect({
-  WebSocket: window.WebSocket, 
+  WebSocket: window.WebSocket,
   region: AWS.config.region,
   credentials: AWS.config.credentials,
   endpoint: '...iot.us-east-1.amazonaws.com', // NOTE: get this value with `aws iot describe-endpoint`
@@ -304,7 +306,7 @@ client.on('offline', () => {
 })
 ```
 
-## Conclusion
+#### Conclusion
 
 That's it! Now you know how to implement real-time communication between your frontend application and serverless backend.
 

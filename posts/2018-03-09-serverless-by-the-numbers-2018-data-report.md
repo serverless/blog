@@ -2,8 +2,10 @@
 title: "Serverless by the numbers: 2018 report"
 description: "Serverless usage stats: event sources, service structures, runtimes, and more."
 date: 2018-03-09
-layout: Post
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/observability-tools/graph-thumb.png"
+category:
+  - news
+  - engineering-culture
 authors:
   - AndreaPasswater
 ---
@@ -72,7 +74,7 @@ Let’s look at all language prevalence over time (excluding Node 6.10, which ot
 
 Python 3.6 is the most steadily-growing language overall in the past eight months, with an especially big breakout this year.
 
-However, the relatively long time scale on the chart above reduces Go to a blip in the lower right corner. This is because Go has only been supported by Lambda since January (or about 2 months, at the time of writing). 
+However, the relatively long time scale on the chart above reduces Go to a blip in the lower right corner. This is because Go has only been supported by Lambda since January (or about 2 months, at the time of writing).
 
 ### Golang adoption curve
 

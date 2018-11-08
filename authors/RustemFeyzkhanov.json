@@ -1,0 +1,12 @@
+{
+  "name": "Rustem Feyzkhanov",
+  "github": "ryfeus",
+  "twitter": "ryfeus",
+  "site": "https://ryfeus.io",
+  "avatar": "https://avatars1.githubusercontent.com/u/3318397?s=400&v=4",
+  "bio": {
+    "short": "Data Scientist.",
+    "long":
+    "Rustem is passionate about serverless infrastructure and AI deployment on it. He has ported several packages on AWS Lambda from Tensroflow/Keras/Sklearn/Skimage/OpenCV/Spacy/Tesseract for ML/AI to PhantomJS/Selenium/WRK for web scraping. Check them out: https://github.com/ryfeus/lambda-packs"
+  }
+}

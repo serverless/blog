@@ -2,13 +2,14 @@
 title: "The state of serverless observability—why we built Thundra"
 description: "Here's where serverless observability is today. Learn why we decided to build yet another AWS Lambda monitoring solution, Thundra."
 date: 2017-12-20
-layout: Post
 thumbnail: "https://s3-us-west-2.amazonaws.com/why-thundra-serverless-blog/logo.png"
+category:
+  - operations-and-observability
 authors:
   - SerkanOzal
 ---
 
-For a very long time, monitoring tools were simple. They were mainly used as external pings. 
+For a very long time, monitoring tools were simple. They were mainly used as external pings.
 
 But monitoring tools have significantly evolved in recent years. They provide things like time series traces, metrics, and logs. This kind of monitoring is called “whitebox monitoring”—a subcategory of monitoring, based on information derived from the internals of systems.
 
@@ -33,7 +34,7 @@ In general, there are three pillars of observability:
 ## The current state of serverless observability
 At OpsGenie, we’d been implementing new applications as microservices and splitting our existing monolithic architecture into microservices ([more on that here](https://read.acloud.guru/opsgenie-journey-to-serverless-architecture-785540261ec3)). We were using AWS Lambda as FaaS for deploying and running our microservices.
 
-There are all kinds of frameworks and tools for monitoring typical web applications. But for Lambda? Almost nothing. Especially for Java, which was our language of choice. 
+There are all kinds of frameworks and tools for monitoring typical web applications. But for Lambda? Almost nothing. Especially for Java, which was our language of choice.
 
 AWS does provide you with some metrics about how long an invocation took. But it doesn’t say much about what is going on under the hood. X-Ray added more detail about calls to external services, but it didn’t do enough to expose internal metrics automatically.
 
@@ -43,7 +44,7 @@ We could have gone with a regular APM tool, or the Lambda-specific new products,
 
 **They didn’t consider the nature of a Lambda environment.** Publishing data synchronously is an anti-pattern here because it increases the request duration. Besides, receiver-side data monitoring might not be available all the time. This meant we’d need to either retry sending the request, or just skip it silently.
 
-Since Lambda functions should be stateless and the container itself can be destroyed at any time, monitoring data should not be saved on local storage (in memory or on disk). Publishing with background threads is not a good idea either, because when there is no request handled by the container, the container is in a frozen state. No CPU resource/slot is assigned so there will be no running background threads to publish monitor data. 
+Since Lambda functions should be stateless and the container itself can be destroyed at any time, monitoring data should not be saved on local storage (in memory or on disk). Publishing with background threads is not a good idea either, because when there is no request handled by the container, the container is in a frozen state. No CPU resource/slot is assigned so there will be no running background threads to publish monitor data.
 
 **They didn’t support automated instrumentation.** Updating our code by injecting instrumentation logic would complicate things. That approach was error-prone and didn’t support instrumenting 3rd party libraries because they don’t relinquish their source code for you to play with.
 
@@ -61,7 +62,7 @@ Most modern systems interact with each other, either providing or consuming serv
 
 Fortunately, AWS has [X-Ray](https://aws.amazon.com/xray/), which is a distributed tracing service integrated with AWS Lambda. X-Ray provides you an end-to-end view of requests as they move through your systems.
 
-With X-Ray, you can analyze how your Lambda functions and their connected services are performing. You can identify and troubleshoot the root cause of performance issues and errors, and see a map of your application’s underlying components. 
+With X-Ray, you can analyze how your Lambda functions and their connected services are performing. You can identify and troubleshoot the root cause of performance issues and errors, and see a map of your application’s underlying components.
 
 X-Ray is good for the end-to-end visibility, but it instruments at a high level. For low-level instrumentation, you still need to manage X-Ray’s sub-segments yourself.
 
@@ -83,9 +84,9 @@ Here’s how all that works at a high level:
 
 ![monitoring-architecture](https://s3-us-west-2.amazonaws.com/why-thundra-serverless-blog/monitoring-arch.png)
 
-Trace, metric and log data are written in a structured format as JSON, and sent to CloudWatch asynchronously via 
-`com.amazonaws.services.lambda.runtime.LambdaLogger`. We also have another Lambda function—let's call it **monitor lambda**—which subscribes to log groups of monitored Lambda functions with a subscription filter that is triggered by monitor data. 
-The *monitor lambda* then forwards the data to ElasticSearch, either directly or indirectly through Kinesis or Firehose stream, where it can be queried and analyzed later. 
+Trace, metric and log data are written in a structured format as JSON, and sent to CloudWatch asynchronously via
+`com.amazonaws.services.lambda.runtime.LambdaLogger`. We also have another Lambda function—let's call it **monitor lambda**—which subscribes to log groups of monitored Lambda functions with a subscription filter that is triggered by monitor data.
+The *monitor lambda* then forwards the data to ElasticSearch, either directly or indirectly through Kinesis or Firehose stream, where it can be queried and analyzed later.
 
 ## Correlating traces, metrics, and logs
 To have full system observability, you not only need all the trace, metric, and log data—you need them to be correlated.
@@ -120,7 +121,7 @@ Automated instrumentation is good, but it is not always enough. Sometimes you mi
 
 We took these issues into consideration and implemented our own JVM agent, which does bytecode level instrumentation. The agent can be dynamically attached to the JVM at runtime, which was necessary since there’s no way to give a JVM argument to a Lambda function for the agent.
 
-With our agent, traced methods can be marked with class- or method-level annotations. For 3rd-party libraries, you can’t put annotations on them because you don’t have their source code. That means you’ll need to specify/configure them declaratively somehow, such as by configuration files or system properties. 
+With our agent, traced methods can be marked with class- or method-level annotations. For 3rd-party libraries, you can’t put annotations on them because you don’t have their source code. That means you’ll need to specify/configure them declaratively somehow, such as by configuration files or system properties.
 
 To overcome such limitations, as stated before, our instrumentation infrastructure also supports declaring methods/classes to be traced as regular expression definitions by environment variable, which is given to the Lambda function configuration or by configuration files included in the uploaded artifact/jar.
 
@@ -137,11 +138,11 @@ Here’s an example. We can instrument all public methods of a class named `User
 ![trace-by-annotation](https://s3-us-west-2.amazonaws.com/why-thundra-serverless-blog/trace-by-annotation.png)
 
 ## Detecting long run and taking consequent action
-You can’t instrument everything. And really, you shouldn’t. 
+You can’t instrument everything. And really, you shouldn’t.
 
 If you instrument everything, most of the time there will be redundant tracing data. This will ultimately cause CPU and memory overhead in the system. And also, let’s say you *do* instrument every method—you may not know which part of the method body takes up the majority of the time.
 
-Detailed tracing should be kicked in just as it is needed. If the method call exceeds its predefined time limit, then that call is considered as a “long-run”. In other words, when the method call takes so long that it hits its long-run limit, you can trigger detailed tracing. 
+Detailed tracing should be kicked in just as it is needed. If the method call exceeds its predefined time limit, then that call is considered as a “long-run”. In other words, when the method call takes so long that it hits its long-run limit, you can trigger detailed tracing.
 
 When it is detected that the current method call is a long run call, it is too late for instrumentation—the method call is already active. In this case, method level CPU profiling provides us useful metrics about CPU consumption percentages of methods. By using this information, we can focus on the problematic method to find and understand the bottleneck.
 

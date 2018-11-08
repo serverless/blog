@@ -2,8 +2,11 @@
 title: "Your CORS and API Gateway survival guide"
 description: "Get the basics on Cross-Origin Resource Sharing (CORS) and how to avoid problems with your Serverless web APIs on Lambda."
 date: 2018-01-16
-layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png'
+category:
+  - guides-and-tutorials
+  - operations-and-observability
+heroImage: ''
 authors:
   - AlexDeBrie
 ---
@@ -27,7 +30,7 @@ In this post, we'll cover all you need to know about Serverless + CORS. If you d
 
 Let's get started!
 
-# TL;DR
+#### TL;DR
 
 If you want the quick and dirty way to solve CORS in your Serverless application, do this.
 
@@ -35,13 +38,13 @@ If you want the quick and dirty way to solve CORS in your Serverless application
 
    ```yml
    # serverless.yml
-   
+
    service: products-service
-   
+
    provider:
      name: aws
      runtime: nodejs6.10
-   
+
    functions:
      getProduct:
        handler: handler.getProduct
@@ -58,7 +61,7 @@ If you want the quick and dirty way to solve CORS in your Serverless application
              method: post
              cors: true # <-- CORS!
    ```
-   
+
 2. To handle the [CORS headers](#cors-response-headers), return the CORS headers in your response. The main headers are `Access-Control-Allow-Origin` and `Access-Control-Allow-Credentials`.
 
    You can use the example below, or check out the middleware libraries discussed below to help with this:
@@ -109,9 +112,9 @@ If you want the quick and dirty way to solve CORS in your Serverless application
 
    ```yml
    # serverless.yml
-   
+
    ...
-   
+
 	resources:
 	  Resources:
 	    GatewayResponseDefault4XX:
@@ -125,13 +128,13 @@ If you want the quick and dirty way to solve CORS in your Serverless application
 	          Ref: 'ApiGatewayRestApi'
 	```
 
-# CORS Preflight Requests
+#### CORS Preflight Requests
 
 If you're not making a "simple request", your browser will send a **preflight request** to the resource using the `OPTIONS` method. The resource you're requesting will return with methods that are safe to send to the resource and may optionally return the headers that are valid to send across.
 
 Let's break that down.
 
-### When does my browser send a preflight request?
+##### When does my browser send a preflight request?
 
 Your browser will send a preflight request on almost all cross-origin requests. (The exceptions are "simple requests", but it's a pretty narrow subset of requests.)
 
@@ -139,11 +142,11 @@ Basically, a simple request is only a `GET` request or a `POST` request with for
 
 If you use a `PUT` or `DELETE` request, it will send a preflight. If you use a `Content-Type` header outside of `application/x-www-form-urlencoded`, `multipart/form-data`, or `text/plain`, it will send a preflight. If you include any headers outside some very basic ones, such as Authentication headers, it will send a preflight.
 
-### What's in the response to the preflight request?
+##### What's in the response to the preflight request?
 
 The response to a preflight request includes the domains it allows to access the resources and the methods it allows at that resource, such as `GET`, `POST`, `PUT`, etc. It may also include headers that are allowed at that resource, such as `Authentication`.
 
-### How do I handle preflight requests with Serverless?
+##### How do I handle preflight requests with Serverless?
 
 To set up the preflight response, you'll need to configure an `OPTIONS` method handler at your endpoint in API Gateway. Fortunately, this is very simple with the Serverless Framework.
 
@@ -151,13 +154,13 @@ Simply add `cors: true` to _each endpoint_ in your `serverless.yml`:
 
 ```yml
 # serverless.yml
-   
+
 service: products-service
-   
+
 provider:
   name: aws
   runtime: nodejs6.10
-   
+
 functions:
   getProduct:
     handler: handler.getProduct
@@ -174,18 +177,18 @@ functions:
           method: post
           cors: true # <-- CORS!
 ```
-   
+
 This configures API Gateway to allow any domain to access, and it includes a basic set of allowed headers. If you want additional customization (advanced usage only), it will look like this:
 
 ```yml
 # serverless.yml
-   
+
 service: products-service
 
 provider:
   name: aws
   runtime: nodejs6.10
-   
+
 functions:
   getProduct:
     handler: handler.getProduct
@@ -205,7 +208,7 @@ functions:
             allowCredentials: false
 ```
 
-# CORS Response Headers
+#### CORS Response Headers
 
 While the preflight request only applies to some cross-origin requests, the CORS response headers must be present in _every_ cross-origin request. This means you must add the `Access-Control-Allow-Origin` header to your responses in your handlers.
 
@@ -292,7 +295,7 @@ module.exports = { handler }
 
 Perfect—automatic CORS headers! Check out the whole Middy library for lots of other nice utilities.
 
-If you're a Pythonista, [Daniel Schep](https://twitter.com/schep_) has made a nice [`lambda-decorators`](https://github.com/dschep/lambda-decorators) library with the same goals as Middy—replacing Lambda boilerplate. 
+If you're a Pythonista, [Daniel Schep](https://twitter.com/schep_) has made a nice [`lambda-decorators`](https://github.com/dschep/lambda-decorators) library with the same goals as Middy—replacing Lambda boilerplate.
 
 Here's an example of using it in your Python functions:
 
@@ -311,7 +314,7 @@ def hello(event, context):
 
 **Note:** Daniel is the creator of the [`serverless-python-requirements`](https://github.com/UnitedIncome/serverless-python-requirements) package, which you should absolutely be using if you're writing Lambda functions in Python. Check out our previous [blog post on Python packaging](https://serverless.com/blog/serverless-python-packaging/).
 
-# CORS with custom authorizers
+#### CORS with custom authorizers
 
 [Custom authorizers](https://serverless.com/framework/docs/providers/aws/events/apigateway/#http-endpoints-with-custom-authorizers) allow you to protect your Lambda endpoints with a function that is responsible for handling authorization.
 
@@ -325,7 +328,7 @@ To handle this, you'll need to add a custom GatewayResponse to your API Gateway.
 
 functions:
    ...
-   
+
 resources:
   Resources:
     GatewayResponseDefault4XX:
@@ -341,7 +344,7 @@ resources:
 
 This will ensure that the proper response headers are returned from your custom authorizer rejecting an authorization request.
 
-# CORS with Cookie credentials
+#### CORS with Cookie credentials
 
 _Note: This section was added on January 29, 2018 thanks to a request from [Alex Rudenko](https://twitter.com/orKoN). Hat tip to Martin Splitt for [a great article](http://50linesofco.de/post/2017-03-06-cors-a-guided-tour#credentials-and-cors) on this issue._
 
@@ -390,7 +393,7 @@ module.exports.getProduct = (event, context, callback) => {
 
   const origin = event.headers.origin;
   let headers;
-  
+
   if (ALLOWED_ORIGINS.includes(origin) {
     headers: {
       'Access-Control-Allow-Origin': origin,
@@ -417,9 +420,9 @@ module.exports.getProduct = (event, context, callback) => {
 };
 ```
 
-In this example, we check if the `origin` header matches one of our allowed headers. If so, we include the specific origin in our `Access-Control-Allow-Origin` header, and we state that `Access-Control-Allow-Credentials` are allowed. If the `origin` is not one of our allowed origins, we include the standard headers which will be rejected if the origin attempts a credentialed request. 
+In this example, we check if the `origin` header matches one of our allowed headers. If so, we include the specific origin in our `Access-Control-Allow-Origin` header, and we state that `Access-Control-Allow-Credentials` are allowed. If the `origin` is not one of our allowed origins, we include the standard headers which will be rejected if the origin attempts a credentialed request.
 
-# Conclusion
+#### Conclusion
 
 CORS can be a pain, but there are a few straightforward steps you can take to make it much easier to deal with.
 

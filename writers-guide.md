@@ -1,55 +1,77 @@
-# Serverless Writer’s Guide
+# Serverless writer’s guide
 
-Use this Serverless Writer’s Guide as a resource to help you get started contributing to the [Serverless Blog](https://serverless.com/blog/). This guide includes suggested topics, sample outlines, example posts, helpful links & more!
+We are an open source company to our core, and we love community contributions to [the Serverless Blog](https://serverless.com/blog/), the most popular serverless-focused publication on the web. Do you have something neat to say about serverless technologies? Awesome.
 
-## Content Guidelines 
-- focus on results (our readers are interested in hearing about how serverless allowed you to deliver something great)
-- focus on serverless and event-driven themes (faster time to market, lowest total cost of ownership, microservice architectures, reactive/event-driven design patterns, data as events
-- focus on learnings (it’s still early days for serverless and people want learn from others, especially around operations, as much as possible)
-- provide code examples or tutorials when possible (our audience is technical and likes to get hands on)
-- no overt product pitches, these aren’t received well by our audience and will no be published on our blog
+Read our Serverless Writer’s Guide below to learn about our publication requirements. The suggested topics and our style guide are mandatory reading before submitting to our blog.
 
-## Suggested Topics
+Plus, we've included outlines, example posts, helpful links & more! If you have suggestions about how to make this guide better, let us know.
 
-* Serverless or Event-Driven Architectures
-* Serverless Framework How-To posts or tutorials
-* Answering forum questions
-* Startup/Company Culture
-* Meetup, Conference, Event Recaps
-* Developer Community
-* What you’re learning/working on
-* TL;DR
-* Serverless Weekly Recap
-* Asking for feedback
-* Deep dive for new features
-* Office Hours/Q&A
-* Modern Javascript tips, tricks, How To's and tutorials
-* Amazon Web Services + Lambda tutorials, case studies, and How To guides
-* Microsoft Azure tutorials, case studies, and How To guides
-* Google Cloud Functions tutorials, case studies, and How To guides
-* OpenWhisk tutorials, case studies, and How To guides
-* Microservices
-* FaaS, PaaS
+## Content guidelines 
+- Focus on results and learnings. Tell readers how you did something great with serverless, and what you learned along the way.
+- Provide code examples or tutorials when possible. Our audience wants to be hands-on.
+- No overt product pitches. These aren’t received well by our audience, and will not be published on our blog.
+
+## Style guide
+- Do not use title case in your title. Capitalize the first word and proper nouns only. This goes for section headers, too.
+- Use h4 for section headers, and h5 for subsection headers. Aka, h2 = h4, h3 = h5. We do not have an h4 equivalent, and you should never use h1.
+- Include a header image that is 1200 x 600 px.
+- Never put anything in a quote to emphasize it, or to note an edge case, etc. Instead, write **Note:** and put your note there.
+- Use clear, concise language and short sentences. When in doubt, use shorter paragraphs and shorter sentences. If you have a sentence that runs three lines long, then try to break it up. This makes blog posts much easier to read on mobile.
+- Use a conversational tone that’s familiar, but not informal. [Here’s a great example](https://serverless.com/blog/2018-serverless-community-survey-huge-growth-usage/).
+- Use contractions (i.e., 'we’re' vs. 'we are').
+- Only 1 space after a period or colon.
+- Capitalize the first letter in every sentence.
+
+## Suggested topics
+
+* How I built X with serverless
+* How I saved $X with serverless
+* How to use X serverless plug-in or component
+* How to use this popular development framework with serverless
+* Learnings from doing X with serverless (security, migrations, authentication, etc)
+* Use cases with serverless/FaaS technologies and microservices
+* Serverless Framework how-to posts or tutorials
+* Serverless observability how-to posts or tutorials
+* Answers to forum questions (if it's a popular forum post, people would probably love to see a long-form answer!)
+* Deep dive into new features, either with the Serverless Framework, or something relevant to Framework developers
+* We are especially keen right now on publishing things relating to Golang, GCF, Azure, Cloudflare, and Node8
+* AWS + Lambda tutorials also do well!
 * General developer tips & tricks
-* Expert interviews
 
-## Choosing A Topic
+## Example posts
+
+Check out the following examples for writing inspiration:
+
+* [Learnings and guides](https://serverless.com/blog/strategies-implementing-user-authentication-serverless-applications/)
+* [Using Serverless with other popular frameworks](https://serverless.com/blog/serverless-express-rest-api/)
+* [General tutorials](https://serverless.com/blog/unit-testing-nodejs-serverless-jest/)
+* [Look what I built with Serverless!](https://serverless.com/blog/how-droplr-scales-to-millions-serverless-framework/)
+* [Using Serverless Components](https://serverless.com/blog/how-create-rest-api-serverless-components/)
+* [How to use new features](https://serverless.com/blog/aws-lambda-node-8-support-what-changes-serverless-developers/)
+* [Answering forum questions](https://serverless.com/blog/serverless-workaround-cloudformation-200-resource-limit/)
+* [General developer tips](https://serverless.com/blog/streamline-serverless-workflow-webstorm/)
+
+## Choosing a topic
 
 The Serverless team can find a list of ideas along with a schedule in the <span class="c5 c10">[Content Calendar in Asana](https://www.google.com/url?q=https://app.asana.com/0/173140658754685/206747580911378&sa=D&ust=1481063994397000&usg=AFQjCNHuy4Sb66K5avepG3zVg8TXqSfqrQ). The Serverless team gets first dibs on selecting topics, then we turn to guest authors. Posts are scheduled 1-6 weeks in advance.
 
-## Creating an Outline
+## Creating an outline
 
 It’s helpful to organize your ideas in an outline before you start writing. Your outline will depend on the type of post you’re writing, but here are a few prompts to get you started.
 
-*Note: These are just suggestions. Feel free to amend to fit your needs.*
+**Note:** These are just suggestions. Feel free to change things up to fit your needs.
 
-### Generic Outline
+### Generic outline -> full post process
 
-*   Introduction - What are you writing about and why? Tell the reader what they can expect to learn or gain if they continue reading. Be clear and concise. This is your chance to convince the reader that it’s worth their time to keep going.
-*   Body - Divide into sections that make sense. You can divide the body into paragraphs, steps, phases, or a list. Adding subheadings helps to break up the content and makes it easier for readers to scan your content.
-*   Conclusion - Tie everything together by recapping what you’ve talked about and sharing any relevant next steps. This would also be a great place to include any additional related resources you’d like to share.
+* Write down the one thing you want people to take away from this post in no more than 1-2 sentences. Be clear and concise. This is your chance to convince the reader that it’s worth their time to keep going.
+* Think about all the steps involved in achieving the goal. Write those down. Those are your section headers.
+* If any of your steps are particularly beefy, write the steps involved in achieving those. Those are your subsection headers.
+* Under each section and subsection, write a single-word bulleted list of the things you will cover.
+* Turn those single words into entire sentences.
+* Turn those single sentences into multiple sentences where necessary.
+* Add a 'Conclusion' or 'Wrap-up' section at the end. Tie everything together by recapping what you’ve talked about and sharing any relevant next steps. This would also be a great place to include any additional related resources you’d like to share.
 
-### Writing about a Project
+### Writing about a project
 
 *   What problem did you set out to solve with your project?
 *   What was the benefit of using serverless architecture?
@@ -58,41 +80,10 @@ It’s helpful to organize your ideas in an outline before you start writing. Yo
 *   Share your vision for the future of your project/next steps.
 *   Feel free to include anything else you think is useful/relevant for the post.
 
-### How-To Post
+### How-to post
 
-*   Introduction - What will readers be able to accomplish after reading this post? What makes you a credible source of information about this topic? (i.e., a core framework developer writing about a new feature, or the operations manager writing about the lean startup method)
-*   Steps - Break your process down into individual steps that are clearly labeled. Each step should be one complete thought or action. Include relevant screenshots or code snippets as needed.
-*   Conclusion - Recap your process and include any relevant next steps or additional resources.
-
-### Event Recap
-
-*   Introduction - Provide background info on the event. What is it?
-*   Lessons Learned - Write a list of Lessons Learned or Takeaways from your experience at the event.
-*   Conclusion - What are you going to do with these takeaways? How can readers use this information to their benefit?
-
-## Serverless Style Guide
-
-Please follow these guidelines when writing content for the Serverless blog or social media posts in order to present a consistent voice.
-
-*   Only 1 space after a period or colon.
-*   Capitalize the first letter in every sentence.
-*   Use clear, concise language and short sentences.
-*   Use contractions. (i.e., we’re vs. we are)
-*   Use a conversational tone that’s familiar, but not informal. ([Here’s a great example](https://www.google.com/url?q=https://serverless.com/blog/lessons-learned-on-building-awesome-developer-community/&sa=D&ust=1481063994408000&usg=AFQjCNEoqvo2Kf8cpWEmNs0DUVk6WnzBKw))
-*   Include external links in blog posts.
-*   Include at least one image.
-
-## Example Posts
-
-Check out the following examples for writing inspiration:
-
-*   [Tutorial](https://www.google.com/url?q=http://cloudacademy.com/blog/parse-server-migration-on-aws/&sa=D&ust=1481063994409000&usg=AFQjCNEwAPTtNCPA6Kz8UIOtDxRIFrv1EQ)
-*   [How-To](https://www.google.com/url?q=https://serverless.com/blog/building-a-facebook-messenger-chatbot-with-serverless/&sa=D&ust=1481063994410000&usg=AFQjCNHQIBQNLZxtTMXPp_dLezSPh__E-Q)
-*   [Event](https://www.google.com/url?q=https://serverless.zone/serverlessconf-8cbc8bc52986%23.4ljrripja&sa=D&ust=1481063994410000&usg=AFQjCNEr6qX1goMnRIRJjjnZkKLhxkPhJw)
-*   [New Feature](https://www.google.com/url?q=http://cloudacademy.com/blog/cloudwatch-monitoring-dynamodb/&sa=D&ust=1481063994411000&usg=AFQjCNHRwAmkAPRLWE-PohTDdYuvmOXWdA)
-*   [Showcasing a Project](https://www.google.com/url?q=https://serverless.com/blog/building-a-serverless-garden/&sa=D&ust=1481063994411000&usg=AFQjCNHJKRhRaBlu4hJxaJhJB6ph4DRZsw)
-*   [Weekly Wrap-up](https://www.google.com/url?q=https://circleci.com/blog/a-few-quick-links-november-25-edition/&sa=D&ust=1481063994412000&usg=AFQjCNEb_nzripwva-UN_RAvC9H5qCbhdw) or [Digest](https://www.google.com/url?q=http://www.heavybit.com/library/blog/dev-tools-digest-nov-28/&sa=D&ust=1481063994413000&usg=AFQjCNG6mIF4tsrNnZdqKVPkDWr2h__9aA)
-*   [Company/Startup Culture or Operations](https://www.google.com/url?q=http://blog.hubspot.com/marketing/marketing-automation-mistakes%23sm.00000tlz7v1pvke56wev8qxxmfid5&sa=D&ust=1481063994413000&usg=AFQjCNHcTUkGLYGv17zzed0cuAauHSTg-g)
+* Break your process down into individual steps that are clearly labeled. Each step should be one complete thought or action. Include relevant screenshots or code snippets as needed.
+* Recap your process and include any relevant next steps or additional resources.
 
 # Posting on GitHub
 
@@ -100,7 +91,7 @@ You can post your draft to the [Serverless blog repo](https://www.google.com/url
 
 Please add your author file along with your post. This will include links to your GitHub, Twitter, personal or company website, in addition to a short and long bio. Your photo will be your GitHub avatar
 
-# Writing Resources
+# Writing resources
 
 Check out these additional resources for more tips and tools to help you produce great content:
 

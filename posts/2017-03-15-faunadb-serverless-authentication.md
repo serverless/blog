@@ -34,9 +34,8 @@ The boilerplate ships with code for a few different identity backends. These ste
 5. Uncomment `return faunaUser.saveUser(profile);` from `authentication/lib/storage/usersStorage.js`.
 6. Change the last line of `authentication/lib/storage/cacheStorage.js` to `exports = module.exports = faunaCache;`
 7. Change directory to `authentication` and run `npm install`.
-8. Run `serverless deploy` in the authentication folder to deploy authentication service to AWS. Notice the arn of the `authorize` function.
-9. Run `serverless invoke -f schema` to create your FaunaDB schema.
-10. (optional) Change directory to `test-token` and insert the arn of the authorize function to `authorizer/arn` in `serverless.yml`. Then run `serverless deploy` to deploy test-token service.
+8. Run `STAGE=dev npm run setup:fauna` to create your FaunaDB schema.
+9. (optional) Change directory to `test-token` and run `serverless deploy` to deploy test-token service.
 
 Look here for the code to the [test-token service](https://github.com/laardee/serverless-authentication-boilerplate/blob/37e4006870c708fa3ef8b64d451a13e2ed93e6f3/test-token/handler.js#L20) and here for [the code that uses FaunaDB as an authentication cache and user store.](https://github.com/laardee/serverless-authentication-boilerplate/tree/master/authentication/lib/storage/fauna)
 

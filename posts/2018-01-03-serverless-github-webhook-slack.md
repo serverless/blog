@@ -2,8 +2,9 @@
 title: Build a Github webhook handler with Serverless & AWS Lambda
 description: Deploy a Serverless service that posts notifications of Github stars in a Slack channel
 date: 2018-01-03
-layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png'
+category:
+  - guides-and-tutorials
 authors:
   - AlexDeBrie
 ---

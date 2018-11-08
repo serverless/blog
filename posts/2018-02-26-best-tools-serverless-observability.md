@@ -2,13 +2,14 @@
 title: Best tools for serverless observability
 description: "The current best tools for serverless observability: benefits, drawbacks, and which are right for you."
 date: 2018-02-26
-layout: Post
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/observability-tools/graph-thumb.png"
+category:
+  - operations-and-observability
 authors:
   - AndreaPasswater
 ---
 
-We admit it. In the serverless realm, getting the observability you need can be really frustrating. 
+We admit it. In the serverless realm, getting the observability you need can be really frustrating.
 
 In [his series on serverless observability](https://hackernoon.com/serverless-observability-part-1-new-challenges-to-old-practices-95de1b94d379), Yan Cui has stated the challenges, and the reasons behind them, incredibly well.
 
@@ -28,6 +29,7 @@ Read on for the best tools and best practices.
 - [IOpipe](https://serverless.com/blog/best-tools-serverless-observability/#iopipe)
 - [Thundra](https://serverless.com/blog/best-tools-serverless-observability/#thundra)
 - [OpenTracing](https://serverless.com/blog/best-tools-serverless-observability/#opentracing)
+- [Epsagon](https://serverless.com/blog/best-tools-serverless-observability/#epsagon)
 
 ### AWS CloudWatch
 
@@ -121,7 +123,7 @@ Further reading:
 
 Thundra has not yet hit general availability, but you can sign up for beta access [here](https://www.thundra.io/).
 
-Much like IOpipe, it promises to provide tracing, profiling, monitoring, alerts, and metrics. 
+Much like IOpipe, it promises to provide tracing, profiling, monitoring, alerts, and metrics.
 
 Thunda will differ from IOpipe in a couple ways. They plan to focus on Java rather than Node.js or Python. They are also attempting to avoid latency by keeping data-sending separate from the Lambda function itself. Instead, they’ll first write their metrics to logs, and an out-of-band log processor will send those metrics to the Thundra backend.
 
@@ -145,6 +147,28 @@ Further Reading:
 - [Distributed Tracing in 10 Minutes](https://medium.com/opentracing/distributed-tracing-in-10-minutes-51b378ee40f1)
 - [Towards Turnkey Distributed Tracing](https://medium.com/opentracing/towards-turnkey-distributed-tracing-5f4297d1736)
 - [OpenTracing: An Open Standard for Distributed Tracing](https://thenewstack.io/opentracing-open-standard-distributed-tracing/)
+
+### Epsagon
+
+[Epsagon](https://epsagon.com) is a serverless monitoring and observability tool that automatically detects full transactions throughout a company’s system, calculates costs and provides aggregated numbers around cost and performance across the most critical business functions. Using distributed tracing and AI technologies, Epsagon helps companies significantly reduce downtime and cost by providing end-to-end observability and application performance monitoring at the application level.
+
+*Troubleshooting using distributed tracing:* automatic instrumentation provides full traces.
+<img src="https://s3.us-east-2.amazonaws.com/epsagon-public-screenshots/epsagon-trace.png">
+
+*Application performance and cost monitoring*: complete dashboard for the health of the serverless application.
+<img src="https://s3.us-east-2.amazonaws.com/epsagon-public-screenshots/epsagon-dashboard.png">
+
+Benefits:
+- Automatic tracing and monitoring of the entire application, including distributed tracing.
+- AI-based prediction and alerting of issues before they happen.
+
+Drawbacks:
+- Automatic instrumentation adds a few milliseconds to the running time of the code.
+
+Further Reading:
+- [Epsagon emerges from stealth](https://techcrunch.com/2018/10/17/epsagon-emerges-from-stealth-with-serverless-monitoring-tool)
+- [Epsagon Launch - Why We Started Epsagon](https://blog.epsagon.com/epsagon-is-launching)
+- [5 Ways to Gain Serverless Observability](https://blog.epsagon.com/five-ways-to-gain-serverless-observability)
 
 ## Did we miss anything?
 

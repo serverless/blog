@@ -1,24 +1,33 @@
 ---
-title: How To Build A Serverless Notification System on AWS
+title: How to build a serverless notification system on AWS
 description: Guest author Diego Zanon writes about building a serverless notification system for browsers using the Serverless Framework and AWS IoT.
 date: 2016-11-30
-thumbnail: https://zanon.io/images/posts/2016-11-05-architecture.png
-layout: Post
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-notifications-on-aws.jpg'
+category:
+  - guides-and-tutorials
 authors:
   - DiegoZanon
 ---
 
-# Serverless Notifications
-
 Real-time notifications are an important use case for modern apps. For example, you may need to notify your user that another post is available in their social feed or that someone else added a comment on one of their photos.
 
-Implementing notifications is an easy task when you use WebSockets and have a dedicated server. You can make a permanent link between the user and the server and use the publish-subscribe pattern to share messages. The browser will subscribe to automatically receive new messages without needing a polling mechanism to constantly check for updates.
+But how do you do this serverless-ly?
 
-But if you're going serverless, you don't have a dedicated server. Instead, you need a cloud service that will solve this problem for you providing scalability, high availability and charging per messages and not per hour.
+Typically, you would use WebSockets and have a dedicated server. You'd make a permanent link between the user and the server, and use the publish-subscribe pattern to share messages. The browser would subscribe to automatically receive new messages without needing a polling mechanism to constantly check for updates.
 
-In this post, I'm going to describe how I implemented a notification system for unauthenticated users with the Serverless Framework and AWS IoT for *browsers*. I know that "Internet of Things" sounds strange to be used in a website, but it supports WebSockets and is very easy to use. Besides, Amazon SNS (Simple Notification Service) has a better name, but doesn't support WebSockets.
+But if you're going serverless, you don't *have* a dedicated server.
 
-IoT is used due to its simple messaging system. You create a "topic" and make users to subscribe to it. A message sent to this topic will be automatically shared with all subscribed users. A common use case for this is a chat system.
+Instead, you'll need a cloud service that will solve this problem for you providing scalability, high availability, and charging per messages and not per hour.
+
+## The solution: AWS + the Serverless Framework
+
+In this post, I'm going to describe how I implemented a notification system for unauthenticated users with the Serverless Framework and AWS IoT for *browsers*.
+
+I know that "Internet of Things" sounds strange to be used in a website, but it supports WebSockets, is very easy to use, and unlike Amazon SNS (Simple Notification Service) it supports WebSockets. Win!
+
+### Why IoT?
+
+I used IoT due to its simple messaging system. You create a "topic" and make users to subscribe to it. A message sent to this topic will be automatically shared with all subscribed users. A common use case for this is a chat system.
 
 If you want private messages, you just need to create private topics and restrict the access. Only one user will be subscribed to this topic and you can make your system (Lambda functions) to send updates to this topic to notify this specific user.
 
@@ -52,7 +61,7 @@ I've used the following architecture in this demo.
 
 5. The Lambda function connects to IAM to assume a role and create temporary AWS keys.
 
-6. Frontend code subscribe to IoT events using the temporary keys. 
+6. Frontend code subscribe to IoT events using the temporary keys.
 
 ## Frontend
 
@@ -60,11 +69,11 @@ This demo runs in a static site hosted on Amazon S3. As I've used a Node.js modu
 
 ### AWS IoT
 
-In this project I used the Node module [AWS IoT SDK](https://github.com/aws/aws-iot-device-sdk-js) to connect to the IoT service. 
+In this project I used the Node module [AWS IoT SDK](https://github.com/aws/aws-iot-device-sdk-js) to connect to the IoT service.
 
 First, you need to create a "device" (client browser) by providing access keys and setting the IoT endpoint that is specific to your AWS account. I'll show later how you find those data. After providing those values, it will try to connect.
 
-The next step is to set callback functions to handle incoming events. You need to hook at least with **message** (receive messages) and **connect** (subscribe to a topic after successfully connected to IoT), but you can also handle the following events: **reconnect**, **error**, **offline** and **close**.  
+The next step is to set callback functions to handle incoming events. You need to hook at least with **message** (receive messages) and **connect** (subscribe to a topic after successfully connected to IoT), but you can also handle the following events: **reconnect**, **error**, **offline** and **close**.
 
 To send messages, you use: `client.publish(iotTopic, message)`
 
@@ -90,13 +99,13 @@ const IoT = {
         });
 
         client.on('connect', onConnect);
-        client.on('message', onMessage);            
-        client.on('close', onClose);     
+        client.on('message', onMessage);
+        client.on('close', onClose);
     },
 
     send: (message) => {
         client.publish(iotTopic, message); // send messages
-    }  
+    }
 };
 
 const onConnect = () => {
@@ -128,31 +137,31 @@ $('#btn-keys').on('click', () => {
     $.ajax({
         url: apiGatewayEndpoint,
         success: (res) => {
-            addLog(`Endpoint: ${res.iotEndpoint}, 
-                    Region: ${res.region}, 
-                    AccessKey: ${res.accessKey}, 
-                    SecretKey: ${res.secretKey}, 
+            addLog(`Endpoint: ${res.iotEndpoint},
+                    Region: ${res.region},
+                    AccessKey: ${res.accessKey},
+                    SecretKey: ${res.secretKey},
                     SessionToken: ${res.sessionToken}`);
 
             iotKeys = res; // save the keys
         }
     });
-}); 
+});
 ```
 
 2) Connect with IoT and subscribe for future messages
 
 ```javascript
 $('#btn-connect').on('click', () => {
-    const iotTopic = '/serverless/pubsub';        
+    const iotTopic = '/serverless/pubsub';
 
     IoT.connect(iotTopic,
-                iotKeys.iotEndpoint, 
-                iotKeys.region, 
-                iotKeys.accessKey, 
-                iotKeys.secretKey, 
+                iotKeys.iotEndpoint,
+                iotKeys.region,
+                iotKeys.accessKey,
+                iotKeys.secretKey,
                 iotKeys.sessionToken);
-});    
+});
 ```
 
 3) Send messages
@@ -160,9 +169,9 @@ $('#btn-connect').on('click', () => {
 ```javascript
 $('#btn-send').on('click', () => {
     const msg = $('#message').val();
-    IoT.send(msg);    
+    IoT.send(msg);
     $('#message').val('');
-});   
+});
 ```
 
 ## Backend
@@ -287,7 +296,7 @@ module.exports.auth = (event, context, callback) => {
                     statusCode: 200,
                     headers: {
                         'Access-Control-Allow-Origin': '*'
-                    },  
+                    },
                     body: JSON.stringify({
                         iotEndpoint: iotEndpoint,
                         region: region,

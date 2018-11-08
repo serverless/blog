@@ -2,15 +2,16 @@
 title: "Serverless v1.25 - S3 Transfer Acceleration, API Gateway endpoint type configuration, variable system improvements"
 description: "S3 Transfer Acceleration, API Gateway endpoint type configuration, variable system improvements, enhancements, bug fixes and more added in the Serverless Framework v1.25 release."
 date: 2017-12-21
-layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework_v1.25_1.jpg
+category:
+  - news
 authors:
   - PhilippMuns
 ---
 
 <img align="right" src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework_v1.25_1.jpg" width="210px" >
 
-Here at Serverless, we've been working hard to deliver some holiday goodies. 
+Here at Serverless, we've been working hard to deliver some holiday goodies.
 
 Today we're proud to announce Serverless Framework v1.25.
 
@@ -23,7 +24,7 @@ You can find a complete list of all the updates in the [CHANGELOG.md](https://gi
 
 Faster deployments? Yes, please!
 
-This feature adds [S3 Transfer Acceleration](http://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html) support for uploading your deployment packages to S3. Rather than uploading to your region's origin for S3, it uploads the package to CloudFront edge locations and quickly transfers it to S3. 
+This feature adds [S3 Transfer Acceleration](http://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html) support for uploading your deployment packages to S3. Rather than uploading to your region's origin for S3, it uploads the package to CloudFront edge locations and quickly transfers it to S3.
 
 To enable this new feature, use the `--aws-s3-accelerate` flag when deploying your service:
 
@@ -31,7 +32,7 @@ To enable this new feature, use the `--aws-s3-accelerate` flag when deploying yo
 $ sls deploy --aws-s3-accelerate
 ```
 
-In testing, we've seen huge speedups in package uploads. In an example test, this was **42%** faster than using the normal S3 upload for someone located in the target AWS region. When uploading to a different region (e.g. from Italy to us-west-2), we saw **10x** speedups! ⚡️ 
+In testing, we've seen huge speedups in package uploads. In an example test, this was **42%** faster than using the normal S3 upload for someone located in the target AWS region. When uploading to a different region (e.g. from Italy to us-west-2), we saw **10x** speedups! ⚡️
 
 Much thanks to [Alex Casalboni](https://twitter.com/alex_casalboni) for adding this feature!
 
@@ -50,7 +51,7 @@ provider:
 ...
 ```
 
-Serverless defaults to an EDGE endpoint, which was the standard before AWS released regional endpoints. 
+Serverless defaults to an EDGE endpoint, which was the standard before AWS released regional endpoints.
 
 ### Improved variable processing
 
@@ -66,7 +67,7 @@ This release also includes tons of other improvements and bug fixes.
 
 We hope that you enjoy this release! Feel free to provide some feedback in our [Forum](https://forum.serverless.com), via [Twitter](https://twitter.com/goserverless) or on [GitHub](https://github.com/serverless/serverless).
 
-### Contributors 
+### Contributors
 
 This release contains lots of hard work from our beloved community, and wouldn't have been possible without passionate people who decided to spend their time contributing back to make the Serverless Framework better.
 

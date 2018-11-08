@@ -3,7 +3,8 @@ title: CICD for Serverless Part 1 - Mocha Endpoint Testing
 description: Part 1 of 2 on how to implement a CICD workflow for a Serverless project
 date: 2017-02-17
 thumbnail: https://cloud.githubusercontent.com/assets/20538501/23073708/05595248-f4fc-11e6-9a30-8e7ddaa16b56.png
-layout: Post
+category:
+  - operations-and-observability
 authors:
   - PeteJohnson
 ---
@@ -20,7 +21,7 @@ As a web veteran, the current state of FaaS reminds me of other technology waves
 
 So when I met up with the Serverless Framework team in Las Vegas at their mixer during AWS re:Invent, among the things we talked about was the need for more complete examples. And how to demonstrate how this cutting edge technology can coexist with modern programming techniques like test-driven development (TDD) and Continuous Integration/Continuous Delivery (CICD).
 
-[The team followed through with an excellent set of examples](https://github.com/serverless/examples) and [I riffed off one of them](https://github.com/nerdguru/serverlessTodos) to provide automated endpoint testing using Mocha (this post) and a AWS CodePipeline CICD workflow (next time).  
+[The team followed through with an excellent set of examples](https://github.com/serverless/examples) and [I riffed off one of them](https://github.com/nerdguru/serverlessTodos) to provide automated endpoint testing using Mocha (this post) and a AWS CodePipeline CICD workflow (next time).
 
 **At a high level, the whole thing looks like this:**
 

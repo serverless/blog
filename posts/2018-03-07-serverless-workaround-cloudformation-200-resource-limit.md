@@ -2,8 +2,10 @@
 title: "Serverless Workarounds for CloudFormation's 200 Resource Limit"
 description: How you can troubleshoot, and avoid hitting, CloudFormation's 200 resource limit
 date: 2018-03-07
-layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/logos/serverless-square-icon-text.png'
+category:
+  - guides-and-tutorials
+  - operations-and-observability
 authors:
   - AlexDeBrie
 ---
@@ -105,8 +107,8 @@ If you're thinking of taking this route, I strongly suggest reading Yan Cui's (a
 
 ## Split your stacks with plugins
 
-If you've gotten this far, you're a hold out. You don't want to split your services. You don't want a mono-function. But 
-you still have over 200 resources. 
+If you've gotten this far, you're a hold out. You don't want to split your services. You don't want a mono-function. But
+you still have over 200 resources.
 
 It's time to explore using multiple CloudFormation stacks.
 
@@ -125,7 +127,7 @@ If Nested Stacks sound like the solution for you, check out these two plugins:
 
 ## Bug your AWS contacts
 
-You know what to do. Send out a tweet with `#awswishlist` or ping your AWS support rep and let them know you'd like the 200 resource limit raised. 
+You know what to do. Send out a tweet with `#awswishlist` or ping your AWS support rep and let them know you'd like the 200 resource limit raised.
 
 ## Conclusion
 

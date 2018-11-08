@@ -2,8 +2,10 @@
 title: How to Handle your Python packaging in Lambda with Serverless plugins
 description: Handling Python dependencies in your Lambda functions can be a pain. Here's how I handle Python packaging with Serverless for dev/prod parity.
 date: 2017-08-04
-layout: Post
-thumbnail: https://user-images.githubusercontent.com/6509926/28880672-63c395f4-776b-11e7-8bc9-a9c8dff12c12.png
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/serverless-python-packaging.jpg'
+category:
+  - guides-and-tutorials
+heroImage: ''
 authors:
   - AlexDeBrie
 ---
@@ -16,7 +18,7 @@ The import path also requires finesse. You can install your dependencies directl
 
 But there is a much better way. In this post, I'll show you a how, by using the [`serverless-python-requirements`](https://github.com/UnitedIncome/serverless-python-requirements) plugin for the Serverless Framework.
 
-# Initial Setup
+#### Initial Setup
 
 Let's get our environment ready. If you have Node and NPM installed, install the Serverless Framework globally with:
 
@@ -43,7 +45,7 @@ $ serverless create \
 
 This will create a Serverless Python 3 template project at the given path (`numpy-test/`) with a service name of `numpy-test`. You'll need to change into that directory and create a virtual environment for developing locally.
 
-(**Note:** further reading [here](http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/) about how and why to use virtual environments with Python.)
+(**Note:** further reading [here](https://python-guide-pt-br.readthedocs.io/pt_BR/latest/dev/virtualenvs.html) about how and why to use virtual environments with Python.)
 
 ```bash
 $ cd numpy-test
@@ -67,7 +69,7 @@ import numpy as np
 
 def main(event, context):
     a = np.arange(15).reshape(3, 5)
-    
+
     print("Your numpy array:")
     print(a)
 
@@ -114,7 +116,7 @@ Your numpy array:
 
 Perfect.
 
-# Deploying your service
+#### Deploying your service
 
 Our function is working locally, and it's ready for us to deploy to Lambda. Edit the `serverless.yml` file to look like the following:
 
@@ -150,7 +152,7 @@ Is this ok? (yes) yes
 To configure our `serverless.yml` file to use the plugin, we'll add the following lines in our `serverless.yml`:
 
 ```yml
-# sererless.yml
+# serverless.yml
 
 plugins:
   - serverless-python-requirements
@@ -207,6 +209,6 @@ REPORT RequestId: b32af7a8-52fb-4145-9e85-5985a0f64fe4	Duration: 0.52 ms	Billed 
 
 And there it is. You've got NumPy in your Lambda!
 
-Be sure to check out the repo for additional functionality, including automatic compression of libraries before deploying, which can be a huge help with the larger numerical libraries in Python. 
+Be sure to check out the repo for additional functionality, including automatic compression of libraries before deploying, which can be a huge help with the larger numerical libraries in Python.
 
 *Many thanks to the [United Income](https://unitedincome.com/) team and [Daniel Schep](https://twitter.com/schep_) in particular for creating the `serverless-python-requirements` package. If you want to work on serverless full-time, check out United Income. They use a 100% serverless architecture for everything from serving up their web application to running millions of financial simulations, and they are always looking for talented engineers to join their growing team in Washington, DC.*

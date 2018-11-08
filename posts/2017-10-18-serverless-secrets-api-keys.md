@@ -2,15 +2,18 @@
 title: Managing secrets, API keys and more with Serverless
 description: Use Lambda environment variables and AWS Parameter Store to handle configuration in your Serverless projects
 date: 2017-10-18
-layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/lock2.jpg
+category:
+  - guides-and-tutorials
+  - operations-and-observability
+heroImage: ''
 authors:
   - AlexDeBrie
 ---
 
 Serverless applications are often _service-full_ applications. This means you use hosted services to augment your applications—think DynamoDB for data storage or Mailchimp for sending emails.
 
-When using other services in your Serverless applications, you often need configuration data to make your application work correctly. This includes things like API keys, resource identifiers, or other items. 
+When using other services in your Serverless applications, you often need configuration data to make your application work correctly. This includes things like API keys, resource identifiers, or other items.
 
 In this post, we'll talk about a few different ways to handle these configuration items. This post covers:
 
@@ -20,7 +23,7 @@ In this post, we'll talk about a few different ways to handle these configuratio
 
 Let's get started!
 
-# Using Environment Variables with Lambda
+#### Using Environment Variables with Lambda
 
 When building my first web applications, Heroku's [12 Factor App](https://12factor.net/) was hugely influential—a set of twelve principles to deploy stateless, scalable web applications. I found many of them were directly applicable to Serverless applications.
 
@@ -102,7 +105,7 @@ functions:
 
 Now we have two functions—`superman` and `batman`—and each one has its unique access token for authenticating with Twitter. Success!
 
-# Handling Secrets for Small Teams & Projects
+#### Handling Secrets for Small Teams & Projects
 
 Now that we've got the basics down, let's dig a little deeper into handling secrets for your projects.
 
@@ -158,7 +161,7 @@ functions:
 
 Awesome! Now when we run `sls deploy`, the Serverless Framework will grab those values from the Parameter Store and inject them into our functions as environment variables. Now we can commit our `serverless.yml` to source control without fear of exposing our credentials.
 
-# Managing Secrets for Larger Projects and Teams
+#### Managing Secrets for Larger Projects and Teams
 
 The methods mentioned above work well for certain types of projects. However, there are two different areas that may cause problems.
 
@@ -184,14 +187,14 @@ def get_secret(key):
 		WithDecryption=True
 	)
 	return resp['Parameter']['Value']
-	
+
 access_token = get_secret('supermanToken')
 database_connection = get_secret('databaseConn')
 ```
 
 We create a simple helper utility that wraps a Boto3 call to the Parameter Store and returns the value for a requested secret. Then we can easily call that helper function by providing the name of the secret we want.
 
-# Other considerations
+#### Other considerations
 
 This is just scratching the surface of handling configuration in a larger Serverless project. Another issue you'll want to consider is refreshing your config within a particular Lambda container. Because a Lambda instance can be reused across many function invocations, you'll want to periodically refresh the configuration in case it changed since the instance was initially started.
 

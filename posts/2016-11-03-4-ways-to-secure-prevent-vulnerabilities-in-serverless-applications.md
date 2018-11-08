@@ -2,13 +2,13 @@
 title: 4 Ways to Secure & Prevent Vulnerabilities in Serverless Applications using Snyk
 description: "The new Serverless Snyk plugin scans vulnerable open source packages and alerts of potential security risks."
 date: 2016-11-03
-thumbnail: 'http://res.cloudinary.com/snyk/image/upload/w_400/v1468845258/logo/snyk-avatar.png'
+thumbnail: 'https://res.cloudinary.com/snyk/image/upload/w_400/v1468845258/logo/snyk-avatar.png'
 layout: Post
 authors:
   - TimKadlec
 ---
 
-<img align="right" width="150" height="150" src="http://res.cloudinary.com/snyk/image/upload/w_400/v1468845258/logo/snyk-avatar.png">Serverless is a powerful new approach that enables developers to focus on building features instead of having to focus on the underlying architecture.
+<img align="right" width="150" height="150" src="https://res.cloudinary.com/snyk/image/upload/w_400/v1468845258/logo/snyk-avatar.png">Serverless is a powerful new approach that enables developers to focus on building features instead of having to focus on the underlying architecture.
 
 From a security perspective, it greatly reduces the risk of security issues due to unpatched servers. But it doesn't totally eliminate the risk. In serverless architectures vulnerable open source packages become the primary security risk.
 
@@ -21,7 +21,7 @@ Many of these open source packages are downloaded millions of time each month, m
 The new [Serverless Snyk plugin](https://github.com/Snyk/serverless-snyk) was created to address these issues allowing you to ship securely and focus on building your app.
 
 ## The Serverless Snyk Plugin
-![Screenshot of the Serverless Snyk plugin in action](http://res.cloudinary.com/snyk/image/upload/c_scale,w_900/v1478099693/serverless-snyk-screenshot.png)
+![Screenshot of the Serverless Snyk plugin in action](https://res.cloudinary.com/snyk/image/upload/c_scale,w_900/v1478099693/serverless-snyk-screenshot.png)
 
 The [Serverless Snyk plugin](https://github.com/snyk/serverless-snyk) helps to prevent vulnerable packages in your Serverless application, using [Snyk.io](https://snyk.io).
 

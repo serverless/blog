@@ -1,6 +1,6 @@
 ---
-title: How To Manage Your AWS Step Functions With Serverless
-description: Managing complex workflows with Serverless and AWS Step Functions
+title: How to manage your AWS Step Functions with Serverless
+description: Managing complex workflows with Serverless and AWS Step Functions.
 date: 2017-09-18
 layout: Post
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/step-functions.png
@@ -8,11 +8,13 @@ authors:
   - TakahiroHorike
 ---
 
-When diving into the Function as a service (FAAS) world, a question that often pops up is:
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/step-functions.jpg">
+
+When diving into the Functions as a Service (FaaS) world, a question that often pops up is:
 
 > If serverless functions are stateless, how do I manage state?
 
-There are a number of ways to manage state with backend data stores, `tmp` directories & building this logic into your existing lambda functions but there is a simpler alternative provided by **AWS: Step functions**.
+There are a number of ways to manage state with backend data stores, `tmp` directories & building this logic into your existing lambda functions but there is a simpler alternative provided by AWS: **Step Functions**.
 
 [Step Functions](https://aws.amazon.com/step-functions/) allows you to control complex workflows using Lambda functions without the underlying application managing and orchestrating the state. In essence, it's a state machine to help with complex workflows and aims at keeping your lambda functions free of this additional logic.
 
@@ -108,9 +110,9 @@ module.exports.start = (event, context, callback) => {
 };
 ```
 
-Then, you set up the Lambda will be triggered by events what you want. `startExecution` API requires a stetamachine ARN so you can pass that via environment variables system.
+Then, you set up the Lambda will be triggered by events what you want. `startExecution` API requires a statemachine ARN so you can pass that via environment variables system.
 
-Here’s serverless.yml sample which a triggered stetamachine by S3 event.
+Here’s serverless.yml sample which a triggered statemachine by S3 event.
 
 ```yaml
 service: example-stepf-nodejs
@@ -136,7 +138,7 @@ functions:
 stepFunctions:
   stateMachines:
     hellostepfunc1:
-      name: myStateMachine
+      name: MyStateMachine
       definition:
         Comment: "A Hello World example of the Amazon States Language using an AWS Lambda Function"
         StartAt: HelloWorld1
@@ -190,7 +192,7 @@ Then, here is another Lambda function which writes a log to S3 Bucket.
 'use strict';
 const AWS = require('aws-sdk');
 
-module.exports.wtiteS3 = (event, context, callback) => {
+module.exports.writeS3 = (event, context, callback) => {
   const s3 = new AWS.S3();
   const params = {
     Bucket: 'sls-logs-bukect',
@@ -225,7 +227,7 @@ functions:
   startEC2:
     handler: handler.startEC2
   writeS3:
-    handler: handler.wtiteS3
+    handler: handler.writeS3
 
 stepFunctions:
   stateMachines:
