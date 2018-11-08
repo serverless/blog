@@ -1,6 +1,6 @@
 ---
 title: "Introducing FONK: a serverless LAMP stack for K8S"
-description: "How do you compare the five FaaS on K8S runtimes with 3,000 or more GitHub stars?  Write the same webapp design pattern on all of them. Read more on FONK, a Serverless LAMP stack for K8S."
+description: "How do you compare the top five FaaS on K8S runtimes? Write the same web app design pattern on all of them. Read more on FONK, a Serverless LAMP stack for K8S."
 date: 2018-11-08
 thumbnail: 'http://fonk-apps.io/FaaSonK8S-393x200.jpg'
 category:
