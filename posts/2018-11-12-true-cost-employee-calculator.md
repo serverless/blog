@@ -7,7 +7,7 @@ category:
   - engineering-culture
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-employee-cost.jpg"
 authors:
-  - CaseySchultz
+  - CaseyShultz
 ---
 
 If you’re a founder, this shouldn’t surprise you: for most companies, employee compensation is its largest expense.
@@ -26,7 +26,7 @@ We’re a small and lean startup that has to make every dollar count. So, I deci
 
 The calculator is focused on San Francisco, but feel free to copy it and edit it with your own state and city numbers:
 
-Employee Cost Calculator
+[Employee Cost Calculator](https://docs.google.com/spreadsheets/d/1lzvqppwrMzTHnF83-RdsnflR9AZPR58HRYSMJcQTyRQ/edit#gid=0)
 
 *Disclaimer - the purpose of this calculator is to share a tool that we use internally at Serverless to estimate the total cost of an employee. It is not intended for commercial use. We are not tax professionals and encourage you to consult with a financial professional before making decisions based on this calculator.*
 
