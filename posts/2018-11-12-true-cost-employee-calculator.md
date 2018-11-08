@@ -2,10 +2,10 @@
 title: "The true cost of a new employee: compensation calculator for startups"
 description: "Employee compensation is probably your biggest expense, but the total cost of an employee goes beyond their salary. Use this total compensation calculator to accurately budget!"
 date: 2018-11-12
-thumbnail: ""
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-employee-cost.jpg"
 category:
   - engineering-culture
-heroImage: ""
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-employee-cost.jpg"
 authors:
   - CaseySchultz
 ---
