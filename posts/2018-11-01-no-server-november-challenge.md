@@ -23,15 +23,66 @@ As a side note, we also have a [Serverless Examples Explorer](https://serverless
 
 #### The challenges
 
-##### Nov 5: Serverless Ipsum, DadJokeBot, GitHub Check
+There are currently **6** challenges to choose from!
+
+#### Nov 12: Cute Cats, Alexa skill, AnimalBot
+
+##### Make a website that serves visitors cute cat gifs.
+
+*Beginner track*
+
+Make a website. On that website, pull in a random cat gif. At its most basic, the gif should change every time the page is refreshed. Bonus points if you create a custom domain name.
+
+Here are some resources to get you started:
+* [Cute cat gifs on Giphy](https://giphy.com/explore/cute-cat)
+* [How to create a dynamic website with pre-built Serverless Components](https://serverless.com/blog/how-create-dynamic-website-with-serverless-components/)
+* [Check our Examples Explorer for a dynamic website example](https://serverless.com/examples/aws-node-serve-dynamic-html-via-http-endpoint)
+* [Create a custom domain name for Lambda and API Gateway](https://serverless.com/blog/serverless-api-gateway-domain/)
+
+How to submit to the Cute Cat challenge:
+1. Tweet the link to your GitHub repo and your Cute Cat webpage.
+2. Include the hashtag #noServerNovember.
+
+##### Build an Alexa skill that tells you a random fact about One Direction.
+
+*Intermediate/Advanced track (fun version)*
+
+Make a serverless-backed Alexa skill. When you say, “Alexa, tell me something about One Direction,” or “Alexa, hit me with some One Direction facts,” Alexa should answer you and tell you a random fact about One Direction.
+
+Here are some resources to get you started:
+* [Here are some One Direction facts; you’ll need to convert this to a database](https://www.thefactsite.com/2012/01/50-facts-about-one-direction.html)
+* [Search Alexa examples](https://serverless.com/examples/) in the Serverless Examples Explorer
+* [Building Alexa skills with the Serverless Bespoken plugin](https://serverless.com/blog/building-testing-alexa-skill-bespoken-plugin/)
+* [How to build a serverless Alexa skill](https://medium.com/@rupakg/how-to-build-a-serverless-alexa-skill-51d8479e0432)
+
+How to submit to the One Direction challenge:
+1. Tweet the link to your GitHub repo, ideally also with a video (or sound clip) of the Alexa skill working, because that is way more fun.
+2. Include the hashtag #noServerNovember.
+
+##### Create a Twitter bot that recognizes animals in images.
+
+*Advanced track*
+
+Make a serverless, image-recognition-backed Twitter bot. When a user tweets at the bot: “@animalbot, what’s in this image?”, the bot should reply with the name of the animal, “It’s a panda!”
+
+ Here are some resources to get you started:
+* [Using Tensorflow with the Serverless Framework for image recognition](https://serverless.com/blog/using-tensorflow-serverless-framework-deep-learning-image-recognition/)
+* [Deploying bots on Azure using the Serverless Framework](https://www.microsoft.com/developerblog/2017/06/01/deploying-bots-using-the-serverless-framework/)
+* [Making a Twitter AWS Lambda bot](https://garywoodfine.com/twitter-wordpress-aws-lambda-bot/)
+
+How to submit to the AnimalBot challenge:
+1. Tweet the link to your GitHub repo and AnimalBot account.
+2. Include the hashtag #noServerNovember.
+
+#### Nov 5: Serverless Ipsum, DadJokeBot, GitHub Check
 
 We've got three challenges this week to suit all levels! The Serverless Ipsum challenge can be done even if you've never set up an AWS account before, and have never coded anything in your life.
 
 Every challenge you complete gets you one entry into the drawing.
 
-*Beginner track*
+##### Build a Serverless Ipsum generator.
 
-**Build a Serverless Ipsum generator.**
+*Beginner track*
 
 Build a simple serverless-backed web app that displays Serverless Ipsum when it is loaded. Or Tony Danza Ipsum. Or The Office Ipsum. Or Reasons-I-Can’t-Take-Out-The-Trash Ipsum. 
 
@@ -47,9 +98,9 @@ How to submit to the Serverless Ipsum challenge:
 1. Tweet the link to your GitHub repo and your Ipsum webpage.
 2. Include the hashtag #noServerNovember.
 
-*Intermediate/Advanced track (fun version)*
+##### Make a Twitter bot that tweets dad jokes.
 
-**Make a Twitter bot that tweets dad jokes.**
+*Intermediate/Advanced track (fun version)*
 
 Write a serverless-backed Twitter bot. Make it tweet dad jokes. That’s really all there is to it.
 
@@ -62,9 +113,9 @@ How to submit to the DadBot Twitter challenge:
 1. Tweet the link to your GitHub repo and your DadBot account.
 2. Include the hashtag #noServerNovember.
 
-*Intermediate/Advanced track (actually useful (!!!) version)*
+##### Automate a GitHub Check with Serverless.
 
-**Automate a GitHub Check with Serverless.**
+*Intermediate/Advanced track (actually useful (!!!) version)*
 
 This project is one of our favorites around the office, for its sheer usability. Automating anything to do with GitHub is just incredibly useful.
 
@@ -82,8 +133,6 @@ Here are some resources to get you started:
 How to submit to the GitHub Check challenge:
 1. Tweet the link to your GitHub repo with a screenshot of the Check in action.
 2. Include the hashtag #noServerNovember.
-
-**Nov 12:** *???*
 
 **Nov 19:** *???*
 
