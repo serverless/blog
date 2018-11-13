@@ -114,6 +114,7 @@ schema {
     mutation: Mutation
     subscription: Subscription
 }
+```
 
 This is all we need on the backend side to get AppSync up and running. We can now deploy the service:
 
