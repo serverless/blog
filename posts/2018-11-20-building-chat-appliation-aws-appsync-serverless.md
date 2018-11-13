@@ -1,12 +1,12 @@
 ---
 title: "Building a chat application using AWS AppSync and Serverless"
 description: "Let's build a chat app using AWS AppSync and the Serverless Framework! Plus: info on data sources, metrics and logs, and authentication."
-date: 2018-11-20
+date: 2018-11-19
 thumbnail: ''
 heroImage: ''
 category:
   - guides-and-tutorials
-authors:
+authors: AlexDebrie
   - 
 ---
 
