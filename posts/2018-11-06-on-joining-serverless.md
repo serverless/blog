@@ -24,6 +24,6 @@ I am joining Serverless, Inc. because I believe in the future that we can build.
 
 I believe in a future that has us building and delivering modern applications that are more resilient, powerful, and cost effective. I believe in a future that has us operating applications and services, not infrastructure—a future that has radical focus on business value delivery.
 
-My day-to-day hustle will be making sure developers are served by the Serverless ecosystem. That means making sure we aren innovating and accommodating in the name of progress. We at Serverless, Inc need to continue to be good stewards of the serverless and serviceful future.
+My day-to-day hustle will be making sure developers are served by the Serverless ecosystem. That means making sure we are innovating and accommodating in the name of progress. We at Serverless, Inc need to continue to be good stewards of the serverless and serviceful future.
 
 The future is always just over the horizon, but there is no other community, or company, I would rather be chasing it with. It's going to be a great 2019 and beyond.
