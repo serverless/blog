@@ -5,7 +5,7 @@ date: 2018-11-14
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-employee-cost.jpg"
 category:
   - engineering-culture
-heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-employee-cost.jpg"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/startup-employee-cost-calculator.jpg"
 authors:
   - CaseyShultz
 ---
