@@ -23,7 +23,54 @@ As a side note, we also have a [Serverless Examples Explorer](https://serverless
 
 #### The challenges
 
-There are currently **6** challenges to choose from!
+There are currently **9** challenges to choose from!
+
+#### Nov 19: Twilio reminder, Slack bot, stock ticker
+
+##### Make an SMS reminder bot with Twilio.
+
+*Beginner track*
+
+Create a serverless-backed Twilio reminder bot that sends you a text message. Have it tell you to take out the trash. Or move your car to avoid parking tickets. Or text your mom happy birthday.
+
+Here are some resources to get you started:
+* [How to avoid parking tickets with Serverless](https://serverless.com/blog/avoid-parking-tickets-with-serverless/)
+
+How to submit to the Reminder Bot challenge:
+1. Tweet the link to your GitHub repo with a screenshot of the sent text message.
+2. Include the hashtag #noServerNovember.
+
+##### Make a Slack bot that suggests a random 80s action flick.
+
+*Intermediate/Advanced track*
+
+Create a serverless-backed Slack bot. Users should be able to type a slash command (such as `/action`), and receive the name of a random action flick.
+
+Bonus points if you include the cover art, a link to the IMDB / Rotten Tomatoes page, a quote, or really anything else that makes it more robust.
+
+Here are some resources to get you started:
+* [The `serverless-slackbot` example in GitHub](https://github.com/johnagan/serverless-slackbot)
+* [The Movie Database API](https://developers.themoviedb.org/3/discover/movie-discover)
+* [TMDB movie metadata](https://www.kaggle.com/tmdb/tmdb-movie-metadata)
+* [Create a Slack bot with Serverless](https://foobar123.com/code-with-me-create-a-slack-app-with-serverless-part-1-18b1052310c8)
+* [Make a serverless chatbot](https://acloud.guru/learn/serverless-chatbot)
+
+How to submit to the 80s Action Flick challenge:
+1. Tweet the link to your GitHub repo with a screenshot of the bot in action.
+2. Include the hashtag #noServerNovember.
+
+##### Create a cron + ETL-backed stock ticker.
+
+*Intermediate/Advanced track*
+
+Create a serverless-backed cron job that runs an ETL script to pull data from one SaaS service into another. For example, a phone number you can text to receive stock (or for additional buzzword bonus points, crypto) price information. We recommend going Twitter -> serverless backend (AWS Lambda, Microsoft Azure, or Google Cloud Functions) -> 
+
+Here are some resources to get you started:
+* [ETL job processing with Serverless and redshift](https://serverless.com/blog/etl-job-processing-with-serverless-lambda-and-redshift/)
+
+How to submit to the Stock Ticker challenge:
+1. Tweet the link to your GitHub repo and a screenshot of your Stock Ticker in action.
+2. Include the hashtag #noServerNovember.
 
 #### Nov 12: Cute Cats, Alexa skill, AnimalBot
 
@@ -133,8 +180,6 @@ Here are some resources to get you started:
 How to submit to the GitHub Check challenge:
 1. Tweet the link to your GitHub repo with a screenshot of the Check in action.
 2. Include the hashtag #noServerNovember.
-
-**Nov 19:** *???*
 
 **Nov 26:** *Special Edition: re:Invent serverless hackathon*
 
