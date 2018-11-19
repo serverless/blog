@@ -2,12 +2,12 @@
 title: "Building a chat application using AWS AppSync and Serverless"
 description: "Let's build a chat app using AWS AppSync and the Serverless Framework! Plus: info on data sources, metrics and logs, and authentication."
 date: 2018-11-19
-thumbnail: ''
-heroImage: ''
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/appsync-chat/appsync-chat-thumb.png'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/appsync-chat/appsync-chat-header.png'
 category:
   - guides-and-tutorials
-authors: AlexDebrie
-  - 
+authors: 
+  - AlexDebrie
 ---
 
 GraphQL gets a lot of praise for its expressiveness, for the idea of batching requests for data, and for its great development tooling. But there is an additional benefit that mostly goes unnoticed.
