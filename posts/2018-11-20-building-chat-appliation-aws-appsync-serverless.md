@@ -7,7 +7,7 @@ heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/appsyn
 category:
   - guides-and-tutorials
 authors: 
-  - AlexDebrie
+  - AlexDeBrie
 ---
 
 GraphQL gets a lot of praise for its expressiveness, for the idea of batching requests for data, and for its great development tooling. But there is an additional benefit that mostly goes unnoticed.
