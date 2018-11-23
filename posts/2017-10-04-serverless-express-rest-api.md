@@ -564,3 +564,7 @@ Here are a few other resources you might find useful while building Express appl
 - [3 Steps to Faster Serverless Development](https://serverless.com/blog/quick-tips-for-faster-serverless-development/)
 - [Monitoring with Metrics and Alarms](https://serverless.com/blog/serverless-ops-metrics/)
 - [Function introspection with logging](https://serverless.com/blog/serverless-ops-logs/)
+
+
+#### Architectural Diagram
+![Architectural Diagram](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Thom's+Posts/node.jpg)
