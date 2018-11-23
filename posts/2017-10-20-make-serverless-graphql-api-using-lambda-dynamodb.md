@@ -248,7 +248,7 @@ But if I want the API to call me "Jer", I can update the nickname for "Jeremy":
 
 ```sh
 $ curl -G 'https://9qdmq5nvql.execute-api.us-east-1.amazonaws.com/dev/query' --data-urlencode 'query=mutation {changeNickname(firstName:
- "Jeremy", nickname: "Jer")}'
+"Jeremy", nickname: "Jer")}'
 $ curl -G 'https://9qdmq5nvql.execute-api.us-east-1.amazonaws.com/dev/query' --data-urlencode 'query={greeting(firstName: "Jeremy")}'
 # {"data":{"greeting":"Hello, Jer."}}
 ```
@@ -260,5 +260,10 @@ Separation of concerns like this let you build front-ends and services that offl
 #### Deploy your own!
 
 To deploy this service yourself, download the [source code](https://github.com/serverless/examples/tree/master/aws-node-graphql-api-with-dynamodb) and deploy it with the [Serverless Framework](https://serverless.com/framework/). Or, take a look at [a larger example project](https://github.com/boazdejong/serverless-graphql-api) for ideas on project structure and factoring.
+
+
+#### Architectural Diagram
+![Architectural Diagram](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Thom's+Posts/graphql.jpg)
+
 
 Happy building!
