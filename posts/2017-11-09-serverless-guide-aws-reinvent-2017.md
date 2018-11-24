@@ -76,7 +76,7 @@ Or try the workshop version! You'll become a developer at a ridesharing company,
 Includes: API Gateway, DynamoDB, Route 53, CloudFront, S3
 
 **SRV306 - State Machines in the Wild! How Customers use AWS Step Functions** | Aria<br>
-Shameless plug: Coca-cola uses the [Serverless Framework](https://serverless.com/framework). Patrick Brandt will go over how they created a customer loyalty program with Step Functions. The session explores all kinds of neat things that you can do with state machines.
+Shameless plug: Coca-cola uses the [Serverless Framework](https://serverless.com/framework/). Patrick Brandt will go over how they created a customer loyalty program with Step Functions. The session explores all kinds of neat things that you can do with state machines.
 
 Includes: Step Functions, operations automation, state management
 

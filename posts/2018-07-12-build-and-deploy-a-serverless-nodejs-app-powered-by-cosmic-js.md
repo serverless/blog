@@ -12,7 +12,7 @@ authors:
 
 Serverless application development is growing in popularity. And it's no surprise. *Build apps, not infrastructure* is an appealing proposition. With serverless, you don't have to manage server infrastructure, you get infinite scalability, and you never have to pay for idle server time.
 
-And [the Serverless Framework](https://serverless.com/framework) does one better: it further abstracts building serverless apps into a delightful developer experience. It helps you get a cloud function-powered app up and running, fast.
+And [the Serverless Framework](https://serverless.com/framework/) does one better: it further abstracts building serverless apps into a delightful developer experience. It helps you get a cloud function-powered app up and running, fast.
 
 In this tutorial, I'm going to show you how to get started with the [Cosmic JS Serverless Starter app](https://github.com/cosmicjs/serverless-starter) in a matter of minutes. And as a bonus, I'll show you the steps to transform any Node.js app into an infinitely scalable Node.js Serverless App!
 
@@ -153,7 +153,7 @@ module.exports.handler = serverless(app);
 ```
 
 ## In Conclusion
-With a few edits, you can quickly transform almost any Node.js app into a serverless app. The [Serverless Framework](https://serverless.com/framework) abstracts the complexity of AWS account configuration, and gives you a delightful development experience.
+With a few edits, you can quickly transform almost any Node.js app into a serverless app. The [Serverless Framework](https://serverless.com/framework/) abstracts the complexity of AWS account configuration, and gives you a delightful development experience.
 
 Add Cosmic JS-powered content, and you have an infinitely scalable serverless app with content managed via the Cosmic JS API.  No servers to manage, no CMS to maintain. Building apps, not infrastructure, is the future!
 
