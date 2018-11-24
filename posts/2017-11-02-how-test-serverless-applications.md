@@ -13,7 +13,7 @@ authors:
 
 Serverless applications are quickly gaining in complexity—testing is key.
 
-I’ve been building the Serverless Framework for 2 years now, and during that time it's been my focus to create as smooth a testing and debugging experience as possible. In this article, I’ll share some techniques that you can use with the [Serverless Framework](https://www.serverless.com/framework) to test and debug your serverless application during development.
+I’ve been building the Serverless Framework for 2 years now, and during that time it's been my focus to create as smooth a testing and debugging experience as possible. In this article, I’ll share some techniques that you can use with the [Serverless Framework](https://serverless.com/framework/) to test and debug your serverless application during development.
 
 I'll focus on testing serverless functions, since this is where most of the development happens.
 
@@ -90,7 +90,7 @@ While `invoke local` doesn’t emulate Lambda 100%, you’ll still be able to fi
 
 ##### Using the Event Gateway
 
-We’ve recently announced a new project called the [Event Gateway](https://www.serverless.com/event-gateway) that helps manage all events happening in your serverless application. You can use the Event Gateway to locally and rapidly test your functions.
+We’ve recently announced a new project called the [Event Gateway](https://serverless.com/event-gateway/) that helps manage all events happening in your serverless application. You can use the Event Gateway to locally and rapidly test your functions.
 
 We'll need two terminal sessions for this. First, spin up the Event Gateway in your current terminal session with `serverless run`. Then, open another session and emit events with the `serverless emit` command. This will invoke any function that is subscribing to that event, and you’ll be able to see the result of all function invocations in the `serverless run` session.
 

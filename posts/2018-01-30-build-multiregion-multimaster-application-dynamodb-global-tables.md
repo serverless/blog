@@ -538,4 +538,4 @@ Check it out and run it yourself!
 
 # Miss the DynamoDB global tables webinar?
 
-Follow [@goserverless](twitter.com/goserverless) on twitter or sign up for our bi-monthly newsletter (via the lefthand menu) to stay on top of serverless industry news.
+Follow [@goserverless](https://twitter.com/goserverless/) on twitter or sign up for our bi-monthly newsletter (via the lefthand menu) to stay on top of serverless industry news.

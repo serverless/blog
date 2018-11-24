@@ -20,7 +20,7 @@ And learn a little Serverless development at the same time! Today, we're going t
 
 We're going to create a cron job that sends us an SMS the night before every street cleaning day.
 
-This example uses the [Serverless Framework](https://www.serverless.com/framework), AWS Lambda and Node.js. You can install the Framework with:
+This example uses the [Serverless Framework](https://serverless.com/framework/), AWS Lambda and Node.js. You can install the Framework with:
 
 ```bash
 $ npm install -g serverless

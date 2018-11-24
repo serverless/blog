@@ -291,7 +291,7 @@ After looking at all the amazing new features it’s time to celebrate! On Frid
 
 ## New homepage
 
-We also took some time to work on our brand new Serverless homepage. Check it out at [http://serverless.com](http://serverless.com). Curious what this looks like in code? We’ve got you covered! Our homepage is open source and the corresponding code can be found [here](https://github.com/serverless/site).
+We also took some time to work on our brand new Serverless homepage. Check it out at [https://serverless.com](https://serverless.com). Curious what this looks like in code? We’ve got you covered! Our homepage is open source and the corresponding code can be found [here](https://github.com/serverless/site).
 
 ## Your feedback / contributing to Serverless
 

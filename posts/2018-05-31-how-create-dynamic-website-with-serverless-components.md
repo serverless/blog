@@ -77,7 +77,7 @@ Using this `path` property, we're referencing our frontend code on our file syst
 You'll also notice that we're referring to a REST API component using the variable syntax `${productsApi.url}`. So we'll need to add that component. Let's do that!
 
 #### Setting up the REST API
-You can add a REST API by adding the `rest-api` component. This component supports both AWS API Gateway and [Serverless Event Gateway](https://http://serverless.com/event-gateway).
+You can add a REST API by adding the `rest-api` component. This component supports both AWS API Gateway and [Serverless Event Gateway](https://serverless.com/event-gateway/).
 
 In this example, we're going to use the API Gateway. Let's add this component to our `serverless.yml` file by adding this config:
 

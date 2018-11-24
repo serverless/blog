@@ -131,7 +131,7 @@ authors:
 
 > Fork this repo and submit a PR. [This video guide will walk you through the process](https://www.youtube.com/watch?v=ps1oQeg-0ss)
 
-We will review and publish your post with our audience on [serverless.com](http://serverless.com/blog) and share it all around the web!
+We will review and publish your post with our audience on [serverless.com](https://serverless.com/blog/) and share it all around the web!
 
 Ping us with any questions on [Twitter](http://twitter.com/goserverless) or [post an issue](https://github.com/serverless/blog/issues/new) and we will get back with you shortly.
 

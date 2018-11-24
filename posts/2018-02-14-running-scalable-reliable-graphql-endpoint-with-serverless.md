@@ -33,7 +33,7 @@ Ready to talk about creating Serverless GraphQL endpoints using DynamoDB, RDS an
 
 Awesome. Let's go.
 
-**Note** For the GraphQL and Serverless primer, keep reading. Or [click here to go straight to the code walkthrough](https://www.serverless.com/blog/running-scalable-reliable-graphQL-endpoint-with-serverless/#serverless-graphql-repository)
+**Note** For the GraphQL and Serverless primer, keep reading. Or [click here to go straight to the code walkthrough](https://serverless.com/blog/running-scalable-reliable-graphQL-endpoint-with-serverless/#serverless-graphql-repository)
 
 #### What is GraphQL?
 

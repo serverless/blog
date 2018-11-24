@@ -71,7 +71,7 @@ AND! (jazz hands) Your site is deployed!
 ## Merging pull requests: builds and previews
 As you submit new pull requests and update your site, Netlify can automatically trigger new builds on your behalf.
 
-On the [Serverless.com](https://www.serverless.com) site, when we create a new branch, Netlify pings us with a GitHub comment on that branch to generate a build preview URL for us:
+On the [Serverless.com](https://serverless.com) site, when we create a new branch, Netlify pings us with a GitHub comment on that branch to generate a build preview URL for us:
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/netlify/deploy+preview+comment.png">
 

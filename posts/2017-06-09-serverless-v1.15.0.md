@@ -58,7 +58,7 @@ functions:
           trigger: PreSignUp
 ```
 
-The `cognitoUserPool` event source has lots of other configuration parameters. You can read more about them in [our docs](https://www.serverless.com/framework/docs/providers/aws/events/cognito-user-pool).
+The `cognitoUserPool` event source has lots of other configuration parameters. You can read more about them in [our docs](https://serverless.com/framework/docs/providers/aws/events/cognito-user-pool/).
 
 ### KMS Key support
 

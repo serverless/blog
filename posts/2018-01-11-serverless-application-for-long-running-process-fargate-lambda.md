@@ -70,7 +70,7 @@ The diagram below and the steps that follow describe the overall workflow of the
 5. S3 triggers another Lambda function when the thumbnail is uploaded
 6. The Lambda function writes the url of the thumbnail to the log.
 
-**Note:** If you are not interested in learning how the container image was built or how to test extracting the thumbnail locally, please skip ahead to the [Setting up ECS (Fargate)](https://www.serverless.com/blog/serverless-application-for-long-running-process-fargate-lambda/#setting-up-ecs-using-fargate) section. I have the Docker container [rupakg/docker-ffmpeg-thumb](https://hub.docker.com/r/rupakg/docker-ffmpeg-thumb/) shared on Dockerhub for you to use.
+**Note:** If you are not interested in learning how the container image was built or how to test extracting the thumbnail locally, please skip ahead to the [Setting up ECS (Fargate)](https://serverless.com/blog/serverless-application-for-long-running-process-fargate-lambda/#setting-up-ecs-using-fargate/) section. I have the Docker container [rupakg/docker-ffmpeg-thumb](https://hub.docker.com/r/rupakg/docker-ffmpeg-thumb/) shared on Dockerhub for you to use.
 
 #### Building the Container Image
 
