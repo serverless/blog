@@ -13,9 +13,9 @@ authors:
 
 We’re closing out [#NoServerNovember](https://serverless.com/blog/no-server-november-challenge) with a special-edition re:Invent virtual hackathon. 
 
-Winners get fame, glory, and an Amazon Echo or other cool prizes! Want to participate? Awesome.
+Winners get fame, glory, and an Amazon Echo or other cool prizes! Want to participate? Awesome. Read on for the challenge description and details.
 
-Note that this hackathon isn't in direct partnership with AWS, it's just a fun thing [Serverless](https://serverless.com/) is doing alongside re:Invent.
+(Note that this hackathon isn't in direct partnership with AWS, it's just a fun thing [Serverless](https://serverless.com/) is doing alongside re:Invent.)
 
 #### The hackathon challenge
 
