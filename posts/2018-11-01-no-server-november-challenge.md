@@ -23,7 +23,13 @@ As a side note, we also have a [Serverless Examples Explorer](https://serverless
 
 #### The challenges
 
-There are currently **9** challenges to choose from!
+There are currently **9** challenges and **1** hackathon to choose from!
+
+#### Nov 26: Special edition re:Invent hackathon!
+
+We've got even cooler prizes this week for our hackathon entrants. The re:Invent virtual hackathon can be done from anywhere, on a team or not on a team, however you want to enter.
+
+[Check out the hackathon assignment](https://serverless.com/blog/no-server-november-reinvent-hackathon/) and get building!
 
 #### Nov 19: Twilio reminder, Slack bot, stock ticker
 
