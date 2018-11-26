@@ -11,14 +11,13 @@ authors:
   - ThomCrowe
 ---
 
-The re:Invent serverless virtual hackathon begins NOW
-We’re closing out #NoServerNovember with a special-edition virtual hackathon for AWS re:Invent. Participate from anywhere, win cool prizes.
-
 We’re closing out [#NoServerNovember](https://serverless.com/blog/no-server-november-challenge) with a special-edition re:Invent virtual hackathon. 
 
 Winners get fame, glory, and an Amazon Echo or other cool prizes! Want to participate? Awesome.
 
-#### The re:Invent Serverless hackathon
+Note that this hackathon isn't in direct partnership with AWS, it's just a fun thing [Serverless](https://serverless.com/) is doing alongside re:Invent.
+
+#### The hackathon challenge
 
 It's #GivingTuesday. As a community, let's help AWS's Andrew Jassy fulfill his newest mission: putting a cat in every home in America.
 
@@ -28,7 +27,7 @@ This year, we're going to work together to ensure Jassy has everything he needs 
 
 With a Serverless app, of course. Or a [new component](https://serverless.com/blog/what-are-serverless-components-how-use/), [plugin](https://github.com/serverless/plugins), or [example](https://serverless.com/examples/) to help get the non-profit up and running.
 
-**Important note:** This is all in good fun, and Amazon Feline is not an actual AWS-sponsored hackathon or non-profit initiative. However! We do plan to take your projects and create replicable applications and repos that non-profits around the world can use to help promote their own missions.
+**Important note:** This scenario is all in good fun, and Amazon Feline is not an actual AWS-sponsored hackathon or non-profit initiative. However! We do plan to take your projects and create replicable applications and repos that non-profits around the world can use to help promote their own missions.
 
 Some ideas include:
 
