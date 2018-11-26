@@ -12,7 +12,7 @@ authors:
 
 Rob Gruhl kicked off [Emit Conference](http://www.emitconference.com/) with a peek behind the scenes at Nordstrom's architecture.
 
-In his talk, Rob discussed Nordstrom's use of the event-sourced architecture with [Serverless.com](http://www.serverless.com): what it is and why it's a good fit for the Serverless paradigm. He also notes some difficulties with the event-sourcing pattern, the ways Nordstrom has worked around it, and ends with a few [#awswishlist](https://twitter.com/hashtag/awswishlist) items that would make it easier to develop event-sourced applications with Serverless.
+In his talk, Rob discussed Nordstrom's use of the event-sourced architecture with [Serverless.com](https://serverless.com): what it is and why it's a good fit for the Serverless paradigm. He also notes some difficulties with the event-sourcing pattern, the ways Nordstrom has worked around it, and ends with a few [#awswishlist](https://twitter.com/hashtag/awswishlist) items that would make it easier to develop event-sourced applications with Serverless.
 
 Nordstrom were an early adopter of the Serverless Framework for services from personalization to frequently-viewed items. They've since contributed some excellent resources back to the community, including the "[Hello, Retail](https://github.com/Nordstrom/hello-retail)" project and a Serverless Artillery project for performance testing.
 
@@ -40,7 +40,7 @@ So we decided to do a proof of concept using this distributed ledger. It's also 
 
 The cost came down tremendously. Maybe less than $100 a day for this processing capability. It also allowed us to use that exact same stream to do some more interesting things like frequently viewed. Maybe brand category affinity for personalization. So after that, we did a bunch of request-response services, both in production and as proof of concept. And one thing that we found is anytime you have a lot of functions, you have a lot of serverless architecture, you need a deployment framework to kind of keep yourself organized. 
 
-So we found the [Serverless.com](https://www.serverless.com) deployment framework and we were able to make a number of contributions that made it work well at Nordstrom. So this ability to update the framework, the responsiveness of the team, and the quality of the community, is one of the reasons why we continue to use this framework and recommend it. 
+So we found the [Serverless.com](https://serverless.com) deployment framework and we were able to make a number of contributions that made it work well at Nordstrom. So this ability to update the framework, the responsiveness of the team, and the quality of the community, is one of the reasons why we continue to use this framework and recommend it. 
 
 So fast forward a few years. At this point we have, I would say on a given day, we have hundreds of millions of serverless invocations. We have hundreds and hundreds of serverless functions live. We have dozens of teams using serverless functions. And across all of these serverless functions, we've found that when you invoke a serverless function, you're looking for an event. 
 

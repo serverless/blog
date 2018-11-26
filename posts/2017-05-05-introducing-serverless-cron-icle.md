@@ -14,7 +14,7 @@ authors:
 "Both are seeing massive interest from developer communities and enterprise, eager to implement solutions, and both need to learn how to support developers and systems integrators to adopt a fast moving technology with a rapid pace of innovation that means there are new things to learn every other week." Read more about what lessons the two fields can exchange on *The New Stack* [here](https://thenewstack.io/iot-serverless-can-learn/). *By [Mark Boyd](https://twitter.com/mgboydcom).*
 
 ### [My AWS Wish List for 2017](https://read.acloud.guru/my-aws-wishlist-for-2017-8c55a7b7b475)
-A serverless developer at [A Cloud Guru](https://acloud.guru/) (the masterminds behind [ServerlessConf](http://serverlessconf.io/)), John outlines his wish list for Lambda, API Gateway, DynamoDB, CloudFormation and more. Check it out on the A Cloud Guru blog [here](https://read.acloud.guru/my-aws-wishlist-for-2017-8c55a7b7b475). *By [John McKim](https://twitter.com/johncmckim).*
+A serverless developer at [A Cloud Guru](https://acloud.guru/) (the masterminds behind [ServerlessConf](https://serverlessconf.io/)), John outlines his wish list for Lambda, API Gateway, DynamoDB, CloudFormation and more. Check it out on the A Cloud Guru blog [here](https://read.acloud.guru/my-aws-wishlist-for-2017-8c55a7b7b475). *By [John McKim](https://twitter.com/johncmckim).*
 
 ### [Virtual Panel - ServerlessConf 2017 Debriefing](https://youtu.be/7OPYapnBOzA)
 In this conversation, Krish Subramanian from Rishidot Research talks with Erica Windisch, Benjamin Ball, Matt Weagle, Pete Johnson, Lee Calcote and Kevin McGrath about their major takeaways from ServerlessConf Austin. Watch the video [here](https://youtu.be/7OPYapnBOzA). *From [Rishidot Research](https://twitter.com/rishidot).*
