@@ -56,6 +56,10 @@ To qualify, the entry must use the Serverless Framework and AWS Lambda.
 
 These projects will all be open-sourced to help other charitable organizations clone, modify, or expand upon to grow their own reach.
 
+##### Winners
+
+Winners will be hand-picked by the Serverless team. We will judge entries based on their relevance to the theme, as well as the project's broader applications for non-profits.
+
 #### More #NoServerNovember fun
 
 We kind of took over November this year with a month-long series of Serverless challenges! If you’d rather try your hand at a smaller project, check out our weekly #NoServerNovember challenges as well:
