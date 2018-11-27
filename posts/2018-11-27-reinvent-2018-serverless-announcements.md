@@ -22,7 +22,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 #### re:Invent 2018 announcements
 
-*Pending*
+* [DynamoDB Transactions](#dynamodb-transactions)
 
 #### Pre-re:Invent announcements
 
@@ -34,9 +34,16 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [AppSync Pipeline Resolvers](#appsync-pipeline-resolvers)
 * [Lambda + Kinesis Data Streams Upgrades](#lambda--kinesis-data-streams-upgrades)
 * [Python 3.7 for Lambda](#python-37-for-lambda)
-* [DynamoDB Transactions](#dynamodb-transactions)
+* [AWS Transfer for SFTP](#aws-transfer-for-sftp)
+
 
 #### Announcements:
+
+#### DynamoDB Transactions
+
+**What it is:** DynamoDB now supports transactions. 🎉
+
+**Why it matters:** The best database for Serverless gets better and better. Now you can read and/or write multiple items on a single table or across multiple tables and get ACID transactions. This is a great addition and removes a lot of complicated logic from client libraries.
 
 ##### [Amplify Console](https://aws.amazon.com/about-aws/whats-new/2018/11/announcing-aws-amplify-console/)
 
@@ -92,8 +99,9 @@ This is a huge step forward for fans of stream-based processing with AWS Lambda.
 
 **How do I use it:** You can use Python3.7 in the Serverless Framework by setting `runtime: python3.7`. The built-in `aws-python3` template will use Python3.7 in the [next release of the Framework](https://github.com/serverless/serverless/pull/5505).
 
-#### DynamoDB Transactions
+#### AWS Transfer for SFTP
 
-**What it is:** DynamoDB now supports transactions. 🎉
+**What it is:** A managed SFTP service for Amazon S3
 
-**Why it matters:** The best database for Serverless gets better and better. Now you can read and/or write multiple items on a single table or across multiple tables and get ACID transactions. This is a great addition and removes a lot of complicated logic from client libraries.
+**Why it matters:** Lock down your file transfers with SFTP, without modifications to your app, and without needing to manage any SFTP servers.
+
