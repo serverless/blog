@@ -15,6 +15,8 @@ We’re closing out [#NoServerNovember](https://serverless.com/blog/no-server-no
 
 Winners get fame, glory, and an Amazon Echo or other cool prizes! Want to participate? Awesome. Read on for the challenge description and details.
 
+The deadline to submit your project is **Sunday, Dec 2** at 11:00pm PT! So you've got all week.
+
 (Note that this hackathon isn't in direct partnership with AWS, it's just a fun thing [Serverless](https://serverless.com/) is doing alongside re:Invent.)
 
 #### The hackathon challenge
