@@ -10,7 +10,7 @@ authors:
   - AndreaPasswater
 ---
 
-*Last updated:*
+*Last updated: Nov 27, 8:49 AM*
 
 re:Invent 2018 has begun! But there is ever so much to track.
 
