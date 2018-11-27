@@ -41,7 +41,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 #### Announcements:
 
-#### CloudWatch Logs Insights
+#### [CloudWatch Logs Insights](https://aws.amazon.com/blogs/aws/new-amazon-cloudwatch-logs-insights-fast-interactive-log-analytics/)
 
 **What it is:** A managed service for querying logs across all AWS services.
 
