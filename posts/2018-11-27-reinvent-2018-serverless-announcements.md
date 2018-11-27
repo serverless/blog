@@ -50,9 +50,17 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 Friend-of-the-Framework and all-around awesome guy [Jeremy Daly](https://twitter.com/jeremy_daly) has done a great [review of the Serverless Aurora Data API](https://www.jeremydaly.com/aurora-serverless-data-api-a-first-look/). TL;DR: It's not quite ready for primetime. AWS often releases things early and rapidly improves them, so look for this to get a lot better in 2019.
 
-##### Preview of Aurora Serverless (PostgreSQL)
+##### [Preview of Aurora Serverless (PostgreSQL)](https://aws.amazon.com/about-aws/whats-new/2018/11/sign-up-for-the-preview-of-amazon-aurora-postgresql-serverless/)
 
-##### AppSync Pipeline Resolvers
+**What it is:** A PostgreSQL-compatible version of the Aurora Serverless database is now available in preview.
+
+**Why it matters:** We're very bullish on Serverless Aurora being an important tool in the Serverless ecosystem. The MySQL-compatible database was released earlier this year, and now the PostgreSQL version is getting closer. This is great news for Postgres fans.
+
+##### [AppSync Pipeline Resolvers](https://aws.amazon.com/about-aws/whats-new/2018/11/aws-appsync-launches-pipeline-resolvers-delta-sync-aurora-serverless-support/)
+
+**What it is:** Break up GraphQL resolvers into multiple steps when using AppSync.
+
+**Why it matters:** [AppSync is a great way to build Serverless GraphQL applications](https://serverless.com/blog/building-chat-appliation-aws-appsync-serverless/), and this service continues to get more and more powerful. The pipeline resolvers are great for adding authorization to the front of your GraphQL api or for more complex flows. AppSync is definitely a service to watch in 2019.
 
 ##### [Lambda + Kinesis Data Streams Upgrades](https://aws.amazon.com/about-aws/whats-new/2018/11/aws-lambda-supports-kinesis-data-streams-enhanced-fan-out-and-http2/)
 
