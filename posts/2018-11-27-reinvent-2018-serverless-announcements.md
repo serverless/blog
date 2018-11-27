@@ -24,6 +24,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 #### re:Invent 2018 announcements
 
 * [DynamoDB Transactions](#dynamodb-transactions)
+* [CloudWatch Logs Insights](#cloudwatch-logs-insights)
 
 #### Pre-re:Invent announcements
 
@@ -39,6 +40,12 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 
 #### Announcements:
+
+#### [CloudWatch Logs Insights](https://aws.amazon.com/blogs/aws/new-amazon-cloudwatch-logs-insights-fast-interactive-log-analytics/)
+
+**What it is:** A managed service for querying logs across all AWS services.
+
+**Why it matters:** Could be a pretty convenient way to create simple dashboards and ad-hoc queries in AWS without having to rely on a 3rd party service.
 
 #### DynamoDB Transactions
 
