@@ -10,7 +10,7 @@ authors:
   - AndreaPasswater
 ---
 
-*Last updated: Nov 27, 8:49 AM*
+*Last updated: Nov 27, 1:33 AM*
 
 re:Invent 2018 has begun! But there is ever so much to track.
 
@@ -34,6 +34,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [AppSync Pipeline Resolvers](#appsync-pipeline-resolvers)
 * [Lambda + Kinesis Data Streams Upgrades](#lambda--kinesis-data-streams-upgrades)
 * [Python 3.7 for Lambda](#python-37-for-lambda)
+* [DynamoDB Transactions](#dynamodb-transactions)
 
 #### Announcements:
 
@@ -90,3 +91,9 @@ This is a huge step forward for fans of stream-based processing with AWS Lambda.
 **Why it matters:** You get all the latest Python features with your Lambdas! The most exciting addition to Python3.7 is likely [dataclasses](https://docs.python.org/3/library/dataclasses.html) -- a much simpler way to define classes.
 
 **How do I use it:** You can use Python3.7 in the Serverless Framework by setting `runtime: python3.7`. The built-in `aws-python3` template will use Python3.7 in the [next release of the Framework](https://github.com/serverless/serverless/pull/5505).
+
+#### DynamoDB Transactions
+
+**What it is:** DynamoDB now supports transactions. 🎉
+
+**Why it matters:** The best database for Serverless gets better and better. Now you can read and/or write multiple items on a single table or across multiple tables and get ACID transactions. This is a great addition and removes a lot of complicated logic from client libraries.
