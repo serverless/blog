@@ -43,9 +43,9 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 #### [CloudWatch Logs Insights](https://aws.amazon.com/blogs/aws/new-amazon-cloudwatch-logs-insights-fast-interactive-log-analytics/)
 
-**What it is:** A managed service for querying logs across all AWS services.
+**What it is:** A faster, better query language for CloudWatch logs.
 
-**Why it matters:** Could be a pretty convenient way to create simple dashboards and ad-hoc queries in AWS without having to rely on a 3rd party service.
+**Why it matters:** CloudWatch Logs has been the default logging solution for AWS Lambda and all container-based services from AWS. However, it hasn't kept up with third-party logging solutions out there. This is a step in the right direction to make it easier to see what's happening in your serverless applications.
 
 #### DynamoDB Transactions
 
