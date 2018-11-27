@@ -11,7 +11,7 @@ authors:
   - AlexDeBrie
 ---
 
-*Last updated: Nov 27, 1:33 PM*
+*Last updated: Nov 27, 3:41 PM*
 
 re:Invent 2018 has begun! But there is ever so much to track.
 
