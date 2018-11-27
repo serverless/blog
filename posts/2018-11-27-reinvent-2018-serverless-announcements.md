@@ -12,11 +12,11 @@ authors:
 
 **Last updated:** Nov 27, 8:49 AM
 
-re:Invent 2018 has begun! But there is ever so much to track.
+re:Invent 2018 has begun! But there is *so much* to track. How do you keep up?
 
-If last year is any indication, we expect AWS to have a long list of serverless-centered announcements and launches. If you want to keep up, you've come to the right place.
+If last year is any indication, we expect AWS to have a long list of serverless-centered announcements and launches. We're watching all the keynotes and announcements live as they happen, and compiling the "what it is" and the "why it matters" right here.
 
-We're watching all the keynotes and announcements live as they happen, and compiling the "what it is" and the "why it matters" right here. Updating live all week!
+Updating live all week!
 
 Oh, and while you're here, you should [check out our re:Invent virtual hackathon](https://serverless.com/blog/no-server-november-reinvent-hackathon). You can participate from anywhere, even if you're not at the conference, and win prizes while helping non-profits along the way.
 
