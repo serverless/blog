@@ -10,7 +10,7 @@ authors:
   - AndreaPasswater
 ---
 
-*Last updated: Nov 27, 8:49 AM*
+**Last updated:** Nov 27, 8:49 AM
 
 re:Invent 2018 has begun! But there is ever so much to track.
 
@@ -20,9 +20,21 @@ We're watching all the keynotes and announcements live as they happen, and compi
 
 Oh, and while you're here, you should [check out our re:Invent virtual hackathon](https://serverless.com/blog/no-server-november-reinvent-hackathon). You can participate from anywhere, even if you're not at the conference, and win prizes while helping non-profits along the way.
 
-#### re:Invent 2018 announcements
+#### re:Invent 2018 announcements (newest to oldest)
 
 *Coming soon!*
+
+#### Pre-re:Invent announcements
+
+* [Amplify Console](#amplify-console)
+* [Firecracker](#firecracker)
+* [S3 Batch Operations (preview)](#s3-batch-operations-preview)
+* [Serverless Data API](#serverless-data-api)
+* [Preview of Aurora Serverless (PostgreSQL)](#preview-of-aurora-serverless-postgresql)
+* [AppSync Pipeline Resolvers](#appsync-pipeline-resolvers)
+* [Lambda + Kinesis Data Streams](#lambda-+-kinesis-data-streams)
+
+#### Announcements
 
 ##### Amplify Console
 
