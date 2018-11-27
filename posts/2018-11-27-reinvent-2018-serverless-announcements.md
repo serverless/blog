@@ -42,7 +42,13 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **Why it matters:** This eliminates a ton of toil around operating on existing objects in S3. You would need to write a ton of custom logic to make sure you're hitting the right objects, handling errors, etc. Now you can easily manipulate a huge block of objects in a single go.
 
-##### Serverless Data API
+##### [Serverless Aurora Data API](https://aws.amazon.com/about-aws/whats-new/2018/11/aurora-serverless-data-api-beta/)
+
+**What it is:** An HTTP endpoint for accessing your Serverless Aurora database.
+
+**Why it matters:** This is a big deal. In our post last year on [why Serverless Aurora is the future of data](https://serverless.com/blog/serverless-aurora-future-of-data/), we noted that an HTTP-accessible relational database would be a huge step forward for the Serverless ecosystem. AWS is starting to deliver on this promise.
+
+Friend-of-the-Framework and all-around awesome guy [Jeremy Daly](https://twitter.com/jeremy_daly) has done a great [review of the Serverless Aurora Data API](https://www.jeremydaly.com/aurora-serverless-data-api-a-first-look/). TL;DR: It's not quite ready for primetime. AWS often releases things early and rapidly improves them, so look for this to get a lot better in 2019.
 
 ##### Preview of Aurora Serverless (PostgreSQL)
 
