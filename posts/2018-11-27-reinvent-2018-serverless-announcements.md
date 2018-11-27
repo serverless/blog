@@ -32,8 +32,8 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [Serverless Aurora Data API](#serverless-aurora-data-api)
 * [Preview of Aurora Serverless (PostgreSQL)](#preview-of-aurora-serverless-postgresql)
 * [AppSync Pipeline Resolvers](#appsync-pipeline-resolvers)
-* [Lambda + Kinesis Data Streams Upgrades](#lambda-+-kinesis-data-streams-upgrades)
-* [Python 3.7 for Lambda](#python-3.7-for-lambda)
+* [Lambda + Kinesis Data Streams Upgrades](#lambda--kinesis-data-streams-upgrades)
+* [Python 3.7 for Lambda](#python-37-for-lambda)
 
 #### Announcements:
 
