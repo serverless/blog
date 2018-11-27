@@ -2,8 +2,8 @@
 title: "All the Serverless announcements at re:Invent 2018"
 description: "Not at AWS re:Invent? That's ok; we're compiling all the most important serverless announcements and updates. Updating live all week."
 date: 2018-11-27
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/reinvent-updates-thumb.png'
-heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/reinvent-updates-header.gif'
+thumbnail: ''
+heroImage: ''
 category:
   - news
 authors: 
@@ -24,17 +24,23 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 *Coming soon!*
 
-##### Amplify Console
+##### [Amplify Console](https://aws.amazon.com/about-aws/whats-new/2018/11/announcing-aws-amplify-console/)
 
-Amplify Console is a deployment & hosting platform for web apps with serverless backends.
+**What it is:** Deployment and hosting platform for web applications with serverless backends. Easily build and deploy your static site using Gatsby, Hugo, Jekyll, or other static site generators, as well as your backend APIs.
 
-##### Firecracker
+**Why it matters:** JAMStack, here I come! This is a low-config way to manage your JAMStack. Think Netlify, but with backend functions as well. For many projects, this is a great way to get your code from dev to production quickly.
 
-Firecracker is a virtual machine manager that hosts Lambda and Fargate. Not directly relevant but interesting to see AWS open-sourcing some of the cool tech behind Lambda.
+##### [AWS open-sources Firecracker virtualization technology](https://aws.amazon.com/blogs/aws/firecracker-lightweight-virtualization-for-serverless-computing/)
 
-##### S3 Batch Operations (preview)
+**What it is:** Firecracker is a virtual machine manager built by AWS that hosts Lambda functions and Fargate containers. It's extremely lightweight, able to create a microVM in as little as 125 milliseconds.
 
-With S3 batch operations, you can operate on a bunch of existing S3 objects, including sending to Lambda.
+**Why it matters:** For most Serverless users, this isn't something you need to care about. Yes, #ServerlessHasServers, but you don't need to know about them! However, it's still really exciting to see the amazing tech that is underlying all of these services from AWS. Further, the fact that Firecracker is open source means that it could receive community contributions that continue to push the envelope on serverless performance. It's great to see AWS making core, original contributions to the open-source community.
+
+##### [S3 Batch Operations (preview)](https://aws.amazon.com/about-aws/whats-new/2018/11/s3-batch-operations/)
+
+**What it is:** Select batches of existing objects in S3 to run actions on -- add tags, copy to another bucket, or even send to Lambda functions.
+
+**Why it matters:** This eliminates a ton of toil around operating on existing objects in S3. You would need to write a ton of custom logic to make sure you're hitting the right objects, handling errors, etc. Now you can easily manipulate a huge block of objects in a single go.
 
 ##### Serverless Data API
 
