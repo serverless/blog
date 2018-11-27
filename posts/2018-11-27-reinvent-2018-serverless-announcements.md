@@ -2,8 +2,8 @@
 title: "All the Serverless announcements at re:Invent 2018"
 description: "Not at AWS re:Invent? That's ok; we're compiling all the most important serverless announcements and updates. Updating live all week."
 date: 2018-11-27
-thumbnail: ''
-heroImage: ''
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/reinvent-updates-thumb.png'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/reinvent-updates-header.png'
 category:
   - news
 authors: 
@@ -22,7 +22,20 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 #### re:Invent 2018 announcements
 
-*Coming soon!*
+*Pending*
+
+#### Pre-re:Invent announcements
+
+* [Amplify Console](#amplify-console)
+* [AWS open-sources Firecracker virtualization technology](#aws-open-sources-firecracker-virtualization-technology)
+* [S3 Batch Operations (preview)](#s3-batch-operations-preview)
+* [Serverless Aurora Data API](#serverless-aurora-data-api)
+* [Preview of Aurora Serverless (PostgreSQL)](#preview-of-aurora-serverless-postgresql)
+* [AppSync Pipeline Resolvers](#appsync-pipeline-resolvers)
+* [Lambda + Kinesis Data Streams Upgrades](#lambda-+-kinesis-data-streams-upgrades)
+* [Python 3.7 for Lambda](#python-3.7-for-lambda)
+
+#### Announcements:
 
 ##### [Amplify Console](https://aws.amazon.com/about-aws/whats-new/2018/11/announcing-aws-amplify-console/)
 
