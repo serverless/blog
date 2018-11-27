@@ -23,3 +23,23 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 #### re:Invent 2018 announcements
 
 *Coming soon!*
+
+##### Amplify Console
+
+Amplify Console is a deployment & hosting platform for web apps with serverless backends.
+
+##### Firecracker
+
+Firecracker is a virtual machine manager that hosts Lambda and Fargate. Not directly relevant but interesting to see AWS open-sourcing some of the cool tech behind Lambda.
+
+##### S3 Batch Operations (preview)
+
+With S3 batch operations, you can operate on a bunch of existing S3 objects, including sending to Lambda.
+
+##### Serverless Data API
+
+##### Preview of Aurora Serverless (PostgreSQL)
+
+##### AppSync Pipeline Resolvers
+
+##### Lambda + Kinesis Data Streams
