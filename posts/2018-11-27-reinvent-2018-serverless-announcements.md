@@ -27,6 +27,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [AWS Sagemaker Ground Truth](#aws-sagemaker-ground-truth)
 * [AWS Inferentia -- custom-built chip for faster ML inference](#aws-inferentia)
 * [Amazon Elastic Inference](#amazon-elastic-inference)
+* [Amazon Quantum Ledger Database](#quantum-ledger-database-qldb)
 * [Timestream timeseries database](#timestream-timeseries-database)
 * [DynamoDB per-request billing](#dynamodb-per-request-billing)
 * [AWS Control Tower](#aws-control-tower)
@@ -68,6 +69,12 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 **What it is:** Add elastic GPUs to your EC2 instance for faster machine learning training and inference.
 
 **Why it matters:** There's a huge hunger for GPUs for machine learning, and AWS is making it easier to attach to your EC2 instances. You can get serious performance -- up to 32 TeraFLOPS of performance -- and you pay on a per-hour basis, just like EC2.
+
+#### Quantum Ledger Database (QLDB)
+
+**What it is:** A fully-managed ledger database
+
+**Why it matters:** QLDB has similar mechanics to a SQL database but without the ability to permanently overwrite or delete data. This can be very useful for times when you have strong audit requirements and need to ensure long-term integrity and completeness of your data. Also, obvious usage for blockchain technology, if that's your thing.
 
 #### Timestream timeseries database
 
