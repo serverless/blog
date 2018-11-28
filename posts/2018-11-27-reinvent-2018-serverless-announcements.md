@@ -25,6 +25,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 * [DynamoDB Transactions](#dynamodb-transactions)
 * [CloudWatch Logs Insights](#cloudwatch-logs-insights)
+* [AWS Control Tower](#aws-control-tower)
 
 #### Pre-re:Invent announcements
 
@@ -53,6 +54,12 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 **What it is:** DynamoDB now supports transactions. 🎉
 
 **Why it matters:** The best database for Serverless gets better and better. Now you can read and/or write multiple items on a single table or across multiple tables and get ACID transactions. This is a great addition and removes a lot of complicated logic from client libraries.
+
+#### AWS Control Tower
+
+**What it is:** A centralized place to manage multiple accounts in AWS.
+
+**Why it matters:** This is a great addition for Serverless users. We're seeing a lot of teams that have separate accounts for each stage. Or, a team might give an isolated account for each developer for quickly testing changes before moving into the official CI/CD pipeline. This makes it a lot easier to give your developers flexibility without having an Excel sheet of AWS accounts.
 
 ##### [Amplify Console](https://aws.amazon.com/about-aws/whats-new/2018/11/announcing-aws-amplify-console/)
 
