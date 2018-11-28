@@ -10,7 +10,7 @@ authors:
   - AlexDeBrie
 ---
 
-*Last updated: Nov 27, 9:21 AM*
+*Last updated: Nov 27, 10:28 AM*
 
 re:Invent 2018 has begun! But there is ever so much to track.
 
@@ -24,6 +24,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **Latest:**
 
+* [Textract](#textract)
 * [AWS Sagemaker Ground Truth](#aws-sagemaker-ground-truth)
 * [AWS Inferentia -- custom-built chip for faster ML inference](#aws-inferentia)
 * [Amazon Elastic Inference](#amazon-elastic-inference)
@@ -53,7 +54,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 #### Announcements:
 
-#### Textstract
+#### Textract
 
 **What it is:** OCR++ service to extract text and data from documents, no machine learning experience required
 
@@ -81,13 +82,13 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **What it is:** A fully-managed ledger database
 
-**Why it matters:** QLDB has similar mechanics to a SQL database but without the ability to permanently overwrite or delete data. This can be very useful for times when you have strong audit requirements and need to ensure long-term integrity and completeness of your data. Also, obvious usage for blockchain technology, if that's your thing.
+**Why it matters:** Track and verify history of data changes. QLDB has similar mechanics to a SQL database but without the ability to permanently overwrite or delete data. This can be very useful for times when you have strong audit requirements and need to ensure long-term integrity and completeness of your data. Also, obvious usage for blockchain technology, if that's your thing.
 
 #### Amazon Managed Blockchain
 
-**What it is:** Lets you create and manage blockchain networks. Essentially, blockchain-as-a-service
+**What it is:** Lets you create and manage blockchain networks. Essentially, blockchain-as-a-service.
 
-**Why it matters:** 
+**Why it matters:** It makes it much easier to set up a blockchain network on Ethereum. We're admittedly more instantly excited about the Quantum Ledger Database, but there are some potentially interesting applications for companies to get up and running with smart contracts more easily with the Managed Blockchain service.
 
 #### Timestream timeseries database
 
