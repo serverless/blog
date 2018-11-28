@@ -10,7 +10,7 @@ authors:
   - AlexDeBrie
 ---
 
-*Last updated: Nov 27, 9:21 AM*
+*Last updated: Nov 27, 10:28 AM*
 
 re:Invent 2018 has begun! But there is ever so much to track.
 
@@ -24,6 +24,13 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **Latest:**
 
+* [Textract](#textract)
+* [Amazon Personalize](#amazon-personalize)
+* [AWS Sagemaker Ground Truth](#aws-sagemaker-ground-truth)
+* [AWS Inferentia–custom-built chip for faster ML inference](#aws-inferentia)
+* [Amazon Elastic Inference](#amazon-elastic-inference)
+* [Amazon Quantum Ledger Database](#quantum-ledger-database-qldb)
+* [Amazon Managed Blockchain](#amazon-managed-blockchain)
 * [Timestream timeseries database](#timestream-timeseries-database)
 * [DynamoDB per-request billing](#dynamodb-per-request-billing)
 * [AWS Control Tower](#aws-control-tower)
@@ -47,6 +54,48 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 
 #### Announcements:
+
+#### Textract
+
+**What it is:** OCR++ service to extract text and data from documents, no machine learning experience required
+
+**Why it matters:** It builds on the capabilities of previous text-recognition services, correctly parsing tables and other tricky text formats. Also, it can be used by anyone, even those with no previous machine learning experience. This shows AWS's commitment to widening developer accessibility to cutting-edge tech.
+
+#### Amazon Personalize
+
+**What it is:** Real-time personalization and recommendation service
+
+**Why it matters:** This is the same recommendation foundation Amazon uses for their own product recommendations, and now they're making it available to everyone. The best part: they claim no machine learning experience is required in order to use it.
+
+#### [AWS Sagemaker Ground Truth](https://aws.amazon.com/blogs/aws/amazon-sagemaker-ground-truth-build-highly-accurate-datasets-and-reduce-labeling-costs-by-up-to-70/)
+
+**What it is:** A way to label your data for machine learning training.
+
+**Why it matters:** Machine learning relies on properly-labelled data to train your models, and this can be a manual, time-consuming process. Sagemaker Ground Truth helps with this with both automatic and manual labelling for your existing data sets.
+
+#### [AWS Inferentia](https://aws.amazon.com/machine-learning/inferentia/)
+
+**What it is:** A custom-built chip from AWS to improve machine-learning inference
+
+**Why it matters:** Machine learning is all the rage, and it takes large amounts of computational power to train and inferj with machine learning. AWS is pushing the envelope, just like Google is with its [TPU chips](https://cloud.google.com/tpu/). Look for these to help the serverless crowd down the road.
+
+#### [AWS Elastic Inference](https://aws.amazon.com/blogs/aws/amazon-elastic-inference-gpu-powered-deep-learning-inference-acceleration/)
+
+**What it is:** Add elastic GPUs to your EC2 instance for faster machine learning training and inference.
+
+**Why it matters:** There's a huge hunger for GPUs for machine learning, and AWS is making it easier to attach to your EC2 instances. You can get serious performance -- up to 32 TeraFLOPS of performance -- and you pay on a per-hour basis, just like EC2.
+
+#### Quantum Ledger Database (QLDB)
+
+**What it is:** A fully-managed ledger database
+
+**Why it matters:** Track and verify history of data changes. QLDB has similar mechanics to a SQL database but without the ability to permanently overwrite or delete data. This can be very useful for times when you have strong audit requirements and need to ensure long-term integrity and completeness of your data. Also, obvious usage for blockchain technology, if that's your thing.
+
+#### Amazon Managed Blockchain
+
+**What it is:** Lets you create and manage blockchain networks. Essentially, blockchain-as-a-service.
+
+**Why it matters:** It makes it much easier to set up a blockchain network on Ethereum. We're admittedly more instantly excited about the Quantum Ledger Database, but there are some potentially interesting applications for companies to get up and running with smart contracts more easily with the Managed Blockchain service.
 
 #### Timestream timeseries database
 
@@ -134,7 +183,7 @@ This is a huge step forward for fans of stream-based processing with AWS Lambda.
 
 **What it is:** AWS Lambda now supports the Python3.7 runtime.
 
-**Why it matters:** You get all the latest Python features with your Lambdas! The most exciting addition to Python3.7 is likely [dataclasses](https://docs.python.org/3/library/dataclasses.html) -- a much simpler way to define classes.
+**Why it matters:** You get all the latest Python features with your Lambdas! The most exciting addition to Python3.7 is likely [dataclasses](https://docs.python.org/3/library/dataclasses.html)–a much simpler way to define classes.
 
 **How do I use it:** You can use Python3.7 in the Serverless Framework by setting `runtime: python3.7`. The built-in `aws-python3` template will use Python3.7 in the [next release of the Framework](https://github.com/serverless/serverless/pull/5505).
 
@@ -144,7 +193,7 @@ This is a huge step forward for fans of stream-based processing with AWS Lambda.
 
 **Why it matters:** Lock down your file transfers with SFTP, without modifications to your app, and without needing to manage any SFTP servers.
 
-#### [S3 Intelligent Tiering](#### AWS Transfer for SFTP)
+#### S3 Intelligent Tiering
 
 **What it is:** A new storage class for S3 which intelligently moves your objects between Standard Storage and Infrequent Access based on the individual object's access patterns.
 
