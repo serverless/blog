@@ -54,6 +54,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **Operations & Observability:**
 
+* [AWS CloudMap](#aws-cloudmap)
 * [CloudWatch Logs Insights](#cloudwatch-logs-insights)
 
 **Machine Learning:**
@@ -78,6 +79,14 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [AWS Transfer for SFTP](#aws-transfer-for-sftp)
 
 #### Announcements:
+
+#### AWS CloudMap
+
+**What it is:** A hosted service discovery system from AWS.
+
+**Why it matters:** This looks pretty neat. Typically, service discovery systems are more server-full as you're trying to find the hosts where your services are moving around. CloudMap has support for IP address discovery, but it also allows you to register services generally within AWS. You can register services within CloudMap, and other services can reach out to grab the current configuration as needed. 
+
+Previously, serverless developers would use things like AWS SSM to manage this service discovery, but CloudMap looks like an interesting solution.
 
 #### Textract
 
