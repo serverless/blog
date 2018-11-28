@@ -10,7 +10,7 @@ authors:
   - JaredShort
 ---
 
-At this year's re:Invent (see here for live recap](https://serverless.com/blog/reinvent-2018-serverless-announcements/)), AWS annouced that it was open sourcing Firecracker. If you’ve never heard of Firecracker, it’s the technology that powers innovative serverless compute from AWS, like Lambda and Fargate.
+At this year's re:Invent ([see here for live recap](https://serverless.com/blog/reinvent-2018-serverless-announcements/)), AWS annouced that it was open sourcing Firecracker. If you’ve never heard of Firecracker, it’s the technology that powers innovative serverless compute from AWS, like Lambda and Fargate.
 
 In a nutshell, Firecracker is a virtual machine manager—responsible for launching, managing, and killing tons of tiny virtual machines on a server. It’s ideally suited for serverless because it marries the capabilities of virtual machines (security, isolation) with the capabilities of small and agile functions (speed, resource efficiency).
 
