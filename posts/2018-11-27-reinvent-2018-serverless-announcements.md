@@ -24,6 +24,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **Latest:**
 
+* [AWS Sagemaker Ground Truth](#aws-sagemaker-ground-truth)
 * [AWS Inferentia -- custom-built chip for faster ML inference](#aws-inferentia)
 * [Amazon Elastic Inference](#amazon-elastic-inference)
 * [Timestream timeseries database](#timestream-timeseries-database)
@@ -49,6 +50,12 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 
 #### Announcements:
+
+#### [AWS Sagemaker Ground Truth](https://aws.amazon.com/blogs/aws/amazon-sagemaker-ground-truth-build-highly-accurate-datasets-and-reduce-labeling-costs-by-up-to-70/)
+
+**What it is:** A way to label your data for machine learning training.
+
+**Why it matters:** Machine learning relies on properly-labelled data to train your models, and this can be a manual, time-consuming process. Sagemaker Ground Truth helps with this with both automatic and manual labelling for your existing data sets.
 
 #### [AWS Inferentia](https://aws.amazon.com/machine-learning/inferentia/)
 
