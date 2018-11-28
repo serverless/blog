@@ -26,7 +26,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 * [Textract](#textract)
 * [AWS Sagemaker Ground Truth](#aws-sagemaker-ground-truth)
-* [AWS Inferentia -- custom-built chip for faster ML inference](#aws-inferentia)
+* [AWS Inferentia–custom-built chip for faster ML inference](#aws-inferentia)
 * [Amazon Elastic Inference](#amazon-elastic-inference)
 * [Amazon Quantum Ledger Database](#quantum-ledger-database-qldb)
 * [Amazon Managed Blockchain](#amazon-managed-blockchain)
@@ -176,7 +176,7 @@ This is a huge step forward for fans of stream-based processing with AWS Lambda.
 
 **What it is:** AWS Lambda now supports the Python3.7 runtime.
 
-**Why it matters:** You get all the latest Python features with your Lambdas! The most exciting addition to Python3.7 is likely [dataclasses](https://docs.python.org/3/library/dataclasses.html) -- a much simpler way to define classes.
+**Why it matters:** You get all the latest Python features with your Lambdas! The most exciting addition to Python3.7 is likely [dataclasses](https://docs.python.org/3/library/dataclasses.html)–a much simpler way to define classes.
 
 **How do I use it:** You can use Python3.7 in the Serverless Framework by setting `runtime: python3.7`. The built-in `aws-python3` template will use Python3.7 in the [next release of the Framework](https://github.com/serverless/serverless/pull/5505).
 
@@ -186,7 +186,7 @@ This is a huge step forward for fans of stream-based processing with AWS Lambda.
 
 **Why it matters:** Lock down your file transfers with SFTP, without modifications to your app, and without needing to manage any SFTP servers.
 
-#### [S3 Intelligent Tiering](#### AWS Transfer for SFTP)
+#### S3 Intelligent Tiering
 
 **What it is:** A new storage class for S3 which intelligently moves your objects between Standard Storage and Infrequent Access based on the individual object's access patterns.
 
