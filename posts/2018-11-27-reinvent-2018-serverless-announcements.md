@@ -27,6 +27,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [CloudWatch Logs Insights](#cloudwatch-logs-insights)
 * [AWS Control Tower](#aws-control-tower)
 * [AWS Security Hub](#aws-security-hub)
+* [DynamoDB per-request billing](#dynamodb-per-request-billing)
 
 #### Pre-re:Invent announcements
 
@@ -67,6 +68,12 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 **What it is:** A tool to centrally manage security and compliance across many AWS accounts.
 
 **Why it matters:** Like the AWS Control Hub, this helps manage the growing number of AWS accounts under your purview. Security has long been a tough thing for fast-moving product teams, and a centrally managed tool like this will help you move fast and stay secure.
+
+#### DynamoDB per-request billing
+
+**What it is:** You can know pay for DynamoDB on a per-request basis, rather than pre-provisioned read and write capacity.
+
+**Why it matters:** DynamoDB continues to make huge progress. One issue with DynamoDB with serverless is that you had to determine your capacity ahead of time. No more. Like AWS Lambda, you can now pay per-request. This is great for coupling the cost to the value you're provided your users.
 
 ##### [Amplify Console](https://aws.amazon.com/about-aws/whats-new/2018/11/announcing-aws-amplify-console/)
 
