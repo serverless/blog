@@ -10,7 +10,7 @@ authors:
   - AlexDeBrie
 ---
 
-*Last updated: Nov 27, 10:48 AM*
+*Last updated: Nov 27, 1:20 PM*
 
 re:Invent 2018 has begun! But there is ever so much to track.
 
@@ -54,6 +54,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **Operations & Observability:**
 
+* [AWS CloudMap](#aws-cloudmap)
 * [CloudWatch Logs Insights](#cloudwatch-logs-insights)
 
 **Machine Learning:**
@@ -78,6 +79,14 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [AWS Transfer for SFTP](#aws-transfer-for-sftp)
 
 #### Announcements:
+
+#### AWS CloudMap
+
+**What it is:** A hosted service discovery system from AWS.
+
+**Why it matters:** This looks pretty neat. Typically, service discovery systems are more server-full as you're trying to find the hosts where your services are moving around. CloudMap has support for IP address discovery, but it also allows you to register services generally within AWS. You can register services within CloudMap, and other services can reach out to grab the current configuration as needed. 
+
+Previously, serverless developers would use things like AWS SSM to manage this service discovery, but CloudMap looks like an interesting solution.
 
 #### Textract
 
@@ -173,7 +182,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **What it is:** Firecracker is a virtual machine manager built by AWS that hosts Lambda functions and Fargate containers. It's extremely lightweight, able to create a microVM in as little as 125 milliseconds.
 
-**Why it matters:** For most Serverless users, this isn't something you need to care about. Yes, #ServerlessHasServers, but you don't need to know about them! However, it's still really exciting to see the amazing tech that is underlying all of these services from AWS. Further, the fact that Firecracker is open source means that it could receive community contributions that continue to push the envelope on serverless performance. It's great to see AWS making core, original contributions to the open-source community.
+**Why it matters:** We have a [full explainer on Firecracker](https://serverless.com/blog/firecracker-what-means-serverless/), and what it means for serverless developers. In sum, this isn't something most serverless users should care about. Yes, #ServerlessHasServers, but you don't need to know about them! However, it's still really exciting to see the amazing tech that is underlying all of these services from AWS. Further, the fact that Firecracker is open source means that it could receive community contributions that continue to push the envelope on serverless performance. It's great to see AWS making core, original contributions to the open-source community.
 
 ##### [S3 Batch Operations (preview)](https://aws.amazon.com/about-aws/whats-new/2018/11/s3-batch-operations/)
 
