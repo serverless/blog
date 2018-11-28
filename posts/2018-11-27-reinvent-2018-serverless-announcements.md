@@ -24,8 +24,6 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **Latest:**
 
-* [AWS Cloud Map](#aws-cloud-map)
-
 **Most Exciting:**
 
 * [AWS open-sources Firecracker virtualization technology](#aws-open-sources-firecracker-virtualization-technology)
@@ -80,10 +78,6 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [AWS Transfer for SFTP](#aws-transfer-for-sftp)
 
 #### Announcements:
-
-#### AWS Cloud Map
-
-**What it is:** 
 
 #### Textract
 
