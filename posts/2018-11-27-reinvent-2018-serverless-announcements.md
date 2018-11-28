@@ -37,6 +37,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [Lambda + Kinesis Data Streams Upgrades](#lambda--kinesis-data-streams-upgrades)
 * [Python 3.7 for Lambda](#python-37-for-lambda)
 * [AWS Transfer for SFTP](#aws-transfer-for-sftp)
+* [S3 Intelligent-Tiering](#s3-intelligent-tiering)
 
 
 #### Announcements:
@@ -112,4 +113,10 @@ This is a huge step forward for fans of stream-based processing with AWS Lambda.
 **What it is:** A managed SFTP service for Amazon S3
 
 **Why it matters:** Lock down your file transfers with SFTP, without modifications to your app, and without needing to manage any SFTP servers.
+
+#### [S3 Intelligent Tiering](#### AWS Transfer for SFTP)
+
+**What it is:** A new storage class for S3 which intelligently moves your objects between Standard Storage and Infrequent Access based on the individual object's access patterns.
+
+**Why it matters:** This is a great addition from AWS to help you save money on your bills. Choosing the right storage class for your S3 objects can be a chore. Doing it manually often results in subpar pricing decisions. This is another example of AWS managing the boring stuff so you can focus on what matters to your users.
 
