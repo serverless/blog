@@ -11,7 +11,7 @@ authors:
   - AlexDeBrie
 ---
 
-*Last updated: Nov 27, 9:03 AM*
+*Last updated: Nov 27, 9:21 AM*
 
 re:Invent 2018 has begun! But there is ever so much to track.
 
@@ -27,6 +27,8 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [CloudWatch Logs Insights](#cloudwatch-logs-insights)
 * [AWS Control Tower](#aws-control-tower)
 * [AWS Security Hub](#aws-security-hub)
+* [DynamoDB per-request billing](#dynamodb-per-request-billing)
+* [Timestream timeseries database](#timestream-timeseries-database)
 
 #### Pre-re:Invent announcements
 
@@ -67,6 +69,18 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 **What it is:** A tool to centrally manage security and compliance across many AWS accounts.
 
 **Why it matters:** Like the AWS Control Hub, this helps manage the growing number of AWS accounts under your purview. Security has long been a tough thing for fast-moving product teams, and a centrally managed tool like this will help you move fast and stay secure.
+
+#### DynamoDB per-request billing
+
+**What it is:** You can know pay for DynamoDB on a per-request basis, rather than pre-provisioned read and write capacity.
+
+**Why it matters:** DynamoDB continues to make huge progress. One issue with DynamoDB with serverless is that you had to determine your capacity ahead of time. No more. Like AWS Lambda, you can now pay per-request. This is great for coupling the cost to the value you're provided your users.
+
+#### Timestream timeseries database
+
+**What it is:** A fully-managed timeseries database
+
+**Why it matters:** AWS continues to innovate on purpose-built datastores and now adds a time series database. Time series databases have grown in popularity in recent years. Having a fully-managed solution is a great win for serverless fans!
 
 ##### [Amplify Console](https://aws.amazon.com/about-aws/whats-new/2018/11/announcing-aws-amplify-console/)
 
