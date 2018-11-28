@@ -23,12 +23,15 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 #### re:Invent 2018 announcements
 
-* [DynamoDB Transactions](#dynamodb-transactions)
-* [CloudWatch Logs Insights](#cloudwatch-logs-insights)
+**Latest:**
+
+* [Timestream timeseries database](#timestream-timeseries-database)
+* [DynamoDB per-request billing](#dynamodb-per-request-billing)
 * [AWS Control Tower](#aws-control-tower)
 * [AWS Security Hub](#aws-security-hub)
-* [DynamoDB per-request billing](#dynamodb-per-request-billing)
-* [Timestream timeseries database](#timestream-timeseries-database)
+* [DynamoDB Transactions](#dynamodb-transactions)
+* [CloudWatch Logs Insights](#cloudwatch-logs-insights)
+
 
 #### Pre-re:Invent announcements
 
@@ -46,17 +49,17 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 #### Announcements:
 
-#### [CloudWatch Logs Insights](https://aws.amazon.com/blogs/aws/new-amazon-cloudwatch-logs-insights-fast-interactive-log-analytics/)
+#### Timestream timeseries database
 
-**What it is:** A faster, better query language for CloudWatch logs.
+**What it is:** A fully-managed timeseries database
 
-**Why it matters:** CloudWatch Logs has been the default logging solution for AWS Lambda and all container-based services from AWS. However, it hasn't kept up with third-party logging solutions out there. This is a step in the right direction to make it easier to see what's happening in your serverless applications.
+**Why it matters:** AWS continues to innovate on purpose-built datastores and now adds a time series database. Time series databases have grown in popularity in recent years. Having a fully-managed solution is a great win for serverless fans!
 
-#### DynamoDB Transactions
+#### DynamoDB per-request billing
 
-**What it is:** DynamoDB now supports transactions. 🎉
+**What it is:** You can know pay for DynamoDB on a per-request basis, rather than pre-provisioned read and write capacity.
 
-**Why it matters:** The best database for Serverless gets better and better. Now you can read and/or write multiple items on a single table or across multiple tables and get ACID transactions. This is a great addition and removes a lot of complicated logic from client libraries.
+**Why it matters:** DynamoDB continues to make huge progress. One issue with DynamoDB with serverless is that you had to determine your capacity ahead of time. No more. Like AWS Lambda, you can now pay per-request. This is great for coupling the cost to the value you're provided your users.
 
 #### AWS Control Tower
 
@@ -70,17 +73,17 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **Why it matters:** Like the AWS Control Hub, this helps manage the growing number of AWS accounts under your purview. Security has long been a tough thing for fast-moving product teams, and a centrally managed tool like this will help you move fast and stay secure.
 
-#### DynamoDB per-request billing
+#### DynamoDB Transactions
 
-**What it is:** You can know pay for DynamoDB on a per-request basis, rather than pre-provisioned read and write capacity.
+**What it is:** DynamoDB now supports transactions. 🎉
 
-**Why it matters:** DynamoDB continues to make huge progress. One issue with DynamoDB with serverless is that you had to determine your capacity ahead of time. No more. Like AWS Lambda, you can now pay per-request. This is great for coupling the cost to the value you're provided your users.
+**Why it matters:** The best database for Serverless gets better and better. Now you can read and/or write multiple items on a single table or across multiple tables and get ACID transactions. This is a great addition and removes a lot of complicated logic from client libraries.
 
-#### Timestream timeseries database
+#### [CloudWatch Logs Insights](https://aws.amazon.com/blogs/aws/new-amazon-cloudwatch-logs-insights-fast-interactive-log-analytics/)
 
-**What it is:** A fully-managed timeseries database
+**What it is:** A faster, better query language for CloudWatch logs.
 
-**Why it matters:** AWS continues to innovate on purpose-built datastores and now adds a time series database. Time series databases have grown in popularity in recent years. Having a fully-managed solution is a great win for serverless fans!
+**Why it matters:** CloudWatch Logs has been the default logging solution for AWS Lambda and all container-based services from AWS. However, it hasn't kept up with third-party logging solutions out there. This is a step in the right direction to make it easier to see what's happening in your serverless applications.
 
 ##### [Amplify Console](https://aws.amazon.com/about-aws/whats-new/2018/11/announcing-aws-amplify-console/)
 
