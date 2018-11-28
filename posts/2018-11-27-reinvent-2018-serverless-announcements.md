@@ -11,7 +11,7 @@ authors:
   - AlexDeBrie
 ---
 
-*Last updated: Nov 27, 3:41 PM*
+*Last updated: Nov 27, 3:41 AM*
 
 re:Invent 2018 has begun! But there is ever so much to track.
 
@@ -25,6 +25,8 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 * [DynamoDB Transactions](#dynamodb-transactions)
 * [CloudWatch Logs Insights](#cloudwatch-logs-insights)
+* [AWS Control Tower](#aws-control-tower)
+* [AWS Security Hub](#aws-security-hub)
 
 #### Pre-re:Invent announcements
 
@@ -37,6 +39,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [Lambda + Kinesis Data Streams Upgrades](#lambda--kinesis-data-streams-upgrades)
 * [Python 3.7 for Lambda](#python-37-for-lambda)
 * [AWS Transfer for SFTP](#aws-transfer-for-sftp)
+* [S3 Intelligent-Tiering](#s3-intelligent-tiering)
 
 
 #### Announcements:
@@ -52,6 +55,18 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 **What it is:** DynamoDB now supports transactions. 🎉
 
 **Why it matters:** The best database for Serverless gets better and better. Now you can read and/or write multiple items on a single table or across multiple tables and get ACID transactions. This is a great addition and removes a lot of complicated logic from client libraries.
+
+#### AWS Control Tower
+
+**What it is:** A centralized place to manage multiple accounts in AWS.
+
+**Why it matters:** This is a great addition for Serverless users. We're seeing a lot of teams that have separate accounts for each stage. Or, a team might give an isolated account for each developer for quickly testing changes before moving into the official CI/CD pipeline. This makes it a lot easier to give your developers flexibility without having an Excel sheet of AWS accounts.
+
+#### AWS Security Hub
+
+**What it is:** A tool to centrally manage security and compliance across many AWS accounts.
+
+**Why it matters:** Like the AWS Control Hub, this helps manage the growing number of AWS accounts under your purview. Security has long been a tough thing for fast-moving product teams, and a centrally managed tool like this will help you move fast and stay secure.
 
 ##### [Amplify Console](https://aws.amazon.com/about-aws/whats-new/2018/11/announcing-aws-amplify-console/)
 
@@ -112,4 +127,10 @@ This is a huge step forward for fans of stream-based processing with AWS Lambda.
 **What it is:** A managed SFTP service for Amazon S3
 
 **Why it matters:** Lock down your file transfers with SFTP, without modifications to your app, and without needing to manage any SFTP servers.
+
+#### [S3 Intelligent Tiering](#### AWS Transfer for SFTP)
+
+**What it is:** A new storage class for S3 which intelligently moves your objects between Standard Storage and Infrequent Access based on the individual object's access patterns.
+
+**Why it matters:** This is a great addition from AWS to help you save money on your bills. Choosing the right storage class for your S3 objects can be a chore. Doing it manually often results in subpar pricing decisions. This is another example of AWS managing the boring stuff so you can focus on what matters to your users.
 
