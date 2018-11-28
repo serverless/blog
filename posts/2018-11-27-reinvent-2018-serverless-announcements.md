@@ -25,6 +25,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 **Latest:**
 
 * [Textract](#textract)
+* [Amazon Personalize](#amazon-personalize)
 * [AWS Sagemaker Ground Truth](#aws-sagemaker-ground-truth)
 * [AWS Inferentia–custom-built chip for faster ML inference](#aws-inferentia)
 * [Amazon Elastic Inference](#amazon-elastic-inference)
@@ -59,6 +60,12 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 **What it is:** OCR++ service to extract text and data from documents, no machine learning experience required
 
 **Why it matters:** It builds on the capabilities of previous text-recognition services, correctly parsing tables and other tricky text formats. Also, it can be used by anyone, even those with no previous machine learning experience. This shows AWS's commitment to widening developer accessibility to cutting-edge tech.
+
+#### Amazon Personalize
+
+**What it is:** Real-time personalization and recommendation service
+
+**Why it matters:** This is the same recommendation foundation Amazon uses for their own product recommendations, and now they're making it available to everyone. The best part: they claim no machine learning experience is required in order to use it.
 
 #### [AWS Sagemaker Ground Truth](https://aws.amazon.com/blogs/aws/amazon-sagemaker-ground-truth-build-highly-accurate-datasets-and-reduce-labeling-costs-by-up-to-70/)
 
