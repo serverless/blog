@@ -28,6 +28,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [AWS Inferentia -- custom-built chip for faster ML inference](#aws-inferentia)
 * [Amazon Elastic Inference](#amazon-elastic-inference)
 * [Amazon Quantum Ledger Database](#quantum-ledger-database-qldb)
+* [Amazon Managed Blockchain](#amazon-managed-blockchain)
 * [Timestream timeseries database](#timestream-timeseries-database)
 * [DynamoDB per-request billing](#dynamodb-per-request-billing)
 * [AWS Control Tower](#aws-control-tower)
@@ -52,6 +53,12 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 #### Announcements:
 
+#### Textstract
+
+**What it is:** OCR++ service to extract text and data from documents, no machine learning experience required
+
+**Why it matters:** It builds on the capabilities of previous text-recognition services, correctly parsing tables and other tricky text formats. Also, it can be used by anyone, even those with no previous machine learning experience. This shows AWS's commitment to widening developer accessibility to cutting-edge tech.
+
 #### [AWS Sagemaker Ground Truth](https://aws.amazon.com/blogs/aws/amazon-sagemaker-ground-truth-build-highly-accurate-datasets-and-reduce-labeling-costs-by-up-to-70/)
 
 **What it is:** A way to label your data for machine learning training.
@@ -75,6 +82,12 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 **What it is:** A fully-managed ledger database
 
 **Why it matters:** QLDB has similar mechanics to a SQL database but without the ability to permanently overwrite or delete data. This can be very useful for times when you have strong audit requirements and need to ensure long-term integrity and completeness of your data. Also, obvious usage for blockchain technology, if that's your thing.
+
+#### Amazon Managed Blockchain
+
+**What it is:** Lets you create and manage blockchain networks. Essentially, blockchain-as-a-service
+
+**Why it matters:** 
 
 #### Timestream timeseries database
 
