@@ -10,7 +10,7 @@ authors:
   - AlexDeBrie
 ---
 
-*Last updated: Nov 27, 10:28 AM*
+*Last updated: Nov 27, 10:48 AM*
 
 re:Invent 2018 has begun! But there is ever so much to track.
 
@@ -23,8 +23,6 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 #### re:Invent 2018 announcements
 
 **Latest:**
-
-* [AWS Outposts](#aws-outposts)
 
 **Most Exciting:**
 
@@ -80,10 +78,6 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [AWS Transfer for SFTP](#aws-transfer-for-sftp)
 
 #### Announcements:
-
-#### AWS Outposts
-
-**What it is:** A hybrid solution to run AWS cloud on premises.
 
 #### Textract
 
