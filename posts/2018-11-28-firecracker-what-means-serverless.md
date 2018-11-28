@@ -41,3 +41,8 @@ Things you can possibly expect from Firecracker going open source are future imp
 But it is kind of cool to see AWS initiating an open source project like this.
 
 A few years ago, AWS barely contributed to open source at all. Then, they started contributing to popular projects like Kubernetes in ways that made it easier to run on AWS. Now, we’re seeing them originate and open source foundational projects.
+
+##### More re:Invent news
+
+* [Join the Serverless virtual hackathon at re:Invent!](https://serverless.com/blog/no-server-november-reinvent-hackathon/)(ends Sunday at 11:00 PM PT)
+* [All the Serverless announcements at re:Invent 2018](https://serverless.com/blog/reinvent-2018-serverless-announcements/)
