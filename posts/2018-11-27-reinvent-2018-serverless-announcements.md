@@ -24,6 +24,8 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **Latest:**
 
+* [AWS Inferentia -- custom-built chip for faster ML inference](#aws-inferentia)
+* [Amazon Elastic Inference](#amazon-elastic-inference)
 * [Timestream timeseries database](#timestream-timeseries-database)
 * [DynamoDB per-request billing](#dynamodb-per-request-billing)
 * [AWS Control Tower](#aws-control-tower)
@@ -47,6 +49,18 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 
 #### Announcements:
+
+#### [AWS Inferentia](https://aws.amazon.com/machine-learning/inferentia/)
+
+**What it is:** A custom-built chip from AWS to improve machine-learning inference
+
+**Why it matters:** Machine learning is all the rage, and it takes large amounts of computational power to train and inferj with machine learning. AWS is pushing the envelope, just like Google is with its [TPU chips](https://cloud.google.com/tpu/). Look for these to help the serverless crowd down the road.
+
+#### [AWS Elastic Inference](https://aws.amazon.com/blogs/aws/amazon-elastic-inference-gpu-powered-deep-learning-inference-acceleration/)
+
+**What it is:** Add elastic GPUs to your EC2 instance for faster machine learning training and inference.
+
+**Why it matters:** There's a huge hunger for GPUs for machine learning, and AWS is making it easier to attach to your EC2 instances. You can get serious performance -- up to 32 TeraFLOPS of performance -- and you pay on a per-hour basis, just like EC2.
 
 #### Timestream timeseries database
 
