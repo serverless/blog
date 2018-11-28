@@ -25,34 +25,53 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 **Latest:**
 
 * [AWS Outposts](#aws-outposts)
+
+**Most Exciting:**
+
+* [AWS open-sources Firecracker virtualization technology](#aws-open-sources-firecracker-virtualization-technology)
+* [DynamoDB Transactions](#dynamodb-transactions)
+* [Timestream timeseries database](#timestream-timeseries-database)
+
+**Databases:**
+
+* [Timestream timeseries database](#timestream-timeseries-database)
+* [DynamoDB per-request billing](#dynamodb-per-request-billing)
+* [DynamoDB Transactions](#dynamodb-transactions)
+* [Serverless Aurora Data API](#serverless-aurora-data-api)
+* [Preview of Aurora Serverless (PostgreSQL)](#preview-of-aurora-serverless-postgresql)
+
+**Security:**
+
+* [AWS Control Tower](#aws-control-tower)
+* [AWS Security Hub](#aws-security-hub)
+
+**Operations & Observability:**
+
+* [CloudWatch Logs Insights](#cloudwatch-logs-insights)
+
+**Machine Learning:**
+
 * [Textract](#textract)
 * [Amazon Personalize](#amazon-personalize)
 * [AWS Sagemaker Ground Truth](#aws-sagemaker-ground-truth)
 * [AWS Inferentia–custom-built chip for faster ML inference](#aws-inferentia)
 * [Amazon Elastic Inference](#amazon-elastic-inference)
+
+**Blockchain, what:**
+
 * [Amazon Quantum Ledger Database](#quantum-ledger-database-qldb)
 * [Amazon Managed Blockchain](#amazon-managed-blockchain)
-* [Timestream timeseries database](#timestream-timeseries-database)
-* [DynamoDB per-request billing](#dynamodb-per-request-billing)
-* [AWS Control Tower](#aws-control-tower)
-* [AWS Security Hub](#aws-security-hub)
-* [DynamoDB Transactions](#dynamodb-transactions)
-* [CloudWatch Logs Insights](#cloudwatch-logs-insights)
-
 
 #### Pre-re:Invent announcements
 
 * [Amplify Console](#amplify-console)
 * [AWS open-sources Firecracker virtualization technology](#aws-open-sources-firecracker-virtualization-technology)
 * [S3 Batch Operations (preview)](#s3-batch-operations-preview)
-* [Serverless Aurora Data API](#serverless-aurora-data-api)
-* [Preview of Aurora Serverless (PostgreSQL)](#preview-of-aurora-serverless-postgresql)
 * [AppSync Pipeline Resolvers](#appsync-pipeline-resolvers)
 * [Lambda + Kinesis Data Streams Upgrades](#lambda--kinesis-data-streams-upgrades)
 * [Python 3.7 for Lambda](#python-37-for-lambda)
 * [AWS Transfer for SFTP](#aws-transfer-for-sftp)
 * [S3 Intelligent-Tiering](#s3-intelligent-tiering)
-
 
 #### Announcements:
 
