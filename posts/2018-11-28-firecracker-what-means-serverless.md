@@ -1,6 +1,6 @@
 ---
-title: "What Firecracker open-source means for the serverless community"
-description: "AWS open-sourced Firecracker, the Lambda and Fargate core. Here’s what it means for the serverless community."
+title: "Firecracker: does it matter for the serverless community?"
+description: "AWS open-sourced Firecracker, the Lambda and Fargate core. But how significant is it for the serverless community?"
 date: 2018-11-28
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/reinvent-updates-thumb.png'
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/reinvent-updates-header1.gif'
