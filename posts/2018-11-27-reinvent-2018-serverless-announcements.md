@@ -32,6 +32,10 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [DynamoDB Transactions](#dynamodb-transactions)
 * [Timestream timeseries database](#timestream-timeseries-database)
 
+**Compute:**
+
+* [AWS open-sources Firecracker virtualization technology](#aws-open-sources-firecracker-virtualization-technology)
+
 **Databases:**
 
 * [Timestream timeseries database](#timestream-timeseries-database)
@@ -39,6 +43,11 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [DynamoDB Transactions](#dynamodb-transactions)
 * [Serverless Aurora Data API](#serverless-aurora-data-api)
 * [Preview of Aurora Serverless (PostgreSQL)](#preview-of-aurora-serverless-postgresql)
+
+**Storage:**
+
+* [S3 Batch Operations (preview)](#s3-batch-operations-preview)
+* [S3 Intelligent-Tiering](#s3-intelligent-tiering)
 
 **Security:**
 
@@ -65,13 +74,10 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 #### Pre-re:Invent announcements
 
 * [Amplify Console](#amplify-console)
-* [AWS open-sources Firecracker virtualization technology](#aws-open-sources-firecracker-virtualization-technology)
-* [S3 Batch Operations (preview)](#s3-batch-operations-preview)
 * [AppSync Pipeline Resolvers](#appsync-pipeline-resolvers)
 * [Lambda + Kinesis Data Streams Upgrades](#lambda--kinesis-data-streams-upgrades)
 * [Python 3.7 for Lambda](#python-37-for-lambda)
 * [AWS Transfer for SFTP](#aws-transfer-for-sftp)
-* [S3 Intelligent-Tiering](#s3-intelligent-tiering)
 
 #### Announcements:
 
