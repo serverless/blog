@@ -95,7 +95,13 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **What it is:** Real-time personalization and recommendation service
 
-**Why it matters:** This is the same recommendation foundation Amazon uses for their own product recommendations, and now they're making it available to everyone. The best part: they claim no machine learning experience is required in order to use it.
+**Why it matters:** This is the same recommendation foundation Amazon.com uses for their own product recommendations, and now they're making it available to everyone. The best part: they claim no machine learning experience is required in order to use it.
+
+#### Amazon Forecast
+
+**What it is:** Time series forecasting
+
+**Why it matters:** This is based on the same technology they use at Amazon.com, and no machine learning experience is required to use it.
 
 #### [AWS Sagemaker Ground Truth](https://aws.amazon.com/blogs/aws/amazon-sagemaker-ground-truth-build-highly-accurate-datasets-and-reduce-labeling-costs-by-up-to-70/)
 
