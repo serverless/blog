@@ -7,7 +7,6 @@ heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinve
 category:
   - news
 authors: 
-  - AndreaPasswater
   - AlexDeBrie
 ---
 
