@@ -24,6 +24,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **Latest:**
 
+* [AWS Outposts](#aws-outposts)
 * [Textract](#textract)
 * [Amazon Personalize](#amazon-personalize)
 * [AWS Sagemaker Ground Truth](#aws-sagemaker-ground-truth)
@@ -54,6 +55,10 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 
 #### Announcements:
+
+#### AWS Outposts
+
+**What it is:** A hybrid solution to run AWS cloud on premises.
 
 #### Textract
 
