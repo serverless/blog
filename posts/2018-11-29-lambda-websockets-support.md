@@ -1,9 +1,9 @@
 ---
 title: "Why we're so excited about API Gateway websockets support"
 description: "AWS just announced API Gateway websockets support, and the serverless community got pretty excited. Here's why."
-date: 2018-11-30
-thumbnail: TODO
-heroImage: TODO
+date: 2018-11-29
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/reinvent-updates-thumb.png'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/reinvent-updates-header1.gif'
 category:
   - news
 authors: 
