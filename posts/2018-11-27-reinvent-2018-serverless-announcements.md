@@ -151,6 +151,10 @@ Want to get started with Step Functions? Check out this [post on managing your A
 
 **What it is:** A managed Kafka service for streaming data.
 
+#### Nested Apps using SAR
+
+**What it is:** The Serverless Application Model now supports nested applications via the Serverless Application Repository.
+
 #### AWS CloudMap
 
 **What it is:** A hosted service discovery system from AWS.
