@@ -13,8 +13,8 @@ authors:
 
 [AWS re:Invent](https://serverless.com/blog/reinvent-2018-serverless-announcements) is in full swing, with AWS announcing a slew of new features. Most notably, we’re pretty excited about AWS Lambda's support for Layers. 
 
-[Layers](
-https://aws.amazon.com/blogs/aws/new-for-aws-lambda-use-any-programming-language-and-share-common-components/) allows you to include additional files or data for your functions. This could be binaries such as [FFmpeg](https://www.ffmpeg.org/) or [ImageMagick](https://imagemagick.org/script/index.php), or it could be difficult-to-package dependencies, such as [NumPy](http://www.numpy.org/) for Python. These layers are added to your function’s zip file when published. In a way, they are comparable to [EC2 AMIs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html), but for functions. 
+[Layers](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)
+allows you to include additional files or data for your functions. This could be binaries such as [FFmpeg](https://www.ffmpeg.org/) or [ImageMagick](https://imagemagick.org/script/index.php), or it could be difficult-to-package dependencies, such as [NumPy](http://www.numpy.org/) for Python. These layers are added to your function’s zip file when published. In a way, they are comparable to [EC2 AMIs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html), but for functions. 
 
 The killer feature of Lambda's Layers is that they can be shared between Lambda functions, accounts, and even publicly!
 
@@ -205,13 +205,13 @@ You can see the following projects for some examples of using this plugin to bui
 
 #### Custom runtime support: even better!
 
-Along with layers support, AWS also just announced support for building your own runtime using the [Runtime API](https://aws.amazon.com/blogs/aws/new-for-aws-lambda-use-any-programming-language-and-share-common-components/).
+Along with layers support, AWS also just announced support for building your own runtime using the [Runtime API](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-custom.html).
 
 This allows you to build, use, and share runtime support for Lambda outside of what AWS officially supports.
 
 ##### Custom runtimes with the Serverless Framework
 
-To utilize custom runtimes with Serverless, specify the runtime as `provided` in your `serverless.yml` and include a layer that provides a custom runtime. For documentation on building your own runtime, see AWS’s documentation [here](LINK TO RUNTIME DOCS)
+To utilize custom runtimes with Serverless, specify the runtime as `provided` in your `serverless.yml` and include a layer that provides a custom runtime. For documentation on building your own runtime, see AWS’s documentation [here](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-custom.html)
 
 ##### More re:Invent news
 
