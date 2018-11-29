@@ -2,8 +2,8 @@
 title: "How to publish and use AWS Lambda Layers with the Serverless Framework"
 description: "Learn about AWS's recently introduced Lambda Layers and how to publish and use them with Serverless Framework."
 date: 2018-11-29
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/lambda-layers-thumb.png'
-heroImage: ‘https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/lambda-layers-header.png’
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/lambda-layers-thumb.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/lambda-layers-header.png"
 category:
   - guides-and-tutorials
   - news
@@ -11,7 +11,7 @@ authors:
   - DanielSchep
 ---
 
-[AWS re:Invent](https://serverless.com/blog/reinvent-2018-serverless-announcements) is in full swing, with AWS announcing a slew of new features. Most notably, we’re pretty excited about AWS Lambda's support for Layers.
+[AWS re:Invent](https://serverless.com/blog/reinvent-2018-serverless-announcements) is in full swing, with AWS announcing a slew of new features. Most notably, we’re pretty excited about AWS Lambda's support for Layers. 
 
 [Layers](
 https://aws.amazon.com/blogs/aws/new-for-aws-lambda-use-any-programming-language-and-share-common-components/) allows you to include additional files or data for your functions. This could be binaries such as [FFmpeg](https://www.ffmpeg.org/) or [ImageMagick](https://imagemagick.org/script/index.php), or it could be difficult-to-package dependencies, such as [NumPy](http://www.numpy.org/) for Python. These layers are added to your function’s zip file when published. In a way, they are comparable to [EC2 AMIs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html), but for functions. 
