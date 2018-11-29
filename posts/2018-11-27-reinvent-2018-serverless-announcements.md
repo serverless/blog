@@ -29,12 +29,18 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [AWS Lambda Layers](#aws-lambda-layers)
 * [AWS IDE Integrations](#aws-ide-integrations)
 * [Better Step Function Integrations](#better-step-function-integrations)
+* [ALB Support for Lambda](#lambda-alb-support)
+* [AWS Lambda Ruby support](#lambda-ruby-support)
+* [Amazon Managed Streaming for Kafka](#amazon-managed-streaming-for-kafka)
 
 **Most Exciting:**
 
+* [Websocket support for Lambda functions](#websocket-support-for-aws-lambda)
+* [AWS Lambda Layers](#aws-lambda-layers)
+* [Bring your own runtime to AWS Lambda](#bring-your-own-runtime-to-aws-lambda)
+* [Timestream timeseries database](#timestream-timeseries-database)
 * [AWS open-sources Firecracker virtualization technology](#aws-open-sources-firecracker-virtualization-technology)
 * [DynamoDB Transactions](#dynamodb-transactions)
-* [Timestream timeseries database](#timestream-timeseries-database)
 
 **Compute:**
 
@@ -122,6 +128,18 @@ The Serverless Framework has day-one support of Lambda Layers, so you can start 
 **Why it matters:** Huge step up for multi-step workflows. Rather than writing your own custom logic in Lambdas, you can interact with AWS services directly. Remember, the best code is the code you don't have to write.
 
 Want to get started with Step Functions? Check out this [post on managing your AWS Step Functions with Serverless](https://serverless.com/blog/how-to-manage-your-aws-step-functions-with-serverless/).
+
+#### Lambda Ruby Support
+
+**What it is:** AWS Lambda now supports Ruby!
+
+#### Lambda ALB Support
+
+**What it is:** Invoke Lambdas directly from ALB, without using API Gateway.
+
+#### Amazon Managed Streaming for Kafka
+
+**What it is:** A managed Kafka service for streaming data.
 
 #### AWS CloudMap
 
