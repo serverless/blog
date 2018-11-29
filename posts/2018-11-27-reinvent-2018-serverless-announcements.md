@@ -42,6 +42,16 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [AWS open-sources Firecracker virtualization technology](#aws-open-sources-firecracker-virtualization-technology)
 * [DynamoDB Transactions](#dynamodb-transactions)
 
+**Lambda:**
+
+* [Websocket support for Lambda functions](#websocket-support-for-aws-lambda)
+* [Bring your own runtime to AWS Lambda](#bring-your-own-runtime-to-aws-lambda)
+* [ALB Support for Lambda](#lambda-alb-support)
+* [AWS Lambda Ruby support](#lambda-ruby-support)
+* [AWS Lambda Layers](#aws-lambda-layers)
+* [Lambda + Kinesis Data Streams Upgrades](#lambda--kinesis-data-streams-upgrades)
+* [Python 3.7 for Lambda](#python-37-for-lambda)
+
 **Compute:**
 
 * [AWS open-sources Firecracker virtualization technology](#aws-open-sources-firecracker-virtualization-technology)
