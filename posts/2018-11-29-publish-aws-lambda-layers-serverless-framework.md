@@ -53,7 +53,7 @@ layers:
 
 Run the following commands to download the contents of your layer:
 
-```bash
+```
 mkdir layer
 cd layer
 curl -O https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
@@ -96,7 +96,7 @@ layers:
 
 Next, we’ll add a `custom` section to `serverless.yml` to specify the S3 bucket name (choose your own unique bucket name):
 
-```
+```yaml
 custom:
   bucket: MyGifMakerBucket
 ```
