@@ -29,7 +29,9 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [AWS Lambda Layers](#aws-lambda-layers)
 * [AWS IDE Integrations](#aws-ide-integrations)
 * [Better Step Function Integrations](#better-step-function-integrations)
+* [ALB Support for Lambda](#lambda-alb-support)
 * [AWS Lambda Ruby support](#lambda-ruby-support)
+* [Amazon Managed Streaming for Kafka](#amazon-managed-streaming-for-kafka)
 
 **Most Exciting:**
 
@@ -130,6 +132,14 @@ Want to get started with Step Functions? Check out this [post on managing your A
 #### Lambda Ruby Support
 
 **What it is:** AWS Lambda now supports Ruby!
+
+#### Lambda ALB Support
+
+**What it is:** Invoke Lambdas directly from ALB, without using API Gateway.
+
+#### Amazon Managed Streaming for Kafka
+
+**What it is:** A managed Kafka service for streaming data.
 
 #### AWS CloudMap
 
