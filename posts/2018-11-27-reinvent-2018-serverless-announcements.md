@@ -27,6 +27,8 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [Websocket support for Lambda functions](#websocket-support-for-aws-lambda)
 * [Bring your own runtime to AWS Lambda](#bring-your-own-runtime-to-aws-lambda)
 * [AWS Lambda Layers](#aws-lambda-layers)
+* [AWS IDE Integrations](#aws-ide-integrations)
+* [Better Step Function Integrations](#better-step-function-integrations)
 
 **Most Exciting:**
 
@@ -106,6 +108,20 @@ This feature is not released yet but coming soon.
 **Why it matters:** Layers allow you to pack code or data into a base layer which is then packaged into your function packages. This can be used to handle difficult dependencies or to package common code across all of your Lambda functions.
 
 The Serverless Framework has day-one support of Lambda Layers, so you can start using it today!
+
+#### AWS IDE integration
+
+**What it is:** Deep AWS integrations with your favorite IDEs
+
+**Why it matters:** If you're a PyCharm, IntelliJ, or VS Code user, this is for you. Handy shortcuts and **step-through debugging of Lambda functions**. Much easier to get your functions into production!
+
+#### Better Step-Function Integrations
+
+**What it is:** Use services like SNS, ECS, DynamoDB, SageMaker, and more in your Step Functions.
+
+**Why it matters:** Huge step up for multi-step workflows. Rather than writing your own custom logic in Lambdas, you can interact with AWS services directly. Remember, the best code is the code you don't have to write.
+
+Want to get started with Step Functions? Check out this [post on managing your AWS Step Functions with Serverless](https://serverless.com/blog/how-to-manage-your-aws-step-functions-with-serverless/).
 
 #### AWS CloudMap
 
