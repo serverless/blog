@@ -1,6 +1,6 @@
 ---
 title: "Real-time applications with API Gateway WebSockets and AWS Lambda"
-description: "AWS just announced API Gateway websockets support, and the serverless community got pretty excited. Here's why."
+description: "AWS just announced API Gateway WebSockets support, and the serverless community got pretty excited. Here's why."
 date: 2018-11-29
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/reinvent-updates-thumb.png'
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/reinvent-updates-header1.gif'
@@ -24,7 +24,7 @@ They worked, but they weren’t ideal.
 
 #### WebSockets support makes real-time so much easier
 
-The WebSockets support that was announced today means developers have much more control over the websocket layer itself, delivering payloads directly to lambda functions and shuttling results back.
+The WebSockets support that was announced today means developers have much more control over the WebSocket layer itself, delivering payloads directly to lambda functions and shuttling results back.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/WebSocket?src=hash&amp;ref_src=twsrc%5Etfw">#WebSocket</a> APIs enable you to support a WS connection to <a href="https://twitter.com/hashtag/APIGateway?src=hash&amp;ref_src=twsrc%5Etfw">#APIGateway</a>, which can then invoke Lambda when a message is received (also on connect/disconnect). You can send a message by making a request to a callback URL with the connectionId.</p>&mdash; Dougal Ballantyne @ re:Invent (@dsballantyne) <a href="https://twitter.com/dsballantyne/status/1068211212280750080?ref_src=twsrc%5Etfw">November 29, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -33,7 +33,7 @@ There are other classes of services out there, like Ably or PubNub, which offer 
 
 #### A real-time WebSockets example
 
-To understand the power of this new feature, let’s look for example architecture building the canonical “chat” example for real-time websocket driven applications.
+To understand the power of this new feature, let’s look for example architecture building the canonical “chat” example for real-time WebSocket driven applications.
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/websockets-chat-app.png" alt="WebSockets chat app">
 
