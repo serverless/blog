@@ -205,7 +205,7 @@ You can see the following projects for some examples of using this plugin to bui
 
 #### Custom runtime support: even better!
 
-Along with layers support, AWS also just announced support for building your own runtime using the [Runtime API](https://linktoamazondocsforruntimeapi).
+Along with layers support, AWS also just announced support for building your own runtime using the [Runtime API](https://aws.amazon.com/blogs/aws/new-for-aws-lambda-use-any-programming-language-and-share-common-components/).
 
 This allows you to build, use, and share runtime support for Lambda outside of what AWS officially supports.
 
