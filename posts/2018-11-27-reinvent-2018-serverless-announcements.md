@@ -36,6 +36,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **Databases:**
 
+* [Amazon Quantum Ledger Database](#quantum-ledger-database-qldb)
 * [Timestream timeseries database](#timestream-timeseries-database)
 * [DynamoDB per-request billing](#dynamodb-per-request-billing)
 * [DynamoDB Transactions](#dynamodb-transactions)
