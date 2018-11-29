@@ -10,7 +10,7 @@ authors:
   - AlexDeBrie
 ---
 
-*Last updated: Nov 27, 10:30 AM*
+*Last updated: Nov 27, 11:23 AM*
 
 re:Invent 2018 has begun! But there is ever so much to track.
 
@@ -26,7 +26,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 * [Websocket support for Lambda functions](#websocket-support-for-aws-lambda)
 * [Bring your own runtime to AWS Lambda](#bring-your-own-runtime-to-aws-lambda)
-* [AWS Lambda Layers](#aws-lambda-layers)
+* [AWS Lambda Layers](#aws-lambda-layers) - ready to [publish and use with the Serverless Framework](https://serverless.com/blog/publish-aws-lambda-layers-serverless-framework/) right now
 * [AWS IDE Integrations](#aws-ide-integrations)
 * [Better Step Function Integrations](#better-step-function-integrations)
 * [ALB Support for Lambda](#lambda-alb-support)
@@ -36,7 +36,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 **Most Exciting:**
 
 * [Websocket support for Lambda functions](#websocket-support-for-aws-lambda)
-* [AWS Lambda Layers](#aws-lambda-layers)
+* [AWS Lambda Layers](#aws-lambda-layers) - ready to [publish and use with the Serverless Framework](https://serverless.com/blog/publish-aws-lambda-layers-serverless-framework/) right now
 * [Bring your own runtime to AWS Lambda](#bring-your-own-runtime-to-aws-lambda)
 * [Timestream timeseries database](#timestream-timeseries-database)
 * [AWS open-sources Firecracker virtualization technology](#aws-open-sources-firecracker-virtualization-technology)
@@ -109,11 +109,11 @@ This feature is not released yet but coming soon.
 
 #### AWS Lambda Layers
 
-**What it is:** AMIs for Lambda -- build base layers that can be used across multiple Lambda functions
+**What it is:** AMIs for Lambda—build base layers that can be used across multiple Lambda functions
 
 **Why it matters:** Layers allow you to pack code or data into a base layer which is then packaged into your function packages. This can be used to handle difficult dependencies or to package common code across all of your Lambda functions.
 
-The Serverless Framework has day-one support of Lambda Layers, so you can start using it today!
+The Serverless Framework has day-one support of Lambda Layers, so you can start using it today! Here's how to [publish and use Lambda Layers with the Serverless Framework](https://serverless.com/blog/publish-aws-lambda-layers-serverless-framework/).
 
 #### AWS IDE integration
 
