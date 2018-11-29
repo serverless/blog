@@ -44,5 +44,6 @@ A few years ago, AWS barely contributed to open source at all. Then, they starte
 
 ##### More re:Invent news
 
+* [How to publish and use Lambda Layers with the Serverless Framework](https://serverless.com/blog/publish-aws-lambda-layers-serverless-framework/)
 * [Join the Serverless virtual hackathon at re:Invent!](https://serverless.com/blog/no-server-november-reinvent-hackathon/)(ends Sunday at 11:00 PM PT)
 * [All the Serverless announcements at re:Invent 2018](https://serverless.com/blog/reinvent-2018-serverless-announcements/)
