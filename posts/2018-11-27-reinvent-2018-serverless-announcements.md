@@ -10,7 +10,7 @@ authors:
   - AlexDeBrie
 ---
 
-*Last updated: Nov 27, 1:20 PM*
+*Last updated: Nov 27, 10:30 AM*
 
 re:Invent 2018 has begun! But there is ever so much to track.
 
@@ -24,6 +24,12 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **Latest:**
 
+* [Websocket support for Lambda functions](#websocket-support-for-aws-lambda)
+* [Bring your own runtime to AWS Lambda](#bring-your-own-runtime-to-aws-lambda)
+* [AWS Lambda Layers](#aws-lambda-layers)
+* [AWS IDE Integrations](#aws-ide-integrations)
+* [Better Step Function Integrations](#better-step-function-integrations)
+
 **Most Exciting:**
 
 * [AWS open-sources Firecracker virtualization technology](#aws-open-sources-firecracker-virtualization-technology)
@@ -36,6 +42,7 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **Databases:**
 
+* [Amazon Quantum Ledger Database](#quantum-ledger-database-qldb)
 * [Timestream timeseries database](#timestream-timeseries-database)
 * [DynamoDB per-request billing](#dynamodb-per-request-billing)
 * [DynamoDB Transactions](#dynamodb-transactions)
@@ -79,6 +86,42 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 * [AWS Transfer for SFTP](#aws-transfer-for-sftp)
 
 #### Announcements:
+
+#### Websocket support for AWS Lambda
+
+**What it is:** Use websockets with your Lambda functions
+
+**Why it matters:** This is awesome. Websockets enable bi-directional interaction between client and server, making it much easier to do real-time functionality like chat. Previously, you [could use AWS IoT to get Websockets with Lambda](https://serverless.com/blog/realtime-updates-using-lambda-websockets-iot/), but this is much cleaner.
+
+This feature is not released yet but coming soon.
+
+#### Bring your own runtime to AWS Lambda
+
+**What it is:** A way to bring your own runtime to AWS Lambda
+
+**Why it matters:** You don't need to wait for AWS to add your favorite language -- you can bring your own! This is a great add and a common ask from Serverless users. Fans of more obscure languages will be particularly happy.
+
+#### AWS Lambda Layers
+
+**What it is:** AMIs for Lambda -- build base layers that can be used across multiple Lambda functions
+
+**Why it matters:** Layers allow you to pack code or data into a base layer which is then packaged into your function packages. This can be used to handle difficult dependencies or to package common code across all of your Lambda functions.
+
+The Serverless Framework has day-one support of Lambda Layers, so you can start using it today!
+
+#### AWS IDE integration
+
+**What it is:** Deep AWS integrations with your favorite IDEs
+
+**Why it matters:** If you're a PyCharm, IntelliJ, or VS Code user, this is for you. Handy shortcuts and **step-through debugging of Lambda functions**. Much easier to get your functions into production!
+
+#### Better Step-Function Integrations
+
+**What it is:** Use services like SNS, ECS, DynamoDB, SageMaker, and more in your Step Functions.
+
+**Why it matters:** Huge step up for multi-step workflows. Rather than writing your own custom logic in Lambdas, you can interact with AWS services directly. Remember, the best code is the code you don't have to write.
+
+Want to get started with Step Functions? Check out this [post on managing your AWS Step Functions with Serverless](https://serverless.com/blog/how-to-manage-your-aws-step-functions-with-serverless/).
 
 #### AWS CloudMap
 
