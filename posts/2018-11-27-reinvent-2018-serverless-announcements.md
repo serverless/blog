@@ -153,7 +153,7 @@ Want to get started with Step Functions? Check out this [post on managing your A
 
 #### Nested Apps using SAR
 
-**What it is:** The Serverless Application Model now supports nested applications.
+**What it is:** The Serverless Application Model now supports nested applications via the Serverless Application Repository.
 
 #### AWS CloudMap
 
