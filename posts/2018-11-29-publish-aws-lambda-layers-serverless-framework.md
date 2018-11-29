@@ -1,6 +1,6 @@
 ---
-title: "Introducing: AWS Lambda Layers"
-description: "Learn about AWS's recently introduced Lambda Layers and how to use them with Serverless Framework."
+title: "How to Publish AWS Lambda Layers with the Serverless Framework"
+description: "Learn about AWS's recently introduced Lambda Layers and how to publish and use them with Serverless Framework."
 date: 2018-11-29
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/lambda-layers-thumb.png'
 heroImage: ‘https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/lambda-layers-header.png’
