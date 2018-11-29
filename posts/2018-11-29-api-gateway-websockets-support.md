@@ -31,10 +31,26 @@ The WebSockets support that was announced today means developers have much more 
 
 There are other classes of services out there, like Ably or PubNub, which offer solutions in this space. But staying closely integrated to your platform provider for core services can make a lot of sense for many organizations. Security teams and billing departments appreciate working with a known vendor.
 
+#### A real-time WebSockets example
+
 To understand the power of this new feature, let’s look for example architecture building the canonical “chat” example for real-time websocket driven applications.
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/websockets-chat-app.png" alt="WebSockets chat app">
 
+With these native WebSockets in API Gateway, you establish a single WebSocket connection to API Gateway from the device. AWS Lambda is notified of the connection in your normal event-driven compute method. You get some metadata, the payload and a connectionId that you use later.
+
+It's probably a good idea for you to store this connectionId and information the device sent you (perhaps topics or channels they are subscribed to) in a datastore such as DynamoDB, so you can reference it later when needed.
+
+Next, say someone wants to send a new message out to the channel. They would send it over their established WebSocket to API Gateway, to a waiting AWS Lambda function. On invoke, the business logic would check your datastore for the connections subscribed to that channel, and callback to API Gateway with the connectionId and your payload.
+
+API Gateway will take it from there and send your payload through on the established WebSocket connection.
+
+You Lambda function would be invoked on disconnects as well, allowing you to clean things up in your data store so you don't waste cycles trying to send messages to non-existent connections.
+
+In sum: this is simple, event-driven, and real time. This single feature makes a whole new class of applications first class citizens in the serverless ecosystem!
+
 #### Serverless Framework support
 
-WebSockets for API Gateway is unfortunately not GA yet. We are working to bring this new feature to the Serverless Framework ASAP so you can leverage it as it becomes available!
+WebSockets for API Gateway is unfortunately not GA yet.
+
+We are working to bring this new feature to the Serverless Framework ASAP so you can leverage it as it becomes available, so stay tuned!
