@@ -35,7 +35,7 @@ There are other classes of services out there, like Ably or PubNub, which offer 
 
 To understand the power of this new feature, let’s look for example architecture building the canonical “chat” example for real-time WebSocket driven applications.
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/websockets-chat-app.png" alt="WebSockets chat app">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/websockets-chat-app.png" alt="WebSockets chat app" style='width:751px; margin:0 auto'>
 
 With these native WebSockets in API Gateway, you establish a single WebSocket connection to API Gateway from the device. AWS Lambda is notified of the connection in your normal event-driven compute method. You get some metadata, the payload and a connectionId that you use later.
 
