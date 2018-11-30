@@ -117,6 +117,8 @@ This feature is not released yet but coming soon. For our full explainer on why 
 
 **Why it matters:** You don't need to wait for AWS to add your favorite language -- you can bring your own! This is a great add and a common ask from Serverless users. Fans of more obscure languages will be particularly happy.
 
+**Taking it one step further:** At Serverless, we saw BYOR and decided to take it one step further. Check out [Serverless Open Runtime](https://serverless.com/blog/introducing-serverless-open-runtime/) on GitHub. Build and share common solutions to complex problems before they even get to your business logic.
+
 #### AWS Lambda Layers
 
 **What it is:** AMIs for Lambda—build base layers that can be used across multiple Lambda functions
