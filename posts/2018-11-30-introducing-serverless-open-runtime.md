@@ -43,7 +43,7 @@ With a pipelined approach to the event request/response lifecycle, it’s straig
 
 Here’s an example of a constructed runtime that leverages some request and response middleware examples (explanation below):
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/serverless-open-runtime1.png" alt="Serverless open runtime">
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/serverless-open-runtime1.png" alt="Serverless open runtime" style='width:461px; margin:0 auto'>
 
 The Open Runtime gets started when Lambda first receives a lambda execution request. It then actually fetches a request from the AWS Runtime API. This request is then processed by middlewares, by invoking them as executables and passing the event in via STDIN and reading the processed event back via STDOUT. It is then passed to the language specific runtime which invokes your handler code. The response is then processed by middlewares similarly to how they were invoked for the event.
 
