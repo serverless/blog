@@ -109,13 +109,15 @@ Oh, and while you're here, you should [check out our re:Invent virtual hackathon
 
 **Why it matters:** This is awesome. Websockets enable bi-directional interaction between client and server, making it much easier to do real-time functionality like chat. Previously, you [could use AWS IoT to get Websockets with Lambda](https://serverless.com/blog/realtime-updates-using-lambda-websockets-iot/), but this is much cleaner.
 
-This feature is not released yet but coming soon.
+This feature is not released yet but coming soon. For our full explainer on why WebSockets are cool and how they make real-time apps so much easier (with architecture diagrams!), [see here](https://serverless.com/blog/api-gateway-websockets-support/).
 
 #### Bring your own runtime to AWS Lambda
 
 **What it is:** A way to bring your own runtime to AWS Lambda
 
 **Why it matters:** You don't need to wait for AWS to add your favorite language -- you can bring your own! This is a great add and a common ask from Serverless users. Fans of more obscure languages will be particularly happy.
+
+**Taking it one step further:** At Serverless, we saw BYOR and decided to take it one step further. Check out [Serverless Open Runtime](https://serverless.com/blog/introducing-serverless-open-runtime/) on GitHub. Build and share common solutions to complex problems before they even get to your business logic.
 
 #### AWS Lambda Layers
 
