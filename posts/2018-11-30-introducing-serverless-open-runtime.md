@@ -25,7 +25,7 @@ The Serverless Open Runtime makes it simple to build and share common solutions 
 This could mean capabilities like:
 
 * more graceful timeouts
-* the ability to coerce AWS (or other provider-specific) events to [CloudEvent spec](https://cloudevents.io) or HTTP requests
+* the ability to transform AWS (or other provider-specific) events to [CloudEvent spec](https://cloudevents.io) or HTTP requests
 * more detailed tracing and debugging
 * middleware implementations in any language, compatible with your service regardless of the language you chose to use
 * prepackaging of common libraries
