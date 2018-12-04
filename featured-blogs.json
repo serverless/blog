@@ -1,7 +1,7 @@
 [
   "publish-aws-lambda-layers-serverless-framework",
-  "reinvent-2018-serverless-announcements",  
-  "no-server-november-reinvent-hackathon",
-  "firecracker-what-means-serverless",
-  "building-chat-appliation-aws-appsync-serverless"
+  "api-ruby-serverless-framework",
+  "reinvent-2018-serverless-announcements",
+  "api-gateway-websockets-support",
+  "common-node8-mistakes-in-lambda"
 ]
