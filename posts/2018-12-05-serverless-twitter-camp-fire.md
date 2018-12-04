@@ -2,8 +2,8 @@
 title: "A Serverless Twitter bot helps house Camp Fire victims"
 description: "When the California Camp Fire displaced thousands of people from their homes, I built a simple serverless Twitter bot to help people get placed in temporary housing!"
 date: 2018-12-05
-thumbnail: ''
-heroImage: ''
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/camp-fire/camp-fire-housing-thumb.jpg'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/camp-fire/camp-fire-housing.jpg'
 category:
   - guides-and-tutorials
   - user-stories
