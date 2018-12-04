@@ -2,13 +2,15 @@
 title: "Building an API with Ruby and the Serverless Framework"
 description: "AWS Lambda now supports Ruby! Here's how you can get started and build an API with the Serverless Framework."
 date: 2018-12-04
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/reinvent-updates-thumb.png'
-heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/reinvent-updates-header1.gif'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/ruby/serverless-ruby-thumb.png'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/ruby/serverless-ruby-header.png'
 category:
   - guides-and-tutorials
 authors: 
   - JaredShort
 ---
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/ruby/serverless-ruby-body.png" alt="Serverless Ruby API">
 
 On the heels of re:Invent, it's been a great week for the serverless community. And one of the most exciting things in AWS's re:Invent goodie basket? Ruby support for Lambda!
 
