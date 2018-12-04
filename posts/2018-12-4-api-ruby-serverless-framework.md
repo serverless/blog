@@ -10,8 +10,6 @@ authors:
   - JaredShort
 ---
 
-<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/ruby/serverless-ruby-body.png" alt="Serverless Ruby API">
-
 On the heels of re:Invent, it's been a great week for the serverless community. And one of the most exciting things in AWS's re:Invent goodie basket? Ruby support for Lambda!
 
 Personally, I love Ruby, and was really excited to play around with a Ruby deployment on the Serverless Framework.
@@ -21,6 +19,8 @@ So here you have it, Ruby fans. Your Ruby + Serverless Framework getting started
 Let's get to it.
 
 #### Getting Started
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/ruby/serverless-ruby-body.png" alt="Serverless Ruby API">
 
 First up, we need to install the Serverless Framework (if you haven't already), and create a new Ruby service:
 
