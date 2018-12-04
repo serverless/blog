@@ -18,9 +18,9 @@ So here you have it, Ruby fans. Your Ruby + Serverless Framework getting started
 
 Let's get to it.
 
-#### Getting Started
-
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/ruby/serverless-ruby-body.png" alt="Serverless Ruby API">
+
+#### Getting Started
 
 First up, we need to install the Serverless Framework (if you haven't already), and create a new Ruby service:
 
