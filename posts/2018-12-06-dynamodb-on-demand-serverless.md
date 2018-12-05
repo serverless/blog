@@ -1,5 +1,5 @@
 ---
-title: "DynamoDB On-Demand: How, when and why to use it in your serverless applications"
+title: "DynamoDB On-Demand: When, why and how to use it in your serverless applications"
 description: "DynamoDB On-Demand allows truly serverless billing for your applications. Learn how to use it here, and when you should or shouldn't go on-demand."
 date: 2018-12-06
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/reinvent-updates-thumb.png'
