@@ -145,6 +145,8 @@ Want to get started with Step Functions? Check out this [post on managing your A
 
 **What it is:** AWS Lambda now supports Ruby!
 
+**Get started with Ruby:** The Serverless Framework already supports the Ruby runtime. Here's our guide on [deploying your first API with Ruby](https://serverless.com/blog/api-ruby-serverless-framework/).
+
 #### Lambda ALB Support
 
 **What it is:** Invoke Lambdas directly from ALB, without using API Gateway.
@@ -224,6 +226,8 @@ Previously, serverless developers would use things like AWS SSM to manage this s
 **What it is:** You can know pay for DynamoDB on a per-request basis, rather than pre-provisioned read and write capacity.
 
 **Why it matters:** DynamoDB continues to make huge progress. One issue with DynamoDB with serverless is that you had to determine your capacity ahead of time. No more. Like AWS Lambda, you can now pay per-request. This is great for coupling the cost to the value you're provided your users.
+
+**Should you use it right now?** We wrote a full guide on when (and when not) to use DynamoDB on-demand, plus how to implement it in your existing serverless applications. [See the full DynamoDB on-demand guide here](https://serverless.com/blog/dynamodb-on-demand-serverless/).
 
 #### AWS Control Tower
 
