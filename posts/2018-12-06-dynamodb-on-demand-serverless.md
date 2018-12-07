@@ -170,7 +170,7 @@ Exactly—"Why does it matter?" Partition-planning is basically an unnecessary d
 
 There are a few limits you should know about.
 
-First, there are some [limits](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html) on how high DynamoDB On-Demand can scale up. By default, that limit is 40,000 read request units and 40,000 write request units per table in most regions. You can increase that if needed. Those numbers are _per second_, so we're talking some serious traffic.
+First, there are some [limits](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html) on how high DynamoDB On-Demand can scale up. By default, that limit is 40,000 read request units and 40,000 write request units per table in most regions. You can [increase](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) that if needed. Those numbers are _per second_, so we're talking some serious traffic.
 
 Second, you are limited in how often you can change between provisioned capacity and on-demand pricing. As of now, it looks like you can only switch once per day.
 
