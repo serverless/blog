@@ -250,6 +250,9 @@ You can see the following projects for some examples of using this plugin to bui
 
  * [geoip-lambda-layer](https://github.com/dschep/geoip-lambda-layer) - A layer containing [MaxMind](https://maxmind.com)’s GeoIP libraries
  * [sqlite-lambda-layer](https://github.com/dschep/sqlite-lambda-layer) - A layer to fix SQLite support in Python 3.6 runtimes
+ 
+##### Awesome layers
+Also check out this repository of awesome layers: https://github.com/mthenw/awesome-layers
 
 #### Custom runtime support: even better!
 
