@@ -54,13 +54,13 @@ layers:
 Run the following commands to download the contents of your layer:
 
 ```
-mkdir layer
-cd layer
-curl -O https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
-tar xf ffmpeg-git-amd64-static.tar.xz
-rm ffmpeg-git-amd64-static.tar.xz
-mv ffmpeg-git-*-amd64-static ffmpeg
-cd ..
+$ mkdir layer
+$ cd layer
+$ curl -O https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
+$ tar xf ffmpeg-git-amd64-static.tar.xz
+$ rm ffmpeg-git-amd64-static.tar.xz
+$ mv ffmpeg-git-*-amd64-static ffmpeg
+$ cd ..
 ```
 
 You’re ready to test deployment of your layer. Deploy and you’ll see the layer’s ARN in the output info:
@@ -187,14 +187,62 @@ module.exports.mkgif = async (event, context) => {
 Now you can deploy both the layer & updated function with `sls deploy`. Let’s test it out by uploading a video to our S3 bucket:
 
 ```
-curl -OL https://archive.org/download/mov-bbb/mov_bbb.mp4
-aws s3 cp mov_bbb.mp4 s3://YOURBUCKETNAME/mov_bbb.mp4
-# wait a little bit….
-aws s3 cp s3://YOURBUCKETNAME/mov_bbb.mp4.gif mov_bb.mp4.gif
+$ curl -OL https://archive.org/download/mov-bbb/mov_bbb.mp4
+$ aws s3 cp mov_bbb.mp4 s3://YOURBUCKETNAME/mov_bbb.mp4
+$ # wait a little bit….
+$ aws s3 cp s3://YOURBUCKETNAME/mov_bbb.mp4.gif mov_bb.mp4.gif
 ```
 You now have a GIF copy of the mp4 you uploaded!
 
 For the full source of this example, check it out in our [examples repo](https://github.com/serverless/examples/tree/master/aws-ffmpeg-layer).
+
+#### Some tips on working with layers
+You probably noticed in the example above that instead of specifying an ARN for the layer that he
+function is using we used `{Ref: FfmpegLambdaLayer}`. This is a
+[CloudFormation Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html).
+The name is derived from your layer's name. Eg. `ffmpeg` became `FfmpegLambdaLayer`. If you're not
+sure what your layer's name will be you can find it by running `sls package` then searching for
+`LambdaLayer` in `.serverless/cloudformation-template-update-stack.json`.
+
+You may have noticed, that everytime you deploy your stack a new layer version is created. This is
+due to limitations with CloudFormation. The best way to deal with this is by keeping your layer &
+your function in separate stacks. Let's try that with the example we just made.
+
+First, create a new folder and move the layers directory into it:
+```
+$ cd ..
+$ mkdir ffmpeg-layer
+$ mv gifmaker/layer ffmpeg-layer/.
+$ cd ffmpeg-layer
+```
+
+Now remove the top-level `layers` section in `gifmaker/serverless.yml`. Then create a new
+`serverless.yml` in the `ffmpeg-layer` folder containing:
+```yaml
+service: ffmpeg-layer
+frameworkVersion: ">=1.34.0 <2.0.0"
+provider:
+  name: aws
+layers:
+  ffmpeg:
+    path: layer
+resources:
+  Outputs:
+    FfmpegLayerExport:
+        Value:
+          Ref: FfmpegLambdaLayer
+        Export:
+          Name: FfmpegLambdaLayer
+```
+
+Now run `sls deploy` to publish your layer!
+
+Next go back to the `gifmaker` service directory and change `{Ref: FfmpegLambdaLayer}` in the
+`serverless.yml` to `${cf:ffmpeg-layer-dev:FfmpegLayerExport}`. You can now run `sls deploy` and
+it'll use the layer from the other service! Note that the `dev` in the variable above is the
+[stage](https://serverless.com/framework/docs/providers/aws/guide/workflow#using-stages)
+of your layer service.
+
 
 #### More Examples
 
