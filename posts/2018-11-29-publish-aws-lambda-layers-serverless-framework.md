@@ -197,18 +197,23 @@ You now have a GIF copy of the mp4 you uploaded!
 For the full source of this example, check it out in our [examples repo](https://github.com/serverless/examples/tree/master/aws-ffmpeg-layer).
 
 #### Some tips on working with layers
-You probably noticed in the example above that instead of specifying an ARN for the layer that he
-function is using we used `{Ref: FfmpegLambdaLayer}`. This is a
+
+In the example above, instead of specifying an ARN for the layer that the
+function is using, we used `{Ref: FfmpegLambdaLayer}`. This is a
 [CloudFormation Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html).
-The name is derived from your layer's name. Eg. `ffmpeg` became `FfmpegLambdaLayer`. If you're not
-sure what your layer's name will be you can find it by running `sls package` then searching for
+
+The name is derived from your layer's name, e.g., `ffmpeg` becomes `FfmpegLambdaLayer`. If you're not
+sure what your layer's name will be, you can find it by running `sls package` then searching for
 `LambdaLayer` in `.serverless/cloudformation-template-update-stack.json`.
 
-You may have noticed, that everytime you deploy your stack a new layer version is created. This is
-due to limitations with CloudFormation. The best way to deal with this is by keeping your layer &
-your function in separate stacks. Let's try that with the example we just made.
+You may have noticed that every time you deploy your stack, a new layer version is created. This is
+due to limitations with CloudFormation. The best way to deal with this is by keeping your layer and
+your function in separate stacks.
+
+Let's try that with the example we just made.
 
 First, create a new folder and move the layers directory into it:
+
 ```
 $ cd ..
 $ mkdir ffmpeg-layer
@@ -216,8 +221,9 @@ $ mv gifmaker/layer ffmpeg-layer/.
 $ cd ffmpeg-layer
 ```
 
-Now remove the top-level `layers` section in `gifmaker/serverless.yml`. Then create a new
+Remove the top-level `layers` section in `gifmaker/serverless.yml`, then create a new
 `serverless.yml` in the `ffmpeg-layer` folder containing:
+
 ```yaml
 service: ffmpeg-layer
 frameworkVersion: ">=1.34.0 <2.0.0"
@@ -235,11 +241,11 @@ resources:
           Name: FfmpegLambdaLayer
 ```
 
-Now run `sls deploy` to publish your layer!
+Now you can run `sls deploy` to publish your layer!
 
-Next go back to the `gifmaker` service directory and change `{Ref: FfmpegLambdaLayer}` in the
+Go back to the `gifmaker` service directory and change `{Ref: FfmpegLambdaLayer}` in the
 `serverless.yml` to `${cf:ffmpeg-layer-dev:FfmpegLayerExport}`. You can now run `sls deploy` and
-it'll use the layer from the other service! Note that the `dev` in the variable above is the
+it'll use the layer from the other service. Note that the `dev` in the variable above is the
 [stage](https://serverless.com/framework/docs/providers/aws/guide/workflow#using-stages)
 of your layer service.
 
@@ -267,5 +273,6 @@ To utilize custom runtimes with Serverless, specify the runtime as `provided` in
 ##### More re:Invent news
 
 * [All the Serverless announcements at re:Invent 2018](https://serverless.com/blog/reinvent-2018-serverless-announcements/)
+* [DynamoDB On-Demand: When, why and how to use it in your serverless applications](https://serverless.com/blog/dynamodb-on-demand-serverless/)
+* [Real-time applications with API Gateway WebSockets and AWS Lambda](https://serverless.com/blog/api-gateway-websockets-support/)
 * [What Firecracker open-source means for the serverless community](https://serverless.com/blog/firecracker-what-means-serverless/)
-* [Join the Serverless virtual hackathon at re:Invent; participate from anywhere, win prizes!](https://serverless.com/blog/no-server-november-reinvent-hackathon/)(ends Sunday at 11:00 PM PT)
