@@ -3,7 +3,7 @@ title: "How to publish and use AWS Lambda Layers with the Serverless Framework"
 description: "Learn about AWS's recently introduced Lambda Layers and how to publish and use them with Serverless Framework."
 date: 2018-11-29
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/lambda-layers-thumb.png"
-heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/lambda-layers-header.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/lambda-layers.png"
 category:
   - guides-and-tutorials
   - news
@@ -26,6 +26,8 @@ There are two aspects to using Lambda Layers:
 We’re excited to say that the Serverless Framework has day 1 support for both publishing and using Lambda Layers with your functions with [Version 1.34.0](https://github.com/serverless/serverless/releases/tag/v1.34.0)!
 
 See how you can publish and use Lambda Layers with the Serverless Framework below.
+
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent/lambda-layers-header.png" alt="Lambda Layers on Serverless Framework">
 
 #### Example use case: Creating GIFs with FFmpeg
 
