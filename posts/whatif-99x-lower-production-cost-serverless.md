@@ -11,8 +11,10 @@ authors:
 ---
 
 [Whatif](https://www.worktool.cloud/) is a risk analysis platform used worldwide. The only problem with it is: it’s a web-based application with a customer base that’s increasingly mobile.
+
 They realized they needed to branch into iOS and Android, and decided to build a mobile app: CoverYa, a real-time checklist management tool for mobile. Their top priorities were building a highly-performant, scalable application.
-To do this, they partnered with 99X Technology.
+
+To do this, they partnered with [99X Technology](https://www.99xtechnology.com/).
 
 #### The Challenge
 
@@ -35,9 +37,9 @@ Whatif appreciated that a serverless application would be much easier to maintai
 
 The migration from their legacy APIs to a serverless application was designed to be executed in small iterations to ensure that the overall Coverya platform continued to run while the web app communicated with both APIs.
 
-Development stayed on schedule. 99X utilized the Serverless Frameworks’ Offline Plugin and Meta Sync Plugin to develop, test and deploy offline, further increasing developer productivity throughout the project, which they found incredibly helpful for an on-time product delivery. 
+Development stayed on schedule. 99X utilized the Serverless Frameworks’ [Offline Plugin](https://github.com/dherault/serverless-offline) and [Meta Sync Plugin](https://github.com/serverless/serverless-meta-sync) to develop, test and deploy offline. This increased developer productivity throughout the project and helped make it possible to complete the product on time. 
 
-The team further used Serverless Dynamodb Local, Serverless Dependency Install plugins and the boilerplate code for running the Serverless Development locally. These were released as Open Source assets, which you can find here.
+The team further used [Serverless Dynamodb Local](https://github.com/99xt/serverless-dynamodb-local), [Serverless Dependency Install](https://github.com/99xt/serverless-dependency-install) plugins and the boilerplate code for running the Serverless Development locally. These were released as Open Source assets, which you can find [here](https://github.com/99xt).
 
 #### The Results
 
