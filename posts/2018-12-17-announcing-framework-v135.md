@@ -1,5 +1,5 @@
 ---
-title: "Serverless Framework v.1.35: Local Invoke Ruby, CloudFormation config"
+title: "Serverless Framework v.1.35: Local Invoke Ruby, CloudFormation variable syntax"
 description: "Check out the latest Serverless Framework v1.35 release, featuring Ruby invoke local support, CloudFormation config, and more."
 date: 2018-12-17
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v135-thumb.png'
