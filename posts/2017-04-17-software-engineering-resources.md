@@ -93,7 +93,7 @@ Even with the rise of new programming paradigms (like Functional Programming), O
 
 <img align="right" src="https://cloud.githubusercontent.com/assets/20538501/25054993/20f586c6-2115-11e7-95b6-58d3d14175f3.png">
 
-Can you relate to the feeling that you just don't know enough? Perhaps someday you might be exposed as a "fraud" because you do your job, but compated to others you're still lacking some knowledge?
+Can you relate to the feeling that you just don't know enough? Perhaps someday you might be exposed as a "fraud" because you do your job, but compared to others you're still lacking some knowledge?
 
 This is called ["Impostor Syndrome"](https://en.wikipedia.org/wiki/Impostor_syndrome) and quite a common feeling in the tech industry where experienced coders are hired even if they don't have an academic degree.
 
