@@ -62,5 +62,5 @@ Each release, there are always many people involved. This release is no differen
 
 We couldn’t do it without you!
 
-[Rupak Ganguly - @rupakg](https://github.com/rupakg), [Dean Holdren - @dholdren](https://github.com/dholdren), [TATSUNO Yasuhiro - @exoego](https://github.com/exoego), [Jeff Soloshy - @MacMcirish](https://github.com/MacMcIrish), [Federico - @asyba](https://github.com/asyba), (Jaap Taal - @q42jaap)[https://github.com/q42jaap], [Joshua Napoli - @joshuanapoli](https://github.com/joshuanapoli), [Enrique Valenzuela - @enriquemanuel](https://github.com/enriquemanuel)
+[Rupak Ganguly - @rupakg](https://github.com/rupakg), [Dean Holdren - @dholdren](https://github.com/dholdren), [TATSUNO Yasuhiro - @exoego](https://github.com/exoego), [Jeff Soloshy - @MacMcirish](https://github.com/MacMcIrish), [Federico - @asyba](https://github.com/asyba), [Jaap Taal - @q42jaap](https://github.com/q42jaap), [Joshua Napoli - @joshuanapoli](https://github.com/joshuanapoli), [Enrique Valenzuela - @enriquemanuel](https://github.com/enriquemanuel)
 
