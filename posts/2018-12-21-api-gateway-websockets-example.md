@@ -74,7 +74,7 @@ We’re leveraging the usual suspects here: API Gateway WebSockets (of course), 
 
 ##### Chat app architecture
 
-[CONNECTION MANAGEMENT DIAGRAM] # TODO
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/websockets/connection-management.png" alt="connection management diagram">
 
 As users connect and disconnect, we store their connection Id in the DynamoDB table, as well as register them into the "General" chat channel.
 
@@ -84,7 +84,7 @@ Users can then:
 - Unsubscribe from a channel
 - Send a message to all users in a channel
 
-[SEND CHANNEL A MESSAGE DIAGRAM] # TODO
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/websockets/send-message.png" alt="send channel a message diagram">
 
 Each time any of these things occurs, we send out a broadcast to all subscribers of a channel what has happened. If someone joined the channel, left (or disconnected and left all channels), or a message was sent.
 
@@ -98,7 +98,7 @@ So, what are we leveraging DynamoDB streams for you ask?
 
 We decided to think about things a bit differently to demonstrate the power of this architecture. When a user unsubscribes or subscribes to a channel, we don't _immediately_ notify everyone in the same Lambda invocation. Rather, we have AWS Lambda receive that stream and process it asynchronously.
 
-[CHANNEL SUBSCRIBER JOIN/LEAVE FLOW DIAGRAM] # TODO
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/websockets/channel-subscriber.png" alt="channel subscriber flow diagram">
 
 It still happens extremely fast, and to all WebSocket clients, it appears no different.
 
