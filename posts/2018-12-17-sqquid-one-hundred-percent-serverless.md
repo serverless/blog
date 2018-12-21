@@ -1,7 +1,7 @@
 ---
 title: "SQQUID: a 100% serverless startup"
 description: "Sqquid uses AWS Lambda and the Serverless Framework for their core product and marketing website. See what it’s like to be a fully serverless startup."
-date: 2019-12-17
+date: 2018-12-17
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/sqquid/sqquid-serverless-thumb.jpg"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/sqquid/sqquid-serverless-header.jpeg"
 category:
