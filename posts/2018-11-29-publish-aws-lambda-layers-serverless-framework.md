@@ -246,7 +246,7 @@ resources:
 Now you can run `sls deploy` to publish your layer!
 
 Go back to the `gifmaker` service directory and change `{Ref: FfmpegLambdaLayer}` in the
-`serverless.yml` to `${cf:ffmpeg-layer-dev:FfmpegLayerExport}`. You can now run `sls deploy` and
+`serverless.yml` to `${cf:ffmpeg-layer-dev.FfmpegLayerExport}`. You can now run `sls deploy` and
 it'll use the layer from the other service. Note that the `dev` in the variable above is the
 [stage](https://serverless.com/framework/docs/providers/aws/guide/workflow#using-stages)
 of your layer service.
