@@ -2,8 +2,8 @@
 title: "The definitive guide to using Terraform with the Serverless Framework"
 description: "Wondering whether you should use Terraform or the Serverless Framework for your infrastructure as code? We've got answers."
 date: 2019-01-14
-thumbnail: ''
-heroImage: ''
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/terraform/serverless-terraform-thumb.png'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/terraform/serverless-terraform-header.png'
 category:
   - guides-and-tutorials
 authors: 
