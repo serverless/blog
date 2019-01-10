@@ -1,5 +1,5 @@
 ---
-title: "Serverless Framework v1.36: Bug Fixes and Quality of Life Improvements for All!"
+title: "Serverless Framework v1.36: Bug fixes and quality of life improvements for all!"
 description: "Check out the latest Serverless Framework v1.36 release, bug fixes and quality of life improvements for all!"
 date: 2018-01-09
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v136-thumb.png'
@@ -10,7 +10,11 @@ authors:
   - JaredShort
 ---
 
-This release was focused heavily on bug fixes and enhancements around the framework and documentation.
+Let's bring 2019 in right. New year, new Framework release!
+
+Framework v1.36 focuses heavily on bug fixes and Framework enhancements and documentation.
+
+Check below for the full list, or jump to the bottom for our [Framework roadmap](#roadmap-and-focus).
 
 #### Enhancements
 
@@ -43,14 +47,13 @@ This release was focused heavily on bug fixes and enhancements around the framew
 - [#5627](https://github.com/serverless/serverless/pull/5627) update layers doc to reflect max of 5<a href="https://github.com/serverless/serverless/pull/5627/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+2</span>/<span style="color:#cb2431">-2</span></a><a href="https://github.com/dschep"> <img style="vertical-align: middle" src='https://avatars0.githubusercontent.com/u/667763?v=4' alt='' height="20px"> dschep</a>
 - [#5628](https://github.com/serverless/serverless/pull/5628) Add Ruby to supported languages in README.md<a href="https://github.com/serverless/serverless/pull/5628/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+1</span>/<span style="color:#cb2431">-1</span></a><a href="https://github.com/dbw03135"> <img style="vertical-align: middle" src='https://avatars1.githubusercontent.com/u/18095759?v=4' alt='' height="20px"> dbw03135</a>
 - [#5659](https://github.com/serverless/serverless/pull/5659) direct link to video guide<a href="https://github.com/serverless/serverless/pull/5659/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+1</span>/<span style="color:#cb2431">-1</span></a><a href="https://github.com/dschep"> <img style="vertical-align: middle" src='https://avatars0.githubusercontent.com/u/667763?v=4' alt='' height="20px"> dschep</a>
- 
 
-#### Roadmap & focus
+#### Roadmap and focus
 
 We will continue to focus on tackling the backlog, bug fixes and quality of life improvements for the next release.
 
-A common request has been Amazon API Gateway v2 and its WebSockets, as well as Application Load Balancer AWS Lambda targets. While we have implemented WebSocket support [via a plugin](https://github.com/serverless/serverless-websockets-plugin), the core Serverless Framework support for both these requests will be introduced when CloudFormation officially supports them!
+A common request has been Amazon API Gateway v2 and its WebSockets, as well as Application Load Balancer AWS Lambda targets. While we have implemented WebSocket support [via a plugin](https://github.com/serverless/serverless-websockets-plugin), the core Serverless Framework support for both these requests will be introduced when CloudFormation officially supports them.
 
-#### Contributor Thanks
+#### Contributor thanks
 
-As always, we appreciate each and every one of you that use and contribute to the framework and Serverless ecosystem!
+As always, we appreciate each and every one of you that use and contribute to the Framework and Serverless ecosystem!
