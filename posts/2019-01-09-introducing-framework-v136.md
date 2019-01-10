@@ -1,7 +1,7 @@
 ---
 title: "Serverless Framework v1.36: Bug fixes and quality of life improvements for all!"
 description: "Check out the latest Serverless Framework v1.36 release, bug fixes and quality of life improvements for all!"
-date: 2018-01-09
+date: 2019-01-09
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v136-thumb.png'
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v136-header.svg'
 category:
