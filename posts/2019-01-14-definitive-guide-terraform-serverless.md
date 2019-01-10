@@ -22,8 +22,7 @@ In this article, we’ll talk about the right way to manage infrastructure when 
 
 #### Why automate infrastructure management
 
-While Terraform is one of the most popular IaC tools out there, it certainly isn’t the only one. Think AWS CloudFormation, Ansible, Chef, and Puppet.
-IaC becomes really important once developers need a way to organize their growing cloud infrastructure and collaborate across teams.
+Infrastructure as Code (IaC) becomes really important once developers need a way to organize their growing cloud infrastructure and collaborate across teams.
 
 Most importantly, IaC tools make it necessary to have process and discipline; there’s a smaller chance of accidental or unexpected changes, and it’s easier to share configuration between different parts of your infrastructure.
 
