@@ -10,11 +10,9 @@ authors:
   - SebastianBorza
 ---
 
-If your organisation uses automation to manage cloud infrastructure, you’ve almost certainly heard about Terraform—it’s the most popular Infrastructure as Code tool in the world.
+If your organisation uses automation to manage cloud infrastructure, you’ve almost certainly heard about Terraform. And if you’ve built anything serverless, you might have noticed that deploying with the Serverless Framework is a lot like running Terraform.
 
-And if you’ve built anything serverless, you might have noticed that deploying with the Serverless Framework is a lot like running Terraform. To which we say: you’re absolutely right. 
-
-Many companies using Serverless already use Terraform, and some Serverless Framework functionality, especially when it comes to provisioning cloud resources, is similar to what Terraform can do.
+To which we say: you’re absolutely right. Many companies using Serverless already use Terraform, and some Serverless Framework functionality, especially when it comes to provisioning cloud resources, is similar to what Terraform can do.
 
 So if both Terraform and Serverless can solve your infrastructure automation needs, which one should you use? And should you use just one for all purposes?
 
