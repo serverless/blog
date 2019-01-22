@@ -12,7 +12,7 @@ authors:
 
 If your organisation uses automation to manage cloud infrastructure, you’ve almost certainly heard about Terraform. And if you’ve built anything serverless, you might have noticed that deploying with the Serverless Framework is a lot like running Terraform.
 
-To which we say: you’re absolutely right. Many companies using Serverless already use Terraform, and some Serverless Framework functionality, especially when it comes to provisioning cloud resources, is similar to what Terraform can do.
+To which we say: you’re absolutely right. Many companies using Serverless already use Terraform, and some Serverless Framework functionality is similar to what Terraform can do, especially when it comes to provisioning cloud resources.
 
 So if both Terraform and Serverless can solve your infrastructure automation needs, which one should you use? And should you use just one for all purposes?
 
@@ -45,6 +45,8 @@ For an organization using both Terraform and Serverless, here are the benefits o
 For application-specific infrastructure, we suggest managing all the pieces with the Serverless Framework, for a few reasons.
 
 First, you couple this infrastructure to the application itself. Second, we like to think that the application "owns" things, like the tables in the Postgres database. There is little value in managing the table names outside of the application context (e.g. in Terraform).
+
+Third, you can iterate your application release without touching your shared infrastructure. Software releases decouple from shared infrastructure, allowing you to focus on the application itself without having to worry about infrastructure changes.
 
 ##### Terraform for shared infrastructure
 
