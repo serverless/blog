@@ -1,5 +1,5 @@
 ---
-title: "Serverless 1-day workshop on March 1"
+title: "Register for the Serverless workshop on March 1 in San Francisco!"
 description: "We're hosting a day long serverless workshop in San Francisco on March 1. Register today!"
 date: 2019-01-23
 thumbnail: ''
@@ -14,7 +14,7 @@ One question that comes up time and time again about Serverless is how to run it
 
 These are tough questions, which is why we're bringing Jared Short, our Head of Developer Relations and Experience, to San Francisco for a one-day Serverless Workshop!
 
-The workshop is on March 1st in San Francisco, California. Read below for more details, or go ahead and [Register here]().
+The workshop is on March 1st in San Francisco, California. Read below for more details, or go ahead and [Register here](https://www.eventbrite.com/e/serverless-workshop-sf-tickets-54621470288).
 
 #### Who is this workshop for?
 
@@ -32,6 +32,6 @@ This workshop is designed for you (and your whole team). By the end, we want to 
 
 The workshop is one full day. Registration is $500, with limited early-bird tickets available for $400. Plus, if you use the promocode `SLSBlog`, you can save an additional 20% off of the cost of registration!
 
-[Register for the workshop today]()!
+[Register for the workshop today](https://www.eventbrite.com/e/serverless-workshop-sf-tickets-54621470288)!
 
 If you have any questions at all, reach out to us [on Twitter](https://twitter.com/goserverless) or drop a comment below.
