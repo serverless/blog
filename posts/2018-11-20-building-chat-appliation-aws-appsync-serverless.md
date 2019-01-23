@@ -274,6 +274,8 @@ In the chat app, we are using the [DynamoDB](https://serverless.com/developers/g
 
 AWS Lambda is the third data source option supported by AppSync. You could create a service in AWS Lambda that would query an RDS database, or go to an HTTP service outside of AWS to get the data. While this allows for some extensibility, doing anything with Lambda would require more work than just using a fully managed service like in our DynamoDB example above.
 
+Finally, you can use [Aurora Serverless](https://docs.aws.amazon.com/appsync/latest/devguide/tutorial-rds-resolvers.html) as a data source for your resolvers as well. Aurora Serverless is a fully-managed relational database with on-demand scale-up and scale-down. Aurora Serverless has versions compatible with MySQL or PostgreSQL, so they work well with existing tooling. While it's still early for Serverless Aurora, I'm [very bullish on its future in the serverless ecosystem](https://serverless.com/blog/serverless-aurora-future-of-data/).
+
 ##### Authentication options
 
 In the chat app project, we used the Cognito User Pools authentication mechanism.
