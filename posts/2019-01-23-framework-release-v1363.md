@@ -1,6 +1,6 @@
 ---
 title: "Serverless Framework v1.36.3"
-description: "Check out the latest Serverless Framework v1.36.3 release"
+description: "Check out the latest Serverless Framework v1.36.3 release."
 date: 2019-01-23
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v1363-thumb.png'
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v1363-header.png'
@@ -10,7 +10,7 @@ authors:
   - JaredShort
 ---
 
-The regular cadence of releases is full steam ahead as we release another version of the framework, v1.36.3, brings 4 bug fixes and 9 enhancements.
+The regular cadence of releases is full steam ahead as we release another version of the framework, v1.36.3, bringing 4 bug fixes and 9 enhancements.
 
 #### Bug Fixes
 
