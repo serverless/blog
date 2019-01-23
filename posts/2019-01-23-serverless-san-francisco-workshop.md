@@ -34,4 +34,4 @@ The workshop is one full day. Registration is $500, with limited early-bird tick
 
 [Register for the workshop today](https://www.eventbrite.com/e/serverless-workshop-sf-tickets-54621470288)!
 
-If you have any questions at all, reach out to us [on Twitter](https://twitter.com/goserverless) or drop a comment below.
+If you have any questions at all, reach out to us [on Twitter](https://twitter.com/goserverless) or drop a comment below. 
