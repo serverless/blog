@@ -2,8 +2,8 @@
 title: "Register for the Serverless workshop on March 1 in San Francisco!"
 description: "We're hosting a day long serverless workshop in San Francisco on March 1. Register today!"
 date: 2019-01-23
-thumbnail: ''
-heroImage: ''
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Thom's+Posts/workshop-thumb.jpg'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Thom's+Posts/workshop-header.jpg'
 category:
   - news
 authors: 
