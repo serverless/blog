@@ -3,7 +3,7 @@ title: "Serverless Framework v1.36.3"
 description: "Check out the latest Serverless Framework v1.36.3 release"
 date: 2019-01-09
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v1363-thumb.png'
-heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v1363-header.svg'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v1363-header.png'
 category:
   - news
 authors: 
