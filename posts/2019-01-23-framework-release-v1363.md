@@ -10,7 +10,7 @@ authors:
   - JaredShort
 ---
 
-The regular cadence of releases is full steam ahead as we release another version of the framework, v1.36.3, bringing 4 bug fixes and 9 enhancements.
+The regular cadence of releases is full steam ahead as we release another version of the framework, v1.36.3, bringing 5 bug fixes and 9 enhancements.
 
 #### Bug Fixes
 
