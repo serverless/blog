@@ -2,15 +2,15 @@
 title: "Register for the Serverless workshop on March 1 in San Francisco!"
 description: "We're hosting a day long serverless workshop in San Francisco on March 1. Register today!"
 date: 2019-01-23
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Thom's+Posts/workshop-thumb.jpg'
-heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Thom's+Posts/workshop-header.jpg'
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Thom's+Posts/workshop-thumb.jpg"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Thom's+Posts/workshop-header.jpg"
 category:
   - news
 authors: 
   - ThomCrowe
 ---
 
-One question that comes up time and time again about Serverless is how to run it at scale in an enterprise environment. There are a lot of things to plan for and address: operations, automation, security, team collaboration, architecture design, and process. 
+One question that comes up time and time again about Serverless is how to run it at scale across a team. There are a lot of things to plan for and address: operations, automation, security, team collaboration, architecture design, and process. 
 
 These are tough questions, which is why we're bringing Jared Short, our Head of Developer Relations and Experience, to San Francisco for a one-day Serverless Workshop!
 
