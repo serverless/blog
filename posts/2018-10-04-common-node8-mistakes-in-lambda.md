@@ -42,7 +42,7 @@ module.exports.handler = async (event, context) => {
 }
 ```
 
-#### Not using promisfy
+#### Not using promisify
 
 Before Node8, [bluebird](http://bluebirdjs.com/docs/getting-started.html) filled a massive gap. It provided the utility to convert callback-based functions to promise-based. But Node8's built-in `util` module has filled that gap with the `promisify` function.
 
