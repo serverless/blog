@@ -1,0 +1,44 @@
+---
+title: "Coming together remotely"
+description: "How we bring our team together from around the world"
+date: 2019-01-31
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Thom's+Posts/workshop-thumb.jpg"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Thom's+Posts/workshop-header.jpg"
+category:
+  - news
+authors: 
+  - ThomCrowe
+---
+
+
+
+We're a distributed first team here at Serverless which is pretty great; we get to bring the best of the best on our team since we can hire from pretty much everywhere. We have great people here and work hard to build products that are changing the way the world develops and builds out the web. 
+
+One unfortunate downside to a remote work environment, as you'd imagine, is just that: our team is remote. We don't have the chance to do a team lunch or happy hour after work. Fortunately, our leadership remains committed to our company and our employees and hosts a bi-annual onsite where our team comes together from across the globe to work, strategize, and experience an intense team-building week. But what about the six months in between those offsites?
+
+This past holiday season inspired us. Some of our team members who live in the Bay area got together and posted some fun pics, and we thought, why not do a virtual holiday party. 
+
+## Getting Started
+
+One thing we wanted to do was a Secret Santa and, instead of reinventing the wheel, we went with a great product already in use: [Elfster](https://www.elfster.com/). I sent out an email to the team with a link to our Secret Santa gift exchange. We used [Zoom](https://www.zoom.us) so we could see everyone's festive faces and, in one case, those decked out in holiday lights! Everyone who wanted to sign up and Elfster randomized pairings, making each person an anonymous Secret Santa. It has built-in functionality to ask your assignee questions and share a wish list.
+
+Then we scheduled a time to open our gifts. We were supposed to have all of our gifts delivered before our virtual holiday problem. One problem: with an internationally distributed team, you have to wait for international delivery so some people wouldn't get their presents on time.
+
+## A Homegrown Solution
+
+One of our team members, [Daniel](https://github.com/dschep], built an app for us. He called it [Virtual Present](https://glitch.com/~virtual-present), and it was just that. We could upload a pic of the gift we sent someone and generate, and if they choose, customize a link. Once someone opens the link, he or she clicks the page, and the virtual present gets unwrapped and shows what's on its way.
+
+Everyone had a good time, even those who didn't participate in the gift giving. Then we hung out, talked about holiday plans, movies and music, and life general. It was great and got me to thinking, why not do more of this.
+
+## How we're team building
+
+Part of our bi-weekly All Hands calls is a time devoted to "empathize" within our team. This has been part of Serverless for ________ and is something that I really liked when I started. Employees have a slide in the deck to present their "Roses" and "Thorns," good and not-so-good things that happened in their lives since the last meeting. We see pics of people's vacations, catch up on kiddos, share books, movies, and podcast recommendations...it's a great time to stay involved with everyone as a team.
+
+Next week we're hosting a virtual coffee time with the team. Everyone who wants to can hop on the Zoom room, bring a cup of coffee, tea, etc., and just hang out. No agenda on the table, only a time for everyone to hang out around a virtual watercooler.
+
+Productivity and shipping great resources are always the priority here at Serverless; one thing we, like so many others, have learned, is that having a great team that works well together makes working better for everyone and ensures we're building the best possible products we can.
+
+
+
+
+
