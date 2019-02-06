@@ -1,7 +1,7 @@
 ---
 title: "Serverless Framework v1.37"
 description: "Check out the latest Serverless Framework v1.37 release."
-date: 2019-01-23
+date: 2019-02-07
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v137-thumb.png'
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v137-header.png'
 category:
@@ -51,7 +51,7 @@ The next release plans to maintain our cadence and keep tackling our issue and P
 
 #### Contributor thanks
 
-Fun fact about all our contributors.
+We had more than 20 contributors have their work go into this release and we can't thank each of them enough. You all make the community special.
 
-
+Want to have your github avatar and name in the next release post? Check out these [issues we are looking for help on](https://github.com/serverless/serverless/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)!
 
