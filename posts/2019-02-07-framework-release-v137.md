@@ -10,7 +10,7 @@ authors:
   - JaredShort
 ---
 
-We have a lot of bug fixes and enhancements on the menu for the v1.37 release. 10 bug fixes, 14 enhancements to make your life better and a few updates to our docs!
+We have a lot of bug fixes and enhancements on the menu for the v1.37 release. 10 bug fixes and 14 enhancements to be exact. Plus, a few updates to our docs!
 
 #### Bug Fixes
 - [#4888](https://github.com/serverless/serverless/pull/4888) Fix broken Azure Hello World Example documentation<a href="https://github.com/serverless/serverless/pull/4888/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+4</span>/<span style="color:#cb2431">-4</span></a> <a href="https://github.com/eeg3"> <img src='https://avatars2.githubusercontent.com/u/1928361?v=4' style="vertical-align: middle" alt='' height="20px"> eeg3</a>
