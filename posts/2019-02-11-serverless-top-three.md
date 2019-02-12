@@ -1,9 +1,9 @@
 ---
 title: "Serverless named EMA Top 3 for serverless technologies!"
 description: "EMA has named Serverless as a Top 3 for serverless technologies in their recently-launched serverless report."
-date: 2019-01-30
-thumbnail: “https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/top-3/top-3-thumbnail.png”
-heroImage: “https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/top-3/top-3-header.png”
+date: 2019-02-11
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/top-3/top-3-thumbnail.png'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/top-3/top-3-header.png'
 category:
   - news
 authors: 
