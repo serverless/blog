@@ -29,7 +29,7 @@ We are humbled by our community and the support you provide; we wouldn’t be he
 
 If you’re interested in using Serverless at your company, or have questions about how to expand usage across the team, we’d love to chat!
 
-Get in touch to [learn more about Serverless Framework Enterprise](https://serverless.com/support/).
+Get in touch to [learn more about Serverless Framework Enterprise](https://serverless.com/enterprise/).
 
 ##### Similar posts
 
