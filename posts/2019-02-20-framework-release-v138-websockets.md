@@ -10,9 +10,11 @@ authors:
   - EslamHefnawy
 ---
 
-As many of you likely remember, [AWS finally added support for WebSockets in API Gateway & Lambda](https://serverless.com/blog/reinvent-2018-serverless-announcements#websocket-support-for-aws-lambda) at last year's re:Invent. Upon initial release, CloudFormation didn't yet have support for WebSockets. We at Serverless wanted the Framework to support WebSockets right away, so we created an [official plugin](https://github.com/serverless/serverless-websockets-plugin) as a temporary measure until CloudFormation support was added.
+As many of you likely remember, [AWS finally added support for WebSockets in API Gateway & Lambda](https://serverless.com/blog/reinvent-2018-serverless-announcements#websocket-support-for-aws-lambda) at last year's re:Invent. Even though CloudFormation didn't have support for WebSockets at initial release, We created an [official Serverless Framework plugin](https://github.com/serverless/serverless-websockets-plugin) to support WebSockets in the Framework right away.
 
-And now, it has been! So we are incredibly excited to announce that, as of Framework v1.38, [the Serverless Framework](https://serverless.com/framework/) has support for WebSockets integrated into Framework core. No plugin required.
+This was only a temporary measure until CloudFormation support was added. And now, it has been.
+
+So we are incredibly excited to announce that the [Serverless Framework](https://serverless.com/framework/) v1.38 now has support for WebSockets integrated into Framework core! No plugin required.
 
 **Note:** This means that the [serverless-websockets-plugin](https://github.com/serverless/serverless-websockets-plugin) is officially deprecated. We will no longer maintain it.
 
