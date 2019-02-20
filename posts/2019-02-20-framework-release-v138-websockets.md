@@ -1,24 +1,24 @@
 ---
 title: "Serverless Framework v1.38 - Introducing Websockets Support"
-description: "Check out the latest Serverless Framework v1.38 release."
+description: "The latest Serverless Framework v1.38 release includes WebSockets support!"
 date: 2019-02-20
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v137-thumb.png'
-heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v137-header.png'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v138-thumb.png'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v138-header.png'
 category:
   - news
 authors:
   - EslamHefnawy
 ---
 
-### Introducing Websockets Support
-After years of waiting, [AWS has finally added support for websockets in API Gateway & Lambda](https://aws.amazon.com/blogs/compute/announcing-websocket-apis-in-amazon-api-gateway/), and because CloudFormation didn't have support for websockets at the time of the initial release, we've created an [official plugin](https://github.com/serverless/serverless-websockets-plugin) that lets you integrate websockets into you Serverless Framework projects.
+As many of you likely remember, [AWS finally added support for WebSockets in API Gateway & Lambda](https://serverless.com/blog/reinvent-2018-serverless-announcements#websocket-support-for-aws-lambda) at last year's re:Invent. Upon initial release, CloudFormation didn't yet have support for WebSockets. We at Serverless wanted the Framework to support WebSockets right away, so we created an [official plugin](https://github.com/serverless/serverless-websockets-plugin) as a temporary measure until CloudFormation support was added.
 
-Fast forward couple of weeks, [CloudFormation now has official support for Websockets](https://aws.amazon.com/about-aws/whats-new/2019/02/automate-websocket-api-creation-in-api-gateway-with-cloudformation/). With that in place, we immediately started adding support for Websockets in the framework core. We're now excited to announce that this 1.38.0 release includes support for Websockets.
+And now, it has been! So we are incredibly excited to announce that, as of Framework v1.38, [the Serverless Framework](https://serverless.com/framework/) has support for WebSockets integrated into Framework core. No plugin required.
 
-**Note:** Now that we have official support for websockets in core, the [serverless-websockets-plugin](https://github.com/serverless/serverless-websockets-plugin) is officially deprecated, and we will no longer maintain it.
+**Note:** This means that the [serverless-websockets-plugin](https://github.com/serverless/serverless-websockets-plugin) is officially deprecated. We will no longer maintain it.
 
-#### Getting Started with Websockets
-To start using websockets in your serverless projects, subscribe your functions to the new `websocket` event by specifying the desired routes that would invoke your function: 
+#### Get Started with WebSockets on the Serverless Framework
+
+To start using WebSockets in your serverless projects, subscribe your functions to the new `websocket` event by specifying the desired routes that would invoke your function: 
 
 ```yml
 functions:
@@ -28,7 +28,7 @@ functions:
       - websocket: $default
 ```
 
-This would create a `$default` route that would forward all websocket events (including `$connect` and `$disconnect`) to your `default` function.
+This will create a `$default` route that will forward all WebSocket events (including `$connect` and `$disconnect`) to your `default` function.
 
 You can also specify your event as an object and add more routes:
 
@@ -58,14 +58,17 @@ functions:
 
 ```
 
-The object notation will be useful when you want to add more configuration to your websocket events, for example when we add support for authorizers in an upcoming release.
+The object notation will be useful when you want to add more configuration to your WebSocket events. For example, when we add support for authorizers in an upcoming release.
 
-Once you deploy this service, you'll see the endpoint of your websocket backend in your terminal. Using this endpoint, you can connect to your websocket backend using any websocket client.
+Once you deploy this service, you'll see the endpoint of your WebSocket backend in your terminal. Using this endpoint, you can connect to your WebSocket backend using any WebSocket client.
 
-You could also have another function with `http` event, so your service would expose to endpoints, one for websockets, the other for http.
+You could also have another function with `http` event, so your service would expose to endpoints: one for websockets, the other for http.
 
 ##### Specifying Route Selection Expression
-By default, the route selection expression is set to `$request.body.action`. This property tells API Gateway how to parse the data coming into your websocket endpoint. So with this default behavior, and using the service above, you can invoke the `echo` function by using the following JSON object as your websocket event body: 
+
+By default, the route selection expression is set to `$request.body.action`. This property tells API Gateway how to parse the data coming into your WebSocket endpoint.
+
+So with this default behavior and using the service above, you can invoke the `echo` function by using the following JSON object as your websocket event body: 
 
 ```json
 {
@@ -83,7 +86,7 @@ provider:
   websocketsApiRouteSelectionExpression: "$request.body.route"
 ```
 
-In that case, your websocket body should be:
+In that case, your WebSocket body should be:
 
 ```json
 {
@@ -92,10 +95,11 @@ In that case, your websocket body should be:
 }
 ```
 
-Remember that any other body/data coming to your websocket back would invoke the default function.
+Remember that any other body/data coming to your WebSocket backend would invoke the default function.
 
 ##### Communicating with clients
-The framework also takes care of setting the permissions required for your lambda function to communicate to the connected clients. So you'll be able to send data to any client right away by using the new `ApiGatewayManagementApi` Service, without having to worry about IAM policies.
+
+The Framework also takes care of setting the permissions required for your Lambda function to communicate to the connected clients. This means you'll be able to send data to any client right away by using the new `ApiGatewayManagementApi` Service, without having to worry about IAM policies:
 
 ```js
   const client = new AWS.ApiGatewayManagementApi({
@@ -111,14 +115,14 @@ The framework also takes care of setting the permissions required for your lambd
     .promise();
 ```
 
-**Note:** At the time of this writing, the Lambda runtime does not include the latest version of the AWS SDK that includes this new `ApiGatewayManagementApi` service. So you'll have to deploy your own by adding it to your `package.json`.
+**Note:** At the time of writing, the Lambda runtime does not include the latest version of the AWS SDK that contains this new `ApiGatewayManagementApi` service. So you'll have to deploy your own by adding it to your `package.json`.
 
-And that's pretty much all you need to do to get started with websockets events. For more information, [please checkout our docs](https://serverless.com/framework/docs/providers/aws/events/websocket/)
+And that's pretty much all you need to do to get started with WebSockets events! For more information, [please check out our docs](https://serverless.com/framework/docs/providers/aws/events/websocket/).
 
 
 ### Changelog
 
-Other than Websockets support, we added a lot of enhancements and bug fixes in this release. Here's our changelog, with some links to the corresponding PRs!
+Other than WebSockets support, we added a lot of enhancements and bug fixes in this release. Here's our changelog, with some links to the corresponding PRs.
 
  - [Set timout & others on context in python invoke local](https://github.com/serverless/serverless/pull/5796)
  - [Append in Custom Syntax](https://github.com/serverless/serverless/pull/5799)
@@ -147,7 +151,7 @@ Other than Websockets support, we added a lot of enhancements and bug fixes in t
 
 #### Roadmap and focus
 
-Over the next few releases, we'll be enhancing websocket support with more features like authorizers and request responses. We're also focusing on improving the local development experience. Keep an eye on the upcoming milestones to stay up to date with what's coming:
+Over the next few releases, we'll be enhancing WebSockets support with more features, like authorizers and request responses. We're also focusing on improving the local development experience. Keep an eye on the upcoming milestones to stay up to date with what's coming:
 
 - [v1.39.0 Milestone](https://github.com/serverless/serverless/milestone/61)
 - [v1.40.0 Milestone](https://github.com/serverless/serverless/milestone/62)
