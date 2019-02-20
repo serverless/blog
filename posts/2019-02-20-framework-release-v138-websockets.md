@@ -1,7 +1,7 @@
 ---
 title: "Serverless Framework v1.38 - Introducing Websockets Support"
 description: "Check out the latest Serverless Framework v1.38 release."
-date: 2019-02-07
+date: 2019-02-20
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v137-thumb.png'
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v137-header.png'
 category:
@@ -11,7 +11,7 @@ authors:
 ---
 
 ### Introducing Websockets Support
-After years of waiting, [AWS has finally added support for websockets in API Gateway & Lambda](https://aws.amazon.com/blogs/compute/announcing-websocket-apis-in-amazon-api-gateway/), and because CloudFormation didn't have support for websockets at the time of the initial release, we've created an [external plugin](https://github.com/serverless/serverless-websockets-plugin) that lets you integrate websockets into you Serverless Framework projects.
+After years of waiting, [AWS has finally added support for websockets in API Gateway & Lambda](https://aws.amazon.com/blogs/compute/announcing-websocket-apis-in-amazon-api-gateway/), and because CloudFormation didn't have support for websockets at the time of the initial release, we've created an [official plugin](https://github.com/serverless/serverless-websockets-plugin) that lets you integrate websockets into you Serverless Framework projects.
 
 Fast forward couple of weeks, [CloudFormation now has official support for Websockets](https://aws.amazon.com/about-aws/whats-new/2019/02/automate-websocket-api-creation-in-api-gateway-with-cloudformation/). With that in place, we immediately started adding support for Websockets in the framework core. We're now excited to announce that this 1.38.0 release includes support for Websockets.
 
@@ -62,6 +62,9 @@ The object notation will be useful when you want to add more configuration to yo
 
 Once you deploy this service, you'll see the endpoint of your websocket backend in your terminal. Using this endpoint, you can connect to your websocket backend using any websocket client.
 
+You could also have another function with `http` event, so your service would expose to endpoints, one for websockets, the other for http.
+
+##### Specifying Route Selection Expression
 By default, the route selection expression is set to `$request.body.action`. This property tells API Gateway how to parse the data coming into your websocket endpoint. So with this default behavior, and using the service above, you can invoke the `echo` function by using the following JSON object as your websocket event body: 
 
 ```json
@@ -91,6 +94,7 @@ In that case, your websocket body should be:
 
 Remember that any other body/data coming to your websocket back would invoke the default function.
 
+##### Communicating with clients
 The framework also takes care of setting the permissions required for your lambda function to communicate to the connected clients. So you'll be able to send data to any client right away by using the new `ApiGatewayManagementApi` Service, without having to worry about IAM policies.
 
 ```js
@@ -109,49 +113,44 @@ The framework also takes care of setting the permissions required for your lambd
 
 **Note:** At the time of this writing, the Lambda runtime does not include the latest version of the AWS SDK that includes this new `ApiGatewayManagementApi` service. So you'll have to deploy your own by adding it to your `package.json`.
 
-And that's pretty much all you need to do to get started with websockets events. For more information, [please checkout our docs](THIS LINK SHOULD BE UPDATED ONCE DOCS ARE RELEASED)
+And that's pretty much all you need to do to get started with websockets events. For more information, [please checkout our docs](https://serverless.com/framework/docs/providers/aws/events/websocket/)
 
 
-### Other features of v1.38.0 (THIS SECTION NEEDS TO BE UPDATED)
+### Changelog
 
-Other than Websockets support, we added a lot of enhancements and bug fixes in this release. 10 bug fixes and 14 enhancements to be exact. Plus, a few updates to our docs!
+Other than Websockets support, we added a lot of enhancements and bug fixes in this release. Here's our changelog, with some links to the corresponding PRs!
 
-#### Bug Fixes
-- [#5839](https://github.com/serverless/serverless/pull/5839) Fix service name in template install message<a href="https://github.com/serverless/serverless/pull/4888/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+4</span>/<span style="color:#cb2431">-4</span></a> <a href="https://github.com/eeg3"> <img src='https://avatars2.githubusercontent.com/u/1928361?v=4' style="vertical-align: middle" alt='' height="20px"> eeg3</a>
-- [#5710](https://github.com/serverless/serverless/pull/5710) Fix #5664 - Rollback fails due to a timestamp parsing error<a href="https://github.com/serverless/serverless/pull/5710/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+53</span>/<span style="color:#cb2431">-7</span></a> <a href="https://github.com/luanmuniz"> <img src='https://avatars0.githubusercontent.com/u/3428149?v=4' style="vertical-align: middle" alt='' height="20px"> luanmuniz</a>
-- [#5714](https://github.com/serverless/serverless/pull/5714) AWS: Tell S3 bucket name and how to recover if deployment bucket does not exist<a href="https://github.com/serverless/serverless/pull/5714/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+28</span>/<span style="color:#cb2431">-1</span></a> <a href="https://github.com/exoego"> <img src='https://avatars2.githubusercontent.com/u/127635?v=4' style="vertical-align: middle" alt='' height="20px"> exoego</a>
-- [#5728](https://github.com/serverless/serverless/pull/5728) Do not print logs if print command is used.<a href="https://github.com/serverless/serverless/pull/5728/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+105</span>/<span style="color:#cb2431">-0</span></a> <a href="https://github.com/exoego"> <img src='https://avatars2.githubusercontent.com/u/127635?v=4' style="vertical-align: middle" alt='' height="20px"> exoego</a>
-- [#5739](https://github.com/serverless/serverless/pull/5739) Fix assuming a role with an AWS profile<a href="https://github.com/serverless/serverless/pull/5739/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+88</span>/<span style="color:#cb2431">-19</span></a> <a href="https://github.com/piohhmy"> <img src='https://avatars0.githubusercontent.com/u/1857656?v=4' style="vertical-align: middle" alt='' height="20px"> piohhmy</a>
-- [#5744](https://github.com/serverless/serverless/pull/5744) Resolve profile before performing aws-sdk dependent actions<a href="https://github.com/serverless/serverless/pull/5744/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+11</span>/<span style="color:#cb2431">-5</span></a> <a href="https://github.com/dschep"> <img src='https://avatars0.githubusercontent.com/u/667763?v=4' style="vertical-align: middle" alt='' height="20px"> dschep</a>
-- [#5760](https://github.com/serverless/serverless/pull/5760) don't check call tty on macs<a href="https://github.com/serverless/serverless/pull/5760/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+2</span>/<span style="color:#cb2431">-1</span></a> <a href="https://github.com/dschep"> <img src='https://avatars0.githubusercontent.com/u/667763?v=4' style="vertical-align: middle" alt='' height="20px"> dschep</a>
-- [#5763](https://github.com/serverless/serverless/pull/5763) Require provider.credentials vars to be resolved before s3/ssm/cf vars<a href="https://github.com/serverless/serverless/pull/5763/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+45</span>/<span style="color:#cb2431">-4</span></a> <a href="https://github.com/dschep"> <img src='https://avatars0.githubusercontent.com/u/667763?v=4' style="vertical-align: middle" alt='' height="20px"> dschep</a>
-- [#5775](https://github.com/serverless/serverless/pull/5775) Preserve whitespaces in single-quote literal fallback<a href="https://github.com/serverless/serverless/pull/5775/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+12</span>/<span style="color:#cb2431">-2</span></a> <a href="https://github.com/exoego"> <img src='https://avatars2.githubusercontent.com/u/127635?v=4' style="vertical-align: middle" alt='' height="20px"> exoego</a>
-- [#5785](https://github.com/serverless/serverless/pull/5785) Fixes for AWS cors config issues<a href="https://github.com/serverless/serverless/pull/5785/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+14</span>/<span style="color:#cb2431">-3</span></a> <a href="https://github.com/pchynoweth"> <img src='https://avatars0.githubusercontent.com/u/24738364?v=4' style="vertical-align: middle" alt='' height="20px"> pchynoweth</a>
-
-#### Enhancements
-- [#4712](https://github.com/serverless/serverless/pull/4712) Enable tab completion for slss shortcut<a href="https://github.com/serverless/serverless/pull/4712/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+2</span>/<span style="color:#cb2431">-0</span></a> <a href="https://github.com/drexler"> <img src='https://avatars3.githubusercontent.com/u/1205434?v=4' style="vertical-align: middle" alt='' height="20px"> drexler</a>
-- [#4794](https://github.com/serverless/serverless/pull/4794) Default to error code if message is non-existent<a href="https://github.com/serverless/serverless/pull/4794/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+77</span>/<span style="color:#cb2431">-1</span></a> <a href="https://github.com/drexler"> <img src='https://avatars3.githubusercontent.com/u/1205434?v=4' style="vertical-align: middle" alt='' height="20px"> drexler</a>
-- [#4822](https://github.com/serverless/serverless/pull/4822) Add resource count and warning to info display<a href="https://github.com/serverless/serverless/pull/4822/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+182</span>/<span style="color:#cb2431">-2</span></a> <a href="https://github.com/alexdebrie"> <img src='https://avatars3.githubusercontent.com/u/6509926?v=4' style="vertical-align: middle" alt='' height="20px"> alexdebrie</a>
-- [#5139](https://github.com/serverless/serverless/pull/5139) Allows Fn::GetAtt with Lambda DLQ-onError<a href="https://github.com/serverless/serverless/pull/5139/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+59</span>/<span style="color:#cb2431">-10</span></a> <a href="https://github.com/martinjlowm"> <img src='https://avatars0.githubusercontent.com/u/110860?v=4' style="vertical-align: middle" alt='' height="20px"> martinjlowm</a>
-- [#5161](https://github.com/serverless/serverless/pull/5161) Updated aws provider to invoke .promise on methods that support it. Otherwise falls back to .send with a callback<a href="https://github.com/serverless/serverless/pull/5161/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+39</span>/<span style="color:#cb2431">-6</span></a> <a href="https://github.com/exocom"> <img src='https://avatars2.githubusercontent.com/u/2851652?v=4' style="vertical-align: middle" alt='' height="20px"> exocom</a>
-- [#5311](https://github.com/serverless/serverless/pull/5311) Upgrade google-cloudfunctions to v2 and set defaults to node8 etc<a href="https://github.com/serverless/serverless/pull/5311/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+3</span>/<span style="color:#cb2431">-3</span></a> <a href="https://github.com/bodaz"> <img src='https://avatars0.githubusercontent.com/u/6238558?v=4' style="vertical-align: middle" alt='' height="20px"> bodaz</a>
-- [#5495](https://github.com/serverless/serverless/pull/5495) Add uploaded file name to log while AWS deploy<a href="https://github.com/serverless/serverless/pull/5495/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+5</span>/<span style="color:#cb2431">-2</span></a> <a href="https://github.com/Enase"> <img src='https://avatars3.githubusercontent.com/u/2459495?v=4' style="vertical-align: middle" alt='' height="20px"> Enase</a>
-- [#5577](https://github.com/serverless/serverless/pull/5577) Add template for provided runtime with the bash sample from AWS<a href="https://github.com/serverless/serverless/pull/5577/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+154</span>/<span style="color:#cb2431">-0</span></a> <a href="https://github.com/dschep"> <img src='https://avatars0.githubusercontent.com/u/667763?v=4' style="vertical-align: middle" alt='' height="20px"> dschep</a>
-- [#5636](https://github.com/serverless/serverless/pull/5636) Throw an error if plugin is executed outside of a serverless directory<a href="https://github.com/serverless/serverless/pull/5636/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+48</span>/<span style="color:#cb2431">-45</span></a> <a href="https://github.com/shanehandley"> <img src='https://avatars2.githubusercontent.com/u/1322294?v=4' style="vertical-align: middle" alt='' height="20px"> shanehandley</a>
-- [#5656](https://github.com/serverless/serverless/pull/5656) handle layers paths with trailing slash and leading ./ or just .<a href="https://github.com/serverless/serverless/pull/5656/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+56</span>/<span style="color:#cb2431">-3</span></a> <a href="https://github.com/dschep"> <img src='https://avatars0.githubusercontent.com/u/667763?v=4' style="vertical-align: middle" alt='' height="20px"> dschep</a>
-- [#5705](https://github.com/serverless/serverless/pull/5705) Convert reservedConcurrency to integer to allow use env var<a href="https://github.com/serverless/serverless/pull/5705/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+6</span>/<span style="color:#cb2431">-3</span></a> <a href="https://github.com/snurmine"> <img src='https://avatars0.githubusercontent.com/u/16050765?v=4' style="vertical-align: middle" alt='' height="20px"> snurmine</a>
-- [#5740](https://github.com/serverless/serverless/pull/5740) Provide multi origin cors values<a href="https://github.com/serverless/serverless/pull/5740/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+85</span>/<span style="color:#cb2431">-11</span></a> <a href="https://github.com/richarddd"> <img src='https://avatars2.githubusercontent.com/u/1422927?v=4' style="vertical-align: middle" alt='' height="20px"> richarddd</a>
-- [#5754](https://github.com/serverless/serverless/pull/5754) Add Hello World Ruby Example<a href="https://github.com/serverless/serverless/pull/5754/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+63</span>/<span style="color:#cb2431">-0</span></a> <a href="https://github.com/yuki3738"> <img src='https://avatars3.githubusercontent.com/u/6305192?v=4' style="vertical-align: middle" alt='' height="20px"> yuki3738</a>
-- [#5758](https://github.com/serverless/serverless/pull/5758) AWS: Add fallback support in ${cf} and ${s3}<a href="https://github.com/serverless/serverless/pull/5758/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+137</span>/<span style="color:#cb2431">-1</span></a> <a href="https://github.com/exoego"> <img src='https://avatars2.githubusercontent.com/u/127635?v=4' style="vertical-align: middle" alt='' height="20px"> exoego</a>
-
-#### Documentation
-- [#5731](https://github.com/serverless/serverless/pull/5731) Fix link<a href="https://github.com/serverless/serverless/pull/5731/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+7</span>/<span style="color:#cb2431">-7</span></a> <a href="https://github.com/kazufumi-nishida-www"> <img src='https://avatars0.githubusercontent.com/u/40748597?v=4' style="vertical-align: middle" alt='' height="20px"> kazufumi-nishida-www</a>
-- [#5751](https://github.com/serverless/serverless/pull/5751) Fix typo in Multiple Configuration Files example<a href="https://github.com/serverless/serverless/pull/5751/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+1</span>/<span style="color:#cb2431">-1</span></a> <a href="https://github.com/paflopes"> <img src='https://avatars0.githubusercontent.com/u/5330156?v=4' style="vertical-align: middle" alt='' height="20px"> paflopes</a>
-- [#5788](https://github.com/serverless/serverless/pull/5788) Document how to use Secrets Manager<a href="https://github.com/serverless/serverless/pull/5788/files?utf8=✓&diff=split" style="text-decoration:none;"> <span style="color:#28a647">+18</span>/<span style="color:#cb2431">-0</span></a> <a href="https://github.com/dschep"> <img src='https://avatars0.githubusercontent.com/u/667763?v=4' style="vertical-align: middle" alt='' height="20px"> dschep</a>
+ - [Set timout & others on context in python invoke local](https://github.com/serverless/serverless/pull/5796)
+ - [Append in Custom Syntax](https://github.com/serverless/serverless/pull/5799)
+ - [Don't load config for `config`](https://github.com/serverless/serverless/pull/5798)
+ - [Replace blocking fs.readFileSync with non blocking fs.readFile in checkForChanges.js](https://github.com/serverless/serverless/pull/5791)
+ - [Added layer option for deploy function update-config](https://github.com/serverless/serverless/pull/5787)
+ - [fix makeDeepVariable replacement](https://github.com/serverless/serverless/pull/5809)
+ - [Make local ruby pry work](https://github.com/serverless/serverless/pull/5718)
+ - [Replace \ with / in paths on windows before passing to nanomatch](https://github.com/serverless/serverless/pull/5808)
+ - [Support deploying GoLang to AWS from Windows!](https://github.com/serverless/serverless/pull/5813)
+ - [Fix windows go rework](https://github.com/serverless/serverless/pull/5816)
+ - [Make use of join operator first argument in sns docs](https://github.com/serverless/serverless/pull/5826)
+ - [add support for command type='container'](https://github.com/serverless/serverless/pull/5821)
+ - [Add Google Python function template](https://github.com/serverless/serverless/pull/5819)
+ - [Update config-credentials.md](https://github.com/serverless/serverless/pull/5827)
+ - [Update bucket conf to default AES256 encryption.](https://github.com/serverless/serverless/pull/5800)
+ - [Fix: override wildcard glob pattern (**) in resolveFilePathsFromPatterns](https://github.com/serverless/serverless/pull/5825)
+ - [Indicate unused context in aws-nodejs-typescipt](https://github.com/serverless/serverless/pull/5832)
+ - [Add stack trace to aws/invokeLocal errors](https://github.com/serverless/serverless/pull/5835)
+ - [Missing underscore](https://github.com/serverless/serverless/pull/5836)
+ - [Updating cloudformation resource reference url](https://github.com/serverless/serverless/pull/5690)
+ - [Docs: Replacing "runtimes" with "templates"](https://github.com/serverless/serverless/pull/5843)
+ - [Add support for websockets event](https://github.com/serverless/serverless/pull/5824)
+ - [AWS: ${ssm} resolve vairbale as JSON if it is stored as JSON in Secrets Manager](https://github.com/serverless/serverless/pull/5842)
+ - [Fix service name in template install message](https://github.com/serverless/serverless/pull/5839)
 
 #### Roadmap and focus
 
-The next release plans to maintain our cadence and keep tackling our issue and PR backlog.
+Over the next few releases, we'll be enhancing websocket support with more features like authorizers and request responses. We're also focusing on improving the local development experience. Keep an eye on the upcoming milestones to stay up to date with what's coming:
+
+- [v1.39.0 Milestone](https://github.com/serverless/serverless/milestone/61)
+- [v1.40.0 Milestone](https://github.com/serverless/serverless/milestone/62)
 
 #### Contributor thanks
 
