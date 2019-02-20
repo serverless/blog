@@ -64,7 +64,7 @@ The object notation will be useful when you want to add more configuration to yo
 
 Once you deploy this service, you'll see the endpoint of your WebSocket backend in your terminal. Using this endpoint, you can connect to your WebSocket backend using any WebSocket client.
 
-You could also have another function with `http` event, so your service would expose to endpoints: one for websockets, the other for http.
+You could also have another function with `http` event, so your service would expose two endpoints: one for websockets, the other for http.
 
 ##### Specifying Route Selection Expression
 
