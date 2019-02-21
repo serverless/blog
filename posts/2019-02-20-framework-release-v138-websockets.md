@@ -1,7 +1,7 @@
 ---
 title: "Serverless Framework v1.38 - Introducing Websockets Support"
 description: "The latest Serverless Framework v1.38 release includes WebSockets support!"
-date: 2019-02-20
+date: 2019-02-21
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v138-thumb.png'
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v138-header.png'
 category:
@@ -10,11 +10,9 @@ authors:
   - EslamHefnawy
 ---
 
-As many of you likely remember, [AWS finally added support for WebSockets in API Gateway & Lambda](https://serverless.com/blog/reinvent-2018-serverless-announcements#websocket-support-for-aws-lambda) at last year's re:Invent. Even though CloudFormation didn't have support for WebSockets at initial release, We created an [official Serverless Framework plugin](https://github.com/serverless/serverless-websockets-plugin) to support WebSockets in the Framework right away.
+As many of you likely remember, [AWS finally added support for WebSockets in API Gateway & Lambda](https://serverless.com/blog/reinvent-2018-serverless-announcements#websocket-support-for-aws-lambda) at last year's re:Invent. While we were all waiting for CloudFormation support, we created an [official Serverless Framework plugin](https://github.com/serverless/serverless-websockets-plugin) to support WebSockets in the Framework right away.
 
-This was only a temporary measure until CloudFormation support was added. And now, it has been.
-
-So we are incredibly excited to announce that the [Serverless Framework](https://serverless.com/framework/) v1.38 now has support for WebSockets integrated into Framework core! No plugin required.
+This was only a temporary measure until CloudFormation support was added. And now, it has been! So we are incredibly excited to announce that the [Serverless Framework](https://serverless.com/framework/) v1.38 now has support for WebSockets integrated into Framework core. No plugin required.
 
 **Note:** This means that the [serverless-websockets-plugin](https://github.com/serverless/serverless-websockets-plugin) is officially deprecated. We will no longer maintain it.
 
