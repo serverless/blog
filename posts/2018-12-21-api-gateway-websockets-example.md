@@ -11,6 +11,7 @@ authors:
   - JaredShort
 ---
 
+**Update:** As of v1.38, the Serverless Framework supports WebSockets in core. No need for a plugin! [Read the announcement and how-to here.](https://serverless.com/blog/api-gateway-websockets-support)
 
 As we approach the end of 2018, I’m incredibly excited to announce that we at Serverless have a small gift for you: You can work with Amazon API Gateway WebSockets in your Serverless Framework applications starting _right now_.
 
