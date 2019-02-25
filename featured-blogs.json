@@ -1,7 +1,7 @@
 [
-  "publish-aws-lambda-layers-serverless-framework",
-  "dynamodb-on-demand-serverless",
+  "framework-release-v138-websockets",
+  "serverless-top-three",
+  "definitive-guide-terraform-serverless",
   "sqquid-one-hundred-percent-serverless",
-  "api-gateway-websockets-support",
-  "serverless-twitter-camp-fire"
+  "publish-aws-lambda-layers-serverless-framework",
 ]
