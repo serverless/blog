@@ -118,4 +118,4 @@ Most of all, Bachta is floored with how easy Serverless makes it to ship softwar
 
 If you are thinking of moving onto the cloud, we're here to help you with serverless-specific tooling and dedicated support.
 
-[Talk to us] about Serverless Framework Enterprise(https://serverless.com/enterprise/) to learn more!
+[Talk to us about Serverless Framework Enterprise](https://serverless.com/enterprise/) to learn more!
