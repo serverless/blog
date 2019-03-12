@@ -2,8 +2,8 @@
 title: "How Shamrock transacts billions of dollars with Serverless Framework Enterprise"
 description: "See how Shamrock’s serverless invoicing system handles billions of dollars of transactions with no active scaling required. Plus: their multi-cloud approach with AWS and Google."
 date: 2019-02-26
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/shamrock-story/shamrock-serverless-thumbnail.png'
-heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/shamrock-story/shamrock-serverless-header.png'
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/shamrock-story/shamrock-serverless-thumbnail.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/shamrock-story/shamrock-serverless-header.png"
 category:
   - user-stories
 authors:
@@ -34,11 +34,11 @@ Their new architecture was recently put to the test when they got a 30% usage sp
 
 The engineering team is relieved to have a system that they don’t have to babysit every day. Their business team has been ecstatic about the new system, and how much happier customers are with its performance.
 
->  We gained the respect of the business teams with this app, and now they want more. With serverless, we can turn around fast with good quality. If you do things right in serverless, it forces good quality and scales immensely.
+> We gained the respect of the business teams with this app, and now they want more. With serverless, we can turn around fast with good quality. If you do things right in serverless, it forces good quality and scales immensely.
 
-*—Tim Bachta, CTO*
+_—Tim Bachta, CTO_
 
-Their cost for all this? $3,000 a month, 10x less than their previous Docker cost with less to manage and no active scaling required.
+Their cost for all this? \$3,000 a month, 10x less than their previous Docker cost with less to manage and no active scaling required.
 
 Because of its success, the Shamrock engineering team is actively converting more legacy applications over to serverless and building new internal tools to automate more of the business team’s workflow: an internal staff tool to audit paperwork, for example.
 
@@ -48,11 +48,11 @@ They took their old Node.js code from Docker and moved it over to the Serverless
 
 > Devs were able to focus on developing out what was needed. They could just code.
 
-*—Tim Bachta, CTO*
+_—Tim Bachta, CTO_
 
 Their serverless invoicing application currently has about 100 services total, and is able to be managed by a 10-person engineering team.
 
-While Shamrock began the migration using the Serverless Framework Open Source, they eventually switched to Serverless Framework Enterprise as they scaled for the way it helped them further streamline their serverless operations—the Enterprise version of the Framework provides additional tooling, dashboards, and 24/7 support.
+For their migration, they decided to leverage Serverless Framework Enterprise to help streamline their serverless operations and scale development through training, additional tooling, our dashboard, and enterprise support.
 
 #### Multi-cloud: AWS cloud + Google services
 
@@ -68,11 +68,11 @@ Plus, with the Serverless Framework, they can easily deploy to other clouds with
 
 CTO Tim Bachta admits that adopting a serverless and event-driven mindset can be a culture shift, but ultimately one that comes with a lot of upsides.
 
-His teams have autonomy to work on things they feel will drive productivity or business value, and at the end of the day, whoever built it is responsible for it. 
+His teams have autonomy to work on things they feel will drive productivity or business value, and at the end of the day, whoever built it is responsible for it.
 
 > You wanna solve it you build it. You build it you run it. You run it you own it. Everybody’s a builder.
 
-*—Tim Bachta, CTO*
+_—Tim Bachta, CTO_
 
 ##### CI/CD with Serverless
 
@@ -86,7 +86,7 @@ Overall, the engineering culture at Shamrock is one with a high level of ownersh
 
 > I want everybody to test their code, and not just on their computer. I want them to support their code when something goes wrong. But we empower our developers through serverless. With empowerment comes responsibility.
 
-*—Tim Bachta, CTO*
+_—Tim Bachta, CTO_
 
 #### Challenges along the way
 
@@ -112,7 +112,7 @@ Most of all, Bachta is floored with how easy Serverless makes it to ship softwar
 
 > I’ve been doing this for 20+ years, and I can think back to two years ago what it used to take to build a new feature. I need this VM, I need this provisioned, etc. And now, it’s as easy as—I need this Lambda to be connected to this API, go. The ability for developers to test and experiment and get stuff out there is huge.
 
-*—Tim Bachta, CTO*
+_—Tim Bachta, CTO_
 
 #### Try Serverless Framework Enterprise
 
