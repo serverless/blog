@@ -52,7 +52,7 @@ _—Tim Bachta, CTO_
 
 Their serverless invoicing application currently has about 100 services total, and is able to be managed by a 10-person engineering team.
 
-For their migration, they decided to leverage Serverless Framework Enterprise to help streamline their serverless operations and scale development through training, additional tooling, our dashboard, and enterprise support.
+For their migration, they leveraged Serverless Framework Enterprise to help streamline their serverless operations and scale development through training, additional tooling, our dashboard, and enterprise support.
 
 #### Multi-cloud: AWS cloud + Google services
 
