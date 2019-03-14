@@ -269,4 +269,4 @@ If you've never used Serverless before, building an app that resizes images is a
 
 To get going with Serverless, start with [their own documentation](https://serverless.com/framework/docs/getting-started/), or check out their [AWS-based introduction to the Serverless framework](https://serverless.com/framework/docs/providers/aws/guide/intro/). For other cloud providers, [Serverless can help you there too](https://serverless.com/framework/docs/#Supported-Providers).
 
-You can find the full example project from this article [in this GitHub repo](https://github.com/chief-wizard/serverless-nodejs-image-resizing).
+You can find the full example project from this article [in this GitHub repo](https://serverless.com/examples/aws-node-dynamic-image-resizer).
