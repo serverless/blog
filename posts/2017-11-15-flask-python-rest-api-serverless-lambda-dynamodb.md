@@ -266,7 +266,7 @@ def create_user():
     user_id = request.json.get('userId')
     name = request.json.get('name')
     if not user_id or not name:
-        return jsonify({'error': 'Please provider userId and name'}), 400
+        return jsonify({'error': 'Please provide userId and name'}), 400
 
     resp = client.put_item(
         TableName=USERS_TABLE,
