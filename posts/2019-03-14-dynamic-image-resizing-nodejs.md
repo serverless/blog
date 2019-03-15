@@ -2,8 +2,8 @@
 title: "Dynamic image resizing with Node.js and the Serverless Framework"
 description: "Learn how to create an API that allows you to resize images dynamically using AWS, S3, Lambda & Serverless Framework."
 date: 2019-03-14
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/shamrock-story/shamrock-serverless-thumbnail.png"
-heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/shamrock-story/shamrock-serverless-header.png"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/dynamic-image-resizing/dynamic-image-resizing-thumbnail.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/dynamic-image-resizing/dynamic-image-resizing-header.png"
 category:
   - guides-and-tutorials
 authors:
