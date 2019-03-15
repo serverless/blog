@@ -16,13 +16,13 @@ Above all, large images dramatically increase page load times, impacting the use
 
 With those downsides in mind, it's in your interest to generate and serve a compressed image of lower but still good quality. But what's the ideal image size? Given the huge variety of potential screen sizes, that question is nearly impossible to answer. And pre-scaling the original image to all imaginable sizes will result in an unsustainable hit to your cloud storage capacity and therefore to your monthly bill. So what's the solution?
 
-Enter Serverless, an up-and-coming framework for cloud platforms that does for you what server-side code normally would. Serverless' auto-scaling, pay-per-execution functions not only let you avoid that massive collection of pre-scaled cloud data, but also significantly cut down on your compute costs, since you won't need to maintain a fleet of image scaling servers.
+Serverless Framework, which makes it very easy to build applications using AWS Lambda and other Serverless compute providers, is a great solution for this use case. Serverless' auto-scaling, pay-per-execution functions not only let you avoid that massive collection of pre-scaled cloud data, but also significantly cut down on your compute costs, since you won't need to maintain a fleet of image scaling servers.
 
-In this article, we'll take an in-depth look at the benefits of dynamic image resizing and walk you through using the Serverless framework to resize your images dynamically. So, let's get to it!
+In this article, we'll take an in-depth look at the benefits of dynamic image resizing and walk you through using the Serverless Framework to resize your images dynamically with AWS Lambda. So, let's get to it!
 
 #### A solution using S3
 
-In this example we'll be using Node.js along with [the Serverless framework](https://serverless.com/framework/) to build our app. We’ll also be using S3, the AWS cloud storage service, but the Serverless framework works with Azure, GCP and Kubernetes as well, among others.
+In this example we'll be using Node.js along with [the Serverless framework](https://serverless.com/framework/) to build our app. We’ll also be using S3, the AWS cloud storage service, but the Serverless Framework works with Azure, GCP and Kubernetes as well, among others.
 
 Here's the core logic of our process: If we already have the properly sized image in our S3 storage, calling the corresponding S3 URI will serve us the previously stored image directly. But if we don't have the image in that size yet, following the S3 link will first generate the image in that size and then serve it to us. And, of course, the newly resized image gets stored in S3.
 
