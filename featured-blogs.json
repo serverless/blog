@@ -1,7 +1,7 @@
 [
-  "dynamic-image-resizing-nodejs",
   "framework-release-v138-websockets",
   "serverless-top-three",
   "definitive-guide-terraform-serverless",
-  "sqquid-one-hundred-percent-serverless"
+  "sqquid-one-hundred-percent-serverless",
+  "publish-aws-lambda-layers-serverless-framework"
 ]
