@@ -87,7 +87,7 @@ provider:
 
 functions:
   app:
-    handler: wsgi.handler
+    handler: wsgi_handler.handler
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
@@ -194,7 +194,7 @@ provider:
 
 functions:
   app:
-    handler: wsgi.handler
+    handler: wsgi_handler.handler
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
@@ -335,7 +335,7 @@ Let's take another look at our function configuration in `serverless.yml`:
 ```
 functions:
   app:
-    handler: wsgi.handler
+    handler: wsgi_handler.handler
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
@@ -360,16 +360,16 @@ Each function instance will have the same code, but they'll be segmented for met
 
 functions:
   app:
-    handler: wsgi.handler
+    handler: wsgi_handler.handler
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
   getUser:
-    handler: wsgi.handler
+    handler: wsgi_handler.handler
     events:
       - http: 'GET /users/{proxy+}'
   createUser:
-    handler: wsgi.handler
+    handler: wsgi_handler.handler
     events:
       - http: 'POST /users'
 ```
@@ -547,7 +547,7 @@ If you already have an existing Flask application, it's very easy to convert to 
 
 	functions:
 	  app:
-	    handler: wsgi.handler
+	    handler: wsgi_handler.handler
 	    events:
 	      - http: ANY /
 	      - http: 'ANY {proxy+}'
