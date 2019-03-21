@@ -1,6 +1,7 @@
 {
   "name": "Michael Lavers",
   "github": "kolanos",
+  "avatar":false,
   "site": "https://iopipe.com",
   "bio": {
     "short": "Michael Lavers is a senior software engineer at IOpipe.",
@@ -8,3 +9,4 @@
       "Michael Lavers is a senior software engineer at IOpipe."
   }
 }
+
