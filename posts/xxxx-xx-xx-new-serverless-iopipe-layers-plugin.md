@@ -13,7 +13,7 @@ authors:
 
 ---
 
-IOpipe just released a new [Serverless plugin](https://github.com/iopipe/serverless-iopipe-layers) to add monitoring and observability to your Lambda functions without requiring code changes.
+IOpipe just released a new [Serverless plugin](https://github.com/iopipe/serverless-iopipe-layers) to add monitoring and observability to your Lambda functions—without requiring code changes.
 
 If you’re using the [Serverless Framework](https://serverless.com/framework/) to build, deploy, and operate your applications on AWS Lambda, we built our new plugin to make it simple for developers to get realtime high-resolution invocation metrics and intuitive debugging for their serverless applications.
 
