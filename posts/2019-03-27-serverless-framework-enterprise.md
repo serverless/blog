@@ -15,7 +15,7 @@ Last year, we announced our **Serverless Platform Beta**. Today, we’re bringin
 Check it out [here](https://serverless.com/enterprise/) to get access.
 
 <video autoplay>
-    <source src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-enterprise-release/serverless-framework-enterprise-dashboard-overview-compressed.mp4" type="video/mp4">
+    <source src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-enterprise-release/serverless-framework-enterprise-dashboard-overview-SMALL.mp4" type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
 
