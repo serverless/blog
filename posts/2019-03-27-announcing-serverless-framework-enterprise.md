@@ -4,6 +4,7 @@ description: "The end-to-end tool for building and managing serverless applicati
 date: 2019-03-27
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-enterprise-release/serverless-framework-enterprise-thumbnail.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-enterprise-release/serverless-framework-enterprise-header.png"
+dontShowHeroImageInBlog: "true"
 category:
   - news
 authors:
