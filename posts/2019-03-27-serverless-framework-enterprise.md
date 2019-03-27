@@ -14,7 +14,13 @@ Last year, we announced our **Serverless Platform Beta**.  Today, we’re bringi
 
 Check it out [here](https://serverless.com/enterprise/) to get access.
 
-[ Animation of deploying and the dashboard ]
+<video>
+
+    <source src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-enterprise-release/serverless-framework-enterprise-dashboard-overview-compressed.mp4" type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
 
 The serverless movement was never supposed to be about needing multiple tools to build and operate your applications.  Serverless is about doing more with less.
 
