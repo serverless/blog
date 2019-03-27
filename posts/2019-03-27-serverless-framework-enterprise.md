@@ -38,7 +38,7 @@ The Enterprise console includes simple charts that you can click for low-level d
 
 When a new error is detected in your code, we’ll tell you about it immediately.  We’ll even tell you where the error is.
 
-[ Animation of Error Alert ] 
+![Serverless Framework Enterprise Dashboard Error Alerts](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-enterprise-release/serverless-framework-enterprise-dashboard-error-alerts.png)
 
 #### Serverless Secrets
 
@@ -48,13 +48,11 @@ Serverless Framework Enterprise ships with a solution for secrets management cal
 
 You can create secrets within the Enterprise console and easily reference them via the Serverless Framework’s variable system.
 
-[ Animation of a Secret Variable ]
-
 You can also create a special type of secret that gives the Serverless Framework temporary access to deploy to your Amazon Web Services account.
 
 Using this, the developers on your team and your CI/CD system do not need access credentials to your cloud account.  All that’s needed is to add the AWS Secret to the “credentials” property in “serverless.yml”.
 
-[ Animation of AWS Secret ]
+![Serverless Framework Enterprise Secrets](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-enterprise-release/serverless-framework-enterprise-secrets.png)
 
 #### Serverless Safeguards
 
