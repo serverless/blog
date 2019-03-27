@@ -15,7 +15,7 @@ Last year, we announced our **Serverless Platform Beta**. Today, we’re bringin
 
 Check it out [here](https://serverless.com/enterprise/) to get access.
 
-<video autoplay muted loop controls>
+<video autoplay muted loop controls poster='https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-enterprise-release/FWE-video-start-image.png'>
     <source src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-enterprise-release/serverless-framework-enterprise-dashboard-overview-SMALL.mp4" type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
@@ -71,4 +71,4 @@ Think of it as a linter for serverless applications.
 
 #### Available Now
 
-Serverless Framework Enterprise is available today. [Click here to get access](https://www.serverless.com/enterprise/)
+Serverless Framework Enterprise is available today. [Click here to get access](https://serverless.com/enterprise/#enterprise-contact-form)
