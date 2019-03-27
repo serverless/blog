@@ -89,9 +89,9 @@ Most importantly: Serverless is about outcomes, not infrastructure. We believe w
 
 Great! We have a full working example ready to go.
 
-Head on over to the [Serverless Components repo](https://github.com/serverless/components) on GitHub and check out our [example retail app](https://github.com/serverless/components/tree/master/examples/retail-app).
+Head on over to the [Serverless Components repo](https://github.com/serverless/components) on GitHub and check out our [templates](https://github.com/serverless/components/tree/master/templates).
 
-We’ve authored several infrastructure-level Components you can use to create higher-order outcomes [in our temporary registry](https://github.com/serverless/components/tree/master/registry).
+We’ve authored several infrastructure-level Components you can use to create higher-order outcomes [in our temporary registry](https://github.com/serverless/components/tree/master/registry.json).
 
 If you'd like a really comprehensive walkthrough, here's how to [set up a landing page using the Serverless Netlify and Lambda Components](https://serverless.com/blog/how-to-create-landing-page-with-serverless-components/).
 
