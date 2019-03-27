@@ -63,7 +63,7 @@ Serverless Framework Enterprise includes its own policy engine called Serverless
 Safeguards can be configured in the Enterprise console.  There are over a dozen Safeguards that come out-of-the-box with Serverless Framework Enterprise, that will warn you if your application contains any well known architectural anti-patterns.
 Think of it as a linter for serverless applications.
 
-[ Animation of Safeguards Processing in Terminal ]
+![Serverless Framework Enterprise Safeguards](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-framework-enterprise-release/serverless-framework-enterprise-safeguards.png)
 
 #### Available Now
 
