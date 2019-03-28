@@ -71,4 +71,4 @@ Think of it as a linter for serverless applications.
 
 #### Available Now
 
-Serverless Framework Enterprise is available today. [Click here to get access](https://serverless.com/enterprise/#enterprise-contact-form)
+Serverless Framework Enterprise is available today. [Click here to get access](https://serverless.com/enterprise/)
