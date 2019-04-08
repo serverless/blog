@@ -22,7 +22,7 @@ While that works great for Node.js, Python and Java, AWS Lambda now supports [an
 
 With v1.39.1 we now support Docker-based local invocation, which makes it possible for the Serverless Framework to support any runtime and AWS Lambda Layer combination. The implementation itself leverages the [`lambci/lambda`](https://hub.docker.com/r/lambci/lambda) [Docker](https://docker.com) images.
 
-Docker-based local invocations are enabled by default for runtimes that weren't previously supported. It can also be enabled with the `--docker` flag for already supported Node.js / Python / Ruby and Java runtimes. Docker-based invoke local also includes support for Lambda Layers. Both local, as well as external Layers referenced via an ARN, are supported. You can learn more about using Docker-based local invocation with the Serverless Framework in our documentation.
+Docker-based local invocations are enabled by default for runtimes that weren't previously supported. It can also be enabled with the `--docker` flag for already supported Node.js / Python / Ruby and Java runtimes. Docker-based invoke local also includes support for Lambda Layers. Both local, as well as external Layers referenced via an ARN, are supported. You can learn more about using Docker-based local invocation with the Serverless Framework in our [documentation](https://serverless.com/framework/docs/providers/aws/cli-reference/invoke-local/).
 
 ### Authorizers Support for Websockets
 
