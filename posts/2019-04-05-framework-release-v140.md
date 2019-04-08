@@ -1,7 +1,7 @@
 ---
 title: "Serverless Framework v1.40"
 description: "Check out what’s included in Serverless Framework v1.40 (and v1.39)."
-date: 2019-04-xx
+date: 2019-04-05
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v140-thumb.png’
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v140-header.png’
 category:
