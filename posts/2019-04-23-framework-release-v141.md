@@ -12,9 +12,9 @@ authors:
 
 With the Serverless Framework v1.41.0 release, we’re adding AWS X-Ray Tracing support for API Gateway, which complements the AWS tracing story and makes it possible to trace incoming events from API Gateway all the way through your Lambda functions. Our new version also adds support for multiple API Gateway usage plan and key definitions as well as lots of enhancements for local function invocations via Docker. In addition to that, we also addressed a couple of bug fixes and enhancements. 1 bug fix and 7 enhancements were merged and are now available in our v1.41.0 release.
 
-### X-Ray support for AWS Lambda
+### X-Ray support for AWS API Gateway
 
-AWS API Gateway is one of the central services used in many serverless applications. Interactions with an API Gateway-driven serverless backend start with an event which is triggered via a HTTP requests and then re-routed to the corresponding AWS Lambda function.
+AWS API Gateway is one of the central services used in many serverless applications. Interactions with an API Gateway-driven serverless backend start with an event which is triggered via an HTTP request and then re-routed to the corresponding AWS Lambda function.
 
 It would be great to monitor and trace requests through the service-stack to better understand how requests are processed and where they spend most of their lifetime.
 
@@ -28,7 +28,7 @@ provider:
     apiGateway: true
 ```
 
-X-Ray tracing works great when it’s used on different services. If you’re using X-Ray Tracing for API Gateway you might want to enable it for your Lambda functions as well:
+X-Ray tracing works best when it’s used across multiple AWS services. If you’re using X-Ray Tracing for API Gateway you might want to enable it for your Lambda functions as well:
 
 ```yaml
 provider:
@@ -46,7 +46,7 @@ Please remove the old API Gateway and re-deploy it with tracing enabled if you w
 
 ### Support for multiple usage plans
 
-Sometimes it’s useful to limit access to your API Gateway when exposing it to the public. In previous versions of the Serverless Framework this could be easily done via [API Kayes and usage plans](https://serverless.com/framework/docs/providers/aws/events/apigateway/#setting-api-keys-for-your-rest-api):
+Sometimes it’s useful to limit access to your API Gateway when exposing it to the public. In previous versions of the Serverless Framework this could be easily done via [API Keys and usage plans](https://serverless.com/framework/docs/providers/aws/events/apigateway/#setting-api-keys-for-your-rest-api):
 
 ```yaml
 provider:
@@ -66,7 +66,7 @@ provider:
 
 The initial implementation which supported one usage plan and multiple API Keys was usually enough for simple API Gateway setups.
 
-However in production setups one usually needs more flexibility. It’s very common to have different types of usage plans for different user types such as “free” plan users and “paid” plan users.
+However in production setups one usually needs more flexibility. It’s very common to have different types of usage plans for different user types, such as “free” plan users and “paid” plan users.
 
 The Serverless Framework v1.41.0 adds support for multiple usage plans. Multiple API Keys can be assigned to each usage plan:
 
@@ -103,13 +103,11 @@ provider:
 
 Serverless Framework [recently added support](https://serverless.com/blog/framework-release-v140/) for local function invocation via Docker, meaning that every AWS Lambda runtime can now be invoked locally in a Docker container.
 
-The initial implementation was focused on the bare minimum to see how the community reacts to Docker supported local function invocations.
-
 Serverless Framework v1.41.0 adds support for:
-[Function environment variables](https://github.com/serverless/serverless/pull/5988)
-[Access to function dependencies](https://github.com/serverless/serverless/pull/5977)
-[Lambda layer download caching](https://github.com/serverless/serverless/pull/5992)
-[Docker argument passing](https://github.com/serverless/serverless/pull/5994)
+[function environment variables](https://github.com/serverless/serverless/pull/5988); 
+[access to function dependencies](https://github.com/serverless/serverless/pull/5977); 
+[lambda layer download caching](https://github.com/serverless/serverless/pull/5992); and 
+[Docker argument passing](https://github.com/serverless/serverless/pull/5994).
 
 #### Bug Fixes
 
