@@ -122,7 +122,7 @@ const success = {
 }
 
 async function connectionHandler(event, context){
-  await saveConnectionInfoToDyanmoDB(event.requestContext.connectionId);
+  await saveConnectionInfoToDynamoDB(event.requestContext.connectionId);
   return success;
 
   // if we would try to post to the websocket management api here, we would get a 410
