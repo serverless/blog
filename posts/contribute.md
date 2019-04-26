@@ -1,5 +1,5 @@
 ---
-title: Contritubing Guest Posts
+title: Contributing Guest Posts
 layout: Default
 ---
 
