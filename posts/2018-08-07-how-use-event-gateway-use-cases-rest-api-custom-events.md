@@ -170,7 +170,7 @@ $ curl -X GET ${APP}/users/10
 # {"id":"10","email":"donald.duck@disney.com","firstName":"Donald","lastName":"Duck"}
 ```
 
-As you can see, the Event Gateway can easily be used to handle REST API workloads with pay-per-use, infinitely scaleable serverless functions.
+As you can see, the Event Gateway can easily be used to handle REST API workloads with pay-per-use, infinitely scalable serverless functions.
 
 ## Using the Event Gateway with custom events
 
