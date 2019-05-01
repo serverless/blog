@@ -2,7 +2,7 @@
 title: "Serverless Framework Enterprise - Error Insights"
 description: "In this release of Serverless Framework Enterprise, we are extending Error Insights to support invocation logs access along with stack traces & more."
 date: 2019-04-30
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-enterprise-updates/error-insights/serverless-enterprise-error-insights-header.png"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-enterprise-updates/error-insights/serverless-enterprise-error-insights-thumb.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-enterprise-updates/error-insights/serverless-enterprise-error-insights-header.png"
 category:
   - news
