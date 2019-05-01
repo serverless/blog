@@ -7,7 +7,7 @@ heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framew
 category:
   - news
 authors:
-  - AlexDeBrie
+  - MaciejSkierkowski
 ---
 
 With today’s Serverless Framework Enterprise release we are extending the capabilities of Serverless Error Insights to support invocation logs. Developers can now easily access invocation logs along with stack traces from new error type alerts and error metrics to help developers discover, troubleshoot and easily resolve errors.
