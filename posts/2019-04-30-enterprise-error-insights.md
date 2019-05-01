@@ -1,6 +1,6 @@
 ---
 title: "Serverless Framework Enterprise - Error Insights"
-description: "In this release of Serverless Framework Enterprise, we are extending Error Insights to support invocation logs access along with stack traces & more."
+description: "In this release, we are extending the capabilities of Serverless Error Insights to support invocation logs access along with stack traces & more."
 date: 2019-04-30
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-enterprise-updates/error-insights/serverless-enterprise-error-insights-thumb.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-enterprise-updates/error-insights/serverless-enterprise-error-insights-header.png"
@@ -42,4 +42,4 @@ To help navigate CloudWatch logs we’ve added the CloudWatch logs directly into
 
 ### Getting Started with the new error insights
 
-If you’re already developing your service using the Serverless Framework then integrating these new features is easy peasy. First,[register for a Serverless Framework Enterprise account](https://serverless.com/enterprise/#enterprise-contact-form), then just[update your existing service to use the enterprise plugin](https://github.com/serverless/enterprise/blob/master/docs/update.md).
+If you’re already developing your service using the Serverless Framework then integrating these new features is easy peasy. First, [register for a Serverless Framework Enterprise account](https://serverless.com/enterprise/#enterprise-contact-form), then just [update your existing service to use the enterprise plugin](https://github.com/serverless/enterprise/blob/master/docs/update.md).
