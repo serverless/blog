@@ -17,13 +17,14 @@ The following example will leverage CloudFront and Lambda@Edge functions to expi
 
 Lambda@Edge functions are similar to AWS Lambda functions, but with a few limitations. At the time the execution time and memory size are more limited than in the regular Lambda functions, and no environmental variables can be used.
 
-[The example project](https://github.com/laardee/one-time-presigned-url) is made with the Serverless Framework. For those who are new with the Serverless Framework, it is a deployment tool which can be used to deploy resources to AWS and other cloud environments. Next, I'll go through the basic concept and components.
+[The example project](https://github.com/laardee/one-time-presigned-url) is made with the Serverless Framework. For those who are new with the Serverless Framework, it is a deployment tool which can be used to deploy resources to AWS and other cloud environments. Next, I’ll go through the basic concept and components.
 
 ## The Concept
 
 The objective is that the object can be created with a presigned URL, but so that each presigned URL can only be used once.
 
 I had a few different ideas for the implementation.
+
 The first one was to index expired tokens only, which was not as good as I thought. In this approach, I would have to check that the token is valid ok before I write anything to the index. I ended up getting everything from favicon.ico to my signature index.
 
 Then I thought that if I only write signature hash to valid index and then delete it when it is used, but that was no go because S3 is eventual consistency on delete. I might still get an object although it was deleted earlier. I could use, e.g. DynamoDB with global tables for this approach, but single bucket deployment is much more comfortable.
@@ -40,9 +41,9 @@ How this implementation work is that first, the user makes a request to /url end
 
 **Figure 2.** Verification of the presigned URL
 
-The user then uses that URL to upload the file (step 1, Figure 2) and validation lambda check (step 2, Figure 2) if the hash created from URL can be found from valid signatures index and is not in the indexed as an expired token. If we have a match from both conditions, the current hash is written to expired signatures index (step 4, Figure 2).
+The user then uses that URL to upload the file (step 1, Figure 2). Viewer request triggers the Lambda (step 2, Figure 2) which verifies that the hash created from URL can be found from valid signatures index and is not indexed as an expired token (step 3, Figure 2). If we have a match from both conditions, the current hash is written to expired signatures index (step 4, Figure 2).
 
-For addition to that, the version of the expired signature object is checked, and if the current version of the hash is first, everything is ok (step 5, Figure 2). This is just in case someone is speedy and gets between head and put object. There is a window that is open for some milliseconds.
+For addition to that, the version of the expired signature object is checked, and if the current version of the hash is first, everything is ok (step 5, Figure 2). This is just in case someone is speedy and gets between head and put operations.
 
 After all the verifications are successfully passed, the original request is returned to CloudFront (step 6, Figure 2) and to the bucket (step 7, Figure 2), which then decides if the presigned URL is valid for putting the object.
 
@@ -50,7 +51,7 @@ After all the verifications are successfully passed, the original request is ret
 
 The S3 bucket will contain the uploaded files and an index of used signatures. There will be no bucket policy, ACLs, or anything; the bucket is private and cannot be accessed from outside without presigned URL.
 
-The generation and invalidation of the signed URLs will happen on the Lambda@Edge functions, which are triggered in the CloudFront's viewer request stage. Functions have a role which allows them to generate the presigned URL, and check if the URL is in the index and write it there if it doesn't yet exist.
+The generation and invalidation of the signed URLs will happen on the Lambda@Edge functions, which are triggered in the CloudFront’s viewer request stage. Functions have a role which allows them to generate the presigned URL, and check if the URL is in the index and write it there if it doesn’t yet exist.
 
 The bucket and CloudFront distribution are defined in the resources block of serverless.yml. The bucket name is fetched from an external json file, which is also used in lambda functions due to the limitation of the environmental variables that Lambda@Edge functions have.
 
@@ -190,7 +191,7 @@ If the version id matches to the initial version id, Lambda will pass the reques
 
 The function which creates the presigned URL needs to have s3:putObject permissions for the object in that bucket and one that checks if it is an initial upload requires permissions for s3:getObject, s3:putObject, s3:listBucket, and s3:listBucketVersions.
 
-## Development and deployment
+## Development and Deployment
 
 Deploying the stack with Serverless Framework is easy; sls deploy and then wait. And wait, everything related to CloudFront takes time. At least 10 minutes, and removal of the replicated functions can take up to 45 minutes. That is a good driver for test-driven-development. The example project uses jest with mocked AWS SDK, that way the development is fast and if you make small logic errors those are caught before deployment.
 
@@ -198,9 +199,9 @@ Lambda@Edge functions have to be deployed to the North Virginia (us-east-1) regi
 
 CloudFormation is also not a best friend with those replicated functions what comes to the removal, the removal usually times out.
 
-## Time for a test run!
+## Time for a Test Run!
 
-First, find out the domain name of the created distribution either by logging in to the AWS web console or with the AWS CLI. The following snipped lists all the deployed distributions and shows domain names and comments. The comment field is the same one that is defined as a comment in CloudFront resource in serverless.yml. In the example, it is the service name, e.g. dev-presigned-upload.
+First, find out the domain name of the created distribution either by logging in to the AWS web console or with the AWS CLI. The following snipped lists all the deployed distributions and shows domain names and comments. The comment field is the same one that is defined as a comment in CloudFront resource in serverless.yml. In the example, it is the service name, e.g. `dev-presigned-upload`.
 
 ```shell
 aws cloudfront list-distributions \
