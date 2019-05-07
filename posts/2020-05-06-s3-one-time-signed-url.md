@@ -1,6 +1,6 @@
 ---
 title: "Uploading Objects to S3 Using One-Time Presigned URLs"
-description: "This post describes the ..."
+description: "Learn how to use Lambda@Edge to verify that S3 presigned URLs are only used once."
 date: 2019-05-06
 thumbnail: ""
 heroImage: ""
