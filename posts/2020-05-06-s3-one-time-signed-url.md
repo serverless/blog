@@ -16,20 +16,23 @@ How to then prevent the usage of the presigned URL after the initial upload?
 The following example will leverage CloudFront and Lambda@Edge functions to expire the presigned URL when the initial upload starts.
 
 Lambda@Edge functions are similar to AWS Lambda functions, but with a few limitations. At the time the execution time and memory size are more limited than in the regular Lambda functions, and no environmental variables can be used.
-The example project which is available on GitHub is made with Serverless Framework. For those who are new with the Serverless Framework, it is a deployment tool which can be used to deploy resources to AWS and other cloud environments. Next, I'll go through the basic concept and components.
+
+[The example project](https://github.com/laardee/one-time-presigned-url) is made with the Serverless Framework. For those who are new with the Serverless Framework, it is a deployment tool which can be used to deploy resources to AWS and other cloud environments. Next, I'll go through the basic concept and components.
 
 ## The Concept
 
 The objective is that the object can be created with a presigned URL, but so that each presigned URL can only be used once.
+
 I had a few different ideas for the implementation.
 The first one was to index expired tokens only, which was not as good as I thought. In this approach, I would have to check that the token is valid ok before I write anything to the index. I ended up getting everything from favicon.ico to my signature index.
 
 Then I thought that if I only write signature hash to valid index and then delete it when it is used, but that was no go because S3 is eventual consistency on delete. I might still get an object although it was deleted earlier. I could use, e.g. DynamoDB with global tables for this approach, but single bucket deployment is much more comfortable.
+
 I could also create a homebrew token system, but I rather use something AWS engineers have developed and tested.
 
 How this implementation work is that first, the user makes a request to /url endpoint (step 1, Figure 1), it triggers a lambda function (step 2, Figure 1) which creates a presigned URL using S3 API (step 3, Figure 1). Then a hash created from it is saved to the bucket (step 4, Figure 1) as a valid signature. After that Lambda function creates a response which contains the URL (step 5, Figure 1) and returns it to the user (step 6, Figure 1).
 
-Figure 1. Presigned URL creation
+**Figure 1.** Presigned URL creation
 
 The user then uses that URL to upload the file (step 1, Figure 2) and validation lambda check (step 2, Figure 2) if the hash created from URL can be found from valid signatures index and is not in the indexed as an expired token. If we have a match from both conditions, the current hash is written to expired signatures index (step 4, Figure 2).
 
@@ -37,7 +40,7 @@ For addition to that, the version of the expired signature object is checked, an
 
 After all the verifications are successfully passed, the original request is returned to CloudFront (step 6, Figure 2) and to the bucket (step 7, Figure 2), which then decides if the presigned URL is valid for putting the object.
 
-Figure 2. Verification of the presigned URL
+**Figure 2.** Verification of the presigned URL
 
 ## AWS Resources
 
@@ -69,7 +72,7 @@ Bucket:
 
 The origin in CloudFront is this bucket, and it has two behaviours; the default behaviour is for the upload and behaviour with pattern /url will respond with the presigned URL that is used for the upload.
 
-The default behaviour in Distribution config allows all the HTTP methods so that PUT can be used to upload files. S3 allows files up to 5 gigabytes to be uploaded with that method, although it is better to use multipart upload for files bigger than 100 megabytes. For simplicity, this example uses only PUT.
+The default behaviour in Distribution config allows all the HTTP methods so that `PUT` can be used to upload files. S3 allows files up to 5 gigabytes to be uploaded with that method, although it is better to use multipart upload for files bigger than 100 megabytes. For simplicity, this example uses only `PUT`.
 
 CloudFront should also forward the query string which contains the signature and token for the upload.
 
@@ -88,8 +91,9 @@ AllowedMethods:
   - PUT # Method used for upload
 ```
 
-The behaviour for the/url pattern only allows GET and HEAD methods and it doesn't have to forward anything; the response will be created with Lambda function.
-The origin contains only the domain name, which is the bucket name, and id. The S3OriginConfig is an empty object because the bucket will be private. If you want to allow users to view files which are saved to the bucket, the origin access identity can be set.
+The behaviour for the `/url` pattern only allows GET and HEAD methods and it doesn't have to forward anything; the response will be created with Lambda function.
+
+The origin contains only the domain name, which is the bucket name, and id. The `S3OriginConfig` is an empty object because the bucket will be private. If you want to allow users to view files which are saved to the bucket, the origin access identity can be set.
 
 ```yaml
 Origins:
@@ -101,6 +105,7 @@ Origins:
 ### Lambda Functions
 
 Both of the functions are triggered in viewer request stage, that is when the CloudFront receives the request from the end user (browser, mobile app, and such).
+
 The function which creates the presigned URL is straightforward; it uses AWS SDK to create the URL, stores a hash created from it to the bucket and returns the URL. I'm using node UUID module to generate a random object key for the upload.
 
 ```js
@@ -186,11 +191,70 @@ The function which creates the presigned URL needs to have s3:putObject permissi
 Deploying the stack with Serverless Framework is easy; sls deploy and then wait. And wait, everything related to CloudFront takes time. At least 10 minutes, and removal of the replicated functions can take up to 45 minutes. That is a good driver for test-driven-development. The example project uses jest with mocked AWS SDK, that way the development is fast and if you make small logic errors those are caught before deployment.
 
 Lambda@Edge functions have to be deployed to the North Virginia (us-east-1) region. From there the functions are replicated to edge locations.
-CloudFormation is also not a best friend with those replicated functions what comes to the removal, the removal usually times out, but the serverless Lambda@Edge plugin helps in that.
+
+CloudFormation is also not a best friend with those replicated functions what comes to the removal, the removal usually times out.
+
+## Time for a test run!
+
+First, find out the domain name of the created distribution either by logging in to the AWS web console or with the AWS CLI. The following snipped lists all the deployed distributions and shows domain names and comments. The comment field is the same one that is defined as a comment in CloudFront resource in serverless.yml. In the example, it is the service name, e.g. dev-presigned-upload.
+
+```shell
+aws cloudfront list-distributions - query DistributionList.Items[*][DomainName,Comment] - region us-east-1
+```
+
+Pick the domain name from the list and run curl https://DOMAIN_NAME/url. Copy the response and then run following snippet.
+
+```shell
+curl --request PUT \
+     --url "URL_FROM_RESPONSE" \
+     --verbose \
+     --data "My data"
+```
+You should get something like this as a response.
+
+```shell
+< HTTP/2 200
+< content-length: 0
+< x-amz-id-2: uFQvK....c=
+< x-amz-request-id: 94....C1
+< date: Tue, 07 May 2019 08:11:58 GMT
+< x-amz-version-id: YQ....iR
+< x-amz-server-side-encryption: AES256
+< etag: "1d...18"
+< server: AmazonS3
+< x-cache: Miss from cloudfront
+< via: 1.1 9f....72.cloudfront.net (CloudFront)
+< x-amz-cf-id: tx....jw==
+```
+
+Then rerun the same upload snippet, with the same presigned URL, and the response should be following.
+
+```shell
+< HTTP/2 403
+< content-type: text/plain
+< content-length: 9
+< server: CloudFront
+< date: Tue, 07 May 2019 08:18:11 GMT
+< content-encoding: UTF-8
+< x-cache: LambdaGeneratedResponse from cloudfront
+< via: 1.1 a5....f4.cloudfront.net (CloudFront)
+< x-amz-cf-id: 44....Rg==
+```
+
+In the latter one, the Lambda has generated the 403 response.
+
+
+---
+
+Now you have a CloudFront distribution which creates presigned URLs for uploading files and verifies that those are not used more than one time.
+
+To secure the endpoint which creates presigned URL, you can create a custom authorizer which validates, e.g. authorization header or you can use AWS WAF to limit access.
+
+If you have any improvements, corrections, or anything related to the code, please open an issue or PR to the repository.
 
 **Links to relevant resources**
 
-* Example project
-* Serverless Framework
-* AWS Lambda@Edge docs 
-* Amazon S3 Presigned URL docs
+* [Example project](https://github.com/laardee/one-time-presigned-url)
+* [Serverless Framework](https://serverless.com)
+* [AWS Lambda@Edge docs](https://docs.aws.amazon.com/lambda/latest/dg/lambda-edge.html)
+* [Amazon S3 Presigned URL docs](https://docs.aws.amazon.com/AmazonS3/latest/dev/PresignedUrlUploadObject.html)
