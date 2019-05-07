@@ -32,6 +32,8 @@ I could also create a homebrew token system, but I rather use something AWS engi
 
 How this implementation work is that first, the user makes a request to /url endpoint (step 1, Figure 1), it triggers a lambda function (step 2, Figure 1) which creates a presigned URL using S3 API (step 3, Figure 1). Then a hash created from it is saved to the bucket (step 4, Figure 1) as a valid signature. After that Lambda function creates a response which contains the URL (step 5, Figure 1) and returns it to the user (step 6, Figure 1).
 
+![s3-signed-url-at-edge-get-signed-url](https://user-images.githubusercontent.com/4726921/57304228-a042cf00-70e7-11e9-81ad-00f03470d8c2.png)
+
 **Figure 1.** Presigned URL creation
 
 The user then uses that URL to upload the file (step 1, Figure 2) and validation lambda check (step 2, Figure 2) if the hash created from URL can be found from valid signatures index and is not in the indexed as an expired token. If we have a match from both conditions, the current hash is written to expired signatures index (step 4, Figure 2).
@@ -39,6 +41,8 @@ The user then uses that URL to upload the file (step 1, Figure 2) and validation
 For addition to that, the version of the expired signature object is checked, and if the current version of the hash is first, everything is ok (step 5, Figure 2). This is just in case someone is speedy and gets between head and put object. There is a window that is open for some milliseconds.
 
 After all the verifications are successfully passed, the original request is returned to CloudFront (step 6, Figure 2) and to the bucket (step 7, Figure 2), which then decides if the presigned URL is valid for putting the object.
+
+![s3-signed-url-at-edge-validate](https://user-images.githubusercontent.com/4726921/57304222-9caf4800-70e7-11e9-85d4-18119b188635.png)
 
 **Figure 2.** Verification of the presigned URL
 
