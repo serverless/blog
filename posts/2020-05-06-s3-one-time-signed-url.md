@@ -203,10 +203,12 @@ CloudFormation is also not a best friend with those replicated functions what co
 First, find out the domain name of the created distribution either by logging in to the AWS web console or with the AWS CLI. The following snipped lists all the deployed distributions and shows domain names and comments. The comment field is the same one that is defined as a comment in CloudFront resource in serverless.yml. In the example, it is the service name, e.g. dev-presigned-upload.
 
 ```shell
-aws cloudfront list-distributions - query DistributionList.Items[*][DomainName,Comment] - region us-east-1
+aws cloudfront list-distributions \
+     --query DistributionList.Items[*][DomainName,Comment] \
+     --region us-east-1
 ```
 
-Pick the domain name from the list and run curl https://DOMAIN_NAME/url. Copy the response and then run following snippet.
+Pick the domain name from the list and run `curl https://DOMAIN_NAME/url`. Copy the response and then run following snippet.
 
 ```shell
 curl --request PUT \
