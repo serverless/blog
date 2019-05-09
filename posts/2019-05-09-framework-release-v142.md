@@ -10,7 +10,7 @@ authors:
   - PhilippMuns
 ---
 
-The Serverless Framework v1.42.0 release adds support for REST API access logs and API Gateway binary media type responses. Furthermore it’s now possible to set API Gateway request body validations and API key values. 
+It is now easier to build even more robust APIs using the Serverless Framework.The Serverless Framework v1.42.0 release adds support for REST API access logs and API Gateway binary media type responses. Furthermore it’s now possible to set API Gateway request body validations and API key values. 
 In addition to that we also addressed bug fixes and enhancements. 3 bug fixes and 7 enhancements were merged 
 and are now available in our v1.42.0 release.
 
