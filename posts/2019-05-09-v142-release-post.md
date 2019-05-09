@@ -2,8 +2,8 @@
 title: "Serverless Framework v1.42.0 -  API Gateway Logs, Binary Media Type Responses, Request Body Validations & More"
 description: "Check out what’s included in Serverless Framework v1.42."
 date: 2019-04-23
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v141-thumb.png"
-heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v141-header.png"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v142-thumb.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v142-header.png"
 category:
   - news
 authors:
