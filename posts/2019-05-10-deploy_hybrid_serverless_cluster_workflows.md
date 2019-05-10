@@ -2,8 +2,8 @@
 title: "Using the Serverless framework to deploy hybrid serverless/cluster workflows"
 description: "We’ll cover how to use Serverless Framework, AWS Lambda, AWS Step Functions, AWS Fargate and AWS Batch to deploy hybrid serverless/cluster workflows."
 date: 2019-05-10
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-enterprise-updates/error-insights/serverless-enterprise-error-insights-thumb.png"
-heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-enterprise-updates/error-insights/serverless-enterprise-error-insights-header.png"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-05-10-deploy_hybrid_serverless_cluster_workflows/thumbnail.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-05-10-deploy_hybrid_serverless_cluster_workflows/header.png"
 category:
   - guides-and-tutorials
 authors:
@@ -55,7 +55,7 @@ In summary, AWS Step Functions enables us to combine Serverless processing with 
 
 For a machine learning pipeline, we can benefit from the large amount of parallelization AWS Batch or Fargate gives us on our various hyperparameters while still benefitting from storing and comparing results via Serverless Lambda functions
 
-![Machine learning training pipeline](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-05-10-deploy_hybrid_serverless_cluster_workflows/MLTrainingPipeline.png)
+![Machine learning training pipeline](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-05-10-deploy_hybrid_serverless_cluster_workflows/Serverless_Graph-machine+learning+training.png)
 
 #### Machine learning deployment pipeline
 
@@ -65,13 +65,13 @@ A hybrid infrastructure enables to solve a number of issues which occur during t
 - A/B testing which allows us to compare model performance, to ensure the best model goes into production.
 - Scalable inference allows us to run batches in parallel which increases the speed of processing.
 
-![Machine learning deployment pipeline](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-05-10-deploy_hybrid_serverless_cluster_workflows/MLDeploymentPipeline.png)
+![Machine learning deployment pipeline](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-05-10-deploy_hybrid_serverless_cluster_workflows/Serverless_Graph-Machine+learning+deployment.png)
 
 #### Data pipeline
 
 A data pipeline can utilize hybrid infrastructure to modularize the processing parts into several types of modules. Modules which can be easily parallelized can be processed through AWS Lambdas, modules which need to be processed through GPU instances can use AWS Batch and modules which require long processing times can utilize AWS Fargate.
 
-![Data pipeline](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-05-10-deploy_hybrid_serverless_cluster_workflows/DataPipeline.png)
+![Data pipeline](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-05-10-deploy_hybrid_serverless_cluster_workflows/Serverless_Graph-data+pipeline.png)
 
 ### Pushing Docker container image to ECR
 
