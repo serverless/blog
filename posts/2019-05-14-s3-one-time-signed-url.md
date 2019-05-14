@@ -1,7 +1,7 @@
 ---
 title: "Uploading objects to S3 using one-time pre signed URLs"
 description: "Learn how to use Lambda@Edge to verify that S3 presigned URLs are only used once."
-date: 2019-05-06
+date: 2019-05-14
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/s3-one-time-signed-url/thumbnail.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/s3-one-time-signed-url/header.png"
 category:
