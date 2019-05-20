@@ -1,7 +1,7 @@
 ---
 title: "Using the Serverless framework to deploy hybrid serverless/cluster workflows"
 description: "We’ll cover how to use Serverless Framework, AWS Lambda, AWS Step Functions, AWS Fargate and AWS Batch to deploy hybrid serverless/cluster workflows."
-date: 2019-05-10
+date: 2019-05-20
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-05-10-deploy_hybrid_serverless_cluster_workflows/thumbnail.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-05-10-deploy_hybrid_serverless_cluster_workflows/header.png"
 category:
