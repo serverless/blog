@@ -122,11 +122,11 @@ const success = {
 }
 
 async function connectionHandler(event, context){
-  await saveConnectionInfoToDyanmoDB(event.requestContext.connectionId);
+  await saveConnectionInfoToDynamoDB(event.requestContext.connectionId);
   return success;
 
   // if we would try to post to the websocket management api here, we would get a 410
-  // we must first "succesfully" execute this connection handler to establish the WebSocket
+  // we must first "successfully" execute this connection handler to establish the WebSocket
 }
 
 // assume there is other logic and processes that save "channel" subscriptions for each
@@ -147,7 +147,7 @@ async function messageHandler(event, context){
   // make sure they all send
   await Promise.all(messages)
 
-  // still have to let api gateway know we were succesful!
+  // still have to let api gateway know we were successful!
   return success;
 }
 ```

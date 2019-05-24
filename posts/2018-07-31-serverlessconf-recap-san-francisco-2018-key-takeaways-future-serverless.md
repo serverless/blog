@@ -46,7 +46,7 @@ Rob Gruhl from Nordstrom talked about the best ways to scale serverless:
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2018-serverlessconf-sf/nordstrom-serverless-all-things.jpg">
 
-And it's easy to see why this matters. Verizon is here at ServerlessConf talking about serverless in the enterprise. There was a case study from Box. Capital One and Netflix presented on their own serverless architecture. Fender Digital (yeah, the guitar company) is all-in on serverless right now. And? They're transitioning everyting to Go.
+And it's easy to see why this matters. Verizon is here at ServerlessConf talking about serverless in the enterprise. There was a case study from Box. Capital One and Netflix presented on their own serverless architecture. Fender Digital (yeah, the guitar company) is all-in on serverless right now. And? They're transitioning everything to Go.
 
 And speaking of which—
 
@@ -65,7 +65,7 @@ One thing we noticed in every "here's how we're using serverless" presentation t
 
 Mark Nunnikhoven insisted—you're better off out of the gate with serverless security. You can't dig into a single function running on, say, Lambda, and poke into other parts of the system. And ultimately, security is about the _people_. It isn't about just securing the functions, you need to have a robust system that does what it's intended to do, and only what it's intended to do.
 
-Chris Munns built on what others had been saying to offer insight into securing Lambdas specifically. Do not use `*` in your IAM policies. Dependency management is key; keep track of package dependencies and apply securit updates. Don't use a VPC; putting your functions inside of a VPC provides little extra security benefit. Stop doing stupid stuff with secrets.
+Chris Munns built on what others had been saying to offer insight into securing Lambdas specifically. Do not use `*` in your IAM policies. Dependency management is key; keep track of package dependencies and apply security updates. Don't use a VPC; putting your functions inside of a VPC provides little extra security benefit. Stop doing stupid stuff with secrets.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Really great pragmatic guidance and tips from <a href="https://twitter.com/chrismunns?ref_src=twsrc%5Etfw">@chrismunns</a> on writing secure <a href="https://twitter.com/hashtag/lambda?src=hash&amp;ref_src=twsrc%5Etfw">#lambda</a> functions for <a href="https://twitter.com/awscloud?ref_src=twsrc%5Etfw">@awscloud</a>. <a href="https://twitter.com/hashtag/serverless?src=hash&amp;ref_src=twsrc%5Etfw">#serverless</a> <a href="https://twitter.com/hashtag/serverlessconf?src=hash&amp;ref_src=twsrc%5Etfw">#serverlessconf</a> <a href="https://t.co/TXdooEvYig">pic.twitter.com/TXdooEvYig</a></p>&mdash; Tony Pujals (@tonypujals) <a href="https://twitter.com/tonypujals/status/1024710919371218945?ref_src=twsrc%5Etfw">August 1, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -74,7 +74,7 @@ Chris Munns built on what others had been saying to offer insight into securing 
 
 (Credit to [Ben Kehoe](https://twitter.com/ben11kehoe) for the 'DiffOps' term.)
 
-When the serveless movement was gaining momentum, there was a lot of buzz about how it would remove the need for DevOps. Not so, says everybody at ServerlessConf 2018. With all of these companies giving presentations about how they're running serveless at scale, a big undercurrent has been, "this is how we do our serverless operations."
+When the serverless movement was gaining momentum, there was a lot of buzz about how it would remove the need for DevOps. Not so, says everybody at ServerlessConf 2018. With all of these companies giving presentations about how they're running serverless at scale, a big undercurrent has been, "this is how we do our serverless operations."
 
 There are still ops. And we're all still defining and discovering what those ops are.
 
@@ -93,7 +93,7 @@ Yochay Kiriaty of Microsoft Azure provided a great "don't do this" bucket list f
 - Avoid recursions
 - Concurrency limitations and rate limits
 
-Erica Windisch of IOpipes talked about serverless observability cornerstones. The serverless culture is about not building when you can buy, builiding as little as possible in general, and doing it with minimal complexity. Meaning: in a serverless world, business performance and metrics are more important than infrastructure metrics. Know your KPIs.
+Erica Windisch of IOpipes talked about serverless observability cornerstones. The serverless culture is about not building when you can buy, building as little as possible in general, and doing it with minimal complexity. Meaning: in a serverless world, business performance and metrics are more important than infrastructure metrics. Know your KPIs.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Infrastructure performance? BORING. Great talk on observability by <a href="https://twitter.com/ewindisch?ref_src=twsrc%5Etfw">@ewindisch</a>. <a href="https://twitter.com/hashtag/ServerlessConf?src=hash&amp;ref_src=twsrc%5Etfw">#ServerlessConf</a> <a href="https://t.co/7nyr49NoH7">pic.twitter.com/7nyr49NoH7</a></p>&mdash; Linda Nichols (@lynnaloo) <a href="https://twitter.com/lynnaloo/status/1024763983029358592?ref_src=twsrc%5Etfw">August 1, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -101,7 +101,7 @@ Erica Windisch of IOpipes talked about serverless observability cornerstones. Th
 Jared Short and Forrest Brazeal had some advice of another type: how to successfully go home from ServerlessConf and successfully convince all your co-workers that it's a _great_ idea.
 
 - Leaders want to hear that it significantly reduces compute costs, they will be far from alone when it comes to adoption, and you can get started with few development resources
-- Architects want to hear that cloud lock-in is an acceptible risk (and a bit of a myth), they can trust but verify with load testing tools, serverless is "getting more and more boring" (read: safe) by the day
+- Architects want to hear that cloud lock-in is an acceptable risk (and a bit of a myth), they can trust but verify with load testing tools, serverless is "getting more and more boring" (read: safe) by the day
 - SysAdmin want to hear that they still have knobs to turn, they can partner with developers, and they can still monitor code if not infra. There are opportunities for them to start taking on more and more serverless DevOps.
 - Other developers want to hear that it's even faster to test in the cloud anyway, there are all kinds of cool new frameworks they can use, and they can start focusing more on writing code that matters
 
@@ -116,7 +116,7 @@ Our own Andrea Passwater does Growth at Serverless, Inc, and has started to depl
 
 Her first serverless app was [Serverless Ipsum](https://medium.freecodecamp.org/i-just-deployed-a-serverless-app-and-i-cant-code-here-s-how-i-did-it-94983d7b43bd), but she has since moved on to other things, like a Slack bot that pings her coworkers about their blog post deadlines.
 
-And she's not the only person preaching about the newfound accessbility of coding. Keith Horwood is speaking on Stdlib, an API platform that could make developing APIs more like using Zapier. There are more engineers having open discussions about how to make coding more accessible to everyone, and more people at ServerlessConf from non-engineering backgrounds who are here to learn.
+And she's not the only person preaching about the newfound accessibility of coding. Keith Horwood is speaking on Stdlib, an API platform that could make developing APIs more like using Zapier. There are more engineers having open discussions about how to make coding more accessible to everyone, and more people at ServerlessConf from non-engineering backgrounds who are here to learn.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/goserverless?ref_src=twsrc%5Etfw">@goserverless</a> <a href="https://twitter.com/sogrady?ref_src=twsrc%5Etfw">@sogrady</a> <a href="https://twitter.com/monkchips?ref_src=twsrc%5Etfw">@monkchips</a> theme from <a href="https://twitter.com/Serverlessconf?ref_src=twsrc%5Etfw">@Serverlessconf</a> seems to be &quot;Knowledge workers and other non-developers are the newest Kingmakers&quot; 😉 <a href="https://twitter.com/hashtag/serverless?src=hash&amp;ref_src=twsrc%5Etfw">#serverless</a></p>&mdash; Val Bercovici 🇻 (@valb00) <a href="https://twitter.com/valb00/status/1024364019241472000?ref_src=twsrc%5Etfw">July 31, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -20,7 +20,7 @@ Sure, there were hack-y ways to do real-time applications before.
 
 You could, for instance, use [AWS IoT topics with MQTT over WebSockets](https://serverless.com/blog/realtime-updates-using-lambda-websockets-iot), and I have even heard of folks running containers or cluster to broker WebSocket connections even though the rest of their systems are serverless.
 
-There is also fanstastic WebSocket support [in AWS AppSync](https://serverless.com/blog/building-chat-appliation-aws-appsync-serverless), but this introduces some complexities with a GraphQL layer and you give up a bit of control in exchange for simplicity. Undoubtedly a great solution if it can meet your needs.
+There is also fantastic WebSocket support [in AWS AppSync](https://serverless.com/blog/building-chat-appliation-aws-appsync-serverless), but this introduces some complexities with a GraphQL layer and you give up a bit of control in exchange for simplicity. Undoubtedly a great solution if it can meet your needs.
 
 #### WebSockets support makes real-time so much easier
 

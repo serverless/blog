@@ -19,7 +19,7 @@ Read on for a full feature breakdown, or watch the 2 minute video:
 
 #### Serverless adoption is growing, and fast
 
-In 2015, we created a project called the [Serverless Framework](https://serverless.com/framework/). Our mission was to make serveless development easy. By leveraging new cloud infrastructure that auto-scales and charges only when it’s used, we believed developers could build software with remarkably low overhead.
+In 2015, we created a project called the [Serverless Framework](https://serverless.com/framework/). Our mission was to make serverless development easy. By leveraging new cloud infrastructure that auto-scales and charges only when it’s used, we believed developers could build software with remarkably low overhead.
 
 At that time, we had no idea what the Framework would become. A community rallied behind it and the broader serverless movement, contributing to the open source core, offering their opinions and insights, and sharing their passion.
 
