@@ -1,6 +1,6 @@
 [
   "deployment-profiles",
+  "lessons-learned-from-sending-millions-of-serverless-webhooks",
   "framework-release-v142",
-  "s3-one-time-signed-url",
-  "framework-enterprise-error-insights"
+  "s3-one-time-signed-url"
 ]

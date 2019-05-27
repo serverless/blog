@@ -37,7 +37,7 @@ After sending millions of webhooks on the new architecture, we've learned valuab
 7. **Lambda errors can be elusive, but CloudWatch Insights helps.** When a Lambda Error alert triggers, it’s not immediately clear what happened, especially if there are lots of logs to search through. Only through experience do you find timeouts log “timed out” and out-of-memory errors log “process exited.” CloudWatch Insights provides query capabilities to easily search Log Groups for these messages:
 
 ```
-fields @timestamp, @message
+| fields @timestamp, @message
 | filter @message like /\[error\]|timed|exited/
 | sort @timestamp
 ```
