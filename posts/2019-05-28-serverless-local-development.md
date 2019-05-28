@@ -1,6 +1,6 @@
 ---
 title: "Serverless Local Development"
-description: "We're building serverless applications as collections of serverless microservices dependant on cloud infrastructure. So how do we develop locally? How do we run our code on our machines and not have to deploy to the cloud to test?"
+description: "We're building serverless applications as collections of serverless microservices dependant on cloud infrastructure. So how do we develop locally?"
 date: 2019-05-08
 thumbnail: ''
 heroImage: ''
