@@ -1,9 +1,9 @@
 ---
 title: "Serverless Local Development"
 description: "We're building serverless applications as collections of serverless microservices dependant on cloud infrastructure. So how do we develop locally?"
-date: 2019-05-08
-thumbnail: ''
-heroImage: ''
+date: 2019-05-30
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/ServerlessLocalDevelopment/1thumbnail.png'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/ServerlessLocalDevelopment/1header.png'
 category:
   - guides & tutorials
 authors: 
