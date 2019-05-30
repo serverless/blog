@@ -3,7 +3,8 @@ title: Deploy a scalable API and Backend with Serverless, Express, and Node.js
 description: Learn how to structure a microservice application in multiple serverless.yml files for infinite scalability.
 date: 2019-05-29
 layout: Post
-thumbnail: ''
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/sls-microservice/thumbnail.png'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/sls-microservice/header.png'
 authors:
   - BryanKillian
 category:
