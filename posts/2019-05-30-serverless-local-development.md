@@ -5,7 +5,7 @@ date: 2019-05-30
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/ServerlessLocalDevelopment/1thumbnail.png'
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/ServerlessLocalDevelopment/1header.png'
 category:
-  - guides & tutorials
+  - guides-and-tutorials
 authors: 
   - GarethMcCumskey
 ---
