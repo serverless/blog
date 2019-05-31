@@ -31,18 +31,24 @@ cd sls-microservice/backend
 ```
 
 ## How to use `make buildAll` and `make deployAll`
-Getting started is simple, after cloning the repository all you need to do is build the project with `make buildAll` and then deploy the project with `make deployAll`.  `make buildAll` will run `yarn install` in the `./backend` directory, then it will look at each directory in the `./backend/src` directory and run `yarn install` for each, then it will run `make buildAll` from the `./api` directory.  This will look at each directory in the `./api/src` directory and run `yarn install` for each.  `make deployAll` will run `serverless deploy --stage dev` in the `./backend` directory and then it will run `make deployAll --STAGE='dev'` from the `./api` directory.  This will look at each directory in the `./api/src` directory and run `serverless deploy --stage dev` for each.  
+Getting started is simple, after cloning the repository all you need to do is build the project with `make buildAll` and then deploy the project with `make deployAll`.  
+`make buildAll` will run `yarn install` in the `./backend` directory, then it will look at each directory in the `./backend/src` directory and run `yarn install` for each, then it will run `make buildAll` from the `./api` directory.  This will look at each directory in the `./api/src` directory and run `yarn install` for each.  
+`make deployAll` will run `serverless deploy --stage dev` in the `./backend` directory and then it will run `make deployAll --STAGE='dev'` from the `./api` directory.  This will look at each directory in the `./api/src` directory and run `serverless deploy --stage dev` for each.  
 
 ## What does this build
-![api diagram](https://github.com/trilom/sls-microservice/blob/master/sls-microservice.jpg "API Diagram")
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/sls-microservice/sls-microservice.jpg">
 This will define an example Serverless infrastructure stack containing:
-1. an API Gateway
+
+1. **an API Gateway**
 The API has 6 endpoints.  One to create a user, one to get a user information, one to get a list of users, one to get a list of orders for a user, one to get order information for that user, and one to create an order.
-2. two DynamoDB tables
+
+2. **two DynamoDB tables**
 One is the user table and one is the order table.
-3. a SQS queue
+
+3. **a SQS queue**
 An SQS queue that looks out for orders and moves them to fulfillment.
-4. one backend lambda function, and three api lambda functions
+
+4. **one backend lambda function, and three api lambda functions**
 The backend function will look for messages in the Order queue, then move them to fulfillment.
 The API functions are split into 3 endpoints where you can implement different packages scope.
 
