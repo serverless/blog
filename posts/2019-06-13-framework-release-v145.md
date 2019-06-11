@@ -10,7 +10,7 @@ authors:
   - PhilippMuns
 ---
 
-The Serverless Framework v1.45.0 release adds the new ALB event source, support for API Gateway Websocket Logs, deployment packages hosted on S3 and custom configuration files. In addition to those features we’ve addressed a number of bug fixes and other enhancements. X bug fixes and X enhancements were merged and are now available through our v1.45.0 release.
+The Serverless Framework v1.45.0 release adds the new ALB event source, support for API Gateway Websocket Logs, deployment packages hosted on S3 and custom configuration files. In addition to those features we’ve addressed a number of bug fixes and other enhancements. 3 bug fixes and 2 enhancements were merged and are now available through our v1.45.0 release.
 
 **Important:** Due to the [Node.js release cycle](https://github.com/nodejs/Release/blob/master/README.md) we’ve dropped support for Node.js version 4 which is no longer in LTS. Going forward we’ll slowly phase out non LTS Node.js version in the future to ensure that we keep on innovating while keeping our users secure.
 
