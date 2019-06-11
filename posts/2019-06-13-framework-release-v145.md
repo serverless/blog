@@ -89,9 +89,9 @@ The Serverless Framework makes it possible to separate the package and deploymen
 
 This feature is often used in CI / CD setups where one service creates the deployment artifact which is then consumed by another service and carried out via a deployment.
 
-Running in such a setup often brings up the question where a deployment artifact should be stored. With Serverless Framework v1.45.0 we introduce the possibility to pull down deployment artifacts which are stored in an S3 bucket.
+When using this kind of configuration, the inevitable question of where to store the deployment artifact comes up. With Serverless Framework v1.45.0 we introduce the possibility to pull down deployment artifacts which are stored in an S3 bucket.
 
-Using such feature only requires you to set the `package` path to the corresponding `.zip` object in a S3 bucket:
+Using this feature only requires you to set the `package` path to the corresponding `.zip` object in a S3 bucket:
 
 ```yaml
 package:
@@ -116,11 +116,11 @@ We kept the implementation agnostic, meaning that we can extend it to pull `zip`
 
 #### Custom configuration files
 
-It was frequently requested to make possible to configure multiple services within a scope of one project.
+It has been frequently requested to make possible to configure multiple services within the scope of a single project.
 
-With a single serverless configuration (aimed to cover single service) it couldn’t be done easily, therefore we’ve enriched Serveless CLI with a `--config` option, it allows to pass a custom config filename  to be used for given command.
+With a single serverless configuration (aimed to cover single service) it couldn’t be done easily, therefore we’ve enriched Serveless CLI with a `--config` option, that allows you yp pass a custom configuration filename to be used for given deploy or package command.
 
-Having that you can easily drive multiple services in scope of one repository:
+This results in the ability to pass individually crafted and specialised configuration files under different circumstances for the same service:
 
 ```bash
 # Deploy API
