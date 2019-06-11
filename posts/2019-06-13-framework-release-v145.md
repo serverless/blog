@@ -16,7 +16,7 @@ The Serverless Framework v1.45.0 release adds the new ALB event source, support 
 
 Please ensure that you’re using an up to date Node version when working with the Serverless Framework.
 
-## ALB event source
+#### ALB event source
 
 API backends are one of the top use cases for serverless architectures. In fact, serverless computing really took off once AWS introduced the integration between AWS Lambda and API Gateway, making it possible to create whole web applications which auto-scale, are easy to maintain and only generate expense when actually used.
 
@@ -54,7 +54,7 @@ module.exports.hello = async () => ({
 
 If you want to learn more about ALBs and their usage in a serverless architecture feel free to read through the [excellent](https://serverless-training.com/articles/save-money-by-replacing-api-gateway-with-application-load-balancer/) [writeups](https://serverless-training.com/articles/how-to-set-up-application-load-balancer-with-lambda/) by [Jeremy Thomerson](https://twitter.com/jthomerson).
 
-## API Gateway Websocket logs
+#### API Gateway Websocket logs
 
 Back in [v1.42.0](https://serverless.com/blog/framework-release-v142/) we’ve introduced support for API Gateway REST API logs. Setting them up was as easy as adding the following lines of code to the `provider` property:
 
@@ -83,7 +83,7 @@ provider:
 
 Do you have any wishes for further configurability or extra features? We’d love to hear your thoughts about Websocket logs in our [feedback issue](https://github.com/serverless/serverless/issues/6218).
 
-## S3 hosted deployment packages
+#### S3 hosted deployment packages
 
 The Serverless Framework makes it possible to separate the package and deployment process with the help of the `serverless package` and `serverless deploy --package` commands.
 
@@ -114,7 +114,7 @@ package:
 
 We kept the implementation agnostic, meaning that we can extend it to pull `zip` files from any remote location. [Let us know](https://github.com/serverless/serverless/issues/new?template=feature_request.md) if that’s something you’re interested in.
 
-## Custom configuration files
+#### Custom configuration files
 
 It was frequently requested to make possible to configure multiple services within a scope of one project.
 
