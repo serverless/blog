@@ -1,7 +1,7 @@
 ---
 title: "Serverless Framework v1.45.0 -  ALB event source, API Gateway Websocket logs, S3 hosted deployment packages, Custom configuration file names & More"
 description: "Check out what’s included in Serverless Framework v1.45."
-date: 2019-05-09
+date: 2019-06-17
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v145-thumb.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v145-header.png"
 category:
