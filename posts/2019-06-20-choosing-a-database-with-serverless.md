@@ -141,7 +141,7 @@ Ultimately, I wouldn't recommend using server-based NoSQL databases in a serverl
 
 While the previous two sections were broad categories of databases, the next two are specific database technologies.
 
-First up is [Amazon DynamoDB](https://aws.amazon.com/dynamodb/). DynamoDB is a NoSQL database, like Mongo and Cassandra mentioned previously. There's a big difference between DynamoDB and the others. For lack of a better term, I'll say that DynamoDB is not 'server-based', while the others are.
+First up is [Amazon DynamoDB](https://serverless.com/dynamodb/). DynamoDB is a NoSQL database, like Mongo and Cassandra mentioned previously. There's a big difference between DynamoDB and the others. For lack of a better term, I'll say that DynamoDB is not 'server-based', while the others are.
 
 What does this mean? When you're using MongoDB, Cassandra, or other NoSQL databases, even if in a managed capacity, you're still working within a server-focused paradigm. You specify the exact number and size of nodes that you want in your cluster. You connect to a certain IP address or hostname that goes directly to your cluster. You probably partition your cluster in a private network so that it's not exposed to the public internet.
 
