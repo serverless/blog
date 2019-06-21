@@ -1,5 +1,5 @@
 ---
-title: Choosing a database for Serverless applications
+title: Choosing a Database for Serverless Applications
 description: Learn the factors to consider when choosing a database with Serverless applications and AWS Lambda
 date: 2019-06-20
 layout: Post
