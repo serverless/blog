@@ -159,7 +159,6 @@ DynamoDB also has a great pricing model for serverless. You can do [pay-per-requ
 The last factor is the data model needs, and this is where it gets iffy with DynamoDB. There are two main issues with DynamoDB data modeling:
 
 1. It's a significant learning curve and shift for those coming from a RDBMS background.
-
 2. It's much less flexible if your access patterns change over time.
 
 These are completely different types of problems. The first one is a temporary problem -- you and your fellow engineers will need to spend some time learning how to model data with DynamoDB. There's a cost here, but it's easily paid if you put in the time.
@@ -175,7 +174,6 @@ The last category of database is [Aurora Serverless](https://aws.amazon.com/rds/
 There are two aspects to Aurora Serverless that are different than traditional RDBMS options:
 
 1. There's a pay-per-use billing model.
-
 2. There's a [Data API](https://aws.amazon.com/about-aws/whats-new/2018/11/aurora-serverless-data-api-beta/) which allows you to make database requests via HTTP.
 
 Remember our initial qualms with using [server-based, relational databases](#server-based-relational-databases) in serverless applications: the connection model isn't a fit; the billing model is not based on usage, and it's a bit of an awkward fit with infrastructure-as-code.
