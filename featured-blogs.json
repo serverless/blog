@@ -1,6 +1,6 @@
 [
+  "serverless-microservices-in-a-team",
   "choosing-a-database-with-serverless",
   "serverless-local-development",
-  "deployment-profiles",
-  "lessons-learned-from-sending-millions-of-serverless-webhooks"
+  "deployment-profiles"
 ]
