@@ -2,8 +2,8 @@
 title: "Serverless microservices in a team"
 description: "How do we build Serverless microservices as a team?"
 date: 2019-06-06
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/ServerlessLocalDevelopment/1thumbnail.png'
-heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/ServerlessLocalDevelopment/1header.png'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-microservices-in-a-team/2thumbnail.png'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-microservices-in-a-team/2header.png'
 category:
   - guides-and-tutorials
 authors: 
