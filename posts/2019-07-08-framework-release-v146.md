@@ -7,7 +7,7 @@ heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framew
 category:
   - news
 authors:
-  - PhilippMuns
+  - MariuszNowak
 ---
 
 The Serverless Framework v1.46.0 release adds new ways to configure conditions for ALB events, support for externally managed Websocket APIs and local plugins which can be referenced via relative file paths. We’ve also addressed a number of enhancements and bug fixes. In total 5 bugs were fixed and 5 enhancements were merged and are now available through our v1.46.0 release.
