@@ -1,6 +1,6 @@
 [
+  "outputs-and-secrets",
   "serverless-microservices-in-a-team",
   "choosing-a-database-with-serverless",
-  "serverless-local-development",
-  "deployment-profiles"
+  "serverless-local-development"
 ]
