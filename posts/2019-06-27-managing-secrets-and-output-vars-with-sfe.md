@@ -1,6 +1,6 @@
 ---
 title: Managing secrets and output variables with Serverless Framework Enterprise
-description: 
+description: Using output variables and secrets management to make it easier for developers to separate secrets and shared components from their services.
 date: 2019-06-27
 layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/image-processing-post/thumbnail.png'
