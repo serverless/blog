@@ -1,7 +1,7 @@
 ---
 title: Dynamic image resizing with Python and Serverless framework
 description: In this article we will provide an example of how to dynamically resize images with Python and the Serverless framework.
-date: 2019-06-03
+date: 2019-06-27
 layout: Post
 thumbnail: ''
 heroImage: ''
