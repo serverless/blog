@@ -2,8 +2,8 @@
 title: "Serverless Framework v1.46.0 - Extended ALB configurability, Support for external Websocket APIs, Local plugins via relative paths & More"
 description: "Check out what’s included in Serverless Framework v1.46."
 date: 2019-07-08
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v145-thumb.png"
-heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v145-header.png"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v146-thumb.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v146-header.png"
 category:
   - news
 authors:
