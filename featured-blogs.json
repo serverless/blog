@@ -1,6 +1,6 @@
 [
+  "graphql-api-mysql-postgres-aurora",
   "outputs-and-secrets",
   "serverless-microservices-in-a-team",
-  "choosing-a-database-with-serverless",
-  "serverless-local-development"
+  "choosing-a-database-with-serverless"
 ]
