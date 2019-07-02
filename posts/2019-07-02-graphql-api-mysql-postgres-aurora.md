@@ -2,8 +2,8 @@
 title: "How to Create a Serverless GraphQL API for MySQL, Postgres and Aurora"
 description: "Learn how you can build a serverless GraphQL API for MySQL, Postgres and Aurora DB."
 date: 2019-07-02
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/outputs-and-secrets/Thumbnail.png'
-heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/outputs-and-secrets/header.png'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/graphql-rds/graphql-rds-thumbnail.png'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/graphql-rds/graphql-rds-header.png'
 category:
   - guides-and-tutorials
 authors: 
