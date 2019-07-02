@@ -18,7 +18,7 @@ For those who answered “true,” we’re here to show you that building GraphQ
 
 GraphQL is a query language for web APIs. There’s a key difference between a conventional REST API and APIs based on GraphQL: with GraphQL, you can use a single request to fetch multiple entities at once. This results in faster page loads and enables a simpler structure for your frontend apps, resulting in a better web experience for everyone. If you’ve never used GraphQL before, we suggest you check out [this GraphQL tutorial](https://graphql.org/learn/) for a quick intro.
 
-The [Serverless](https://serverless.com/framework) [framework](https://serverless.com/framework) is a great fit for GraphQL APIs: with Serverless, you don’t need to worry about running, managing, and scaling your own API servers in the cloud, and you won’t need to write any infrastructure automation scripts. Learn more about Serverless [here](https://serverless.com/learn/overview/). In addition, Serverless provides an excellent vendor-agnostic developer experience and a robust community to help you in building your GraphQL applications.
+The [Serverless framework](https://serverless.com/framework) is a great fit for GraphQL APIs: with Serverless, you don’t need to worry about running, managing, and scaling your own API servers in the cloud, and you won’t need to write any infrastructure automation scripts. Learn more about Serverless [here](https://serverless.com/learn/overview/). In addition, Serverless provides an excellent vendor-agnostic developer experience and a robust community to help you in building your GraphQL applications.
 
 Many applications in our everyday experience contain social networking features, and that kind of functionality can really benefit from implementing GraphQL instead of the REST model, where it’s hard to expose structures with nested entities, like users and their Twitter posts. With GraphQL, you can build a unified API endpoint that allows you to query, write, and edit all the entities you need using a single API request.
 
@@ -68,7 +68,7 @@ Next, let’s define how users of the API will query these entities. While we co
 
 Now let’s define the [mutations](https://graphql.org/learn/queries/)—the operations that modify the data stored in our databases via our GraphQL API. For this we create a `Mutation` type. The only mutation we’ll use for now is `createUser`. Since we’re using three different databases, we add a mutation for each database type. Each of the mutations accepts the input `UserInput` and returns a `User` entity:
 
-```graphql
+```
     type Mutation {
         mysql_createUser(input: UserInput!): User
         postgresql_createUser(input: UserInput!): User
@@ -78,7 +78,7 @@ Now let’s define the [mutations](https://graphql.org/learn/queries/)—the ope
 
 We also want to provide a way to query the users, so we create a `Query` type with one query per database type. Each query accepts a `String` that’s the user’s UUID, returning the `User` entity that contains its name, UUID, and a collection of every associated `Pos``t`:
 
-```graphql
+```
     type Query {
         mysql_getUser(uuid: String!): User
         postgresql_getUser(uuid: String!): User
@@ -171,7 +171,7 @@ In the `Common` folder, we populate the `mysql.js` file with what we’ll need f
 
 The init query creates both the Users and the Posts tables as follows:
 
-```javascript
+```
 exports.init = async (client) => {
         await client.query(`
         CREATE TABLE IF NOT EXISTS users
@@ -202,15 +202,11 @@ The `getUser` query returns the user and their posts:
 ```javascript
     exports.getUser = async (client, uuid) => {
         var user = {};
-        var userFromDb = await client.query(`
-        select id, uuid, name from users where uuid = ? 
-        `, [uuid])
+        var userFromDb = await client.query(`select id, uuid, name from users where uuid = ?`, [uuid])
         if (userFromDb.length == 0) {
             return null;
         }
-        var postsFromDb = await client.query(`
-        select uuid, text from posts where user_id = ?
-        `, [userFromDb[0].id])
+        var postsFromDb = await client.query(`select uuid, text from posts where user_id = ?`, [userFromDb[0].id])
 
         user.UUID = userFromDb[0].uuid;
         user.Name = userFromDb[0].name;
@@ -502,7 +498,7 @@ In this article we walked you through creating a simple GraphQL API, using three
 
 You can find the full example project that we’ve been using [in this GitHub repo](https://github.com/serverless/examples/tree/master/aws-node-graphql-and-rds). The easiest way to experiment with the project is to clone the repo and deploy it from your machine using `npm run deploy`.
 
-For more GraphQL API examples using Serverless, check out [the](https://github.com/serverless/serverless-graphql) `[serverless-graphql](https://github.com/serverless/serverless-graphql)` repo.
+For more GraphQL API examples using Serverless, check out the [serverless-graphql](https://github.com/serverless/serverless-graphql)` repo.
 
 If you’d like to learn more about running Serverless GraphQL APIs at scale, you might enjoy our article series ["Running a scalable & reliable GraphQL endpoint with Serverless](https://serverless.com/blog/running-scalable-reliable-graphql-endpoint-with-serverless/)[.](https://serverless.com/blog/running-scalable-reliable-graphql-endpoint-with-serverless/)["](https://serverless.com/blog/running-scalable-reliable-graphql-endpoint-with-serverless/)
 
