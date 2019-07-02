@@ -171,7 +171,7 @@ In the `Common` folder, we populate the `mysql.js` file with what we’ll need f
 
 The init query creates both the Users and the Posts tables as follows:
 
-```javascript
+```bash
 exports.init = async (client) => {
         await client.query(`
         CREATE TABLE IF NOT EXISTS users
@@ -498,9 +498,9 @@ In this article we walked you through creating a simple GraphQL API, using three
 
 You can find the full example project that we’ve been using [in this GitHub repo](https://github.com/serverless/examples/tree/master/aws-node-graphql-and-rds). The easiest way to experiment with the project is to clone the repo and deploy it from your machine using `npm run deploy`.
 
-For more GraphQL API examples using Serverless, check out the [serverless-graphql](https://github.com/serverless/serverless-graphql)` repo.
+For more GraphQL API examples using Serverless, check out the [serverless-graphql](https://github.com/serverless/serverless-graphql) repo.
 
-If you’d like to learn more about running Serverless GraphQL APIs at scale, you might enjoy our article series ["Running a scalable & reliable GraphQL endpoint with Serverless](https://serverless.com/blog/running-scalable-reliable-graphql-endpoint-with-serverless/)[.](https://serverless.com/blog/running-scalable-reliable-graphql-endpoint-with-serverless/)["](https://serverless.com/blog/running-scalable-reliable-graphql-endpoint-with-serverless/)
+If you’d like to learn more about running Serverless GraphQL APIs at scale, you might enjoy our article series ["Running a scalable & reliable GraphQL endpoint with Serverless"](https://serverless.com/blog/running-scalable-reliable-graphql-endpoint-with-serverless/)
 
 Maybe GraphQL just isn’t your jam, and you’d rather deploy a REST API? We’ve got you covered: check out [this blog post](https://serverless.com/blog/serverless-express-rest-api/) for some examples.
 
