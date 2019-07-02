@@ -68,7 +68,7 @@ Next, let’s define how users of the API will query these entities. While we co
 
 Now let’s define the [mutations](https://graphql.org/learn/queries/)—the operations that modify the data stored in our databases via our GraphQL API. For this we create a `Mutation` type. The only mutation we’ll use for now is `createUser`. Since we’re using three different databases, we add a mutation for each database type. Each of the mutations accepts the input `UserInput` and returns a `User` entity:
 
-```
+```graphql
     type Mutation {
         mysql_createUser(input: UserInput!): User
         postgresql_createUser(input: UserInput!): User
@@ -78,7 +78,7 @@ Now let’s define the [mutations](https://graphql.org/learn/queries/)—the ope
 
 We also want to provide a way to query the users, so we create a `Query` type with one query per database type. Each query accepts a `String` that’s the user’s UUID, returning the `User` entity that contains its name, UUID, and a collection of every associated `Pos``t`:
 
-```
+```graphql
     type Query {
         mysql_getUser(uuid: String!): User
         postgresql_getUser(uuid: String!): User
@@ -171,7 +171,7 @@ In the `Common` folder, we populate the `mysql.js` file with what we’ll need f
 
 The init query creates both the Users and the Posts tables as follows:
 
-```
+```javascript
 exports.init = async (client) => {
         await client.query(`
         CREATE TABLE IF NOT EXISTS users
