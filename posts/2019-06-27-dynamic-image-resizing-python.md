@@ -54,9 +54,12 @@ provider:
   iamRoleStatements:
     - Effect: Allow
       Action:
-        - s3:*
-      Resource: '*'
+        - s3:GetObject
+        - s3:PutObject
+      Resource: 'arn:aws:s3:::resized-images-python/*'
 ```
+
+Note that the `Resource` declaration in the `iamRoleStatements` policy includes my bucket name. You'll need to change it for your bucket name.
 
 Next comes the definition of the function that we are going to expose and its parameters:
 
