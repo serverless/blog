@@ -12,7 +12,7 @@ category:
 featured: guides-and-tutorials
 ---
 
-mages are essential to creating an engaging user experience, but more isn’t always better. Large, high-resolution images may require little effort to integrate into the user interface, but they can drag down download speeds for the whole webpage - and the impact of all that additional points of resolution on the user experience is often minimal.
+Images are essential to creating an engaging user experience, but more isn’t always better. Large, high-resolution images may require little effort to integrate into the user interface, but they can drag down download speeds for the whole webpage - and the impact of all that additional points of resolution on the user experience is often minimal.
 
 Imagine that you run a news site. A large percentage of your readers are viewing your site on their phones and don’t need the high-resolution pictures. Some of your users, though, are reading on a desktop computer where they have a better connection and a better screen, and so will appreciate the higher-quality images.
 
