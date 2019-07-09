@@ -34,24 +34,20 @@ When Serverless Guru finished transitioning the existing Terraform pieces into S
 
 The frontend was a SPA (Single page application) written using AngularJS. The supporting frontend infrastructure that served the frontend application was a combination of the following services:
 
-<ul>
-    <li>AWS S3 for static hosting</li>
-    <li>AWS Cloudfront for caching</li> 
-    <li>AWS ACM for HTTPS</li> 
-    <li>AWS Route53 for DNS</li> 
-</ul>
-  
+* AWS S3 for static hosting
+* AWS Cloudfront for caching 
+* AWS ACM for HTTPS 
+* AWS Route53 for DNS 
+
 Each one of these services, above, was automated via the Serverless Framework and all of it was able to be deployed and connected with a single terminal command.
 
 The backend was written using NodeJS and was broken apart into a microservice architecture where each microservice was a single AWS Lambda function. The supporting backend infrastructure required the following services:
 
-<ul>
-    <li>AWS Lambda for the business logic</li>
-    <li>Amazon Aurora Serverless for the MySQL database</li> 
-    <li>AWS Cognito for adding an authentication layer to the REST API</li> 
-    <li>Amazon API Gateway for hosting the REST API</li> 
-    <li>AWS SES for sending emails to users</li>
-</ul>
+* AWS Lambda for the business logic
+* Amazon Aurora Serverless for the MySQL database 
+* AWS Cognito for adding an authentication layer to the REST API 
+* Amazon API Gateway for hosting the REST API 
+* AWS SES for sending emails to users
 
 #### The beauty of automation
 
