@@ -34,10 +34,10 @@ When Serverless Guru finished transitioning the existing Terraform pieces into S
 
 The frontend was a SPA (Single page application) written using AngularJS. The supporting frontend infrastructure that served the frontend application was a combination of the following services:
 
-- AWS S3 for static hosting
-- AWS Cloudfront for caching
-- AWS ACM for HTTPS
-- AWS Route53 for DNS
+- AWS S3 for static hosting 
+- AWS Cloudfront for caching 
+- AWS ACM for HTTPS 
+- AWS Route53 for DNS 
   
 Each one of these services, above, was automated via the Serverless Framework and all of it was able to be deployed and connected with a single terminal command.
 
