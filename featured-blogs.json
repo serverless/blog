@@ -1,6 +1,6 @@
 [
+  "buildcenter-serverless-development-cycle",
   "graphql-api-mysql-postgres-aurora",
   "outputs-and-secrets",
-  "serverless-microservices-in-a-team",
-  "choosing-a-database-with-serverless"
+  "serverless-microservices-in-a-team"
 ]

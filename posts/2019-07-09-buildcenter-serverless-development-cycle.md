@@ -1,6 +1,6 @@
 ---
 title: "How BuildCenter and Serverless Guru Streamlined Their Serverless Development Cycle"
-description: "BuildCenter makes digital tools for builders. Learn how Serverless Guru helped them streamline their operations using Serverless Framework"
+description: "BuildCenter makes digital tools for builders. Learn how Serverless Guru helped them streamline their operations using Serverless Framework."
 date: 2019-07-09
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-guru-case-study/serverless-guru-case-study-thumb.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-guru-case-study/serverless-guru-case-study-header.png"
