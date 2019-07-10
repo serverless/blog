@@ -16,8 +16,9 @@
     "url": "https://github.com/serverless/blog/issues"
   },
   "homepage": "https://serverless.com/blog",
-  "devDependencies": {
-    "gray-matter": "^2.1.0",
-    "markdown-magic": "^0.1.21"
+  "devDependencies": {},
+  "dependencies": {
+    "gray-matter": "^4.0.2",
+    "markdown-magic": "^0.1.25"
   }
 }

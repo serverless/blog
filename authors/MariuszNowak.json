@@ -1,0 +1,10 @@
+{
+    "name": "Mariusz Nowak",
+    "github": "medikoo",
+    "twitter": "medikoo",
+    "avatar": "https://serverless.com/static/mariusz.f537e273.png",
+    "bio": {
+      "short": "Mariusz Nowak is a core developer at Serverless, Inc.",
+      "long": "Mariusz is a core developer of Serverless Framework, active member of an open source community, engaged into design and implementation of a JavaScript/Node.js applications. Developed and published JavaScript tools and modules, which play important part in modern web applications."
+    }
+  }
