@@ -1,5 +1,5 @@
 ---
-title: "Basic Integration testing with Serverless Framework"
+title: "Basic Integration Testing with Serverless Framework"
 description: "With the latest Serverless Framework release, we made it easier to test APIs built with the Serverless Framework."
 date: 2019-07-10
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/sfe-test-framework/thumbnail.png'
@@ -21,7 +21,7 @@ Serverless Framework provides a new way to define basic integration tests for fu
 As an example let's look at this `handler.js` and `serverless.yml` file.
 
 **handler.js**
-```
+```bash
 module.exports.hello = async (event, context) => {
   let body = {};
   if (event.body) {
@@ -42,7 +42,7 @@ This function will return `hello, <name>` if a name was provided in the JSON req
 Here is the `serverless.yml` for this function with an HTTP POST endpoint.
 
 **serverless.yml**
-```
+```yaml
 tenant: skierkowski
 app: greeter
 service: hello
@@ -66,7 +66,7 @@ functions:
 Go ahead and deploy the service using `sls deploy`. Now let's write some basic integration tests in a new `serverless.test.yml` file. 
 
 **serverless.test.yml**
-```
+```yaml
 - name: says hello to the world by default
   endpoint: {function: hello}
   response:
