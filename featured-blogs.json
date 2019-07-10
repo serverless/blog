@@ -1,4 +1,5 @@
 [
+  "sfe-test-framework",
   "outputs-and-secrets",
   "serverless-microservices-in-a-team",
   "choosing-a-database-with-serverless",
