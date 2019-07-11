@@ -34,7 +34,7 @@ The three levels of support are:
 
 The SLA available on each status depends partly on the support package chosen but can be broken down as follows:
 
-*Community: Receives no additional support beyond what the community can provide, but has been recognised as a potentially supported plugin in the future.
+* Community: Receives no additional support beyond what the community can provide, but has been recognised as a potentially supported plugin in the future.
 * Approved: Approved plugins will receive the contracted SLA time or 24 hours, whichever is longer.
 * Certified: Certified plugins will receive the contracted SLA time or 12 hours, whichever is longer.
 
