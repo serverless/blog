@@ -16,7 +16,7 @@ If you are an organisation building Serverless solutions, Serverless, Inc is her
 
 We at Serverless Inc. decided that we needed to find a way to show our appreciation to our community for the amount of work and effort put into developing so many plugin solutions, and at the same time reduce the risk for our enterprise users who need the safety and security of a consistent entity that can be there should the need arise.
 
-This is why we’re proud to introduce  the Serverless Plugin Support program, an effort designed to allow Serverless, Inc the ability and capacity to assist in supporting the ongoing maintenance of key plugins developed by our community, so that those organisations who rely on them as a critical part of their Serverless ecosystem can rest assured they will receive the same level of support as the core framework.
+This is why we’re proud to introduce  the Serverless Plugin Support program, an effort designed to allow Serverless Inc. the ability and capacity to assist in supporting the ongoing maintenance of key plugins developed by our community, so that those organisations who rely on them as a critical part of their Serverless ecosystem can rest assured they will receive the same level of support as the core framework.
 
 The key aspect of this program is the allocation of a support status based on criteria that a plugin must reach in order to qualify. Each level of support also provides different benefits to the authors, from being able to proudly display a support badge on their Github pages, to being able to attend the weekly open source sync meeting where new features for the framework are planned. Each support status also has different SLA’s for existing and future enterprise support customers depending on the package chosen.
 
