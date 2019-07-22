@@ -20,9 +20,7 @@ Now, the Serverless Framework includes real-time monitoring, testing, secrets ma
 
 [Click here to try the new bigger, bolder Serverless Framework.](https://dashboard.serverless.com)
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=-Nf0ui3qP2E
-" target="_blank"><img src="http://img.youtube.com/vi/-Nf0ui3qP2E/0.jpg" 
-alt="Serverless Framework - Overview - 2019" width="240" height="180" border="10" /></a>
+[![Serverless Framework – Now, Full Lifecycle](http://img.youtube.com/vi/-Nf0ui3qP2E/0.jpg)](http://www.youtube.com/watch?v=-Nf0ui3qP2E "Serverless Framework – Now, Full Lifecycle")
 
 In fairness, it's been hard to avoid using multiple tools to build and manage serverless applications.  Serverless apps are 4x more efficient, but there are real differences in how you make and maintain them, which no single solution has accommodated well.
 
