@@ -1,7 +1,7 @@
 ---
 title: "Serverless Framework – Now, Full Lifecycle"
 description: "Now, the Serverless Framework includes real-time monitoring, testing, secrets management and security features, in a single, unified experience.  All of which are now available to every developer, for free."
-date: 2019-07-11
+date: 2019-07-22
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/full-lifecycle/thumbnail.png'
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/full-lifecycle/header.png'
 category:
