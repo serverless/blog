@@ -1,8 +1,8 @@
 [
+  "notifications-and-alerts",
   "serverless-now-full-lifecycle",
   "plugins-support",
   "serverless-test-framework",
   "graphql-api-mysql-postgres-aurora",
-  "outputs-and-secrets",
-  "serverless-microservices-in-a-team"
+  "outputs-and-secrets"
 ]
