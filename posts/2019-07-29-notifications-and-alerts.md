@@ -3,7 +3,7 @@ title: "Notifications & Alerts"
 description: "The Serverless Framework makes it super easy to identify problems with your deployed serverless applications before they impact the quality of your service"
 date: 2019-07-29
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/notifications-and-alerts/thumbnail.png'
-heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/notifications-and-alerts/header-alt.png'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/notifications-and-alerts/header.png'
 category:
   - news
 authors: 
@@ -18,7 +18,7 @@ __Screen shot: alerts feed & details tab - new error identified__
 ![Screen shot: alerts feed & details tab - new error identified](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/notifications-and-alerts/alertsfeed-and-details.png)
 One of the greatest benefits of serverless architecture is that many of the things that could go wrong with our apps are no longer applicable. We generally no longer have to maintain VMs, storage, or any persisted resources. There is a lot less to monitor! However, there are still things that can go wrong and we still need to keep an eye on them.
 
-We’ve identified the most important things to monitor in your serverless applications and included, out-of-the-box, the charts, alerts and notifications you’ll need to efficiently and effectively develop and operate your serverless applications.
+We’ve identified the most important things to monitor in your serverless applications and included, out-of-the-box, the charts, alerts and notifications you’ll need to efficiently and effectively develop and operate your serverless applications
 
 ##### Memory usage & duration
 
