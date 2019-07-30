@@ -1,6 +1,6 @@
 ---
 title: "EventBridge Use Cases and Examples"
-description: "AWS recently announced the EventBridge offering which helps developers build universal, reliable and fully event-driven applications. Come see how to use it with the Serverless Framework"
+description: "AWS recently announced the EventBridge offering which helps developers build universal, reliable and fully event-driven applications. Come see how to use it with Serverless Framework"
 date: 2019-07-30
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/eventbridge/thumbnail.png'
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/eventbridge/header.png'
