@@ -7,7 +7,7 @@ heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/eventb
 category:
   - news
 authors: 
-  - PhilipMuns
+  - PhilippMuns
 ---
 
 In serverless applications, events are the main communication mechanism. Sources such as API Gateways, databases or data streams emit events while other infrastructure components such as functions react to them in order to fulfill a given business need.
