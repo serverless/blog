@@ -1,8 +1,8 @@
 [
+  "eventbridge",
   "notifications-and-alerts",
   "serverless-now-full-lifecycle",
   "plugins-support",
   "serverless-test-framework",
-  "graphql-api-mysql-postgres-aurora",
-  "outputs-and-secrets"
+  "graphql-api-mysql-postgres-aurora"
 ]
