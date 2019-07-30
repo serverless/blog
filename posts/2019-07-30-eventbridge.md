@@ -116,7 +116,7 @@ functions:
 Next up we need to add some logic to our Newsletter application so that events are emitted to the `marketing` event bus everytime something noteworthy happens:
 
 ```javascript
-// In our marking application code
+// In our marketing application code
 const aws = require(‘aws-sdk’);
 
 function notifyMarketingTeam(email) {
