@@ -155,6 +155,6 @@ Using the EventBridge as a central component to receive and forward events helps
 
 The Serverless Framework v1.49.0 release ships with first-class citizen support for the `evenBridge` event source, making it easy for us to benefit from a serverless event bus system.
 
-Feel free to check our [EventBridge docs]() for more information.
+Feel free to check our [EventBridge docs](https://serverless.com/framework/docs/providers/aws/events/event-bridge/) for more information.
 
 Are you excited about Serverless Framework v1.49.0 and its support for EventBridge? Let us know what you’re planning to build with the Serverless Framework and the `eventBridge` event source in the comments below or via Twitter [@goserverless](https://twitter.com/goserverless).
