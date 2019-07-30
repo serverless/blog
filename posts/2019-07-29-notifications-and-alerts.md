@@ -1,5 +1,5 @@
 ---
-title: "Notifications & Alerts"
+title: "Zero Configuration AWS Lambda Notifications & Alerts with Serverless Framework"
 description: "The Serverless Framework makes it super easy to identify problems with your deployed serverless applications before they impact the quality of your service"
 date: 2019-07-29
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/notifications-and-alerts/thumbnail.png'
