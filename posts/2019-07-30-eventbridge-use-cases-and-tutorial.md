@@ -117,10 +117,10 @@ Next up we need to add some logic to our Newsletter application so that events a
 
 ```javascript
 // In our marketing application code
-const aws = require(‘aws-sdk’);
+const AWS = require('aws-sdk');
 
 function notifyMarketingTeam(email) {
- const eventBridge = new AWS.EventBridge({ 'us-east-1' }); 
+ const eventBridge = new AWS.EventBridge({ region: 'us-east-1' }); 
 
  return eventBridge.putEvents({
    Entries: [
