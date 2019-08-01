@@ -30,7 +30,7 @@ But, the software development tools we use for serverless applications are still
 
 The Serverless Framework helped by offering a single, simpler abstraction to deploy multiple use-cases.  Serverless Components takes this a step further by offering infinite abstractions, for all use-cases.
 
-For example, here is a Serverless Component that deploys a React Application on AWS S3, AWS Cloudfront with an AWS ACM Certificate and a custom domain — all of which costs around $0.08 per 10TB of data transferred, making it one of the cheapest possible ways to host React Apps.
+For example, here is a Serverless Component that deploys a React Application on AWS S3, AWS Cloudfront with an AWS ACM Certificate and a custom domain.
 
 ```yaml
 # serverless.yml
@@ -91,7 +91,7 @@ database:
 
 This fullstack app includes an AWS Lambda-based API, a react-based front-end, an on-demand DynamoDB database table, a custom domain, an SSL certificate and more, all on auto-scaling, pay-per-execution, serverless cloud infrastructure.  
 
-This software stack has possibly the lowest total overhead and cost.
+This software stack has extremely low total overhead and cost.
 
 [The full codebase for this can be found here](https://github.com/serverless/components/tree/master/templates/8-fullstack-application).
 
