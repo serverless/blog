@@ -126,7 +126,7 @@ The programmatic experience takes a lot of inspiration from Component-based fron
 
 At Serverless Inc., we believe in order to deliver the best product, you must be free to use the best services.
 
-Serverless Components are being designed to be entirely vendor agnostic, enabling you to easily use services from different vendors, together.  Whether it's big public cloud, like AWS, Azure, Google, Alibaba, Tencent, or services from smaller vendors like Stripe, Alogolia, Twilio and others.
+Serverless Components are being designed to be entirely vendor agnostic, enabling you to easily use services from different vendors, together.  Whether it's big public cloud, like AWS, Azure, Google, Alibaba, Tencent, or services from smaller vendors like Stripe, Algolia, Twilio and others.
 
 ## Wrapping Up
 
