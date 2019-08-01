@@ -17,7 +17,7 @@ It’s called Serverless Components and you can now use them with the Serverless
 
 [Deploy Serverless Components right now](https://www.github.com/serverless/components), or keep reading to learn why we believe they are a game-changer for the serverless era.
 
-<video width="560" controls>
+<video width="560" controls autoplay muted>
   <source src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-components-beta/serverless-framework-components-beta-overview.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
