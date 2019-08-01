@@ -130,13 +130,15 @@ Serverless Components are being designed to be entirely vendor agnostic, enablin
 
 ## Wrapping Up
 
-We have big plans for Serverless Components.  Our belief is we will see an increasing number of serverless cloud infrastructure services, and we aim for Serverless Components to help everyone create simpler abstractions on top of them, focused on outcomes.
+We have big plans for Serverless Components.  Our belief is we will see an increasing number of serverless cloud infrastructure services in the future, and we aim for Serverless Components to help everyone create simpler abstractions on top of them, focused on outcomes.
 
-If you are a vendor of cloud infrastructure services in need of a powerful developer experience, [please reach out to us](mailto:hello@serverless.com) to learn more about our partner program with Serverless Components.
+If you are a vendor of cloud infrastructure services lookng for a compelling developer experience and community, [please reach out to us](mailto:hello@serverless.com) to learn more about our partner program with Serverless Components.
 
-Go make amazing things!
+**Please Note** While in Beta, Serverless Components does not yet work with existing `serverless.yml` files.  You will have to create a new `serverless.yml` file.  Additionally, Serverless Components are not yet integrated with the Serverless Framework Dashboard.  We have some exciting announcements for this soon.  Stay tuned.
 
-Regards,
+Go make amazing things with Serverless Components and [let us know what you think ](https://github.com/serverless/components/issues).
+
+Cheers,
 
 Austen & the team @ Serverless Inc.
 
