@@ -11,7 +11,7 @@ authors:
 ---
 
 
-**Forget infrastructure.**  Today, we’re giving you a new option to **deploy serverless use-cases — without managing complex infrastructure configuration files**.  
+**Forget infrastructure** — Today, we’re giving you a new option to **deploy serverless use-cases — without managing complex infrastructure configuration files**.  
 
 It’s called Serverless Components and you can now use them with the Serverless Framework to deploy software on serverless cloud services, more easily than ever.  
 
@@ -28,7 +28,7 @@ Serverless, as a paradigm, is about focusing less on technology, and more on out
 
 But, the software development tools we use for serverless applications are still very focused on the underlying infrastructure and suffer from the bloated configuration files and complexity that comes with that mind-set.
 
-The Serverless Framework helped by offering a single, simpler abstraction to deploy multiple use-cases.  Serverless Components takes this a step further by offering infinite abstractions that are use-case specific, hiding irrelevant infrastructure details.
+The Serverless Framework helped by offering a single, simpler abstraction to deploy multiple use-cases.  Serverless Components takes this a step further by offering infinite abstractions, for all use-cases.
 
 For example, here is a Serverless Component that deploys a React Application on AWS S3, AWS Cloudfront with an AWS ACM Certificate and a custom domain — all of which costs around $0.08 per 10TB of data transferred, making it one of the cheapest possible ways to host React Apps.
 
@@ -47,7 +47,7 @@ website:
     domain: https://www.serverless-website.com
 ```
 
-[A full codebase for this can be found here](https://github.com/serverless/components/tree/master/templates/4-website).
+[The full codebase for this can be found here](https://github.com/serverless/components/tree/master/templates/4-website).
 
 Even better, here is a Fullstack Serverless Application using multiple Serverless Components, which you can deploy in seconds:
 
@@ -89,9 +89,11 @@ database:
         KeyType: 'HASH'
 ```
 
-This fullstack app includes an AWS Lambda-based API, a react-based front-end, an on-demand DynamoDB database table, a custom domain, an SSL certificate and more, all on auto-scaling, pay-per-execution, serverless cloud infrastructure.  This software stack has possibly the lowest total overhead and cost.
+This fullstack app includes an AWS Lambda-based API, a react-based front-end, an on-demand DynamoDB database table, a custom domain, an SSL certificate and more, all on auto-scaling, pay-per-execution, serverless cloud infrastructure.  
 
-[A full codebase for this can be found here](https://github.com/serverless/components/tree/master/templates/8-fullstack-application).
+This software stack has possibly the lowest total overhead and cost.
+
+[The full codebase for this can be found here](https://github.com/serverless/components/tree/master/templates/8-fullstack-application).
 
 ## Serverless Components Are Reusable
 
@@ -99,7 +101,7 @@ There hasn’t been an easy way to create reusable outcomes built on serverless 
 
 Serverless Components are designed for reuse and composition.  They can be composed together in YAML (like the examples above) so you and your team can build software faster than ever.
 
-If you want to create a reusable Serverless Component, you can do it programmatically via javascript using “serverless.js”, like this:
+If you want to create a reusable Serverless Component, you can do it programmatically via javascript using `serverless.js`, like this:
 
 ```javascript
 // serverless.js
@@ -118,27 +120,27 @@ MyBlog extends Component {
 }
 ```
 
-The programmatic experience takes a lot of inspiration from Component-based front-end frameworks, like React.  The APIs are simple and familiar.  Lastly, the core is written in vanilla Javascript, making it as approachable as possible.
+The programmatic experience takes a lot of inspiration from Component-based front-end frameworks, like React.  The APIs are simple and familiar.  Lastly, Serverless Components are written in vanilla Javascript, making them as approachable as possible.
 
 ## Vendor Choice
 
 At Serverless Inc., we believe in order to deliver the best product, you must be free to use the best services.
 
-Serverless Components are being designed to be entirely vendor agnostic, enabling you to easily use services from different vendors, together.  Whether it's big public cloud, like AWS, Azure, Google and Alibaba, or a smaller vendor like Stripe, Alogolia, Twilio and others.
+Serverless Components are being designed to be entirely vendor agnostic, enabling you to easily use services from different vendors, together.  Whether it's big public cloud, like AWS, Azure, Google, Alibaba, Tencent, or services from smaller vendors like Stripe, Alogolia, Twilio and others.
 
 ## Wrapping Up
 
-We have big plans for Serverless Components.  The future will be filled with many new serverless cloud infrastructure services, and we aim for Serverless Components to help everyone create simpler abstractions on top of those services, focused on outcomes.
+We have big plans for Serverless Components.  Our belief is we will see an increasing number of serverless cloud infrastructure services, and we aim for Serverless Components to help everyone create simpler abstractions on top of them, focused on outcomes.
 
-If you are a vendor of cloud infrastructure services in need of a powerful developer experience, [please reach out to us](hello@serverless.com) to learn more about our partner program with Serverless Components.
+If you are a vendor of cloud infrastructure services in need of a powerful developer experience, [please reach out to us](mailto:hello@serverless.com) to learn more about our partner program with Serverless Components.
 
-Go make amazing things.
+Go make amazing things!
 
 Regards,
 
-Austen and the Serverless Team.
+Austen & the team @ Serverless Inc.
 
-P.S. Eslam is the lead architect of Serverless Components.  [Reach out to him if you have want to chat about anything related to Serverless Components!](https://twitter.com/eahefnawy)
+P.S. Eslam is the lead architect of Serverless Components.  He's stellar.  [Reach out to him to chat about anything related to Serverless Components](https://twitter.com/eahefnawy)!
 
 
 
