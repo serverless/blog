@@ -1,8 +1,7 @@
 [
-  "secrets-management",
   "serverless-components-beta",
+  "aws-secrets-management",
   "eventbridge-use-cases-and-tutorial",
   "notifications-and-alerts",
-  "serverless-now-full-lifecycle",
-  "plugins-support"
+  "serverless-now-full-lifecycle"
 ]
