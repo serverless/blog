@@ -1,6 +1,6 @@
 ---
-title: "Secrets management for Serverless applications"
-description: "Storing application secrets in cloud applications is a hot topic that provokes many (often contradictory) opinions on how to manage them right."
+title: "Secrets Management for AWS Powered Serverless Applications"
+description: "Storing application secrets in serverless applications is a hot topic that provokes many (often contradictory) opinions on how to manage them right."
 date: 2019-08-02
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/secrets-management/thumbnail.png'
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/secrets-management/header.png'
@@ -10,7 +10,7 @@ authors:
   - GarethMcCumskey
 ---
 
-Question: What’s the right way to manage secrets in cloud applications?
+Question: What’s the right way to manage secrets in serverless applications?
 
 The crowd answers:
 Secrets belong in environment variables! 
@@ -19,7 +19,7 @@ Secrets belong in parameter stores!
 That’s not what parameter stores are for!
 Vault! AWS KMS! SSM!
 
-Storing application secrets in cloud applications is a hot topic that provokes many (often contradictory) opinions on how to manage them right. By “secrets management” we mean the entire secrets lifecycle: from configuring, storing and accessing them to rotating them and enforcing secrets policies. Typical ways to configure secrets include hard-coding them in your application (not recommended!), using dedicated secrets files, storing them in environment variables, and using secrets stores like HashiCorp’s [Vault](https://www.vaultproject.io/).
+Storing application secrets in serverless applications is a hot topic that provokes many (often contradictory) opinions on how to manage them right. By “secrets management” we mean the entire secrets lifecycle: from configuring, storing and accessing them to rotating them and enforcing secrets policies. Typical ways to configure secrets include hard-coding them in your application (not recommended!), using dedicated secrets files, storing them in environment variables, and using secrets stores like HashiCorp’s [Vault](https://www.vaultproject.io/).
 
 If you’re running Serverless applications, most likely you are already using secrets to store data like database connection strings and API tokens for third party services, or you will start needing to use them soon. We want to help you make an informed choice about how to store and access your secrets with the Serverless Framework.
 
@@ -331,4 +331,4 @@ You can find the docs for the solutions we used here:
 - AWS Secrets Manager - [AWS docs](https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html), [Serverless docs](https://serverless.com/framework/docs/providers/aws/guide/variables#reference-variables-using-aws-secrets-manager).
 - Serverless Framework secrets - [Serverless docs](https://serverless.com/framework/docs/dashboard/secrets/).
 
-If you’d like to give Serverless Framework a try, get started [on the website](https://serverless.com/).
+If you’d like to give Serverless Framework a try, have a look at the [getting started guide](https://serverless.com/framework/docs/getting-started/).
