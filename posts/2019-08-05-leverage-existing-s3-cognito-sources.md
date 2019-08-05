@@ -1,7 +1,7 @@
 ---
 title: "Leveraging existing event sources (S3 and CognitoUserPools)"
 description: "Its very likely your organisation has had an S3 bucket or Cognito User Pool in use for a while. Now you can just include them in your Serverless service."
-date: 2019-08-02
+date: 2019-08-05
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/leverage-existing-s3-cognito/thumbnail.png'
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/leverage-existing-s3-cognito/header.png'
 category:
