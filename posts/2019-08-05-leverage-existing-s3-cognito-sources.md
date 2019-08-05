@@ -2,12 +2,12 @@
 title: "Leveraging existing event sources (S3 and CognitoUserPools)"
 description: "Its very likely your organisation has had an S3 bucket or Cognito User Pool in use for a while. Now you can just include them in your Serverless service."
 date: 2019-08-02
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/secrets-management/thumbnail.png'
-heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/secrets-management/header.png'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/leverage-existing-s3-cognito/thumbnail.png'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/leverage-existing-s3-cognito/header.png'
 category:
   - news
 authors: 
-  - GarethMcCumskey
+  - PhilippMuns
 ---
 
 Cloud computing introduced a drastic shift when it was first introduced in the early 2000s. Providers such as Amazon Web Services (AWS) finally made it possible to rent compute, storage and other web related services on a monthly or yearly subscription basis. Getting projects into production was a matter of a credit card swipe and a deployment. Contrasting this with the usual, months long capacity planning and procurement processes shows why cloud computing was such a game changer in the tech industry.
