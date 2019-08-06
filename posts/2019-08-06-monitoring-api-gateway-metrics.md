@@ -11,7 +11,7 @@ category:
   - guides-and-tutorials
 ---
 
-Thousands of developers are using serverless technologies to build web APIs. Tools like the Serverless Framework make it easy to build with foundational infrastructure like AWS Lambda, API Gateway and DynamoDB to build REST APIs and GraphQL APIs. (TODO: Add hyperlinks)
+Thousands of developers are using serverless technologies to build web APIs. Tools like the Serverless Framework make it easy to build with foundational infrastructure like AWS Lambda, API Gateway and DynamoDB to build [REST APIs](https://serverless.com/blog/node-rest-api-with-serverless-lambda-and-dynamodb/) and [GraphQL APIs](https://serverless.com/blog/running-scalable-reliable-graphql-endpoint-with-serverless/).
 
 But monitoring these APIs is still a bit of a black box. The out-of-the-box monitoring systems provided by AWS don't provide the granularity you need for inspecting your APIs, particularly when the failure could span multiple systems.
 
