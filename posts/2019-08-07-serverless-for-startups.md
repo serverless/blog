@@ -1,6 +1,6 @@
 ---
-title: "How we saved over $1,000 by building CloudForecast.io using AWS Lambda + Serverless"
-description: "When we decided to launch and bootstrap CloudForecast in 2018, we faced questions that every startup face."
+title: "Serverless: The Ideal Choice For Startups? (CloudForecast Case Study)"
+description: "CloudForecast is a bootstrapped startup that launched in 2018. This is their story of why they decided to go serverless."
 date: 2019-08-07
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudforecast/thumbnail.png'
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudforecast/header.png'
@@ -10,11 +10,11 @@ authors:
   - FrancoisLagier
 ---
 
-When we decided to launch and bootstrap [CloudForecast](https://www.cloudforecast.io/?utm_source=medium&utm_medium=blog&utm_campaign=serverless) in 2018, we faced questions that every startup face including "What’s the right way to build this product with our resources without creating technical debts for the future?"
+When we decided to launch and bootstrap [CloudForecast](https://www.cloudforecast.io/?utm_source=serverless.com&utm_medium=blog&utm_campaign=serverless) in 2018, we faced questions that every startup face including "What’s the right way to build this product with our resources without creating technical debts for the future?"
 
 #### The "$100 Startup" concept
 
-Around the time we started [CloudForecast](https://www.cloudforecast.io/?utm_source=medium&utm_medium=blog&utm_campaign=serverless), I was reading "$100 Startup" by Chris Guillebeau. In his book, Chris advises his readers to get their product out fast while being cost-effective to limit the damage if your idea fails (definitely possible, unfortunately!). We try to apply this advice on every side of our business including our technical decisions.
+Around the time we started [CloudForecast](https://www.cloudforecast.io/?utm_source=serverless.com&utm_medium=blog&utm_campaign=serverless), I was reading "$100 Startup" by Chris Guillebeau. In his book, Chris advises his readers to get their product out fast while being cost-effective to limit the damage if your idea fails (definitely possible, unfortunately!). We try to apply this advice on every side of our business including our technical decisions.
 
 #### Our goals/requirements
 
@@ -58,8 +58,8 @@ We considered running a couple of small instances to do the job which would cost
 Like every new startup, we made (and are probably still making) some mistakes along the way but picking AWS Lambda and the serverless framework wasn’t one of them. Here are a few reasons why it was the right choice for us: 
 
 * **CloudForecast was able to grow effortlessly with AWS Lambda:** As we onboard clients, we will automatically run more functions and the cost will grow linearly with revenue.
-* **The Serverless framework is always improving and it’s keeping up with AWS Lambda.** The recent [Full Lifecycle](https://serverless.com/blog/serverless-now-full-lifecycle) feature announcement is a perfect example of how the Serverless framework is always evolving.
+* **The Serverless framework is always improving and it’s keeping up with AWS Lambda.** The recent [Full Lifecycle](https://serverless.com/blog/serverless-now-full-lifecycle/) feature announcement is a perfect example of how the Serverless framework is always evolving.
 
 Over time, our product evolved and so did our functions but Serverless and Lambda were always able to deliver.
 
-If you have any questions related to this post or what we do at [CloudForecast.io](https://www.cloudforecast.io/?utm_source=medium&utm_medium=blog&utm_campaign=serverless), feel free to reach out to me at francois@cloudforecast.io. We would love to hear from you!
+If you have any questions related to this post or what we do at [CloudForecast.io](https://www.cloudforecast.io/?utm_source=serverless.com&utm_medium=blog&utm_campaign=serverless), feel free to reach out to me at francois@cloudforecast.io. We would love to hear from you!
