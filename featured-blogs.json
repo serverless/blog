@@ -1,7 +1,7 @@
 [
+  "cloudforecast",
   "leverage-existing-s3-cognito-sources",
   "serverless-components-beta",
   "aws-secrets-management",
-  "eventbridge-use-cases-and-tutorial",
-  "notifications-and-alerts"
+  "eventbridge-use-cases-and-tutorial"
 ]
