@@ -1,5 +1,5 @@
 ---
-title: "Fast, Cheap & Global React Apps via Serverless Framework Components [Video]"
+title: "Fast, Cheap & Global React Apps via Serverless Framework Components (Video)"
 description: "Easily deploy React applications that are fast, global and cheap to host on AWS S3 and AWS Cloudfront."
 date: 2019-08-07
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-components-react-apps/react-apps-serverless-components-thumb.png'
