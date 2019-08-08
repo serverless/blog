@@ -2,19 +2,23 @@
 title: "Fast, Cheap & Global React Apps via Serverless Framework Components [Video]"
 description: "Easily deploy React applications that are fast, global and cheap to host on AWS S3 and AWS Cloudfront."
 date: 2019-08-07
-thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudforecast/thumbnail.png'
-heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cloudforecast/header.png'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-components-react-apps/react-apps-serverless-components-thumb.png'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-components-react-apps/react-apps-serverless-components-hero.png'
 category:
   - guides-and-tutorials
 authors: 
   - AustenCollins
 ---
 
-Here's a tutorial on how you can deploy React applications that are fast, global and cheap to host. 
+Here's a tutorial on how you can deploy React applications that are fast, global and cheap to host.
 
-The outcome of this is a website with a React app, a custom domain and SSL certificate — Basically, everything you need to be production ready.
+The outcome of this is a website with a React app, a custom domain and SSL certificate — **Basically, everything you need to be production ready.**
 
-And all of this will be made simple via the Serverless Framework and its new Serverless Components feature.  
+And all of this will be made simple via the Serverless Framework and its new Serverless Components feature.
+
+This post features few images because an entire walkthrough video of this tutorial can be found here:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ts26BVuX3j0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ### Overview
