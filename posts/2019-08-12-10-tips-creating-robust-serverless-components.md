@@ -12,7 +12,7 @@ authors:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ts26BVuX3j0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Serverless Components allow anyone to design and build specific use cases and share them with the world, without having to be tied to a single pattern or a single opinion. We then released 20+ components to bootstrap these uses cases, and we’re constantly building more. One of our core design goals is simplicity, so we produced an incredibly simple core and components API that makes creating components a breeze, and we’ve covered them all in a simple one-page documentation.
+[Serverless Components](https://github.com/serverless/components) allow anyone to design and build specific use cases and share them with the world, without having to be tied to a single pattern or a single opinion. We then released 20+ components to bootstrap these uses cases, and we’re constantly building more. One of our core design goals is simplicity, so we produced an incredibly simple core and components API that makes creating components a breeze, and we’ve covered them all in a [simple one-page documentation](https://github.com/serverless/components/blob/master/README.md).
 
 In this article, we will give you comprehensive practice advice (not docs) on creating robust Serverless Components based on our experience building all these components over the past year, to help as you start creating components for your own unique use cases. So let’s dig in..
 
