@@ -1,8 +1,7 @@
 [
+  "react-apps-with-serverless-components",
+  "serverless-for-startups",
+  "leverage-existing-s3-cognito-sources",
   "serverless-components-beta",
-  "eventbridge-use-cases-and-tutorial",
-  "notifications-and-alerts",
-  "serverless-now-full-lifecycle",
-  "plugins-support",
-  "serverless-test-framework"
+  "eventbridge-use-cases-and-tutorial"
 ]

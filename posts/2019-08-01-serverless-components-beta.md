@@ -47,7 +47,7 @@ website:
     domain: https://www.serverless-website.com
 ```
 
-[The full codebase for this can be found here](https://github.com/serverless/components/tree/master/templates/4-website).
+[The full codebase for this can be found here](https://github.com/serverless/components/tree/master/templates/website).
 
 Even better, here is a Fullstack Serverless Application using multiple Serverless Components, which you can deploy in seconds:
 
@@ -93,7 +93,7 @@ This fullstack app includes an AWS Lambda-based API, a react-based front-end, an
 
 This software stack has extremely low total overhead and cost.
 
-[The full codebase for this can be found here](https://github.com/serverless/components/tree/master/templates/8-fullstack-application).
+[The full codebase for this can be found here](https://github.com/serverless/components/tree/master/templates/fullstack-application).
 
 ## Serverless Components Are Reusable
 
