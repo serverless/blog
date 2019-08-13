@@ -2,8 +2,8 @@
 title: "10 Tips for Creating Robust Serverless Components"
 description: "A practical guide for creating robust, safe and fast serverless components."
 date: 2019-08-07
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-components-beta/serverless-components-thumbnail.gif"
-heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-components-beta/serverless_components_header.gif"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/10-tips-robust-components/thumbnail.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/10-tips-robust-components/header.png"
 category:
   - guides-and-tutorials
 authors:
