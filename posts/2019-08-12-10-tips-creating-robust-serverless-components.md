@@ -78,7 +78,7 @@ if (prevLambda) {
 In many cases, especially if you’re creating a low level component, you’ll have to provision resources in some cloud provider (ie. AWS). In that case, you will likely need to choose a name or some sort of an identifier to your resource (ie. bucket name). If the resource name is an input, you will need to be aware that a resource of that name might already exist and handle that edge case. You will also need to handle the case of the user changing the name input, in which case you should delete the old resource with the old name (that was saved in state in a previous deployment), and create a new one with the new name. We recommend that you create the new resource before deleting the old one, in case something went wrong during creation. Here's how this might look like:
 
 ```js
-// we already created a new lambda for the new name
+// we already created a new lambda with the new name
 // now let's make sure we delete the old one...
 if (this.state.name && this.state.name !== inputs.name) {
   this.context.status(`Replacing Lambda`);
@@ -89,7 +89,7 @@ if (this.state.name && this.state.name !== inputs.name) {
 However if your use cases allows it, we recommend that you use random names for better UX and to avoid collisions completely, and then save that in the local state. We have a helper function that makes it easy to create random resource names that share a global `contextId` as a form of tagging. Using this function could look something like this:
 
 ```js
-config.name = this.state.name || this.context.resourceId();
+const name = this.state.name || this.context.resourceId();
 ```
 
 ### 6. Detect Changes in Inputs
@@ -113,7 +113,6 @@ const configChanged = (prevLambda, lambda) => {
     "hash"
   ];
   const inputs = pick(keys, lambda);
-  inputs.role = { arn: inputs.role.arn }; // remove other inputs.role component outputs
   const prevInputs = pick(keys, prevLambda);
   return not(equals(inputs, prevInputs));
 };
@@ -167,7 +166,7 @@ const { Component, Utils } = require("@serverless/core");
 
 class myComponent extends Component {
   async default(inputs = {}) {
-    // some logic here...
+    // your logic here...
 
     if (!(await utils.fileExists(path))) {
       await utils.writeFile(path, contents);
