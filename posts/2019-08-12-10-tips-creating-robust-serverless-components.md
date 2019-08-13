@@ -147,7 +147,7 @@ const getLambda = async ({ lambda, name }) => {
 
 ### 8. Removal Should Use State, Not Inputs
 
-In case of removal, we recommend that you use state data that was previously saved by the previous deployment instead of using the inputs object. The reasoning behind that is that inputs do not represent the actual state on the provider, but rather the state that you want it to be. They are also not guaranteed to be always available (for example, the user could change inputs in the YAML file), but the state is accessed programmatically and will always be there. The state is always kept up to date with every deployment and it represents the last known “state” of the component and its resources.
+In case of removal, we recommend that you use state data that was previously saved by the previous deployment instead of using the inputs object. The reasoning behind that is that inputs do not represent the actual state on the provider, but rather the state that you want it to be. They are also not guaranteed to be always available (for example, if inputs are passed from other component's outputs, then running `sls remove`), but the state is accessed programmatically and will always be there. The state is always kept up to date with every deployment and it represents the last known “state” of the component and its resources.
 
 here's how the [aws-lambda component](https://github.com/serverless-components/aws-lambda) removes the lambda using the name stored in state, instead of the name passed as an input (which the user might change):
 
