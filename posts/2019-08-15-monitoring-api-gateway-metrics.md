@@ -1,7 +1,7 @@
 ---
 title: Tracking API Gateway metrics in Serverless applications
 description: Monitoring web APIs in Serverless applications can be difficult. See how to do it with the Serverless Framework.
-date: 2019-08-06
+date: 2019-08-15
 layout: Post
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/monitoring-api-gateway-metrics/thumbnail.png'
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/monitoring-api-gateway-metrics/header.png'
