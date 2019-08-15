@@ -27,7 +27,7 @@ After we review the problems, I'll show you how we're solving this problem with 
 
 Let's get started!
 
-## Problem 1: Lambda Errors don't map to HTTP Errors
+#### Problem 1: Lambda Errors don't map to HTTP Errors
 
 If you have experience building services with AWS Lambda, you're probably familiar with CloudWatch Logs and CloudWatch Metrics. The great thing about CloudWatch is that it's integrated automatically with your Lambda functions. You don't have to do any instrumentation to get the logs flowing.
 
@@ -47,7 +47,7 @@ However, I've also lost some visibility into my application health. If my Dynamo
 
 As a developer, I'm interested in more than just whether my Lambda function successfully handled all errors before returning to the client. I also care about the user-facing result of the invocation -- was the client able to perform the action it wanted?
 
-## Problem 2: There are many places your request can fail outside of Lambda
+#### Problem 2: There are many places your request can fail outside of Lambda
 
 The second area where traditional Lambda monitoring falls down is that **there are many areas where API Gateway can fail aside from your Lambda function.** Your users can be experiencing errors before a request makes it to your Lambda function or even after your function completes successfully.
 
@@ -63,7 +63,7 @@ Further, even if your request makes it to your Lambda function and completes suc
 
 In each of these situations, the basic Lambda metrics and logs won't help you realize that your users are facing errors.
 
-### Problem 3: API Gateway metrics don't let you drill to the root issue
+##### Problem 3: API Gateway metrics don't let you drill to the root issue
 
 Let's switch over to the API Gateway side of the house. You can look at API Gateway-level metrics using CloudWatch Metrics. These will show you the number of 2XX, 3XX, 4XX, and 5XX status codes by resource and method in your application.
 
@@ -75,7 +75,7 @@ When your database goes down and results in a number of 500 errors, how do you f
 
 In the first case, you'll likely need API Gateway access logs enabled and some sort of system to process these logs as they come in. In the second case, you'll either need to instrument your code with some kind of application error platform, or you'll need to process your Lambda logs into an external system.
 
-## How we're solving this problem
+#### How we're solving this problem
 
 In the sections above, we noted a few problems with the current, separated approach of CloudWatch Metrics. 
 
