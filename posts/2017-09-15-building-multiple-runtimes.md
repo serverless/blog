@@ -12,7 +12,7 @@ As a developer on the cloud, there are many tools at your disposal. The Serverle
 
 To manage these related codebases, you might choose to divide your application’s functions into a number of different services. However, if you prefer to deploy a single service for all your functions, regardless of what language they are written in, the Serverless Framework empowers you to do just that.
 
-Let’s consider a small application that uses two runtimes and provides two functions. This example will use Python and Node targeting AWS, but the concepts will be broadly applicable in other circumstances. The full the project files can be [found here](https://github.com/serverless/examples/tree/master/aws-multiple-runtime) 
+Let’s consider a small application that uses two runtimes and provides two functions. This example will use Python and Node targeting AWS, but the concepts will be broadly applicable in other circumstances. The full project files can be [found here](https://github.com/serverless/examples/tree/master/aws-multiple-runtime) 
 
 We’ll create an application that has an endpoint that reports the current system timestamp, and a web controller that displays the time in the browser. The configuration will look largely similar to a single-runtime application. We specify the name of the service and the target provider in our `serverless.yml`:
 
