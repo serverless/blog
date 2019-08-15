@@ -91,7 +91,7 @@ The Serverless Framework provides the solution to this, letting you see your end
 
 First, you can see endpoint errors right next to your function invocation errors. Remember what we discussed above -- it's possible for your Lambda function to return successfully but your endpoint to show an error to the user. This view allows you to see both sources of errors.
 
-TODO: Add image of this.
+![API Gateway and function errors](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/monitoring-api-gateway-metrics/APIErrors.png)
 
 If you want to dig deeper on a particular error, click in to see the full story. You get API Gateway metrics, function metrics, logs, and even a stacktrace. In one place, you can see everything that happened with a single request, making it much easier to debug.
 
