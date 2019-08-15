@@ -1,7 +1,7 @@
 [
+  "monitoring-api-gateway-metrics",
   "10-tips-creating-robust-serverless-components",
   "react-apps-with-serverless-components",
   "serverless-for-startups",
-  "leverage-existing-s3-cognito-sources",
-  "serverless-components-beta"
+  "leverage-existing-s3-cognito-sources"
 ]
