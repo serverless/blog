@@ -160,7 +160,7 @@ Keep in mind however what we mentioned earlier about keeping most of the state i
 When you first create your component, you’ll need to extend the Component class from the `@serverless/core` npm package. In that package, there are plenty of useful utilities that you can use to make your life easier. For example, we have a `Utils.sleep()` function that pauses runtime for a few seconds before moving on. This is extremely helpful when dealing with cloud infrastructure as it might take a while to create some resources before we make further operations on it. There are also file system, parsing and packaging utilities that you can use when dealing with files that you might need to upload to the cloud. Here's a common use-case:
 
 ```js
-const { Component, Utils } = require("@serverless/core");
+const { Component, utils } = require("@serverless/core");
 
 class myComponent extends Component {
   async default(inputs = {}) {
