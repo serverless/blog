@@ -1,6 +1,6 @@
 ---
 title: Zero instrumentation observability for AWS Lambda
-description: We recently launched a few features which make troubleshooting Serverless Framework services much easier, with zero effort
+description: Learn how to get instant visibility into your AWS Lambda functions with zero instrumentation using Serverless Framework.
 date: 2019-08-20
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/zero-instrumentation-observability-aws-lambda-functions/thumbnail.png'
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/zero-instrumentation-observability-aws-lambda-functions/header.png'
