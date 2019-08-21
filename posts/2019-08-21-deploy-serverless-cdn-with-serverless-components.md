@@ -1,7 +1,7 @@
 ---
 title: "Easily Deploy A Serverless CDN With Serverless Components"
 description: "How to deploy a serverless content delivery network (CDN) using Serverless Components."
-date: 2019-08-07
+date: 2019-08-21
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cdn-with-components/thumbnail.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cdn-with-components/header.png"
 category:
