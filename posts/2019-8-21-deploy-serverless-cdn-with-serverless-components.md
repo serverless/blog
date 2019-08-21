@@ -1,20 +1,20 @@
 ---
-title: "Deploy a Serverless CDN with Serverless Components"
+title: "Easily Deploy A Serverless CDN With Serverless Components"
 description: "How to deploy a serverless content delivery network (CDN) using Serverless Components."
 date: 2019-08-07
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/10-tips-robust-components/thumbnail.png"
-heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/10-tips-robust-components/header.png"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cdn-with-components/thumbnail.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cdn-with-components/header.png"
 category:
   - guides-and-tutorials
 authors:
   - EslamHefnawy
 ---
 
-Two weeks ago we released a complete solution for deploying serverless websites that supports custom domain, SSL & CDN in a single [website component](https://github.com/serverless-components/website). Since then we've receive great feedback about related use cases of the underlying infrastructure and we realized there is a need for a standalone content delivery network solution to serve your static assets, even if they're not directly related to your website.
+Two weeks ago we released a complete solution for deploying serverless websites that supports custom domain, SSL & CDN in a single [website component](https://github.com/serverless-components/website). Since then we've received great feedback about related use cases of the underlying infrastructure and we realized there is a need for a standalone content delivery network solution to serve your static assets, even if they're not directly related to your website.
 
 Today we're releasing the zero-config [Serverless CDN component](https://github.com/serverless-components/cdn) to serve that exact use case. Just like the [website component](https://github.com/serverless-components/website), it supports secure SSL-enabled custom domains and is powered by AWS S3, AWS CloudFront, AWS Route53 & AWS Certificate Manager. All can be deployed with **only 2 lines of YAML**.
 
-### Deploying the Serverless CDN Component
+#### Deploying the Serverless CDN Component
 
 To deploy the [Serverless CDN component](https://github.com/serverless-components/cdn), you'll need to first install the latest version of the Serverless Framework if you haven't done that already.
 
@@ -54,7 +54,7 @@ After you upload your first file, you can request & view this file via your CDN 
 https://d29sqymsceo6j1.cloudfront.net/my-first-image.png
 ```
 
-### Adding a Custom Domain to Your Serverless CDN
+#### Adding a Custom Domain to Your Serverless CDN
 
 Just like the [website component](https://github.com/serverless-components/website), you can add your own custom domain to your content delivery network with a single input.
 
@@ -65,7 +65,7 @@ myServerlessCDN:
     domain: cdn.example.com
 ```
 
-Please note that your domain (`example.com` in this example) must have been purchased via AWS Route53 and available in your AWS account. For advanced users, you may also purchase it else where, then configure the name servers to point to an AWS Route53 hosted zone. How you do that depends on your registrar.
+Please note that your domain (`example.com` in this example) must have been purchased via AWS Route53 and available in your AWS account. For advanced users, you may also purchase it elsewhere, then configure the name servers to point to an AWS Route53 hosted zone. How you do that depends on your registrar.
 
 To deploy your custom domain, just run `serverless` again:
 
@@ -83,7 +83,7 @@ myApp (master)$ serverless
 myApp (master)$
 ```
 
-You'll now notice there's a new `domain` output in the CLI and that it's already SSL-enabled and completely secure by default, as the [Serverless CDN component](https://github.com/serverless-components/cdn) creates a free certificate for your automatically via AWS Certeficate Manager. If this is the first time you use your domain with AWS, deployment may take a while during certificate creation and validation.
+You'll now notice there's a new `domain` output in the CLI and that it's already SSL-enabled and completely secure by default, as the [Serverless CDN component](https://github.com/serverless-components/cdn) creates a free certificate for you automatically via AWS Certificate Manager. If this is the first time you use your domain with AWS, deployment may take a while during certificate creation and validation.
 
 You may now use this domain instead of the root CloudFront URL we used earlier to access our file. Again, keep in mind that domain propagation may take a few minutes:
 
@@ -91,7 +91,7 @@ You may now use this domain instead of the root CloudFront URL we used earlier t
 https://cdn.example.com/my-first-image.png
 ```
 
-### Composing Your Serverless CDN with Other Components
+#### Composing Your Serverless CDN with Other Components
 
 As mentioned before, the Serverless CDN is just one of [30+ components we already have available for you](https://github.com/serverless-components). You will likely need to use this serverless content delivery network with other components of your application (for example the [backend component](https://github.com/serverless-components/backend)) to be able to dynamically upload files from your backend to the bucket that was created for you. For a full stack application, your YAML file may look something like this:
 
@@ -109,7 +109,7 @@ backend:
     code:
       src: ../backend
     domain: api.example.com
-    # dyanmically passing the bucket name output to the backend as an environment variable
+    # dynamically passing the bucket name output to the backend as an environment variable
     env:
       CDN_BUCKET: ${cdn.bucketName}
 
@@ -121,7 +121,7 @@ cdn:
 
 Checkout the docs for the [backend component](https://github.com/serverless-components/backend) and the [website component](https://github.com/serverless-components/website) for more information.
 
-### Using the Serverless CDN Component in Your Own Custom Component
+#### Using the Serverless CDN Component in Your Own Custom Component
 
 If you're building [your own custom component](https://github.com/serverless/components#building-components), we've also created a custom `upload` function that you can use to directly upload files to your bucket, without even knowing the bucket name. Here's an example on how this might look like:
 
@@ -153,9 +153,9 @@ module.exports = myCustomComponent;
 
 Needless to say, you must deploy your [Serverless CDN component](https://github.com/serverless-components/cdn) before you're able to use the `upload` function as it stores the required CDN data in the state.
 
-### Wrapping up
+#### Wrapping up
 
-In this article, we've seen how you can deploy a zero-config Serverless CDN, and adding your own custom domain to it using the [Serverless CDN component](https://github.com/serverless-components/cdn). We've also seen how you could use this CDN component in your existsing application by composing it with other [serverless components](https://github.com/serverless-components), and finally, we demonstrated how you could use this [Serverless CDN component](https://github.com/serverless-components/cdn) as a child component in [your own custom component](https://github.com/serverless/components#building-components) and how you could utilize the custom `upload` function we're exposing to [your custom component](https://github.com/serverless/components#building-components) to easily upload files and directories to your new serverless content delivery network.
+In this article, we've seen how you can deploy a zero-config Serverless CDN, and adding your own custom domain to it using the [Serverless CDN component](https://github.com/serverless-components/cdn). We've also seen how you could use this CDN component in your existing application by composing it with other [serverless components](https://github.com/serverless-components), and finally, we demonstrated how you could use this [Serverless CDN component](https://github.com/serverless-components/cdn) as a child component in [your own custom component](https://github.com/serverless/components#building-components) and how you could utilize the custom `upload` function we're exposing to [your custom component](https://github.com/serverless/components#building-components) to easily upload files and directories to your new serverless content delivery network.
 
 We hope you will find this [Serverless CDN component](https://github.com/serverless-components/cdn) useful for your application, and we can't wait to see what you'll do with it. If you have any questions, feedback or showoffs (we love those!), [feel free to contact me directly on Twitter](https://twitter.com/eahefnawy).
 
