@@ -109,7 +109,7 @@ backend:
     code:
       src: ../backend
     domain: api.example.com
-    # dyanmically passing the bucket name output to the backend as an environmetn variable
+    # dyanmically passing the bucket name output to the backend as an environment variable
     env:
       CDN_BUCKET: ${cdn.bucketName}
 
