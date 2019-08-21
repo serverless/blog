@@ -40,7 +40,7 @@ The invocation details also include CloudWatch Logs, stack traces and functions 
 #### Logs
 Long gone are the days of having to login to the AWS Console and sift through countless CloudWatch log streams to find the invocation logs you need. The “logs” section of the invocation details view loads the Cloud Watch logs for that particular invocation so any debugging logs your function generated are now available at your fingertips. 
 
-![Logs](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/zero-instrumentation-observability-aws-lambda-functions/logs.png)
+![Logs](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/zero-instrumentation-observability-aws-lambda-functions/LogsCropped.png)
 
 #### Stack trace
 The invocation details view also includes the stack trace for your selected invocation. Perhaps the most popular and valuable tool for debugging your code, the stack trace will show you the exact line of code which caused the error and you’ll be able to navigate through the stack as well. Even if your code is obfuscated by typescript or minification you’ll be able to get this nice view with support for [Source Maps](https://serverless.com/framework/docs/dashboard/insights#uploading-source-map).
