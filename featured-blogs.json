@@ -1,7 +1,7 @@
 [
+  "zero-instrumentation-observability-aws-lambda-functions",
   "monitoring-api-gateway-metrics",
   "10-tips-creating-robust-serverless-components",
   "react-apps-with-serverless-components",
-  "serverless-for-startups",
-  "leverage-existing-s3-cognito-sources"
+  "serverless-for-startups"
 ]
