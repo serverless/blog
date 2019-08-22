@@ -31,7 +31,7 @@ myServerlessCDN:
   component: "@serverless/cdn"
 ```
 
-That's litrally all the YAML you need to deploy a complete serverless content delivery network. All you need to do now is just run the `serverless` command in the current working directory:
+That's literally all the YAML you need to deploy a complete serverless content delivery network. All you need to do now is just run the `serverless` command in the current working directory:
 
 ```
 myApp (master)$ serverless
