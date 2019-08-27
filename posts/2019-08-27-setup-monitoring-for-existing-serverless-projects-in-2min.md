@@ -15,6 +15,6 @@ One of the challenges when working with the Serverless Framework and lambda is h
 
 First, make sure you have your terminal open in the directory containing your Serverless project. Then run the `serverless` command without any arguments. You will then be presented with an interactive set of prompts to configure your service for monitoring! Create an account and it will handle the rest for you.
 
-![screen recording of the interactive serverless setup flow](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/setup-monitoring-existing-project/sls-monitoring.gif)
+<img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/setup-monitoring-existing-project/sls-monitoring.gif" alt="screen recording of the interactive serverless setup flow">
 
 Then run `serverless deploy` to redeploy your project with monitoring enabled. After that, you can open the monitoring dashboard for your service by running `serverless dashboard`.
