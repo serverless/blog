@@ -1,0 +1,10 @@
+{
+    "name": "Tanner Barlow",
+    "github": "tbarlow12",
+    "site": "https://www.linkedin.com/in/tannerbarlow/",
+    "avatar": "https://avatars3.githubusercontent.com/u/10962815?s=460&v=4",
+    "bio": {
+        "short": "Tanner is a Software Engineer at Microsoft on the Commercial Software Engineering Team",
+        "long": "Tanner is part of the team at Microsoft responsible for the v1 release of the serverless-azure-functions plugin as well as the @multicloud library for serverless handlers"
+    }
+}
