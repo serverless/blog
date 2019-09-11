@@ -1,11 +1,12 @@
 ---
 title: "How to use Serverless and Twilio to automate your communication channels"
 description: "We’re happy to announce that you can now deploy Twilio Functions using the Serverless Framework. Here's how!"
-date: 2019-08-21
+date: 2019-09-11
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-and-twilio/thumbnail.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-and-twilio/header.png"
 category:
   - guides-and-tutorials
+  - news
 authors:
   - StefanJudis
 ---
