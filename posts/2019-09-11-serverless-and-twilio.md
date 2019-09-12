@@ -342,7 +342,7 @@ TWILIO_ACCOUNT_SID=AC... TWILIO_AUTH_TOKEN=a4... serverless deploy
 
 **Twilio functions are built to answer Twilio webhooks and glue services together quickly**
 
-![Twilio XML](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-and-twilio/image1.png)
+![Twilio XML](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-and-twilio/image1.jpg)
 
 ##### Additional resources
 
