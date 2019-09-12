@@ -40,7 +40,7 @@ module.exports.hello = async (event, context) => {
 };
 ```
 
-In the example above, our lambda function handler throws an error; however, it is also caught. It calls the `captureError` function provided by the Serverless Framework SDK in the `context` object. The function was able to proceed and return a nice friendly error to the API while still capturing the error. The documentation provides more details on using the `captureError` method.
+In the example above, our lambda function handler throws an error; however, it is also caught. It calls the `captureError` function provided by the Serverless Framework SDK in the `context` object. The function was able to proceed and return a nice friendly error to the API while still capturing the error. The [documentation](http://slss.io/docs-capture-error) provides more details on using the `captureError` method.
 
 Now that the error is captured by the Serverless Framework, you can use the powerful dashboard features to help monitor and  debug these errors. Here are a few ways you can interact with these newly captured errors in the dashboard.
 
