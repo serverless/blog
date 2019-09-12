@@ -1,7 +1,7 @@
 ---
 title: Monitor and debug all serverless errors
 description: "Use captureError to monitor and debug caught errors in your Serverless Framework services even when they are caught by your code."
-date: 2019-09-11
+date: 2019-09-12
 thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/monitor-and-debug-all-serverless-errors/thumb.png'
 heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/monitor-and-debug-all-serverless-errors/header.png'
 authors:
