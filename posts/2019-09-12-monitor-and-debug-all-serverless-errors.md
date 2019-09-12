@@ -46,18 +46,18 @@ Now that the error is captured by the Serverless Framework, you can use the powe
 
 When a new error is captured which hasn’t been captured before, you will get a [New Error Type](https://serverless.com/framework/docs/dashboard/insights#error-new-error-type-identified) alert. You can also setup [notifications](https://serverless.com/framework/docs/dashboard/notifications/) to get notified in Slack or email, or custom SNS Topics or API endpoints. 
 
-[SCREENSHOT: new error type]
+![New error type alert](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/monitor-and-debug-all-serverless-errors/image-01.png)
 
 All errors, including fatal errors and captured errors, are available in the Invocation Explorer so you can filter for invocations containing errors.
 
-[SCREENSHOT: invocation explorer filter]
+![Invocation explorer with filter](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/monitor-and-debug-all-serverless-errors/image-02.png)
 
 Also in the invocation explorer you can dive into the details of the individual invocation to get the details about the error, including the stack trace which was captured by the `captureError` method in the code.
 
-[SCREENSHOT: invocation details with stack trace]
+![Invocation explorer details with stack trace](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/monitor-and-debug-all-serverless-errors/image-03.png)
 
 Lastly, in the service instance overview page you can view invocation metrics and filter the results to identify the captured errors.
 
-[SCREENSHOT: invocations & errors chart]
+![Invocations and errors chart](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/monitor-and-debug-all-serverless-errors/image-04.png)
 
 If you want to improve monitoring and debugging for your Serverless Framework application, getting started with the automatic instrumentation is incredibly easy. [Sign up in the dashboard](https://dashboard.serverless.com/) and follow the instructions to start a new Serverless Framework project or incorporate the dashboard features into existing services.
