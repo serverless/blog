@@ -136,7 +136,6 @@ To deploy functions to the Twilio Runtime, you have to define your `accountSid` 
 # serverless.yml
 provider:
   name: twilio
-
   # Auth credentials which you'll find at twilio.com/console
   config:
     accountSid: ${env:TWILIO_ACCOUNT_SID}
