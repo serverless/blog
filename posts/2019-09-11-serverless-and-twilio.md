@@ -132,7 +132,7 @@ Let’s go over these options one-by-one.
 
 To deploy functions to the Twilio Runtime, you have to define your `accountSid` and an `authToken`. You could potentially hardcode these values in your `serverless.yml` but it is recommended to pass these values via environment variables (`${env:TWILIO_ACCOUNT_SID}` and `${env:TWILIO_AUTH_TOKEN}`). This way, you don’t risk to push your sensible credentials to GitHub.
 
-```
+```yml
 # serverless.yml
 provider:
   name: twilio
