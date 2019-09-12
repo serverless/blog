@@ -2,8 +2,8 @@
 title: Monitor and debug all serverless errors
 description: 
 date: 2019-09-11
-thumbnail: ''
-heroImage: ''
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/monitor-and-debug-all-serverless-errors/thumb.png'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/monitor-and-debug-all-serverless-errors/header.png'
 authors:
   - MaciejSkierkowski
 category:
