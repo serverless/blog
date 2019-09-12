@@ -1,0 +1,12 @@
+{
+  "name": "Stefan Judis",
+  "github": "stefanjudis",
+  "twitter": "stefanjudis",
+  "site": "https://www.stefanjudis.com",
+  "avatar": "https://avatars.githubusercontent.com/stefanjudis?v=3&s=140",
+  "bio": {
+    "short": "Stefan is a developer evangelist at Twilio.",
+    "long":
+      "Stefan started programming 9 years ago and quickly fell in love with web performance, new technologies, and accessibility. He is also a curator of the web performance online resource Perf Tooling, contributes to a variety of open source projects and enjoys sharing nerdy discoveries."
+    }
+}
