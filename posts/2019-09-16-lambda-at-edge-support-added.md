@@ -2,8 +2,8 @@
 title: "Lambda@Edge support now available"
 description: "Using Lambda@Edge is a great way to speed up your application. And the Serverless Framework now has support for it."
 date: 2019-09-16
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-and-twilio/thumbnail.png"
-heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-and-twilio/header.png"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/lambda-at-edge/thumbnail.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/lambda-at-edge/header.png"
 category:
   - guides-and-tutorials
   - news
