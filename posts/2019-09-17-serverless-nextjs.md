@@ -14,6 +14,8 @@ Today, I’m excited to announce a project I’ve been working on over the past 
 
 The project is the **[Serverless Next.js Component](https://github.com/danielcondemarin/serverless-next.js/tree/master/packages/serverless-nextjs-component)** which you can use with the **[Serverless Framework](https://github.com/serverless/serverless)** to deploy Next.js apps to AWS Lambda@Edge functions in every CloudFront edge location across the globe. These Lambda@Edge functions do server-side rendering of your website pages, as close as possible to your end users, providing very low latency.
 
+#### Principles
+
 The project was developed with a few design principles in mind.
 
 **1. Zero configuration by default**
@@ -22,7 +24,7 @@ That’s right, you can get up and running in under a minute with no configurati
 
 **2. Feature parity with next 9**
 
-All features of next 9 are supported.
+All features of next 9 are supported:
 
 * [Server-side rendered pages](https://github.com/zeit/next.js#fetching-data-and-component-lifecycle). No surprise here, this is what attracts most folks to use next. serverless-next.js deploys your pages to Lambda@Edge. Server side rendering happens right at the edge, close to your users.
 
@@ -38,7 +40,7 @@ All features of next 9 are supported.
 
 **3. Fast deployments**
 
-The **[Serverless Next.js Component](https://github.com/danielcondemarin/serverless-next.js/tree/master/packages/serverless-nextjs-component)** is fast. Deploying your application, typically takes less than a minute. `next build` is used behind the scenes, no magic there. A CloudFront distribution is provisioned for you with best practices in place. The pages compiled are zipped up and deployed to Lambda@Edge which is then associated to your distribution. An S3 bucket is also deployed for the static assets which are uploaded using [S3 accelerated transfers](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html).
+The [Serverless Next.js Component](https://github.com/danielcondemarin/serverless-next.js/tree/master/packages/serverless-nextjs-component) is fast. Deploying your application, typically takes less than a minute. `next build` is used behind the scenes, no magic there. A CloudFront distribution is provisioned for you with best practices in place. The pages compiled are zipped up and deployed to Lambda@Edge which is then associated to your distribution. An S3 bucket is also deployed for the static assets which are uploaded using [S3 accelerated transfers](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html).
 
 The only caveat is that the first deployment you have to wait a few minutes for the CloudFront distribution to be available. However, subsequent deployments don’t have this problem. Once the distribution is up, deploying updates is fast.
 
@@ -46,9 +48,29 @@ CloudFormation **is not used** for provisioning resources. This is partly why de
 
 ![serverless nextjs graphics aws lambda edge](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-nextjs/serverless_nextjs_graphics.png)
 
-**Getting Started**
+#### Architecture
 
-Using the **[Serverless Next.js Component](https://github.com/danielcondemarin/serverless-next.js/tree/master/packages/serverless-nextjs-component)** is easy, just add it to your `serverless.yml` like this:
+Let’s look in more detail at the architecture deployed to AWS.
+
+![serverless nextjs aws lambda edge architecture](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-nextjs/serverless_nextjs_lambda_edge_aws_architecture.png)
+
+Three Cache Behaviours are created in CloudFront.
+
+The first 2. `_next/*` and `static/*` forward the requests to S3.
+
+The 3rd. is associated to a lambda function which is responsible for handling three types of requests.
+
+1. Server side rendered page. Any page that defines `getInitialPropsmethod` will be rendered at this level and the response is returned immediately to the user.
+
+2. Statically optimised page. Requests to pages that were pre-compiled by next to HTML are forwarded to S3 where the HTML is stored.
+
+3. Public resources. These are requests to root level resources like /robots.txt, `/favicon.ico`, `/manifest.json` etc. These are also forwarded to S3 where these resources can be found.
+
+The reason why 2. and 3. have to go through Lambda@Edge first is because these routes don’t conform to a pattern like _next/* or static/*. Also, one cache behaviour per route is a bad idea because CloudFront [only allows 25 per distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html).
+
+#### Getting Started
+
+Using the [Serverless Next.js Component](https://github.com/danielcondemarin/serverless-next.js/tree/master/packages/serverless-nextjs-component) is easy, just add it to your `serverless.yml` like this:
 
 ```yaml
 # serverless.yml
@@ -70,7 +92,7 @@ Remove it with the `remove` command:
 $ npx serverless remove
 ```
 
-**Custom domains**
+#### Custom Domains
 
 You can set a custom domain for your application. serverless-next.js takes care of associating the domain with your CloudFront distribution, creates the sub domain in Route53 and even sets up the SSL Certificate using AWS ACM. It is optional and looks like this:
 
@@ -82,7 +104,7 @@ myApp:
    domain: [“www”, “example.com”] # [ sub-domain, domain ]
 ```
  
-**Behind the scenes**
+#### Behind the Scenes
 
 The project is powered by the amazing [serverless-components](https://serverless.com/blog/what-are-serverless-components-how-use/). At its core it uses 4 components:
 
@@ -93,27 +115,7 @@ The project is powered by the amazing [serverless-components](https://serverless
 
 Most of the heavy lifting is done by the components themselves, serverless-next.js simply orchestrates.
 
-**Architecture**
-
-Let’s look in more detail at the architecture deployed to AWS.
-
-![serverless nextjs aws lambda edge architecture](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-nextjs/serverless_nextjs_lambda_edge_aws_architecture.png)
-
-Three Cache Behaviours are created in CloudFront.
-
-The first 2. `_next/*` and `static/*` forward the requests to S3.
-
-The 3rd. is associated to a lambda function which is responsible for handling three types of requests.
-
-1. Server side rendered page. Any page that defines `getInitialPropsmethod` will be rendered at this level and the response is returned immediately to the user.
-
-2. Statically optimised page. Requests to pages that were pre-compiled by next to HTML are forwarded to S3 where the HTML is stored.
-
-3. Public resources. These are requests to root level resources like /robots.txt, `/favicon.ico`, `/manifest.json` etc. These are also forwarded to S3 where these resources can be found.
-
-The reason why 2. and 3. have to go through Lambda@Edge first is because these routes don’t conform to a pattern like _next/* or static/*. Also, one cache behaviour per route is a bad idea because CloudFront [only allows 25 per distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html).
-
-**What’s next?**
+#### What's Next?
 
 Build time efficiencies, configurable caching options for users and potentially adding a separate `/api` cache behaviour for API Routes. I will also be working on more complete examples that integrate with other AWS Services.
 
