@@ -12,7 +12,7 @@ category:
 
 Today, I’m excited to announce a project I’ve been working on over the past few months. It provides a simple, fast and efficient way to deploy your nextjs applications to AWS using CloudFront, Lambda@Edge and S3.
 
-serverless-next.js deploys your app to CloudFront edge locations across the globe. Pages are server side rendered close to your end users, providing very low latency.
+The project is the **[Serverless Next.js Component](https://github.com/danielcondemarin/serverless-next.js/tree/master/packages/serverless-nextjs-component)** and it deploys your app to CloudFront edge locations across the globe. Pages are server side rendered close to your end users, providing very low latency.
 
 The project was developed with a few design principles in mind.
 
