@@ -44,6 +44,8 @@ The only caveat is that the first deployment you have to wait a few minutes for 
 
 CloudFormation **is not used** for provisioning resources. This is partly why deployments are quick. It also means the project is not bound by [CloudFormation limits](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html), which is an issue on the predecessor of this project, [serverless-nextjs-plugin](https://github.com/danielcondemarin/serverless-next.js/tree/master/packages/serverless-nextjs-plugin#caveats).
 
+![serverless nextjs graphics aws lambda edge](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-nextjs/serverless_nextjs_graphics.png)
+
 **Custom domains**
 
 You can set a custom domain for your application. serverless-next.js takes care of associating the domain with your CloudFront distribution, creates the sub domain in Route53 and even sets up the SSL Certificate using AWS ACM. It is optional and looks like this:
@@ -70,6 +72,8 @@ Most of the heavy lifting is done by the components themselves, serverless-next.
 **Architecture**
 
 Let’s look in more detail at the architecture deployed to AWS.
+
+![serverless nextjs aws lambda edge architecture](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-nextjs/serverless_nextjs_lambda_edge_aws_architecture.png)
 
 Three Cache Behaviours are created in CloudFront.
 
