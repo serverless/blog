@@ -2,8 +2,8 @@
 title: "How to Create a REST API with Azure Functions and the Serverless Framework - Part 1"
 description: "Learn how to create, run and deploy a simple REST API to Azure Functions with the Serverless Framework"
 date: 2019-09-17
-thumbnail: ""
-heroImage: ""
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/azure-functions-part1/thumbnail.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/azure-functions-part1/header.png"
 category:
   - guides-and-tutorials
 authors:
