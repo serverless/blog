@@ -10,9 +10,9 @@ category:
   - news
 ---
 
-Today, I’m excited to announce a project I’ve been working on over the past few months. It provides a simple, fast and efficient way to deploy your nextjs applications to AWS using CloudFront, Lambda@Edge and S3.
+Today, I’m excited to announce a project I’ve been working on over the past few months. It provides a simple, fast and efficient way to deploy your Next.js applications to AWS using CloudFront, Lambda@Edge and S3.
 
-The project is the **[Serverless Next.js Component](https://github.com/danielcondemarin/serverless-next.js/tree/master/packages/serverless-nextjs-component)** and it deploys your app to CloudFront edge locations across the globe. Pages are server side rendered close to your end users, providing very low latency.
+The project is the **[Serverless Next.js Component](https://github.com/danielcondemarin/serverless-next.js/tree/master/packages/serverless-nextjs-component)** which you can use with the **[Serverless Framework](https://github.com/serverless/serverless)** to deploy Next.js apps to AWS Lambda@Edge functions in every CloudFront edge location across the globe. These Lambda@Edge functions do server-side rendering of your website pages, as close as possible to your end users, providing very low latency.
 
 The project was developed with a few design principles in mind.
 
@@ -24,7 +24,7 @@ That’s right, you can get up and running in under a minute with no configurati
 
 All features of next 9 are supported.
 
-* [Server side rendered pages](https://github.com/zeit/next.js#fetching-data-and-component-lifecycle). No surprise here, this is what attracts most folks to use next. serverless-next.js deploys your pages to Lambda@Edge. Server side rendering happens right at the edge, close to your users.
+* [Server-side rendered pages](https://github.com/zeit/next.js#fetching-data-and-component-lifecycle). No surprise here, this is what attracts most folks to use next. serverless-next.js deploys your pages to Lambda@Edge. Server side rendering happens right at the edge, close to your users.
 
 * [API Routes](https://nextjs.org/docs#api-routes). Like the pages, your api backend is also deployed to Lambda@Edge. When fetching data client side this ensures very low response latency.
 
@@ -38,7 +38,7 @@ All features of next 9 are supported.
 
 **3. Fast deployments**
 
-serverless-next.js is fast. Deploying your application, typically takes less than a minute. `next build` is used behind the scenes, no magic there. A CloudFront distribution is provisioned for you with best practices in place. The pages compiled are zipped up and deployed to Lambda@Edge which is then associated to your distribution. An S3 bucket is also deployed for the static assets which are uploaded using [S3 accelerated transfers](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html).
+The **[Serverless Next.js Component](https://github.com/danielcondemarin/serverless-next.js/tree/master/packages/serverless-nextjs-component)** is fast. Deploying your application, typically takes less than a minute. `next build` is used behind the scenes, no magic there. A CloudFront distribution is provisioned for you with best practices in place. The pages compiled are zipped up and deployed to Lambda@Edge which is then associated to your distribution. An S3 bucket is also deployed for the static assets which are uploaded using [S3 accelerated transfers](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html).
 
 The only caveat is that the first deployment you have to wait a few minutes for the CloudFront distribution to be available. However, subsequent deployments don’t have this problem. Once the distribution is up, deploying updates is fast.
 
@@ -46,15 +46,39 @@ CloudFormation **is not used** for provisioning resources. This is partly why de
 
 ![serverless nextjs graphics aws lambda edge](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-nextjs/serverless_nextjs_graphics.png)
 
+**Getting Started**
+
+Using the **[Serverless Next.js Component](https://github.com/danielcondemarin/serverless-next.js/tree/master/packages/serverless-nextjs-component)** is easy, just add it to your `serverless.yml` like this:
+
+```yaml
+# serverless.yml
+myApp:
+ component: serverless-next.js
+```
+
+Sane defaults are baked in, so no additional configuration is needed.
+
+Use the Serverless Framework to deploy via the `serverless` command, like this:
+
+```shell
+$ npx serverless
+```
+
+Remove it with the `remove` command:
+
+```shell
+$ npx serverless remove
+```
+
 **Custom domains**
 
 You can set a custom domain for your application. serverless-next.js takes care of associating the domain with your CloudFront distribution, creates the sub domain in Route53 and even sets up the SSL Certificate using AWS ACM. It is optional and looks like this:
 
 ```yaml
-  # serverless.yml
-  myApp:
-   component: serverless-next.js
-   inputs:
+# serverless.yml
+myApp:
+ component: serverless-next.js
+ inputs:
    domain: [“www”, “example.com”] # [ sub-domain, domain ]
 ```
  
