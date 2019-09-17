@@ -16,11 +16,11 @@ serverless-next.js deploys your app to CloudFront edge locations across the glob
 
 The project was developed with a few design principles in mind.
 
-#### 1. Zero configuration by default
+**1. Zero configuration by default**
 
 That’s right, you can get up and running in under a minute with no configuration required.
 
-#### 2. Feature parity with next 9
+**2. Feature parity with next 9**
 
 All features of next 9 are supported.
 
@@ -36,7 +36,7 @@ All features of next 9 are supported.
 
 * [User static / public folders](https://github.com/zeit/next.js#static-file-serving-eg-images). User assets like images in the static folder or root level resources in your public folder are uploaded to S3. Like build assets, CloudFront serves these assets from S3.
 
-#### 3. Fast deployments
+**3. Fast deployments**
 
 serverless-next.js is fast. Deploying your application, typically takes less than a minute. `next build` is used behind the scenes, no magic there. A CloudFront distribution is provisioned for you with best practices in place. The pages compiled are zipped up and deployed to Lambda@Edge which is then associated to your distribution. An S3 bucket is also deployed for the static assets which are uploaded using [S3 accelerated transfers](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html).
 
@@ -44,7 +44,7 @@ The only caveat is that the first deployment you have to wait a few minutes for 
 
 CloudFormation **is not used** for provisioning resources. This is partly why deployments are quick. It also means the project is not bound by [CloudFormation limits](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html), which is an issue on the predecessor of this project, [serverless-nextjs-plugin](https://github.com/danielcondemarin/serverless-next.js/tree/master/packages/serverless-nextjs-plugin#caveats).
 
-#### Custom domains
+**Custom domains**
 
 You can set a custom domain for your application. serverless-next.js takes care of associating the domain with your CloudFront distribution, creates the sub domain in Route53 and even sets up the SSL Certificate using AWS ACM. It is optional and looks like this:
 
@@ -56,7 +56,7 @@ You can set a custom domain for your application. serverless-next.js takes care 
    domain: [“www”, “example.com”] # [ sub-domain, domain ]
 ```
  
-#### Behind the scenes
+**Behind the scenes**
 
 The project is powered by the amazing [serverless-components](https://serverless.com/blog/what-are-serverless-components-how-use/). At its core it uses 4 components:
 
@@ -67,7 +67,7 @@ The project is powered by the amazing [serverless-components](https://serverless
 
 Most of the heavy lifting is done by the components themselves, serverless-next.js simply orchestrates.
 
-#### Architecture
+**Architecture**
 
 Let’s look in more detail at the architecture deployed to AWS.
 
@@ -85,7 +85,7 @@ The 3rd. is associated to a lambda function which is responsible for handling th
 
 The reason why 2. and 3. have to go through Lambda@Edge first is because these routes don’t conform to a pattern like _next/* or static/*. Also, one cache behaviour per route is a bad idea because CloudFront [only allows 25 per distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html).
 
-#### What’s next?
+**What’s next?**
 
 Build time efficiencies, configurable caching options for users and potentially adding a separate `/api` cache behaviour for API Routes. I will also be working on more complete examples that integrate with other AWS Services.
 
