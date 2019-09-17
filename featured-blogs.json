@@ -1,7 +1,7 @@
 [
+  "serverless-azure-functions-v1",
   "lambda-at-edge-support-added",
   "serverless-and-twilio",
   "setup-monitoring-for-existing-serverless-projects-in-2min",
-  "zero-instrumentation-observability-aws-lambda-functions",
-  "monitoring-api-gateway-metrics"
+  "zero-instrumentation-observability-aws-lambda-functions"
 ]
