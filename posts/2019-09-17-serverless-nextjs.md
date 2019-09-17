@@ -1,3 +1,15 @@
+---
+title: Serverless Next.js At The Edge
+description: "Deploy Next.js on AWS Lambda@Edge for global, fast server-side rendered react applications, and easily interact with other AWS resources."
+date: 2019-09-17
+thumbnail: 'https://s3.amazonaws.com/assets.general.serverless.com/component_nextjs/serverless_nextjs_blog_thumbnail.png'
+heroImage: 'https://s3.amazonaws.com/assets.general.serverless.com/component_nextjs/serverless_nextjs_blog_header.png'
+authors:
+  - DanielConde
+category:
+  - news
+---
+
 Today, I’m excited to announce a project I’ve been working on over the past few months. It provides a simple, fast and efficient way to deploy your nextjs applications to AWS using CloudFront, Lambda@Edge and S3.
 
 serverless-next.js deploys your app to CloudFront edge locations across the globe. Pages are server side rendered close to your end users, providing very low latency.
