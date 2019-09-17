@@ -10,7 +10,7 @@ authors:
   - TannerBarlow
 ---
 
-## Overview
+#### Overview
 
 With the [recent updates to the `serverless-azure-functions` plugin](https://github.com/serverless/serverless-azure-functions/blob/master/CHANGELOG.md), it is now easier than ever to create, deploy and maintain a real-world REST API running on Azure Functions. This post will walk you through the first few steps of doing that. 
 
@@ -26,7 +26,7 @@ npm i serverless -g
 
 Also, the `serverless` CLI can be referenced by either `serverless` or `sls`. I will use `sls` in this post just because it's shorter, but `serverless` would work just the same.
 
-## Step 1: Create your local Azure Function project
+#### Step 1: Create your local Azure Function project
 
 Let's begin by creating our Azure Function project with a template from serverless.
 
@@ -42,7 +42,7 @@ npm install serverless-azure-functions --save
 
 It’s important to note that the generated `serverless.yml` file will contain a lot of commented lines, which start with `#`. Those are purely for your benefit in exploring features of the Azure Functions plugin, and can be safely removed.
 
-## Step 2: Add your own handlers
+#### Step 2: Add your own handlers
 
 For the sake of this demo, we’re going to create a basic wrapper of the GitHub API for [issues](https://developer.github.com/v3/issues/) and [pull requests](https://developer.github.com/v3/pulls/).
 
@@ -79,7 +79,7 @@ package:
 functions:
 ```
 
-#### Add Code
+##### Add Code
 
 Let’s add in our own code. We’ll start by creating the directory `src/handlers`. This, perhaps to your great surprise, will be where our handlers will live. Inside that directory, we will put our two handlers: [issues.js](https://github.com/tbarlow12/sls-az-func-rest-api/blob/master/src/handlers/issues.js) and [pulls.js](https://github.com/tbarlow12/sls-az-func-rest-api/blob/master/src/handlers/pulls.js).
 
@@ -163,7 +163,7 @@ module.exports.getQueryOrBodyParam = (req, param) => {
 
 You’ll also note that the handlers are using a popular NPM package for HTTP requests, `axios`. Run `npm install axios --save` in your service root directory.
 
-#### Current Folder structure
+##### Current Folder structure
 
 ```
 sls-az-func-rest-api
@@ -178,7 +178,7 @@ sls-az-func-rest-api
 |-- serverless.yml
 ```
 
-Now we need to add our new handlers the serverless configuration, which will now look like:
+Now we need to add our new handlers to the serverless configuration, which will now look like:
 
 ```yaml
 service: sls-az-func-rest-api 
@@ -210,7 +210,7 @@ functions:
           authLevel: anonymous
 ```
  
-### Step 2.1: Test your API Locally
+#### Step 2.1: Test your API Locally
 
 Run the following command in your project directory to test your local service.
 
@@ -269,7 +269,7 @@ When I’m done running the service locally, I’ll hit `Ctrl/Cmd + C` in the AP
 
 ![alt text](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/azure+plugin+update/cleanup.png)
 
-### Step 2.2: Deploy
+#### Step 2.2: Deploy
 
 ##### Authentication
 
@@ -289,7 +289,7 @@ and watch the magic happen. Your app will be packaged up into a `.zip` file, whi
 
 ![alt text](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/azure+plugin+update/deploy+(1).png)
 
-### Step 2.3 Invoke Deployed Function
+#### Step 2.3 Invoke Deployed Function
 
 We can invoke a deployed function in the same way we invoked our local function, just without the `local` command:
 
@@ -299,7 +299,7 @@ sls invoke -f pulls -p data.json
 
 ![alt text](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/azure+plugin+update/invoke.png)
 
-### (Optional) Step 2.4: Cleanup
+#### (Optional) Step 2.4: Cleanup
 
 If you have been following this tutorial and would like to clean up the resources you deployed, you can simply run:
 
@@ -309,12 +309,12 @@ sls remove
 
 BE CAREFUL when running this command. This will delete your entire resource group.
 
-## Additional Steps
+#### Additional Steps
 
 Stay tuned for future posts walking you through other steps of setting up your service, including adding [API Management](https://azure.microsoft.com/en-us/services/api-management/) configuration, quality gates like linting and unit tests, adding Webpack support, CI/CD and more.
 
 Also, if you're going to be at ServerlessConf 2019 in NYC, the Microsoft team is putting on a [Azure Serverless Hands-on Workshop](http://aka.ms/nycworkshop) on October 7th from 8:30 am to 5:00 pm.
 
-## Contributing
+#### Contributing
 
 We’re eager to get your feedback on the `serverless-azure-functions` plugin. Please [log issues on the GitHub repo with any bug reports or feature requests](https://github.com/serverless/serverless-azure-functions/issues/new/choose). Or better yet, fork the repo and open up a [pull request](https://github.com/serverless/serverless-azure-functions/pulls)! 
