@@ -20,7 +20,7 @@ This effort is a joint venture between Microsoft, 7-Eleven & Serverless, Inc
 
 In the initial release the Serverless Multicloud SDK supports NodeJS with both Microsoft Azure and Amazon Web Services.  The SDK has an Express-like feel.  It supports familiar concepts like `Middleware` to abstract away your service's cross-cutting concerns like logging, exception handling, validation and authorization.  The framework supports creating your own middleware components that can be reused and plug seamlessly into your applications pipeline.
 
-This guide assumes you have some working knowledge of NodeJS and how to build services with the Serverless Framework.  We will walk through the process of creating a REST API with the Serverless Multicloud SDK.
+This guide assumes you have some working knowledge of NodeJS and how to build services with the Serverless Framework.  We will walk through the process of migrating a REST API to use the new Serverless Multicloud SDK.
 
 #### Prerequisites
 Install the Serverless CLI globally
