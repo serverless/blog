@@ -35,17 +35,20 @@ The invocation details will show you all of the details you need to identify the
 #### Stack Traces
 If the function invocation crashes, the stack trace is recorded and you can find the root cause in no time. The “new error type” alert will notify you of new errors and you’ll be able to see the errors in the metrics and invocation explorer. You can also use the integrated Python SDK to record handled exceptions even if your function doesn’t crash.
 
-[SCREENSHOT: python stack trace]
+![Stack Traces](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/python-dashboard-support/stack.png)
+
 #### CloudWatch Logs
 With the powerful Invocation Explorer you no longer need to sift through CloudWatch to find an invocation, and it provides you with CloudWatch logs for all invocations. The Serverless Framework Dashboard pulls in the CloudWatch logs you need so you have everything all in one place.
 
-[SCREENSHOT: logs in invocation details]
+![Logs](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/python-dashboard-support/logs.png)
+
 #### Function Spans
 Deploy your application with the Serverless Framework Dashboard enabled and it will automatically instrument calls made by your Lambda functions to any AWS service or HTTP endpoint. You’ll be able to see what AWS services were called, what methods they called, and their time span. You’ll also see what HTTP services were called, including the host name, HTTP code response, method, host, path, and the time span.
 
 All of this instrumentation is 100% automatic, no need to add any plugins, wrappers, or instrumentation.
 
-[SCREENSHOT: we can use the screenshot from https://serverless.com/monitoring/ but ideally I’d like to get one which includes the HTTP function span]
+![Function Spans](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/python-dashboard-support/span.png)
+
 #### Alerts
 Serverless Framework Dashboard comes with nine alerts available out of the box, no configuration or setup needed. Your serverless functions will be monitored for memory usage, durations, and errors the minute you deploy them. You’ll be notified of these alerts in Slack, email, or you can easily set up custom notifications via point and click integrations with SNS and webhooks.
 
