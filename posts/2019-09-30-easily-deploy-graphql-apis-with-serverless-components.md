@@ -12,9 +12,7 @@ category:
 
 Ever since we released [Serverless Components](https://github.com/serverless/components), we've seen huge demand for an AppSync component. Especially that it is not natively supported in the Serverless Framework. Today, we're super thrilled to announce that [Serverless Components](https://github.com/serverless/components) now supports deploying GraphQL apps natively on AWS using the [aws-app-sync serverless component](https://github.com/serverless-components/aws-app-sync).
 
-We've built this component from scratch without any dependency on CloudFormation, making it a lot faster to deploy when compared to CloudFormation and Amplify. It also ships with sane defaults that makes it a lot simpler and easier to use without having to scroll through multiple pages of AWS documentation and copy/paste code. We've done the research for you, and we've packaged it all in a this easy-to-use component.
-
-It comes with the following set of features:
+We've built this component from scratch without any dependency on CloudFormation, making it a lot faster to deploy when compared to CloudFormation and Amplify. It also ships with sane defaults that makes it a lot simpler and easier to use without having to scroll through multiple pages of AWS documentation and copy/paste code. We've done the research for you, and we've packaged it all in this easy-to-use component. It comes with the following set of features:
 
 - [x] Fast Deployments (~10 seconds on average)
 - [x] Create New APIs or Reuse Existing Ones
@@ -32,7 +30,7 @@ In this article, we won't be able to cover all the features of this component. B
 
 ### Credits
 
-Before moving forward, we'd like to give a HUGE shoutout to [Eetu Tuomala](https://github.com/laardee) who's put a lot of effort contributing this component to the community and making sure it supports all of AppSync features. We'd also like to thank [Siddharth Gupta](https://github.com/sid88in) for building the original Serverless Framework AppSync plugin, which is the main inspiration for this component.
+Before moving forward, we'd like to give a HUGE shoutout to [Eetu Tuomala](https://github.com/laardee) who's put a lot of effort contributing this component to the community and making sure it supports all of AppSync features. We'd also like to thank [Siddharth Gupta](https://github.com/sid88in) for building the original [Serverless Framework AppSync plugin](https://github.com/sid88in/serverless-appsync-plugin), which is the main inspiration for this component.
 
 ### Getting Started
 
@@ -42,7 +40,7 @@ If you're new to [Serverless Components](https://github.com/serverless/component
 npm i -g serverless
 ```
 
-Awesome! You're now ready to deploy our blogging GraphQL API powered by AppSync. So let's do that next!
+Awesome! Next up, we're gonna configure our simple blogging GraphQL API.
 
 ### Configuring Your GraphQL API
 
@@ -57,7 +55,7 @@ You'll need to have 4 files in the current working directory:
 
 #### .env
 
-This is where we keep the AWS credentials that you'll use for this component. It looks something like this...
+This is where you keep the AWS credentials that you'll use for this component. It looks something like this...
 
 ```
 # .env
@@ -94,8 +92,6 @@ type Post {
 
 This is where you put your Lambda code. This code should work with the schema defined above. So in our example, it should look like this...
 
-**Note:** In a real world use case, you'd use a database to store your posts data. For for the sake of this example, we're hard-coding the data.
-
 ```js
 exports.handler = async event => {
   var posts = {
@@ -121,9 +117,11 @@ exports.handler = async event => {
 };
 ```
 
+**Note:** In a real world use case, you'd use a database to store your posts data. For for the sake of this example, we're hard-coding the data.
+
 #### serverless.yml
 
-The `serverless.yml` file is where you define all the componnets that you'd like to use. In our case, we only need two components. One is the new [aws-app-sync component](https://github.com/serverless-components/aws-app-sync), and the other is the [aws-lambda component](https://github.com/serverless-components/aws-lambda). We will pass the ARN output of the lambda component as an input to the app sync componnet. Basically we're just telling AppSync to use that lambda as our data source.
+The `serverless.yml` file is where you define all the componnets that you'd like to use. In our case, we only need two components. One is the new [aws-app-sync component](https://github.com/serverless-components/aws-app-sync), and the other is the [aws-lambda component](https://github.com/serverless-components/aws-lambda). We will pass the ARN output of the lambda component as an input to the app sync componnet. Basically we're just telling AppSync to use that Lambda as our data source.
 
 Here's how this file looks like...
 
@@ -159,10 +157,10 @@ myAppSyncApi:
 
 #### Setting Up a Custom Domain
 
-This step is not required, but if you'd like to setup a custom domain for your GraphQL API, just add the `domain` property to the app sync component inputs:
+This step is not required, but if you'd like to setup a custom domain for your GraphQL API, just add a `domain` property to the app sync component inputs:
 
 ```yml
-appsync:
+myAppSyncApi:
   component: "@serverless/aws-app-sync"
   inputs:
     domain: api.example.com # add your custom domain here
@@ -197,9 +195,11 @@ The first deployment might take a little up to a minute (a little more if you've
 myApp (master)$
 ```
 
+Amazing! Your GraphQL API has been deployed. Now let's query...
+
 ### Querying Your GraphQL API
 
-Notice the returned API URL & API Key in the CLI. You can now query your new API using this data. Using fetch, you could do an HTTP request that looks something like this...
+Notice the returned API URL & API Key in the CLI after deployment. You can now query your new API using this data. Using [node-fetch](https://github.com/bitinn/node-fetch), you could do an HTTP request that looks something like this...
 
 ```js
 const fetch = require("node-fetch");
@@ -233,3 +233,5 @@ fetch(url, {
 And there you have it! A serverless GraphQL API, with a custom domain, deployed with just a handful of serverless components. In a real world application, you'd likey need more components for your app. For example, you would use the [aws-dynamodb component](https://github.com/serverless-components/aws-dynamodb) to store your posts. Take a look at our growing list of [serverless components](https://github.com/serverless-components) to see what else you could use for your application.
 
 This is just the tip of the iceburg. The [aws-app-sync component](https://github.com/serverless-components/aws-app-sync) supports lots of other features and data sources. For more information, [please checkout the docs](https://github.com/serverless-components/aws-app-sync).
+
+We can't wait to see what you build with Serverless Components. If you have any questions or feedback, feel free to [reach out to me directly on Twitter](https://twitter.com/eahefnawy).
