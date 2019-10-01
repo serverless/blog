@@ -10,7 +10,7 @@ category:
   - news
 ---
 
-<iframe width="560" height="315" src="https://youtu.be/FnCpIIb9fOk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=FnCpIIb9fOk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The Serverless Framework has amazing [monitoring](https://serverless.com/monitoring/) and [alerting](https://serverless.com/alerts/); however, until today, this has only been available for the Node runtime. Now, we are adding support for Python to the Serverless Framework Dashboard to enable monitoring, alerts, and much more for your Python serverless applications.
 
