@@ -122,7 +122,7 @@ exports.handler = async event => {
 
 #### serverless.yml
 
-The `serverless.yml` file is where you define all the components that you'd like to use. In our case, we only need two components. One is the new [aws-app-sync component](https://github.com/serverless-components/aws-app-sync), and the other is the [aws-lambda component](https://github.com/serverless-components/aws-lambda). We will pass the ARN output of the lambda component as an input to the app sync componnet. Basically we're just telling AppSync to use that Lambda as our data source.
+The `serverless.yml` file is where you define all the components that you'd like to use. In our case, we only need two components. One is the new [aws-app-sync component](https://github.com/serverless-components/aws-app-sync), and the other is the [aws-lambda component](https://github.com/serverless-components/aws-lambda). We will pass the ARN output of the lambda component as an input to the app sync component. Basically we're just telling AppSync to use that Lambda as our data source.
 
 Here's how this file looks...
 
