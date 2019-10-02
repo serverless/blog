@@ -1,7 +1,7 @@
 [
-  "python-dashboard-support",
+  "easily-deploy-graphql-apis-with-serverless-components",
+  "aws-lambda-python-monitoring",
   "serverless-azure-functions-v1",
   "lambda-at-edge-support-added",
-  "serverless-and-twilio",
-  "setup-monitoring-for-existing-serverless-projects-in-2min"
+  "serverless-and-twilio"
 ]
