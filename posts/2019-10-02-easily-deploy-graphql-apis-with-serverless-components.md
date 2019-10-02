@@ -1,7 +1,7 @@
 ---
 title: Easily Deploy GraphQL APIs with Serverless Components
-description: "Introducing the AWS AppSync componnet that allows you to easily and quickly deploy GraphQL APIs on AWS, and integrate them with AWS Lambda, DynamoDB & others."
-date: 2019-09-17
+description: "Introducing the AWS AppSync component that allows you to easily and quickly deploy GraphQL APIs on AWS, and integrate them with AWS Lambda, DynamoDB & others."
+date: 2019-10-02
 thumbnail: "https://s3.amazonaws.com/assets.general.serverless.com/component_appsync/blog-thumbnail-appsync-serverless-component.png"
 heroImage: "https://s3.amazonaws.com/assets.general.serverless.com/component_appsync/blog-header-appsync-serverless-component.png"
 authors:
@@ -230,8 +230,8 @@ fetch(url, {
 
 ### Wrapping Up
 
-And there you have it! A serverless GraphQL API, with a custom domain, deployed with just a handful of serverless components. In a real world application, you'd likey need more components for your app. For example, you would use the [aws-dynamodb component](https://github.com/serverless-components/aws-dynamodb) to store your posts. Take a look at our growing list of [serverless components](https://github.com/serverless-components) to see what else you could use for your application.
+And there you have it! A serverless GraphQL API, with a custom domain, deployed with just a handful of serverless components. In a real world application, you'd likely need more components for your app. For example, you would use the [aws-dynamodb component](https://github.com/serverless-components/aws-dynamodb) to store your posts. Take a look at our growing list of [serverless components](https://github.com/serverless-components) to see what else you could use for your application.
 
-This is just the tip of the iceburg. The [aws-app-sync component](https://github.com/serverless-components/aws-app-sync) supports lots of other features and data sources. For more information, [please check out the docs](https://github.com/serverless-components/aws-app-sync).
+This is just the tip of the iceberg. The [aws-app-sync component](https://github.com/serverless-components/aws-app-sync) supports lots of other features and data sources. For more information, [please check out the docs](https://github.com/serverless-components/aws-app-sync).
 
 We can't wait to see what you build with Serverless Components. If you have any questions or feedback, feel free to [reach out to me directly on Twitter](https://twitter.com/eahefnawy).
