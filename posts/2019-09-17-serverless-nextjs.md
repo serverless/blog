@@ -101,7 +101,7 @@ You can set a custom domain for your application. serverless-next.js takes care 
 myApp:
  component: serverless-next.js
  inputs:
-   domain: [“www”, “example.com”] # [ sub-domain, domain ]
+   domain: ["www", "example.com"] # [ sub-domain, domain ]
 ```
  
 #### Behind the Scenes

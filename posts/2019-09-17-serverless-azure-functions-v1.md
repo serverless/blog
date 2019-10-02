@@ -65,7 +65,7 @@ service: sls-az-func-rest-api
  
 provider:
   name: azure
-  region: West US 2
+  location: East US
   runtime: nodejs10.x
  
 plugins:
@@ -185,7 +185,8 @@ service: sls-az-func-rest-api
  
 provider:
   name: azure
-  location: West US 2
+  location: East US
+  runtime: nodejs10.x
  
 plugins:
   - serverless-azure-functions
