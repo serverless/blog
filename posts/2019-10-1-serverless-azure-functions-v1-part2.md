@@ -68,8 +68,7 @@ provider:
 
 That's exactly what I did for [Step 4](https://github.com/tbarlow12/sls-az-func-rest-api/commit/c593308efc5a60e2701ec97122564592072080e2). Also, because we want API Management to be the only entry point for our API endpoints, I also changed each function's `authLevel` to `function`. This requires a function-specific API key for authentication. You can see in the screenshot what happens in the first command, when I try to `curl` the original function URL. I get a `401` response code. But when I hit the URL provided by API Management, I get the response I expect:
 
-<!-- TODO: Update with address to image in S3 Bucket -->
-![alt text]()
+![alt text](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/azure-functions-part2/apim_curl.jpg)
 
 For more details on `authLevel`, check out the [trigger configuration docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook#trigger---configuration).
 
