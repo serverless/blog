@@ -21,7 +21,7 @@ To pick up where we left off in the example repo (after having completed Step 2)
 $ git clone https://github.com/<your-github-name>/sls-az-func-rest-api && git checkout cf46d1d
 ```
 
-#### [Step 3: Add unit testing and linting](https://github.com/tbarlow12/sls-az-func-rest-api/commit/465ecfe04bda8d4d5ac7c9c5ce31557a8993408f)
+#### Step 3: Add unit testing and linting - (commit [465ecfe](https://github.com/tbarlow12/sls-az-func-rest-api/commit/465ecfe04bda8d4d5ac7c9c5ce31557a8993408f))
 
 Because this isn't a blog post on unit tests, linting or quality gates in general, I'll just share the tools that I'm using and the quality gates that I added to the repository. Feel free to use them as stubs for your own future tests or lint rules.
 
@@ -53,7 +53,7 @@ For more details, take a look at the [commit in the example repo](https://github
 $ git checkout 465ecfe
 ```
 
-#### [Step 4: Add basic API Management Configuration](https://github.com/tbarlow12/sls-az-func-rest-api/commit/c593308efc5a60e2701ec97122564592072080e2)
+#### Step 4: Add basic API Management Configuration - (commit [c593308](https://github.com/tbarlow12/sls-az-func-rest-api/commit/c593308efc5a60e2701ec97122564592072080e2))
 
 This was one of the first features we implemented into the `v1` of the `serverless-azure-functions` plugin. because most Azure Function Apps are REST APIs, and it's hard to have a real-world API in Azure without [API Management](https://azure.microsoft.com/en-us/services/api-management/).
 
@@ -92,7 +92,7 @@ If you are deploying to a region outside of that list, you will need to specify 
 $ sls deploy
 ```
 
-#### [Step 5: Add more advanced API Management Configuration](https://github.com/tbarlow12/sls-az-func-rest-api/commit/38413a03100a65c423dc18ab47754471a4c6f245)
+#### Step 5: Add more advanced API Management Configuration - (commit [38413a0](https://github.com/tbarlow12/sls-az-func-rest-api/commit/38413a03100a65c423dc18ab47754471a4c6f245))
 
 If you need a few more knobs to turn when configuring your API Management instance, you can provide a more verbose configuration. Here is the verbose config I added to the sample repo (the `...` means the rest of the config for that section stayed the same):
 
@@ -176,7 +176,7 @@ The example just uses the default and deploys to region(s) where Consumption API
 $ sls deploy
 ```
 
-#### (Optional) [Step 5.1: Revert back to basic API Management configuration](https://github.com/tbarlow12/sls-az-func-rest-api/commit/4c5803f1e5adf21befbeac8e91cac4552b4f9c1c)
+#### (Optional) Step 5.1: Revert back to basic API Management configuration - (commit [4c5803f](https://github.com/tbarlow12/sls-az-func-rest-api/commit/4c5803f1e5adf21befbeac8e91cac4552b4f9c1c))
 
 To make the demo simple and easy to follow, I'm going to revert my `apim` configuration back to the defaults:
 
@@ -186,7 +186,7 @@ apim: true
 
 You might be able to do the same, depending on your requirements.
 
-#### [Step 6: Add Webpack configuration](https://github.com/tbarlow12/sls-az-func-rest-api/commit/1aefac7e5ed99db009632724c6a70c9cb3d29bf8)
+#### Step 6: Add Webpack configuration - (commit [1aefac7](https://github.com/tbarlow12/sls-az-func-rest-api/commit/1aefac7e5ed99db009632724c6a70c9cb3d29bf8))
 
 [Webpack](https://webpack.js.org/) dramatically reduces the packaging time as well as the size of your deployed package. After making these changes, your packaged Function App will be optimized with Webpack (You can run `sls package` to package it up or just run `sls deploy` which will include packaging as part of the lifecycle).
 
@@ -239,7 +239,7 @@ And just like that, your deployed Azure Function apps will be webpacked and read
 
 ![alt text](https://media.giphy.com/media/zcCGBRQshGdt6/giphy.gif)
 
-#### [Step 7: Enable Serverless CLI configuration](https://github.com/tbarlow12/sls-az-func-rest-api/commit/4cb42fdf17d7793a3ac9660bb43f28e8fe2d46d5)
+#### Step 7: Enable Serverless CLI configuration - (commit [4cb42fd](https://github.com/tbarlow12/sls-az-func-rest-api/commit/4cb42fdf17d7793a3ac9660bb43f28e8fe2d46d5))
 
 If you're running a real-life production service, you will most likely be deploying to multiple regions and multiple stages. Maybe merges to your `dev` branch will trigger deployments to your `dev` environment, `master` into `prod`, etc. I'll show you an example of that in Step 8. To accomplish CLI-level configurability, we need to make a few changes `serverless.yml`.
 
@@ -259,7 +259,7 @@ $ sls deploy --region "West Europe"
 
 We could do similar operations with `--prefix` and `--stage`. Now let's create a pipeline that actually does this.
 
-#### [Step 8: Add CI/CD (with Azure DevOps)](https://github.com/tbarlow12/sls-az-func-rest-api/commit/a8fabf6faa30f7ceab7c18395a5c69c21abd4640)
+#### Step 8: Add CI/CD (with Azure DevOps) - (commit [a8fabf6](https://github.com/tbarlow12/sls-az-func-rest-api/commit/a8fabf6faa30f7ceab7c18395a5c69c21abd4640))
 
 For the CI/CD on my sample repo, I'm using [Azure DevOps](), but it would work the same on any other service you want to use. If you want to use Azure DevOps for an open-source project, [here are a few steps to get started](https://docs.microsoft.com/en-us/azure/devops/organizations/public/about-public-projects?view=azure-devops#get-started-with-a-public-project)
 
