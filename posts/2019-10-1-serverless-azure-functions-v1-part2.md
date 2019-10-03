@@ -14,13 +14,44 @@ authors:
 
 Now that you've created and deployed a basic API from [Part 1](https://serverless.com/blog/serverless-azure-functions-v1), let's take a few more steps towards making that API more resilient and secure. This post will still be based on the [example repo](https://github.com/tbarlow12/sls-az-func-rest-api), and will follow the same "commit-per-step" format as [Part 1](https://serverless.com/blog/serverless-azure-functions-v1), which contains Steps 1 and 2.
 
+To pick up where we left off in the example repo (after having completed Step 2), run:
+
+```bash
+# Assumes you've already forked the repo
+$ git clone https://github.com/<your-github-name>/sls-az-func-rest-api && git checkout cf46d1d
+```
+
 #### [Step 3: Add unit testing and linting](https://github.com/tbarlow12/sls-az-func-rest-api/commit/465ecfe04bda8d4d5ac7c9c5ce31557a8993408f)
 
 Because this isn't a blog post on unit tests, linting or quality gates in general, I'll just share the tools that I'm using and the quality gates that I added to the repository. Feel free to use them as stubs for your own future tests or lint rules.
 
-For unit tests, I'm using the [Jest](https://jestjs.io/) test runner from Facebook. I've used it for several projects in the past and have never had any issues. Because my code makes REST calls via `axios`, I'm using the `axios-mock-adapter` to mock the request & response. Jest tests typically sit alongside the file they are testing, and end with `.test.js`. For linting, I'm using [ESLint](https://eslint.org) with a very basic configuration.
+For unit tests, I'm using the [Jest](https://jestjs.io/) test runner from Facebook. I've used it for several projects in the past and have never had any issues. Jest tests typically sit alongside the file they are testing, and end with `.test.js`. This is configurable within [`jest.config.js`](https://github.com/tbarlow12/sls-az-func-rest-api/commit/465ecfe04bda8d4d5ac7c9c5ce31557a8993408f#diff-2d0cd5d10b9604941c38c6aac608178a), which is found at the root of the project.
 
-Check out the [commit in the example repo](https://github.com/tbarlow12/sls-az-func-rest-api/commit/465ecfe04bda8d4d5ac7c9c5ce31557a8993408f) for more details.
+Because my code makes REST calls via `axios`, I'm using the `axios-mock-adapter` to mock the request & response. The tests that I wrote ([issues.test.js](https://github.com/tbarlow12/sls-az-func-rest-api/commit/465ecfe04bda8d4d5ac7c9c5ce31557a8993408f#diff-fb5daf13ab24c55eef4f041fc89c5025) and [pulls.test.js](https://github.com/tbarlow12/sls-az-func-rest-api/commit/465ecfe04bda8d4d5ac7c9c5ce31557a8993408f#diff-29c6cbdb5c35cdd4da7f67589ae7121a)) run some simple checks to make sure the correct URLs are hit and return the expected responses.
+
+For linting, I'm using [ESLint](https://eslint.org) with a very basic configuration, found in [`.eslintrc.json`](https://github.com/tbarlow12/sls-az-func-rest-api/commit/465ecfe04bda8d4d5ac7c9c5ce31557a8993408f#diff-df39304d828831c44a2b9f38cd45289c). To run a lint check, you can run:
+
+```bash
+$ npm run lint
+```
+
+Many errors can be fixed automatically with:
+
+```bash
+$ npm run lint:fix
+```
+
+Run your tests with:
+
+```bash
+$ npm test
+```
+
+For more details, take a look at the [commit in the example repo](https://github.com/tbarlow12/sls-az-func-rest-api/commit/465ecfe04bda8d4d5ac7c9c5ce31557a8993408f) or check out the commit locally
+
+```bash
+$ git checkout 465ecfe
+```
 
 #### [Step 4: Add basic API Management Configuration](https://github.com/tbarlow12/sls-az-func-rest-api/commit/c593308efc5a60e2701ec97122564592072080e2)
 
@@ -35,7 +66,13 @@ provider:
     apim: true
 ```
 
-That's exactly what I did for [Step 4](https://github.com/tbarlow12/sls-az-func-rest-api/commit/c593308efc5a60e2701ec97122564592072080e2). Also, because we want API Management to be the only entry point for our API endpoints, I also changed each function's `authLevel` to `function`. This requires a function-specific API key for authentication. For more details on `authLevel`, check out the [trigger configuration docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook#trigger---configuration).
+That's exactly what I did for [Step 4](https://github.com/tbarlow12/sls-az-func-rest-api/commit/c593308efc5a60e2701ec97122564592072080e2). Also, because we want API Management to be the only entry point for our API endpoints, I also changed each function's `authLevel` to `function`. This requires a function-specific API key for authentication. You can see in the screenshot what happens in the first command, when I try to `curl` the original function URL. I get a `401` response code. But when I hit the URL provided by API Management, I get the response I expect:
+
+<!-- TODO: Update with address to image in S3 Bucket -->
+![alt text]()
+
+For more details on `authLevel`, check out the [trigger configuration docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook#trigger---configuration).
+
 
 ###### Consumption SKU
 
@@ -49,6 +86,12 @@ One important thing to note is that the API Management configuration will defaul
 - Australia East
 
 If you are deploying to a region outside of that list, you will need to specify a different SKU (`Developer`, `Basic`, `Standard` or `Premium`) within the `apim` configuration, which will be demonstrated in the next section.
+
+###### Deploy your updates:
+
+```bash
+$ sls deploy
+```
 
 #### [Step 5: Add more advanced API Management Configuration](https://github.com/tbarlow12/sls-az-func-rest-api/commit/38413a03100a65c423dc18ab47754471a4c6f245)
 
@@ -128,6 +171,12 @@ provider:
 
 The example just uses the default and deploys to region(s) where Consumption API Management is currently available.
 
+###### Deploy your updates:
+
+```bash
+$ sls deploy
+```
+
 #### (Optional) [Step 5.1: Revert back to basic API Management configuration](https://github.com/tbarlow12/sls-az-func-rest-api/commit/4c5803f1e5adf21befbeac8e91cac4552b4f9c1c)
 
 To make the demo simple and easy to follow, I'm going to revert my `apim` configuration back to the defaults:
@@ -140,13 +189,17 @@ You might be able to do the same, depending on your requirements.
 
 #### [Step 6: Add Webpack configuration](https://github.com/tbarlow12/sls-az-func-rest-api/commit/1aefac7e5ed99db009632724c6a70c9cb3d29bf8)
 
-[Webpack](https://webpack.js.org/) dramatically reduces the packaging time as well as the size of your deployed package. We use another awesome Serverless plugin, [`serverless-webpack`](https://github.com/serverless-heaven/serverless-webpack) to make Webpacking an Azure Function app really easy.
+[Webpack](https://webpack.js.org/) dramatically reduces the packaging time as well as the size of your deployed package. After making these changes, your packaged Function App will be optimized with Webpack (You can run `sls package` to package it up or just run `sls deploy` which will include packaging as part of the lifecycle).
+
+Just as an example, even for this very small application, my package size went from **324 KB** to **28 KB**. 
+
+To accomplish this, we'll use another awesome Serverless plugin, [`serverless-webpack`](https://github.com/serverless-heaven/serverless-webpack) to make Webpacking our Azure Function app really easy.
 
 First thing you'll want to do, assuming you're working through this tutorial in your own git repository, is add the generated Webpack folder to your `.gitignore`
 
 ```yaml
 # .gitignore
-
+...
 # Webpack artifacts
 .webpack/
 ```
@@ -323,6 +376,9 @@ jobs:
       sls deploy --prefix gh --stage prod --region "West Europe"
     env:
       # Azure Service Principal. Secrets need to be mapped here
+      # USE THIS EXACT TEXT, DON'T COPY/PASTE YOUR CREDENTIALS HERE.
+      # Azure DevOps will use the variables within
+      # the variable group `sls-deploy-creds` to replace all the $() values
       AZURE_SUBSCRIPTION_ID: $(AZURE_SUBSCRIPTION_ID)
       AZURE_TENANT_ID: $(AZURE_TENANT_ID)
       AZURE_CLIENT_ID: $(AZURE_CLIENT_ID)
