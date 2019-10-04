@@ -12,11 +12,11 @@ authors:
 
 # Overview
 
-Today we're excited to announce Serverless Framework support for the biggest public cloud providers in the biggest country in the world - Alibaba Cloud (Aliyun). 
+Today we're excited to announce Serverless Framework support for the biggest public cloud provider in the most populous in the world - Alibaba Cloud (Aliyun). 
 
-As we continue our push towards more vendor choice with [Twilio](https://serverless.com/blog/serverless-and-twilio/) and new improvements to the [Microsoft Azure](https://serverless.com/blog/serverless-azure-functions-v1/) integration we are excited to offer developers everywhere a chance to use the Alibaba Cloud plugin to deploy to Alibaba regions in China and around the world.
+As we continue our push towards more vendor choice with [Twilio](https://serverless.com/blog/serverless-and-twilio/) and new improvements to the [Microsoft Azure](https://serverless.com/blog/serverless-azure-functions-v1/) integration we are excited to offer developers everywhere a chance to use the Alibaba Cloud plugin to deploy to Alibaba Cloud regions in China and around the world.
 
-This will allow organizations with customers or users inside China or other parts of East Asia and the Pacific to build geographically-proximate serverless applications. Organizations with previous Serveress Framework experience can use the framework they're used to while adopting features and services of Alibaba Cloud.
+This will allow organizations with customers or users inside China or other parts of East Asia and the Pacific to build geographically-proximate serverless applications. Organizations with previous Serverless Framework experience can use the framework they're used to while adopting features and services of Alibaba Cloud.
 
 # Deploying Our First Alibaba Cloud Microservice
 
@@ -99,12 +99,14 @@ curl -d '{"url": "https://serverless.com/blog/"}' -H "Content-Type: application/
 
 You should see a response like this:
 ```json
-{"result": "Download success, total pictures:11. Please check your images here: https://oss.console.aliyun.com/bucket/oss-us-east-1/sls-5089169273817666-us-east-1/object"}
+{"result": "Download success, total pictures:11. Please check your images here: https://oss.console.aliyun.com/bucket/oss-us-east-1/sls-5111111111112222-us-east-1/object"}
 ```
 
-Finally, if you're interested in deploying the service to alternate regions you can also use the `--region` flag with the deploy command. For example, to deploy to Hong Kong you could use: `serverless deploy --region cn-hongkong`.
+If you do, congrats! You've just deployed your own microservice into the Alibaba Cloud and used it successfully! You can sign into Alibaba Cloud and visit the OSS management console and see your images. Now, before you deploy this into production, just keep in mind this is a simple demo that didn't implement any type of authorization. Anyone with your API URL could POST pages to crawl. So, if you'd like to remove the service when you're done testing it out, you can run `serverless remove`. 
 
-And that's it! You've just deployed your own microservice into the Alibaba Cloud. If you'd like to help guide the development of this plugin check out the [GitHub repo](https://github.com/aliyun/serverless-aliyun-function-compute).
+Finally, if you're interested in (re)deploying the service to alternate regions you can also use the `--region` flag with the deploy command. For example, to deploy to Hong Kong you could use: `serverless deploy --region cn-hongkong`.
+
+If you'd like to help guide the development of this plugin check out the [GitHub repo](https://github.com/aliyun/serverless-aliyun-function-compute). If you'd like to learn more about using the Framework with Alibaba Cloud, check out [the documentation](https://serverless.com/framework/docs/providers/alibaba-cloud/events/). 
 
 ## Takeaways
 
