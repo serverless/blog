@@ -59,12 +59,13 @@ Now that we have the credentials, let's get started setting up our microservice.
 
 To get the demo, run: 
 
-`serverless install --url https://github.com/aliyun/serverless-function-compute-examples/tree/master/aliyun-nodejs`
+`serverless install --url https://github.com/aliyun/serverless-function-compute-examples/tree/master/image-crawler-python`
 
-Then, when you `cd aliyun-nodejs` and run `ls` you should see something like this:
+This demo will deploy a microservice that is designed to take an incoming URL, crawl the URL for image links, and then download the links to Alibaba Cloud's Object Storage Service (OSS). When the demo is finished cloning, run `cd image-crawler-python`. Run `ls` in that directory and you should see something like this:
 
 ```
-├── index.js
+├── README.md
+├── index.py
 ├── package.json
 └── serverless.yml
 ```
@@ -85,18 +86,25 @@ Next, if you have not gone through the [real name registration](https://www.alib
 ```
 provider:
   name: aliyun
-  runtime: nodejs8
-  region: ap-southeast-1
+  region: us-east-1
+  runtime: python2.7
   credentials: ~/.aliyuncli/credentials
 ```
 
-After saving the `serverless.yml` file with these changes you can run `serverless deploy` and see your application created inside of the Alibaba Cloud!
+After saving the `serverless.yml` file with these changes you can run `serverless deploy` and see your application created inside of the Alibaba Cloud! The logs should include an API URL which you can test using curl or Postman. Just remember to replace the `http://999999example123123-us-east-1.alicloudapi.com/crawl` in the command below with your API url. 
 
-After the deployment has completed you could load up your API Endpoint in the browser to see the GET request response, use Postman to do the same, or skip the Alibaba Cloud API Gateway portion of the architecture and invoke the function directly with `serverless invoke --function hello`.
+```bash
+curl -d '{"url": "https://serverless.com/blog/"}' -H "Content-Type: application/json" -X POST http://999999example123123-us-east-1.alicloudapi.com/crawl
+```
 
-Finally, if you're interested in deploying the function to alternate regions you can also use the `--region` flag with the deploy command. For example, to deploy to Hong Kong you could use: `serverless deploy --region cn-hongkong`.
+You should see a response like this:
+```json
+{"result": "Download success, total pictures:11. Please check your images here: https://oss.console.aliyun.com/bucket/oss-us-east-1/sls-5089169273817666-us-east-1/object"}
+```
 
-And that's it! You've just deployed your own microservice into the Alibaba Cloud. If you'd like to help guide the development of this plugin check out the [GitHub repo](https://github.com/aliyun/serverless-aliyun-function-compute). 
+Finally, if you're interested in deploying the service to alternate regions you can also use the `--region` flag with the deploy command. For example, to deploy to Hong Kong you could use: `serverless deploy --region cn-hongkong`.
+
+And that's it! You've just deployed your own microservice into the Alibaba Cloud. If you'd like to help guide the development of this plugin check out the [GitHub repo](https://github.com/aliyun/serverless-aliyun-function-compute).
 
 ## Takeaways
 
