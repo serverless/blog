@@ -1,7 +1,7 @@
 ---
 title: "Announcing Serverless Framework Support for Alibaba Cloud"
 description: "Learn how to deploy your first microservice in the Alibaba Cloud with the Serverless Framework."
-date: 2019-10-08
+date: 2019-10-15
 thumbnail: ""
 heroImage: ""
 category:
