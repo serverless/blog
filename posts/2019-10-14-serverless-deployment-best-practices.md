@@ -1,7 +1,7 @@
 ---
 title: "Serverless Deployment Best Practices"
 description: "Learn some of the best practices when it comes to deploying serverless applications."
-date: 2019-10-10
+date: 2019-10-14
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-10-deployment-best-practices/safeguard-header.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-10-deployment-best-practices/safeguard-hero.png"
 category:
