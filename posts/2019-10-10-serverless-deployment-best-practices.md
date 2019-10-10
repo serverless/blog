@@ -2,8 +2,8 @@
 title: "Serverless Deployment Best Practices"
 description: "Learn some of the best practices when it comes to deploying serverless applications."
 date: 2019-10-10
-thumbnail: ""
-heroImage: ""
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-10-deployment-best-practices/safeguard-header.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-10-deployment-best-practices/safeguard-hero.png"
 category:
   - guides-and-tutorials
 authors:
@@ -12,7 +12,7 @@ authors:
 
 ### Overview
 
-As you continue to develop serverless applications, the complexity and scope of those applications can start to grow. With that growth comes the need to follow some structured practices to deploy your applications in a way that minimized bugs, maintains application security, and allows you to develop more rapidly. As we think about how to apply the best practices listed below, I'll also show you how you can use the new Serverless Dashboard [Safeguards](https://serverless.com/framework/docs/dashboard/safeguards/) to help you implement many of them.
+As you continue to develop serverless applications, their complexity and scope can start to grow. That growth brings a need to follow structured practices to deploy your applications in a way that minimizes bugs, maintains application security, and allows you to develop more rapidly. This post will review a variety of serverless deployment best practices listed below. As we review them, I'll also show you how you can use the new Serverless Dashboard [Safeguards](https://serverless.com/framework/docs/dashboard/safeguards/) to help you easily implement these practices in your own Serverless Framework applications. If you're not yet familiar with the Serverless Dashboard take a look at [the documentation](https://serverless.com/framework/docs/dashboard/) to get started.
 
 So let's take a look at a few deployment best practices that you can implement in your own serverless applications!
 
@@ -50,9 +50,9 @@ While these situations might not apply to your organization, if they do (you gue
 
 #### Stages
 
-Conventions rock. They help developers learn a set of standards and then intuitively understand other parts of a system. One of the most ubiquitous development conventions is having a separate place for code customers see (production) and one or more places for code that developers are working on that isn't quite ready (development/testing). These different places are usually called `stages` and allow you to set up a consistent flow for the path your code takes as it moves towards customers.
+Conventions rock. They help developers learn a set of standards and then intuitively understand other parts of a system. One of the most ubiquitous development conventions is having a separate place for code customers see (production) and one or more places for code that developers are working on that isn't quite ready (development/testing etc.). These different places are usually called `stages` and they allow you to set up a consistent path for your code to take as it moves towards customers.
 
-With the Serverless Framework, by default, your applications are pushed out in a `dev` stage as you work on them. Then, when ready for production you can deploy them to a stage like `prod`. For each of these stages, you might want to use a very different set of configuration. 
+With the Serverless Framework, by default, your applications are pushed out in a `dev` stage as you work on them. Then, when ready for production you can deploy them to a stage like `prod` by updating your `serverless.yml` or running a deploy command with the `--stage prod` option. For each of these stages, you might want to use a very different set of configuration. 
 
 Fortunately, there's a lot of new granularity to what you can do with the Serverless Dashboard when it comes to interacting with stages. Per-stage configuration can include things like:
 
@@ -60,7 +60,7 @@ Fortunately, there's a lot of new granularity to what you can do with the Server
 - What Safeguards are evaluated against the deployment
 - What parameters and secrets are used
 
-You can also use Safeguard configuration to do things like blocking `dev` stage deployments to the production AWS account. These options become very flexible to help you support the needs and workflow of your organization.
+This allows you to use Safeguards to do things ranging from blocking `dev` stage deployments to the production AWS account or making sure that your production API keys are always bundled in with production deployments. These options become very flexible to help you support the needs and workflows of your organization.
 
 #### Allowed Regions
 
@@ -78,17 +78,19 @@ One common pattern would be to require that your Lambda functions all consistent
 
 Let's imagine a service that processes content submissions from users, records them in a database, and indexes them for search. It might have one Lambda function to accept/reject the submission and store it in a DynamoDB table and another to index the new data in ElasticSearch. If you take this simple architecture and spread it across a prod or dev environment you've already got four Lambda functions to keep track of. Doing this becomes easier when we follow a Lambda function naming convention like this: `serviceName-stage-functionName`.
 
-Then, the function names become:
+Then, the function names become something like this:
 
 - `newSubmissions-prod-submissionGrader`
 - `newSubmissions-prod-elasticsearchIndexer`
 - `newSubmissions-dev-submissionGrader`
 - `newSubmissions-dev-elasticsearchIndexer`
 
-This way, you know exactly what the function you need is called and can find it when you need it. Now, if you don't want to worry about a new developer deciding to deploy an opaquely-named service this can be pretty useful. This is just another of those best practices that you can enforce inside of the Serverless Dashboard with Safeguards.
+This way, you know exactly what the function you need is called and can find it when you need it. Now, if you don't want to worry about a new developer deciding to deploy an opaquely-named service, you can also enforce this naming convention using yet another Safeguard in the Serverless Dashboard.
 
 #### Takeaways 
 
 This is just a subset of best practices that we want to enable in the Serverless Dashboard. There are also many other Safeguards to enable more application-specific practices like enforcing the creation of Dead Letter Queues or requiring services be within a VPC. 
 
-Keep in mind that these best practice they aren't only applicable to the Serverless Framework. However you decide to building your applications, many of these practices can help you build applications more effectively and securely. Are there other development best practices you think we missed? Let us know! We're constantly looking for ways to improve the development experience for our users.
+Keep in mind that these best practice aren't only applicable to the Serverless Framework. However you decide to build your applications, many of these practices can help you do so more effectively and securely. 
+
+Are there other development best practices you think we missed? Let us know in the comments! We're constantly looking for ways to improve the development experience for our users.
