@@ -1,7 +1,7 @@
 ---
 title: "How to Create a REST API with Azure Functions and the Serverless Framework - Part 2"
 description: "Learn how to add API Management, Webpack and CI/CD to your Azure Functions REST API"
-date: 2019-10-1
+date: 2019-10-10
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/azure-functions-part1/thumbnail.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/azure-functions-part1/header.png"
 category:
