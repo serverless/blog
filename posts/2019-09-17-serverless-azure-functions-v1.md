@@ -319,3 +319,5 @@ Also, if you're going to be at ServerlessConf 2019 in NYC, the Microsoft team is
 #### Contributing
 
 We’re eager to get your feedback on the `serverless-azure-functions` plugin. Please [log issues on the GitHub repo with any bug reports or feature requests](https://github.com/serverless/serverless-azure-functions/issues/new/choose). Or better yet, fork the repo and open up a [pull request](https://github.com/serverless/serverless-azure-functions/pulls)! 
+
+Part Two of this tutorial can now be found [here](https://serverless.com/blog/serverless-azure-functions-v1-part2).
