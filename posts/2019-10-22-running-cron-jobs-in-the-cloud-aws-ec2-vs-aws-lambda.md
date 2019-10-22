@@ -1,6 +1,6 @@
 ---
 title: Running cron jobs in the cloud: AWS EC2 vs. AWS Lambda
-description: ""
+description: "Cron jobs are one of the things that have gotten harder, not easier, when moving to the cloud. In this article, we compare Amazon EC2 and AWS Lambda for running cron jobs in AWS and offer guidance for when to choose which of the two."
 date: 2019-10-22
 thumbnail: ""
 heroImage: ""
