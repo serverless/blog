@@ -261,7 +261,7 @@ We recommend this option for teams with multiple developers. With this setup, yo
 
 Before deploying, if you don’t yet have an account, sign up for [the Serverless Dashboard](https://serverless.com). Once your account is set up, create a new application using the *Add* button:
 
-![](https://paper-attachments.dropbox.com/s_D6A318E3304787C7BD3B786B84304335D69A584B04ED28AC91EA477DBA851D68_1569494360910_84yzvtwj7w97upg.png)
+![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cron-jobs-on-aws/serverless-aws-cron-applications.png)
 
 To make sure Serverless Framework knows which application to associate with our cron job, we add the `tenant` and `app` attributes to the `serverless.yml` file at the root level. You will need to replace the values shown here with the ones from your Serverless account:
 
@@ -279,7 +279,7 @@ After that, the steps to deploy are:
 1. In the Dashboard, navigate to Profiles → Create or choose a profile → AWS credential access role.
 2. Select *Personal AWS Account* and specify the IAM role you’d like to use for deployment. If the role doesn’t exist yet, click the *Create a role* link to create it.
 3. Click *Save and Exit.*
-![](https://paper-attachments.dropbox.com/s_D6A318E3304787C7BD3B786B84304335D69A584B04ED28AC91EA477DBA851D68_1569492900227_rpyh9d9axfcuiwq.png)
+![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cron-jobs-on-aws/aws-profiles-setup.png)
 
 4. Run `serverless login` in the console on your local machine and log in with your Serverless Dashboard credentials.
 5. Run `serverless deploy` without configuring the production AWS account on your machine.
@@ -292,11 +292,11 @@ Check out [this YouTube video](https://www.youtube.com/watch?v=KTsWDCXvxqU) wher
 
 When you deploy via the Serverless Dashboard (our recommended approach), the monitoring is already set up once the cron job is deployed. On the Applications page, we click through to the deployment we just ran:
 
-![](https://paper-attachments.dropbox.com/s_D6A318E3304787C7BD3B786B84304335D69A584B04ED28AC91EA477DBA851D68_1569495118956_jyymx4x6n5o3uvl.png)
+![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cron-jobs-on-aws/aws-database-cron.png)
 
 On the deployment page, when we go to the Overview section we see the list of alerts and a graph of function invocations and errors:
 
-![](https://paper-attachments.dropbox.com/s_D6A318E3304787C7BD3B786B84304335D69A584B04ED28AC91EA477DBA851D68_1569495165139_w48jlx8abatpq6f.png)
+![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cron-jobs-on-aws/aws-cron-job-alerts.png)
 
 It’s currently empty, but more information will appear as the cron job starts being invoked. On the Alerts tab, any alerts relevant to your cron job will be displayed. That’s it! No extra work needed to set up monitoring and alerting.
 
