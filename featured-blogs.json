@@ -1,7 +1,8 @@
 [
+  "cron-jobs-on-aws",
+  "serverless-deployment-best-practices",
   "serverless-azure-functions-v1-part2",
   "easily-deploy-graphql-apis-with-serverless-components",
   "aws-lambda-python-monitoring",
-  "serverless-azure-functions-v1",
-  "lambda-at-edge-support-added"
+  "serverless-azure-functions-v1"
 ]
