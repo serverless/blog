@@ -1,6 +1,6 @@
 ---
 title: Creating, monitoring, and testing cron jobs on AWS
-description: "In this article we walk you through how to create a cron job on AWS using AWS Lambda and Serverless Framework, how to get the right alerts and security measures in place, and how to scale your cron jobs as needed."
+description: "In this article we walk you through how to create a cron job on AWS using AWS Lambda and Serverless Framework and how to get the right alerts and security measures in place."
 date: 2019-10-23
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cron-jobs-on-aws/cron-jobs-on-aws-thumb.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cron-jobs-on-aws/cron-jobs-on-aws-header.png"
