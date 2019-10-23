@@ -5,7 +5,7 @@ date: 2019-10-23
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cron-jobs-on-aws/cron-jobs-on-aws-thumb.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cron-jobs-on-aws/cron-jobs-on-aws-header.png"
 authors:
-  - AlexeyKlochay
+  - GarethMcCumskey
 category:
   - guides-and-tutorials
 ---
