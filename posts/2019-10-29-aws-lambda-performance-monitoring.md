@@ -1,6 +1,6 @@
 ---
 title: AWS Lambda Performance Optimization & Monitoring with Tracing & Spans (Serverless Framework Pro)
-description: "To troubleshoot the performance of a AWS Lambda function, we need the transaction time of each dependency. Come see how we do that with Serverless Framework Pro"
+description: "To troubleshoot the performance of an AWS Lambda function, we need the transaction time of each dependency. Come see how we do that with Serverless Framework Pro"
 date: 2019-10-29
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/tracing-and-spans/Thumbnail.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/tracing-and-spans/header.png"
@@ -20,7 +20,7 @@ Serverless applications are highly distributed, where each function performs a f
 
 If the REST API endpoint performance is degraded, it can be incredibly challenging to identify the root cause as it may be tied to the function code or to any one of the countless dependencies. As your applications grow, so do the service dependencies and the possible root causes of performance issues.
 
-To troubleshoot the performance of a serverless application, we need traces and spans that show us the transaction time of each dependency.
+To troubleshoot the performance of a AWS Lambda function, we need traces and spans that show us the transaction time of each dependency.
 
 Serverless Framework Pro provides both zero-config / zero-code automatic instrumentation and custom instrumentation to capture spans of the calls to dependent services. Your code is automatically instrumented for you and the Serverless Framework Dashboard provides a powerful invocation explorer to drill into and visualize span details.
 
