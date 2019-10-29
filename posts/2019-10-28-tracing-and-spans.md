@@ -2,8 +2,8 @@
 title: Troubleshooting serverless performance issues with tracing and spans
 description: "To troubleshoot the performance of a serverless application, we need the transaction time of each dependency. Come see how we do that with Serverless Framework Pro"
 date: 2019-10-28
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cron-jobs-on-aws/cron-jobs-on-aws-thumb.png"
-heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cron-jobs-on-aws/cron-jobs-on-aws-header.png"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/tracing-and-spans/Thumbnail.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/tracing-and-spans/header.png"
 authors:
   - MaciejSkierkowski
 category:
