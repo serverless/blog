@@ -43,7 +43,7 @@ On the other hand, changes are going to happen less frequently to the infrastruc
 
 Here's a little diagram to illustrate the above setup.
 
-![Real-world Serverless app repo structure](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/real-world-serverless-app-structure.png)
+![Real-world Serverless app repo structure](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless+app+setup/unnamed.png)
 
 # Organizing your Lambda functions
 
