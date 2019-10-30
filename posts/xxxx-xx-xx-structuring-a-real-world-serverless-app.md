@@ -3,6 +3,8 @@ title: Structuring a Real-World Serverless App
 description: "In this post we'll be looking at how to structure a real-world Serverless Framework application."
 date: xxxx-xx-xx
 layout: Post
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless+app+setup/unnamed+(1).png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless+app+setup/unnamed+(2).png"
 category:
   - guides-and-tutorials
 authors:
