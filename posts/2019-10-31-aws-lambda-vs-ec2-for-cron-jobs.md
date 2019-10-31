@@ -20,7 +20,7 @@ AWS Lambda is taking its place as the new standard for task automation in AWS en
 
 In this article, we’ll compare Amazon EC2 and AWS Lambda for running cron jobs and offer guidance for when to choose which of the two.
 
-### AWS EC2 vs. AWS Lambda for running cron jobs
+### Amazon EC2 vs. AWS Lambda for running cron jobs
 
 **Cost and resource utilization**
 Under EC2, you must reserve an entire machine for your cron jobs at all times. Unless you have a very high and consistent number of cron jobs that you run, you’re likely underutilizing your EC2 machine.
