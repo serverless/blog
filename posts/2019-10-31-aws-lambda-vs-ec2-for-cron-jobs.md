@@ -1,17 +1,18 @@
 ---
-title: Running cron jobs in the cloud: AWS EC2 vs. AWS Lambda
+title: Running cron jobs in the cloud - AWS EC2 vs AWS Lambda
 description: "Cron jobs are one of the things that have gotten harder, not easier, when moving to the cloud. In this article, we compare Amazon EC2 and AWS Lambda for running cron jobs in AWS and offer guidance for when to choose which of the two."
-date: 2019-10-22
-thumbnail: ""
-heroImage: ""
+date: 2019-10-31
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/aws-lambda-vs-ec2-for-cron-jobs/ec2-vs-lambda-thumb.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/aws-lambda-vs-ec2-for-cron-jobs/ec2-vs-lambda-header.png"
 authors:
-  - AlexeyKlochay
+  - GarethMcCumskey
 category:
   - guides-and-tutorials
 ---
+
 Cron jobs are one of the things that have gotten harder, not easier, when moving to the cloud.
 
-The motivation to automate recurring tasks is still strong in the software community, but while companies have been transitioning their infrastructure towards cloud environments, they’ve been falling behind on tooling for daily tasks. Previously, when companies hosted servers in their own datacenters, scheduling a cron job to run on a spare machine was a 15-minute task. But with the move to the cloud, there are no longer any spare machines. Companies track infrastructure closely because the management of this infrastructure is now done automatically, and access to it is restricted, creating new barriers to automation in cloud environments.
+The motivation to automate recurring tasks is still strong in the software community, but while companies have been transitioning their infrastructure towards cloud environments, they’ve been falling behind on tooling for daily tasks. Previously, when companies hosted servers in their own data centers, scheduling a cron job to run on a spare machine was a 15-minute task. But with the move to the cloud, there are no longer any spare machines. Companies track infrastructure closely because the management of this infrastructure is now done automatically, and access to it is restricted, creating new barriers to automation in cloud environments.
 
 The first solutions to general automation in the cloud ran on Amazon EC2: companies would spin up a machine and use it for cron jobs, or they’d install a layer of middleware on top of EC2, such as [Sidekiq](https://github.com/mperham/sidekiq). These solutions were unsustainable due to overspending on idle machines. Running cron jobs using Sidekiq and similar scheduling systems also meant that the software engineering teams had to maintain an application layer for scheduling the jobs, and this resulted in unnecessarily tight coupling of cron jobs to the business logic of the given applications.
 
@@ -19,7 +20,7 @@ AWS Lambda is taking its place as the new standard for task automation in AWS en
 
 In this article, we’ll compare Amazon EC2 and AWS Lambda for running cron jobs and offer guidance for when to choose which of the two.
 
-## AWS EC2 vs. AWS Lambda for running cron jobs
+### AWS EC2 vs. AWS Lambda for running cron jobs
 
 **Cost and resource utilization**
 Under EC2, you must reserve an entire machine for your cron jobs at all times. Unless you have a very high and consistent number of cron jobs that you run, you’re likely underutilizing your EC2 machine.
@@ -30,7 +31,6 @@ This pricing model for AWS Lambda can be both a positive and a negative. If you 
 
 **Software available for cron jobs and machine maintenance**
 Here are some of the regular maintenance tasks you’ll need to perform on any EC2 machines you use for cron jobs:
-
 
 - Update the operating system.
 - Install security updates.
@@ -60,13 +60,13 @@ Overall, AWS Lambda has more options for secrets management that require less co
 **Metrics and alerts**
 When a cron job breaks, developers generally don’t notice until it overloads another system or goes out of service. To prevent service disruptions from cron jobs not running or running incorrectly, it can be very helpful to set up a reliable metrics feed and alerts based on those metrics. The metrics and alerts make you aware of problems so that you can resolve them before they have any downstream effects on your infrastructure.
 
-Both EC2 and AWS Lambda allow you to export metrics to [CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html), and seting up alerts on those metrics is straightforward. On AWS Lambda, emitted CloudWatch events are generally tied to function executions and run times. CloudWatch’s default metrics may not be right for monitoring infrequently running functions (like cron jobs), so you may need to adjust the metrics coming from your cron-job Lambda functions. With EC2, however, the default CloudWatch metrics only monitor the machine itself, such the load average and the amount of memory used, offering essentially no visibility into the cron jobs running on the machine. If you use EC2 for cron jobs, you will certainly need to create and submit your own metrics to CloudWatch (or other metrics systems).
+Both EC2 and AWS Lambda allow you to export metrics to [CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html), and setting up alerts on those metrics is straightforward. On AWS Lambda, emitted CloudWatch events are generally tied to function executions and run times. CloudWatch’s default metrics may not be right for monitoring infrequently running functions (like cron jobs), so you may need to adjust the metrics coming from your cron-job Lambda functions. With EC2, however, the default CloudWatch metrics only monitor the machine itself, such the load average and the amount of memory used, offering essentially no visibility into the cron jobs running on the machine. If you use EC2 for cron jobs, you will certainly need to create and submit your own metrics to CloudWatch (or other metrics systems).
 
 AWS Lambda has a built-in metrics system that’s more geared toward short-lived tasks like cron jobs. However, using CloudWatch can get expensive fast, and configuring the right alerts can be challenging for jobs that don’t run often. To address this, the Serverless Framework provides pre-configured alerts that kick in when there is an unusual level of activity in your function, or when it generates a new exception.
 
 Independent of the metrics system you choose, getting visibility into how your cron jobs run and where they might have issues greatly reduces the risk of a job silently failing and impacting downstream services and infrastructure.
 
-## EC2 vs Lambda: which one should you use for cron jobs?
+### EC2 vs Lambda: which one should you use for cron jobs?
 
 We’ve covered all the ways in which AWS Lambda and EC2 differ in running cron jobs. Both of these services are cloud-native ways to automate tasks in your infrastructure.
 
@@ -74,7 +74,7 @@ Deciding which one is the right choice for your company and your team depends on
 
 There’s definitely still a place for EC2 in running cron jobs when the tasks have specific requirements that Lambda can’t support, such as long-running jobs, jobs that require access to special resources like GPUs, or jobs that are written in runtimes not supported by Lambda. For these use cases, you’ll need to create your own solutions in concert with other AWS services for deployment, secrets management and alerting.
 
-## Links and references
+### Links and references
 - [A scheduled cron job example using AWS Lambda and Serverless Framework](https://serverless.com/examples/aws-node-scheduled-cron/).
 - [Serverless Framework](https://serverless.com/framework/docs/providers/aws/events/schedule/) `[schedule](https://serverless.com/framework/docs/providers/aws/events/schedule/)` [event](https://serverless.com/framework/docs/providers/aws/events/schedule/).
 - [Deployment best practices for Serverless applications](https://serverless.com/blog/serverless-deployment-best-practices/).
