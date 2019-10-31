@@ -1,5 +1,5 @@
 ---
-title: Running cron jobs in the cloud - AWS EC2 vs AWS Lambda
+title: Running cron jobs in the cloud - Amazon EC2 vs AWS Lambda
 description: "In this article, we compare Amazon EC2 and AWS Lambda for running cron jobs in AWS and offer guidance for when to choose which of the two."
 date: 2019-10-31
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/aws-lambda-vs-ec2-for-cron-jobs/ec2-vs-lambda-thumb.png"
@@ -76,6 +76,6 @@ There’s definitely still a place for EC2 in running cron jobs when the tasks h
 
 ### Links and references
 - [A scheduled cron job example using AWS Lambda and Serverless Framework](https://serverless.com/examples/aws-node-scheduled-cron/).
-- [Serverless Framework](https://serverless.com/framework/docs/providers/aws/events/schedule/) `[schedule](https://serverless.com/framework/docs/providers/aws/events/schedule/)` [event](https://serverless.com/framework/docs/providers/aws/events/schedule/).
+- [Serverless Framework schedule event](https://serverless.com/framework/docs/providers/aws/events/schedule/).
 - [Deployment best practices for Serverless applications](https://serverless.com/blog/serverless-deployment-best-practices/).
 - [Secrets management for AWS powered Serverless applications](https://serverless.com/blog/aws-secrets-management/).
