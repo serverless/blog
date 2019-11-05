@@ -111,55 +111,19 @@ Now that we've got the basics down, let's dig a little deeper into handling secr
 
 In the example above, the big problem is that our access token is in plaintext directly in our `serverless.yml`. This is a sensitive secret that we don't want to commit to source control.
 
-A better option is to use [AWS Parameter Store](http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-paramstore.html) to store your secrets. This is a new service provided by AWS that acts as a centralized config store for your applications. It's quickly becoming a popular way to manage secrets—check out [this post from Segment](https://segment.com/blog/the-right-way-to-manage-secrets/) on how and why you should use it.
+A better option is to use the [Serverless Framework Pro Dashboard](https://dashboard.serverless.com) Parameters feature. If you are already using Serverless Framework Pro for monitoring your Serverless Services, it makes sense to use the same tool to help you centrally maintain your secrets. And this can be very easily done across stages (or environments) as well.
 
-We added [integration with Parameter Store](https://github.com/serverless/serverless/pull/4062) (also known as SSM, for Simple Systems Manager) with version 1.22 of the Serverless Framework. This means you can refer to SSM parameters directly in `serverless.yml` using the following syntax:
+When you have logged into your `org` on the dashboard, click on 'profiles' in the top left, then either choose from an existing profile you already assign to a particular stage or create a new one. Once you have opened a profile, you will see a tab labelled parameters. It is here that you can then add whatever parameter you like for that deployment profiles stage. You can then repeat that for any other stage that your services may need and add the values specific to that stage.
+
+But how does this work? Well, within our `serverless.yml` we can reference those parameters using the `${param:keyname}` syntax. And then, on deployment time, the Serverless Framework will read the values from our Serverless Pro configuration and replace the variable syntax with the actual values.
 
 ```yml
 ...
   environment:
-    MY_API_SECRET: ${ssm:nameOfKey}
+    MY_DASHBOARD_PARAM: ${param:nameOfKey}
 ...
 ```
-
-Let's apply this to our previous example. Use the [AWS CLI](https://aws.amazon.com/cli/) to store two new SSM parameters—one for the Serverless Superman bot and one for the Big Data Batman bot:
-
-```bash
-aws ssm put-parameter --name supermanToken --type String --value mySupermanToken
-aws ssm put-parameter --name batmanToken --type String --value myBatmanToken
-```
-
-The `name` is how you identify the key you want, and the `value` is the configuration value that you want to store.
-
-Then, we update our `serverless.yml` to refer to these SSM parameters:
-
-```yml
-# serverless.yml
-
-service: env-variables
-
-provider:
-  name: aws
-  runtime: python3.6
-  stage: dev
-  region: us-east-1
-
-functions:
-  superman:
-    handler: superman.main
-    events:
-      - schedule: rate(10 minutes)
-    environment:
-      TWITTER_ACCESS_TOKEN: ${ssm:supermanToken}
-  batman:
-    handler: batman.main
-    events:
-      - schedule: rate(10 minutes)
-    environment:
-      TWITTER_ACCESS_TOKEN: ${ssm:batmanToken}
-```
-
-Awesome! Now when we run `sls deploy`, the Serverless Framework will grab those values from the Parameter Store and inject them into our functions as environment variables. Now we can commit our `serverless.yml` to source control without fear of exposing our credentials.
+![Video of process to add new param](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/secrets-api-keys/secrets-api-keys.gif)
 
 #### Managing Secrets for Larger Projects and Teams
 
@@ -169,9 +133,9 @@ First, environment variables are inserted into your Lambda function as plain-tex
 
 Second, environment variables are set at _deploy time_ rather than being evaluated at _run time_. This can be problematic for configuration items that change occasionally. This is even more painful if the same config item is used across multiple functions, such as a database connection string. If you need to change the configuration item for any reason, you'll need to redeploy all of the services that use that configuration item. This can be a nightmare.
 
-If this is the case, I would still recommend using AWS Parameter Store to handle your secrets. It's very simple to use and allows for nice access controls on who and what is allowed to access certain secrets.
+If this is the case, I would recommend using AWS Parameter Store to handle your secrets. It's very simple to use and allows for nice access controls on who and what is allowed to access certain secrets.
 
-However, you'll have to write code with your Lambda handler to interact with Parameter Store—you can't use the easy shorthand from the Serverless Framework.
+However, you'll have to write code within your Lambda handler to interact with Parameter Store—you can't use the easy shorthand from the Serverless Framework.
 
 Here's an example of how you would get a configuration value from SSM in your Lambda function in Python:
 
@@ -198,4 +162,4 @@ We create a simple helper utility that wraps a Boto3 call to the Parameter Store
 
 This is just scratching the surface of handling configuration in a larger Serverless project. Another issue you'll want to consider is refreshing your config within a particular Lambda container. Because a Lambda instance can be reused across many function invocations, you'll want to periodically refresh the configuration in case it changed since the instance was initially started.
 
-Yan Cui has [written a more detailed post](https://hackernoon.com/you-should-use-ssm-parameter-store-over-lambda-env-variables-5197fc6ea45b) on this and other aspects of managing secrets in a larger Serverless project. I would recommend reading that (and all of Yan's other pieces!) for additional information.
+We have [another blog post](https://serverless.com/blog/aws-secrets-management) that goes into even more detail about secrets management and if you are looking for more information I would recommend reading that one as well.
