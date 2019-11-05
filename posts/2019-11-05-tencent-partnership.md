@@ -1,6 +1,6 @@
 ---
-title: "Tencent Cloud and Serverless Join Forces to Create a next Generation, Serverless Cloud"
-description: "Tencent and Serverless are partnering to offer developers more opportunities to develop serverless applications on the internet company in Asia."
+title: "Tencent Cloud and Serverless Join Forces to Bring the Serverless Movement to China"
+description: "Tencent becomes a Premier Cloud Provider of the Serverless Framework."
 date: 2019-11-05
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/tencent-cloud-announcement/tencent-cloud-provider-thumb.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/tencent-cloud-announcement/tencent-cloud-provider-header.png"
@@ -30,6 +30,6 @@ We have something for front-end developers too. In seconds, you can deploy auto-
 
 ![Graphic of the Tencent Cloud Provider](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/tencent-cloud-announcement/tencent-cloud-provider.png)
 
-With very little configuration, you can now also easily deploy [REST API endpoints](https://intl.cloud.tencent.com/document/product/628/11755) that take advantage of the full range of Tencent API Gateway features (e.g. usage plans and throttling). You can also easily deploy Tencent Serverless Cloud Functions as scheduled jobs, and react to events on Tencent Cloud Object Storage, Tencent Message Broker and Tencent Cloud Kafka.
+With very little configuration, you can now also easily deploy [REST API endpoints](https://github.com/serverless-tencent/serverless-tencent-scf) that take advantage of the full range of Tencent API Gateway features (e.g. usage plans and throttling). You can also easily deploy Tencent Serverless Cloud Functions as scheduled jobs, and react to events on Tencent Cloud Object Storage, Tencent Message Broker and Tencent Cloud Kafka.
 
 As you try out each of these open-source projects, tell us how to improve your experience by logging issues and feature requests in the related Github repos. Our next steps will be to enable more use-cases to be built on serverless infrastructure, like types of data processing pipelines, AI and machine learning, workflow automation and more. Additionally, we will start to focus on advanced monitoring and debugging features, so developer teams have the appropriate level of observability to bring these use-cases into production, and the debugging power to identify the root causes of issues and fix them quickly.
