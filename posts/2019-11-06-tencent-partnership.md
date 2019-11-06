@@ -1,7 +1,7 @@
 ---
 title: "Tencent Cloud and Serverless Join Forces to Bring the Serverless Movement to China"
 description: "Tencent becomes a Premier Cloud Provider of the Serverless Framework."
-date: 2019-11-05
+date: 2019-11-06
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/tencent-cloud-announcement/tencent-cloud-provider-thumb.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/tencent-cloud-announcement/tencent-cloud-provider-header.png"
 category:
