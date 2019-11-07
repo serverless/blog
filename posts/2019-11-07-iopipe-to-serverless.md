@@ -2,8 +2,8 @@
 title: "Migrating Monitoring from IOpipe to Serverless Pro"
 description: "Learn how to migrate your serverless application monitoring to Serverless Pro from IOpipe."
 date: 2019-11-07
-thumbnail: ""
-heroImage: ""
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-11-iopipe-migration/Thumbnail.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-11-iopipe-migration/header.png"
 category:
   - guides-and-tutorials
 authors:
