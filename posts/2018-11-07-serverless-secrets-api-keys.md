@@ -1,7 +1,7 @@
 ---
 title: Managing secrets, API keys and more with Serverless
 description: Use Lambda environment variables and AWS Parameter Store to handle configuration in your Serverless projects
-date: 2017-10-18
+date: 2017-11-07
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/lock2.jpg
 category:
   - guides-and-tutorials
