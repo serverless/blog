@@ -1,6 +1,6 @@
 ---
-title: "Migrating Monitoring from IOpipe to Serverless Pro"
-description: "Learn how to migrate your serverless application monitoring to Serverless Pro from IOpipe."
+title: "Migrating Monitoring from IOpipe to Serverless Framework Pro"
+description: "Learn how to migrate your serverless application monitoring to Serverless Framework Pro from IOpipe."
 date: 2019-11-07
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-11-iopipe-migration/Thumbnail.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-11-iopipe-migration/header.png"
@@ -28,7 +28,7 @@ I'm going to assume that:
 2. You have AWS keys configured locally that you use to deploy your services
 3. You're ready to remove IOpipe (as it will soon be unsupported)
 
-## Step 1 - Signing Up for Serverless Pro (For Free!)
+## Step 1 - Signing Up for Serverless Framework Pro (For Free!)
 
 Serverless Framework Pro is free to use for up to a million monthly Lambda function invocations. Just create a dashboard account [here](http://dashboard.serverless.com).
 
