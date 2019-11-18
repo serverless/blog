@@ -270,7 +270,7 @@ The simplicity of AppSync, as it is generally the case for managed services, com
 
 ##### Data sources
 
-In the chat app, we are using the [DynamoDB](https://serverless.com/developers/guides/dynamodb/) data source, which is one of the better-supported sources in AppSync. Another fully-managed data source that’s available out of the box is the Amazon Elasticsearch Service.
+In the chat app, we are using the [DynamoDB](https://serverless.com/dynamodb/) data source, which is one of the better-supported sources in AppSync. Another fully-managed data source that’s available out of the box is the Amazon Elasticsearch Service.
 
 AWS Lambda is the third data source option supported by AppSync. You could create a service in AWS Lambda that would query an RDS database, or go to an HTTP service outside of AWS to get the data. While this allows for some extensibility, doing anything with Lambda would require more work than just using a fully managed service like in our DynamoDB example above.
 

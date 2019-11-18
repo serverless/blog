@@ -10,7 +10,7 @@ authors:
   - AlexDeBrie
 ---
 
-At [re:Invent 2018](https://serverless.com/blog/reinvent-2018-serverless-announcements/), AWS announced [DynamoDB On-Demand](https://aws.amazon.com/blogs/aws/amazon-dynamodb-on-demand-no-capacity-planning-and-pay-per-request-pricing/). This lets you pay for DynamoDB on a _per-request basis_ rather than planning capacity ahead of time.
+At [re:Invent 2018](https://serverless.com/blog/reinvent-2018-serverless-announcements/), AWS announced [DynamoDB On-Demand](https://aws.amazon.com/blogs/aws/amazon-dynamodb-on-demand-no-capacity-planning-and-pay-per-request-pricing/). This lets you pay for [DynamoDB](https://serverless.com/dynamodb/) on a _per-request basis_ rather than planning capacity ahead of time.
 
 We at Serverless are really excited about this new pricing model and can't wait to use it in our applications. This post is your one-stop-shop on all things DynamoDB On-Demand + Serverless.
 

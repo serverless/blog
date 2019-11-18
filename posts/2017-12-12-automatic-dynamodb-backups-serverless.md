@@ -14,7 +14,7 @@ The bad news? You can't schedule and automate your backups. You need to manually
 
 **Have no fear, an automated solution is here.** 
 
-Use the power of [Serverless](https://serverless.com) to automatically backup your DynamoDB tables on a schedule! 
+Use the power of [Serverless](https://serverless.com) to automatically backup your [DynamoDB](https://serverless.com/dynamodb/) tables on a schedule! 
 
 Follow the steps below to use our project to backup your DynamoDB tables.
 

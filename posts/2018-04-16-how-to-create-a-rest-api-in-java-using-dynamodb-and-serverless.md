@@ -9,7 +9,7 @@ authors:
   - RupakGanguly
 ---
 
-In this walkthough, we will build a `products-api` serverless service that will implement a REST API for products. We will be using Java as our language of choice. The data will be stored in a DynamoDB table, and the service will be deployed to AWS.
+In this walkthough, we will build a `products-api` serverless service that will implement a REST API for products. We will be using Java as our language of choice. The data will be stored in a [DynamoDB](https://serverless.com/dynamodb/) table, and the service will be deployed to AWS.
 
 ![image](https://user-images.githubusercontent.com/8188/38645675-ec708d0e-3db2-11e8-8f8b-a4a37ed612b9.png)
 

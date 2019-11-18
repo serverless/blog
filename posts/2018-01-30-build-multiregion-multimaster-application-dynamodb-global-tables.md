@@ -9,7 +9,7 @@ category:
 authors:
   - AlexDeBrie
 ---
-*To see how DynamoDB compares to MongoDB, Cassandra, or BigTable, [see here](https://serverless.com/developers/guides/dynamodb/).*
+*To see how DynamoDB compares to MongoDB, Cassandra, or BigTable, [see here](https://serverless.com/dynamodb/).*
 
 AWS gives devs some *powerful* building blocks for making amazing applications. In this walkthrough, we're going to create a multi-region, multi-master, geo-routed application—all in about 30 minutes.
 

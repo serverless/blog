@@ -12,7 +12,7 @@ In the last few years, we've seen an explosion in developers using event streams
 
 ## User Signup with DynamoDB
 
-You have a great idea for an application. Like many apps, you need a way for users to sign up. An [increasingly popular architecture](https://serverless.com/blog/node-rest-api-with-serverless-lambda-and-dynamodb/) is to create a REST API using API Gateway, Lambda, and DynamoDB. With the Serverless Framework, your create user function might look like:
+You have a great idea for an application. Like many apps, you need a way for users to sign up. An [increasingly popular architecture](https://serverless.com/blog/node-rest-api-with-serverless-lambda-and-dynamodb/) is to create a REST API using API Gateway, Lambda, and [DynamoDB](https://serverless.com/dynamodb/). With the Serverless Framework, your create user function might look like:
 
 ```python
 import json
