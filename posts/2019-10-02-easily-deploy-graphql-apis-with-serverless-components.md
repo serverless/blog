@@ -31,7 +31,7 @@ In this article, we won't be able to cover all the features of this component. B
 
 ### Credits
 
-Before moving forward, we'd like to give a HUGE shoutout to [Eetu Tuomala](https://github.com/laardee) who's put a lot of effort contributing this component to the community and making sure it supports all of AppSync features. We'd also like to thank [Siddharth Gupta](https://github.com/sid88in) for building the original [Serverless Framework AppSync plugin](https://github.com/sid88in/serverless-appsync-plugin), which is the main inspiration for this component.
+Before moving forward, we'd like to give a HUGE shoutout to [Eetu Tuomala](https://github.com/laardee) who's put a lot of effort contributing this component to the community and making sure it supports all of [AppSync](https://serverless.com/aws-appsync/) features. We'd also like to thank [Siddharth Gupta](https://github.com/sid88in) for building the original [Serverless Framework AppSync plugin](https://github.com/sid88in/serverless-appsync-plugin), which is the main inspiration for this component.
 
 ### Getting Started
 

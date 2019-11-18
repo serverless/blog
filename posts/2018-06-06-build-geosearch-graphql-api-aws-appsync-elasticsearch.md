@@ -12,7 +12,7 @@ authors:
 
 In this tutorial, we're going to build an Elasticsearch-backed GraphQL API on AWS AppSync. All using the Serverless Framework.
 
-[AppSync](https://aws.amazon.com/appsync/) offers the ability to create serverless GraphQL APIs with much less backend code than previously possible. We will take advantage of this to create our own geo search service (similar to the one used by AirBnB), which will allow users to search for items within a 10km radius of a given location.
+[AppSync](https://serverless.com/aws-appsync/) offers the ability to create serverless GraphQL APIs with much less backend code than previously possible. We will take advantage of this to create our own geo search service (similar to the one used by AirBnB), which will allow users to search for items within a 10km radius of a given location.
 
 Let's get started!
 

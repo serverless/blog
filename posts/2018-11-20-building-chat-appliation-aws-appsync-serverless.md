@@ -18,10 +18,10 @@ Users get from more responsive frontend apps, while also saving bandwidth. Devel
 
 **AppSync**, AWS’s managed GraphQL layer, builds on the benefits of GraphQL and adds a few more cool things in its mobile and web SDKs: subscriptions, convenient authentication via Cognito Pools, and the ability to plug in directly to a bunch of AWS services for data.
 
-AppSync can do a lot while still being a fully managed service, which works out great for Serverless applications. No more GraphQL resolvers in Lambda functions. No more hand-rolled authentication. 
+[AppSync](https://serverless.com/aws-appsync/) can do a lot while still being a fully managed service, which works out great for Serverless applications. No more GraphQL resolvers in Lambda functions. No more hand-rolled authentication. 
 It’s the best of GraphQL with less complexity than before.
 
-In this article, we show how you can get started with AWS AppSync in a Serverless project, and talk about the benefits and drawbacks of using AppSync for your Serverless applications. Let’s get to it!
+In this article, we show how you can get started with [AWS AppSync](https://serverless.com/aws-appsync/) in a Serverless project, and talk about the benefits and drawbacks of using AppSync for your Serverless applications. Let’s get to it!
  
 #### Building a chat app with AppSync
  
