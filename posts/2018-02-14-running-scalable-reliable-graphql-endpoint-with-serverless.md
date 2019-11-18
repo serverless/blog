@@ -10,7 +10,7 @@ authors:
   - SiddharthGupta
 ---
 
-*New to AWS AppSync?* Check out this [Ultimate Guide to AWS AppSync](https://serverless.com/aws-appsync/)
+*New to AppSync?* Check out this [Ultimate Guide to AWS AppSync](https://serverless.com/aws-appsync/)
 
 - Part 1: GraphQL endpoints with API Gateway + AWS Lambda (this post)
 - Part 2: [AppSync Backend: AWS Managed GraphQL Service](https://medium.com/@sid88in/running-a-scalable-reliable-graphql-endpoint-with-serverless-24c3bb5acb43)
