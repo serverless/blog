@@ -68,7 +68,7 @@ Given the problems and requirements described above, I figured I'd need some **o
 
 This sounded like the **perfect scenario for AWS Step Functions** since I wanted all of this to happen in parallel, map the results into the corresponding performance/cost metrics, and finally reduce it to a single value (i.e. the optimal power configuration). Therefore I went on and designed a multi-branch state machine on paper, where each parallel branch would correspond to a power value.
 
-Here is when I found out that AWS Step Functions does not allow you to generate states dynamically, and you can't update the state machine structure via API either. I didn't give up, so I started building a simple command that would take a list of power configuration to evaluate as input to generate the state machine JSON code.
+Here is when I found out that [AWS Step Functions](https://serverless.com/aws-step-functions/) does not allow you to generate states dynamically, and you can't update the state machine structure via API either. I didn't give up, so I started building a simple command that would take a list of power configuration to evaluate as input to generate the state machine JSON code.
 
 One more problem: every branch would need to run the same Lambda Function in parallel with different power configurations. Therefore I decided that I'd need an **initialization step** that would **create a Function Version/Alias for each configuration**. Since I didn't like the idea of leaving a mess after the state machine execution, I also added a **cleaning step** at the end.
 

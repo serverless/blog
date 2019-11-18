@@ -50,7 +50,7 @@ In our project, we developed five Proofs of Concept. Recall that our problems we
 - AWS Lambda + API Gateway + S3 will replace our existing image resizing and provide better caching mechanisms
 
 **To reduce high operational costs:**
-- A workflow using Step functions + S3 + AWS Lambdas will replace our existing EC2 instances
+- A workflow using [Step functions](https://serverless.com/aws-step-functions/) + S3 + AWS Lambdas will replace our existing EC2 instances
 
 By implementing these Proofs of Concept, my team ended up validating all of our hypotheses.
 

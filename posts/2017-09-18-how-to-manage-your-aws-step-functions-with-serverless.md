@@ -10,6 +10,8 @@ authors:
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/header+images/step-functions.jpg">
 
+- *New to Step Functions?* Check out this [Ultimate Guide to AWS Step Functions](https://serverless.com/aws-step-functions/)
+
 When diving into the Functions as a Service (FaaS) world, a question that often pops up is:
 
 > If serverless functions are stateless, how do I manage state?

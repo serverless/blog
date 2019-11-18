@@ -14,7 +14,7 @@ Serverless infrastructure is becoming ever more popular and a lot of organisatio
 
 That is why, from my perspective, orchestrators allow us to take the best from both and benefit from the advantages serverless and cluster workflows.
 
-In this post, I’ll cover a method to build a serverless workflow using AWS Lambda as a Serverless processing node, AWS Fargate and AWS Batch as cluster processing nodes and AWS Step Functions as the orchestrator between them.
+In this post, I’ll cover a method to build a serverless workflow using AWS Lambda as a Serverless processing node, AWS Fargate and AWS Batch as cluster processing nodes and AWS [Step Functions](https://serverless.com/aws-step-functions/) as the orchestrator between them.
 
 We will cover the following:
 
