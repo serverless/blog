@@ -10,7 +10,7 @@ authors:
   - JaredShort
 ---
 
-AWS just announced the launch of a widely-requested feature: WebSockets for Amazon API Gateway. This means Framework users around the world finally have a straightforward way to create client-driven, real-time applications via WebSockets.
+AWS just announced the launch of a widely-requested feature: WebSockets for [Amazon API Gateway](https://serverless.com/amazon-api-gateway/). This means Framework users around the world finally have a straightforward way to create client-driven, real-time applications via WebSockets.
 
 Read on for more info on how this changes the game for real-time development, and the Serverless Framework plans to support WebSockets in API Gateway!
 

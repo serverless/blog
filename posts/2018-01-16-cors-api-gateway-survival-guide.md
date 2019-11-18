@@ -148,7 +148,7 @@ The response to a preflight request includes the domains it allows to access the
 
 ##### How do I handle preflight requests with Serverless?
 
-To set up the preflight response, you'll need to configure an `OPTIONS` method handler at your endpoint in API Gateway. Fortunately, this is very simple with the Serverless Framework.
+To set up the preflight response, you'll need to configure an `OPTIONS` method handler at your endpoint in [API Gateway](https://serverless.com/amazon-api-gateway/). Fortunately, this is very simple with the Serverless Framework.
 
 Simply add `cors: true` to _each endpoint_ in your `serverless.yml`:
 

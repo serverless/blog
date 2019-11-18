@@ -189,7 +189,7 @@ We've added two sections to the `serverless.yml`. First, we registered the `serv
 
 Note the `basePath` attribute that we're configuring. This will be prefixed to every route in our `products-service`. Thus, our route that is registered as `/hello` will actually be located at `products/hello`.
 
-If you haven't previously registered this domain with API Gateway, you'll need to register it:
+If you haven't previously registered this domain with [API Gateway](https://serverless.com/amazon-api-gateway/), you'll need to register it:
 
 ```bash
 $ serverless create_domain

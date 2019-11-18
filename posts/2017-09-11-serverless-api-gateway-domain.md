@@ -11,7 +11,7 @@ authors:
   - AlexDeBrie
 ---
 
-With Serverless, it's easier than ever to deploy production-ready API endpoints. However, using AWS API Gateway results in odd hostnames for your endpoints. Further, these hostnames will change if you remove and redeploy your service, which can cause problems for existing clients.
+With Serverless, it's easier than ever to deploy production-ready API endpoints. However, using [AWS API Gateway](https://serverless.com/amazon-api-gateway/) results in odd hostnames for your endpoints. Further, these hostnames will change if you remove and redeploy your service, which can cause problems for existing clients.
 
 In this guide, I'll show you how to map a custom domain name to your endpoints.
 
