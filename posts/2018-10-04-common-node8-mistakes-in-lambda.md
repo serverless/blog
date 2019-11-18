@@ -10,7 +10,7 @@ authors:
   - YanCui
 ---
 
-It’s been 6 months since AWS Lambda added support Node.js 8.10. I’m super happy that I can finally use `async/await` to [simplify my Lambda functions](https://serverless.com/blog/aws-lambda-node-8-support-what-changes-serverless-developers/). 
+It’s been 6 months since [AWS Lambda](https://serverless.com/aws-lambda/) added support Node.js 8.10. I’m super happy that I can finally use `async/await` to [simplify my Lambda functions](https://serverless.com/blog/aws-lambda-node-8-support-what-changes-serverless-developers/). 
 
 In the meantime, I have helped a few clients with their Node8 serverless projects. In doing so I have seen some recurring mistakes around `async/await`.
 

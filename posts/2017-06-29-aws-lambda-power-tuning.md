@@ -60,7 +60,7 @@ I easily solved the complexity issue by using the [Serverless Framework](https:/
 
 Since I wanted everything to run in a real AWS environment and generate statistically relevant results, I quickly realized I had to actually execute the Lambda Function provided as input, as opposed to computing a performance estimate based on code static analysis (which wouldn't be easy to achieve across languages).
 
-To be fast and cost-effective, I thought the tool itself would need to run on AWS Lambda, and it'd need to invoke the input function thousands of times in parallel (at least a few hundreds for each of the 24 available power configurations).
+To be fast and cost-effective, I thought the tool itself would need to run on [AWS Lambda](https://serverless.com/aws-lambda/), and it'd need to invoke the input function thousands of times in parallel (at least a few hundreds for each of the 24 available power configurations).
 
 ### Why AWS Step Functions?
 

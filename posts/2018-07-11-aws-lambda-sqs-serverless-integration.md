@@ -17,7 +17,7 @@ At long last, the wait is over. AWS recently announced that [Simple Queue Servic
 
 In my opinion, SQS is the third leg in a trifecta of core integrations for Lambda. The first leg was [API Gateway](https://serverless.com/framework/docs/providers/aws/events/apigateway/), which allowed developers to quickly deploy REST APIs and other HTTP-accessible business logic. The second leg was [S3 triggers](https://serverless.com/framework/docs/providers/aws/events/s3/), which let you asynchronously process data blobs, whether it be log file processing or the canonical example of creating image thumbnails. The third and final leg is message processing via SQS, allowing you to offload tasks that are time- or resource-intensive into a background process for a faster, more resilient system.
 
-The SQS integration is also a great on-ramp for users looking to test the waters with Lambda and Serverless. If you manage a fleet of EC2 worker instances that are processing from SQS queues, porting that logic to Lambda should be pretty straight-forward. Quit thinking about auto-scaling, resource utilization, and reserved instances and get back to focusing on your business logic.
+The SQS integration is also a great on-ramp for users looking to test the waters with [Lambda](https://serverless.com/aws-lambda/) and Serverless. If you manage a fleet of EC2 worker instances that are processing from SQS queues, porting that logic to Lambda should be pretty straight-forward. Quit thinking about auto-scaling, resource utilization, and reserved instances and get back to focusing on your business logic.
 
 ##### What we'll cover in this post
 
