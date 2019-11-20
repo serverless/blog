@@ -1,5 +1,5 @@
 ---
-title: Take the legwork out of API Gateway troubleshooting
+title: "Take the legwork out of API Gateway troubleshooting"
 description: "Tag your Lambdas to track errors and debug serverless applications. If you’re using NodeJS or Python, we’ll help you find even the trickiest serverless application errors faster."
 date: 2019-11-20
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/gateway-troubleshooting/exp+thumb%402x.png"
