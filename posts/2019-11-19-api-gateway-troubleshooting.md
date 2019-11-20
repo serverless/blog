@@ -5,10 +5,10 @@ date: 2019-11-20
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/gateway-troubleshooting/exp+thumb%402x.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/gateway-troubleshooting/explorer+header%402x.png"
 authors:
-  - MaciejSkierkowski
+  - VerneLindner
 category:
   - news
-  - guides-and-tutorials
+  - operations-and-observability
 ---
 
 #### Troubleshooting API Gateway Errors
@@ -28,7 +28,7 @@ You can search by request ID, but customers don’t always include a request ID 
 
 With the Serverless Framework dashboard’s new requests explorer, you can sidestep that painful process and go straight to the logs and stacktraces you need. The explorer lets you locate requests by endpoint, method, status code and time range. Each request opens a detailed report, where you’ll find the log, and a link to the relevant function invocation report. You can skip the searching and focus all your time on the fun part: solving the problem.
 
-https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/gateway-troubleshooting/blogpost-img-exp.png
+![Serverless Insights](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/gateway-troubleshooting/blogpost-img-exp.png)
 
 #### Malformed Response 
 If you’ve been developing serverless applications for a while, and you’re good at avoiding the common mistakes that can trigger misconfigured API Gateways, you can still find yourself chasing down APIGW errors. Here’s an example:
