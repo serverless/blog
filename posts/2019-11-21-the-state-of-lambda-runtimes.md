@@ -2,8 +2,8 @@
 title: "The State of AWS Lambda Runtimes"
 description: "A look at the past, present, and future of AWS Lambda runtimes."
 date: 2019-11-21
-thumbnail: ""
-heroImage: ""
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-11-state-of-lambda-runtimes/thumbnail.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-11-state-of-lambda-runtimes/header.png"
 category:
   - news
 authors:
