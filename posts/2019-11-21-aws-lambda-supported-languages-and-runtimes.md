@@ -1,5 +1,5 @@
 ---
-title: "The State of AWS Lambda Runtimes"
+title: "The State of AWS Lambda Supported Languages & Runtimes (Updated November 2019)"
 description: "A look at the past, present, and future of AWS Lambda runtimes."
 date: 2019-11-21
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2019-11-state-of-lambda-runtimes/thumbnail.png"
@@ -12,7 +12,9 @@ authors:
 
 ### Overview
 
-In the last few years a lot has changed with AWS Lambda runtimes. With all of these changes there are some runtimes reaching the end of their supported life and several new features to think about taking advantage of. Let's take a look at some of the upcoming changes and what they mean for you.
+In the last few years a lot has changed with AWS Lambda supported languages and runtimes. With all of these changes there are some older runtimes reaching the end of their supported life and several new runtimes and new features to think about taking advantage of.
+
+Real quickly, let's make sure we're all on the same page with our terminology. By a `supported language` I'm talking about something like Node.js, Python, or Java. By a `runtime` I mean a specific version of that language like Python 3.7 or Java 11. Now let's take a look at some of the upcoming changes and what they mean for you.
 
 ## Managed Runtimes
 
