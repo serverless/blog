@@ -21,7 +21,7 @@ We’ve been there ourselves! That’s why we’ve added tags to the Serverless 
 
 Our new tag filters can do the tracking for you. Now, when you’re trying to debug an issue that’s hard to track or hard to replicate, try this: log when you’re in the error state, tag that log line, and output a JSON object that represents some state of your application. Open the explorer, filter on that tag and view the invocations the explorer finds for you. 
 
-![Tags in dashboard](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/debugging-tags/thumb+tags%402x.png)
+![Tags in dashboard](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/debugging-tags/tags-img-2.png)
 
 
 Here’s an example of how we’ve used it; the API that powers the Serverless Framework dashboard is monitored within the dashboard (yes, we eat our own dogfood). One of our customers reported a query error, but no actual errors were being raised. We created a tag, and used it to find their invocation logs, so we could study the state of our application during the time their functions were invoked.
