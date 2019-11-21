@@ -69,7 +69,6 @@ The Node.js 12.x runtime is the current Long Term Support (LTS) version of Node.
 - Support for TLS 1.3 and other TLS improvements
 - A new experimental feature called a "Diagnostic report" that will let you generate a report on demand or when certain events occur
 - Potentially significant startup improvements that may give "a ~30% speedup in startup time for the main thread."
-- Experimental support for ES6 modules
 
 You can review the full release details [here](https://medium.com/@nodejs/introducing-node-js-12-76c41a1b3f3f).
 
