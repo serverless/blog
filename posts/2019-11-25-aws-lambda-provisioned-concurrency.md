@@ -2,8 +2,8 @@
 title: "Provisioned Concurrency: What it is and how to use it with the Serverless Framework"
 description: "If you were trying to use Lambda in a use case that was very latency sensitive, cold starts were probably your greatest concern. AWS has heard the concerns"
 date: 2019-11-25
-thumbnail: ""
-heroImage: ""
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/provisioned-concurrency/blog-thumbnail-comp.png",
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/provisioned-concurrency/blog-header-comp.png"
 authors:
   - GarethMcCumskey
 category:
