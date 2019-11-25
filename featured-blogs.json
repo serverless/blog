@@ -1,9 +1,8 @@
 [
+  "aws-lambda-provisioned-concurrency",
   "aws-lambda-performance-optimization",
   "cron-jobs-on-aws",
   "serverless-deployment-best-practices",
   "serverless-azure-functions-v1-part2",
-  "easily-deploy-graphql-apis-with-serverless-components",
-  "aws-lambda-python-monitoring",
-  "serverless-azure-functions-v1"
+  "easily-deploy-graphql-apis-with-serverless-components"
 ]
