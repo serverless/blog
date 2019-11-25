@@ -1,5 +1,5 @@
 ---
-title: "Provisioned Concurrency: How does this change things?"
+title: "Provisioned Concurrency: What it is and how to use it with the Serverless Framework"
 description: "If you were trying to use Lambda in a use case that was very latency sensitive, cold starts were probably your greatest concern. AWS has heard the concerns"
 date: 2019-11-25
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/debugging-tags/thumb+tags%402x.png"
@@ -49,14 +49,20 @@ However, it doesn’t end there. You can even go so far as to write a simple Lam
 Provisioned Concurrency can be set via the AWS SDK:
 
 ```javascript
-var params = {
-  FunctionName: 'MyFunctionName',
-  ProvisionedConcurrentExecutions: '5'
+'use strict';
+const AWS = require('aws-sdk')
+
+module.exports.setProvisionedConcurrency = async event => {
+  const params = {
+    FunctionName: 'MyFunctionName',
+    ProvisionedConcurrentExecutions: '5'
+  };
+  const lambda = new AWS
+  lambda.putProvisionedConcurrency(params, function(err, data) {
+    if (err) console.log(err, err.stack); // an error occurred
+    else     console.log(data);           // successful response
+  });
 };
-lambda.putProvisionedConcurrency(params, function(err, data) {
-  if (err) console.log(err, err.stack); // an error occurred
-  else     console.log(data);           // successful response
-});
 ```
 
 Now you have the means to schedule the provisioned concurrency whenever you choose and so optimise the cost efficiency of it. 
