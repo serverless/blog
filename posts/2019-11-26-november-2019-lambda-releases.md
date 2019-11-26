@@ -12,7 +12,7 @@ authors:
 
 ## Lambda Updates Galore!
 
-The AWS Lambda team has been busy sneaking in a bunch of updates before re:Invent this year. White I [recently wrote](https://serverless.com/blog/aws-lambda-supported-languages-and-runtimes/) about all the new runtimes that Lambda now supports, they've also added several substantial new features to support sending asynchronous Lambda results along to a destination, having SQS FIFO queues as a Lambda event trigger, and providing greater control over how we interact with streams. Let's take a look at the pre-re:Invent Lambda feature announcements as of Nov 25, 2019.
+The AWS Lambda team has been busy sneaking in a bunch of updates before re:Invent this year. White I [recently wrote](https://serverless.com/blog/aws-lambda-supported-languages-and-runtimes/) about all the new runtimes that Lambda now supports, they've also added several substantial new features that allow sending asynchronous Lambda results along to a destination, having SQS FIFO queues as a Lambda event trigger, and providing greater control over how we interact with DynamoDB and Kinesis streams. Let's take a look at the pre-re:Invent Lambda feature announcements as of Nov 26, 2019.
 
 ## AWS Lambda Destinations and Asynchronous Invocation Improvements
 
@@ -42,13 +42,15 @@ In combination with the AWS Lambda Destinations, and the new support for configu
 
 A very common Lambda use case is to process DynamoDB Streams or Amazon Kinesis Streams. Because of this, they've recently added more support for different ways of handling how Lambda functions processes these event sources.
 
-### Stream Failure Handling and Parallelization Factors
+### Stream Failure Handling
 
 AWS has just released new ways to handle failures when processing a stream. Previously, Lambda would try to process all the records in a batch and if it failed it would stop processing the data, return an error, and retry the entire batch of records until they are successfully proceed or they expire. Now, AWS is offering us several new methods of dealing with streams.
 
 1. Bisect on Function Error - When enabled, you can break the failed batch of records into two chunks and retry them separately. This will allow you to isolate where the bad data is and process the rest of the data successfully.
 2. Maximum Record Age - You can have your Lambda Function skip processing data records that are too old by using a a Maximum Record Age property between 60 seconds and 7 days.
 3. Maximum Retry Attempts - You can set another configuration property to specify how many times you actual want to retry processing - anywhere from 0 to 10,000 retries. I will admit, I am very curious about the application that succeeds only on the 9,999th attempt. 
+
+### Parallelization Factors
 
 Additionally, for both DynamoDB and Kinesis Streams you can use a new "parallelization factor" that allows you to process DynamoDB and Kinesis shards with more than one concurrent Lambda function at a time. This can be very useful when data volumes are larger or processing records takes time. The parallelization factor can be set from 1 to 10 and is used to calculate the number of concurrent Lambda invocations allowed by multiplying the number of data shards. So, for a Kinesis stream with 50 shards and a parallelization factor of 4 you can use (50 * 4) or 200 concurrent Lambda invocations to process the data.
 
