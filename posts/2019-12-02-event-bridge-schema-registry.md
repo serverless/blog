@@ -2,8 +2,8 @@
 title: "EventBridge Schema Registry -- what it is and why it matters for Serverless applications"
 description: "The EventBridge Schema Registry helps document your event schemas and add discoverability to the event domain. See why it's useful here."
 date: 2019-12-02
-thumbnail: TODO
-heroImage: TODO
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/eventbridge-schema-registry/eventbridge-schema-registry-thumb.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/eventbridge-schema-registry/eventbridge-schema-registry-header.png"
 category:
   - news
 authors:
