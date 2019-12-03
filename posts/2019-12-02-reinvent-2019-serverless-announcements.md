@@ -19,6 +19,8 @@ We're watching all the keynotes and announcements live as they happen, and compi
 #### re:Invent 2019 announcements
 
 **Latest:**
+
+ * [Provisioned Concurrency](#provisioned-concurrency)
  * [S3 Access Points](#s3-access-points)
  * [Amazon Managed Cassandra Service](#managed-cassandra)
  * [Pre-Invent Lambda Updates](#pre-invent-lambda-updates)
@@ -29,6 +31,11 @@ We're watching all the keynotes and announcements live as they happen, and compi
 
 * [Pre-Invent Lambda Updates](#pre-invent-lambda-updates)
  * [Eventbridge Schema Registry](#eventbridge-schema-registry)
+
+#### Provisioned Concurrency
+**What it is** You can now spin up a pre-defined number of warm Lambda instances to bypass the cold start issue if latency is an issue
+
+**Why it matters** If you have workloads that are latency sensitive, then being able to have Lambda functions pre-warmed ahead of a certain known event that will invoked Lambda's means you can entirely bypass the cold start issue and make sure requests to Lambda will always begin execution as fast as possible.
 
 #### S3 Access Points
 
