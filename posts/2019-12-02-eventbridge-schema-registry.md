@@ -20,17 +20,17 @@ In this post, we'll look at:
 
 Let's get started!
 
-## Why do you need a schema registry?
+#### Why do you need a schema registry?
 
 Before we get too far, let's understand why you would need a schema registry.
 
-First off, serverless architectures often are *event-driven architectures*. In event-driven architectures, different aspects of your business logic is triggered by the occurance of events.
+First off, serverless architectures often are *event-driven architectures*. In event-driven architectures, different aspects of your business logic is triggered by the occurrence of events.
 
 Events can come from a variety of places. If you have a number of microservices in your application, you can use events to communicate across service boundaries, allowing for more loosely-coupled applications.
 
 If you're working with managed service offerings, such as DynamoDB with [DynamoDB streams](https://serverless.com/framework/docs/providers/aws/events/streams/), you will receive an event whenever a record is updated. You can also use AWS services like [EventBridge](https://serverless.com/blog/eventbridge-use-cases-and-tutorial/) to receive status updates on things like ECS tasks starting or stopping or for [resource creation notifications](https://serverless.com/blog/serverless-cloudtrail-cloudwatch-events/).
 
-Finally, you might receive third-party events as webhooks from providers such as GitHub, Zendesk, or Stripe. These are similar to events from managed AWS services but a little less infrastructure-specific -- they may indicate a more application-centric event that occurred.
+Finally, you might receive third-party events such as webhooks from providers such as GitHub, Zendesk, or Stripe. These are similar to events from managed AWS services but a little less infrastructure-specific -- they may indicate a more application-centric event that occurred.
 
 Whatever the event type you're acting upon, your application will need to know the basic structure of the event. In the past, I've found that the documentation of events can be poor -- maybe they get updated once but never again. Maybe only a few fields are listed but not all of them. Types and required fields are barely listed, as well as the semantic meaning of the fields.
 
@@ -42,7 +42,7 @@ Enter, the EventBridge schema registry.
 
 [Amazon EventBridge](https://aws.amazon.com/eventbridge/) is an event bus for shuttling events between systems and allowing reliable pub/sub functionality. You can send in your own application events, subscribe to AWS system events, or toss in third-party events.
 
-The [EventBridge schema registry](https://aws.amazon.com/blogs/compute/introducing-amazon-eventbridge-schema-registry-and-discovery-in-preview/) is a new service for *automatically detecting and storing schemas* for your events. This is pretty powerful and can help overcome the internal intertia around documenting events.
+The [EventBridge schema registry](https://aws.amazon.com/blogs/compute/introducing-amazon-eventbridge-schema-registry-and-discovery-in-preview/) is a new service for *automatically detecting and storing schemas* for your events. This is pretty powerful and can help overcome the internal inertia around documenting events.
 
 There are two big features of the EventBridge schema registry that I find particularly powerful.
 
