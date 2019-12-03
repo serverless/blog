@@ -59,4 +59,6 @@ We have a dedicated blog post talking about these changes in detail, [so please 
 
 **What it is** Cassandra is a very popular free and open-source, distributed, wide column store, NoSQL database management system designed to handle large amounts of data now fully managed on AWS
 
-** Why this matters** DynamoDB is great, but I have heard from many users already using Cassandra that don't want leave it behind. Now users can get the best of both worlds and communicate to a fully managed Cassandra backend from their Lambda functions and have it be managed for them just like a DynamoDB table with provisioned or on demand modes available and no need to manage clusters.
+**Why this matters** DynamoDB is great, but I have heard from many users already using Cassandra that don't want leave it behind. Now users can get the best of both worlds and communicate to a fully managed Cassandra backend from their Lambda functions and have it be managed for them just like a DynamoDB table with provisioned or on demand modes available and no need to manage clusters.
+
+![Managed Cassandra Announcement](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent-2019/managed-cassandra-announcement-optimised.png)
