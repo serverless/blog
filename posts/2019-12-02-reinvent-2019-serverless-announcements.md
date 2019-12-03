@@ -26,7 +26,7 @@ We're watching all the keynotes and announcements live as they happen, and compi
 
 As the announcements are made, we will be adding ones with the most Serverless impact here in order of excitement.
 
-####Pre-Invent Lambda updates
+#### Pre-Invent Lambda updates
 
 There were a bunch of updates to Lambda released just before RE:Invent started. These include:
 
