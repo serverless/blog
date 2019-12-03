@@ -22,7 +22,7 @@ We're watching all the keynotes and announcements live as they happen, and compi
  * [Pre-Invent Lambda Updates](#pre-invent-lambda-updates)
  * [Eventbridge Schema Registry](#eventbridge-schema-registry)
  * [S3 Access Points](#s3-access-points)
- * [Amazon Managed Cassandra Service](managed-cassandra)
+ * [Amazon Managed Cassandra Service](#managed-cassandra)
 
 **Most Exciting:**
 
