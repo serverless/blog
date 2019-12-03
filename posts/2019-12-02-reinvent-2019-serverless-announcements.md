@@ -26,7 +26,8 @@ We're watching all the keynotes and announcements live as they happen, and compi
 
 **Most Exciting:**
 
-As the announcements are made, we will be adding ones with the most Serverless impact here in order of excitement.
+* [Pre-Invent Lambda Updates](#pre-invent-lambda-updates)
+ * [Eventbridge Schema Registry](#eventbridge-schema-registry)
 
 #### Pre-Invent Lambda updates
 
