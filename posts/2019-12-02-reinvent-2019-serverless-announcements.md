@@ -21,6 +21,7 @@ We're watching all the keynotes and announcements live as they happen, and compi
 **Latest:**
  * [Pre-Invent Lambda Updates](#pre-invent-lambda-updates)
  * [Eventbridge Schema Registry](#eventbridge-schema-registry)
+ * [S3 Access Points](#s3-access-points)
 
 **Most Exciting:**
 
@@ -45,3 +46,9 @@ We have a dedicated blog post talking about these changes in detail, [so please 
 **What it is** The schema registry will scan the structure of events you send and receive in Eventbridge and document their structure automatically for you
 
 **Why it matters** Managing events and their structure is always a tricky business and traditionally relies on developers taking the time off of building things to document things. While Eventbridge is not a panacea its a good bootstrapped step. Check out the [full blog post](https://serverless.com/blog/eventbridge-schema-registry/) for all the details.
+
+#### S3 Access Points
+
+**What it is** An alternate method to specify access patterns to an S3 resource, whether thats a full bucket or just one key, as well as what that access is
+
+**Why it matters** S3 can get very complex to manage permissions for when you have many potential clients attempting to access that data. Being able to have a more specialised, app level permissions system makes managing this a lot easier and means things are more secure in the end for you and your data.
