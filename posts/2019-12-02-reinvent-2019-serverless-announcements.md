@@ -28,7 +28,7 @@ We're watching all the keynotes and announcements live as they happen, and compi
 
 
 **Most Exciting:**
-
+* [Provisioned Concurrency](#provisioned-concurrency)
 * [Pre-Invent Lambda Updates](#pre-invent-lambda-updates)
  * [Eventbridge Schema Registry](#eventbridge-schema-registry)
 
@@ -36,6 +36,8 @@ We're watching all the keynotes and announcements live as they happen, and compi
 **What it is** You can now spin up a pre-defined number of warm Lambda instances to bypass the cold start issue if latency is an issue
 
 **Why it matters** If you have workloads that are latency sensitive, then being able to have Lambda functions pre-warmed ahead of a certain known event that will invoked Lambda's means you can entirely bypass the cold start issue and make sure requests to Lambda will always begin execution as fast as possible.
+
+Read more about this new feature and how the Serverless Framework will support it [at this blog post](https://serverless.com/blog/aws-lambda-provisioned-concurrency).
 
 #### S3 Access Points
 
