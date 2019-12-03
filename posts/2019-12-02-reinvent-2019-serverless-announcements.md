@@ -19,15 +19,30 @@ We're watching all the keynotes and announcements live as they happen, and compi
 #### re:Invent 2019 announcements
 
 **Latest:**
- * [Pre-Invent Lambda Updates](#pre-invent-lambda-updates)
- * [Eventbridge Schema Registry](#eventbridge-schema-registry)
  * [S3 Access Points](#s3-access-points)
  * [Amazon Managed Cassandra Service](#managed-cassandra)
+ * [Pre-Invent Lambda Updates](#pre-invent-lambda-updates)
+ * [Eventbridge Schema Registry](#eventbridge-schema-registry)
+
 
 **Most Exciting:**
 
 * [Pre-Invent Lambda Updates](#pre-invent-lambda-updates)
  * [Eventbridge Schema Registry](#eventbridge-schema-registry)
+
+#### S3 Access Points
+
+**What it is** An alternate method to specify access patterns to an S3 resource, whether thats a full bucket or just one key, as well as what that access is
+
+**Why it matters** S3 can get very complex to manage permissions for when you have many potential clients attempting to access that data. Being able to have a more specialised, app level permissions system makes managing this a lot easier and means things are more secure in the end for you and your data.
+
+#### Managed Cassandra
+
+**What it is** Cassandra is a very popular free and open-source, distributed, wide column store, NoSQL database management system designed to handle large amounts of data now fully managed on AWS
+
+**Why this matters** DynamoDB is great, but I have heard from many users already using Cassandra that don't want leave it behind. Now users can get the best of both worlds and communicate to a fully managed Cassandra backend from their Lambda functions and have it be managed for them just like a DynamoDB table with provisioned or on demand modes available and no need to manage clusters.
+
+![Managed Cassandra Announcement](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent-2019/managed-cassandra-announcement-optimised.png)
 
 #### Pre-Invent Lambda updates
 
@@ -49,16 +64,3 @@ We have a dedicated blog post talking about these changes in detail, [so please 
 
 **Why it matters** Managing events and their structure is always a tricky business and traditionally relies on developers taking the time off of building things to document things. While Eventbridge is not a panacea its a good bootstrapped step. Check out the [full blog post](https://serverless.com/blog/eventbridge-schema-registry/) for all the details.
 
-#### S3 Access Points
-
-**What it is** An alternate method to specify access patterns to an S3 resource, whether thats a full bucket or just one key, as well as what that access is
-
-**Why it matters** S3 can get very complex to manage permissions for when you have many potential clients attempting to access that data. Being able to have a more specialised, app level permissions system makes managing this a lot easier and means things are more secure in the end for you and your data.
-
-#### Managed Cassandra
-
-**What it is** Cassandra is a very popular free and open-source, distributed, wide column store, NoSQL database management system designed to handle large amounts of data now fully managed on AWS
-
-**Why this matters** DynamoDB is great, but I have heard from many users already using Cassandra that don't want leave it behind. Now users can get the best of both worlds and communicate to a fully managed Cassandra backend from their Lambda functions and have it be managed for them just like a DynamoDB table with provisioned or on demand modes available and no need to manage clusters.
-
-![Managed Cassandra Announcement](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/reinvent-2019/managed-cassandra-announcement-optimised.png)
