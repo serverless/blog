@@ -20,7 +20,7 @@ We're watching all the keynotes and announcements live as they happen, and compi
 
 **Latest:**
  * [Pre-Invent Lambda Updates](#pre-invent-lambda-updates)
-
+ * [Eventbridge Schema Registry](#eventbridge-schema-registry)
 
 **Most Exciting:**
 
@@ -39,3 +39,9 @@ There were a bunch of updates to Lambda released just before RE:Invent started. 
 **Why it matters** These seemingly small tweaks open up a much broader set of use cases that maye have previously not been possible. All three changes listed add the capabilties of managing the interactions of three very useful event triggers in additional ways to meet the needs of users, and help make existing workarounds unnecessary.
 
 We have a dedicated blog post talking about these changes in detail, [so please go check that out](https://serverless.com/blog/november-2019-lambda-releases/) for the full skinny..
+
+#### Eventbridge Schema Registry
+
+**What it is** The schema registry will scan the structure of events you send and receive in Eventbridge and document their structure automatically for you
+
+**Why it matters** Managing events and their structure is always a tricky business and traditionally relies on developers taking the time off of building things to document things. While Eventbridge is not a panacea its a good bootstrapped step. Check out the [full blog post](https://serverless.com/blog/eventbridge-schema-registry/) for all the details.
