@@ -2,8 +2,8 @@
 title: "Amazon RDS Proxy makes it easier to use SQL in Serverless"
 description: "The release of the Amazon RDS Proxy at re:Invent removes one of the main objections to using relational databases in serverless applications. Read this post to understand why."
 date: 2019-12-03
-thumbnail: TODO
-heroImage: TODO
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/amazon-rds-proxy/amazon-rds-proxy-thumb.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/amazon-rds-proxy/amazon-rds-proxy-header.png"
 category:
   - news
 authors:
@@ -12,7 +12,7 @@ authors:
 
 For Serverless users, preInvent and re:Invent has been like Christmas. We're getting a ton of new tools to help build Serverless applications, from [Lambda Destinations](https://aws.amazon.com/blogs/compute/introducing-aws-lambda-destinations/) to async invocations, to the [EventBridge schema registry](https://serverless.com/blog/eventbridge-schema-registry/), to a ton of different ways to [manage stream processing in Lambda](https://aws.amazon.com/blogs/compute/new-aws-lambda-controls-for-stream-processing-and-asynchronous-invocations/).
 
-All of these are great, but the most impactful announcement for many users may be the [Amazon RDS Proxy](#TODO). This service, combined with some other recent improvements from AWS, makes it much easier to use relational databases in AWS.
+All of these are great, but the most impactful announcement for many users may be the [Amazon RDS Proxy](https://aws.amazon.com/about-aws/whats-new/2019/12/amazon-rds-proxy-available-in-preview/). This service, combined with some other recent improvements from AWS, makes it much easier to use relational databases in AWS.
 
 In this post, you'll learn the what and why about the Amazon RDS Proxy. We'll cover:
 
@@ -44,7 +44,7 @@ First, AWS released [Amazon Aurora Serverless](https://aws.amazon.com/rds/aurora
 
 Second, AWS announced [improved VPC networking for AWS Lambda functions](https://aws.amazon.com/blogs/compute/announcing-improved-vpc-networking-for-aws-lambda-functions/). This update greatly decreased the coldstart latency for Lambda functions that use a VPC. This makes it more acceptable to use VPC Lambda functions in user-facing applications.
 
-Finally, the [Amazon RDS Proxy](#TODO) announced today handles the connection limits. Rather than managing connections in your Lambda functions, you can offload that to the Amazon RDS Proxy. All pooling will happen in the proxy so that you can handle a large number of connections in a manageable way.
+Finally, the [Amazon RDS Proxy](https://aws.amazon.com/blogs/compute/using-amazon-rds-proxy-with-aws-lambda/) announced today handles the connection limits. Rather than managing connections in your Lambda functions, you can offload that to the Amazon RDS Proxy. All pooling will happen in the proxy so that you can handle a large number of connections in a manageable way.
 
 ## How to think about choosing a database in Serverless
 
