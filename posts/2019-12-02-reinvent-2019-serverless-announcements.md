@@ -19,7 +19,7 @@ We're watching all the keynotes and announcements live as they happen, and compi
 #### re:Invent 2019 announcements
 
 **Latest:**
-
+ * [RDS Proxy](#rds-proxy)
  * [Provisioned Concurrency](#provisioned-concurrency)
  * [S3 Access Points](#s3-access-points)
  * [Amazon Managed Cassandra Service](#managed-cassandra)
@@ -28,9 +28,17 @@ We're watching all the keynotes and announcements live as they happen, and compi
 
 
 **Most Exciting:**
+* [RDS Proxy](#rds-proxy)
 * [Provisioned Concurrency](#provisioned-concurrency)
 * [Pre-Invent Lambda Updates](#pre-invent-lambda-updates)
  * [Eventbridge Schema Registry](#eventbridge-schema-registry)
+
+#### RDS Proxy
+**What it is** Moves connection handling from the Lambda layer to the RDS Proxy layer to help curb the issues around reaching connection maximums.
+
+**Why it matters** RDS has been a difficult service to use with Serverless for a number of reasons, and AWS has made numerous changes lately to try and correct these issues. This is one of the last and solves the problem produced by each Lambda function instance creating its own connection to the database. When at high Lambda concurrency this means you cna easily overwhelm a database with too many connections and essentially make the database inaccessible.
+
+Read on about the changes with RDS proxy in our very own [detailed dive...](https://serverless.com/blog/amazon-rds-proxy/)
 
 #### Provisioned Concurrency
 **What it is** You can now spin up a pre-defined number of warm Lambda instances to bypass the cold start issue if latency is an issue
