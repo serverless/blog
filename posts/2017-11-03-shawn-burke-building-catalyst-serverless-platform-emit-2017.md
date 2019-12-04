@@ -3,7 +3,7 @@ title: Shawn Burke - building the Catalyst serverless platform at Uber
 description: We're posting the full videos and transcripts from Emit 2017! Here's Shawn from Uber on building Catalyst, their serverless platform.
 date: 2017-11-03
 layout: Post
-thumbnail: 'http://www.emitconference.com/assets/images/speaker-shawn-burke.jpg'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Emit+Recap/emit-conference-thumb.png'
 authors:
   - AndreaPasswater
 ---

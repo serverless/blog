@@ -3,7 +3,7 @@ title: Dave Copeland - contract-based testing for event-driven architectures
 description: We're posting the full videos and transcripts from Emit 2017! Here's Dave on contract-based testing for event-driven architectures.
 date: 2017-11-02
 layout: Post
-thumbnail: 'http://www.emitconference.com/assets/images/speaker-dave-copeland.jpg'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Emit+Recap/emit-conference-thumb.png'
 authors:
   - AndreaPasswater
 ---

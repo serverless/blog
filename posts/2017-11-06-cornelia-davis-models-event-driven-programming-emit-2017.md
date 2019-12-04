@@ -3,7 +3,7 @@ title: Cornelia Davis - models for event-driven programming
 description: We're posting the full videos and transcripts from Emit 2017! Here's Cornelia from Pivotal on models for event-driven programming.
 date: 2017-11-06
 layout: Post
-thumbnail: 'http://www.emitconference.com/assets/images/speaker-cornelia-davis.jpg'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Emit+Recap/emit-conference-thumb.png'
 authors:
   - AndreaPasswater
 ---
