@@ -3,7 +3,7 @@ title: Bobby Calderwood - toward a functional programming analogy for microservi
 description: We're posting the full videos and transcripts from Emit 2017! Here's Bobby from CapitalOne with his talk on microservices.
 date: 2017-10-26
 layout: Post
-thumbnail: 'http://www.emitconference.com/assets/images/speaker-bobby-calderwood.jpg'
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Emit+Recap/emit-conference-thumb.png'
 authors:
   - AndreaPasswater
 ---
