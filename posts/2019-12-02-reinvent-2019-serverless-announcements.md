@@ -19,6 +19,7 @@ We're watching all the keynotes and announcements live as they happen, and compi
 #### re:Invent 2019 announcements
 
 **Latest:**
+* [AWS API Gateway v2 for HTTP](#aws-api-gateway-v2-for-http)
  * [RDS Proxy](#rds-proxy)
  * [Provisioned Concurrency](#provisioned-concurrency)
  * [S3 Access Points](#s3-access-points)
@@ -28,11 +29,18 @@ We're watching all the keynotes and announcements live as they happen, and compi
 
 
 **Most Exciting:**
+* [AWS API Gateway v2 for HTTP](#aws-api-gateway-v2-for-http)
 * [RDS Proxy](#rds-proxy)
 * [Provisioned Concurrency](#provisioned-concurrency)
 * [Pre-Invent Lambda Updates](#pre-invent-lambda-updates)
  * [Eventbridge Schema Registry](#eventbridge-schema-registry)
 
+#### AWS API Gateway v2 for HTTP
+**What it is** Overall top down improvement of API Gateway in almost all aspects
+
+**Why it matters** While API Gateway v1 has served us well it hasn't been perfect. v2 solves some of the issues users have had with v1 such as improved latency, reduced cost, better CORS integration and support for JWT's amongst others.
+
+We have a detailed blogpost going through all the changes, so if you want to know more [go check that out](https://serverless.com/blog/api-gateway-v2-http-apis/)
 #### RDS Proxy
 **What it is** Moves connection handling from the Lambda layer to the RDS Proxy layer to help curb the issues around reaching connection maximums.
 
