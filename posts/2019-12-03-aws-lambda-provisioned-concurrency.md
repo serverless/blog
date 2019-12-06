@@ -55,10 +55,11 @@ const AWS = require('aws-sdk')
 module.exports.setProvisionedConcurrency = async event => {
   const params = {
     FunctionName: 'MyFunctionName',
-    ProvisionedConcurrentExecutions: '5'
+    ProvisionedConcurrentExecutions: '5',
+    Qualifier: 'aliasname'
   };
   const lambda = new AWS
-  lambda.putProvisionedConcurrency(params, function(err, data) {
+  lambda.putProvisionedConcurrencyConfig(params, function(err, data) {
     if (err) console.log(err, err.stack); // an error occurred
     else     console.log(data);           // successful response
   });
