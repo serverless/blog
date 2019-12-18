@@ -58,7 +58,7 @@ module.exports.hello = async event, context => {
 If you’re using Python, add this:
 ```javascript
 def hello(event, context):
-   context.serverless_sdk.tag_event('python-transaction', 'true', {'foo': 'bar'})
+   context.serverless_sdk.tag_event('customerId', 5, { 'newCustomer': True, 'isDemo': True})
    body = {
        "message": "Go Serverless v1.0! Your function executed successfully!",
        "input": event
