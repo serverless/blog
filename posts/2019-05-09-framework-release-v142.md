@@ -74,12 +74,12 @@ go all the way through until the request hits the Lamdba function which will rej
 Using the `http` event one can now configure request body validations which are JSON documents used by API Gateway 
 to filter incoming API requests.
 
-Setting request body validations is best done by creating a `.json` file with the definition of the validation:
+Setting request body validations is best done by creating a `.json` file with the definition of the validation. Currently, API Gateway only supports draft-04 compliant schemas. Here is an example:
 
 ```json
 {
   "definitions": {},
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "The Root Schema",
   "required": [
