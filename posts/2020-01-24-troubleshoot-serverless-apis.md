@@ -177,7 +177,7 @@ The above produces the following span:
 
 ![Custom Span of the Hash](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/troubleshoot-serverless-apis/HashCustomSpan.png)
 
-you can immediately tell, just looking at that, that your focus for any optimisation needs to be on that HASH span. Trying to optimise anything else wouldn’t make sense.
+You can immediately tell, just looking at that, that your focus for any optimisation needs to be on that HASH span. Trying to optimise anything else wouldn’t make sense.
 
 ##### Capture Tag
 
