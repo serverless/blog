@@ -104,8 +104,8 @@ As you can see, the API chart shows more errors than the Lambda chart, and this 
 [[IMAGE OF EXPLORER SHOWING API ONLY ERRORS]]
 
 Now we can immediately see the cause of these errors are authorization related.
-
-#### Prevention is better than cure -->
+-->
+#### Prevention is better than cure
 
 Up till now we’ve been looking at how to react to errors. But we can even take it one step further and keep our eyes out for issues that may cause a problem later. For example, if we have Lambda functions that generally run for a certain amount of time, say between 50 and 100 ms, and suddenly there is a spike where our Lambdas are running for over 200ms, this could indicate a potential problem brewing; perhaps some downstream provider is having issues and if we could get some warning ahead of time we could perhaps head that off at the pass. The same thing could apply for invocation count. Maybe we usually get a very steady flow of activity on our Lambda invocations and any sudden spike in invocations is something we need to know about.
 
