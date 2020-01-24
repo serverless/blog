@@ -93,7 +93,7 @@ Scrolling down a bit on the next view I can see that Serverless Framework Pro is
 
 **NOTE**: CloudWatch logs are pulled in from your AWS account. They are not stored anywhere within Serverless Framework Pro, so when I open this detailed view, Serverless Framework Pro makes a request to your AWS account to retrieve the logs. If you delete the CloudWatch log from your account it won’t be visible here either.
 
-#### API Only Errors
+<!-- #### API Only Errors
 
 So far we have been able to troubleshoot errors related to our own code. But what if there is an issue happening with our API requests before it even hits a Lambda function? Errors such as an authorizer failing an authorization request would not show up as a Lambda error. In the same way if you had a request syntax schema applied to your endpoint, and a request errored out, Lambda monitoring would not show you that. However, take a look here:
 
@@ -105,7 +105,7 @@ As you can see, the API chart shows more errors than the Lambda chart, and this 
 
 Now we can immediately see the cause of these errors are authorization related.
 
-#### Prevention is better than cure
+#### Prevention is better than cure -->
 
 Up till now we’ve been looking at how to react to errors. But we can even take it one step further and keep our eyes out for issues that may cause a problem later. For example, if we have Lambda functions that generally run for a certain amount of time, say between 50 and 100 ms, and suddenly there is a spike where our Lambdas are running for over 200ms, this could indicate a potential problem brewing; perhaps some downstream provider is having issues and if we could get some warning ahead of time we could perhaps head that off at the pass. The same thing could apply for invocation count. Maybe we usually get a very steady flow of activity on our Lambda invocations and any sudden spike in invocations is something we need to know about.
 
