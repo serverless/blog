@@ -1,7 +1,7 @@
 ---
 title: "The Serverless Framework Knative Integration"
-description: ""
-date: 2020-01-21
+description: "A look at our Knative Integration and the context around it."
+date: 2020-01-24
 thumbnail: ""
 heroImage: ""
 category:

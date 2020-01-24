@@ -1,11 +1,11 @@
 ---
 title: "Deploying Your First Knative Service with the Serverless Framework"
 description: "Learn how to use the Serverless Framework to deploy your first Knative service on a Kubernetes cluster running in Google Cloud."
-date: 2020-01-21
+date: 2020-01-24
 thumbnail: ""
 heroImage: ""
 category:
-  - news
+  - guides-and-tutorials
 authors:
   - FernandoMedinaCorey
 ---
