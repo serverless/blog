@@ -2,8 +2,8 @@
 title: "How to Troubleshoot Serverless API’s"
 description: "Find out how we go about debugging and troubleshooting our Serverless APIs with Serverless Framework Pro"
 date: 2020-01-24
-thumbnail: ""
-heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/troubleshoot-serverless-apis/webinar-troubleshooting-apis_1200x627.png"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/troubleshoot-serverless-apis/webinar-troubleshooting-apis_1200x627.png"
+heroImage: ""
 category:
   - operations-and-observability
   - guides-and-tutorials
