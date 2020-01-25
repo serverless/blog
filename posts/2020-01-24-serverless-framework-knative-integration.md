@@ -2,8 +2,8 @@
 title: "The Serverless Framework Knative Integration"
 description: "A look at our Knative Integration and the context around it."
 date: 2020-01-24
-thumbnail: ""
-heroImage: ""
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-01-knative-tutorial/knative-integration_blog-thumbnail.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-01-knative-tutorial/knative-integration_blog.png"
 category:
   - news
 authors:
