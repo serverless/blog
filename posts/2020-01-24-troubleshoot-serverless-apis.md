@@ -196,6 +196,7 @@ This allows you to find all invocations that relate to a specific customer ID so
 
 --------------------
 
-Serverless Framework Pro has a generous free tier for anyone building a Serverless application to use. It requires nothing more than [signing up here](dashboard.serverless.com).
+Serverless Framework Pro has a generous free tier for anyone building a Serverless application to use. It requires
+ nothing more than [signing up here](https://dashboard.serverless.com).
 
 If you would like to see these features in action, then feel free to [sign up for our webinar)[https://serverless.zoom.us/webinar/register/WN_7GpfDR5sT-qsUmovARuvrg] on 6 February.
