@@ -10,7 +10,6 @@ category:
   - news
 ---
 
-
 # Announcing Serverless CI/CD
 
 Today we are excited to announce the general availability of Serverless CI/CD in Serverless Framework Pro. Serverless CI/CD is a continuous integration and deployment service you can use for free by signing up for a Serverless Framework Pro account and following the getting started guide.
@@ -27,15 +26,21 @@ Serverless CI/CD heavily leverages existing Serverless Framework Pro features li
 
 ## Preview deployments from pull requests
 
+![Pull Request Status](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-01-announcement-cicd/pull-request.png)
+
 Preview deployments enable you to automatically test and deploy a preview version of your service for every pull request. So now you can get a live preview to test the live code and test integrations.
 
 It’s also self-cleaning. After your branch is merged and deleted, Serverlress CI/CD will automatically un-deploy your service. Now your environment can stay lean and clean.
 
 ## Branch deployments
 
+![Branch deployment status](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-01-announcement-cicd/queue.png)
+
 Branch deployments enable you to deploy all commits from a branch to a specific stage. For example, you can deploy everything from the master branch to a “staging” stage, and everything from the “prod” branch to the “prod” stage. This enables you to leverage your existing git flow to review and promote changes from stage to stage.
 
 ## Mono-repo support
+
+![Mono repo trigger directories](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-01-announcement-cicd/trigger.png)
 
 In a microservices architecture we end up with many serverless.yml files in a single repo, but we don’t want to redeploy all services just because one file changed. With the mono-repo support, you can specify trigger directories, so you can deploy services only if specific files change.
 
