@@ -1,7 +1,7 @@
 ---
 title: Announcing Serverless CI/CD
 description: "Announcing the general availability of Serverless CI/CD in Serverless Framework Pro, a continuous integration and deployment service you can use for free."
-date: 2020-02-01
+date: 2020-02-03
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-01-announcement-cicd/Thumbnail.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-01-announcement-cicd/Header.png"
 authors:
