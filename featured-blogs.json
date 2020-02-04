@@ -1,8 +1,8 @@
 [
+  "announcement-cicd",
   "troubleshoot-serverless-apis",
   "deploy-your-first-knative-service-with-the-serverless-framework",
   "serverless-framework-knative-integration",
   "reinvent-2019-serverless-announcements",
-  "aws-lambda-provisioned-concurrency",
-  "aws-lambda-performance-optimization"
+  "aws-lambda-provisioned-concurrency"
 ]
