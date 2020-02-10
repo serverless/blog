@@ -2,8 +2,8 @@
 title: A Guide to Preview Deployments with Serverless CI/CD
 description: "A closer look at working with Preview Deployments in the Serverless CI/CD solution."
 date: 2020-02-10
-thumbnail: ""
-heroImage: ""
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/preview-deploy-thumbnail.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/preview-deploy-header.png"
 authors:
   - FernandoMedinaCorey
 category:
