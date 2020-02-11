@@ -40,6 +40,10 @@ The preview deployments benefits for frontend code are clearly apparent - you ge
 
 When you create your Preview Deployment, the Framework Pro CI/CD system will still run any [Safeguards](https://serverless.com/framework/docs/dashboard/safeguards/) you have configured for the `default` profile. You'll also still have any automated [tests](https://serverless.com/framework/docs/dashboard/cicd/running-tests/) you have setup run against the deployment. This gives you all the same benefits you might otherwise have waited until a staging environment to check against.
 
+**They Can Supplement Existing CI/CD**
+
+You can use Preview Deployments in combination with Serverless CI/CD for stages like production and staging. Or, you can use them in addition to whatever existing CI/CD tools you have. Already using another tool for your workflow? Great! You can still add Preview Deployments without disrupting any of your existing processes!
+
 **A Clean Environment for Code Review**
 
 Because you're spinning up an entire set of infrastructure, it's open season for your code reviewers to play with the API endpoints and infrastructure resources.
