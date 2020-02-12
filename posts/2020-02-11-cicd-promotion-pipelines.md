@@ -2,8 +2,8 @@
 title: Promotion Pipelines
 description: "Find out what deployment strategies Serverless Framework Pro's CI/CD feature gives us for managing deployments as a team"
 date: 2020-02-11
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/promotion-pipelines/img-thumb-feb10-pipelines.png"
-heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/promotion-pipelines/img-blog-feb10-pipelines.png"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/promotion-pipelines/img-blog-feb10-pipelines.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/promotion-pipelines/img-thumb-feb10-pipelines.png"
 authors:
   - GarethMcCumskey
 category:
