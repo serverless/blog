@@ -7,7 +7,7 @@ heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/promot
 authors:
   - GarethMcCumskey
 category:
-  - guides & tutorials
+  - guides-and-tutorials
 ---
 
 Serverless application development is geat for rapidly spinning up solutions to problems; you complete a little configuration in a serverless.yml file, add some Lambda code to glue it all together and hit `sls deploy`. However, this isn't really going to fly when you have multiple team members working on the same code. You can't have multiple developers deploying code at the same time to the same infrastructure, potentially overwriting what each is doing.
