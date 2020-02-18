@@ -1,7 +1,7 @@
 ---
 title: Managing Stages and Environments
 description: "Being able to manage multiple different stages of deployment within different environments is essential, and Serverless Framework Pro shows you how"
-date: 2020-02-18
+date: 2020-02-17
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/stages-and-environments/img-thumb-environment-stages.png"
 heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/stages-and-environments/img-blog-environment-stages.png"
 authors:
