@@ -101,9 +101,9 @@ Having that, we need to indicate endpoints for which we want to restrict access 
 ```yaml
 functions:
   someFunction:
-	handler: someFunction.handler
-	events:
-  	 - httpApi:
+    handler: someFunction.handler
+    events:
+     - httpApi:
           method: GET
           path: /some-function
           authorizer: someAuthorizer
@@ -114,9 +114,9 @@ If we need to provide authorization scopes, then endpoint configuration should b
 ```yaml
 functions:
   someFunction:
-	handler: someFunction.handler
-	events:
-  	 - httpApi:
+    handler: someFunction.handler
+    events:
+      - httpApi:
           method: GET
           path: /some-function
           authorizer:
