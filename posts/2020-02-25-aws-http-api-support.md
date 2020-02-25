@@ -1,9 +1,9 @@
 ---
 title: Announcing Support for AWS HTTP APIs
 description: "The Serverless Framework now supports the AWS HTTP API - the v2 of API Gateway for HTTP APIs."
-date: 2020-02-27
-thumbnail: ""
-heroImage: ""
+date: 2020-02-25
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-http-api-v2/thumbnail-support-http-apis.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-http-api-v2/hero-support-http-apis.png"
 authors:
   - MariuszNowak
 category:
