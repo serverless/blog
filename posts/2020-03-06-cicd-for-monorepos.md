@@ -1,7 +1,7 @@
 ---
 title: CI/CD for monorepos
 description: "How do we deploy services all collected under a single monorepo in git?"
-date: 2020-02-27
+date: 2020-03-06
 thumbnail: ""
 heroImage: ""
 authors:
