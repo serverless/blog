@@ -2,8 +2,8 @@
 title: CI/CD for monorepos
 description: "How do we deploy services all collected under a single monorepo in git?"
 date: 2020-03-06
-thumbnail: ""
-heroImage: ""
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd-monorepo/thumbnail.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd-monorepo/hero.png"
 authors:
   - GarethMcCumskey
 category:
