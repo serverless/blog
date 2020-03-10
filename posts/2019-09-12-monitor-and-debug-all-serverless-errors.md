@@ -14,7 +14,7 @@ One of the most popular features of the Serverless Framework is its ability to p
 
 This is especially powerful when it comes to monitoring and debugging errors. When your code throws an error, then the Serverless Framework provides a few ways to monitor and debug those errors:
 
-1. You will get a [New Error Type](https://serverless.com/framework/docs/dashboard/insights#error-new-error-type-identified) alert for your service instance, notifying you in Slack or Email that a new error was identified.
+1. You will get a [New Error Type](https://serverless.com/framework/docs/dashboard/monitoring/alerts#error-new-error-type-identified) alert for your service instance, notifying you in Slack or Email that a new error was identified.
 2. The stack trace is captured and in the Serverless Dashboard you can see the stack trace highlighting the exact line which threw the error.
 3. The invocations & errors chart will show you the number of times errors have occurred over a span of time.
 4. Using the invocation explorer you can search and identify the individual invocations which got the error and dig into all the details.
