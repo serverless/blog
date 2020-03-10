@@ -44,7 +44,7 @@ In the example above, our lambda function handler throws an error; however, it i
 
 Now that the error is captured by the Serverless Framework, you can use the powerful dashboard features to help monitor and  debug these errors. Here are a few ways you can interact with these newly captured errors in the dashboard.
 
-When a new error is captured which hasn’t been captured before, you will get a [New Error Type](https://serverless.com/framework/docs/dashboard/insights#error-new-error-type-identified) alert. You can also setup [notifications](https://serverless.com/framework/docs/dashboard/notifications/) to get notified in Slack or email, or custom SNS Topics or API endpoints. 
+When a new error is captured which hasn’t been captured before, you will get a [New Error Type](https://serverless.com/framework/docs/dashboard/monitoring/alerts#error-new-error-type-identified) alert. You can also setup [notifications](https://serverless.com/framework/docs/dashboard/monitoring/notifications/) to get notified in Slack or email, or custom SNS Topics or API endpoints. 
 
 ![New error type alert](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/monitor-and-debug-all-serverless-errors/image-01.png)
 
