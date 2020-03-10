@@ -14,7 +14,7 @@ One of the most popular features of the Serverless Framework is its ability to p
 
 This is especially powerful when it comes to monitoring and debugging errors. When your code throws an error, then the Serverless Framework provides a few ways to monitor and debug those errors:
 
-1. You will get a [New Error Type](https://serverless.com/framework/docs/dashboard/insights#error-new-error-type-identified) alert for your service instance, notifying you in Slack or Email that a new error was identified.
+1. You will get a [New Error Type](https://serverless.com/framework/docs/dashboard/monitoring/alerts#error-new-error-type-identified) alert for your service instance, notifying you in Slack or Email that a new error was identified.
 2. The stack trace is captured and in the Serverless Dashboard you can see the stack trace highlighting the exact line which threw the error.
 3. The invocations & errors chart will show you the number of times errors have occurred over a span of time.
 4. Using the invocation explorer you can search and identify the individual invocations which got the error and dig into all the details.
@@ -44,7 +44,7 @@ In the example above, our lambda function handler throws an error; however, it i
 
 Now that the error is captured by the Serverless Framework, you can use the powerful dashboard features to help monitor and  debug these errors. Here are a few ways you can interact with these newly captured errors in the dashboard.
 
-When a new error is captured which hasn’t been captured before, you will get a [New Error Type](https://serverless.com/framework/docs/dashboard/insights#error-new-error-type-identified) alert. You can also setup [notifications](https://serverless.com/framework/docs/dashboard/notifications/) to get notified in Slack or email, or custom SNS Topics or API endpoints. 
+When a new error is captured which hasn’t been captured before, you will get a [New Error Type](https://serverless.com/framework/docs/dashboard/monitoring/alerts#error-new-error-type-identified) alert. You can also setup [notifications](https://serverless.com/framework/docs/dashboard/monitoring/notifications/) to get notified in Slack or email, or custom SNS Topics or API endpoints. 
 
 ![New error type alert](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/monitor-and-debug-all-serverless-errors/image-01.png)
 
