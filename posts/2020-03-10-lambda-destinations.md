@@ -2,8 +2,8 @@
 title: AWS Lambda Destination Support
 description: "The Serverless Framework now supports the recently released Lambda Event Destinations."
 date: 2020-03-10
-thumbnail: ""
-heroImage: ""
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-03-10-lambda-destinations/thumbnail.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-03-10-lambda-destinations/header.png"
 authors:
   - FernandoMedinaCorey
 category:
@@ -18,6 +18,10 @@ We first [wrote about](https://serverless.com/blog/november-2019-lambda-releases
 Essentially, destinations are the ability for asynchronous Lambda invocations to have their execution results sent to other AWS services without needing to wait for the Lambda execution to finish. Previously, you would have to wait for a Lambda success or failure or need to leverage something like Step Functions. Now, you can invoke functions asynchronously, and send the results of the invocations to different places depending on success or failure.
 
 Today, we're excited to announce support for Lambda Destinations in the Serverless Framework! Make sure you've [upgraded to](https://serverless.com/framework/docs/getting-started/) `v1.66.0` or higher and let's look at how to add them.
+
+You can watch the video below for an abbreviated version or work through the entire guide!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8KBLzRi76Tc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # Adding Lambda Destinations
 
