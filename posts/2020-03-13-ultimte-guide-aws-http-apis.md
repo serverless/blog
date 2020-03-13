@@ -2,8 +2,8 @@
 title: The Ultimate Guide to AWS HTTP APIs
 description: "There's a lot to learn about the new AWS HTTP APIs and the Serverless Framework so let's bring it all together in one place."
 date: 2020-03-13
-thumbnail: ""
-heroImage: ""
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-03-13-ultimate-guide-http-apis/thumbnail.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-03-13-ultimate-guide-http-apis/header.png"
 authors:
   - FernandoMedinaCorey
 category:
@@ -158,7 +158,7 @@ This v2.0 integration simplifies the Lambda/API Gateway interaction dramatically
 
 # Key Differences, Limitations, and Workarounds
 
-In addition to all the great new benefits, there's some key differences to keep in mind. Some of these differences may be irrelevant. Others might be something that prevent you from using the new HTTP APIs. Here's a bulleted list of key changes and differences. In some of these, I'll include potential workarounds and alternatives for those who may be impacted:
+In addition to all the great new benefits, there's some key differences to keep in mind. Some of these differences may be irrelevant. Others might be something that prevent you from using the new HTTP APIs. AWS has several tables with different support or unsupported features of the HTTP APIs [here](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html). So let's take a look at some of the key changes and differences between the two. When looking at some of these differences I'll include potential workarounds or alternatives:
 
 - No support for usage plans and API Keys
 - No wildcard subdomains
@@ -169,7 +169,6 @@ In addition to all the great new benefits, there's some key differences to keep 
 - No Amazon X-ray support and limited logging
 - Support for catch-all routing
 - Deployment, stage, route configuration differences
-
 
 ## Usage Plans and API Keys
 
