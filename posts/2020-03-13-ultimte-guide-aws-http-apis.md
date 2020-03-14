@@ -68,7 +68,7 @@ In the past, authentication and authorization were supported by AWS Lambda and A
 
 Overall, this was a huge nuisance. You had to extract the JWT from headers, verify that it was formatted correctly and cryptographically validate it with a library like `jose` (Node.js) or `python-jose` (Python). After all that, you still had to generate an IAM policy granting access to the API endpoint, and make sure you did it properly to avoid inadvertently caching a policy that denied access to subsequent requests to different endpoints. Essentially, a huge hassle that AWS is offering to take care of for you.
 
-If you're interested in doing with the Serverless Framework, you can read more about it [here](https://serverless.com/blog/serverless-auth-with-aws-http-apis/).
+If you're interested in using the JWT integration and the Serverless Framework, you can read more about it [here](https://serverless.com/blog/serverless-auth-with-aws-http-apis/).
 
 ## Simplified Routes and Deployment Stages
 
@@ -186,7 +186,7 @@ Using request/response transformations, you could process the incoming or outgoi
 
 ## No Caching
 
-As far as I know, there's no great solution here yet beyond configuring your downstream services to implement their own caching. Because the HTTP APIs are significantly cheaper this might not be as important. 
+As far as I know, there's no great solution here yet beyond configuring your downstream services to implement their own caching or relying on REST APIs and the caching they offer. Because the HTTP APIs are significantly cheaper and faster caching may not be as important as it was for the REST APIs. You can also always leverage caching to speed up the other parts fo your application. If you use DynamoDB for example you can still leverage [DAX](https://aws.amazon.com/dynamodb/dax/).
 
 ## No JSON Schema Validation
 
