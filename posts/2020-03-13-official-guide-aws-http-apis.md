@@ -2,8 +2,8 @@
 title: The Official Guide to AWS HTTP APIs
 description: "There's a lot to learn about the new AWS HTTP APIs and the Serverless Framework so let's bring it all together in one place."
 date: 2020-03-13
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-03-13-ultimate-guide-http-apis/thumbnail.png"
-heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-03-13-ultimate-guide-http-apis/header.png"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-03-13-official-guide-aws-http-apis/thumbnail.png"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-03-13-official-guide-aws-http-apis/header.png"
 authors:
   - FernandoMedinaCorey
 category:
