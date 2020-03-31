@@ -11,7 +11,7 @@ category:
 
 # Troubleshooting Serverless APIs
 
-While it might feel like Express.js or Flask are more "Monolithic" approaches to serverless, it's actually a very common pattern for many different applications. And we're excited to announce that you can now deploy your Express.js and Flask microservices with the same same automatic monitoring and debugging features as traditional Serverless Framework microservices.
+While it might feel like Express.js or Flask are more "Monolithic" approaches to serverless, it's actually a very common pattern for many different applications. And we're excited to announce that you can now deploy your Express.js and Flask microservices with the same automatic monitoring and debugging features as traditional Serverless Framework microservices.
 
 While Serverless [Framework Pro](http://dashboard.serverless.com/) previously had [automatic monitoring and troubleshooting](https://serverless.com/blog/troubleshoot-serverless-apis/) tools integrated out of the box, we lacked support for monolambda microservices. Developers using Express.js, Flask, Lambda API, or other development frameworks were unable to take advantage of many of the tools we offer to help review function invocations, sort invocations by API endpoint and more. That changes today.
 
@@ -99,7 +99,7 @@ functions:
       - http: 'ANY {proxy+}'
 ```
 
-This will setup an Amazon API Gateway proxy endpoint for the `app` function which will allow any custom the routes to be handled by your Express.js application. You can do this by creating a single function `app` with a handler of `index.handler` pointing towards the `handler` function we just created inside of the `index.js` file.
+This will setup an Amazon API Gateway proxy endpoint for the `app` function which will allow any custom routes to be handled by your Express.js application. You can do this by creating a single function `app` with a handler of `index.handler` pointing towards the `handler` function we just created inside of the `index.js` file.
 
 You'll also need to make sure that the `org` and `app` values are included in the file and reference your Framework Pro account.
 
