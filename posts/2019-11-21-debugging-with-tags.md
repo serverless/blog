@@ -34,12 +34,12 @@ If you want to try tags in the explorer, you’ll first need to add some to your
 
 If you’re using NodeJS, update serverless with npm update -g  serverless
 
-Add this code to your Serverless.yml file: 
+Add this code to your handler function: 
 
 ```javascript
 module.exports.hello = async event, context => {
  context.serverlessSdk.tagEvent('customerId', 5, { newCustomer: true, isDemo: true, demoExpire: '2019-12-01' })
- tagEvent('200 OK')
+  context.serverlessSdk.tagEvent('200 OK')
  return {
    statusCode: 200,
    body: JSON.stringify(
