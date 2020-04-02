@@ -11,7 +11,7 @@ category:
 
 Today, we're bringing [Serverless Framework Components](https://github.com/serverless/components) out of beta, and introducing several new features, including a **"serverless dev mode"** that enables you to develop on the cloud, via an experience that looks and feels local...
 
-Check out the video overview and [register for our upcoming Serverless Components Webinar](https://serverless.zoom.us/webinar/register/WN_ghGrf0R1TG29a74ElKYPLQ), if you wish to learn more.
+Check out the video overview and register for our [Serverless Components Webinar](https://serverless.zoom.us/webinar/register/WN_ghGrf0R1TG29a74ElKYPLQ), if you would like to join us.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3ndGjkuqyyc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
