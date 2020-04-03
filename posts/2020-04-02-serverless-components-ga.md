@@ -31,7 +31,7 @@ Serverless Components is now powered by our innovative Components Engine, which 
 
 With fast deployments, it becomes much easier to develop directly on real cloud services, rather than maintain a local emulation of those services.
 
-Now, you can develop on the same cloud infrastructure your application will use in production, without comprising on development velocity.
+Now, you can develop on the same cloud infrastructure your application will use in production, without compromising on development velocity.
 
 ## Dev Mode
 
