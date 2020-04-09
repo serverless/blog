@@ -186,7 +186,7 @@ The tl;dr is that when you use GraphQL, you are relying on only one HTTP endpoin
 
 So, how do we build this with the [Serverless Framework](https://serverless.com/framework/)?
 
-We’re going to target AWS Lambda with Node 8 in this example, and the code should be easily adaptable to other FaaS providers. You can download the code for this example [here](https://s3.amazonaws.com/blog.serverless.com/graphql-blog.zip).
+We’re going to target AWS Lambda with Node 8 in this example, and the code should be easily adaptable to other FaaS providers. You can download the code for this example [here](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/graphql-blog.zip).
 
 Using the GraphQL reference implementation in JS, we can easily create our GraphQL schema from the type declarations.
 
