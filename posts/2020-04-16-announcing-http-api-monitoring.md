@@ -1,6 +1,6 @@
 ---
-title: Announcing HTTP API Monitoring
-description: "Framework Pro now supports automatic monitoring for HTTP APIs!"
+title: Announcing HTTP API Troubleshooting
+description: "Framework Pro now supports automatic troubleshooting of HTTP APIs!"
 date: 2020-04-21
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-04-http-api-monitoring/http-api-troubleshooting.png"
 authors:
@@ -9,13 +9,13 @@ category:
   - news
 ---
 
-# Monitoring HTTP APIs
+# Troubleshooting HTTP APIs
 
-After we [announced support](https://serverless.com/blog/aws-http-api-support/) for HTTP APIs in the Serverless Framework we saw a lot of enthusiasm around the benefits of the new HTTP APIs. People were excited about the possibility for significant cost reduction and performance improvement. But, there was still the question of effectively monitoring your Lambda infrastructure in combination with the new HTTP API.
+After we [announced support](https://serverless.com/blog/aws-http-api-support/) for HTTP APIs in the Serverless Framework we saw a lot of enthusiasm around the benefits of the new HTTP APIs. People were excited about the possibility for significant cost reduction and performance improvement. But, there was still the question of effectively troubleshooting your Lambda infrastructure in combination with the new HTTP API.
 
 Because of this, we're excited to announce newly released monitoring and debugging support for HTTP APIs. Now you can get automatically instrumented monitoring and debugging tools on top of your HTTP APIs right out of the box. Let's see how with a simple service.
 
-# Setting up Monitoring
+# Setting up Troubleshooting
 
 First, make sure you've already done a few things:
 
