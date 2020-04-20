@@ -1,8 +1,8 @@
 ---
 title: Announcing HTTP API Monitoring
 description: "Framework Pro now supports automatic monitoring for HTTP APIs!"
-date: 2020-04-16
-thumbnail: ""
+date: 2020-04-21
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-04-http-api-monitoring/http-api-troubleshooting.png"
 authors:
   - FernandoMedinaCorey
 category:
@@ -11,7 +11,7 @@ category:
 
 # Monitoring HTTP APIs
 
-After we [announced support](https://serverless.com/blog/aws-http-api-support/) for HTTP APIs in the Serverless Framework we saw a lot of enthusiasm around the benefits of the new HTTP APIs. People were excited about the possibility for significant cost reduction and performance improvement. But, there was still the question of effectively monitoring your Lambda infrastructure in combination with the new HTTI API.
+After we [announced support](https://serverless.com/blog/aws-http-api-support/) for HTTP APIs in the Serverless Framework we saw a lot of enthusiasm around the benefits of the new HTTP APIs. People were excited about the possibility for significant cost reduction and performance improvement. But, there was still the question of effectively monitoring your Lambda infrastructure in combination with the new HTTP API.
 
 Because of this, we're excited to announce newly released monitoring and debugging support for HTTP APIs. Now you can get automatically instrumented monitoring and debugging tools on top of your HTTP APIs right out of the box. Let's see how with a simple service.
 
@@ -94,4 +94,3 @@ Now that you know how to setup a basic HTTP API with monitoring you're ready to 
 - [Serverless Auth with HTTP APIs](https://serverless.com/blog/serverless-auth-with-aws-http-apis/) is an introductory tutorial to getting started with HTTP API authorizers
 - Also check out [this example](https://github.com/fernando-mc/http-api-surveys-service) of a more complex multi-entity "Surveys service" using DynamoDB and Python
 - Or, if you prefer Node, [this example](https://github.com/fernando-mc/http-api-surveys-service-node) of the same multi-entity "Surveys service" using DynamoDB and Node.js
-
