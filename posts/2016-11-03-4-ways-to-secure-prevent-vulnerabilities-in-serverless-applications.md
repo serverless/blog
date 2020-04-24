@@ -34,7 +34,7 @@ With the Serverless Snyk plugin installed, each time you deploy the plugin will 
 With Snyk [GitHub integration](https://snyk.io/docs/github?utm_source=SLESSPOST) a PR can be submitted to your repository with any updates or patches needed to secure your application. You can also fix the issues by installing and running `snyk wizard` locally. In either case, Snyk will create a `.snyk` policy file to help guide future Snyk commands. If the Serverless Snyk plugin sees that you have a policy file in place before your application is deployed it will apply any of the updates and patches you have specified by [running `snyk protect`](https://snyk.io/docs/using-snyk?utm_source=SLESSPOST#protect).
 
 ### 3. Prevent
-Security is a continous process. As your application continues to evolve the dependencies it uses may change. Snyk runs everytime you deploy to help identify and preemptively fix any new vulnerabilities.
+Security is a continuous process. As your application continues to evolve the dependencies it uses may change. Snyk runs everytime you deploy to help identify and preemptively fix any new vulnerabilities.
 
 ### 4. Respond
 You're given an API token when you sign up for Snyk. By including the API token in your Serverless project (using a `.env` file to ensure it's not mistakenly published), the Serverless Snyk plugin will take a snapshot of the current state of your dependencies and save it to your account. Whenever a new vulnerability is released that impacts your application, Snyk will notify you, and anyone else in your Snyk organization, by email or Slack so you can address the issue right away.

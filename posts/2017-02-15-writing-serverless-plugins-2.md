@@ -162,7 +162,7 @@ Another handy thing to notice here is `cli.log()` function on the serverless obj
 _Note:_ In your implementation, you can easily swap DynamoDB for another database (or even provider!) entirely - however, for now we'll stick to AWS - the most widely used provider.
 
 ## Uploading Data
-In the second step of the implemention, we simply need to take data from `serverless.variables.copyData` and upload it to the test/dev database. As far as I'm aware, we can only do that by uploading the data one by one:
+In the second step of the implementation, we simply need to take data from `serverless.variables.copyData` and upload it to the test/dev database. As far as I'm aware, we can only do that by uploading the data one by one:
 
 ```js
 const getPutPromise = (dynamodb, params, serverless) => new Promise((resolve, reject) => {

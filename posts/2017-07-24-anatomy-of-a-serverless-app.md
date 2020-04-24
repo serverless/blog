@@ -32,7 +32,7 @@ I had to make some choices before I started development:
 
 ## Setup
 
-The intial setup was straightforward:
+The initial setup was straightforward:
 
 1. Install NodeJS: [download](https://nodejs.org/en/download/) or [using package manager](https://nodejs.org/en/download/package-manager/#osx)
 2. Install the [Serverless Framework](https://serverless.com/framework/): `npm install -g serverless`

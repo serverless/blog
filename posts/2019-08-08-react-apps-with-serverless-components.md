@@ -56,7 +56,7 @@ Note:  Later, you may want to scope down these permissions so the Serverless Fra
 
 Copy the "Access Key ID" and the "Secret Access Key".  You will need them in second... 
 
-Now, it's time for the fun Serverless Framwork part.
+Now, it's time for the fun Serverless Framework part.
 
 Make sure you have [Node.js](https://nodejs.org/en/download/) installed.  Then, install the Serverless Framework via NPM and add the global flag `-g`.
 
@@ -131,7 +131,7 @@ Go to AWS Route53's dashboard, egister your domain and wait for the registration
 
 Run `serverless` again and it will acknowledge the new `input` and set up your custom domain, Cloudfront & SSL Certificate.
 
-You will need to wait for your new domain to propogate to the DNS servers around the world. This may take up to an hour as well. Once it's available, you will be able to see it live, as well as any changes you make.
+You will need to wait for your new domain to propagate to the DNS servers around the world. This may take up to an hour as well. Once it's available, you will be able to see it live, as well as any changes you make.
 
 Every time you run `serverless` to deploy changes to your website, the Website Component invalidates the assets you have cached in AWS Cloudfront. This enables you to see changes almost immediately.
 

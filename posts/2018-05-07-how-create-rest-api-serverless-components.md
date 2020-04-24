@@ -245,7 +245,7 @@ components:
 
 Here, we're adding our `createProcuct` component which is of `type` `aws-lambda`.
 
-We've defined the function's configuration with the help of the component's `inputs` section. Note that we're specifing the path to our function's code with the help of the `root` property and the environment variables via `env`.
+We've defined the function's configuration with the help of the component's `inputs` section. Note that we're specifying the path to our function's code with the help of the `root` property and the environment variables via `env`.
 
 ##### `getProduct` and `listProducts`
 

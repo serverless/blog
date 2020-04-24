@@ -1,6 +1,6 @@
 ---
 title: "Keeping the culture in remote culture"
-description: "When your team team is distibuted or remote, building a company culture takes a different kind of effort. Here's how we keep culture strong at Serverless."
+description: "When your team team is distributed or remote, building a company culture takes a different kind of effort. Here's how we keep culture strong at Serverless."
 date: 2018-09-17
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/Thom's+Posts/remotework.jpg
 category:

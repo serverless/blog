@@ -26,7 +26,7 @@ Many users aren't aware of the `serverless deploy function` command and instead 
 
 `sls deploy` re-deploys the entire stack through cloud formation and can be noticeably slooowww.
 
-On the flip side, `sls deploy function` only zips up the code (& any dependancies) and updates the lambda function only. This is much much faster than waiting for an entire stack update.
+On the flip side, `sls deploy function` only zips up the code (& any dependencies) and updates the lambda function only. This is much much faster than waiting for an entire stack update.
 
 So, when developing you can use `sls deploy function -f myFuncName` for speedier code changes in your live AWS account.
 
@@ -38,7 +38,7 @@ If you have only make changes to your function code, `sls deploy function -f myF
 # Redeploy entire stack through cloud formation
 sls deploy
 
-# Redeploy only the code + dependancies to update the AWS lambda function
+# Redeploy only the code + dependencies to update the AWS lambda function
 sls deploy function -f myFuncName
 ```
 

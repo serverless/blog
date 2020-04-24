@@ -20,7 +20,7 @@ RESTful APIs is a well-understood architecture for web and app backends. In a RE
  - Browser + network caching
  - Mature tooling
 
-Because `Users` and `Posts` are separate entities, they're availabe under different URLs. The code responsible for returning users doesn't have to know anything about posts and vice versa. In fact, as the application grows it's common to move the code to separate microservices, and even separate development teams. The fact that resources are exposed on a canonical URL makes it really easy to use standard HTTP headers to enable caching in the browser and network layer.
+Because `Users` and `Posts` are separate entities, they're available under different URLs. The code responsible for returning users doesn't have to know anything about posts and vice versa. In fact, as the application grows it's common to move the code to separate microservices, and even separate development teams. The fact that resources are exposed on a canonical URL makes it really easy to use standard HTTP headers to enable caching in the browser and network layer.
 
 This is great in theory, but unfortunately this model is no longer a great fit for the rich web and mobile apps we are building today. Consider the canonical Facebook Feed. In a RESTful paradigm we would have at least 4 endpoints: `/users`, `/feed`, `/posts`, and `/comments`. To fully render the first screen the app would have to: 
 

@@ -42,7 +42,7 @@ I decided to work with a Photon made by [Particle.io](https://www.particle.io/).
   <img width="400" src="https://cloud.githubusercontent.com/assets/20538501/22045527/70b1499e-dce0-11e6-864d-15f33feb8511.jpg">
 </p>
 
-I connected each LED, using a current limiting resistor, to a seperate pin of the Photon.
+I connected each LED, using a current limiting resistor, to a separate pin of the Photon.
 
 <p align="center">
   <img width="400" src="https://cloud.githubusercontent.com/assets/20538501/22045561/93b6b99c-dce0-11e6-8084-088a2f2b7d3c.jpg">
