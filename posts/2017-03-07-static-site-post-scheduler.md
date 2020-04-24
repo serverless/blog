@@ -108,7 +108,7 @@ To cancel scheduled posts, delete the scheduled comment and it will unschedule t
   - `CRON` - How often you want to check for scheduled posts? See the [AWS cron docs](http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html) or [serverless `schedule` docs](https://serverless.com/framework/docs/providers/aws/events/schedule/) for more information. **Default:** every hour on the hour
   - `GITHUB_REPO` - The `owner/repoName` of your repository
   - `GITHUB_WEBHOOK_SECRET` - Any string you want. This gets plugged into your webhook settings
-  - `GITHUB_API_TOKEN` - Personal access token. See below for additonal info
+  - `GITHUB_API_TOKEN` - Personal access token. See below for additional info
   - `GITHUB_USERNAME` - Your github username. Used for requests to github
 
 ### 3. Deploy the service with `serverless deploy`. If you need to setup Serverless, please see [these install instructions](https://github.com/serverless/serverless#quick-start).

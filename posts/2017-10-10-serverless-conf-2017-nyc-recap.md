@@ -72,7 +72,7 @@ Code quality is a problem. Okay...it's *the* problem. If you look at the OWASP t
 
 Dependencies are another factor. Their weakness is your weakness; dozens of dependencies mean dozens of possible threat points. And don't think that low-level threats are nothing to worry about—people can get root access by exploiting the right combination of grade 3 threats.
 
-Still, we're doing pretty good overall here. Mark gives Serverless Fucntions security a **B+**.
+Still, we're doing pretty good overall here. Mark gives Serverless Functions security a **B+**.
 
 **2. Services**<br>
 How does the provider secure their service? Make sure to check their certifications. If they don't have certs (reasonably common in newer companies and smaller start-ups), then grill them. Make sure they are fully transparent with you.

@@ -124,7 +124,7 @@ And that's pretty much all you need to do to get started with WebSockets events!
 
 Other than WebSockets support, we added a lot of enhancements and bug fixes in this release. Here's our changelog, with some links to the corresponding PRs.
 
- - [Set timout & others on context in python invoke local](https://github.com/serverless/serverless/pull/5796)
+ - [Set timeout & others on context in python invoke local](https://github.com/serverless/serverless/pull/5796)
  - [Append in Custom Syntax](https://github.com/serverless/serverless/pull/5799)
  - [Don't load config for `config`](https://github.com/serverless/serverless/pull/5798)
  - [Replace blocking fs.readFileSync with non blocking fs.readFile in checkForChanges.js](https://github.com/serverless/serverless/pull/5791)

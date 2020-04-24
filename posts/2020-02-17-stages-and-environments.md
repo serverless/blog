@@ -45,7 +45,7 @@ With this setup, a command such as `serverless deploy --stage dev` would hook th
 
 Now lets head back to profiles and look at what we can do with this new profile.
 
-#### Seperate AWS accounts
+#### Separate AWS accounts
 
 Separating our various environments, such as development and production, into alternate AWS accounts is a pretty common practice. If we want our development environment to deploy to an entirely different AWS account to our production environment, this is where we look to do that. Selecting the `AWS account` tab gives us the option to use local AWS credentials, so if we didn't necessarily want to alter the way we deploy now we don't have to. But if you select the option `Add an organization AWS account to deploy.` you immediately get the ability to click a link labelled `Open the AWS console.` which opens up a wizard you just need to click next through.
 

@@ -352,7 +352,7 @@ Again, none of this is required, and it's a bit of an overweight solution since 
 
 #### Local development configuration with Serverless offline plugin
 
-When developing an application, it's nice to rapidly iterate by developing and testing locally rather than doing a full deploy betwen changes. In this section, I'll show you how to configure your environment for local development.
+When developing an application, it's nice to rapidly iterate by developing and testing locally rather than doing a full deploy between changes. In this section, I'll show you how to configure your environment for local development.
 
 First, let's use the [`serverless-offline`](https://github.com/dherault/serverless-offline) plugin. This plugin helps to emulate the API Gateway environment for local development.
 

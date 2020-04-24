@@ -28,7 +28,7 @@ With that out of the way, lets get cracking!
 
 #### Connecting to Github
 
-Make sure you create the app withing the org, using the same names you added to the services `serverless.yml` file as well; I have one I called `monorepotest` ... super original I know. But once I have done that, I open the app and I should have a handy dandy `add service` button to click on. Doing that gives me two option. I want to choose `Deploy from Github`. You should then see a button to `connect to Github`. Click it and go through Github's OAuth process to authorise Serverless Framework Pro to access the monorepo you are configuring. Once done and returned, you may or may not need to just refresh the page. When you see the image below we can move on:
+Make sure you create the app within the org, using the same names you added to the services `serverless.yml` file as well; I have one I called `monorepotest` ... super original I know. But once I have done that, I open the app and I should have a handy dandy `add service` button to click on. Doing that gives me two option. I want to choose `Deploy from Github`. You should then see a button to `connect to Github`. Click it and go through Github's OAuth process to authorise Serverless Framework Pro to access the monorepo you are configuring. Once done and returned, you may or may not need to just refresh the page. When you see the image below we can move on:
 
 ![Deploy from github](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/cicd-monorepo/DeployFromGithub.png)
 
@@ -60,7 +60,7 @@ By default, the `Always trigger a deployment` option is selected and means that 
 
 Automatically, the directory of the current service is selected and you can just click `save settings`. From this point on, `servicea` will only be re-deployed when its own code is edited.
 
-##### Dependancy deployment
+##### Dependency deployment
 
 But what if you actually did have services that had dependencies on each other. So in the example with `servicea`, we could in fact link it to `serviceb` and configure it so that `servicea` will always be re-deployed when `serviceb` is also edited. Just by adding a reference to the correct service directory, I can ensure this will happen:
 

@@ -32,7 +32,7 @@ The main challenge was creating the background architecture to handle the voice 
 
 ### The Solution
 
-The Parallax team ultimately decided that writing a simple Lambda function and letting Amazon do all the heavy lifting seemed like the obvious choice. They settled on using Serverless and CloudFormation to orchestrate the entire platform in code, building a completely scaleable architecture.
+The Parallax team ultimately decided that writing a simple Lambda function and letting Amazon do all the heavy lifting seemed like the obvious choice. They settled on using Serverless and CloudFormation to orchestrate the entire platform in code, building a completely scalable architecture.
 
 > **“**Going serverless allowed us to concentrate on writing the features without worrying about how to scale it. We knew if it worked for one user, it would work for many. The Framework itself allowed us to stop worrying about the underlying architecture, but was powerful enough to dip into if needed.” –James Hall,_Director at Parallax_
 

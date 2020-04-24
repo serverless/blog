@@ -437,7 +437,7 @@ Copy the `config.dev.example.json` to `config.dev.json`, and then supply the val
 
 ##### Plugins
 
-There are cases, like one below, where you need the [AWS CloudFormation Psuedo parameters](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html) in your configuration `serverless.yml` file.
+There are cases, like one below, where you need the [AWS CloudFormation Pseudo parameters](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html) in your configuration `serverless.yml` file.
 
 ```yaml
 execRoleArn: { "Fn::Join" : ["", [ "arn:aws:iam::", { "Ref" : "AWS::AccountId" }, ":role/ecsTaskExecutionRole" ] ] }

@@ -211,7 +211,7 @@ And finally, the cleanup of the data in the `cleanup` helper looks like this:
         }
         anyId = await client.query(`select id from weather_${year}_${week} limit 1`, [year, week])
         if (anyId.length == 0) {
-            throw Error(`cleanup can't finished, because records are not transfered for year = ${year} and week = ${week} in`)
+            throw Error(`cleanup can't finished, because records are not transferred for year = ${year} and week = ${week} in`)
         }
         await client.query(`
         delete

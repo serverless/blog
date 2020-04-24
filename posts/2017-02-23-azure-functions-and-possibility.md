@@ -9,7 +9,7 @@ authors:
 ---
 To the engineers and business leaders ducking out of political protests, excusing themselves from heated dinner table debates, rolling up their sleeves and getting back to work:  Ready to actually take on the insurmountable challenges all around you?  First you'll need courage.  After that, you'll need really good *tools*.
 
-Fortunately,  tools couldn't be better right now.  The cloud providers are competing for your business and doubling down on investment in their platforms.  The number of high-value services in database, storage, artifical intelligence technology and more is growing rapidly.  Innovation in IaaS is now a daily occurrence.
+Fortunately,  tools couldn't be better right now.  The cloud providers are competing for your business and doubling down on investment in their platforms.  The number of high-value services in database, storage, artificial intelligence technology and more is growing rapidly.  Innovation in IaaS is now a daily occurrence.
 
 Meanwhile, getting started is easier than ever.  If you want to adopt a cloud provider and utilize these new services immediately, put some code there, in the form of a *Serverless Function*.
 

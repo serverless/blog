@@ -28,7 +28,7 @@ Taking a step back, it was obvious that the website didn't really do any computi
 
 It was a single-page app with five static pages. There were also a small set of services (e.g. contacting staff and managing donations plans) that had very little to do with the webpages itself.
 
-The site's content lived on a completely seperate hosting service. We used that as a headless Wordpress installation where the admins could edit the site via plugins and the Wordpress app. That WP installation emitted a [JSON RPC API](https://github.com/Movement-2016/movement2016-wp/blob/master/wp-content/themes/movement-admin-theme/inc/movement-json.php), which was then fed to React components that populated the website.
+The site's content lived on a completely separate hosting service. We used that as a headless Wordpress installation where the admins could edit the site via plugins and the Wordpress app. That WP installation emitted a [JSON RPC API](https://github.com/Movement-2016/movement2016-wp/blob/master/wp-content/themes/movement-admin-theme/inc/movement-json.php), which was then fed to React components that populated the website.
 
 As thin as our React app was, it wasn't thin enough to save it from being overwhelmed.
 

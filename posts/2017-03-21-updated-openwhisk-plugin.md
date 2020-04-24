@@ -9,7 +9,7 @@ authors:
 ---
 Multi-provider support was a goal we laid out following the [Serverless Framework v1 release](https://serverless.com/blog/serverless-post-1.0/). Since then we've been working towards simplifying the process of moving applications between cloud providers to enable the development of multi-cloud Serverless apps. All while keeping the Serverless workflow and developer experience consistent across providers so you don't need to learn custom commands or syntax for each platform.
 
-OpenWhisk integration [launched ealier this year](https://serverless.com/blog/openwhisk-integration-with-serverless/). The official OpenWhisk provider plugin allows developers to build, deploy and manage apps running on the OpenWhisk platform using the Serverless Framework. 
+OpenWhisk integration [launched earlier this year](https://serverless.com/blog/openwhisk-integration-with-serverless/). The official OpenWhisk provider plugin allows developers to build, deploy and manage apps running on the OpenWhisk platform using the Serverless Framework. 
 
 ***Special shout out to [James Thomas (@thomasj)](https://twitter.com/thomasj) at IBM for his awesome contribution spearheading this effort!***
 

@@ -336,7 +336,7 @@ As you can see, we access the arguments through the [$context variable](https://
 We also specify that we want the document created in our `places` index via the `path` property. See the [Elasticsearch mapping template reference](https://docs.aws.amazon.com/appsync/latest/devguide/resolver-mapping-template-reference-elasticsearch.html) for the full list of supported fields. Finally, we are using a convenience method that AppSync supplies via the [`$util` object](https://docs.aws.amazon.com/appsync/latest/devguide/resolver-context-reference.html#utility-helpers-in-util) to automatically assign a unique `id` to the document.
 
 
-Let's go ahead and create the reponse template to translate Elasticsearch's response into the JSON response defined in our GraphQL schema. Create `mapping-templates/createPlace-request-mapping-template.txt` with the following contents:
+Let's go ahead and create the response template to translate Elasticsearch's response into the JSON response defined in our GraphQL schema. Create `mapping-templates/createPlace-request-mapping-template.txt` with the following contents:
 
 ```VTL
 $util.toJson({
@@ -555,7 +555,7 @@ It only returns our London listing, so we can see our query is working just as w
 
 ## 7. <a name="destroy"></a>Teardown
 
-We could easily add support for realtime updates to our API at this point, but we've already done a lot of work today. So let's destory our API and leave that for another tutorial.
+We could easily add support for realtime updates to our API at this point, but we've already done a lot of work today. So let's destroy our API and leave that for another tutorial.
 
 In order to update or delete our API, we'll need to feed our serverless config its `apiId` and `apiKey`. Let's go ahead and add these to our `serverless.yml` instructing it to pick them up via environment variables:
 
