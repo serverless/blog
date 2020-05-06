@@ -10,6 +10,8 @@ category:
   - news
 ---
 
+> **Update:** This post is based on the beta version of Serverless Components, which is not compatible with the latest, and much faster, GA version. Please check out the [latest docs](https://github.com/serverless/components) for more up to date information.
+
 Ever since we released [Serverless Components](https://github.com/serverless/components), we've seen huge demand for an AppSync component. Especially since it is not natively supported in the Serverless Framework. Today, we're thrilled to announce the [Serverless AppSync Component](https://github.com/serverless-components/aws-app-sync), which enables you to deploy GraphQL apps on AWS more easily and quickly than ever.
 
 The [Serverless AppSync Component](https://github.com/serverless-components/aws-app-sync) does not rely on CloudFormation, making it a lot faster to deploy compared to CloudFormation and Amplify. It also ships with sane defaults that makes it a lot simpler and easier to use without having to scroll through multiple pages of AWS documentation and copy/paste code. We've done the research for you, and we've packaged it all in this easy-to-use component. It comes with the following set of features:
