@@ -10,6 +10,8 @@ authors:
   - AustenCollins
 ---
 
+> Note: This post is based on the beta version of Serverless Components, which is not compatible with the latest, and much faster, GA version. Please check out the [docs of the GA version of Serverless Components](https://github.com/serverless/components) for more up to date information.
+
 Here's a tutorial on how you can deploy React applications that are fast, global and cheap to host.
 
 The outcome of this is a website with a React app, a custom domain and SSL certificate — **Basically, everything you need to be production ready.**
