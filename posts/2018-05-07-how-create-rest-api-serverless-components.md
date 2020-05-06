@@ -10,6 +10,8 @@ authors:
   - PhilippMuns
 ---
 
+> **Update:** This post is based on the beta version of Serverless Components, which is not compatible with the latest, and much faster, GA version. Please check out the [latest docs](https://github.com/serverless/components) for more up to date information.
+
 #### Introduction
 
 You might have already heard about our new project, [Serverless Components](https://github.com/serverless/components). Our goal was to encapsulate common functionality into so-called "components", which could then be easily re-used, extended and shared with other developers and other serverless applications.
