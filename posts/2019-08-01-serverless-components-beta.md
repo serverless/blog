@@ -10,6 +10,7 @@ authors:
   - AustenCollins
 ---
 
+> **Update:** We've now made Serverless Components much faster, and more stable with the latest GA release. Please check out the [Serverless Components GA Announcement](https://www.serverless.com/blog/serverless-components-ga/) and the [latest docs](https://github.com/serverless/components) for more up to date information.
 
 **Forget infrastructure** — Today, we’re giving you a new option to **deploy serverless use-cases — without managing complex infrastructure configuration files**.  
 
