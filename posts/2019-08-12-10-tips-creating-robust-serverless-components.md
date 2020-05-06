@@ -10,6 +10,8 @@ authors:
   - EslamHefnawy
 ---
 
+> **Update:** While the general ideas of this post still apply, this post is based on the beta version of Serverless Components, which is not compatible with the latest, and much faster, GA version. Please check out the [latest docs](https://github.com/serverless/components) for more up to date information.
+
 [Serverless Components](https://github.com/serverless/components) allow anyone to design and build specific use cases and share them with the world, without having to be tied to a single pattern or a single opinion. We then released 20+ components to bootstrap these uses cases, and we’re constantly building more. One of our core design goals is simplicity, so we produced an incredibly simple core and components API that makes creating components a breeze, and we’ve covered them all in a [simple one-page documentation](https://github.com/serverless/components/blob/master/README.md).
 
 In this article, we will give you practical advice (not docs) on creating robust Serverless Components based on our experience building all these components over the past year, to help as you start creating components for your own unique use cases. So let’s dig in..
