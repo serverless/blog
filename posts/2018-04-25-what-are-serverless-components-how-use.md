@@ -11,6 +11,8 @@ authors:
   - BrianNeisler
 ---
 
+> **Update:** This post is based on the beta version of Serverless Components, which is not compatible with the latest, and much faster, GA version. Please check out the [latest docs](https://github.com/serverless/components) for more up to date information.
+
 #### So, what’s the goal with Serverless Components?
 
 We want to make it easier for you, our developer community, to assemble cloud applications. Plain and simple.
