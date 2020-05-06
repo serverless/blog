@@ -22,6 +22,8 @@ Jump straight into the section you want to read about:
 
 ## Changes in Components v0.3
 
+> **Update:** We've now made Serverless Components much faster, and more stable with the latest GA release. Please check out the [Serverless Components GA Announcement](https://www.serverless.com/blog/serverless-components-ga/) and the [latest docs](https://github.com/serverless/components) for more up to date information.
+
 The new components release contains a bunch of goodies.
 
 ### Install components from URL
