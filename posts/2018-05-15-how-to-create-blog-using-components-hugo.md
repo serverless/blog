@@ -10,6 +10,8 @@ authors:
   - RupakGanguly
 ---
 
+> **Update:** This post is based on the beta version of Serverless Components, which is not compatible with the latest, and much faster, GA version. Please check out the [latest docs](https://github.com/serverless/components) for more up to date information.
+
 Most of us blog, and a very common dilemma is deciding how to host the blog site. You want something easy to use, produce content with, and maintain. Bonus points if it's also easy to port elsewhere in case you ever want to move it.
 
 [Static site generators](https://www.staticgen.com/) are a good option in this regard; they help keep the authoring part simple. They use Markdown as a document format, spruce up the look & feel with themes, and provide a simple workflow for a fully deployable HTML/CSS/JS-based blog site.
