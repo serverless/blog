@@ -10,6 +10,8 @@ authors:
   - EslamHefnawy
 ---
 
+> **Update:** This post is based on the beta version of Serverless Components, which is not compatible with the latest, and much faster, GA version. Please check out the [latest docs](https://github.com/serverless/components) for more up to date information.
+
 In previous posts, we’ve explored how to [create a static website](https://serverless.com/blog/how-to-create-landing-page-with-serverless-components/) and a [REST API](https://serverless.com/blog/how-create-rest-api-serverless-components/) with Serverless Components. This post is going to build on top of that knowledge to create a dynamic website powered by a database.
 
 The example dynamic website we’re going to put together is a retail app. Just a simple eCommerce website that lists the products in your database via a REST API.
