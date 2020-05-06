@@ -10,6 +10,8 @@ authors:
   - EslamHefnawy
 ---
 
+> **Update:** This post is based on the beta version of Serverless Components, which is not compatible with the latest, and much faster, GA version. Please check out the [latest docs](https://github.com/serverless/components) for more up to date information.
+
 Two weeks ago we released a complete solution for deploying serverless websites that supports custom domain, SSL & CDN in a single [website component](https://github.com/serverless-components/website). Since then we've received great feedback about related use cases of the underlying infrastructure and we realized there is a need for a standalone content delivery network solution to serve your static assets, even if they're not directly related to your website.
 
 Today we're releasing the zero-config [Serverless CDN component](https://github.com/serverless-components/cdn) to serve that exact use case. Just like the [website component](https://github.com/serverless-components/website), it supports secure SSL-enabled custom domains and is powered by AWS S3, AWS CloudFront, AWS Route53 & AWS Certificate Manager. All can be deployed with **only 2 lines of YAML**.
