@@ -45,11 +45,11 @@ There was only one thing we couldn’t change: **Client applications!**
 
 Every new client needed to be educated. And migrating them to AWS in general was a long process. For the most part, the refactoring of their application code was needed in order to become [12-factor-ready](https://12factor.net/).
 
-[AWS Lambda](https://aws.amazon.com/lambda/details/) lets you run code without provisioning or managing servers. You pay only for the compute time you consume — there is no charge when your code is not running.
+[AWS Lambda](https://www.serverless.com/aws-lambda/) lets you run code without provisioning or managing servers. You pay only for the compute time you consume — there is no charge when your code is not running.
 
 When AWS first [introduced](https://www.youtube.com/watch?v=9eHoyUVo-yg) Lambda at re:Invent in 2014, I was a bit skeptical. Their example used S3 events. The triggering of image resizing with Lambda was awesome, but I didn’t see our clients adopting this anytime soon.
 
-Internally we started sprinkling in custom [Lambda-Backed Custom Resources](https://aws.amazon.com/blogs/aws/aws-cloudformation-update-lambda-backed-custom-resources-more/) within CloudFormation stacks to fill-up missing gaps. This was when I started to realize how powerful Lambda actually is. We were able to automate a lot of use-cases and 3rd party applications/providers with the use of AWS Lambda.
+Internally we started sprinkling in custom [Lambda-Backed Custom Resources](https://aws.amazon.com/blogs/aws/aws-cloudformation-update-lambda-backed-custom-resources-more/) within CloudFormation stacks to fill-up missing gaps. This was when I started to realize how powerful Lambda actually is. We were able to automate a lot of use-cases and 3rd party applications/providers with the use of [AWS Lambda](https://www.serverless.com/aws-lambda/).
 
 ![new_33b](https://cloud.githubusercontent.com/assets/20538501/20609535/82b4bbe2-b253-11e6-87b2-0cc4ac9cab6c.jpg)
 

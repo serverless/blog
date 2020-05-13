@@ -10,7 +10,7 @@ category:
   - news
 ---
 
-AWS Lambda pretty much single-handedly kick-started the serverless movement we find ourselves in. A compute service with automated scaling and complete elimination of machine or container maintenance. However, some of the characteristics of the service made it a little less than desirable for certain workloads.
+[AWS Lambda](https://www.serverless.com/aws-lambda/) pretty much single-handedly kick-started the serverless movement we find ourselves in. A compute service with automated scaling and complete elimination of machine or container maintenance. However, some of the characteristics of the service made it a little less than desirable for certain workloads.
 
 If you were trying to use Lambda in a use case that was very latency sensitive, cold starts were probably your greatest concern. Cold starts have also been the biggest issue pointed out by detractors of service as to why you need to be cautious about adopting Lambda as your primary compute platform. However, thankfully, AWS has heard the concerns and has provided the means for us to solve the problem.
 
@@ -18,7 +18,7 @@ If you have just deployed a Serverless service, or none of your functions have b
 
 Before now, if you were trying to use techniques to create warm Lambda instances, this was a tricky exercise. It was a little difficult to exactly control how many warm instances you wanted simultaneously and you then had to execute the Lambda you wanted with some kind of branching logic that determined whether this was a warm up execution or an actual execution. It was rather ugly. But it helped folks step past the cold start issues to some degree.
 
-However, AWS has now launched Provisioned Concurrency as a feature. It does pretty much the same thing as those Serverless Framework plugins that try to keep a certain number of warm functions running by allowing you configure warm instances right from the get go. In addition, there are no code changes needed. All we need to do is set a value as to how many provisioned instances we want for a specific function, and the AWS Lambda service itself will ensure to always have that quantity of warmed instances waiting for work!
+However, AWS has now launched Provisioned Concurrency as a feature. It does pretty much the same thing as those Serverless Framework plugins that try to keep a certain number of warm functions running by allowing you configure warm instances right from the get go. In addition, there are no code changes needed. All we need to do is set a value as to how many provisioned instances we want for a specific function, and the [AWS Lambda](https://www.serverless.com/aws-lambda/) service itself will ensure to always have that quantity of warmed instances waiting for work!
 
 Combine this with the auto scaling features of Lambda and we now have the means to respond rapidly to traffic as well as automatically accommodate more traffic as it comes in.
 

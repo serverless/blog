@@ -10,7 +10,7 @@ authors:
 
 During the last few months, I realized that most developers using serverless technologies have to rely on **blind choices** or **manual tuning** to optimize their Lambda Functions. In this article I will present: the data I collected, the [open-source project](https://github.com/alexcasalboni/aws-lambda-power-tuning) I created to solve this problem, and the design ideas that guided me.
 
-## AWS Lambda optimizations, let's go data-driven
+## [AWS Lambda](https://www.serverless.com/aws-lambda/) optimizations, let's go data-driven
 
 I launched [this poll](https://twitter.com/alex_casalboni/status/854059283465383937) a few weeks ago, and I managed to collect almost 160 responses thanks to the community who helped me share it.
 
