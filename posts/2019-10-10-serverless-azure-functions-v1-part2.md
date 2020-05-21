@@ -389,4 +389,4 @@ Notice [this line](https://github.com/tbarlow12/sls-az-func-rest-api/blob/master
 
 #### Concluding Thoughts
 
-A big part of our reason for investing time and effort into the `serverless-azure-functions` plugin was so that developers could easily deploy Azure Functions to solve more real-world, business-level scenarios. We hope that as you use the tool and discover areas for improvement that you'll [file issues on the repo](https://github.com/serverless/serverless-azure-functions/issues/new/choose) or even open up a [pull request](https://github.com/serverless/serverless-azure-functions/pulls).
+A big part of our reason for investing time and effort into the `serverless-azure-functions` plugin was so that developers could easily deploy [Azure Functions](https://www.serverless.com/framework/docs/providers/azure/) to solve more real-world, business-level scenarios. We hope that as you use the tool and discover areas for improvement that you'll [file issues on the repo](https://github.com/serverless/serverless-azure-functions/issues/new/choose) or even open up a [pull request](https://github.com/serverless/serverless-azure-functions/pulls).

@@ -75,7 +75,7 @@ Plus: [click here for an Elm demo.](https://github.com/ktonon/elm-serverless-dem
 
 **4. [Serverless Step Functions](https://github.com/horike37/serverless-step-functions)**, by [Takahiro Horike](https://github.com/horike37)
 
-If serverless functions are stateless, how do you manage state? AWS Step Functions! This plugin lets you use Step Functions with the Serverless Framework.
+If serverless functions are stateless, how do you manage state? [AWS Step Functions](https://www.serverless.com/aws-step-functions/)! This plugin lets you use Step Functions with the Serverless Framework.
 
 Install:
 ```

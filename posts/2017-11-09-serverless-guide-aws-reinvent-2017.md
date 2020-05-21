@@ -76,7 +76,7 @@ Or try the workshop version! You'll become a developer at a ridesharing company,
 Includes: API Gateway, DynamoDB, Route 53, CloudFront, S3
 
 **SRV306 - State Machines in the Wild! How Customers use AWS Step Functions** | Aria<br>
-Shameless plug: Coca-cola uses the [Serverless Framework](https://serverless.com/framework/). Patrick Brandt will go over how they created a customer loyalty program with Step Functions. The session explores all kinds of neat things that you can do with state machines.
+Shameless plug: Coca-cola uses the [Serverless Framework](https://serverless.com/framework/). Patrick Brandt will go over how they created a customer loyalty program with [Step Functions](https://www.serverless.com/aws-step-functions/). The session explores all kinds of neat things that you can do with state machines.
 
 Includes: Step Functions, operations automation, state management
 
@@ -105,7 +105,7 @@ Curious about what serverless can do for you? Learn about their benefits in hand
 
 Includes: Lambda, API Gateway, Step Functions
 
-**CTD201 - Introduction to Amazon CloudFront and AWS Lambda@Edge** | Venetian<br>
+**CTD201 - Introduction to [Amazon CloudFront](https://www.serverless.com/amazon-cloudfront/) and AWS Lambda@Edge** | Venetian<br>
 Learn how to accelerate delivery of websites, APIs, and streamed media content. Lambda@Edge is a serverless service that lets you customize content delivery through CloudFront.
 
 Includes: Lambda@Edge, CloudFront, CDN strategy

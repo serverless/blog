@@ -23,7 +23,7 @@ Instead, you'll need a cloud service that will solve this problem for you provid
 
 In this post, I'm going to describe how I implemented a notification system for unauthenticated users with the Serverless Framework and AWS IoT for *browsers*.
 
-I know that "Internet of Things" sounds strange to be used in a website, but it supports WebSockets, is very easy to use, and unlike Amazon SNS (Simple Notification Service) it supports WebSockets. Win!
+I know that "Internet of Things" sounds strange to be used in a website, but it supports WebSockets, is very easy to use, and unlike [Amazon SNS](https://www.serverless.com/amazon-api-gateway/) (Simple Notification Service) it supports WebSockets. Win!
 
 ### Why IoT?
 
