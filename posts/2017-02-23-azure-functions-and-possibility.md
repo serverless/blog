@@ -21,7 +21,7 @@ Stateless, zero-administration, pay-per-execution functions can exist in a singl
 
 It's a bit early to tell what the serverless multi-cloud architecture will look like, how it will work and whether it can solve the timeless concern of vendor lock-in (which is a complex problem).  However, it's a concept we are heavily focused on and we'll be introducing more products this year to reduce lock-in and capitalize on all of the providers, together.
 
-That said, we're pleased to announce support for Azure Functions within the Serverless Framework.  Our goal is to offer a uniform experience across serverless compute providers.  So you can develop and deploy functions in a single fashion, regardless of their host.
+That said, we're pleased to announce support for [Azure Functions](https://www.serverless.com/framework/docs/providers/azure/) within the Serverless Framework.  Our goal is to offer a uniform experience across serverless compute providers.  So you can develop and deploy functions in a single fashion, regardless of their host.
 
 ![https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/azure-functions.png](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/azure-functions.png)
 

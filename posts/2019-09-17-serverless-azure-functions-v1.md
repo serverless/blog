@@ -12,7 +12,7 @@ authors:
 
 #### Overview
 
-With the [recent updates to the `serverless-azure-functions` plugin](https://github.com/serverless/serverless-azure-functions/blob/master/CHANGELOG.md), it is now easier than ever to create, deploy and maintain a real-world REST API running on Azure Functions. This post will walk you through the first few steps of doing that. 
+With the [recent updates to the `serverless-azure-functions` plugin](https://github.com/serverless/serverless-azure-functions/blob/master/CHANGELOG.md), it is now easier than ever to create, deploy and maintain a real-world REST API running on [Azure Functions](https://www.serverless.com/framework/docs/providers/azure/). This post will walk you through the first few steps of doing that. 
 
 To see the full end-to-end example used to create this demo, check out [my GitHub repo](https://github.com/tbarlow12/sls-az-func-rest-api). I structured [each commit](https://github.com/tbarlow12/sls-az-func-rest-api/commits/master) to follow the steps described in this post. Any steps named `Step X.X` are steps that involve no code or configuration changes (and thus not tracked by source control), but actions that could/should be taken at that point in the process. This is done to preserve the "commit-per-step" structure of the example repo.
 
