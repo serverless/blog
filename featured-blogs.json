@@ -1,8 +1,8 @@
 [
+  "serverless-express-apis-aws-lambda-http-api.md",
   "serverless-components-ga",
   "official-guide-aws-http-apis",
   "announcement-cicd",
   "troubleshoot-serverless-apis",
-  "serverless-framework-knative-integration",
   "reinvent-2019-serverless-announcements"
 ]
