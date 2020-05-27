@@ -7,7 +7,6 @@ authors:
   - AustenCollins
 category:
   - news
-  - guides-and-tutorials
 ---
 
 **TLDR -** Take existing Express.js apps and host them easily onto cheap, auto-scaling, serverless infrastructure on *AWS Lambda* and *AWS HTTP API* with **[Serverless Express](https://github.com/serverless-components/express)**.  It's packed loads of production-ready features, like custom domains, SSL certificates, canary deployments, and costs **~$0.000003** per request.
