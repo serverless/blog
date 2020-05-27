@@ -10,8 +10,6 @@ category:
   - guides-and-tutorials
 ---
 
-# Easier Serverless Express.js APIs With AWS Lambda & AWS HTTP API
-
 **TLDR -** Take existing Express.js apps and host them easily onto cheap, auto-scaling, serverless infrastructure on *AWS Lambda* and *AWS HTTP API* with **[Serverless Express](https://github.com/serverless-components/express)**.  It's packed loads of production-ready features, like custom domains, SSL certificates, canary deployments, and costs **~$0.000003** per request.
 
 If you simply want to host a common **Express.js** Node.js application, have it auto-scale to billions of requests, and charge you only when it's used, we have something special for you...
@@ -88,7 +86,7 @@ Even better, you can use different `.env` files for each `stage` by simply using
 
 One last—often overlooked—step is to install the Express.js dependency, by running `npm i` in the template.
 
-## Deployment
+# Deployment
 
 Now, you are ready to deploy.  The template should work out-of-the-box, so run this command to get up and running...
 
@@ -102,7 +100,7 @@ You should see your teminal return the following:
 
 ![Serverless Framework Express.js](https://s3.amazonaws.com/assets.github.serverless/components/serverless_express_cli_deploy.gif)
 
-## Development
+# Development
 
 Most like to run their Express app locally, and you can absolutely boot up your Express app locally, as you always would.  
 
@@ -122,7 +120,7 @@ Now, every time you save, your Serverless Express will quickly push your changes
 
 ![Serverless Framework Express.js](https://s3.amazonaws.com/assets.github.serverless/components/serverless_express_cli_dev_mode.gif)
 
-## Advanced Configuration
+# Advanced Configuration
 
 Serverless Express may be easy, but that does not mean it isn't powerful or customizable.  It features the best possible defaults, but when you are ready for more, there is a ton of possibility.
 
