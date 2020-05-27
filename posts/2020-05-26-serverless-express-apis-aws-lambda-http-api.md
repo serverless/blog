@@ -12,7 +12,7 @@ category:
 
 # Easier Serverless Express.js APIs With AWS Lambda & AWS HTTP API
 
-**TLDR -** Take existing Express.js apps and host them easily onto cheap, auto-scaling, serverless infrastructure on *AWS Lambda* and *AWS HTTP API* with **[Serverless Express](https://github.com/serverless-components/express)**.  It's packed with loads of production-ready features, like custom domains, SSL certificates, canary deployments, and costs ~$0.000003 per request.
+**TLDR -** Take existing Express.js apps and host them easily onto cheap, auto-scaling, serverless infrastructure on *AWS Lambda* and *AWS HTTP API* with **[Serverless Express](https://github.com/serverless-components/express)**.  It's packed loads of production-ready features, like custom domains, SSL certificates, canary deployments, and costs **~$0.000003** per request.
 
 If you simply want to host a common **Express.js** Node.js application, have it auto-scale to billions of requests, and charge you only when it's used, we have something special for you...
 
@@ -39,7 +39,7 @@ Serverless Express is a [Serverless Framework Component](https://github.com/serv
 
 Install Node.js here.
 
-Then run this command to install Serverless Framework.  If you already have it installed, make sure it's the latest version.
+Then run this command to install Serverless Framework.
 
 ```
 npm i -g serverless
@@ -88,7 +88,7 @@ Even better, you can use different `.env` files for each `stage` by simply using
 
 One last—often overlooked—step is to install the Express.js dependency, by running `npm i` in the template.
 
-# Deployment
+## Deployment
 
 Now, you are ready to deploy.  The template should work out-of-the-box, so run this command to get up and running...
 
@@ -102,7 +102,7 @@ You should see your teminal return the following:
 
 ![Serverless Framework Express.js](https://s3.amazonaws.com/assets.github.serverless/components/serverless_express_cli_deploy.gif)
 
-# Development
+## Development
 
 Most like to run their Express app locally, and you can absolutely boot up your Express app locally, as you always would.  
 
@@ -122,7 +122,7 @@ Now, every time you save, your Serverless Express will quickly push your changes
 
 ![Serverless Framework Express.js](https://s3.amazonaws.com/assets.github.serverless/components/serverless_express_cli_dev_mode.gif)
 
-# Advanced Configuration
+## Advanced Configuration
 
 Serverless Express may be easy, but that does not mean it isn't powerful or customizable.  It features the best possible defaults, but when you are ready for more, there is a ton of possibility.
 
@@ -151,35 +151,21 @@ inputs:
   region: us-east-2              # (optional) aws region to deploy to. default is us-east-1.
 ```
 
-# Setting Up A Custom Domain & SSL Certificate
+# Setting Up A Custom Domain Registered With AWS Route53 & SSL Certificate
 
-The Express Component can easily set up a custom domain and free SSL certificate for your API.
+Here's how to easily set up a custom domain and SSL certificate on AWS Route53.  You can also follow the next section to add a custom domain registered outside of AWS Route53.
 
-First, purchase your custom domain via Route53 on the AWS Acccount you are deploying your Express application on.
+To set up a custom domain purchased on AWS Route53, make sure you it is in a "registered" status and within the same AWS account your Express.js application is running in.
 
-Next, add the domain to the `domain` in `inputs` in `serverless.yml`, like this:
-
-```yaml
-
-inputs:
-  src: ./
-  domain: serverlessexpress.com
-
-```
-
-You can also use a subdomain:
+Once this domain's status goes from "pending" to "registered", simply add the following configuration to your `serverless.yml`...
 
 ```yaml
-
 inputs:
   src: ./
-  domain: express.component-demos.com
-
+  domain: mydomain.com   
 ```
 
-Run `serverless deploy`.
-
-Keep in mind, it will take AWS CloudFront and AWS Route53 and DNS up to 24 hours to propagate these changes and make your custom domain globally accessible.  However, with recent AWS CloudFront speed increases, your domain should be accessible within ~10 minutes.
+Serverless Express will then add your custom domain to your API as well as automatically set-up an SSL certificated with it, so that you can have a production-ready Express.js API.
 
 Don't forget to use `.env` files for different `stages` to use different domains for different environments. 
 
@@ -193,14 +179,31 @@ domain: ${env:domain}
 # .env.dev
 # .env.prod
 
-domain=express.component-demos-dev.com
+domain=api.webapp.com
 ```
 
 ```yaml
-$ serverless deploy --stage dev
+$ serverless deploy --stage prod
 ```
 
-## Bundling Your Express App (Webpack, etc.)
+# Setting Up A Custom Domain Registered Outside Of Route53 & SSL Certificate
+
+If your domain is not on AWS Route53, you will have to set this up manually because the component does not have access to your registrar. Here are the general steps involved:
+
+1. Create an AWS ACM certificate for your domain. Make sure you set the "Additional Names" field to `*.yourdomain.com` as well to include all subdomains as well.
+
+2. After you create the certificate, it should be in a `PENDING_VALIDATION` status. Now you will need to validate your domain. We suggest you follow the DNS steps by adding the validation CNAME record you see on the AWS console to your domain via your registrar dashboard.
+
+3. After you add the validation record, it might take a while, but eventually the certificate should change status to `ISSUED`. Usually it takes around 5 minutes.
+
+4. Add your domain to the `serverless.yml` file as shown above and deploy. This step is important as it adds your domain to API Gateway.
+
+5. Notice the regional url that is returned as an output. Copy this URL, get back to your registrar and add another CNAME record with your domain or subdomain name and a value of this regional url. This ensures that your domain points to that cloudfront URL.
+
+6. After around 20 mins, your SSL certificate and domain should all be working and pointing to your URL. Keep in mind that if you change the `name`, `stage`, `app` or `org` properties in `serverless.yml`, this would result in a completely new instance with a new cloudfront url. This allows you to setup different domains for each stage or instance
+
+
+# Bundling Your Express App (Webpack, etc.)
 
 By reducing your code size, your Express app will actually perform better in the AWS Lambda environment, resulting in a faster API.  A great way to reduce your code size is to bundle it with Webpack, Parcel, or others.
 
@@ -214,27 +217,35 @@ inputs:
     dist: ./dist
 ```
 
-## Canary Deplyoments
+# Canary Deployments
 
-At scale, when you want to push changes out to a small set of users, Serverless Express offers easy Canary Deployments.
+At scale, when you want to push changes out to a small set of users, Serverless Express offers easy Canary Deployments out of the box!
 
-First, update your code with the potentially risky change.
+This enables you to push out a version of your app (containing code changes you deem risky) which is only served to a percentage of traffic that you specificy (0-99%).  This allows you to test big changes with little risk.
 
-Next, add the `traffic` configuration option to `serverless.yml`
+To perform a canary deployment, first update your code with the potentially risky change.  
+
+Next, set a traffic weighting in your `serverless.yml` `inputs`:
 
 ```yaml
+
 inputs:
   src: ./
-  traffic: 0.5
+  traffic: 0.5 # 50%
+
 ```
 
 This tells Serverless Express to serve the new (potentially risky) code to 50% of the API requests, and the old (stable) code to the other 50% of requests.
+
+Run `serverless deploy`.  After deployment is complete, 50% of your requests will be randomly handled by the new experimental code.
+
+You can slowly increment the percentage over time, just continue to re-deploy it.
 
 If things aren't working, revert your code to the old code, remove the `traffic` configuration option, and deploy.
 
 If things are working, keep the new code, remove the `traffic` configuration option, and deploy.
 
-## Wrapping Up
+# Wrapping Up
 
 Our goal is to offer the best Serverless Express.js experience possible.  We have packed years of serverless experience into Serverless Express so you and your team don't have to configure, manage and automate the underlying infrastructure, and we've barely touched on the tremendous power Serverless Express offers. 
 
