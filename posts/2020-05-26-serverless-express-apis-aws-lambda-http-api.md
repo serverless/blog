@@ -99,7 +99,7 @@ Serverless Express will provision all of the infrastructure and upload your code
 
 You should see your teminal return the following:
 
-
+![Serverless Framework Express.js](https://s3.amazonaws.com/assets.github.serverless/components/serverless_express_cli_deploy.gif)
 
 ## Development
 
@@ -119,9 +119,7 @@ $ serverless dev
 
 Now, every time you save, your Serverless Express will quickly push your changes to the cloud.  Further, if all API requests, log statements and errors will stream into your terminal.  It should look like this:
 
-/////////
-
-/////////
+![Serverless Framework Express.js](https://s3.amazonaws.com/assets.github.serverless/components/serverless_express_cli_dev_mode.gif)
 
 ## Advanced Configuration
 
