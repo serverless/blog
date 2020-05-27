@@ -1,12 +1,13 @@
 ---
-title: Serverless Express – Easily Build APIs On AWS Lambda & AWS HTTP API
+title: Serverless Express – Easy APIs On AWS Lambda & AWS HTTP API
 description: "Serverless Express enables you to easily host Express.js APIs on AWS Lambda and AWS HTTP API"
 date: 2020-05-26
-thumbnail: ""
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-express-thumbnail.png"
 authors:
   - AustenCollins
 category:
   - news
+  - guides-and-tutorials
 ---
 
 # Easier Serverless Express.js APIs With AWS Lambda & AWS HTTP API
