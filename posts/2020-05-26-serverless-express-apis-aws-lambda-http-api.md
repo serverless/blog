@@ -250,6 +250,6 @@ As always, you should focus on your application, not infrastructure.  That is th
 
 If you want to learn more, check out these resources:
 
-- [Serverless Express]([https://github.com/serverless-components](https://github.com/serverless/components)/express) - This is the repo for Serverless Express and it contains lots of additional documentation.
-- [Serverless Components]([https://github.com/serverless/components](https://github.com/serverless/components)) - You will most likely want to include a database, custom permissions role, website and more with your Express.js app.  Composition of serverless infrastructure is what Components are all about, so check out all of the neat things you can do via the Components Documentation.
-- [Serverless Fullstack Application]([https://github.com/serverless-components](https://github.com/serverless/components)/fullstack-app) - Here is a real-world example of how to use Serverless Express within the context of a fullstack application that features a database, website, authentication, authorization and more.  It's a great starting point.
+- [Serverless Express](https://github.com/serverless-components/express) - This is the repo for Serverless Express and it contains lots of additional documentation.
+- [Serverless Components](https://github.com/serverless/components) - You will most likely want to include a database, custom permissions role, website and more with your Express.js app.  Composition of serverless infrastructure is what Components are all about, so check out all of the neat things you can do via the Components Documentation.
+- [Serverless Fullstack Application](https://github.com/serverless-components/fullstack-app) - Here is a real-world example of how to use Serverless Express within the context of a fullstack application that features a database, website, authentication, authorization and more.  It's a great starting point.
