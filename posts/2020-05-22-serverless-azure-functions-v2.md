@@ -1,9 +1,9 @@
 ---
 title: "Serverless Azure Functions V2 - Linux, Python & .NET Core Support"
 description: "Introducing the v2 release of the Serverless Azure Functions plugin, which includes support for Linux, Python & .NET Core Function Apps."
-date: 2020-05-20
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/azure-functions-part1/thumbnail.png"
-heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/azure-functions-part1/header.png"
+date: 2020-06-03
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/azure/azure_720.jpg"
+heroImage: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/azure/azure_720.jpg"
 category:
   - guides-and-tutorials
 authors:
