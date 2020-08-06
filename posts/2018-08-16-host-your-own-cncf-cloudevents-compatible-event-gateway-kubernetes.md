@@ -131,4 +131,4 @@ Austen Collins from Serverless, Inc., used the Event Gateway to trigger 11 diffe
 - [Check out the Event Gateway open source project](https://github.com/serverless/event-gateway)
 - [Learn more about the CNCF’s CloudEvents specification](https://github.com/cloudevents/spec)
 - [Read up on popular Event Gateway use cases](https://serverless.com/blog/how-use-event-gateway-use-cases-rest-api-custom-events/)
-- [Try the fully-hosted (serverless) version in the Serverless Platform](https://dashboard.serverless.com/)
+- [Try the fully-hosted (serverless) version in the Serverless Platform](https://app.serverless.com/)

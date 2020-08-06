@@ -111,7 +111,7 @@ Now that we've got the basics down, let's dig a little deeper into handling secr
 
 In the example above, the big problem is that our access token is in plaintext directly in our `serverless.yml`. This is a sensitive secret that we don't want to commit to source control.
 
-A better option is to use the [Serverless Framework Pro Dashboard](https://dashboard.serverless.com) Parameters feature. If you are already using Serverless Framework Pro for monitoring your Serverless Services, it makes sense to use the same tool to help you centrally maintain your secrets. And this can be very easily done across stages (or environments) as well.
+A better option is to use the [Serverless Framework Pro Dashboard](https://app.serverless.com) Parameters feature. If you are already using Serverless Framework Pro for monitoring your Serverless Services, it makes sense to use the same tool to help you centrally maintain your secrets. And this can be very easily done across stages (or environments) as well.
 
 When you have logged into your `org` on the dashboard, click on 'profiles' in the top left, then either choose from an existing profile you already assign to a particular stage or create a new one. Once you have opened a profile, you will see a tab labelled parameters. It is here that you can then add whatever parameter you like for that deployment profiles stage. You can then repeat that for any other stage that your services may need and add the values specific to that stage.
 

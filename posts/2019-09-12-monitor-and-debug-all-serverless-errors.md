@@ -60,4 +60,4 @@ Lastly, in the service instance overview page you can view invocation metrics an
 
 ![Invocations and errors chart](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/monitor-and-debug-all-serverless-errors/image-04.png)
 
-If you want to improve monitoring and debugging for your Serverless Framework application, getting started with the automatic instrumentation is incredibly easy. [Sign up in the dashboard](https://dashboard.serverless.com/) and follow the instructions to start a new Serverless Framework project or incorporate the dashboard features into existing services.
+If you want to improve monitoring and debugging for your Serverless Framework application, getting started with the automatic instrumentation is incredibly easy. [Sign up in the dashboard](https://app.serverless.com/) and follow the instructions to start a new Serverless Framework project or incorporate the dashboard features into existing services.

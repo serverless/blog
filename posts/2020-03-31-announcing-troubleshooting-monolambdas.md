@@ -13,9 +13,9 @@ category:
 
 While it might feel like Express.js or Flask are more "Monolithic" approaches to serverless, it's actually a very common pattern for many different applications. And we're excited to announce that you can now deploy your Express.js and Flask microservices with the same automatic monitoring and debugging features as traditional Serverless Framework microservices.
 
-While Serverless [Framework Pro](http://dashboard.serverless.com/) previously had [automatic monitoring and troubleshooting](https://serverless.com/blog/troubleshoot-serverless-apis/) tools integrated out of the box, we lacked support for monolambda microservices. Developers using Express.js, Flask, Lambda API, or other development frameworks were unable to take advantage of many of the tools we offer to help review function invocations, sort invocations by API endpoint and more. That changes today.
+While Serverless [Framework Pro](http://app.serverless.com/) previously had [automatic monitoring and troubleshooting](https://serverless.com/blog/troubleshoot-serverless-apis/) tools integrated out of the box, we lacked support for monolambda microservices. Developers using Express.js, Flask, Lambda API, or other development frameworks were unable to take advantage of many of the tools we offer to help review function invocations, sort invocations by API endpoint and more. That changes today.
 
-There's a lot of information on the [Serverless Blog](https://serverless.com/blog/) and in our [dashboard documentation](https://serverless.com/framework/docs/dashboard/) about how you can leverage [Framework Pro](http://dashboard.serverless.com/) if you haven't already had a chance to use it. But for now, let's take a look at some of the features you now have access to with monolambda applications.
+There's a lot of information on the [Serverless Blog](https://serverless.com/blog/) and in our [dashboard documentation](https://serverless.com/framework/docs/dashboard/) about how you can leverage [Framework Pro](http://app.serverless.com/) if you haven't already had a chance to use it. But for now, let's take a look at some of the features you now have access to with monolambda applications.
 
 # What's New for Monolambdas?
 
@@ -41,13 +41,13 @@ When you find the invocation you're looking for, you'll get the same information
 
 So how do you get started with these new features? First, [update](https://serverless.com/framework/docs/getting-started/) your version of the Framework to the latest version. If you installed it with NPM you can use `npm update -g serverless`. You'll need v1.67.0 or greater of the Framework and v3.6.1 or greater of the Framework Pro plugin.
 
-Next, in order to add the automated troubleshooting, you'll need to have already created a [Framework Pro](http://dashboard.serverless.com/) account and add the `org` and `app` values inside of your `serverless.yml` file. You may need to create a new `app` for your service.
+Next, in order to add the automated troubleshooting, you'll need to have already created a [Framework Pro](http://app.serverless.com/) account and add the `org` and `app` values inside of your `serverless.yml` file. You may need to create a new `app` for your service.
 
 ## Existing Express.js and Flask apps
 
 If you've already created your own Express.js or Flask app and deployed it previously with the Serverless Framework, all you need to do now is run `serverless deploy` again and test out some of your endpoints. 
 
-In the [Framework Pro Dashboard](http://dashboard.serverless.com/) for that service you should see all your logs and troubleshooting capabilities for each route you test in your monolambda. Keep in mind, that the routes will only start to appear after you run requests against them. 
+In the [Framework Pro Dashboard](http://app.serverless.com/) for that service you should see all your logs and troubleshooting capabilities for each route you test in your monolambda. Keep in mind, that the routes will only start to appear after you run requests against them. 
 
 The two line configuration change and *zero changes* to your application code should trigger a new deployment with the automatic Monolambda troubleshooting and monitoring instrumentation.
 
@@ -111,7 +111,7 @@ From there, just load up the endpoint in to your browser and test out the `hello
 
 ![New Endpoint](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/troubleshooting-monolambdas/hello_fernando.png)
 
-After you test the endpoint out, you should see it appear in the [Framework Pro](http://dashboard.serverless.com/) Dashboard under the explorer for that service:
+After you test the endpoint out, you should see it appear in the [Framework Pro](http://app.serverless.com/) Dashboard under the explorer for that service:
 
 ![New Endpoint](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/troubleshooting-monolambdas/hello_name_explorer.png)
 
@@ -169,7 +169,7 @@ plugins:
 
 If you compare to the Express.js application, you'll also notice that we have an additional `custom` and `plugins` section. These are to allow us to configure the plugins we need to deploy Python dependencies with `serverless-python-requirements` and to deploy Python monolambda apps with `serverless-wsgi`. 
 
-Make sure to update the `app` and `org` names with your own [Framework Pro](http://dashboard.serverless.com/) configuration.
+Make sure to update the `app` and `org` names with your own [Framework Pro](http://app.serverless.com/) configuration.
 
 From there, we'll need to install these plugins with:
 
@@ -189,7 +189,7 @@ Then, you can test the endpoint in to your browser and see how the `hello/name` 
 
 ![New Endpoint Flask Test](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/troubleshooting-monolambdas/hello_fernando_flask.png)
 
-Then, you will see the new endpoint appear in the [Framework Pro](http://dashboard.serverless.com/) Dashboard with the route you used:
+Then, you will see the new endpoint appear in the [Framework Pro](http://app.serverless.com/) Dashboard with the route you used:
 
 ![Explorer Flask](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/troubleshooting-monolambdas/hello_name_explorer_flask.png)
 

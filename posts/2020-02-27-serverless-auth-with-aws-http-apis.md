@@ -27,13 +27,13 @@ In this guide, we will create an Amazon Cognito User Pool, App Client, and Domai
 - For Node.js - `git clone https://github.com/fernando-mc/aws-http-api-node-cognito.git`
 - For Python - `git clone https://github.com/fernando-mc/aws-http-api-python-cognito.git`
 
-After you have the code, make sure you've also [installed the Serverless Framework](https://serverless.com/framework/docs/getting-started/), setup and configured the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html), and (optionally) created a [Framework Pro](https://dashboard.serverless.com/) account.
+After you have the code, make sure you've also [installed the Serverless Framework](https://serverless.com/framework/docs/getting-started/), setup and configured the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html), and (optionally) created a [Framework Pro](https://app.serverless.com/) account.
 
 ## Deploying the Project
 
 With the repository cloned, change directories into the repository and make sure you're on the same level as the `serverless.yml` file. Then you can make a few changes to the demo code:
 
-1. Either configure your own `org` and `app` name with [Framework Pro](https://dashboard.serverless.com/) or remove the `org` and `app` from the top of `serverless.yml`.
+1. Either configure your own `org` and `app` name with [Framework Pro](https://app.serverless.com/) or remove the `org` and `app` from the top of `serverless.yml`.
 2. Update the `DOMAIN_SUFFIX` value in the provider environment section to something unique. I recommend you use something like your name and favorite mythical animal. 
 3. After that, save the file and run `serverless deploy`.
 

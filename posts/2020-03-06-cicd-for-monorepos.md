@@ -22,7 +22,7 @@ It would be great if you could follow along, even if you do not have your very o
 
 Once you've cloned the repo, made the requisite `org` and `app` edit, you just need to push that back into a repo of your own for us to continue.
 
-The last step before we walk through setting up the monorepo deployment is to ensure that we have our connection to our AWS account all squared away, especially if you have a [brand new dashboard account](https://dashboard.serverless.com). This is done by going to profiles on the top menu, selecting the profile we will be using and making sure an AWS account is connected.
+The last step before we walk through setting up the monorepo deployment is to ensure that we have our connection to our AWS account all squared away, especially if you have a [brand new dashboard account](https://app.serverless.com). This is done by going to profiles on the top menu, selecting the profile we will be using and making sure an AWS account is connected.
 
 With that out of the way, lets get cracking!
 

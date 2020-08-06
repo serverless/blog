@@ -22,7 +22,7 @@ Serverless Framework Pro adds the concept of a profile on top of the concept of 
 
 Lets get started with the basic setup we need. Its pretty quick!
 
-First, go to the [Serverless Framework Pro Dashboard](https://dashboard.serverless.com), and create a new account if you haven't got one yet or log into your existing account. If you created a new account you will also see the on-boarding process that introduces you to the concepts in the dashboard. Go ahead and complete that or skip it.
+First, go to the [Serverless Framework Pro Dashboard](https://app.serverless.com), and create a new account if you haven't got one yet or log into your existing account. If you created a new account you will also see the on-boarding process that introduces you to the concepts in the dashboard. Go ahead and complete that or skip it.
 
 Once done, make sure you have an `app` created and you should see something like this:
 
@@ -136,4 +136,4 @@ This is a far bigger topic than can be spoken of in complete detail here, so fee
 
 --------------------
 
-With everything we've looked at, imagine combining that with a production environment and then also looping in Serverless Framework CI/CD which uses all of these features by default. It can help you manage a seamless software development lifecycle across multiple stages and deployment scenarios. All you need to get started is to go the [Serverless Framework Pro Dashboard](https://dashboard.serverless.com) and sign up!
+With everything we've looked at, imagine combining that with a production environment and then also looping in Serverless Framework CI/CD which uses all of these features by default. It can help you manage a seamless software development lifecycle across multiple stages and deployment scenarios. All you need to get started is to go the [Serverless Framework Pro Dashboard](https://app.serverless.com) and sign up!
