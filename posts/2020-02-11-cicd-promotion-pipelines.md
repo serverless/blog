@@ -67,4 +67,4 @@ And that's pretty much. I did say it was easy. Once we match our branch to the r
 
 ![Queued Deployment](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/promotion-pipelines/QueuedDeployment.png)   
 
-To get started head to the [Serverless Framework Pro Dashboard](https://dashboard.serverless.com) and sign up for free!!
+To get started head to the [Serverless Framework Pro Dashboard](https://app.serverless.com) and sign up for free!!

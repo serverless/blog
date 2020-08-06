@@ -39,7 +39,7 @@ serverless login
 
 This will open a browser window to create a Serverless Platform account. Once your account is created, the proper credentials will be returned to your terminal for easy command-line deploys.
 
-Once you've signed up for an account, create a new application in the [Dashboard](https://dashboard.serverless.com). You can do this by clicking the red `+ App` button. When you create a new application, you will get an application URL in the form of `<tenant>-<app>.slsgateway.com`. This is the URL to which you will emit your Event Gateway events.
+Once you've signed up for an account, create a new application in the [Dashboard](https://app.serverless.com). You can do this by clicking the red `+ App` button. When you create a new application, you will get an application URL in the form of `<tenant>-<app>.slsgateway.com`. This is the URL to which you will emit your Event Gateway events.
 
 Make sure you have your tenant name, app name, and application URL available as you will need them in the following sections.
 

@@ -242,7 +242,7 @@ Another downside to this option is that your team still need access to productio
 
 An alternative to the AWS SSM and Secrets Manager is the recently announced [secrets functionality](https://serverless.com/blog/serverless-now-full-lifecycle/) in the Serverless Framework. For API provider number three, the HERE Destination Weather API, we chose this approach.
 
-After logging into the [Serverless Dashboard](https://dashboard.serverless.com/), we add the secret we want to store under the Secrets tab in the Profile section. (You’ll need to create a new profile if you don’t have one yet.)
+After logging into the [Serverless Dashboard](https://app.serverless.com/), we add the secret we want to store under the Secrets tab in the Profile section. (You’ll need to create a new profile if you don’t have one yet.)
 
 
 ![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/secrets-management/s_468DC5A00535E640D1CD6F860B59D7ED1FD419F7F68475C6951254F0A0DFD405_1563915863024_2019072322322346rlfjtpe3.png)

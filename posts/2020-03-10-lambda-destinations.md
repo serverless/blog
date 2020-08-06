@@ -103,7 +103,7 @@ functions:
       onFailure: ${params:FAILURE_ARN}
 ```
 
-This way, the framework will load the relevant parameter at deployment time from [Framework Pro](https://dashboard.serverless.com/).
+This way, the framework will load the relevant parameter at deployment time from [Framework Pro](https://app.serverless.com/).
 
 ### Stage Variables in Event Destinations
 

@@ -18,7 +18,7 @@ Today, we're doing just that.  We're expanding the Serverless Framework to be mo
 
 Now, the Serverless Framework includes real-time monitoring, testing, secrets management and security features, in a single, unified experience.  All of which are now available to every developer, for free.
 
-[Click here to try the new bigger, bolder Serverless Framework.](https://dashboard.serverless.com)
+[Click here to try the new bigger, bolder Serverless Framework.](https://app.serverless.com)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-Nf0ui3qP2E" frameborder="0" allowfullscreen></iframe>
 
