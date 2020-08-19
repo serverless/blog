@@ -1,7 +1,7 @@
 ---
 title: The Serverless Framework Knative Component
 description: "Deploy containerized applications on serverless Knative infrastructure easily, cheaply and scale massively, all via the Serverless Framework"
-date: 2020-05-26
+date: 2020-08-19
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-08-19-serverless-framework-knative-component/serverless-knative.png"
 authors:
   - AustenCollins
