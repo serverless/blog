@@ -2,7 +2,7 @@
 title: Serverless Knative – The Serverless Framework Knative Component
 description: "Deploy containerized applications on serverless Knative infrastructure easily, cheaply and scale massively, all via the Serverless Framework"
 date: 2020-05-26
-thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-express-thumbnail.png"
+thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-08-19-serverless-framework-knative-component/serverless-knative.png"
 authors:
   - AustenCollins
 category:
@@ -16,6 +16,9 @@ While every organization wants to reduce operational cost, many are unable to us
 To solve this, many have been innovating open-source serverless platforms since 2016, as an alternative option.  Some of these are Apache OpenWhisk, Kubeless, and more recently Knative.  These platforms offer similar auto-scaling characteristics, different functionality and make self-hosting their environment possible.  Additionally, they all run on Kubernetes and are a great fit for organizations that leverage Kubernetes already.
 
 The Serverless Framework has integrated with almost all open-source serverless platforms, since their beginning, to offer developers a single, easy way to build serverless apps, regardless of whether they are hosted on self-hosted or hosted serverless services.
+
+![Serverless Framework Knative Component](
+https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-08-19-serverless-framework-knative-component/serverless-knative.png)
 
 Today, the Serverless Framework is improving its support for Knative with the first official Knative Serverless Framework Component.  This Component, developed in collaboration with Red Hat, can deploy and manage containerized applications on serverless Knative infrastructure easily, cheaply and scale massively, all via the Serverless Framework.
 
