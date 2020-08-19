@@ -41,4 +41,4 @@ The mode is autodetected from the connected cluster. OpenShift mode is used by d
 
 Check out the [Serverless Framework Knative Component](https://github.com/serverless-components/knative) to get started.
 
-* [Learn more on the RedHat Blog](www.openshift.com/blog/openshift-serverless-serverless-framework-component)
+* [Learn more on the RedHat Blog](https://www.openshift.com/blog/openshift-serverless-serverless-framework-component)
