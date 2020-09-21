@@ -41,4 +41,4 @@ At the same time, we have decided to adopt true [semantic versioning](https://se
 
 As always, many thanks to our community for their continued support.  Continue making amazing serverless applications!
 
-* [Learn more about the V2 release here](https://github.com/serverless/serverless/releases/tag/v2.0.0)
+[Learn more about the V2 release here](https://github.com/serverless/serverless/releases/tag/v2.0.0)
