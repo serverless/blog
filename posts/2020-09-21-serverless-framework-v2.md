@@ -41,12 +41,4 @@ At the same time, we have decided to adopt true [semantic versioning](https://se
 
 As always, many thanks to our community for their continued support.  Continue making amazing serverless applications!
 
-
-
-We try to reduce churn i open-source.
-
-
-
-
-
-* [Learn more on the RedHat Blog](https://www.openshift.com/blog/openshift-serverless-serverless-framework-component)
+* [Learn more about the V2 release here](https://github.com/serverless/serverless/releases/tag/v2.0.0)
