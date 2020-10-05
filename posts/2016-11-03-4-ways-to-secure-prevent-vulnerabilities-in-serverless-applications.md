@@ -1,14 +1,14 @@
 ---
 title: 4 Ways to Secure & Prevent Vulnerabilities in Serverless Applications using Snyk
-description: "Using Serverless is a boon for security, as it greatly reduces the risk of unpatched servers. In this environment, vulnerable open source packages become the primary security risk. The new Serverless Snyk plugin addresses this issue."
+description: "The new Serverless Snyk plugin scans vulnerable open source packages and alerts of potential security risks."
 date: 2016-11-03
-thumbnail: 'http://res.cloudinary.com/snyk/image/upload/w_400/v1468845258/logo/snyk-avatar.png'
+thumbnail: 'https://res.cloudinary.com/snyk/image/upload/w_400/v1468845258/logo/snyk-avatar.png'
 layout: Post
 authors:
   - TimKadlec
 ---
 
-<img align="right" width="150" height="150" src="http://res.cloudinary.com/snyk/image/upload/w_400/v1468845258/logo/snyk-avatar.png">Serverless is a powerful new approach that enables developers to focus on building features instead of having to focus on the underlying architecture.
+<img align="right" width="150" height="150" src="https://res.cloudinary.com/snyk/image/upload/w_400/v1468845258/logo/snyk-avatar.png">Serverless is a powerful new approach that enables developers to focus on building features instead of having to focus on the underlying architecture.
 
 From a security perspective, it greatly reduces the risk of security issues due to unpatched servers. But it doesn't totally eliminate the risk. In serverless architectures vulnerable open source packages become the primary security risk.
 
@@ -21,7 +21,7 @@ Many of these open source packages are downloaded millions of time each month, m
 The new [Serverless Snyk plugin](https://github.com/Snyk/serverless-snyk) was created to address these issues allowing you to ship securely and focus on building your app.
 
 ## The Serverless Snyk Plugin
-![Screenshot of the Serverless Snyk plugin in action](http://res.cloudinary.com/snyk/image/upload/c_scale,w_900/v1478099693/serverless-snyk-screenshot.png)
+![Screenshot of the Serverless Snyk plugin in action](https://res.cloudinary.com/snyk/image/upload/c_scale,w_900/v1478099693/serverless-snyk-screenshot.png)
 
 The [Serverless Snyk plugin](https://github.com/snyk/serverless-snyk) helps to prevent vulnerable packages in your Serverless application, using [Snyk.io](https://snyk.io).
 
@@ -34,7 +34,7 @@ With the Serverless Snyk plugin installed, each time you deploy the plugin will 
 With Snyk [GitHub integration](https://snyk.io/docs/github?utm_source=SLESSPOST) a PR can be submitted to your repository with any updates or patches needed to secure your application. You can also fix the issues by installing and running `snyk wizard` locally. In either case, Snyk will create a `.snyk` policy file to help guide future Snyk commands. If the Serverless Snyk plugin sees that you have a policy file in place before your application is deployed it will apply any of the updates and patches you have specified by [running `snyk protect`](https://snyk.io/docs/using-snyk?utm_source=SLESSPOST#protect).
 
 ### 3. Prevent
-Security is a continous process. As your application continues to evolve the dependencies it uses may change. Snyk runs everytime you deploy to help identify and preemptively fix any new vulnerabilities.
+Security is a continuous process. As your application continues to evolve the dependencies it uses may change. Snyk runs everytime you deploy to help identify and preemptively fix any new vulnerabilities.
 
 ### 4. Respond
 You're given an API token when you sign up for Snyk. By including the API token in your Serverless project (using a `.env` file to ensure it's not mistakenly published), the Serverless Snyk plugin will take a snapshot of the current state of your dependencies and save it to your account. Whenever a new vulnerability is released that impacts your application, Snyk will notify you, and anyone else in your Snyk organization, by email or Slack so you can address the issue right away.

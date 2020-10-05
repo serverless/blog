@@ -4,6 +4,8 @@ title: 'Building A Better Australian Census Website with Serverless Architecture
 date: 2016-09-20
 description: "Two students built an alternative Australian Bureau of Statistics Census website for $10 million less than the Australian government"
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/austrialia.png
+authors:
+  - StefanieMonge
 ---
 
 Austin Wilshire and Bernd Hartzer [received world-wide attention](http://www.dailymail.co.uk/news/article-3742618/Two-university-students-just-54-hours-build-Census-website-WORKS-10-MILLION-ABS-disastrous-site.html) in August when they built an alternative Australian Bureau of Statistics Census website for $10 million less than the Australian government.
@@ -26,11 +28,11 @@ The kicker? The official ABS site crashed almost immediately after launching. Wh
 
 **AW:**  It crashed pretty much straight away. The government tried blaming it on DoS attacks, but they only tested for like one million requests per hour. They didn’t go higher than that and so I’m pretty sure what happened is just a bunch of people went on after dinner and the servers fell over.
 
-**AC:**  To me, this is like a classic story. You here about this stuff all the time. The government grossly overpays for some sort of simple solution. It goes totally wrong and crashes. Didn’t even sound like anything unexpected, really. But from what I’ve read, they’re doing the Australian census, and this happens … how frequently does this happen, every six years or four years?
+**AC:**  To me, this is like a classic story. You hear about this stuff all the time. The government grossly overpays for some sort of simple solution. It goes totally wrong and crashes. Didn’t even sound like anything unexpected, really. But from what I’ve read, they’re doing the Australian census, and this happens … how frequently does this happen, every six years or four years?
 
 **AW:**  Every five years, I’m pretty sure.
 
-**AC:**  Okay. Every five years. What I read was that 16 million Australians were expected to complete the census entirely online, and so they spent over $9,00,000 creating this website so that they could collect the census information. I also read that they spent over $400,000 on load testing alone. So four hundred grand on just load testing, making sure that it could perform at scale. They said that servers were load tested at a 150% of expected usage levels, but all the money spent, after all the testing done, servers crashed in the evening and everyone was sort of erroring out when they were trying to complete their information. As of today, I think the census was … let’s see. What day is this? This is the 18th. The census was, what day was it Austin? It was like the 8th?
+**AC:**  Okay. Every five years. What I read was that 16 million Australians were expected to complete the census entirely online, and so they spent over $9,000,000 creating this website so that they could collect the census information. I also read that they spent over $400,000 on load testing alone. So four hundred grand on just load testing, making sure that it could perform at scale. They said that servers were load tested at a 150% of expected usage levels, but all the money spent, after all the testing done, servers crashed in the evening and everyone was sort of erroring out when they were trying to complete their information. As of today, I think the census was … let’s see. What day is this? This is the 18th. The census was, what day was it Austin? It was like the 8th?
 
 **AW:**  Yeah, I think so, yeah 8th, last week, Tuesday.
 

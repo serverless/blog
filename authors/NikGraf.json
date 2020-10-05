@@ -1,0 +1,12 @@
+{
+  "name": "Nik Graf",
+  "github": "nikgraf",
+  "twitter": "nikgraf",
+  "site": "https://serverless.com/",
+  "avatar": "https://avatars.githubusercontent.com/nikgraf?v=3&s=140",
+  "bio": {
+    "short": "Nik Graf is lead front-end engineer at Serverless.",
+    "long":
+      "Nik Graf, lead front-end engineer at Serverless, is passionate about software architeture, WebVR, ReasonML, UX, skiing and triathlons."
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Stefanie Monge",
+  "github": "stefmonge",
+  "twitter": "stefaniemonge",
+  "site": "https://serverless.com/blog/",
+  "avatar": "https://avatars.githubusercontent.com/stefmonge?v=3&s=140",
+  "bio": {
+    "short": "Stefanie Monge is a content strategist and event producer at Serverless, Inc.",
+    "long":
+      "Stefanie Monge manages the Serverless blog and global Meetups program. She works with the Serverless team and contributors to cultivate and share stories about serverless architectures and the people who build them."
+    }
+}

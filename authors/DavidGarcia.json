@@ -1,0 +1,12 @@
+{
+  "name": "David García",
+  "github": "davidgf",
+  "twitter": "da_vidgf",
+  "site": "https://www.linkedin.com/in/davidgarciafdz/",
+  "avatar": "https://avatars2.githubusercontent.com/u/1116005",
+  "bio": {
+    "short": "David García is a Solutions Architect consultant.",
+    "long":
+      "David García is a Cloud Solutions Architect, specializing in the AWS ecosystem. Since he met JAWS (currently Serverless), he's only seen cloud applications as a flow of events."
+  }
+}

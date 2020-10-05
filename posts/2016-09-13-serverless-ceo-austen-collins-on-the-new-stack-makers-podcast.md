@@ -1,8 +1,11 @@
 ---
 layout: Post
 title: 'Serverless CEO Austen Collins on The New Stack Makers Podcast'
+description: "Austen talks about the Serverless Framework and the important role our open source community plays in shaping it"
 date: 2016-09-13
 thumbnail: https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/newstack.png
+authors:
+  - StefanieMonge
 ---
 
 _Serverless Inc. CEO and founder [Austen Collins](https://twitter.com/austencollins) was recently featured on the [The New Stack Makers podcast](http://thenewstack.io/tag/the-new-stack-makers/) hosted by [Kiran Oliver](https://twitter.com/koliver_writes). In this episode titled [“How the Serverless Framework is Reshaping AWS Lambda”](http://thenewstack.io/how-serverless-is-reshaping-aws-lambda/) Austen talks about the Serverless Framework and the important role our open source community plays in shaping it. Listen to the conversation [on SoundCloud](https://soundcloud.com/thenewstackmakers/how-serverless-is-reshaping-aws-lambda) or check out the transcript below._

@@ -1,0 +1,11 @@
+{
+  "name": "Carlos Castellanos",
+  "github": "ccverak",
+  "twitter": "ccverak",
+  "avatar": "https://avatars2.githubusercontent.com/u/1001834?v=3&s=140",
+  "bio": {
+    "short": "Carlos Castellanos is a software developer at microapps.com",
+    "long":
+      "Carlos Castellanos is a software developer at microapps.com. He works on the team in charge of building and maintaining MoonMail — an email marketing platform powered by Amazon SES and Serverless framework."
+  }
+}

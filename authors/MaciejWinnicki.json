@@ -1,0 +1,11 @@
+{
+  "name": "Maciej Winnicki",
+  "github": "mthenw",
+  "twitter": "mthenw",
+  "site": "https://serverless.com/",
+  "avatar": "https://avatars.githubusercontent.com/mthenw?v=3&s=140",
+  "bio": {
+    "short": "Maciej Winnicki is a principal software engineer at Serverless, Inc.",
+    "long": "Maciej Winnicki is a principal software engineer at Serverless Inc. He works on the Event Gateway that helps developers build event-driven serverless architectures."
+  }
+}

@@ -1,15 +1,24 @@
 {
   "name": "serverless-blog",
   "version": "1.0.0",
-  "description": "Serverless blog content",
+  "description": "Serverless.com blog content",
+  "scripts": {
+    "docs": "md-magic --path 'README.md' --ignore 'node_modules'",
+    "md": "md-magic --path '**/*.md' --ignore 'node_modules'",
+    "test": "node validate.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/serverless/blog.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Serverless Inc",
   "bugs": {
     "url": "https://github.com/serverless/blog/issues"
   },
-  "homepage": "https://serverless.com/blog"
+  "homepage": "https://serverless.com/blog",
+  "devDependencies": {},
+  "dependencies": {
+    "gray-matter": "^4.0.2",
+    "markdown-magic": "^0.1.25"
+  }
 }

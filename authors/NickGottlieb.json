@@ -1,0 +1,12 @@
+{
+  "name": "Nick Gottlieb",
+  "github": "worldsoup",
+  "twitter": "worldsoup",
+  "site": "https://serverless.com",
+  "avatar": "https://avatars1.githubusercontent.com/u/1475986?v=3&s=140",
+  "bio": {
+    "short": "Nick Gottlieb is VP of Growth at Serverless",
+    "long":
+      "Nick is passionate about understanding and solving complex problems for software development teams. Prior to joining Serverless he was in charge of scaling growth at CircleCI and helped to design and build early versions of CircleCI Enterprise."
+  }
+}

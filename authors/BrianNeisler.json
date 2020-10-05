@@ -1,0 +1,12 @@
+{
+  "name": "Brian Neisler",
+  "github": "brianneisler",
+  "twitter": "brianneisler",
+  "site": "https://serverless.com/",
+  "avatar": "https://avatars.githubusercontent.com/brianneisler?v=3&s=140",
+  "bio": {
+    "short": "Brian Neisler is a product manager at Serverless, Inc.",
+    "long":
+      "Brian Neisler is a product manager at Serverless, Inc. where he focuses on driving product direction while actively trying to simplify the serverless world."
+    }
+}

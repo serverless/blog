@@ -1,0 +1,12 @@
+{
+  "name": "Chris Anderson",
+  "github": "jchris",
+  "twitter": "jchris",
+  "site": "https://fauna.com/",
+  "avatar": "https://avatars.githubusercontent.com/jchris?v=3&s=140",
+  "bio": {
+    "short": "Chris Anderson is Director of Developer Experience at Fauna.",
+    "long":
+      "Chris Anderson is obsessed with bending the physics of the web to give control back to users. Based in Portland, he's the Director of Developer Experience at Fauna."
+    }
+}

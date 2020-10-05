@@ -1,0 +1,11 @@
+{
+  "name": "Alex DeBrie",
+  "github": "alexdebrie",
+  "twitter": "alexbdebrie",
+  "avatar": "https://avatars3.githubusercontent.com/u/6509926?v=3&s=140",
+  "bio": {
+    "short": "Alex DeBrie is a data engineer at Serverless.",
+    "long":
+      "Alex is a data engineer at Serverless. He is an ex-lawyer who loves Python, basketball, and his family."
+  }
+}

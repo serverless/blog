@@ -1,0 +1,12 @@
+{
+  "name": "Jared Short",
+  "github": "shortjared",
+  "twitter": "shortjared",
+  "site": "http://jaredshort.com",
+  "avatar": "https://s.gravatar.com/avatar/be2a62743ef8bbbcb96d912c3faf9327?s=512",
+  "bio": {
+    "short": "Jared Short is the Head of Developer Relations and Experience at Serverless, Inc.",
+    "long":
+      "Jared Short, Head of Developer Relations and Experience at Serverless, Inc., and is based in Washington, DC. He comes to the company with a strong background in and building, operating and maintaining serverless and event-driven systems."
+    }
+}

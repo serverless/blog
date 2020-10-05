@@ -1,7 +1,12 @@
 ---
 title: Beginning Serverless Framework V.1
+description: 'How startups to large enterprises, are using serverless to develop and deploy serverless, event-driven architectures on AWS Lambda'
 date: 2016-05-25
 layout: Post
+category:
+  - user-stories
+authors:
+  - PhilippMuns
 ---
 
 ![building_version_1](https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/blog/legacy/2016/05/building_version_1.gif) The goal of the [Serverless Framework](https://www.github.com/serverless/serverless) (formerly “JAWS”) is to help developers build and operate serverless architectures. In less than a year it has garnered almost 9,000 Github stars and hundreds of companies, from startups to large enterprises, are using it to develop and deploy serverless, event-driven architectures on AWS Lambda and AWS API Gateway.  Overall, it’s been an extraordinary ride. Meanwhile, the landscape is changing. AWS Lambda is improving and evolving. Other IaaS providers are introducing their own serverless offerings. As a result, best practices and the underlying definition of the “serverless architecture” is shifting. It’s time to recap our observations, acknowledge our key learnings, and begin work on a better, bolder Serverless Framework V.1.

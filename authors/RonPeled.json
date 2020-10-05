@@ -1,0 +1,12 @@
+{
+  "name": "Ron Peled",
+  "github": "",
+  "twitter": "",
+  "website": "https://www.linkedin.com/in/ronpeled/",
+  "avatar": "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/authors/Ron-Peled-Facepic.jpg",
+  "bio": {
+    "short": "Ron is founder and CEO of Sqquid, a channel management and order fulfillment company for small and mid-size retailers.",
+    "long":
+      "Ron has over 15 years of experience in ecommerce, with 7 years as CTO. He started Sqquid two years ago, which specializes in channel management & order fulfillment for retailers that have 1-100 store locations. Ron also keeps the fire burning by mentoring & coaching other CTOs."
+  }
+}

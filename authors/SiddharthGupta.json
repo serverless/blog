@@ -1,0 +1,12 @@
+{
+  "name": "Siddharth Gupta",
+  "github": "sid88in",
+  "twitter": "sidg_sid",
+  "site": "https://www.linkedin.com/in/sid88in/",
+  "avatar": "https://avatars.githubusercontent.com/sid88in?v=3&s=140",
+  "bio": {
+    "short": "Sid Gupta is Lead Data Engineer at Glassdoor.",
+    "long":
+    "Sid, Lead Data Engineer at Glassdoor, is passionate about #life #love #dreams #bigdata #serverless #graphql. He is a big advocate of open-source and has contributed to serverless (appsync plugin), graphql, airflow and superset."
+  }
+}

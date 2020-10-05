@@ -1,0 +1,59 @@
+---
+title: "Serverless Framework v1.36: Bug fixes and quality of life improvements for all!"
+description: "Check out the latest Serverless Framework v1.36 release, bug fixes and quality of life improvements for all!"
+date: 2019-01-09
+thumbnail: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v136-thumb.png'
+heroImage: 'https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/framework-updates/framework-v136-header.svg'
+category:
+  - news
+authors: 
+  - JaredShort
+---
+
+Let's bring 2019 in right. New year, new Framework release!
+
+Framework v1.36 focuses heavily on bug fixes and Framework enhancements and documentation.
+
+Check below for the full list, or jump to the bottom for our [Framework roadmap](#roadmap-and-focus).
+
+#### Enhancements
+
+- [#5312](https://github.com/serverless/serverless/pull/5312) Handle scoped npm packages (specifically the `@`) in variables<a href="https://github.com/serverless/serverless/pull/5312/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+51</span>/<span style="color:#cb2431">-34</span></a><a href="https://github.com/Limess"> <img style="vertical-align: middle" src='https://avatars1.githubusercontent.com/u/3199181?v=4' alt='' height="20px"> Limess</a>
+- [#5601](https://github.com/serverless/serverless/pull/5601) Added currently supported regions for GCP functions<a href="https://github.com/serverless/serverless/pull/5601/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+7</span>/<span style="color:#cb2431">-0</span></a><a href="https://github.com/welkie"> <img style="vertical-align: middle" src='https://avatars1.githubusercontent.com/u/7719209?v=4' alt='' height="20px"> welkie</a>
+- [#5604](https://github.com/serverless/serverless/pull/5604) feat(log): Log AWS SDK calls in debug mode<a href="https://github.com/serverless/serverless/pull/5604/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+20</span>/<span style="color:#cb2431">-0</span></a><a href="https://github.com/jlamande"> <img style="vertical-align: middle" src='https://avatars0.githubusercontent.com/u/45306929?v=4' alt='' height="20px"> jlamande</a>
+- [#5607](https://github.com/serverless/serverless/pull/5607) Issue #5502 Support for native async/await in AWS Lambda for aws-nodejs-typescript template <a href="https://github.com/serverless/serverless/pull/5607/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+7</span>/<span style="color:#cb2431">-4</span></a><a href="https://github.com/janvanzoggel"> <img style="vertical-align: middle" src='https://avatars1.githubusercontent.com/u/8875700?v=4' alt='' height="20px"> janvanzoggel</a>
+- [#5620](https://github.com/serverless/serverless/pull/5620) Issue #5619 - Update Cloudflare Templates<a href="https://github.com/serverless/serverless/pull/5620/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+1654</span>/<span style="color:#cb2431">-1654</span></a><a href="https://github.com/benwillkommen"> <img style="vertical-align: middle" src='https://avatars1.githubusercontent.com/u/1740336?v=4' alt='' height="20px"> benwillkommen</a>
+- [#5631](https://github.com/serverless/serverless/pull/5631) change behaviour on initial stack create failed<a href="https://github.com/serverless/serverless/pull/5631/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+7</span>/<span style="color:#cb2431">-1</span></a><a href="https://github.com/Imran99"> <img style="vertical-align: middle" src='https://avatars2.githubusercontent.com/u/2307325?v=4' alt='' height="20px"> Imran99</a>
+- [#5635](https://github.com/serverless/serverless/pull/5635) AWS: Validate rate/cron syntax before Deploy<a href="https://github.com/serverless/serverless/pull/5635/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+163</span>/<span style="color:#cb2431">-15</span></a><a href="https://github.com/exoego"> <img style="vertical-align: middle" src='https://avatars2.githubusercontent.com/u/127635?v=4' alt='' height="20px"> exoego</a>
+- [#5638](https://github.com/serverless/serverless/pull/5638) Add warning for multiple functions having same handler<a href="https://github.com/serverless/serverless/pull/5638/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+63</span>/<span style="color:#cb2431">-0</span></a><a href="https://github.com/exoego"> <img style="vertical-align: middle" src='https://avatars2.githubusercontent.com/u/127635?v=4' alt='' height="20px"> exoego</a>
+- [#5639](https://github.com/serverless/serverless/pull/5639) AWS: Add API Gateway stage name validation.<a href="https://github.com/serverless/serverless/pull/5639/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+63</span>/<span style="color:#cb2431">-0</span></a><a href="https://github.com/exoego"> <img style="vertical-align: middle" src='https://avatars2.githubusercontent.com/u/127635?v=4' alt='' height="20px"> exoego</a>
+
+
+#### Bug fixes
+
+- [#5378](https://github.com/serverless/serverless/pull/5378) Fix error log output<a href="https://github.com/serverless/serverless/pull/5378/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+19</span>/<span style="color:#cb2431">-2</span></a><a href="https://github.com/medikoo"> <img style="vertical-align: middle" src='https://avatars3.githubusercontent.com/u/122434?v=4' alt='' height="20px"> medikoo</a>
+- [#5411](https://github.com/serverless/serverless/pull/5411) aws-csharp create template uses handler-specific artifact<a href="https://github.com/serverless/serverless/pull/5411/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+10</span>/<span style="color:#cb2431">-7</span></a><a href="https://github.com/odedniv"> <img style="vertical-align: middle" src='https://avatars3.githubusercontent.com/u/894198?v=4' alt='' height="20px"> odedniv</a>
+- [#5554](https://github.com/serverless/serverless/pull/5554) Fix ResourceLimitExceeded for cloudwatchLog event<a href="https://github.com/serverless/serverless/pull/5554/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+273</span>/<span style="color:#cb2431">-12</span></a><a href="https://github.com/rdsedmundo"> <img style="vertical-align: middle" src='https://avatars2.githubusercontent.com/u/5482378?v=4' alt='' height="20px"> rdsedmundo</a>
+- [#5650](https://github.com/serverless/serverless/pull/5650) AWS: Fix ${cf.REGION} syntax causes deployment in wrong region<a href="https://github.com/serverless/serverless/pull/5650/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+4</span>/<span style="color:#cb2431">-1</span></a><a href="https://github.com/exoego"> <img style="vertical-align: middle" src='https://avatars2.githubusercontent.com/u/127635?v=4' alt='' height="20px"> exoego</a>
+- [#5651](https://github.com/serverless/serverless/pull/5651) Cloudflare config should be under provider property<a href="https://github.com/serverless/serverless/pull/5651/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+9</span>/<span style="color:#cb2431">-9</span></a><a href="https://github.com/webmasterkai"> <img style="vertical-align: middle" src='https://avatars0.githubusercontent.com/u/969456?v=4' alt='' height="20px"> webmasterkai</a>
+
+#### Documentation
+
+- [#5437](https://github.com/serverless/serverless/pull/5437) Update http.md<a href="https://github.com/serverless/serverless/pull/5437/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+1</span>/<span style="color:#cb2431">-1</span></a><a href="https://github.com/devWebNuts"> <img style="vertical-align: middle" src='https://avatars1.githubusercontent.com/u/32446540?v=4' alt='' height="20px"> devWebNuts</a>
+- [#5613](https://github.com/serverless/serverless/pull/5613) AWS Docs: Fixing link for HTTP Endpoints with AWS_IAM..<a href="https://github.com/serverless/serverless/pull/5613/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+1</span>/<span style="color:#cb2431">-1</span></a><a href="https://github.com/Murraymint1804"> <img style="vertical-align: middle" src='https://avatars3.githubusercontent.com/u/23333380?v=4' alt='' height="20px"> Murraymint1804</a>
+- [#5618](https://github.com/serverless/serverless/pull/5618) updating with more detail about service tracking<a href="https://github.com/serverless/serverless/pull/5618/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+38</span>/<span style="color:#cb2431">-16</span></a><a href="https://github.com/thomcrowe"> <img style="vertical-align: middle" src='https://avatars1.githubusercontent.com/u/7960458?v=4' alt='' height="20px"> thomcrowe</a>
+- [#5623](https://github.com/serverless/serverless/pull/5623) Update credentials.md<a href="https://github.com/serverless/serverless/pull/5623/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+1</span>/<span style="color:#cb2431">-1</span></a><a href="https://github.com/rosner"> <img style="vertical-align: middle" src='https://avatars2.githubusercontent.com/u/792045?v=4' alt='' height="20px"> rosner</a>
+- [#5625](https://github.com/serverless/serverless/pull/5625) Add step to populate ~/.wskprops file to OpenWhisk docs.<a href="https://github.com/serverless/serverless/pull/5625/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+15</span>/<span style="color:#cb2431">-3</span></a><a href="https://github.com/welkie"> <img style="vertical-align: middle" src='https://avatars1.githubusercontent.com/u/7719209?v=4' alt='' height="20px"> welkie</a>
+- [#5627](https://github.com/serverless/serverless/pull/5627) update layers doc to reflect max of 5<a href="https://github.com/serverless/serverless/pull/5627/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+2</span>/<span style="color:#cb2431">-2</span></a><a href="https://github.com/dschep"> <img style="vertical-align: middle" src='https://avatars0.githubusercontent.com/u/667763?v=4' alt='' height="20px"> dschep</a>
+- [#5628](https://github.com/serverless/serverless/pull/5628) Add Ruby to supported languages in README.md<a href="https://github.com/serverless/serverless/pull/5628/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+1</span>/<span style="color:#cb2431">-1</span></a><a href="https://github.com/dbw03135"> <img style="vertical-align: middle" src='https://avatars1.githubusercontent.com/u/18095759?v=4' alt='' height="20px"> dbw03135</a>
+- [#5659](https://github.com/serverless/serverless/pull/5659) direct link to video guide<a href="https://github.com/serverless/serverless/pull/5659/files?utf8=✓&diff=split" style="text-decoration:none;"><span style="color:#28a647">+1</span>/<span style="color:#cb2431">-1</span></a><a href="https://github.com/dschep"> <img style="vertical-align: middle" src='https://avatars0.githubusercontent.com/u/667763?v=4' alt='' height="20px"> dschep</a>
+
+#### Roadmap and focus
+
+We will continue to focus on tackling the backlog, bug fixes and quality of life improvements for the next release.
+
+A common request has been Amazon API Gateway v2 and its WebSockets, as well as Application Load Balancer AWS Lambda targets. While we have implemented WebSocket support [via a plugin](https://github.com/serverless/serverless-websockets-plugin), the core Serverless Framework support for both these requests will be introduced when CloudFormation officially supports them.
+
+#### Contributor thanks
+
+As always, we appreciate each and every one of you that use and contribute to the Framework and Serverless ecosystem!
