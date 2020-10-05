@@ -227,7 +227,7 @@ service: serverless-notifications
 
 provider:
   name: aws
-  runtime: nodejs4.3
+  runtime: nodejs12.x
   stage: dev
   region: us-east-1
   iamRoleStatements:
@@ -273,7 +273,7 @@ const roleName = 'serverless-notifications';
 module.exports.auth = (event, context, callback) => {
 
     // get the endpoint address
-    iot.describeEndpoint({}, (err, data) => {
+    iot.describeEndpoint({ endpointType: 'iot:Data-ATS' }, (err, data) => {
         if (err) return callback(err);
 
         const iotEndpoint = data.endpointAddress;
