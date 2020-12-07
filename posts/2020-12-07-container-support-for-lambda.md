@@ -38,7 +38,9 @@ One of the great selling points of Serverless development is that you can spit o
 #### Building our docker container for Lambda
 
 Now with all the caveats and background out of the way, let's get down to the nuts and bolts of actually building our container solution. And to start, let's get a small list of requirements out of the way:
+
 1. Ensure Docker CLI is installed: (https://docs.docker.com/get-docker/)[https://docs.docker.com/get-docker/]
+
 2. Ensure AWS CLI is installed: (https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)[https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html]
 
 We need to use Docker itself to prepare the docker container and then the AWS CLI to push our newly minted container to AWS’s ECR service for use in Lambda, Then it's just a case of following the steps below.
