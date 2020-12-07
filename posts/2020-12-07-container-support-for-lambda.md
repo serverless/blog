@@ -1,7 +1,7 @@
 ---
 title: Container Image Support for AWS Lambda
 description: "Container Image Support for AWS Lambda has now been added. Read up on why you may (or may not) want to use it and how easy it is to use with the framework"
-date: 2020-05-26
+date: 2020-12-27
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/lambda-docker-support/serverless-framework-docker.png"
 authors:
   - GarethMcCumskey

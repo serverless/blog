@@ -1,8 +1,6 @@
 [
-  "serverless-framework-v2",
+  "container-support-for-lambda",
   "serverless-express-apis-aws-lambda-http-api",
   "serverless-components-ga",
-  "official-guide-aws-http-apis",
-  "announcement-cicd",
-  "troubleshoot-serverless-apis"
+  "official-guide-aws-http-apis"
 ]
