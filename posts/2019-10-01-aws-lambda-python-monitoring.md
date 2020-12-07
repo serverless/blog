@@ -16,7 +16,7 @@ The Serverless Framework has amazing [monitoring](https://serverless.com/monitor
 
 Python is the second most popular runtime for building serverless architectures, making up over 20% of applications built using the Serverless Framework. Considering that AWS Lambda started as Javascript-only, it is impressive that Python has been able to get so much traction amongst Serverless Framework developers.
 
-If you want to configure free monitoring and alerts for your Serverless Python project you can get started now [here](https://dashboard.serverless.com/). 
+If you want to configure free monitoring and alerts for your Serverless Python project you can get started now [here](https://app.serverless.com/). 
 
 Let’s have a look at some of the great things you get as a Python developer using the Serverless Dashboard.
 
@@ -58,7 +58,7 @@ While I have shown you the monitoring features that the Serverless Dashboard now
 #### Get started with zero configuration
 You can enable all of these powerful features without having to instrument your code or configure anything. This all works out of the box when you enable the Serverless Dashboard. Here is how you get started...
 
-If you are new to Serverless Framework install it with `npm install serverless --global`. While the framework uses Node & NPM to install, it still supports Python as a runtime. If you don’t have a Serverless Dashboard account, register at https://dashboard.serverless.com/ and then login in the CLI with `serverless login`.
+If you are new to Serverless Framework install it with `npm install serverless --global`. While the framework uses Node & NPM to install, it still supports Python as a runtime. If you don’t have a Serverless Dashboard account, register at https://app.serverless.com/ and then login in the CLI with `serverless login`.
 
 If you are new to the Serverless Framework, run `serverless` and select `AWS Python`. If you have an existing Python Serverless Framework project, run `serverless` in the directory containing your `serverless.yml` file. This will make sure all the requirements are met, and then update your `serverless.yml` to include `org` and `app` from your Dashboard.
 
