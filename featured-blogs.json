@@ -1,8 +1,6 @@
 [
+  "container-support-for-lambda",,
   "serverless-express-apis-aws-lambda-http-api",
   "serverless-components-ga",
-  "official-guide-aws-http-apis",
-  "announcement-cicd",
-  "troubleshoot-serverless-apis",
-  "reinvent-2019-serverless-announcements"
+  "official-guide-aws-http-apis"
 ]
