@@ -12,7 +12,7 @@ category:
 
 # Announcing Serverless CI/CD
 
-Today we are excited to announce the general availability of Serverless CI/CD in Serverless Framework Pro. Serverless CI/CD is a continuous integration and deployment service you can use for free by [signing up for a Serverless Framework Pro account](https://dashboard.serverless.com) and following the [getting started guide](https://serverless.com/framework/docs/dashboard/cicd#getting-started-in-3-steps).
+Today we are excited to announce the general availability of Serverless CI/CD in Serverless Framework Pro. Serverless CI/CD is a continuous integration and deployment service you can use for free by [signing up for a Serverless Framework Pro account](https://app.serverless.com) and following the [getting started guide](https://serverless.com/framework/docs/dashboard/cicd#getting-started-in-3-steps).
 
 We built Serverless CI/CD because serverless developers need a CI/CD service optimized for serverless workflows. As developers, we want to focus on developing and deploying often, but too much time is spent on managing the CI/CD pipeline.
 
@@ -48,7 +48,7 @@ In a microservices architecture we end up with many serverless.yml files in a si
 
 You’ll need a Serverless Framework Pro account, so sign-up for a free account now.
 
-[Sign-up for free Serverless Framework Pro account](https://dashboard.serverless.com/)
+[Sign-up for free Serverless Framework Pro account](https://app.serverless.com/)
 
 Before you get started, you’ll need an AWS Account, Github repo with an existing Serverless Framework project, and permissions on your Github organization to install the Serverless Framework Pro app.
 

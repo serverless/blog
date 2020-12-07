@@ -20,7 +20,7 @@ Because of this, we're excited to announce newly released monitoring and debuggi
 First, make sure you've already done a few things:
 
 - Installed the Serverless Framework `npm install -g serverless`
-- Created a free [Framework Pro](https://dashboard.serverless.com/) account
+- Created a free [Framework Pro](https://app.serverless.com/) account
 
 After this, you should be able to create an HTTP API pretty easily.
 
@@ -80,7 +80,7 @@ When you load it up in the browser you should see this:
 
 ![Text saying hello friends, in a web browser](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-04-http-api-monitoring/hello-friends.png)
 
-After you refresh the page a few times, open up your [Framework Pro Dashboard](http://dashboard.serverless.com/) and navigate to your app and service. You should now see the recent logs:
+After you refresh the page a few times, open up your [Framework Pro Dashboard](http://app.serverless.com/) and navigate to your app and service. You should now see the recent logs:
 
 ![The Framework Pro Overview section](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-04-http-api-monitoring/hello-explorer.png)
 

@@ -14,7 +14,7 @@ authors:
 
 You may have seen recent news that IOpipe was acquired by New Relic. As part of that process, IOpipe customers have to make changes in the next 30 days to get any form of monitoring on their applications before New Relic sunsets the old product. 
 
-So what better time to try the [Serverless Dashboard](http://dashboard.serverless.com) for free? You'll get automatically-instrumented monitoring that requires no changes to your current function code along with CI/CD, deployment safeguards and more. 
+So what better time to try the [Serverless Dashboard](http://app.serverless.com) for free? You'll get automatically-instrumented monitoring that requires no changes to your current function code along with CI/CD, deployment safeguards and more. 
 
 With a quick account sign up and a two line change to your existing `serverless.yml` file you can setup monitoring (and other features!) for all your Serverless Framework services written in Node or Python for AWS.
 
@@ -30,7 +30,7 @@ I'm going to assume that:
 
 ## Step 1 - Signing Up for Serverless Framework Pro (For Free!)
 
-Serverless Framework Pro is free to use for up to a million monthly Lambda function invocations. Just create a dashboard account [here](http://dashboard.serverless.com).
+Serverless Framework Pro is free to use for up to a million monthly Lambda function invocations. Just create a dashboard account [here](http://app.serverless.com).
 
 During the account creation process all you need to do is create an `app` and call it something related to the services you're trying to instrument. As part of this process you'll also create an `org` but more on that in a moment.
 
@@ -47,7 +47,7 @@ An `org` is an organization that your applications and services are contained wi
 
 The `app` is the applications that your services will be contained within. This might be a particular new product, or services that are somewhat related to each other. But think of this as an easy way to group Serverless Framework services together in a logical way. 
 
-You will need to replace `theorgname` above with the name of your organization. To get that value you can click the upper right dropdown menu in the [Serverless Dashboard](https://dashboard.serverless.com/) and look for the value listed under "Current Org". You can also check the URL bar when signed into the dashboard and you should see the organization name right after `/tenants/` in the URL.
+You will need to replace `theorgname` above with the name of your organization. To get that value you can click the upper right dropdown menu in the [Serverless Dashboard](https://app.serverless.com/) and look for the value listed under "Current Org". You can also check the URL bar when signed into the dashboard and you should see the organization name right after `/tenants/` in the URL.
 
 To get the app name, you can either use the name of the application you just created in Step 1 or you can create a new one with a name to match whatever application you're about to deploy.
 
@@ -61,7 +61,7 @@ When running `serverless deploy` don't be alarmed if you see a few new outputs o
 
 ## Step 4 - Monitor Your Service
 
-Then just test your function with [`serverless invoke`](https://serverless.com/framework/docs/providers/aws/cli-reference/invoke/) or something like [Postman](https://www.getpostman.com/) to test out HTTP API endpoints. Once you fire off your first invocation after this new deployment just open up the [Serverless Dashboard](http://dashboard.serverless.com) and review the function.
+Then just test your function with [`serverless invoke`](https://serverless.com/framework/docs/providers/aws/cli-reference/invoke/) or something like [Postman](https://www.getpostman.com/) to test out HTTP API endpoints. Once you fire off your first invocation after this new deployment just open up the [Serverless Dashboard](http://app.serverless.com) and review the function.
 
 Navigate into the application you just deployed your service in (the `app` value). You can do this by clicking on the tile for that application. For example - the `backup-app` in this screenshot:
 

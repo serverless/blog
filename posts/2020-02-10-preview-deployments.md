@@ -58,11 +58,11 @@ Because these resources are all spun up automatically by opening the PR, there's
 
 ## How to Use Preview Deployments
 
-So how do we configure all this? In this section, I'll take you through how to get started with preview deployments. You'll be able to follow along with every step by cloning my [Serverless Preview Deployments](https://github.com/fernando-mc/serverless-preview-deployments) project and using it in your own [Framework Pro](https://dashboard.serverless.com/) account.
+So how do we configure all this? In this section, I'll take you through how to get started with preview deployments. You'll be able to follow along with every step by cloning my [Serverless Preview Deployments](https://github.com/fernando-mc/serverless-preview-deployments) project and using it in your own [Framework Pro](https://app.serverless.com/) account.
 
 ### Prerequisites 
 
-In order to get started with Preview Deployments, you'll need a Framework Pro account. You can get a free account for personal use [here](http://dashboard.serverless.com/) and configure it using [these steps](https://serverless.com/framework/docs/dashboard#enabling-the-dashboard-on-existing-serverless-framework-services).
+In order to get started with Preview Deployments, you'll need a Framework Pro account. You can get a free account for personal use [here](http://app.serverless.com/) and configure it using [these steps](https://serverless.com/framework/docs/dashboard#enabling-the-dashboard-on-existing-serverless-framework-services).
 
 As of this post, preview deployments require you to:
 
@@ -117,7 +117,7 @@ With this repo setup, we now need to create and configure an App in Framework Pr
 
 **3. Configuring Your App in Framework Pro**
 
-Navigate to the [Framework Pro dashboard](https://dashboard.serverless.com/) and click the "Add App" button. Add an app and make sure to update the name of the app and org values inside of `serverless.yml` in your newly pushed project.
+Navigate to the [Framework Pro dashboard](https://app.serverless.com/) and click the "Add App" button. Add an app and make sure to update the name of the app and org values inside of `serverless.yml` in your newly pushed project.
 
 One snazzy way to do this is to run `serverless --org orgname --app appname`. You can also just open the `serverless.yml` file and confirm you see something like this:
 

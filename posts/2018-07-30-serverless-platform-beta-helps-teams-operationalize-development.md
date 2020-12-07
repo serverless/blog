@@ -11,7 +11,7 @@ authors:
   - AustenCollins
 ---
 
-Today, we’re excited to announce the [Serverless Platform Beta](https://dashboard.serverless.com/)—a single toolkit that provides everything teams need to operationalize serverless development. We plan to expand active development on the Serverless Platform with the $10M Series A funding we raised from Lightspeed Venture Partners and Trinity Ventures, which we are also announcing today.
+Today, we’re excited to announce the [Serverless Platform Beta](https://app.serverless.com/)—a single toolkit that provides everything teams need to operationalize serverless development. We plan to expand active development on the Serverless Platform with the $10M Series A funding we raised from Lightspeed Venture Partners and Trinity Ventures, which we are also announcing today.
 
 Read on for a full feature breakdown, or watch the 2 minute video:
 
@@ -35,7 +35,7 @@ This is exactly what we built the Serverless Platform we’re announcing today t
 
 The Serverless Framework solves several problems in the build phase, and has soared in robustness thanks to a passionate open-source community.
 
-Now, the [Serverless Platform](https://dashboard.serverless.com/) extends its focus to two other phases of serverless application lifecycle management: operating and integrating.
+Now, the [Serverless Platform](https://app.serverless.com/) extends its focus to two other phases of serverless application lifecycle management: operating and integrating.
 
 <img src="https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/serverless-platform-release/3-Serverless-Platform-unified-graphic.png">
 
@@ -107,4 +107,4 @@ With the Serverless Platform Beta, we want to help everyone build more and manag
 
 We can’t wait to hear what you think about the Serverless Platform, and especially the new observability tools it adds to the Serverless Dashboard.
 
-**[Try the Serverless Platform Beta here.](https://dashboard.serverless.com/)**
+**[Try the Serverless Platform Beta here.](https://app.serverless.com/)**

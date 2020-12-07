@@ -97,7 +97,7 @@ At Serverless, we love to dogfood - this is a screenshot of one of the services 
 
 #### Get Started
 
-To get started, first make sure you are on the latest version of the Serverless Framework, which you can install with `npm install serverless --global`. Even though the framework itself is written in  Node, the dashboard supports Python too. If you don’t have a Serverless Framework account, register at https://dashboard.serverless.com/, and if you haven’t yet logged in, run `sls login` on the CLI to login.
+To get started, first make sure you are on the latest version of the Serverless Framework, which you can install with `npm install serverless --global`. Even though the framework itself is written in  Node, the dashboard supports Python too. If you don’t have a Serverless Framework account, register at https://app.serverless.com/, and if you haven’t yet logged in, run `sls login` on the CLI to login.
 
 Now run `sls` in your working directory. If you are new to Serverless Framework, this will start a new project. If you are running it from within an existing Serverless Framework project, then this will update your `serverless.yml` to work with the Dashboard and enable monitoring and tracing spans.
 
