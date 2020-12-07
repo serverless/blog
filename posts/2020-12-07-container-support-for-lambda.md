@@ -87,7 +87,7 @@ CMD [ "index.handler" ]
 ```
 Now we build our image.
 
-> NOTE: For images to be referenced by Serverless we suggest the following image naming convention: <service>-<stage>-<functionName>
+> NOTE: For images to be referenced by Serverless we suggest the following image naming convention: `<service>-<stage>-<functionName>`
 
 ```
 $ docker build -t <image-name>
