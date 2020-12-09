@@ -9,7 +9,7 @@ category:
   - guides-and-tutorials
 ---
 
-AWS Lambda is easy to use and manage; the container has a specific runtime on a known environment and you can just send code to it and it runs. Nice! And this has served us well over the years. The biggest problem with that status quo, however, is when you want to achieve a use case outside of these predetermined environments. Perhaps you want to perform some form of processing using a library that is not included by default into the container? Or even use your own runtime that is not provided?
+AWS Lambda is easy to use and manage; the execution environment has a specific runtime on a known environment and you can just send code to it and it runs. Nice! And this has served us well over the years. The biggest problem with that status quo, however, is when you want to achieve a use case outside of these predetermined environments. Perhaps you want to perform some form of processing using a library that is not included by default into the execution environment? Or even use your own runtime that is not provided?
 
 AWS tried to help solve some of these issues with the introduction of Lambda layers which was useful but still quite limited. The real problem was that, while Lambda by default is great for pick up and run with little to no maintenance, flexibility was sacrificed to achieve that.
 
