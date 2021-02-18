@@ -8,7 +8,6 @@ authors:
 category:
   - news
 ---
-> Please note that while the feature described in this post is still accurate, any depiction of the dashboard UI will be innaccurate because of recent updates in mid 2020.
 
 # Troubleshooting HTTP APIs
 
