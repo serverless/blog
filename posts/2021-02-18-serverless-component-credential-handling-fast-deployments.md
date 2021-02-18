@@ -1,12 +1,12 @@
 ---
-title: Improved Credential Handling & Faster Deployments
+title: Components – Improved Credential Handling & Faster Deployments
 description: "Serverless Framework Components now features more secure credential handling and 80% faster deployments"
-date: 2020-02-18
+date: 2021-02-18
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/lambda-docker-support/serverless-framework-docker.png"
 authors:
   - AustenCollins
 category:
-  - TODO
+  - news
 ---
 
 [Serverless Framework Components](https://www.github.com/serverless/components) enables developers to deploy popular serverless use-cases onto AWS Lambda more easily than ever, and now more securely and 80% more quickly.
