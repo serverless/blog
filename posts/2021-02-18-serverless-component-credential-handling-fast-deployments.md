@@ -1,5 +1,5 @@
 ---
-title: Components: Improved Credential Handling & Faster Deployments
+title: Components - Improved Credential Handling & Faster Deployments
 description: "Serverless Framework Components now features more secure credential handling and 80% faster deployments"
 date: 2021-02-18
 thumbnail: "https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components-credentials-deployments/components-credentials-deployments.png"
