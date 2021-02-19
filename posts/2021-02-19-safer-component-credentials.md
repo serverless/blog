@@ -26,7 +26,7 @@ Components use a cloud engine for deployment, which our company hosts within our
 
 To perform deployments, the Components engine requires access to users' source code and Amazon Web Services account credentials. Many users requested that we automatically import AWS credentials stored in their “default” AWS Profile, which is a convention supported by AWS tools, the Serverless Framework, and others.  But the Components service is different from those tools because it introduced an intermediary into the deployment process. This is where we stumbled.
 
-Users who didn’t explicitly specify credentials with Components could have passed credentials from their default profile through our cloud engine unknowingly. Further, because the Components service is included in the Serverless Framework CLI, there was additional confusion as to how the Framework itself handles credentials. We documented how the Components service differs, but ultimately should have scrutinized these design decisions more thoroughly.
+Users who didn’t explicitly specify credentials with Components could have passed credentials from their default profile through our cloud engine unknowingly. The Components service is also built into the Serverless Framework CLI, adding additional confusion as to how credentials were being handled by the Framework itself. We documented how using the Components service differs, but ultimately we should have scrutinized these design decisions more thoroughly.
 
 ![Serverless](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/components-aws-profiles/components-screenshot-1.png)
 
