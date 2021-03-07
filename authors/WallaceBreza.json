@@ -1,0 +1,10 @@
+{
+  "name": "Wallace Breza",
+  "github": "wbreza",
+  "site": "https://www.linkedin.com/in/wbreza",
+  "avatar": "https://avatars1.githubusercontent.com/u/6540159?s=460&v=4",
+  "bio": {
+      "short": "Wallace is a Principal Software Engineer at Microsoft on the Commercial Software Engineering Team",
+      "long": "Wallace is part of the team at Microsoft responsible for the v1 release of the serverless-azure-functions plugin as well as the @multicloud library for serverless handlers"
+  }
+}
