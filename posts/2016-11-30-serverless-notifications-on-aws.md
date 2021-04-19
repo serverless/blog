@@ -33,13 +33,13 @@ If you want private messages, you just need to create private topics and restric
 
 ## Demo
 
-You can find the code on [GitHub](https://github.com/zanon-io/serverless-notifications).
+You can find the code on [GitHub](https://github.com/diegozanon/serverless-notifications).
 
-Try it here: https://serverless-notifications.zanon.io (open two browser tabs)
+Try it here: https://serverless-notifications.zanon.dev (open two browser tabs)
 
 <p align="center">
-  <a href="https://serverless-notifications.zanon.io">
-    <img src="https://zanon.io/images/posts/2016-11-05-test.png" alt="demo">
+  <a href="https://serverless-notifications.zanon.dev">
+    <img src="https://raw.githubusercontent.com/diegozanon/zanon.io/master/images/posts/2016-11-05-test.png" alt="demo">
   </a>
 </p>
 
@@ -48,7 +48,7 @@ Try it here: https://serverless-notifications.zanon.io (open two browser tabs)
 I've used the following architecture in this demo.
 
 <p align="center">
-  <img src="https://zanon.io/images/posts/2016-11-05-architecture.png" alt="architecture">
+  <img src="https://raw.githubusercontent.com/diegozanon/zanon.io/master/images/posts/2016-11-05-architecture.png" alt="architecture">
 </p>
 
 1. User makes a request to Route 53 that is configured to reference a S3 bucket.
@@ -227,7 +227,7 @@ service: serverless-notifications
 
 provider:
   name: aws
-  runtime: nodejs4.3
+  runtime: nodejs12.x
   stage: dev
   region: us-east-1
   iamRoleStatements:
@@ -273,7 +273,7 @@ const roleName = 'serverless-notifications';
 module.exports.auth = (event, context, callback) => {
 
     // get the endpoint address
-    iot.describeEndpoint({}, (err, data) => {
+    iot.describeEndpoint({ endpointType: 'iot:Data-ATS' }, (err, data) => {
         if (err) return callback(err);
 
         const iotEndpoint = data.endpointAddress;
@@ -333,8 +333,8 @@ If you need to provide temporary keys for *authenticated* users (logged with Fac
 
 I tried another experiment with this and created a demo for a serverless multiplayer game. If you want to develop an HTML5 game in a serverless architecture, you can use IoT to exchange messages between players and implement a cheap multiplayer game. The performance is good enough for dynamic games.
 
-You can see the demo [here](https://bombermon.zanon.io) and the code on [GitHub](https://github.com/zanon-io/serverless-multiplayer-game). You can try it using your desktop and phone to test the multiplayer feature.
+You can see the demo [here](https://bombermon.zanon.dev) and the code on [GitHub](https://github.com/diegozanon/serverless-multiplayer-game). You can try it using your desktop and phone to test the multiplayer feature.
 
 ## Conclusion
 
-IoT can also be used for real-time notifications in the browser. Notifications are a common use case in modern apps, and it's one more problem that you can solve using with Serverless.
+IoT can also be used for real-time notifications in the browser. Notifications are a common use case in modern apps, and it's one more problem that you can solve with Serverless.
