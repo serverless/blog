@@ -20,17 +20,17 @@ The Serverless Framework Dashboard uses features called Providers and Parameters
 
 #### Initial setup
 
-Lets get started with the basic setup we need. Its pretty quick!
+Let's get started with the basic setup we need. Its pretty quick!
 
 First, go to the [Serverless Framework Dashboard](https://app.serverless.com), and create a new account if you haven't got one yet or log into your existing account. If you created a new account, it will prompt you to give your org a name. You can name it anything you like and don't worry, you can create additional orgs later for free if you need one specially named.
 
 Once done, you can click the `create app` at the top right and since we are talking about adding an existing Serverless Framework service, go ahead and choose that option. Here just add the app name you wish to create and the name of the service you are going to deploy. Click the deploy button and you will be prompted to create or choose a Provider. Provider's is a feature to help manage your connection to ... well ... a provider like AWS. Once you have that complete, you just need to copy and paste the small yml snippet with the org and app properties into your serverless.yml, save the file and deploy.
 
-![Create App Form]()
+![Create App Form](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/stages-and-environments/CreateAppFormEdit.png)
 
 When we deploy our up, if we didn't set a stage at deploy time with `--stage stagename`, it would have defaulted to the `dev` stage so you may something like this. 
 
-![Dev stage deployed]()
+![Dev stage deployed](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/stages-and-environments/DevStageDeployedEdit.png)
 
 Howeveer, what if we want to deploy multiple stages? How do we manage that?
 
@@ -42,9 +42,9 @@ Go to the org settings section clicking `org` on the left,then choose the Provid
 
 Once you have added the additional AWS accounts, you can head back to the app screen, and if you have any deployed services (which you should after the instructions above), you will see them here. What we want to do is create a new prod stage and assign our prod only AWS provider to it before we deploy. We do this by clicking the menu icon to the right of the service name, choosing "add stage" and then giving the name prod. Clicking on our new prod stage with a grey "pending" icon we can switch to the provider tab and choose which of the providers we want to allocate to this yet to be deployed stage. 
 
-Now, when we do deploy with `serverless deploy --stage prod`, that deployment process will use the associate provider to get temporary credentials to our prod AWS account and do what it needs to do.
+Now, when we do deploy with `serverless deploy --stage prod`, that deployment process will use the associated provider to get temporary credentials to our prod AWS account and do what it needs to do.
 
-![Product provider allocated to production stage]()
+![Product provider allocated to production stage](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/stages-and-environments/ProductProviderAllocatedEdit.png)
 
 But there are more benefits built in by default as well. Because you can now do deployments to AWS via the Serverless Framework Dashboard, you no longer need to distribute Access Keys and Secrets to developers so that they can deploy from their local machines. When a deployment is done via the dashboard, at deployment time the Serverless Framework requests temporary access credentials created via the provider you just setup. Once deployment is complete, those credentials are no longer in use. 
 
@@ -56,13 +56,13 @@ Your application needs configuration data. Whether that's to connect to data sou
 
 Thankfully, the Serverless Framework Dashboard has a feature to help us solve that. Open up the settings for a service as we did previously you should see a menu with options for CI/CD, Provider and Parameters. Switching to Parameters we are able to add a collection of key/value pairs, with the values stored encrypted. 
 
-![Parameters list for a service]()
+![Parameters list for a service](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/stages-and-environments/ParametersForServiceEdit.png)
 
 These parameters are made available to ALL stages within it. This is a great place to put defaults that are always shared across all stages or perhaps just some sane values to make sure deploys don't error no matter what. As mentioned though, we do want to be able to set unique parameters for stages themselves.
 
 So lets go back to the apps screen and click through to any of our deployed stages, and we should see the parameters tab:
 
-![Parameters list for a stage]()
+![Parameters list for a stage](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/stages-and-environments/ParametersForStageEdit.png)
 
 It is here that we can see that the parameters we had added at the service level filter through, but hovering over the `inherited` label, we can now override this inherited value with a custom one for our stage. We could even add any parameter we need for this stage from scratch if we so desire!
 
