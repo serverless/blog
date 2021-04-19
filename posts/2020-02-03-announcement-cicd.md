@@ -22,7 +22,7 @@ Here are some of the highlights.
 
 When we deploy a service we don’t just deploy to production directly every time. More often, we’ll have multiple environments setup for each stage of our deployment pipeline. While we deploy the same service to each stage, each stage will be deployed to different AWS Accounts and use different configurations.
 
-Serverless CI/CD heavily leverages existing Serverless Framework Pro features like [outputs](https://serverless.com/framework/docs/dashboard/output-variables/) to share variables across services, [parameters](https://serverless.com/framework/docs/dashboard/parameters/) to set secrets/variables, and [access roles](https://serverless.com/framework/docs/dashboard/access-roles/) to connect to your AWS account. All of these are wrapped in a [deployment profile](https://serverless.com/framework/docs/dashboard/profiles/) which you can associate with a stage. Whether you are deploying from the CLI or from Serverless CI/CD the right environment and configurations are used.
+Serverless CI/CD heavily leverages existing Serverless Framework Pro features like [outputs](https://serverless.com/framework/docs/dashboard/output-variables/) to share variables across services, [parameters](https://serverless.com/framework/docs/dashboard/parameters/) to set secrets/variables, and [providers](https://www.serverless.com/framework/docs/guides/providers/) to connect to your AWS account. Whether you are deploying from the CLI or from Serverless CI/CD the right environment and configurations are used depending on the stage submitted.
 
 ## Preview deployments from pull requests
 
