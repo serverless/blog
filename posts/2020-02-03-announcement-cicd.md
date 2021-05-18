@@ -34,13 +34,13 @@ It’s also self-cleaning. After your branch is merged and deleted, Serverless C
 
 ## Branch deployments
 
-![Branch deployment status](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-01-announcement-cicd/queue.png)
+![Branch deployment status](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-01-announcement-cicd/BranchDeploymentStatusEdit.png)
 
 Branch deployments enable you to deploy all commits from a branch to a specific stage. For example, you can deploy everything from the master branch to a “staging” stage, and everything from the “prod” branch to the “prod” stage. This enables you to leverage your existing git flow to review and promote changes from stage to stage.
 
 ## Mono-repo support
 
-![Mono repo trigger directories](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-01-announcement-cicd/trigger.png)
+![Mono repo trigger directories](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-01-announcement-cicd/MonorepoTriggerDirectories.png)
 
 In a microservices architecture we end up with many serverless.yml files in a single repo, but we don’t want to redeploy all services just because one file changed. With the mono-repo support, you can specify trigger directories, so you can deploy services only if specific files change.
 
