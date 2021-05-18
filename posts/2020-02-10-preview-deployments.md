@@ -36,9 +36,9 @@ What characteristics do these resources share? They're virtually all pay-as-you-
 
 The preview deployments benefits for frontend code are clearly apparent - you get some preview URL of a deployment and you can see what changed and make sure it looks great. So what do we really get out of doing something similar for the backend? Let's take a look.
 
-**Automated Tests and Serverless Safeguard**
+**Automated Tests**
 
-When you create your Preview Deployment, the Framework Pro CI/CD system will still run any [Safeguards](https://serverless.com/framework/docs/dashboard/safeguards/) you have configured for the `default` profile. You'll also still have any automated [tests](https://serverless.com/framework/docs/dashboard/cicd/running-tests/) you have setup run against the deployment. This gives you all the same benefits you might otherwise have waited until a staging environment to check against.
+When you create your Preview Deployment, the Framework Pro CI/CD system will still run any automated [tests](https://serverless.com/framework/docs/dashboard/cicd/running-tests/) you have setup to run against the deployment. This gives you all the same benefits you might otherwise have waited until a staging environment to check against.
 
 **They Can Supplement Existing CI/CD**
 
@@ -77,19 +77,13 @@ With all of these perquisites met, you should be able to configure your reposito
 
 First, you'll need to follow some steps to get any CI/CD working with your Framework Pro account. The steps are documented [here](https://serverless.com/framework/docs/dashboard/cicd/) but let's walk through them together.
 
-**1. Link Your AWS Account to a Default Profile**
+**1. Setup a default provider**
 
-When using preview deployments, we'll be deploying to a stage name based on the feature branch name. This helps avoid conflicts with resource names because feature branch names should be unique. 
+When using preview deployments, we'll be deploying to a stage name based on the feature branch name. This helps avoid conflicts with resource names because feature branch names should be unique. If we are able to work in an environment with multiple AWS accounts, we want to them make sure we use an appropriate, non-production account usually for the deployment of these preview branches. 
 
-This also means we need to configure the "default" Framework Pro [deployment profile](https://serverless.com/framework/docs/dashboard/profiles/) with a role so it can deploy feature branches. You can do that by clicking the profiles menu and then clicking on the "default" profile. 
+Because preview branches could be created at any time with any potential stage name, we do not have the opportunity to select the correct AWS connection to associate with these automatically generated stages. We can, however, add providers to our Framework Pro accounts and we can even set a provider as a default. It is this default account that will be used by any preview deployment, or in fact any deployment with a stage name we have not yet manually configured.
 
-![Screenshot of profiles](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/01-profiles.png)
-
-From here, you'll need to configure a "shared AWS account" to use when deploying your preview deployments:
-
-![Screenshot of default profile](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/02-default-profile.png)
-
-This setting will require you to create an AWS IAM Role if you haven't already and give it permissions to Framework Pro to deploy your services. Once you save the default profile, you can then move to deploying and configuring your service with preview deployments.
+Adding a provider is super simple and this [two minute YouTube](https://youtu.be/VUKDRoUdMek) walks through setting up that connection.
 
 **2. Get Your GitHub Repo Setup**
 
@@ -101,7 +95,7 @@ Go ahead and sign in to GitHub and take a moment to [create a new GitHub Reposit
 
 Then copy down the git URL for your repo for later. Mine is: `https://github.com/fernando-mc/preview-deployments-test.git`
 
-We need to do this step because we'll need our own repository in our own GitHub account to push code to and then configure with Preview Deployments later on.
+We need to do this step because we'll need our own repository in our own GitHub account to push code to and then configure with Preview Deployments later on. 
 
 After you create that repo, you can clone the code we'll be using:
 
@@ -113,13 +107,13 @@ After you create that repo, you can clone the code we'll be using:
 
 I'm jumping through all these hoops to make sure this repo is yours and yours alone and not associated with mine in any way. That way I can make sure you don't inadvertently open feature requests against *my* repo, which will unfortunately fail for you!
 
+> NOTE: Please do not fork the repository. Forks of repos currently do not trigger CI/CD requests reliably due to the way the API is implemented by GitHub. 
+
 With this repo setup, we now need to create and configure an App in Framework Pro.
 
 **3. Configuring Your App in Framework Pro**
 
-Navigate to the [Framework Pro dashboard](https://app.serverless.com/) and click the "Add App" button. Add an app and make sure to update the name of the app and org values inside of `serverless.yml` in your newly pushed project.
-
-One snazzy way to do this is to run `serverless --org orgname --app appname`. You can also just open the `serverless.yml` file and confirm you see something like this:
+Navigate to the [Framework Pro dashboard](https://app.serverless.com/) and click the "Create App" button. Go ahead and give your app a name in the required box, then add the service name as it is in your serverless.yml (`serverlessjams` if you haven't changed it). Clicking on `deploy` then gives you the opportunity to choose an AWS provider as the default for the app; you can leave this blank. What you will see are some commands. Copy and paste the `org` and `app` properties to your serverless.yml, make sure to run `serverless login` if you haven't yet so that the Serverless Framework CLI tool has access to your Serverless Pro account and then just run deploy.
 
 ```yaml
 org: fernandosdemos
@@ -127,11 +121,9 @@ app: preview-deployments
 service: serverlessjams
 ```
 
-Where `fernandosdemos` is your org name and `preview-deployments` is your app name. Then make sure to save the `serverless.yml` file and push this change to the GitHub repo with: `git add . && git commit -m "update app and org" && git push origin master`.
+With that initial deployment out the way, it makes it a lot easier to edit the CI/CD settings. By clicking the menu to the left of your now deployed service's name, you can go to settings which has the option to go to CI/CD settings. There should be an option to connect to GitHub or BitBucket. Click whichever is appropriate!
 
-Now that you have the correct org and app values, you can connect GitHub. Click into your app, and visit the "ci/cd settings" tab. Then connect your GitHub account and install the Serverless GitHub application. 
-
-![Screenshot of connecting GitHub](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/04-connect-github.png)
+![Screenshot of connecting GitHub](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/ConnectingToGitHub.png)
 
 If you have multiple organizations associated with your account, you'll need to pick the one you put the repo in.
 
@@ -143,11 +135,11 @@ After this, you will at least need to grant permissions to access the repo we ju
 
 At some point, you might also have another screen or two prompting you to install the Serverless Application in GitHub. After you're done with this process, you can head back to the Framework Pro dashboard and you should now see a repo dropdown to pick from:
 
-![Screenshot of connecting the repo in the Framework Pro dashboard](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/07-connect-repo.png)
+![Screenshot of connecting the repo in the Framework Pro dashboard](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/SelectRepo.png)
 
 After you select the repo your using, preview deployments should be configured by default as shown below:
 
-![Screenshot of the preview deployment settings](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/08-preview-deploy-settings.png)
+![Screenshot of the preview deployment settings](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/PreviewDeployConfigured.png)
 
 You could also configure deployments for other branches (like whenever changes are made in master). But for now, just save the settings and continue.
 
@@ -184,31 +176,15 @@ If you see a failure like this click the "Details":
 
 This should direct you to the deployments section of the Framework Pro dashboard. From there, you can review the log for your preview deployment to see what happened:
 
-![Screenshot of a failed build log in Framework Pro](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/13-deployment-log-failure.png)
+![Screenshot of a failed build log in Framework Pro](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/FailedDeployment.png)
 
-If you followed all the earlier steps above your build probably succeeded, but you might also see an error that will help you fix whatever failed in the build. In this case, we see an error related to our deployment profile: "AWS provider credentials not found. Learn how to set up AWS provider credentials in our docs here: <http://slss.io/aws-creds-setup>." 
-
-If you saw this error, make sure to configure the deployment profile mentioned in step 1 above and then push an update to the preview branch to get it to rebuild. After you do this, (or if you didn't make this mistake in the first place) you should see this:
+If everything was successful you should see a success message in GitHub
 
 ![Screenshot of successful preview deployment in GitHub](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/14-serverless-cicd-preview-success.png)
 
-Clicking the "Details" link inside of the Serverless check should direct you to the Framework Pro dashboard where you can review the logs from the build:
+Clicking the "Details" link inside of the Serverless check should direct you to the Framework Pro dashboard where you can review the logs from the build.
 
-![Screenshot of successful deployment log in Framework Pro](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/15-deployment-log-p1.png)
-
-You should see any configured safeguards run against your deployment:
-
-![Screenshot of Safeguards running in Framework Pro](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/16-deployment-log-p2-safeguards.png)
-
-And the safeguards should also display any warnings that might apply to this preview deployment:
-
-![Screenshot of safeguards warning in Framework Pro CICD log](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/17-deployment-log-p3-safeguards-warns.png)
-
-Finally, after the deployment is completed, you'll see any API endpoints and other relevant resources that were created:
-
-![Screenshot of API endpoints being output in Framework Pro logs](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/2020-02-10-preview-deployments/18-deployment-log-api-endpoints.png)
-
-At this point, any reviewer could copy and paste those API endpoints and test them out. If I were reviewing, I could test out the new API using something like Postman or even copy the API endpoint directly into the frontend and test it out within the UI. Let's give that a shot now for fun.
+Finally, after the deployment is completed, you'll see any API endpoints and other relevant resources that were created. At this point, any reviewer could copy and paste those API endpoints and test them out. If I were reviewing, I could test out the new API using something like Postman or even copy the API endpoint directly into the frontend and test it out within the UI. Let's give that a shot now for fun.
 
 Copy the base of the API endpoint from the log, in my case: 
 
