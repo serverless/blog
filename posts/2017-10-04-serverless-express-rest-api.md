@@ -56,7 +56,7 @@ const serverless = require('serverless-http');
 const express = require('express')
 const app = express()
 
-app.get('/', function (req, res) {
+app.get('/dev', function (req, res) {
   res.send('Hello World!')
 })
 
@@ -76,7 +76,7 @@ service: my-express-application
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs8.10
   stage: dev
   region: us-east-1
 
