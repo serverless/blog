@@ -27,9 +27,7 @@ But how do we go about debugging and troubleshooting our APIs? CloudWatch within
 
 This is pretty much the entire reason why we created Serverless Framework Pro, as a way to help users of the Serverless Framework to monitor and debug their Serverless services; APIs being chief among them.
 
-And if this is the first time you are hearing about this, let me introduce you to the the Serverless Framework Pro dashboard with a [2 minute Youtube video](https://youtu.be/Wbj7J1ziGyY) to get you up to speed.
-
-If you would like to know how to connect one of your services to the dashboard, make sure you have the most recent version of Serverless installed (`npm i -g serverless` or if you use the binary version `serverless upgrade`) and then run the command `serverless` in the same folder as your service. You will be walked through setting everything up.
+If you would like to know how to connect one of your services to the dashboard, make sure you have the most recent version of Serverless installed (`npm i -g serverless` or if you use the binary version `serverless upgrade`) and follow the instructions available here on the [documentation for the dashboard](https://www.serverless.com/framework/docs/guides/dashboard#enabling-the-dashboard-on-existing-serverless-framework-services) 
 
 #### Log to CloudWatch
 
@@ -69,11 +67,11 @@ By just glancing at the charts provided here, you can immediately see if any API
 
 With the image above, I don’t need to wait for a user to complain or report an error, I can instantly see that some errors start happening around 7pm. But it doesn’t end there. It would be even better if I am not required to be watching these charts and I just get notified if something happens.
 
-This is where the Serverless Framework Pro notifications come into it. By going into my app settings, and choosing notifications in the menu, I can configure to have notifications sent to an email address or several, a Slack channel, call a webhook or even send the notification to SNS so I can have own Lambda function, for example, process those notifications as I want.
+This is where the Serverless Framework Pro notifications come into it. By going into my instance settings, and choosing notifications in the menu, I can configure to have notifications sent to an email address or several, a Slack channel, call a webhook or even send the notification to SNS so I can have own Lambda function, for example, process those notifications as I want.
 
 ![Notifications options](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/troubleshoot-serverless-apis/NotificationsScreen.png)
 
-You can configure these per service and per stage and have as many notification configurations as you wish; perhaps dev stages report via email since they aren’t critical but errors in production always go to a Slack channel for the whole team.
+You can configure these per stage and have as many notification configurations as you wish; perhaps dev stages report via email since they aren’t critical but errors in production always go to a Slack channel for the whole team.
 
 #### Retrieving error details
 
