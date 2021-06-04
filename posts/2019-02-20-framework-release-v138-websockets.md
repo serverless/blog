@@ -54,7 +54,7 @@ functions:
     handler: handler.echo
     events:
       - websocket:
-          route: $echo
+          route: echo
 
 ```
 
