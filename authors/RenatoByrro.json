@@ -1,0 +1,12 @@
+{
+  "name": "Renato Byrro",
+  "github": "byrro",
+  "twitter": false,
+  "site": "https://github.com/byrro",
+  "avatar": "https://avatars3.githubusercontent.com/u/10479305?s=460&v=4",
+  "bio": {
+    "short": "Renato Byrro is a Software Developer and Developer Advocate",
+    "long":
+      "Renato Byrro is a Software Developer focused on web APIs, backend data processing pipelines, machine learning, and a Developer Advocate for serverless architectures."
+    }
+}
