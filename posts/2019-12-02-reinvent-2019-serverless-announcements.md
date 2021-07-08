@@ -20,6 +20,7 @@ We're watching all the keynotes and announcements live as they happen, and compi
 
 **Latest:**
 * [AWS API Gateway v2 for HTTP](#aws-api-gateway-v2-for-http)
+* [AWS Step Functions Express Workflows](#aws-step-functions-express-workflows)
  * [RDS Proxy](#rds-proxy)
  * [Provisioned Concurrency](#provisioned-concurrency)
  * [S3 Access Points](#s3-access-points)
@@ -41,6 +42,16 @@ We're watching all the keynotes and announcements live as they happen, and compi
 **Why it matters** While API Gateway v1 has served us well it hasn't been perfect. v2 solves some of the issues users have had with v1 such as improved latency, reduced cost, better CORS integration and support for JWT's amongst others.
 
 We have a detailed blogpost going through all the changes, so if you want to know more [go check that out](https://serverless.com/blog/api-gateway-v2-http-apis/)
+
+#### AWS Step Functions Express Workflows
+
+**What it is** An additional step function workflow type suited for high volume, short duration use cases.
+
+**Why it matters** If you've used Step Functions its a pretty cool way to construct workflows and coordinate the interaction of multiple Lambda functions in an easy to manage workflow setup. The downside is that if you have a lot of volume, especially on relatively short workflows, the costs can be prohibitive. This change allows you to set a workflow as `Express` and along with minor usage changes means you get billed via time to manage state transitions instead of being charged per state transition. 
+
+There is an official AWS post for all the details, so [swing by there](https://aws.amazon.com/blogs/aws/new-aws-step-functions-express-workflows-high-performance-low-cost/) for more information.
+
+
 #### RDS Proxy
 **What it is** Moves connection handling from the Lambda layer to the RDS Proxy layer to help curb the issues around reaching connection maximums.
 
