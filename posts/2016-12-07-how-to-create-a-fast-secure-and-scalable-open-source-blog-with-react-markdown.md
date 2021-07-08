@@ -32,7 +32,7 @@ Let's explore the **100% Open Source, Markdown & React-powered blog** that you'r
 
 Serverless.com's blog is 100% open source content driven by a [GitHub repo](https://github.com/serverless/blog) and Markdown files.
 
-Blog content is fed into our site and rendered with our static website generator of choice [Phenomic](http://phenomic.io).
+Blog content is fed into our site and rendered with our static website generator of choice [Phenomic](https://github.com/MoOx/phenomic).
 
 Let's explore the benefits of our blog setup and how they address the problems outlined above.
 
@@ -70,7 +70,7 @@ We're using React as our frontend framework of choice for creating our serverles
 
 If we decided to blog with WordPress, we'd need to maintain 2 separate style/component libraries because WordPress can't render React components server-side. Keeping styles in sync in multiple platforms is painful and will eventually leads to an inconsistent user experience.
 
-Luckily, our site and blog are powered by [Phenomic](http://phenomic.io), so we can use all of the same React components we use in our products.
+Luckily, our site and blog are powered by [Phenomic](https://github.com/MoOx/phenomic), so we can use all of the same React components we use in our products.
 
 **Code reuse and brand consistency FTW**! 🎉
 
@@ -117,4 +117,4 @@ If I haven't convinced you yet. Tweet at me [@DavidWells](http://twitter.com/dav
 
 I'm planning a series of posts illustrating how the site is built.
 
-For now, [checkout the github repo](https://github.com/serverless/site).
+For now, [checkout the github repo](https://github.com/serverless/blog).
