@@ -76,7 +76,7 @@ service: my-express-application
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs12.x
   stage: dev
   region: us-east-1
 
@@ -141,7 +141,7 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs12.x
   stage: dev
   region: us-east-1
   iamRoleStatements:
@@ -540,7 +540,7 @@ If you already have an existing Express application, it's very easy to convert t
 
 	provider:
 	  name: aws
-	  runtime: nodejs6.10
+	  runtime: nodejs12.x
 	  stage: dev
 	  region: us-east-1
 
