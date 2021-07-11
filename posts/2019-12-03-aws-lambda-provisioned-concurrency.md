@@ -34,9 +34,9 @@ Of course, we don’t really want to dip into the console if our service is buil
 functions:
   hello:
     handler: handler.hello
-      events:
-        - http:
-            path: /hello
+    events:
+      - http:
+          path: /hello
           method: get
     provisionedConcurrency: 5
 ```
