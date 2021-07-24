@@ -103,7 +103,7 @@ exports.handler = (event, context, callback) => {
     const headers = request.headers;
 
     if (headers['cloudfront-is-mobile-viewer'] && headers['cloudfront-is-mobile-viewer'][0].value === 'true') {
-        request.uri = '/lite + request.uri;
+        request.uri = '/lite' + request.uri;
     }
 
     callback(null, request);
