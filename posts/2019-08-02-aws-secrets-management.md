@@ -108,6 +108,8 @@ In our `serverless.yml` we [reference](https://github.com/chief-wizard/serverles
           DARKSKY_URL: 'https://api.darksky.net/forecast'
           DARKSKY_APIKEY: ${ssm:/darksky-api-key~true}
 ```
+Note: the `~true` is no longer supported with v3. The variable will be automatically decrypted by default.
+
 The provider code reads the API key from the environment variable and uses it directly; in a deployed function it will contain the decrypted value of the API key:
 
 ```javascript
