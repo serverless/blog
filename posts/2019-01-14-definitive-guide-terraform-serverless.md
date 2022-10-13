@@ -119,10 +119,12 @@ resource "random_string" "password" {
   length  = 16
   special = false
 }
-
+```
 
 Now, if we want the Serverless application to get the details of the DB connection string we need to save the DB name and the password as encrypted strings in the SSM parameter store. We can do that by using the aws_ssm_parameter resource like this:
 
+
+```
 # parameters.tf
 resource "aws_ssm_parameter" "endpoint" {
   name        = "/database/${var.name}/endpoint"
