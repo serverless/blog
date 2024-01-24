@@ -66,7 +66,7 @@ The most interesting part of `serverless.yml` is the [functions section](https:/
         handler: handler.darksky
         environment: 
           DARKSKY_URL: 'https://api.darksky.net/forecast'
-          DARKSKY_APIKEY: ${ssm:/darksky-api-key~true}
+          DARKSKY_APIKEY: ${ssm:/darksky-api-key}
         events:
           - http:
               path: /darksky/{latitude}/{longitude}
@@ -98,7 +98,7 @@ To add a new secret in the AWS Systems Manager user interface, we specify the Se
 ![](https://s3-us-west-2.amazonaws.com/assets.blog.serverless.com/secrets-management/s_468DC5A00535E640D1CD6F860B59D7ED1FD419F7F68475C6951254F0A0DFD405_1563915821845_20190723172855mbk6sxe5l8.png)
 
 
-In our `serverless.yml` we [reference](https://github.com/chief-wizard/serverless-secrets-management-weather-apis/blob/master/serverless.yml#L23) our DarkSky API key via the `ssm:/` notation. Now that our key is encrypted in the Parameter Store, we add `~true` to the end of the key reference. This way, the Serverless Framework fetches the parameter from SSM, decrypts it, and places the decrypted value into an environment variable for us to use:
+In our `serverless.yml` we [reference](https://github.com/chief-wizard/serverless-secrets-management-weather-apis/blob/master/serverless.yml#L23) our DarkSky API key via the `ssm:/` notation. This way, the Serverless Framework fetches the parameter from SSM, decrypts it, and places the decrypted value into an environment variable for us to use:
 
 ```yml
     functions:
@@ -106,7 +106,7 @@ In our `serverless.yml` we [reference](https://github.com/chief-wizard/serverles
         handler: handler.darksky
         environment: 
           DARKSKY_URL: 'https://api.darksky.net/forecast'
-          DARKSKY_APIKEY: ${ssm:/darksky-api-key~true}
+          DARKSKY_APIKEY: ${ssm:/darksky-api-key}
 ```
 The provider code reads the API key from the environment variable and uses it directly; in a deployed function it will contain the decrypted value of the API key:
 
